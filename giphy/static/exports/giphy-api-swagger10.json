@@ -1,0 +1,1224 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "https://api.giphy.com/v1",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/gifs",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "A multiget version of the get GIF by ID endpoint.\n",
+          "nickname": "getGifsById",
+          "parameters": [
+            {
+              "name": "ids",
+              "description": "Filters results by specified GIF IDs, separated by commas.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "GifsResponse"
+        }
+      ]
+    },
+    {
+      "path": "/gifs/random",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n",
+          "nickname": "randomGif",
+          "parameters": [
+            {
+              "name": "tag",
+              "description": "Filters results by specified tag.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "rating",
+              "description": "Filters results by specified rating.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "GifsRandomResponse"
+        }
+      ]
+    },
+    {
+      "path": "/gifs/search",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.\n",
+          "nickname": "searchGifs",
+          "parameters": [
+            {
+              "name": "q",
+              "description": "Search query term or prhase.",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "description": "The maximum number of records to return.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "25",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "offset",
+              "description": "An optional results offset.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "0",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "rating",
+              "description": "Filters results by specified rating.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "lang",
+              "description": "Specify default language for regional content; use a 2-letter ISO 639-1 language code.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "GifsSearchResponse"
+        }
+      ]
+    },
+    {
+      "path": "/gifs/translate",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF\n",
+          "nickname": "translateGif",
+          "parameters": [
+            {
+              "name": "s",
+              "description": "Search term.",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "GifsTranslateResponse"
+        }
+      ]
+    },
+    {
+      "path": "/gifs/trending",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.\n",
+          "nickname": "trendingGifs",
+          "parameters": [
+            {
+              "name": "limit",
+              "description": "The maximum number of records to return.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "25",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "offset",
+              "description": "An optional results offset.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "0",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "rating",
+              "description": "Filters results by specified rating.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "GifsTrendingResponse"
+        }
+      ]
+    },
+    {
+      "path": "/gifs/{gifId}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Returns a GIF given that GIF's unique ID\n",
+          "nickname": "getGifById",
+          "parameters": [
+            {
+              "name": "gifId",
+              "description": "Filters results by specified GIF ID.",
+              "paramType": "path",
+              "required": true,
+              "allowMultiple": false,
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "GifsResponse1"
+        }
+      ]
+    },
+    {
+      "path": "/stickers/random",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n",
+          "nickname": "randomSticker",
+          "parameters": [
+            {
+              "name": "tag",
+              "description": "Filters results by specified tag.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "rating",
+              "description": "Filters results by specified rating.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "StickersRandomResponse"
+        }
+      ]
+    },
+    {
+      "path": "/stickers/search",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.\n",
+          "nickname": "searchStickers",
+          "parameters": [
+            {
+              "name": "q",
+              "description": "Search query term or prhase.",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "limit",
+              "description": "The maximum number of records to return.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "25",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "offset",
+              "description": "An optional results offset.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "0",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "rating",
+              "description": "Filters results by specified rating.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            },
+            {
+              "name": "lang",
+              "description": "Specify default language for regional content; use a 2-letter ISO 639-1 language code.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "StickersSearchResponse"
+        }
+      ]
+    },
+    {
+      "path": "/stickers/translate",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.\n",
+          "nickname": "translateSticker",
+          "parameters": [
+            {
+              "name": "s",
+              "description": "Search term.",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "StickersTranslateResponse"
+        }
+      ]
+    },
+    {
+      "path": "/stickers/trending",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.\n",
+          "nickname": "trendingStickers",
+          "parameters": [
+            {
+              "name": "limit",
+              "description": "The maximum number of records to return.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "25",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "offset",
+              "description": "An optional results offset.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "defaultValue": "0",
+              "minimum": "",
+              "maximum": "",
+              "uniqueItems": false,
+              "type": "integer",
+              "format": "int32"
+            },
+            {
+              "name": "rating",
+              "description": "Filters results by specified rating.",
+              "paramType": "query",
+              "required": false,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "api_key": []
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [
+            {
+              "code": 400,
+              "message": "Your request was formatted incorrectly or missing required parameters."
+            },
+            {
+              "code": 403,
+              "message": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+            },
+            {
+              "code": 404,
+              "message": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+            },
+            {
+              "code": 429,
+              "message": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+            }
+          ],
+          "uniqueItems": false,
+          "$ref": "StickersTrendingResponse"
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Gif": {
+      "id": "Gif",
+      "required": [],
+      "properties": {
+        "bitly_url": {
+          "description": "The unique bit.ly URL for this GIF",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "content_url": {
+          "description": "Currently unused",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "create_datetime": {
+          "description": "The date this GIF was added to the GIPHY database.",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "embded_url": {
+          "description": "A URL used for embedding this GIF",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "featured_tags": {
+          "description": "An array of featured tags for this GIF (Note: Not available when using the Public Beta Key)",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "id": {
+          "description": "This GIF's unique ID",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "images": {
+          "description": "An object containing data for various available formats and sizes of this GIF.",
+          "uniqueItems": false,
+          "$ref": "Images"
+        },
+        "import_datetime": {
+          "description": "The creation or upload date from this GIF's source.",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "rating": {
+          "description": "The MPAA-style rating for this content. Examples include Y, G, PG, PG-13 and R",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "slug": {
+          "description": "The unique slug used in this GIF's URL",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "source": {
+          "description": "The page on which this GIF was found",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "source_post_url": {
+          "description": "The URL of the webpage on which this GIF was found.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "source_tld": {
+          "description": "The top level domain of the source URL.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "tags": {
+          "description": "An array of tags for this GIF (Note: Not available when using the Public Beta Key)",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "trending_datetime": {
+          "description": "The date on which this gif was marked trending, if applicable.",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "description": "Type of the gif. By default, this is almost always gif",
+          "defaultValue": "gif",
+          "enum": [
+            "gif"
+          ],
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "update_datetime": {
+          "description": "The date on which this GIF was last updated.",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": {
+          "description": "The unique URL for this GIF",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "user": {
+          "description": "The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.",
+          "uniqueItems": false,
+          "$ref": "User"
+        },
+        "username": {
+          "description": "The username this GIF is attached to, if applicable",
+          "uniqueItems": false,
+          "type": "string"
+        }
+      }
+    },
+    "Image": {
+      "id": "Image",
+      "required": [],
+      "properties": {
+        "frames": {
+          "description": "The number of frames in this GIF.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "height": {
+          "description": "The height of this GIF in pixels.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "mp4": {
+          "description": "The URL for this GIF in .MP4 format.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "mp4_size": {
+          "description": "The size in bytes of the .MP4 file corresponding to this GIF.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "size": {
+          "description": "The size of this GIF in bytes.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "url": {
+          "description": "The publicly-accessible direct URL for this GIF.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "webp": {
+          "description": "The URL for this GIF in .webp format.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "webp_size": {
+          "description": "The size in bytes of the .webp file corresponding to this GIF.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "width": {
+          "description": "The width of this GIF in pixels.",
+          "uniqueItems": false,
+          "type": "string"
+        }
+      }
+    },
+    "Meta": {
+      "id": "Meta",
+      "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+      "required": [],
+      "properties": {
+        "msg": {
+          "description": "HTTP Response Message",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "response_id": {
+          "description": "A unique ID paired with this response from the API.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "status": {
+          "description": "HTTP Response Code",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Pagination": {
+      "id": "Pagination",
+      "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.",
+      "required": [],
+      "properties": {
+        "count": {
+          "description": "Total number of items returned.",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int32"
+        },
+        "offset": {
+          "description": "Position in pagination.",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_count": {
+          "description": "Total number of items available.",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "User": {
+      "id": "User",
+      "description": "The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.",
+      "required": [],
+      "properties": {
+        "avatar_url": {
+          "description": "The URL for this user's avatar image.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "banner_url": {
+          "description": "The URL for the banner image that appears atop this user's profile page.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "display_name": {
+          "description": "The display name associated with this user (contains formatting the base username might not).",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "profile_url": {
+          "description": "The URL for this user's profile.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "twitter": {
+          "description": "The Twitter username associated with this user, if applicable.",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "username": {
+          "description": "The username associated with this user.",
+          "uniqueItems": false,
+          "type": "string"
+        }
+      }
+    },
+    "GifsRandomResponse": {
+      "id": "GifsRandomResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Gif"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        }
+      }
+    },
+    "GifsResponse": {
+      "id": "GifsResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "items": {
+            "$ref": "Gif"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        },
+        "pagination": {
+          "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.",
+          "uniqueItems": false,
+          "$ref": "Pagination"
+        }
+      }
+    },
+    "GifsResponse1": {
+      "id": "GifsResponse1",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Gif"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        }
+      }
+    },
+    "GifsSearchResponse": {
+      "id": "GifsSearchResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "items": {
+            "$ref": "Gif"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        },
+        "pagination": {
+          "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.",
+          "uniqueItems": false,
+          "$ref": "Pagination"
+        }
+      }
+    },
+    "GifsTranslateResponse": {
+      "id": "GifsTranslateResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Gif"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        }
+      }
+    },
+    "GifsTrendingResponse": {
+      "id": "GifsTrendingResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "items": {
+            "$ref": "Gif"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        },
+        "pagination": {
+          "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.",
+          "uniqueItems": false,
+          "$ref": "Pagination"
+        }
+      }
+    },
+    "Images": {
+      "id": "Images",
+      "description": "An object containing data for various available formats and sizes of this GIF.",
+      "required": [],
+      "properties": {
+        "downsized": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "downsized_large": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "downsized_medium": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "downsized_small": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "downsized_still": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_height": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_height_downsampled": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_height_small": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_height_small_still": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_height_still": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_width": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_width_downsampled": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_width_small": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_width_small_still": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "fixed_width_still": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "looping": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "original": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "original_still": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "preview": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        },
+        "preview_gif": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Image"
+        }
+      }
+    },
+    "StickersRandomResponse": {
+      "id": "StickersRandomResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Gif"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        }
+      }
+    },
+    "StickersSearchResponse": {
+      "id": "StickersSearchResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "items": {
+            "$ref": "Gif"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        },
+        "pagination": {
+          "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.",
+          "uniqueItems": false,
+          "$ref": "Pagination"
+        }
+      }
+    },
+    "StickersTranslateResponse": {
+      "id": "StickersTranslateResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "uniqueItems": false,
+          "$ref": "Gif"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        }
+      }
+    },
+    "StickersTrendingResponse": {
+      "id": "StickersTrendingResponse",
+      "required": [],
+      "properties": {
+        "data": {
+          "description": "",
+          "items": {
+            "$ref": "Gif"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        },
+        "meta": {
+          "description": "The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.",
+          "uniqueItems": false,
+          "$ref": "Meta"
+        },
+        "pagination": {
+          "description": "The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.",
+          "uniqueItems": false,
+          "$ref": "Pagination"
+        }
+      }
+    }
+  },
+  "authorizations": {
+    "api_key": {
+      "passAs": "query",
+      "keyname": "api_key",
+      "type": "apiKey"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ]
+}

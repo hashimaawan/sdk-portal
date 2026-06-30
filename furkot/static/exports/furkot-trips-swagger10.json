@@ -1,0 +1,270 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "https://trips.furkot.com/pub/api",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/trip",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "list user's trips",
+          "nickname": "Trip_GET",
+          "parameters": [],
+          "authorizations": {
+            "furkot_auth_access_code": [
+              {
+                "scope": "read:trips",
+                "description": "list trips and stops info"
+              }
+            ]
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "items": {
+            "$ref": "Trip"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "path": "/trip/{trip_id}/stop",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "list stops for a trip identified by {trip_id}",
+          "nickname": "TripStopByTripId_GET",
+          "parameters": [
+            {
+              "name": "trip_id",
+              "description": "id of the trip",
+              "paramType": "path",
+              "required": true,
+              "allowMultiple": false,
+              "uniqueItems": false,
+              "type": "string"
+            }
+          ],
+          "authorizations": {
+            "furkot_auth_access_code": [
+              {
+                "scope": "read:trips",
+                "description": "list trips and stops info"
+              }
+            ]
+          },
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "items": {
+            "$ref": "Step"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Step": {
+      "id": "Step",
+      "required": [],
+      "properties": {
+        "address": {
+          "description": "address of the stop",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "arrival": {
+          "description": "arrival at the stop in its local timezone as YYYY-MM-DDThh:mm",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "coordinates": {
+          "description": "geographical coordinates of the stop",
+          "uniqueItems": false,
+          "$ref": "Coordinates"
+        },
+        "departure": {
+          "description": "departure from the stop in its local timezone as YYYY-MM-DDThh:mm",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "description": "name of the stop",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "nights": {
+          "description": "number of nights",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int64"
+        },
+        "passthru": {
+          "description": "true for pass-through points anchoring route",
+          "uniqueItems": false,
+          "type": "boolean"
+        },
+        "route": {
+          "description": "route leading to the stop",
+          "uniqueItems": false,
+          "$ref": "Route"
+        },
+        "url": {
+          "description": "url of the page with more information about the stop",
+          "uniqueItems": false,
+          "type": "string"
+        }
+      }
+    },
+    "Trip": {
+      "id": "Trip",
+      "required": [],
+      "properties": {
+        "begin": {
+          "description": "begin of the trip in its local timezone as YYYY-MM-DDThh:mm",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "description": "description of the trip (truncated to 200 characters)",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "end": {
+          "description": "end of the trip in its local timezone as YYYY-MM-DDThh:mm",
+          "uniqueItems": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "description": "Unique ID of the trip",
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "name": {
+          "description": "name of the trip",
+          "uniqueItems": false,
+          "type": "string"
+        }
+      }
+    },
+    "Coordinates": {
+      "id": "Coordinates",
+      "description": "geographical coordinates of the stop",
+      "required": [],
+      "properties": {
+        "lat": {
+          "description": "latitude",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "number",
+          "format": "double"
+        },
+        "lon": {
+          "description": "longitude",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "Route": {
+      "id": "Route",
+      "description": "route leading to the stop",
+      "required": [],
+      "properties": {
+        "distance": {
+          "description": "route distance in meters",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int64"
+        },
+        "duration": {
+          "description": "route duration in seconds",
+          "minimum": "",
+          "maximum": "",
+          "uniqueItems": false,
+          "type": "integer",
+          "format": "int64"
+        },
+        "mode": {
+          "description": "travel mode",
+          "enum": [
+            "car",
+            "motorcycle",
+            "bicycle",
+            "walk",
+            "other"
+          ],
+          "uniqueItems": false,
+          "type": "string"
+        },
+        "polyline": {
+          "description": "route path compatible with Google polyline encoding algorithm",
+          "uniqueItems": false,
+          "type": "string"
+        }
+      }
+    }
+  },
+  "authorizations": {
+    "furkot_auth_access_code": {
+      "scopes": [
+        {
+          "scope": "read:trips",
+          "description": "list trips and stops info"
+        }
+      ],
+      "grantTypes": {
+        "authorization_code": {
+          "tokenRequestEndpoint": {
+            "url": "https://trips.furkot.com/oauth/authorize"
+          },
+          "tokenEndpoint": {
+            "url": "https://trips.furkot.com/pub/api/access_token"
+          }
+        }
+      },
+      "type": "oauth2"
+    },
+    "furkot_auth_implicit": {
+      "scopes": [
+        {
+          "scope": "read:trips",
+          "description": "list users trips info"
+        }
+      ],
+      "grantTypes": {
+        "implicit": {
+          "loginEndpoint": {
+            "url": "https://trips.furkot.com/oauth/authorize"
+          }
+        }
+      },
+      "type": "oauth2"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ]
+}

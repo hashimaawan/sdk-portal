@@ -1,0 +1,384 @@
+#%RAML 0.8
+title: Furkot Trips
+version: 1.0.0
+documentation:
+- title: Furkot Trips
+  content: |
+    Furkot provides Rest API to access user trip data.
+
+    Using Furkot API an application can list user trips and display stops for a specific trip.
+
+    Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+baseUri: https://trips.furkot.com/pub/api
+securedBy:
+- furkot_auth_access_code:
+    scopes:
+    - read:trips
+- furkot_auth_implicit:
+    scopes:
+    - read:trips
+protocols:
+- HTTPS
+baseUriParameters: {}
+schemas:
+- Step: |
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "id": "Step",
+      "title": "Step",
+      "type": "object",
+      "properties": {
+        "address": {
+          "description": "address of the stop",
+          "type": "string"
+        },
+        "arrival": {
+          "description": "arrival at the stop in its local timezone as YYYY-MM-DDThh:mm",
+          "type": "string",
+          "format": "date-time"
+        },
+        "coordinates": {
+          "id": "Coordinates",
+          "title": "Coordinates",
+          "description": "geographical coordinates of the stop",
+          "type": "object",
+          "properties": {
+            "lat": {
+              "description": "latitude",
+              "type": "number"
+            },
+            "lon": {
+              "description": "longitude",
+              "type": "number"
+            }
+          }
+        },
+        "departure": {
+          "description": "departure from the stop in its local timezone as YYYY-MM-DDThh:mm",
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "description": "name of the stop",
+          "type": "string"
+        },
+        "nights": {
+          "description": "number of nights",
+          "type": "integer",
+          "format": "int64"
+        },
+        "passthru": {
+          "description": "true for pass-through points anchoring route",
+          "type": "boolean"
+        },
+        "route": {
+          "id": "Route",
+          "title": "Route",
+          "description": "route leading to the stop",
+          "type": "object",
+          "properties": {
+            "distance": {
+              "description": "route distance in meters",
+              "type": "integer",
+              "format": "int64"
+            },
+            "duration": {
+              "description": "route duration in seconds",
+              "type": "integer",
+              "format": "int64"
+            },
+            "mode": {
+              "title": "Mode",
+              "description": "travel mode",
+              "type": "string",
+              "additionalProperties": false,
+              "enum": [
+                "car",
+                "motorcycle",
+                "bicycle",
+                "walk",
+                "other"
+              ]
+            },
+            "polyline": {
+              "description": "route path compatible with Google polyline encoding algorithm",
+              "type": "string"
+            }
+          }
+        },
+        "url": {
+          "description": "url of the page with more information about the stop",
+          "type": "string"
+        }
+      }
+    }
+- Trip: |
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "id": "Trip",
+      "title": "Trip",
+      "type": "object",
+      "properties": {
+        "begin": {
+          "description": "begin of the trip in its local timezone as YYYY-MM-DDThh:mm",
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "description": "description of the trip (truncated to 200 characters)",
+          "type": "string"
+        },
+        "end": {
+          "description": "end of the trip in its local timezone as YYYY-MM-DDThh:mm",
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "description": "Unique ID of the trip",
+          "type": "string"
+        },
+        "name": {
+          "description": "name of the trip",
+          "type": "string"
+        }
+      }
+    }
+- Coordinates: |
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "id": "Coordinates",
+      "title": "Coordinates",
+      "description": "geographical coordinates of the stop",
+      "type": "object",
+      "properties": {
+        "lat": {
+          "description": "latitude",
+          "type": "number"
+        },
+        "lon": {
+          "description": "longitude",
+          "type": "number"
+        }
+      }
+    }
+- Mode: |
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "Mode",
+      "description": "travel mode",
+      "type": "string",
+      "additionalProperties": false,
+      "enum": [
+        "car",
+        "motorcycle",
+        "bicycle",
+        "walk",
+        "other"
+      ]
+    }
+- Route: |
+    {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "id": "Route",
+      "title": "Route",
+      "description": "route leading to the stop",
+      "type": "object",
+      "properties": {
+        "distance": {
+          "description": "route distance in meters",
+          "type": "integer",
+          "format": "int64"
+        },
+        "duration": {
+          "description": "route duration in seconds",
+          "type": "integer",
+          "format": "int64"
+        },
+        "mode": {
+          "title": "Mode",
+          "description": "travel mode",
+          "type": "string",
+          "additionalProperties": false,
+          "enum": [
+            "car",
+            "motorcycle",
+            "bicycle",
+            "walk",
+            "other"
+          ]
+        },
+        "polyline": {
+          "description": "route path compatible with Google polyline encoding algorithm",
+          "type": "string"
+        }
+      }
+    }
+securitySchemes:
+- furkot_auth_access_code:
+    type: OAuth 2.0
+    settings:
+      authorizationUri: https://trips.furkot.com/oauth/authorize
+      accessTokenUri: https://trips.furkot.com/pub/api/access_token
+      authorizationGrants:
+      - code
+      scopes:
+      - read:trips
+- furkot_auth_implicit:
+    type: OAuth 2.0
+    settings:
+      authorizationUri: https://trips.furkot.com/oauth/authorize
+      accessTokenUri: ''
+      authorizationGrants:
+      - token
+      scopes:
+      - read:trips
+/trip:
+  /{trip_id}/stop:
+    uriParameters:
+      trip_id:
+        description: id of the trip
+        type: string
+        required: true
+        displayName: trip_id
+    get:
+      description: list stops for a trip identified by {trip_id}
+      responses:
+        '200':
+          description: Successful response
+          body:
+            application/json:
+              schema: |
+                {
+                  "description": "",
+                  "type": "array",
+                  "items": {
+                    "id": "Step",
+                    "title": "Step",
+                    "type": "object",
+                    "properties": {
+                      "address": {
+                        "description": "address of the stop",
+                        "type": "string"
+                      },
+                      "arrival": {
+                        "description": "arrival at the stop in its local timezone as YYYY-MM-DDThh:mm",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "coordinates": {
+                        "id": "Coordinates",
+                        "title": "Coordinates",
+                        "description": "geographical coordinates of the stop",
+                        "type": "object",
+                        "properties": {
+                          "lat": {
+                            "description": "latitude",
+                            "type": "number"
+                          },
+                          "lon": {
+                            "description": "longitude",
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "departure": {
+                        "description": "departure from the stop in its local timezone as YYYY-MM-DDThh:mm",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "name": {
+                        "description": "name of the stop",
+                        "type": "string"
+                      },
+                      "nights": {
+                        "description": "number of nights",
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "passthru": {
+                        "description": "true for pass-through points anchoring route",
+                        "type": "boolean"
+                      },
+                      "route": {
+                        "id": "Route",
+                        "title": "Route",
+                        "description": "route leading to the stop",
+                        "type": "object",
+                        "properties": {
+                          "distance": {
+                            "description": "route distance in meters",
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "duration": {
+                            "description": "route duration in seconds",
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "mode": {
+                            "title": "Mode",
+                            "description": "travel mode",
+                            "type": "string",
+                            "additionalProperties": false,
+                            "enum": [
+                              "car",
+                              "motorcycle",
+                              "bicycle",
+                              "walk",
+                              "other"
+                            ]
+                          },
+                          "polyline": {
+                            "description": "route path compatible with Google polyline encoding algorithm",
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "url": {
+                        "description": "url of the page with more information about the stop",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+  get:
+    description: list user's trips
+    responses:
+      '200':
+        description: Successful response
+        body:
+          application/json:
+            schema: |
+              {
+                "description": "",
+                "type": "array",
+                "items": {
+                  "id": "Trip",
+                  "title": "Trip",
+                  "type": "object",
+                  "properties": {
+                    "begin": {
+                      "description": "begin of the trip in its local timezone as YYYY-MM-DDThh:mm",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "description": {
+                      "description": "description of the trip (truncated to 200 characters)",
+                      "type": "string"
+                    },
+                    "end": {
+                      "description": "end of the trip in its local timezone as YYYY-MM-DDThh:mm",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "id": {
+                      "description": "Unique ID of the trip",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "name of the trip",
+                      "type": "string"
+                    }
+                  }
+                }
+              }

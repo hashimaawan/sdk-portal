@@ -1,0 +1,43 @@
+# Common Team Years GET
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/#/ruby/x-redirect/JTI0ZSUyRiUyRkNvbW1vblRlYW1ZZWFyc19HRVQ
+
+:information_source: **Note** This endpoint does not require authentication.
+
+```ruby
+def common_team_years_get(league_id)
+```
+
+
+# Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `league_id` | `String` | Query, Required | - |
+
+
+# Response Type
+
+**200**: 200 OK
+
+`void`
+
+
+# Example Usage
+
+```ruby
+league_id = 'LeagueID4'
+
+client_controller.common_team_years_get(league_id)
+```
+
+
+# Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 400 | Bad request - bad parameters | `APIException` |
+| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `APIException` |
+
+
+

@@ -1,0 +1,36 @@
+# Servers Actions Enable Rescue Request
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/#/typescript/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMEVuYWJsZSUyNTIwUmVzY3VlJTI1MjBSZXF1ZXN0
+
+
+# Interface Name
+
+`ServersActionsEnableRescueRequest`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `sshKeys` | `number[] \| undefined` | Optional | Array of SSH key IDs which should be injected into the rescue system. |
+| `type` | [`Type65Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/llms-pages/typescript/models/enumerations/type-65.md) | Optional | Type of rescue system to boot (default: `linux64`) |
+
+
+# Example
+
+```ts
+import {
+  ServersActionsEnableRescueRequest,
+  Type65Enum,
+} from 'hetzner-cloud-apilib';
+
+const serversActionsEnableRescueRequest: ServersActionsEnableRescueRequest = {
+  sshKeys: [
+    2323
+  ],
+  type: Type65Enum.Linux64,
+};
+```
+
+
+

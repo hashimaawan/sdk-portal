@@ -1,0 +1,205 @@
+#%RAML 1.0
+title: Furkot Trips
+version: 1.0.0
+baseUri: https://trips.furkot.com/pub/api
+baseUriParameters: {}
+protocols:
+- HTTPS
+documentation:
+- title: Furkot Trips
+  content: |
+    Furkot provides Rest API to access user trip data.
+
+    Using Furkot API an application can list user trips and display stops for a specific trip.
+
+    Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+securitySchemes:
+  furkot_auth_access_code:
+    type: OAuth 2.0
+    settings:
+      authorizationUri: https://trips.furkot.com/oauth/authorize
+      accessTokenUri: https://trips.furkot.com/pub/api/access_token
+      authorizationGrants:
+      - authorization_code
+      scopes:
+      - read:trips
+  furkot_auth_implicit:
+    type: OAuth 2.0
+    settings:
+      authorizationUri: https://trips.furkot.com/oauth/authorize
+      accessTokenUri: ''
+      authorizationGrants:
+      - implicit
+      scopes:
+      - read:trips
+securedBy:
+- furkot_auth_access_code:
+    scopes:
+    - read:trips
+- furkot_auth_implicit:
+    scopes:
+    - read:trips
+types:
+  Step:
+    displayName: Step
+    type: object
+    properties:
+      address:
+        required: false
+        displayName: address
+        description: address of the stop
+        type: string
+      arrival:
+        required: false
+        displayName: arrival
+        description: arrival at the stop in its local timezone as YYYY-MM-DDThh:mm
+        type: datetime
+      coordinates:
+        required: false
+        displayName: coordinates
+        description: geographical coordinates of the stop
+        type: Coordinates
+      departure:
+        required: false
+        displayName: departure
+        description: departure from the stop in its local timezone as YYYY-MM-DDThh:mm
+        type: datetime
+      name:
+        required: false
+        displayName: name
+        description: name of the stop
+        type: string
+      nights:
+        required: false
+        displayName: nights
+        description: number of nights
+        type: integer
+        format: int64
+      passthru:
+        required: false
+        displayName: passthru
+        description: true for pass-through points anchoring route
+        type: boolean
+      route:
+        required: false
+        displayName: route
+        description: route leading to the stop
+        type: Route
+      url:
+        required: false
+        displayName: url
+        description: url of the page with more information about the stop
+        type: string
+  Trip:
+    displayName: Trip
+    type: object
+    properties:
+      begin:
+        required: false
+        displayName: begin
+        description: begin of the trip in its local timezone as YYYY-MM-DDThh:mm
+        type: datetime
+      description:
+        required: false
+        displayName: description
+        description: description of the trip (truncated to 200 characters)
+        type: string
+      end:
+        required: false
+        displayName: end
+        description: end of the trip in its local timezone as YYYY-MM-DDThh:mm
+        type: datetime
+      id:
+        required: false
+        displayName: id
+        description: Unique ID of the trip
+        type: string
+      name:
+        required: false
+        displayName: name
+        description: name of the trip
+        type: string
+  Coordinates:
+    displayName: Coordinates
+    description: geographical coordinates of the stop
+    type: object
+    properties:
+      lat:
+        required: false
+        displayName: lat
+        description: latitude
+        type: number
+        format: double
+      lon:
+        required: false
+        displayName: lon
+        description: longitude
+        type: number
+        format: double
+  Route:
+    displayName: Route
+    description: route leading to the stop
+    type: object
+    properties:
+      distance:
+        required: false
+        displayName: distance
+        description: route distance in meters
+        type: integer
+        format: int64
+      duration:
+        required: false
+        displayName: duration
+        description: route duration in seconds
+        type: integer
+        format: int64
+      mode:
+        required: false
+        displayName: mode
+        description: travel mode
+        type: string
+        enum:
+        - car
+        - motorcycle
+        - bicycle
+        - walk
+        - other
+      polyline:
+        required: false
+        displayName: polyline
+        description: route path compatible with Google polyline encoding algorithm
+        type: string
+/trip:
+  get:
+    displayName: Trip_GET
+    description: list user's trips
+    responses:
+      '200':
+        description: Successful response
+        body:
+          application/json:
+            displayName: response
+            description: ''
+            type: array
+            items:
+              type: Trip
+  /{trip_id}/stop:
+    uriParameters:
+      trip_id:
+        required: true
+        displayName: trip_id
+        description: id of the trip
+        type: string
+    get:
+      displayName: TripStopByTripId_GET
+      description: list stops for a trip identified by {trip_id}
+      responses:
+        '200':
+          description: Successful response
+          body:
+            application/json:
+              displayName: response
+              description: ''
+              type: array
+              items:
+                type: Step

@@ -1,0 +1,80 @@
+# Certificates Response
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/#/python/x-redirect/JTI0bSUyRkNlcnRpZmljYXRlc1Jlc3BvbnNl
+
+
+# Class Name
+
+`CertificatesResponse`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `certificates` | [`List[Certificate]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/llms-pages/python/models/structures/certificate.md) | Required | - |
+| `meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/llms-pages/python/models/structures/meta.md) | Optional | - |
+
+
+# Example
+
+```python
+from hetznercloudapi.models.certificate import Certificate
+from hetznercloudapi.models.certificates_response import CertificatesResponse
+from hetznercloudapi.models.issuance_enum import IssuanceEnum
+from hetznercloudapi.models.meta import Meta
+from hetznercloudapi.models.pagination import Pagination
+from hetznercloudapi.models.renewal_enum import RenewalEnum
+from hetznercloudapi.models.status_2 import Status2
+from hetznercloudapi.models.type_enum import TypeEnum
+from hetznercloudapi.models.used_by import UsedBy
+
+certificates_response = CertificatesResponse(
+    certificates=[
+        Certificate(
+            certificate='-----BEGIN CERTIFICATE-----\n...',
+            created='2016-01-30T23:55:00+00:00',
+            domain_names=[
+                'example.com',
+                'webmail.example.com',
+                'www.example.com'
+            ],
+            fingerprint='03:c7:55:9b:2a:d1:04:17:09:f6:d0:7f:18:34:63:d4:3e:5f',
+            id=42,
+            labels={
+                'key0': 'labels2',
+                'key1': 'labels1',
+                'key2': 'labels0'
+            },
+            name='my-resource',
+            not_valid_after='2019-07-08T09:59:59+00:00',
+            not_valid_before='2019-01-08T10:00:00+00:00',
+            used_by=[
+                UsedBy(
+                    id=4711,
+                    mtype='load_balancer'
+                )
+            ],
+            status=Status2(
+                error=None,
+                issuance=IssuanceEnum.COMPLETED,
+                renewal=RenewalEnum.FAILED
+            ),
+            mtype=TypeEnum.UPLOADED
+        )
+    ],
+    meta=Meta(
+        pagination=Pagination(
+            last_page=77.7,
+            next_page=209.18,
+            page=17.58,
+            per_page=13.34,
+            previous_page=50.02,
+            total_entries=206.64
+        )
+    )
+)
+```
+
+
+

@@ -1,0 +1,63 @@
+# Servers Response 1
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/#/php/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMFJlc3BvbnNlMQ
+
+
+# Class Name
+
+`ServersResponse1`
+
+
+# Fields
+
+| Name | Type | Tags | Description | Getter | Setter |
+|  --- | --- | --- | --- | --- | --- |
+| `action` | [`?Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/llms-pages/php/models/structures/action.md) | Optional | - | getAction(): ?Action | setAction(?Action action): void |
+
+
+# Example
+
+```php
+use HetznerCloudAPILib\Models\Builders\ServersResponse1Builder;
+use HetznerCloudAPILib\Models\Builders\ActionBuilder;
+use HetznerCloudAPILib\Models\Builders\Resource2Builder;
+use HetznerCloudAPILib\Models\StatusEnum;
+use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+
+$serversResponse1 = ServersResponse1Builder::init()
+    ->action(
+        ActionBuilder::init(
+            'command6',
+            238,
+            143.26,
+            [
+                Resource2Builder::init(
+                    198,
+                    'type0'
+                )->build(),
+                Resource2Builder::init(
+                    198,
+                    'type0'
+                )->build(),
+                Resource2Builder::init(
+                    198,
+                    'type0'
+                )->build()
+            ],
+            'started8',
+            StatusEnum::RUNNING
+        )
+            ->error(
+                ErrorBuilder::init(
+                    'code2',
+                    'message4'
+                )->build()
+            )
+            ->finished('finished0')
+            ->build()
+    )
+    ->build();
+```
+
+
+

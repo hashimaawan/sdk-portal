@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="https://trips.furkot.com/pub/api/schemas" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Furkot Trips" xml:lang="en">Furkot provides Rest API to access user trip data.
+Using Furkot API an application can list user trips and display stops for a specific trip.
+Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+</doc>
+  <grammars>
+    <xs:schema xmlns:tns="https://trips.furkot.com/pub/api/schemas" targetNamespace="https://trips.furkot.com/pub/api/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Step" type="schemas:Step" />
+      <xs:element name="Trip" type="schemas:Trip" />
+      <xs:element name="Coordinates" type="schemas:Coordinates" />
+      <xs:element name="Mode" type="schemas:Mode" />
+      <xs:element name="Route" type="schemas:Route" />
+      <xs:element name="Trip_GET200_Response0" type="schemas:Trip_GET200_Response0" />
+      <xs:element name="TripStopByTripId_GET200_Response0" type="schemas:TripStopByTripId_GET200_Response0" />
+      <xs:complexType name="Step">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>address of the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="arrival" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>arrival at the stop in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="coordinates" type="schemas:Coordinates">
+            <xs:annotation>
+              <xs:documentation>geographical coordinates of the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="departure" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>departure from the stop in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>name of the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="nights" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>number of nights</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="passthru" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>true for pass-through points anchoring route</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="route" type="schemas:Route">
+            <xs:annotation>
+              <xs:documentation>route leading to the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>url of the page with more information about the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Trip">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="begin" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>begin of the trip in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>description of the trip (truncated to 200 characters)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="end" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>end of the trip in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Unique ID of the trip</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>name of the trip</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Coordinates">
+        <xs:annotation>
+          <xs:documentation>geographical coordinates of the stop</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lat" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>latitude</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lon" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>longitude</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Mode">
+        <xs:annotation>
+          <xs:documentation>travel mode</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="car" />
+          <xs:enumeration value="motorcycle" />
+          <xs:enumeration value="bicycle" />
+          <xs:enumeration value="walk" />
+          <xs:enumeration value="other" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Route">
+        <xs:annotation>
+          <xs:documentation>route leading to the stop</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="distance" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>route distance in meters</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="duration" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>route duration in seconds</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="mode" type="schemas:Mode">
+            <xs:annotation>
+              <xs:documentation>travel mode</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="polyline" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>route path compatible with Google polyline encoding algorithm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Trip_GET200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="response" type="schemas:Trip">
+            <xs:annotation>
+              <xs:documentation>Successful response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TripStopByTripId_GET200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="response" type="schemas:Step">
+            <xs:annotation>
+              <xs:documentation>Successful response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </grammars>
+  <resources base="https://trips.furkot.com/pub/api">
+    <resource id="_trip" path="/trip">
+      <method id="Trip_GET" name="GET">
+        <doc title="Trip_GET" xml:lang="en">list user's trips</doc>
+        <request />
+        <response status="200">
+          <doc title="200" xml:lang="en">Successful response</doc>
+          <representation element="schemas:Trip_GET200_Response0" mediaType="application/json" />
+        </response>
+      </method>
+    </resource>
+    <resource id="_triptrip_idstop" path="/trip/{trip_id}/stop">
+      <param name="trip_id" style="template" type="xsd:string" required="true">
+        <doc title="trip_id" xml:lang="en">id of the trip</doc>
+      </param>
+      <method id="TripStopByTripId_GET" name="GET">
+        <doc title="TripStopByTripId_GET" xml:lang="en">list stops for a trip identified by {trip_id}</doc>
+        <request />
+        <response status="200">
+          <doc title="200" xml:lang="en">Successful response</doc>
+          <representation element="schemas:TripStopByTripId_GET200_Response0" mediaType="application/json" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

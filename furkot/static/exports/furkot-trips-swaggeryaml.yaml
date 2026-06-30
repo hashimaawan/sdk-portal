@@ -1,0 +1,197 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Furkot Trips
+  description: >
+    Furkot provides Rest API to access user trip data.
+
+    Using Furkot API an application can list user trips and display stops for a specific trip.
+
+    Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+  contact:
+    email: trips@furkot.com
+host: trips.furkot.com
+basePath: /pub/api
+securityDefinitions:
+  furkot_auth_access_code:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: https://trips.furkot.com/oauth/authorize
+    tokenUrl: https://trips.furkot.com/pub/api/access_token
+    scopes:
+      read:trips: list trips and stops info
+  furkot_auth_implicit:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://trips.furkot.com/oauth/authorize
+    scopes:
+      read:trips: list users trips info
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /trip:
+    get:
+      description: list user's trips
+      summary: Trip_GET
+      operationId: Trip_GET
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Trip'
+          headers: {}
+      security:
+      - furkot_auth_access_code:
+        - read:trips
+        furkot_auth_implicit:
+        - read:trips
+  /trip/{trip_id}/stop:
+    get:
+      description: list stops for a trip identified by {trip_id}
+      summary: TripStopByTripId_GET
+      operationId: TripStopByTripId_GET
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: trip_id
+        in: path
+        required: true
+        type: string
+        description: id of the trip
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Step'
+          headers: {}
+      security:
+      - furkot_auth_access_code:
+        - read:trips
+        furkot_auth_implicit:
+        - read:trips
+definitions:
+  Step:
+    title: Step
+    type: object
+    properties:
+      address:
+        description: address of the stop
+        type: string
+      arrival:
+        description: arrival at the stop in its local timezone as YYYY-MM-DDThh:mm
+        type: string
+        format: date-time
+      coordinates:
+        type: object
+        allOf:
+        - $ref: '#/definitions/Coordinates'
+        - description: geographical coordinates of the stop
+      departure:
+        description: departure from the stop in its local timezone as YYYY-MM-DDThh:mm
+        type: string
+        format: date-time
+      name:
+        description: name of the stop
+        type: string
+      nights:
+        description: number of nights
+        type: integer
+        format: int64
+      passthru:
+        description: true for pass-through points anchoring route
+        type: boolean
+      route:
+        type: object
+        allOf:
+        - $ref: '#/definitions/Route'
+        - description: route leading to the stop
+      url:
+        description: url of the page with more information about the stop
+        type: string
+  Trip:
+    title: Trip
+    type: object
+    properties:
+      begin:
+        description: begin of the trip in its local timezone as YYYY-MM-DDThh:mm
+        type: string
+        format: date-time
+      description:
+        description: description of the trip (truncated to 200 characters)
+        type: string
+      end:
+        description: end of the trip in its local timezone as YYYY-MM-DDThh:mm
+        type: string
+        format: date-time
+      id:
+        description: Unique ID of the trip
+        type: string
+      name:
+        description: name of the trip
+        type: string
+  Coordinates:
+    title: Coordinates
+    description: geographical coordinates of the stop
+    type: object
+    properties:
+      lat:
+        description: latitude
+        type: number
+        format: double
+      lon:
+        description: longitude
+        type: number
+        format: double
+  Mode:
+    title: Mode
+    description: travel mode
+    type: string
+    enum:
+    - car
+    - motorcycle
+    - bicycle
+    - walk
+    - other
+  Route:
+    title: Route
+    description: route leading to the stop
+    type: object
+    properties:
+      distance:
+        description: route distance in meters
+        type: integer
+        format: int64
+      duration:
+        description: route duration in seconds
+        type: integer
+        format: int64
+      mode:
+        type: object
+        allOf:
+        - $ref: '#/definitions/Mode'
+        - description: travel mode
+      polyline:
+        description: route path compatible with Google polyline encoding algorithm
+        type: string
+security:
+- furkot_auth_access_code:
+  - read:trips
+- furkot_auth_implicit:
+  - read:trips
+tags: []
+externalDocs:
+  url: https://help.furkot.com/widgets/furkot-api.html
+  description: Furkot API description

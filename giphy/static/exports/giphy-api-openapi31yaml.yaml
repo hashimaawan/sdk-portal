@@ -1,0 +1,981 @@
+openapi: 3.1.0
+info:
+  title: Giphy API
+  description: Giphy API
+  contact:
+    email: support@giphy.com
+  version: '1.0'
+jsonSchemaDialect: https://json-schema.org/draft/2020-12/schema
+servers:
+- url: https://api.giphy.com/v1
+  variables: {}
+paths:
+  /gifs:
+    get:
+      tags:
+      - gifs
+      summary: getGifsById
+      description: >
+        A multiget version of the get GIF by ID endpoint.
+      operationId: getGifsById
+      parameters:
+      - name: ids
+        in: query
+        description: Filters results by specified GIF IDs, separated by commas.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GifsResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /gifs/random:
+    get:
+      tags:
+      - gifs
+      summary: randomGif
+      description: >
+        Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
+      operationId: randomGif
+      parameters:
+      - name: tag
+        in: query
+        description: Filters results by specified tag.
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: rating
+        in: query
+        description: Filters results by specified rating.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GifsRandomResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /gifs/search:
+    get:
+      tags:
+      - gifs
+      summary: searchGifs
+      description: >
+        Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.
+      operationId: searchGifs
+      parameters:
+      - name: q
+        in: query
+        description: Search query term or prhase.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: The maximum number of records to return.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 25
+      - name: offset
+        in: query
+        description: An optional results offset.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 0
+      - name: rating
+        in: query
+        description: Filters results by specified rating.
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: lang
+        in: query
+        description: Specify default language for regional content; use a 2-letter ISO 639-1 language code.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Search results
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GifsSearchResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /gifs/translate:
+    get:
+      tags:
+      - gifs
+      summary: translateGif
+      description: >
+        The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF
+      operationId: translateGif
+      parameters:
+      - name: s
+        in: query
+        description: Search term.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GifsTranslateResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /gifs/trending:
+    get:
+      tags:
+      - gifs
+      summary: trendingGifs
+      description: >
+        Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
+      operationId: trendingGifs
+      parameters:
+      - name: limit
+        in: query
+        description: The maximum number of records to return.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 25
+      - name: offset
+        in: query
+        description: An optional results offset.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 0
+      - name: rating
+        in: query
+        description: Filters results by specified rating.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GifsTrendingResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /gifs/{gifId}:
+    get:
+      tags:
+      - gifs
+      summary: getGifById
+      description: >
+        Returns a GIF given that GIF's unique ID
+      operationId: getGifById
+      parameters:
+      - name: gifId
+        in: path
+        description: Filters results by specified GIF ID.
+        required: true
+        schema:
+          type: integer
+          contentEncoding: int32
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GifsResponse1'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /stickers/random:
+    get:
+      tags:
+      - stickers
+      summary: randomSticker
+      description: >
+        Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
+      operationId: randomSticker
+      parameters:
+      - name: tag
+        in: query
+        description: Filters results by specified tag.
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: rating
+        in: query
+        description: Filters results by specified rating.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StickersRandomResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /stickers/search:
+    get:
+      tags:
+      - stickers
+      summary: searchStickers
+      description: >
+        Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.
+      operationId: searchStickers
+      parameters:
+      - name: q
+        in: query
+        description: Search query term or prhase.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: The maximum number of records to return.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 25
+      - name: offset
+        in: query
+        description: An optional results offset.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 0
+      - name: rating
+        in: query
+        description: Filters results by specified rating.
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: lang
+        in: query
+        description: Specify default language for regional content; use a 2-letter ISO 639-1 language code.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Search results
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StickersSearchResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /stickers/translate:
+    get:
+      tags:
+      - stickers
+      summary: translateSticker
+      description: >
+        The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
+      operationId: translateSticker
+      parameters:
+      - name: s
+        in: query
+        description: Search term.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StickersTranslateResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+  /stickers/trending:
+    get:
+      tags:
+      - stickers
+      summary: trendingStickers
+      description: >
+        Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
+      operationId: trendingStickers
+      parameters:
+      - name: limit
+        in: query
+        description: The maximum number of records to return.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 25
+      - name: offset
+        in: query
+        description: An optional results offset.
+        style: form
+        explode: true
+        schema:
+          type: integer
+          contentEncoding: int32
+          default: 0
+      - name: rating
+        in: query
+        description: Filters results by specified rating.
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StickersTrendingResponse'
+        '400':
+          description: Your request was formatted incorrectly or missing required parameters.
+          headers: {}
+          content: {}
+        '403':
+          description: You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+          headers: {}
+          content: {}
+        '404':
+          description: The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+          headers: {}
+          content: {}
+        '429':
+          description: Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+          headers: {}
+          content: {}
+      deprecated: false
+    parameters: []
+components:
+  schemas:
+    Gif:
+      title: Gif
+      type: object
+      properties:
+        bitly_url:
+          type: string
+          description: The unique bit.ly URL for this GIF
+          examples:
+          - http://gph.is/1gsWDcL
+        content_url:
+          type: string
+          description: Currently unused
+        create_datetime:
+          type: string
+          description: The date this GIF was added to the GIPHY database.
+          contentEncoding: date-time
+          examples:
+          - 2013-08-01 12:41:48
+        embded_url:
+          type: string
+          description: A URL used for embedding this GIF
+          examples:
+          - http://giphy.com/embed/YsTs5ltWtEhnq
+        featured_tags:
+          type: array
+          items:
+            type: string
+          description: 'An array of featured tags for this GIF (Note: Not available when using the Public Beta Key)'
+        id:
+          type: string
+          description: This GIF's unique ID
+          examples:
+          - YsTs5ltWtEhnq
+        images:
+          allOf:
+          - $ref: '#/components/schemas/Images'
+          - description: An object containing data for various available formats and sizes of this GIF.
+        import_datetime:
+          type: string
+          description: The creation or upload date from this GIF's source.
+          contentEncoding: date-time
+          examples:
+          - 2013-08-01 12:41:48
+        rating:
+          type: string
+          description: The MPAA-style rating for this content. Examples include Y, G, PG, PG-13 and R
+          examples:
+          - g
+        slug:
+          type: string
+          description: The unique slug used in this GIF's URL
+          examples:
+          - confused-flying-YsTs5ltWtEhnq
+        source:
+          type: string
+          description: The page on which this GIF was found
+          examples:
+          - http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/
+        source_post_url:
+          type: string
+          description: The URL of the webpage on which this GIF was found.
+          examples:
+          - http://cheezburger.com/5282328320
+        source_tld:
+          type: string
+          description: The top level domain of the source URL.
+          examples:
+          - cheezburger.com
+        tags:
+          type: array
+          items:
+            type: string
+          description: 'An array of tags for this GIF (Note: Not available when using the Public Beta Key)'
+        trending_datetime:
+          type: string
+          description: The date on which this gif was marked trending, if applicable.
+          contentEncoding: date-time
+          examples:
+          - 2013-08-01 12:41:48
+        type:
+          allOf:
+          - $ref: '#/components/schemas/Type'
+          - description: Type of the gif. By default, this is almost always gif
+        update_datetime:
+          type: string
+          description: The date on which this GIF was last updated.
+          contentEncoding: date-time
+          examples:
+          - 2013-08-01 12:41:48
+        url:
+          type: string
+          description: The unique URL for this GIF
+          examples:
+          - http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq
+        user:
+          allOf:
+          - $ref: '#/components/schemas/User'
+          - description: The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
+        username:
+          type: string
+          description: The username this GIF is attached to, if applicable
+          examples:
+          - JoeCool4000
+    Image:
+      title: Image
+      type: object
+      properties:
+        frames:
+          type: string
+          description: The number of frames in this GIF.
+          examples:
+          - '15'
+        height:
+          type: string
+          description: The height of this GIF in pixels.
+          examples:
+          - '200'
+        mp4:
+          type: string
+          description: The URL for this GIF in .MP4 format.
+          examples:
+          - https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4
+        mp4_size:
+          type: string
+          description: The size in bytes of the .MP4 file corresponding to this GIF.
+          examples:
+          - '25123'
+        size:
+          type: string
+          description: The size of this GIF in bytes.
+          examples:
+          - '32381'
+        url:
+          type: string
+          description: The publicly-accessible direct URL for this GIF.
+          examples:
+          - https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif
+        webp:
+          type: string
+          description: The URL for this GIF in .webp format.
+          examples:
+          - https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp
+        webp_size:
+          type: string
+          description: The size in bytes of the .webp file corresponding to this GIF.
+          examples:
+          - '12321'
+        width:
+          type: string
+          description: The width of this GIF in pixels.
+          examples:
+          - '320'
+    Meta:
+      title: Meta
+      type: object
+      properties:
+        msg:
+          type: string
+          description: HTTP Response Message
+          examples:
+          - OK
+        response_id:
+          type: string
+          description: A unique ID paired with this response from the API.
+          examples:
+          - 57eea03c72381f86e05c35d2
+        status:
+          type: integer
+          description: HTTP Response Code
+          contentEncoding: int32
+          examples:
+          - 200
+      description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+    Pagination:
+      title: Pagination
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Total number of items returned.
+          contentEncoding: int32
+          examples:
+          - 25
+        offset:
+          type: integer
+          description: Position in pagination.
+          contentEncoding: int32
+          examples:
+          - 75
+        total_count:
+          type: integer
+          description: Total number of items available.
+          contentEncoding: int32
+          examples:
+          - 250
+      description: The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+    User:
+      title: User
+      type: object
+      properties:
+        avatar_url:
+          type: string
+          description: The URL for this user's avatar image.
+          examples:
+          - https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif
+        banner_url:
+          type: string
+          description: The URL for the banner image that appears atop this user's profile page.
+          examples:
+          - https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg
+        display_name:
+          type: string
+          description: The display name associated with this user (contains formatting the base username might not).
+          examples:
+          - JoeCool4000
+        profile_url:
+          type: string
+          description: The URL for this user's profile.
+          examples:
+          - https://giphy.com/cheezburger/
+        twitter:
+          type: string
+          description: The Twitter username associated with this user, if applicable.
+          examples:
+          - '@joecool4000'
+        username:
+          type: string
+          description: The username associated with this user.
+          examples:
+          - joecool4000
+      description: The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
+    GifsRandomResponse:
+      title: GifsRandomResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Gif'
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+    GifsResponse:
+      title: GifsResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gif'
+          description: ''
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+        pagination:
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - description: The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+    GifsResponse1:
+      title: GifsResponse1
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Gif'
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+    GifsSearchResponse:
+      title: GifsSearchResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gif'
+          description: ''
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+        pagination:
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - description: The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+    GifsTranslateResponse:
+      title: GifsTranslateResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Gif'
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+    GifsTrendingResponse:
+      title: GifsTrendingResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gif'
+          description: ''
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+        pagination:
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - description: The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+    Images:
+      title: Images
+      type: object
+      properties:
+        downsized:
+          $ref: '#/components/schemas/Image'
+        downsized_large:
+          $ref: '#/components/schemas/Image'
+        downsized_medium:
+          $ref: '#/components/schemas/Image'
+        downsized_small:
+          $ref: '#/components/schemas/Image'
+        downsized_still:
+          $ref: '#/components/schemas/Image'
+        fixed_height:
+          $ref: '#/components/schemas/Image'
+        fixed_height_downsampled:
+          $ref: '#/components/schemas/Image'
+        fixed_height_small:
+          $ref: '#/components/schemas/Image'
+        fixed_height_small_still:
+          $ref: '#/components/schemas/Image'
+        fixed_height_still:
+          $ref: '#/components/schemas/Image'
+        fixed_width:
+          $ref: '#/components/schemas/Image'
+        fixed_width_downsampled:
+          $ref: '#/components/schemas/Image'
+        fixed_width_small:
+          $ref: '#/components/schemas/Image'
+        fixed_width_small_still:
+          $ref: '#/components/schemas/Image'
+        fixed_width_still:
+          $ref: '#/components/schemas/Image'
+        looping:
+          $ref: '#/components/schemas/Image'
+        original:
+          $ref: '#/components/schemas/Image'
+        original_still:
+          $ref: '#/components/schemas/Image'
+        preview:
+          $ref: '#/components/schemas/Image'
+        preview_gif:
+          $ref: '#/components/schemas/Image'
+      description: An object containing data for various available formats and sizes of this GIF.
+    StickersRandomResponse:
+      title: StickersRandomResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Gif'
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+    StickersSearchResponse:
+      title: StickersSearchResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gif'
+          description: ''
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+        pagination:
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - description: The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+    StickersTranslateResponse:
+      title: StickersTranslateResponse
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/Gif'
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+    StickersTrendingResponse:
+      title: StickersTrendingResponse
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gif'
+          description: ''
+        meta:
+          allOf:
+          - $ref: '#/components/schemas/Meta'
+          - description: The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+        pagination:
+          allOf:
+          - $ref: '#/components/schemas/Pagination'
+          - description: The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+    Type:
+      title: Type
+      const: gif
+      type: string
+      description: Type of the gif. By default, this is almost always gif
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: api_key
+      in: query
+security:
+- api_key: []
+tags:
+- name: gifs
+- name: stickers
+externalDocs:
+  description: Official Giphy Documentation
+  url: https://developers.giphy.com/docs/

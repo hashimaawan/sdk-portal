@@ -6,7 +6,7 @@
     {
       "name": "1Forge Finance APIs",
       "_type": "workspace",
-      "_id": "wrk_e8217b3ec688482a98bdf726f929dcab",
+      "_id": "wrk_de33fa8536dd468f9b6b57de312920cc",
       "description": "Stock and Forex Data and Realtime Quotes"
     },
     {
@@ -16,14 +16,14 @@
         "server2": "http://1forge.com/forex-quotes"
       },
       "_type": "environment",
-      "_id": "env_8bff476ff615413fb69f338a41243c35",
-      "parentId": "wrk_e8217b3ec688482a98bdf726f929dcab"
+      "_id": "env_a7916c68a90040278304c699a196e3f9",
+      "parentId": "wrk_de33fa8536dd468f9b6b57de312920cc"
     },
     {
       "name": "forex",
       "_type": "request_group",
-      "_id": "fld_9e08af55ac0d4cc7a33d93ab6561b3ae",
-      "parentId": "wrk_e8217b3ec688482a98bdf726f929dcab",
+      "_id": "fld_2e51a41722a448a0a4d7faacd07638a8",
+      "parentId": "wrk_de33fa8536dd468f9b6b57de312920cc",
       "description": ""
     },
     {
@@ -32,8 +32,8 @@
       "url": "{{server1}}/quotes",
       "authentication": {},
       "_type": "request",
-      "_id": "req_a6f0e5bd3df24398b30d817aef0a9747",
-      "parentId": "fld_9e08af55ac0d4cc7a33d93ab6561b3ae",
+      "_id": "req_54a5c60bd7354898a10ed8c0694103b0",
+      "parentId": "fld_2e51a41722a448a0a4d7faacd07638a8",
       "description": "Get quotes"
     },
     {
@@ -42,8 +42,8 @@
       "url": "{{server1}}/symbols",
       "authentication": {},
       "_type": "request",
-      "_id": "req_f7ea235bc3334d51804f8c28f52c20c2",
-      "parentId": "fld_9e08af55ac0d4cc7a33d93ab6561b3ae",
+      "_id": "req_a521a57bab5b411d919629d862228047",
+      "parentId": "fld_2e51a41722a448a0a4d7faacd07638a8",
       "description": "Symbol List"
     }
   ]

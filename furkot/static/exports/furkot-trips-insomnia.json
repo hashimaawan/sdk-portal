@@ -1,0 +1,53 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "apimatic.transformer",
+  "resources": [
+    {
+      "name": "Furkot Trips",
+      "_type": "workspace",
+      "_id": "wrk_914ee6e6ef424b058f7afb3d0c0ca8ce",
+      "description": "Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.\n"
+    },
+    {
+      "name": "production",
+      "data": {
+        "default": "https://trips.furkot.com/pub/api",
+        "authserver": "https://trips.furkot.com/oauth"
+      },
+      "_type": "environment",
+      "_id": "env_506f0c4492c148cf8af5569ec8246ee8",
+      "parentId": "wrk_914ee6e6ef424b058f7afb3d0c0ca8ce"
+    },
+    {
+      "name": "Trip_GET",
+      "method": "GET",
+      "url": "{{default}}/trip",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://trips.furkot.com/pub/api/access_token",
+        "authorizationUrl": "https://trips.furkot.com/oauth/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_70f59cbda3f44ec1bf6279b336e4010c",
+      "parentId": "wrk_914ee6e6ef424b058f7afb3d0c0ca8ce",
+      "description": "list user's trips"
+    },
+    {
+      "name": "TripStopByTripId_GET",
+      "method": "GET",
+      "url": "{{default}}/trip/{trip_id}/stop",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://trips.furkot.com/pub/api/access_token",
+        "authorizationUrl": "https://trips.furkot.com/oauth/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_47ec3121e0864ad09811427cd0f064c8",
+      "parentId": "wrk_914ee6e6ef424b058f7afb3d0c0ca8ce",
+      "description": "list stops for a trip identified by {trip_id}"
+    }
+  ]
+}

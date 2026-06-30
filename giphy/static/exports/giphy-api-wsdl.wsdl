@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="https://api.giphy.com/v1/schemas" xmlns:wsdl="https://api.giphy.com/v1/wsdl" targetNamespace="https://api.giphy.com/v1/wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="https://api.giphy.com/v1/schemas" targetNamespace="https://api.giphy.com/v1/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GET_getGifsById_InputMessage" type="schemas:GET_getGifsById_InputMessage" />
+      <xs:element name="GET_getGifsById_OutputMessage" type="schemas:GET_getGifsById_OutputMessage" />
+      <xs:element name="GET_getGifsById_400" type="schemas:GET_getGifsById_400" />
+      <xs:element name="GET_getGifsById_403" type="schemas:GET_getGifsById_403" />
+      <xs:element name="GET_getGifsById_404" type="schemas:GET_getGifsById_404" />
+      <xs:element name="GET_getGifsById_429" type="schemas:GET_getGifsById_429" />
+      <xs:element name="GET_randomGif_InputMessage" type="schemas:GET_randomGif_InputMessage" />
+      <xs:element name="GET_randomGif_OutputMessage" type="schemas:GET_randomGif_OutputMessage" />
+      <xs:element name="GET_randomGif_400" type="schemas:GET_randomGif_400" />
+      <xs:element name="GET_randomGif_403" type="schemas:GET_randomGif_403" />
+      <xs:element name="GET_randomGif_404" type="schemas:GET_randomGif_404" />
+      <xs:element name="GET_randomGif_429" type="schemas:GET_randomGif_429" />
+      <xs:element name="GET_searchGifs_InputMessage" type="schemas:GET_searchGifs_InputMessage" />
+      <xs:element name="GET_searchGifs_OutputMessage" type="schemas:GET_searchGifs_OutputMessage" />
+      <xs:element name="GET_searchGifs_400" type="schemas:GET_searchGifs_400" />
+      <xs:element name="GET_searchGifs_403" type="schemas:GET_searchGifs_403" />
+      <xs:element name="GET_searchGifs_404" type="schemas:GET_searchGifs_404" />
+      <xs:element name="GET_searchGifs_429" type="schemas:GET_searchGifs_429" />
+      <xs:element name="GET_translateGif_InputMessage" type="schemas:GET_translateGif_InputMessage" />
+      <xs:element name="GET_translateGif_OutputMessage" type="schemas:GET_translateGif_OutputMessage" />
+      <xs:element name="GET_translateGif_400" type="schemas:GET_translateGif_400" />
+      <xs:element name="GET_translateGif_403" type="schemas:GET_translateGif_403" />
+      <xs:element name="GET_translateGif_404" type="schemas:GET_translateGif_404" />
+      <xs:element name="GET_translateGif_429" type="schemas:GET_translateGif_429" />
+      <xs:element name="GET_trendingGifs_InputMessage" type="schemas:GET_trendingGifs_InputMessage" />
+      <xs:element name="GET_trendingGifs_OutputMessage" type="schemas:GET_trendingGifs_OutputMessage" />
+      <xs:element name="GET_trendingGifs_400" type="schemas:GET_trendingGifs_400" />
+      <xs:element name="GET_trendingGifs_403" type="schemas:GET_trendingGifs_403" />
+      <xs:element name="GET_trendingGifs_404" type="schemas:GET_trendingGifs_404" />
+      <xs:element name="GET_trendingGifs_429" type="schemas:GET_trendingGifs_429" />
+      <xs:element name="GET_getGifById_InputMessage" type="schemas:GET_getGifById_InputMessage" />
+      <xs:element name="GET_getGifById_OutputMessage" type="schemas:GET_getGifById_OutputMessage" />
+      <xs:element name="GET_getGifById_400" type="schemas:GET_getGifById_400" />
+      <xs:element name="GET_getGifById_403" type="schemas:GET_getGifById_403" />
+      <xs:element name="GET_getGifById_404" type="schemas:GET_getGifById_404" />
+      <xs:element name="GET_getGifById_429" type="schemas:GET_getGifById_429" />
+      <xs:element name="GET_randomSticker_InputMessage" type="schemas:GET_randomSticker_InputMessage" />
+      <xs:element name="GET_randomSticker_OutputMessage" type="schemas:GET_randomSticker_OutputMessage" />
+      <xs:element name="GET_randomSticker_400" type="schemas:GET_randomSticker_400" />
+      <xs:element name="GET_randomSticker_403" type="schemas:GET_randomSticker_403" />
+      <xs:element name="GET_randomSticker_404" type="schemas:GET_randomSticker_404" />
+      <xs:element name="GET_randomSticker_429" type="schemas:GET_randomSticker_429" />
+      <xs:element name="GET_searchStickers_InputMessage" type="schemas:GET_searchStickers_InputMessage" />
+      <xs:element name="GET_searchStickers_OutputMessage" type="schemas:GET_searchStickers_OutputMessage" />
+      <xs:element name="GET_searchStickers_400" type="schemas:GET_searchStickers_400" />
+      <xs:element name="GET_searchStickers_403" type="schemas:GET_searchStickers_403" />
+      <xs:element name="GET_searchStickers_404" type="schemas:GET_searchStickers_404" />
+      <xs:element name="GET_searchStickers_429" type="schemas:GET_searchStickers_429" />
+      <xs:element name="GET_translateSticker_InputMessage" type="schemas:GET_translateSticker_InputMessage" />
+      <xs:element name="GET_translateSticker_OutputMessage" type="schemas:GET_translateSticker_OutputMessage" />
+      <xs:element name="GET_translateSticker_400" type="schemas:GET_translateSticker_400" />
+      <xs:element name="GET_translateSticker_403" type="schemas:GET_translateSticker_403" />
+      <xs:element name="GET_translateSticker_404" type="schemas:GET_translateSticker_404" />
+      <xs:element name="GET_translateSticker_429" type="schemas:GET_translateSticker_429" />
+      <xs:element name="GET_trendingStickers_InputMessage" type="schemas:GET_trendingStickers_InputMessage" />
+      <xs:element name="GET_trendingStickers_OutputMessage" type="schemas:GET_trendingStickers_OutputMessage" />
+      <xs:element name="GET_trendingStickers_400" type="schemas:GET_trendingStickers_400" />
+      <xs:element name="GET_trendingStickers_403" type="schemas:GET_trendingStickers_403" />
+      <xs:element name="GET_trendingStickers_404" type="schemas:GET_trendingStickers_404" />
+      <xs:element name="GET_trendingStickers_429" type="schemas:GET_trendingStickers_429" />
+      <xs:complexType name="Gif">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bitly_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique bit.ly URL for this GIF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="content_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Currently unused</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="create_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date this GIF was added to the GIPHY database.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="embded_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A URL used for embedding this GIF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="featured_tags" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>An array of featured tags for this GIF (Note: Not available when using the Public Beta Key)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This GIF's unique ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="images" type="schemas:Images">
+            <xs:annotation>
+              <xs:documentation>An object containing data for various available formats and sizes of this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="import_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The creation or upload date from this GIF's source.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The MPAA-style rating for this content. Examples include Y, G, PG, PG-13 and R</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="slug" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique slug used in this GIF's URL</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="source" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The page on which this GIF was found</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="source_post_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL of the webpage on which this GIF was found.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="source_tld" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The top level domain of the source URL.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="tags" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>An array of tags for this GIF (Note: Not available when using the Public Beta Key)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="trending_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date on which this gif was marked trending, if applicable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="gif" name="type" type="schemas:Type">
+            <xs:annotation>
+              <xs:documentation>Type of the gif. By default, this is almost always gif</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="update_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date on which this GIF was last updated.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique URL for this GIF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="user" type="schemas:User">
+            <xs:annotation>
+              <xs:documentation>The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="username" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The username this GIF is attached to, if applicable</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Image">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="frames" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The number of frames in this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="height" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The height of this GIF in pixels.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="mp4" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this GIF in .MP4 format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="mp4_size" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The size in bytes of the .MP4 file corresponding to this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="size" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The size of this GIF in bytes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The publicly-accessible direct URL for this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="webp" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this GIF in .webp format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="webp_size" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The size in bytes of the .webp file corresponding to this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="width" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The width of this GIF in pixels.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Meta">
+        <xs:annotation>
+          <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msg" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>HTTP Response Message</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="response_id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A unique ID paired with this response from the API.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="status" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>HTTP Response Code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Pagination">
+        <xs:annotation>
+          <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Total number of items returned.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="offset" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Position in pagination.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="total_count" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Total number of items available.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="User">
+        <xs:annotation>
+          <xs:documentation>The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="avatar_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this user's avatar image.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="banner_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for the banner image that appears atop this user's profile page.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="display_name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The display name associated with this user (contains formatting the base username might not).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="profile_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this user's profile.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="twitter" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The Twitter username associated with this user, if applicable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="username" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The username associated with this user.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsRandomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsResponse1">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsSearchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsTranslateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsTrendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Images">
+        <xs:annotation>
+          <xs:documentation>An object containing data for various available formats and sizes of this GIF.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="downsized" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_large" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_medium" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_small" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_downsampled" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_small" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_small_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_downsampled" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_small" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_small_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="looping" type="schemas:Image" />
+          <xs:element minOccurs="0" name="original" type="schemas:Image" />
+          <xs:element minOccurs="0" name="original_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="preview" type="schemas:Image" />
+          <xs:element minOccurs="0" name="preview_gif" type="schemas:Image" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersRandomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersSearchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersTranslateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersTrendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Type">
+        <xs:annotation>
+          <xs:documentation>Type of the gif. By default, this is almost always gif</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="gif" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="GET_getGifsById_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ids" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified GIF IDs, separated by commas.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifsById_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifsById_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifsById_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifsById_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifsById_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomGif_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tag" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified tag.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified rating.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomGif_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsRandomResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomGif_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomGif_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomGif_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomGif_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchGifs_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="q" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Search query term or prhase.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="25" name="limit" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The maximum number of records to return.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="0" name="offset" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>An optional results offset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified rating.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lang" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Specify default language for regional content; use a 2-letter ISO 639-1 language code.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchGifs_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsSearchResponse">
+            <xs:annotation>
+              <xs:documentation>Search results</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchGifs_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchGifs_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchGifs_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchGifs_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateGif_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="s" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Search term.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateGif_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsTranslateResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateGif_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateGif_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateGif_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateGif_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingGifs_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" default="25" name="limit" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The maximum number of records to return.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="0" name="offset" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>An optional results offset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified rating.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingGifs_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsTrendingResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingGifs_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingGifs_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingGifs_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingGifs_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifById_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="gifId" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified GIF ID.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifById_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsResponse1" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifById_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifById_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifById_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_getGifById_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomSticker_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tag" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified tag.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified rating.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomSticker_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersRandomResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomSticker_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomSticker_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomSticker_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_randomSticker_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchStickers_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="q" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Search query term or prhase.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="25" name="limit" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The maximum number of records to return.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="0" name="offset" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>An optional results offset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified rating.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lang" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Specify default language for regional content; use a 2-letter ISO 639-1 language code.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchStickers_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersSearchResponse">
+            <xs:annotation>
+              <xs:documentation>Search results</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchStickers_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchStickers_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchStickers_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_searchStickers_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateSticker_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="s" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Search term.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateSticker_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersTranslateResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateSticker_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateSticker_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateSticker_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_translateSticker_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingStickers_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" default="25" name="limit" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The maximum number of records to return.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="0" name="offset" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>An optional results offset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Filters results by specified rating.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingStickers_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersTrendingResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingStickers_400">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response400">
+            <xs:annotation>
+              <xs:documentation>Your request was formatted incorrectly or missing required parameters.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingStickers_403">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response403">
+            <xs:annotation>
+              <xs:documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingStickers_404">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response404">
+            <xs:annotation>
+              <xs:documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_trendingStickers_429">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response429">
+            <xs:annotation>
+              <xs:documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="GET_getGifsById_InputMessage">
+    <part name="GET_getGifsById_InputMessage" element="schemas:GET_getGifsById_InputMessage" />
+  </message>
+  <message name="GET_getGifsById_OutputMessage">
+    <part name="GET_getGifsById_OutputMessage" element="schemas:GET_getGifsById_OutputMessage" />
+  </message>
+  <message name="GET_getGifsById_400">
+    <part name="GET_getGifsById_400" element="schemas:GET_getGifsById_400" />
+  </message>
+  <message name="GET_getGifsById_403">
+    <part name="GET_getGifsById_403" element="schemas:GET_getGifsById_403" />
+  </message>
+  <message name="GET_getGifsById_404">
+    <part name="GET_getGifsById_404" element="schemas:GET_getGifsById_404" />
+  </message>
+  <message name="GET_getGifsById_429">
+    <part name="GET_getGifsById_429" element="schemas:GET_getGifsById_429" />
+  </message>
+  <message name="GET_randomGif_InputMessage">
+    <part name="GET_randomGif_InputMessage" element="schemas:GET_randomGif_InputMessage" />
+  </message>
+  <message name="GET_randomGif_OutputMessage">
+    <part name="GET_randomGif_OutputMessage" element="schemas:GET_randomGif_OutputMessage" />
+  </message>
+  <message name="GET_randomGif_400">
+    <part name="GET_randomGif_400" element="schemas:GET_randomGif_400" />
+  </message>
+  <message name="GET_randomGif_403">
+    <part name="GET_randomGif_403" element="schemas:GET_randomGif_403" />
+  </message>
+  <message name="GET_randomGif_404">
+    <part name="GET_randomGif_404" element="schemas:GET_randomGif_404" />
+  </message>
+  <message name="GET_randomGif_429">
+    <part name="GET_randomGif_429" element="schemas:GET_randomGif_429" />
+  </message>
+  <message name="GET_searchGifs_InputMessage">
+    <part name="GET_searchGifs_InputMessage" element="schemas:GET_searchGifs_InputMessage" />
+  </message>
+  <message name="GET_searchGifs_OutputMessage">
+    <part name="GET_searchGifs_OutputMessage" element="schemas:GET_searchGifs_OutputMessage" />
+  </message>
+  <message name="GET_searchGifs_400">
+    <part name="GET_searchGifs_400" element="schemas:GET_searchGifs_400" />
+  </message>
+  <message name="GET_searchGifs_403">
+    <part name="GET_searchGifs_403" element="schemas:GET_searchGifs_403" />
+  </message>
+  <message name="GET_searchGifs_404">
+    <part name="GET_searchGifs_404" element="schemas:GET_searchGifs_404" />
+  </message>
+  <message name="GET_searchGifs_429">
+    <part name="GET_searchGifs_429" element="schemas:GET_searchGifs_429" />
+  </message>
+  <message name="GET_translateGif_InputMessage">
+    <part name="GET_translateGif_InputMessage" element="schemas:GET_translateGif_InputMessage" />
+  </message>
+  <message name="GET_translateGif_OutputMessage">
+    <part name="GET_translateGif_OutputMessage" element="schemas:GET_translateGif_OutputMessage" />
+  </message>
+  <message name="GET_translateGif_400">
+    <part name="GET_translateGif_400" element="schemas:GET_translateGif_400" />
+  </message>
+  <message name="GET_translateGif_403">
+    <part name="GET_translateGif_403" element="schemas:GET_translateGif_403" />
+  </message>
+  <message name="GET_translateGif_404">
+    <part name="GET_translateGif_404" element="schemas:GET_translateGif_404" />
+  </message>
+  <message name="GET_translateGif_429">
+    <part name="GET_translateGif_429" element="schemas:GET_translateGif_429" />
+  </message>
+  <message name="GET_trendingGifs_InputMessage">
+    <part name="GET_trendingGifs_InputMessage" element="schemas:GET_trendingGifs_InputMessage" />
+  </message>
+  <message name="GET_trendingGifs_OutputMessage">
+    <part name="GET_trendingGifs_OutputMessage" element="schemas:GET_trendingGifs_OutputMessage" />
+  </message>
+  <message name="GET_trendingGifs_400">
+    <part name="GET_trendingGifs_400" element="schemas:GET_trendingGifs_400" />
+  </message>
+  <message name="GET_trendingGifs_403">
+    <part name="GET_trendingGifs_403" element="schemas:GET_trendingGifs_403" />
+  </message>
+  <message name="GET_trendingGifs_404">
+    <part name="GET_trendingGifs_404" element="schemas:GET_trendingGifs_404" />
+  </message>
+  <message name="GET_trendingGifs_429">
+    <part name="GET_trendingGifs_429" element="schemas:GET_trendingGifs_429" />
+  </message>
+  <message name="GET_getGifById_InputMessage">
+    <part name="GET_getGifById_InputMessage" element="schemas:GET_getGifById_InputMessage" />
+  </message>
+  <message name="GET_getGifById_OutputMessage">
+    <part name="GET_getGifById_OutputMessage" element="schemas:GET_getGifById_OutputMessage" />
+  </message>
+  <message name="GET_getGifById_400">
+    <part name="GET_getGifById_400" element="schemas:GET_getGifById_400" />
+  </message>
+  <message name="GET_getGifById_403">
+    <part name="GET_getGifById_403" element="schemas:GET_getGifById_403" />
+  </message>
+  <message name="GET_getGifById_404">
+    <part name="GET_getGifById_404" element="schemas:GET_getGifById_404" />
+  </message>
+  <message name="GET_getGifById_429">
+    <part name="GET_getGifById_429" element="schemas:GET_getGifById_429" />
+  </message>
+  <message name="GET_randomSticker_InputMessage">
+    <part name="GET_randomSticker_InputMessage" element="schemas:GET_randomSticker_InputMessage" />
+  </message>
+  <message name="GET_randomSticker_OutputMessage">
+    <part name="GET_randomSticker_OutputMessage" element="schemas:GET_randomSticker_OutputMessage" />
+  </message>
+  <message name="GET_randomSticker_400">
+    <part name="GET_randomSticker_400" element="schemas:GET_randomSticker_400" />
+  </message>
+  <message name="GET_randomSticker_403">
+    <part name="GET_randomSticker_403" element="schemas:GET_randomSticker_403" />
+  </message>
+  <message name="GET_randomSticker_404">
+    <part name="GET_randomSticker_404" element="schemas:GET_randomSticker_404" />
+  </message>
+  <message name="GET_randomSticker_429">
+    <part name="GET_randomSticker_429" element="schemas:GET_randomSticker_429" />
+  </message>
+  <message name="GET_searchStickers_InputMessage">
+    <part name="GET_searchStickers_InputMessage" element="schemas:GET_searchStickers_InputMessage" />
+  </message>
+  <message name="GET_searchStickers_OutputMessage">
+    <part name="GET_searchStickers_OutputMessage" element="schemas:GET_searchStickers_OutputMessage" />
+  </message>
+  <message name="GET_searchStickers_400">
+    <part name="GET_searchStickers_400" element="schemas:GET_searchStickers_400" />
+  </message>
+  <message name="GET_searchStickers_403">
+    <part name="GET_searchStickers_403" element="schemas:GET_searchStickers_403" />
+  </message>
+  <message name="GET_searchStickers_404">
+    <part name="GET_searchStickers_404" element="schemas:GET_searchStickers_404" />
+  </message>
+  <message name="GET_searchStickers_429">
+    <part name="GET_searchStickers_429" element="schemas:GET_searchStickers_429" />
+  </message>
+  <message name="GET_translateSticker_InputMessage">
+    <part name="GET_translateSticker_InputMessage" element="schemas:GET_translateSticker_InputMessage" />
+  </message>
+  <message name="GET_translateSticker_OutputMessage">
+    <part name="GET_translateSticker_OutputMessage" element="schemas:GET_translateSticker_OutputMessage" />
+  </message>
+  <message name="GET_translateSticker_400">
+    <part name="GET_translateSticker_400" element="schemas:GET_translateSticker_400" />
+  </message>
+  <message name="GET_translateSticker_403">
+    <part name="GET_translateSticker_403" element="schemas:GET_translateSticker_403" />
+  </message>
+  <message name="GET_translateSticker_404">
+    <part name="GET_translateSticker_404" element="schemas:GET_translateSticker_404" />
+  </message>
+  <message name="GET_translateSticker_429">
+    <part name="GET_translateSticker_429" element="schemas:GET_translateSticker_429" />
+  </message>
+  <message name="GET_trendingStickers_InputMessage">
+    <part name="GET_trendingStickers_InputMessage" element="schemas:GET_trendingStickers_InputMessage" />
+  </message>
+  <message name="GET_trendingStickers_OutputMessage">
+    <part name="GET_trendingStickers_OutputMessage" element="schemas:GET_trendingStickers_OutputMessage" />
+  </message>
+  <message name="GET_trendingStickers_400">
+    <part name="GET_trendingStickers_400" element="schemas:GET_trendingStickers_400" />
+  </message>
+  <message name="GET_trendingStickers_403">
+    <part name="GET_trendingStickers_403" element="schemas:GET_trendingStickers_403" />
+  </message>
+  <message name="GET_trendingStickers_404">
+    <part name="GET_trendingStickers_404" element="schemas:GET_trendingStickers_404" />
+  </message>
+  <message name="GET_trendingStickers_429">
+    <part name="GET_trendingStickers_429" element="schemas:GET_trendingStickers_429" />
+  </message>
+  <portType name="Giphy_x0020_API_PortType">
+    <operation name="GET_getGifsById">
+      <documentation>A multiget version of the get GIF by ID endpoint.
+</documentation>
+      <input message="wsdl:GET_getGifsById_InputMessage" />
+      <output message="wsdl:GET_getGifsById_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_getGifsById_400" message="wsdl:GET_getGifsById_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_getGifsById_403" message="wsdl:GET_getGifsById_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_getGifsById_404" message="wsdl:GET_getGifsById_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_getGifsById_429" message="wsdl:GET_getGifsById_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_randomGif">
+      <documentation>Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
+</documentation>
+      <input message="wsdl:GET_randomGif_InputMessage" />
+      <output message="wsdl:GET_randomGif_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_randomGif_400" message="wsdl:GET_randomGif_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_randomGif_403" message="wsdl:GET_randomGif_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_randomGif_404" message="wsdl:GET_randomGif_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_randomGif_429" message="wsdl:GET_randomGif_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_searchGifs">
+      <documentation>Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.
+</documentation>
+      <input message="wsdl:GET_searchGifs_InputMessage" />
+      <output message="wsdl:GET_searchGifs_OutputMessage">
+        <documentation>Search results</documentation>
+      </output>
+      <fault name="GET_searchGifs_400" message="wsdl:GET_searchGifs_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_searchGifs_403" message="wsdl:GET_searchGifs_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_searchGifs_404" message="wsdl:GET_searchGifs_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_searchGifs_429" message="wsdl:GET_searchGifs_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_translateGif">
+      <documentation>The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF
+</documentation>
+      <input message="wsdl:GET_translateGif_InputMessage" />
+      <output message="wsdl:GET_translateGif_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_translateGif_400" message="wsdl:GET_translateGif_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_translateGif_403" message="wsdl:GET_translateGif_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_translateGif_404" message="wsdl:GET_translateGif_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_translateGif_429" message="wsdl:GET_translateGif_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_trendingGifs">
+      <documentation>Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
+</documentation>
+      <input message="wsdl:GET_trendingGifs_InputMessage" />
+      <output message="wsdl:GET_trendingGifs_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_trendingGifs_400" message="wsdl:GET_trendingGifs_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_trendingGifs_403" message="wsdl:GET_trendingGifs_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_trendingGifs_404" message="wsdl:GET_trendingGifs_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_trendingGifs_429" message="wsdl:GET_trendingGifs_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_getGifById">
+      <documentation>Returns a GIF given that GIF's unique ID
+</documentation>
+      <input message="wsdl:GET_getGifById_InputMessage" />
+      <output message="wsdl:GET_getGifById_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_getGifById_400" message="wsdl:GET_getGifById_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_getGifById_403" message="wsdl:GET_getGifById_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_getGifById_404" message="wsdl:GET_getGifById_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_getGifById_429" message="wsdl:GET_getGifById_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_randomSticker">
+      <documentation>Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
+</documentation>
+      <input message="wsdl:GET_randomSticker_InputMessage" />
+      <output message="wsdl:GET_randomSticker_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_randomSticker_400" message="wsdl:GET_randomSticker_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_randomSticker_403" message="wsdl:GET_randomSticker_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_randomSticker_404" message="wsdl:GET_randomSticker_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_randomSticker_429" message="wsdl:GET_randomSticker_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_searchStickers">
+      <documentation>Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.
+</documentation>
+      <input message="wsdl:GET_searchStickers_InputMessage" />
+      <output message="wsdl:GET_searchStickers_OutputMessage">
+        <documentation>Search results</documentation>
+      </output>
+      <fault name="GET_searchStickers_400" message="wsdl:GET_searchStickers_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_searchStickers_403" message="wsdl:GET_searchStickers_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_searchStickers_404" message="wsdl:GET_searchStickers_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_searchStickers_429" message="wsdl:GET_searchStickers_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_translateSticker">
+      <documentation>The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
+</documentation>
+      <input message="wsdl:GET_translateSticker_InputMessage" />
+      <output message="wsdl:GET_translateSticker_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_translateSticker_400" message="wsdl:GET_translateSticker_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_translateSticker_403" message="wsdl:GET_translateSticker_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_translateSticker_404" message="wsdl:GET_translateSticker_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_translateSticker_429" message="wsdl:GET_translateSticker_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+    <operation name="GET_trendingStickers">
+      <documentation>Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
+</documentation>
+      <input message="wsdl:GET_trendingStickers_InputMessage" />
+      <output message="wsdl:GET_trendingStickers_OutputMessage">
+        <documentation />
+      </output>
+      <fault name="GET_trendingStickers_400" message="wsdl:GET_trendingStickers_400">
+        <documentation>Your request was formatted incorrectly or missing required parameters.</documentation>
+      </fault>
+      <fault name="GET_trendingStickers_403" message="wsdl:GET_trendingStickers_403">
+        <documentation>You weren't authorized to make your request; most likely this indicates an issue with your API Key.</documentation>
+      </fault>
+      <fault name="GET_trendingStickers_404" message="wsdl:GET_trendingStickers_404">
+        <documentation>The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</documentation>
+      </fault>
+      <fault name="GET_trendingStickers_429" message="wsdl:GET_trendingStickers_429">
+        <documentation>Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</documentation>
+      </fault>
+    </operation>
+  </portType>
+  <binding name="Giphy_x0020_API_Binding" type="wsdl:Giphy_x0020_API_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="GET_getGifsById">
+      <soap:operation soapAction="GET_getGifsById" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_getGifsById_400">
+        <soap:fault use="literal" name="GET_getGifsById_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_getGifsById_403">
+        <soap:fault use="literal" name="GET_getGifsById_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_getGifsById_404">
+        <soap:fault use="literal" name="GET_getGifsById_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_getGifsById_429">
+        <soap:fault use="literal" name="GET_getGifsById_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_randomGif">
+      <soap:operation soapAction="GET_randomGif" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_randomGif_400">
+        <soap:fault use="literal" name="GET_randomGif_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_randomGif_403">
+        <soap:fault use="literal" name="GET_randomGif_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_randomGif_404">
+        <soap:fault use="literal" name="GET_randomGif_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_randomGif_429">
+        <soap:fault use="literal" name="GET_randomGif_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_searchGifs">
+      <soap:operation soapAction="GET_searchGifs" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_searchGifs_400">
+        <soap:fault use="literal" name="GET_searchGifs_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_searchGifs_403">
+        <soap:fault use="literal" name="GET_searchGifs_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_searchGifs_404">
+        <soap:fault use="literal" name="GET_searchGifs_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_searchGifs_429">
+        <soap:fault use="literal" name="GET_searchGifs_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_translateGif">
+      <soap:operation soapAction="GET_translateGif" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_translateGif_400">
+        <soap:fault use="literal" name="GET_translateGif_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_translateGif_403">
+        <soap:fault use="literal" name="GET_translateGif_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_translateGif_404">
+        <soap:fault use="literal" name="GET_translateGif_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_translateGif_429">
+        <soap:fault use="literal" name="GET_translateGif_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_trendingGifs">
+      <soap:operation soapAction="GET_trendingGifs" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_trendingGifs_400">
+        <soap:fault use="literal" name="GET_trendingGifs_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_trendingGifs_403">
+        <soap:fault use="literal" name="GET_trendingGifs_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_trendingGifs_404">
+        <soap:fault use="literal" name="GET_trendingGifs_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_trendingGifs_429">
+        <soap:fault use="literal" name="GET_trendingGifs_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_getGifById">
+      <soap:operation soapAction="GET_getGifById" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_getGifById_400">
+        <soap:fault use="literal" name="GET_getGifById_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_getGifById_403">
+        <soap:fault use="literal" name="GET_getGifById_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_getGifById_404">
+        <soap:fault use="literal" name="GET_getGifById_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_getGifById_429">
+        <soap:fault use="literal" name="GET_getGifById_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_randomSticker">
+      <soap:operation soapAction="GET_randomSticker" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_randomSticker_400">
+        <soap:fault use="literal" name="GET_randomSticker_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_randomSticker_403">
+        <soap:fault use="literal" name="GET_randomSticker_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_randomSticker_404">
+        <soap:fault use="literal" name="GET_randomSticker_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_randomSticker_429">
+        <soap:fault use="literal" name="GET_randomSticker_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_searchStickers">
+      <soap:operation soapAction="GET_searchStickers" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_searchStickers_400">
+        <soap:fault use="literal" name="GET_searchStickers_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_searchStickers_403">
+        <soap:fault use="literal" name="GET_searchStickers_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_searchStickers_404">
+        <soap:fault use="literal" name="GET_searchStickers_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_searchStickers_429">
+        <soap:fault use="literal" name="GET_searchStickers_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_translateSticker">
+      <soap:operation soapAction="GET_translateSticker" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_translateSticker_400">
+        <soap:fault use="literal" name="GET_translateSticker_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_translateSticker_403">
+        <soap:fault use="literal" name="GET_translateSticker_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_translateSticker_404">
+        <soap:fault use="literal" name="GET_translateSticker_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_translateSticker_429">
+        <soap:fault use="literal" name="GET_translateSticker_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+    <operation name="GET_trendingStickers">
+      <soap:operation soapAction="GET_trendingStickers" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+      <fault name="GET_trendingStickers_400">
+        <soap:fault use="literal" name="GET_trendingStickers_400" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_trendingStickers_403">
+        <soap:fault use="literal" name="GET_trendingStickers_403" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_trendingStickers_404">
+        <soap:fault use="literal" name="GET_trendingStickers_404" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+      <fault name="GET_trendingStickers_429">
+        <soap:fault use="literal" name="GET_trendingStickers_429" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="Giphy_x0020_API">
+    <documentation>Giphy API</documentation>
+    <port name="default_Port" binding="wsdl:Giphy_x0020_API_Binding">
+      <soap:address location="https://api.giphy.com/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

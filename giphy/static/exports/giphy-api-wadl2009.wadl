@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="https://api.giphy.com/v1/schemas" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Giphy API" xml:lang="en">Giphy API</doc>
+  <grammars>
+    <xs:schema xmlns:tns="https://api.giphy.com/v1/schemas" targetNamespace="https://api.giphy.com/v1/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Gif" type="schemas:Gif" />
+      <xs:element name="Image" type="schemas:Image" />
+      <xs:element name="Meta" type="schemas:Meta" />
+      <xs:element name="Pagination" type="schemas:Pagination" />
+      <xs:element name="User" type="schemas:User" />
+      <xs:element name="GifsRandomResponse" type="schemas:GifsRandomResponse" />
+      <xs:element name="GifsResponse" type="schemas:GifsResponse" />
+      <xs:element name="GifsResponse1" type="schemas:GifsResponse1" />
+      <xs:element name="GifsSearchResponse" type="schemas:GifsSearchResponse" />
+      <xs:element name="GifsTranslateResponse" type="schemas:GifsTranslateResponse" />
+      <xs:element name="GifsTrendingResponse" type="schemas:GifsTrendingResponse" />
+      <xs:element name="Images" type="schemas:Images" />
+      <xs:element name="StickersRandomResponse" type="schemas:StickersRandomResponse" />
+      <xs:element name="StickersSearchResponse" type="schemas:StickersSearchResponse" />
+      <xs:element name="StickersTranslateResponse" type="schemas:StickersTranslateResponse" />
+      <xs:element name="StickersTrendingResponse" type="schemas:StickersTrendingResponse" />
+      <xs:element name="Type" type="schemas:Type" />
+      <xs:element name="getGifsById200_Response0" type="schemas:getGifsById200_Response0" />
+      <xs:element name="randomGif200_Response0" type="schemas:randomGif200_Response0" />
+      <xs:element name="searchGifs200_Response0" type="schemas:searchGifs200_Response0" />
+      <xs:element name="translateGif200_Response0" type="schemas:translateGif200_Response0" />
+      <xs:element name="trendingGifs200_Response0" type="schemas:trendingGifs200_Response0" />
+      <xs:element name="getGifById200_Response0" type="schemas:getGifById200_Response0" />
+      <xs:element name="randomSticker200_Response0" type="schemas:randomSticker200_Response0" />
+      <xs:element name="searchStickers200_Response0" type="schemas:searchStickers200_Response0" />
+      <xs:element name="translateSticker200_Response0" type="schemas:translateSticker200_Response0" />
+      <xs:element name="trendingStickers200_Response0" type="schemas:trendingStickers200_Response0" />
+      <xs:complexType name="Gif">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bitly_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique bit.ly URL for this GIF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="content_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Currently unused</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="create_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date this GIF was added to the GIPHY database.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="embded_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A URL used for embedding this GIF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="featured_tags" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>An array of featured tags for this GIF (Note: Not available when using the Public Beta Key)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>This GIF's unique ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="images" type="schemas:Images">
+            <xs:annotation>
+              <xs:documentation>An object containing data for various available formats and sizes of this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="import_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The creation or upload date from this GIF's source.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="rating" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The MPAA-style rating for this content. Examples include Y, G, PG, PG-13 and R</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="slug" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique slug used in this GIF's URL</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="source" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The page on which this GIF was found</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="source_post_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL of the webpage on which this GIF was found.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="source_tld" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The top level domain of the source URL.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="tags" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>An array of tags for this GIF (Note: Not available when using the Public Beta Key)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="trending_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date on which this gif was marked trending, if applicable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" default="gif" name="type" type="schemas:Type">
+            <xs:annotation>
+              <xs:documentation>Type of the gif. By default, this is almost always gif</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="update_datetime" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date on which this GIF was last updated.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The unique URL for this GIF</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="user" type="schemas:User">
+            <xs:annotation>
+              <xs:documentation>The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="username" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The username this GIF is attached to, if applicable</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Image">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="frames" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The number of frames in this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="height" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The height of this GIF in pixels.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="mp4" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this GIF in .MP4 format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="mp4_size" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The size in bytes of the .MP4 file corresponding to this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="size" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The size of this GIF in bytes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The publicly-accessible direct URL for this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="webp" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this GIF in .webp format.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="webp_size" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The size in bytes of the .webp file corresponding to this GIF.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="width" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The width of this GIF in pixels.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Meta">
+        <xs:annotation>
+          <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msg" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>HTTP Response Message</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="response_id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A unique ID paired with this response from the API.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="status" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>HTTP Response Code</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Pagination">
+        <xs:annotation>
+          <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="count" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Total number of items returned.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="offset" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Position in pagination.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="total_count" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>Total number of items available.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="User">
+        <xs:annotation>
+          <xs:documentation>The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="avatar_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this user's avatar image.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="banner_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for the banner image that appears atop this user's profile page.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="display_name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The display name associated with this user (contains formatting the base username might not).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="profile_url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The URL for this user's profile.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="twitter" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The Twitter username associated with this user, if applicable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="username" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The username associated with this user.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsRandomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsResponse1">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsSearchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsTranslateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GifsTrendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Images">
+        <xs:annotation>
+          <xs:documentation>An object containing data for various available formats and sizes of this GIF.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="downsized" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_large" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_medium" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_small" type="schemas:Image" />
+          <xs:element minOccurs="0" name="downsized_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_downsampled" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_small" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_small_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_height_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_downsampled" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_small" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_small_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="fixed_width_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="looping" type="schemas:Image" />
+          <xs:element minOccurs="0" name="original" type="schemas:Image" />
+          <xs:element minOccurs="0" name="original_still" type="schemas:Image" />
+          <xs:element minOccurs="0" name="preview" type="schemas:Image" />
+          <xs:element minOccurs="0" name="preview_gif" type="schemas:Image" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersRandomResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersSearchResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersTranslateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StickersTrendingResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="data" type="schemas:Gif" />
+          <xs:element minOccurs="0" name="meta" type="schemas:Meta">
+            <xs:annotation>
+              <xs:documentation>The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="pagination" type="schemas:Pagination">
+            <xs:annotation>
+              <xs:documentation>The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Type">
+        <xs:annotation>
+          <xs:documentation>Type of the gif. By default, this is almost always gif</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="gif" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="getGifsById200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="randomGif200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsRandomResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchGifs200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsSearchResponse">
+            <xs:annotation>
+              <xs:documentation>Search results</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="translateGif200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsTranslateResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="trendingGifs200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsTrendingResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getGifById200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:GifsResponse1" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="randomSticker200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersRandomResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchStickers200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersSearchResponse">
+            <xs:annotation>
+              <xs:documentation>Search results</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="translateSticker200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersTranslateResponse" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="trendingStickers200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="response200" type="schemas:StickersTrendingResponse" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </grammars>
+  <resources base="https://api.giphy.com/v1">
+    <resource id="_gifs" path="/gifs">
+      <method id="getGifsById" name="GET">
+        <doc title="getGifsById" xml:lang="en">A multiget version of the get GIF by ID endpoint.
+</doc>
+        <request>
+          <param name="ids" style="query" type="xsd:string">
+            <doc title="ids" xml:lang="en">Filters results by specified GIF IDs, separated by commas.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:getGifsById200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_gifsrandom" path="/gifs/random">
+      <method id="randomGif" name="GET">
+        <doc title="randomGif" xml:lang="en">Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
+</doc>
+        <request>
+          <param name="tag" style="query" type="xsd:string">
+            <doc title="tag" xml:lang="en">Filters results by specified tag.</doc>
+          </param>
+          <param name="rating" style="query" type="xsd:string">
+            <doc title="rating" xml:lang="en">Filters results by specified rating.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:randomGif200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_gifssearch" path="/gifs/search">
+      <method id="searchGifs" name="GET">
+        <doc title="searchGifs" xml:lang="en">Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.
+</doc>
+        <request>
+          <param name="q" style="query" type="xsd:string" required="true">
+            <doc title="q" xml:lang="en">Search query term or prhase.</doc>
+          </param>
+          <param name="limit" style="query" type="xsd:integer" default="25">
+            <doc title="limit" xml:lang="en">The maximum number of records to return.</doc>
+          </param>
+          <param name="offset" style="query" type="xsd:integer" default="0">
+            <doc title="offset" xml:lang="en">An optional results offset.</doc>
+          </param>
+          <param name="rating" style="query" type="xsd:string">
+            <doc title="rating" xml:lang="en">Filters results by specified rating.</doc>
+          </param>
+          <param name="lang" style="query" type="xsd:string">
+            <doc title="lang" xml:lang="en">Specify default language for regional content; use a 2-letter ISO 639-1 language code.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <doc title="200" xml:lang="en">Search results</doc>
+          <representation element="schemas:searchGifs200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_gifstranslate" path="/gifs/translate">
+      <method id="translateGif" name="GET">
+        <doc title="translateGif" xml:lang="en">The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF
+</doc>
+        <request>
+          <param name="s" style="query" type="xsd:string" required="true">
+            <doc title="s" xml:lang="en">Search term.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:translateGif200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_gifstrending" path="/gifs/trending">
+      <method id="trendingGifs" name="GET">
+        <doc title="trendingGifs" xml:lang="en">Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
+</doc>
+        <request>
+          <param name="limit" style="query" type="xsd:integer" default="25">
+            <doc title="limit" xml:lang="en">The maximum number of records to return.</doc>
+          </param>
+          <param name="offset" style="query" type="xsd:integer" default="0">
+            <doc title="offset" xml:lang="en">An optional results offset.</doc>
+          </param>
+          <param name="rating" style="query" type="xsd:string">
+            <doc title="rating" xml:lang="en">Filters results by specified rating.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:trendingGifs200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_gifsgifId" path="/gifs/{gifId}">
+      <param name="gifId" style="template" type="xsd:integer" required="true">
+        <doc title="gifId" xml:lang="en">Filters results by specified GIF ID.</doc>
+      </param>
+      <method id="getGifById" name="GET">
+        <doc title="getGifById" xml:lang="en">Returns a GIF given that GIF's unique ID
+</doc>
+        <request />
+        <response status="200">
+          <representation element="schemas:getGifById200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_stickersrandom" path="/stickers/random">
+      <method id="randomSticker" name="GET">
+        <doc title="randomSticker" xml:lang="en">Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
+</doc>
+        <request>
+          <param name="tag" style="query" type="xsd:string">
+            <doc title="tag" xml:lang="en">Filters results by specified tag.</doc>
+          </param>
+          <param name="rating" style="query" type="xsd:string">
+            <doc title="rating" xml:lang="en">Filters results by specified rating.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:randomSticker200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_stickerssearch" path="/stickers/search">
+      <method id="searchStickers" name="GET">
+        <doc title="searchStickers" xml:lang="en">Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.
+</doc>
+        <request>
+          <param name="q" style="query" type="xsd:string" required="true">
+            <doc title="q" xml:lang="en">Search query term or prhase.</doc>
+          </param>
+          <param name="limit" style="query" type="xsd:integer" default="25">
+            <doc title="limit" xml:lang="en">The maximum number of records to return.</doc>
+          </param>
+          <param name="offset" style="query" type="xsd:integer" default="0">
+            <doc title="offset" xml:lang="en">An optional results offset.</doc>
+          </param>
+          <param name="rating" style="query" type="xsd:string">
+            <doc title="rating" xml:lang="en">Filters results by specified rating.</doc>
+          </param>
+          <param name="lang" style="query" type="xsd:string">
+            <doc title="lang" xml:lang="en">Specify default language for regional content; use a 2-letter ISO 639-1 language code.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <doc title="200" xml:lang="en">Search results</doc>
+          <representation element="schemas:searchStickers200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_stickerstranslate" path="/stickers/translate">
+      <method id="translateSticker" name="GET">
+        <doc title="translateSticker" xml:lang="en">The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
+</doc>
+        <request>
+          <param name="s" style="query" type="xsd:string" required="true">
+            <doc title="s" xml:lang="en">Search term.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:translateSticker200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_stickerstrending" path="/stickers/trending">
+      <method id="trendingStickers" name="GET">
+        <doc title="trendingStickers" xml:lang="en">Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
+</doc>
+        <request>
+          <param name="limit" style="query" type="xsd:integer" default="25">
+            <doc title="limit" xml:lang="en">The maximum number of records to return.</doc>
+          </param>
+          <param name="offset" style="query" type="xsd:integer" default="0">
+            <doc title="offset" xml:lang="en">An optional results offset.</doc>
+          </param>
+          <param name="rating" style="query" type="xsd:string">
+            <doc title="rating" xml:lang="en">Filters results by specified rating.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation element="schemas:trendingStickers200_Response0" mediaType="application/json" />
+        </response>
+        <response status="400">
+          <doc title="400" xml:lang="en">Your request was formatted incorrectly or missing required parameters.</doc>
+        </response>
+        <response status="403">
+          <doc title="403" xml:lang="en">You weren't authorized to make your request; most likely this indicates an issue with your API Key.</doc>
+        </response>
+        <response status="404">
+          <doc title="404" xml:lang="en">The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.</doc>
+        </response>
+        <response status="429">
+          <doc title="429" xml:lang="en">Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.</doc>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

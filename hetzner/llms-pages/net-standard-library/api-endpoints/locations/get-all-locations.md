@@ -1,0 +1,43 @@
+# Get All Locations
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/#/net-standard-library/x-redirect/JTI0ZSUyRkxvY2F0aW9ucyUyRkdldCUyNTIwYWxsJTI1MjBMb2NhdGlvbnM
+
+Returns all Location objects.
+
+:information_source: **Note** This endpoint does not require authentication.
+
+```csharp
+GetAllLocationsAsync(
+    string name = null)
+```
+
+
+# Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `name` | `string` | Query, Optional | Can be used to filter Locations by their name. The response will only contain the Location matching the specified name. |
+
+
+# Response Type
+
+**200**: The `locations` key in the reply contains an array of Location objects with this structure
+
+[`Task<Models.LocationsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/llms-pages/net-standard-library/models/structures/locations-response.md)
+
+
+# Example Usage
+
+```csharp
+try
+{
+    LocationsResponse result = await locationsController.GetAllLocationsAsync();
+}
+catch (ApiException e)
+{
+    Console.WriteLine(e.Message);
+}
+```
+
+
+

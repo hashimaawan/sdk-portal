@@ -1,0 +1,6265 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "apimatic.transformer",
+  "resources": [
+    {
+      "name": "NBA Stats API",
+      "_type": "workspace",
+      "_id": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": "The destination for current and historic NBA statistics."
+    },
+    {
+      "name": "Allstarballotpredictor_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/allstarballotpredictor",
+      "parameters": [
+        {
+          "name": "WestPlayer1",
+          "value": "WestPlayer194",
+          "disabled": false
+        },
+        {
+          "name": "WestPlayer2",
+          "value": "WestPlayer216",
+          "disabled": false
+        },
+        {
+          "name": "WestPlayer3",
+          "value": "WestPlayer338",
+          "disabled": false
+        },
+        {
+          "name": "WestPlayer4",
+          "value": "WestPlayer463",
+          "disabled": false
+        },
+        {
+          "name": "WestPlayer5",
+          "value": "WestPlayer589",
+          "disabled": false
+        },
+        {
+          "name": "EastPlayer1",
+          "value": "EastPlayer130",
+          "disabled": false
+        },
+        {
+          "name": "EastPlayer2",
+          "value": "EastPlayer210",
+          "disabled": false
+        },
+        {
+          "name": "EastPlayer3",
+          "value": "EastPlayer326",
+          "disabled": false
+        },
+        {
+          "name": "EastPlayer4",
+          "value": "EastPlayer469",
+          "disabled": false
+        },
+        {
+          "name": "EastPlayer5",
+          "value": "EastPlayer561",
+          "disabled": false
+        },
+        {
+          "name": "PointCap",
+          "value": "PointCap15",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_443c8e5400d54fc3bf8019ec1f3eb70a",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscore_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscore",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID5",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod55",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod6",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange76",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange25",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType57",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_5abd6e4242da4b26807e36683be6cdf4",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoreadvanced_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoreadvanced",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID8",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod18",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod12",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange89",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange8",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType92",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_3a766d113ce644a9b9e79b6e8b7e9db6",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoreadvancedv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoreadvancedv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID71",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod9",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod67",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange88",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange62",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType79",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_62850e5d27804f938ff3197e27fbc9d3",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscorefourfactors_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscorefourfactors",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID2",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod27",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod28",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange31",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange2",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType88",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_1498de8644f14e16ae1a7867d4bf915a",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscorefourfactorsv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscorefourfactorsv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID39",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod51",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod17",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange15",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange14",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType93",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_5157b8b808174e378b7d43afb9ee1bb7",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoremisc_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoremisc",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID9",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod62",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod54",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange22",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange3",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType21",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_9968cb966c9d48649a9bf784326684eb",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoremiscv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoremiscv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID8",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod66",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod72",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange58",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange29",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType33",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_3e3eaa8d946c45a18fa7b3d04109d910",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoreplayertrackv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoreplayertrackv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID30",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_110baf73a70443909f8b0051015251b8",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscorescoring_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscorescoring",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID62",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod50",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod88",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange83",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange16",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType74",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_8f7b760390ed495b8b56ed2336401aeb",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscorescoringv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscorescoringv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID92",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod97",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod89",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange31",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange33",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType3",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_99d67f0e7a474fd39977f875565b9737",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoresummaryv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoresummaryv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID4",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_98c5c6e63e514b8cb32f82721cfe6fb4",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoretraditionalv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoretraditionalv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID18",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod34",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod7",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange31",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange81",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType80",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_26583cabf7f54ca0ac3968910302dee0",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoreusage_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoreusage",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID67",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod82",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod70",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange33",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange24",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType24",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_f583bb88ec1f491195015b67ca4ab847",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Boxscoreusagev2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/boxscoreusagev2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID72",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod38",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod4",
+          "disabled": false
+        },
+        {
+          "name": "StartRange",
+          "value": "StartRange88",
+          "disabled": false
+        },
+        {
+          "name": "EndRange",
+          "value": "EndRange40",
+          "disabled": false
+        },
+        {
+          "name": "RangeType",
+          "value": "RangeType73",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_2c6bcbdf3cef49c39432f29fbc2bfb0b",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "CommonTeamYears_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/commonTeamYears",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID10",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ab80e79176154ab681e6ffb8227fb7c1",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Commonallplayers_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/commonallplayers",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID56",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season95",
+          "disabled": false
+        },
+        {
+          "name": "IsOnlyCurrentSeason",
+          "value": "IsOnlyCurrentSeason24",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_77db125a0e6e4db1acd2fba52233cac5",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Commonplayerinfo_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/commonplayerinfo",
+      "parameters": [
+        {
+          "name": "PlayerID",
+          "value": "PlayerID69",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_3d3511306ed747caa654755f0bedd5c6",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Commonplayoffseries_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/commonplayoffseries",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID91",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season7",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_6d41419349574b1fa3aeef49370ddaf0",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Commonteamroster_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/commonteamroster",
+      "parameters": [
+        {
+          "name": "Season",
+          "value": "Season64",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID20",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ab3744dd344144f1a47a716be464b5b7",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Draftcombinedrillresults_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/draftcombinedrillresults",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID25",
+          "disabled": false
+        },
+        {
+          "name": "SeasonYear",
+          "value": "SeasonYear35",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_495d184c75a7450ebf47c19aa3e88975",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Draftcombinenonstationaryshooting_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/draftcombinenonstationaryshooting",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID5",
+          "disabled": false
+        },
+        {
+          "name": "SeasonYear",
+          "value": "SeasonYear22",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_0309dacf034941c0a4a3e8bcb6a6f2ae",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Draftcombineplayeranthro_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/draftcombineplayeranthro",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID32",
+          "disabled": false
+        },
+        {
+          "name": "SeasonYear",
+          "value": "SeasonYear98",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_64a148c88c6949c0b3beb87424a64af0",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Draftcombinespotshooting_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/draftcombinespotshooting",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID43",
+          "disabled": false
+        },
+        {
+          "name": "SeasonYear",
+          "value": "SeasonYear11",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_a11c031d194a468a9f016be19578176f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Draftcombinestats_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/draftcombinestats",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID48",
+          "disabled": false
+        },
+        {
+          "name": "SeasonYear",
+          "value": "SeasonYear80",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_adf7aa51ac694df1aaacc0437f384f19",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Drafthistory_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/drafthistory",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID6",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_9f95355a8472436f99679ddf60552ac5",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Franchisehistory_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/franchisehistory",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID35",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_45452bd02a17467387e3d5c923062dd5",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Homepageleaders_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/homepageleaders",
+      "parameters": [
+        {
+          "name": "StatCategory",
+          "value": "StatCategory37",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID59",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season16",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType11",
+          "disabled": false
+        },
+        {
+          "name": "PlayerOrTeam",
+          "value": "PlayerOrTeam68",
+          "disabled": false
+        },
+        {
+          "name": "PlayerScope",
+          "value": "PlayerScope93",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope61",
+          "disabled": false
+        },
+        {
+          "name": "Game",
+          "value": "Game29",
+          "disabled": false
+        },
+        {
+          "name": "Player",
+          "value": "Player5",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_a6a4be3a7d7d40a69cca1e673b80f38e",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Homepagev2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/homepagev2",
+      "parameters": [
+        {
+          "name": "StatType",
+          "value": "StatType24",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID13",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season18",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType61",
+          "disabled": false
+        },
+        {
+          "name": "PlayerOrTeam",
+          "value": "PlayerOrTeam60",
+          "disabled": false
+        },
+        {
+          "name": "PlayerScope",
+          "value": "PlayerScope32",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope50",
+          "disabled": false
+        },
+        {
+          "name": "Game",
+          "value": "Game7",
+          "disabled": false
+        },
+        {
+          "name": "Player",
+          "value": "Player25",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_02fe7db8d73d41acb7e8d797ff491d98",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaderstiles_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaderstiles",
+      "parameters": [
+        {
+          "name": "Stat",
+          "value": "Stat0",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID56",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season77",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType13",
+          "disabled": false
+        },
+        {
+          "name": "PlayerOrTeam",
+          "value": "PlayerOrTeam12",
+          "disabled": false
+        },
+        {
+          "name": "PlayerScope",
+          "value": "PlayerScope24",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope76",
+          "disabled": false
+        },
+        {
+          "name": "Game",
+          "value": "Game30",
+          "disabled": false
+        },
+        {
+          "name": "Player",
+          "value": "Player67",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ca6e326019ef459391a1d06f1fe21b7f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashlineups_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashlineups",
+      "parameters": [
+        {
+          "name": "GroupQuantity",
+          "value": "GroupQuantity90",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType3",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType17",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode56",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus13",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust45",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank34",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season72",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome15",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location53",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month66",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment17",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom61",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo83",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID54",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference42",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision96",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment31",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period65",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames67",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_3bf44b5bacfa43f8bc673aba53aad565",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashplayerbiostats_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashplayerbiostats",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode52",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID53",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season29",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType58",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_9153ab82bf3849678e5b78f4dffe56b2",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashplayerclutch_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashplayerclutch",
+      "parameters": [
+        {
+          "name": "ClutchTime",
+          "value": "ClutchTime87",
+          "disabled": false
+        },
+        {
+          "name": "AheadBehind",
+          "value": "AheadBehind66",
+          "disabled": false
+        },
+        {
+          "name": "PointDiff",
+          "value": "PointDiff60",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope81",
+          "disabled": false
+        },
+        {
+          "name": "PlayerExperience",
+          "value": "PlayerExperience60",
+          "disabled": false
+        },
+        {
+          "name": "PlayerPosition",
+          "value": "PlayerPosition77",
+          "disabled": false
+        },
+        {
+          "name": "StarterBench",
+          "value": "StarterBench26",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType3",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode19",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus95",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust14",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank71",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season6",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType53",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome97",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location41",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month42",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment5",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom43",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo72",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID76",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference93",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision13",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment13",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period45",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames14",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_0261c60bf6bf499985a99a9d66f7b5f2",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashplayerptshot_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashplayerptshot",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID20",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode29",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season72",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType14",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_5183553212ca487ab5a96e3b1f824a40",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashplayershotlocations_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashplayershotlocations",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType80",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode40",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus84",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust15",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank53",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season54",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType95",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome15",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location60",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month22",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment27",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom28",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo21",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID42",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference39",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision69",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment65",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period54",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames64",
+          "disabled": false
+        },
+        {
+          "name": "DistanceRange",
+          "value": "DistanceRange57",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope46",
+          "disabled": false
+        },
+        {
+          "name": "PlayerExperience",
+          "value": "PlayerExperience97",
+          "disabled": false
+        },
+        {
+          "name": "PlayerPosition",
+          "value": "PlayerPosition62",
+          "disabled": false
+        },
+        {
+          "name": "StarterBench",
+          "value": "StarterBench4",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_92a24cb17f8b490e96222323947b5f1b",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashplayerstats_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashplayerstats",
+      "parameters": [
+        {
+          "name": "GameScope",
+          "value": "GameScope41",
+          "disabled": false
+        },
+        {
+          "name": "PlayerExperience",
+          "value": "PlayerExperience17",
+          "disabled": false
+        },
+        {
+          "name": "PlayerPosition",
+          "value": "PlayerPosition72",
+          "disabled": false
+        },
+        {
+          "name": "StarterBench",
+          "value": "StarterBench63",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType21",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode56",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus5",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust94",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank27",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season97",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType6",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome97",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location55",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month71",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment22",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom25",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo41",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID34",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference48",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision86",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment90",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period15",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames0",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ab5ea78f9b0e42508679f106591df287",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashptdefend_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashptdefend",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID61",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode85",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season82",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType45",
+          "disabled": false
+        },
+        {
+          "name": "DefenseCategory",
+          "value": "DefenseCategory29",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_293b8b2560c744fab08874d7c7b9816b",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashptteamdefend_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashptteamdefend",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID90",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode56",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season9",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType91",
+          "disabled": false
+        },
+        {
+          "name": "DefenseCategory",
+          "value": "DefenseCategory25",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_e4dedf54c34042ab856abd0928382999",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashteamclutch_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashteamclutch",
+      "parameters": [
+        {
+          "name": "ClutchTime",
+          "value": "ClutchTime12",
+          "disabled": false
+        },
+        {
+          "name": "AheadBehind",
+          "value": "AheadBehind92",
+          "disabled": false
+        },
+        {
+          "name": "PointDiff",
+          "value": "PointDiff50",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope25",
+          "disabled": false
+        },
+        {
+          "name": "PlayerExperience",
+          "value": "PlayerExperience21",
+          "disabled": false
+        },
+        {
+          "name": "PlayerPosition",
+          "value": "PlayerPosition51",
+          "disabled": false
+        },
+        {
+          "name": "StarterBench",
+          "value": "StarterBench70",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType54",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode90",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus96",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust46",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank89",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season48",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType80",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome84",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location9",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month21",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment91",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom9",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo17",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID18",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference18",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision96",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment12",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period11",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames86",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_05de43b37c704241964b53a9ce86f749",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashteamptshot_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashteamptshot",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID29",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode44",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season18",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType53",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_a8828914a0494cebb94a6eb6a910054f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashteamshotlocations_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashteamshotlocations",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType60",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode98",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus29",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust65",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank31",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season65",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType40",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome35",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location18",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month83",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment64",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom32",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo85",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID32",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference26",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision88",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment59",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period71",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames9",
+          "disabled": false
+        },
+        {
+          "name": "DistanceRange",
+          "value": "DistanceRange17",
+          "disabled": false
+        },
+        {
+          "name": "GameScope",
+          "value": "GameScope17",
+          "disabled": false
+        },
+        {
+          "name": "PlayerExperience",
+          "value": "PlayerExperience10",
+          "disabled": false
+        },
+        {
+          "name": "PlayerPosition",
+          "value": "PlayerPosition58",
+          "disabled": false
+        },
+        {
+          "name": "StarterBench",
+          "value": "StarterBench94",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_dbdee072499d4f6d8163cb9c53b76d5a",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leaguedashteamstats_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leaguedashteamstats",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType77",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode10",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus54",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust23",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank45",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season63",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType60",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome16",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location51",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month23",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment68",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom10",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo26",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID3",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference30",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision59",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment21",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period52",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames92",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_8407e579d4fb4cc5bf341ac45a2979a5",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Leagueleaders_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/leagueleaders",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID53",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode74",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season71",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType13",
+          "disabled": false
+        },
+        {
+          "name": "Scope",
+          "value": "Scope5",
+          "disabled": false
+        },
+        {
+          "name": "StatCategory",
+          "value": "StatCategory97",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_184cce75f69344298281f84f1df0523c",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playbyplay_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playbyplay",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID84",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod25",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod45",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_4483e998227f4065a9a983a7bbaf9196",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playbyplayv2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playbyplayv2",
+      "parameters": [
+        {
+          "name": "GameID",
+          "value": "GameID19",
+          "disabled": false
+        },
+        {
+          "name": "StartPeriod",
+          "value": "StartPeriod80",
+          "disabled": false
+        },
+        {
+          "name": "EndPeriod",
+          "value": "EndPeriod10",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_f5350b77acc649a1a3ac34baf7a6951c",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playercareerstats_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playercareerstats",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode80",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID6",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_2e63b0b2dd6d43e38fc748478ab2b9a5",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playercompare_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playercompare",
+      "parameters": [
+        {
+          "name": "PlayerIDList",
+          "value": "PlayerIDList46",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerIDList",
+          "value": "VsPlayerIDList74",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType3",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType88",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode0",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus93",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust70",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank56",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season94",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome51",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location24",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month32",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment4",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom65",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo68",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID17",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference85",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision81",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment38",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period98",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames83",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ce18876c185048f19721a1676189aff1",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbyclutch_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbyclutch",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType74",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode23",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus14",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust34",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank28",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season81",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType94",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID73",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome39",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location80",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month98",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment66",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom32",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo33",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID8",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference44",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision2",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment67",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period25",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames19",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_81926d87eb124b8499e4fd18f609fdcd",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbygamesplits_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbygamesplits",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType91",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode32",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus88",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust57",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank52",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season51",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType86",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID13",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome53",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location5",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month56",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment78",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom34",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo45",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID61",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference68",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision39",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment23",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period22",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames94",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_d56010c888184f1590c1fead5fbcac97",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbygeneralsplits_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbygeneralsplits",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType24",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode24",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus35",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust55",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank65",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season19",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType93",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID24",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome37",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location96",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month62",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment84",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom90",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo31",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID31",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference8",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision68",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment68",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period86",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames35",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_62bb8cb26988435f986d840d193cc352",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbylastngames_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbylastngames",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType39",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode96",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus84",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust12",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank75",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season76",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType4",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID36",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome0",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location2",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month40",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment96",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom15",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo97",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID58",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference69",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision27",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment1",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period61",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames83",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_69c8732c33314a9eac4f0a316eb3d34f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbyopponent_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbyopponent",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType27",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode7",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus73",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust20",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank20",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season36",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType32",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID15",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome98",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location78",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month42",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment51",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom14",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo48",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID21",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference65",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision34",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment63",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period94",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames9",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_a01073d6e87d45d7ac1f83c13dfb54ff",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbyshootingsplits_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbyshootingsplits",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType14",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode0",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus59",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust2",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank58",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season36",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType39",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID58",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome78",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location60",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month0",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment92",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom55",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo0",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID45",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference75",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision11",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment91",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period50",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames49",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_9ed0682b3c2c4db6b9e44e96b83451f8",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbyteamperformance_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbyteamperformance",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType80",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode44",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus39",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust64",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank89",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season41",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType48",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID1",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome71",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location75",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month20",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment90",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom60",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo73",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID20",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference80",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision90",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment21",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period4",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames76",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_533de5d334b442e696562fe00cc4831f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashboardbyyearoveryear_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashboardbyyearoveryear",
+      "parameters": [
+        {
+          "name": "MeasureType",
+          "value": "MeasureType37",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode46",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus62",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust83",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank48",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season69",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType10",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID39",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome37",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location17",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month21",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment94",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom12",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo14",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID55",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference61",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision65",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment61",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period18",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames70",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_16f3fbb15d37404091e3a022ae4c7b3f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashptpass_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashptpass",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode50",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season20",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType78",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID2",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID91",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome29",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location18",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month80",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment13",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom19",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo72",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID10",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference72",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision15",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames21",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_cbb423361c8d4693b9da4c29b7151a29",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashptreb_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashptreb",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode85",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season73",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType54",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID26",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID71",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome65",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location6",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month17",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment52",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom79",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo40",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID82",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference30",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision24",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment36",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period6",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames62",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_cec9961752f248108932cd194d69e1d7",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashptreboundlogs_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashptreboundlogs",
+      "parameters": [
+        {
+          "name": "Season",
+          "value": "Season78",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType7",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID13",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID7",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome55",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location1",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month0",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment63",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom38",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo33",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID44",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference73",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision57",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment17",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period17",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames19",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_922bd9a687bb4f0792ed047fb0ae9abc",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashptshotdefend_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashptshotdefend",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode80",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season10",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType78",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID38",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID74",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome82",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location12",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month36",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment23",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom79",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo85",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID0",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference71",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision80",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment34",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period2",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames46",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_fc4a5063edca43dbb3485bc666983a21",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashptshotlog_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashptshotlog",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID9",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season24",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType3",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID38",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID79",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_edf58f9889e5489a8f8f061cf7d94f09",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerdashptshots_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerdashptshots",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode93",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season35",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType36",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID62",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID1",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome43",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location6",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month89",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment91",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom97",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo55",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID86",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference23",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision22",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment50",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period27",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames97",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_f94f4cefe1404d79ab33d10f45a97f51",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playergamelog_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playergamelog",
+      "parameters": [
+        {
+          "name": "PlayerID",
+          "value": "PlayerID33",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season61",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType26",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_56845da7dcb14aa6ad8f8ae6db9dd588",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerprofile_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerprofile",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID47",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID18",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season76",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType15",
+          "disabled": false
+        },
+        {
+          "name": "GraphStartSeason",
+          "value": "GraphStartSeason53",
+          "disabled": false
+        },
+        {
+          "name": "GraphEndSeason",
+          "value": "GraphEndSeason8",
+          "disabled": false
+        },
+        {
+          "name": "GraphStat",
+          "value": "GraphStat32",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_bca733af6fe84e3a9ca13cf4b6e96775",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playerprofilev2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playerprofilev2",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode75",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID20",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_03855ebfc76043638a7d62ecda80f911",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playersvsplayers_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playersvsplayers",
+      "parameters": [
+        {
+          "name": "PlayerTeamID",
+          "value": "PlayerTeamID3",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID1",
+          "value": "PlayerID15",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID2",
+          "value": "PlayerID284",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID3",
+          "value": "PlayerID319",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID4",
+          "value": "PlayerID40",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID5",
+          "value": "PlayerID559",
+          "disabled": false
+        },
+        {
+          "name": "VsTeamID",
+          "value": "VsTeamID48",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID1",
+          "value": "VsPlayerID113",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID2",
+          "value": "VsPlayerID272",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID3",
+          "value": "VsPlayerID386",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID4",
+          "value": "VsPlayerID423",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID5",
+          "value": "VsPlayerID52",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType89",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType18",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode51",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus3",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust49",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank93",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season72",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome85",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location92",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month83",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment8",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom42",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo52",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID90",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference55",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision71",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment51",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period49",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames84",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_f946304464fc4e8a9c4b596dae059fe9",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playervsplayer_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playervsplayer",
+      "parameters": [
+        {
+          "name": "PlayerID",
+          "value": "PlayerID45",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID",
+          "value": "VsPlayerID7",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType16",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType43",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode12",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus17",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust35",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank23",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season25",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome64",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location9",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month60",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment23",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom52",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo94",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID0",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference54",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision19",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment66",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period8",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames81",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_b72a0e9b87fc4c65bf501ea7dcab5d10",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Playoffpicture_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/playoffpicture",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID62",
+          "disabled": false
+        },
+        {
+          "name": "SeasonID",
+          "value": "SeasonID27",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_73a910cf3e93497a8581b485cc20edf3",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Scoreboard_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/scoreboard",
+      "parameters": [
+        {
+          "name": "GameDate",
+          "value": "GameDate81",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID91",
+          "disabled": false
+        },
+        {
+          "name": "DayOffset",
+          "value": "DayOffset0",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_1ce67fd5b06846aab5fec8079b666f20",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "ScoreboardV2_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/scoreboardV2",
+      "parameters": [
+        {
+          "name": "GameDate",
+          "value": "GameDate2",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID8",
+          "disabled": false
+        },
+        {
+          "name": "DayOffset",
+          "value": "DayOffset45",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_960241cc6bde4ae4a4d46cff4b313a14",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Shotchartdetail_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/shotchartdetail",
+      "parameters": [
+        {
+          "name": "SeasonType",
+          "value": "SeasonType67",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID37",
+          "disabled": false
+        },
+        {
+          "name": "PlayerID",
+          "value": "PlayerID75",
+          "disabled": false
+        },
+        {
+          "name": "GameID",
+          "value": "GameID86",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome82",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location67",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month87",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment93",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom2",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo68",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID0",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference41",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision2",
+          "disabled": false
+        },
+        {
+          "name": "Position",
+          "value": "Position84",
+          "disabled": false
+        },
+        {
+          "name": "RookieYear",
+          "value": "RookieYear52",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment4",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period49",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames80",
+          "disabled": false
+        },
+        {
+          "name": "ContextMeasure",
+          "value": "ContextMeasure72",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_cdd4b7f452664bcc83d98f1c464f4ced",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Shotchartlineupdetail_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/shotchartlineupdetail",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID58",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season74",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType49",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID30",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome50",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location38",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month56",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment35",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom37",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo28",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID63",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference79",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision40",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment84",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period2",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames64",
+          "disabled": false
+        },
+        {
+          "name": "GameID",
+          "value": "GameID31",
+          "disabled": false
+        },
+        {
+          "name": "GROUP_ID",
+          "value": "GROUP_ID1",
+          "disabled": false
+        },
+        {
+          "name": "ContextMeasure",
+          "value": "ContextMeasure96",
+          "disabled": false
+        },
+        {
+          "name": "ContextFilter",
+          "value": "ContextFilter80",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_c675aa5a807041fa95f740e5e3fa34d7",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbyclutch_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbyclutch",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID22",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType24",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode5",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus38",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust58",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank56",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season6",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType7",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome52",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location42",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month65",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment30",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom84",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo59",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID39",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference13",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision8",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment65",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period43",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames39",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_a444e6b428eb494abdc48301382fbb97",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbygamesplits_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbygamesplits",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID76",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType68",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode20",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus46",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust7",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank92",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season56",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType44",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome47",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location27",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month33",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment48",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom65",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo76",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID57",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference4",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision11",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment87",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period82",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames48",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_891dc04bfed9409ea0bad01f85c336e0",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbygeneralsplits_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbygeneralsplits",
+      "parameters": [
+        {
+          "name": "SeasonType",
+          "value": "SeasonType19",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID83",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType76",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode93",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus2",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust76",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank17",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season39",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome42",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location54",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month18",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment22",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom4",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo68",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID80",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference88",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision89",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment46",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period0",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames44",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_d6a1d27b59eb45f48d241ecf38c97a82",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbylastngames_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbylastngames",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID76",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType43",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode7",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus6",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust18",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank60",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season81",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType15",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome49",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location47",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month26",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment93",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom78",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo96",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID90",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference14",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision17",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment20",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period20",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames62",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_4bf26fc1e93343beaac949853b622569",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbyopponent_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbyopponent",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID81",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType15",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode96",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus14",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust91",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank83",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season35",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType21",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome89",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location6",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month87",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment55",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom71",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo46",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID33",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference66",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision83",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment30",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period42",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames0",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_e129b02029ce4a578dacd188c8972c35",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbyshootingsplits_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbyshootingsplits",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID54",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType22",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode33",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus58",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust81",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank11",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season25",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType3",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome96",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location8",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month55",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment48",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom18",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo76",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID36",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference0",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision95",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment80",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period29",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames3",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_df09efc4790b42f3b5c8bce4e4258372",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbyteamperformance_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbyteamperformance",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID11",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType13",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode10",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus20",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust57",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank3",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season50",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType71",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome76",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location68",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month70",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment77",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom96",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo12",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID89",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference52",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision24",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment89",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period9",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames32",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_386d60a532cf49cfa4d83cb2992e761d",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashboardbyyearoveryear_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashboardbyyearoveryear",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID77",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType87",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode25",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus65",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust67",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank29",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season49",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType79",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome13",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location89",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month42",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment22",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom78",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo21",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID63",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference44",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision81",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment39",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period27",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames59",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_e79f42a9ac7e45c49f4df6325e00f2bc",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashlineups_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashlineups",
+      "parameters": [
+        {
+          "name": "GroupQuantity",
+          "value": "GroupQuantity28",
+          "disabled": false
+        },
+        {
+          "name": "GameID",
+          "value": "GameID79",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType45",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID72",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType8",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode41",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus89",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust42",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank91",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season15",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome20",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location16",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month34",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment67",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom40",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo21",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID98",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference80",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision12",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment65",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period45",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames95",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_73c1dcc848de46f5b3fa5294cd26697b",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashptpass_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashptpass",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode67",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season69",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType93",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID26",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome59",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location15",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month67",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment78",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom84",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo44",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID36",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference78",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision92",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames32",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_08b00f9520c24b5398cc51ecd334adea",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashptreb_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashptreb",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode3",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season49",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType71",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID94",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome50",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location81",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month41",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment5",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom82",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo46",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID43",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference19",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision54",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment67",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period81",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames96",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ba0a547bb85941fe95e3da687549d3a0",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamdashptshots_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamdashptshots",
+      "parameters": [
+        {
+          "name": "PerMode",
+          "value": "PerMode41",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season22",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType35",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID63",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome19",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location66",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month35",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment75",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom27",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo37",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID86",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference92",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision47",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment68",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period52",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames60",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_0c02519ac3f64f8596241ba30f02b669",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamgamelog_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamgamelog",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID22",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season40",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType35",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_8f6004d45f104364bd71e47ed70d33b3",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teaminfocommon_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teaminfocommon",
+      "parameters": [
+        {
+          "name": "Season",
+          "value": "Season58",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID33",
+          "disabled": false
+        },
+        {
+          "name": "LeagueID",
+          "value": "LeagueID2",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType28",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_6ecc3413469a438bbfbdb2c4938ac898",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamplayerdashboard_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamplayerdashboard",
+      "parameters": [
+        {
+          "name": "SeasonType",
+          "value": "SeasonType36",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID39",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType17",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode35",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus22",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust6",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank36",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season30",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome38",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location24",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month19",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment53",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom6",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo58",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID41",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference2",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision58",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment5",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period90",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames82",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_94d1f0846bb24331bde2f49a8d2e947f",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamplayeronoffdetails_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamplayeronoffdetails",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID15",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType89",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode18",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus89",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust87",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank81",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season7",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType92",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome87",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location92",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month80",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment0",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom78",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo31",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID27",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference46",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision33",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment54",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period1",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames24",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_60efd737a8cb4ef0a9bb1bf2012c2274",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamplayeronoffsummary_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamplayeronoffsummary",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID69",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType36",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode60",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus90",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust6",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank2",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season39",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType18",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome8",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location50",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month36",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment54",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom1",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo37",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID67",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference28",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision31",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment64",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period47",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames30",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_40becd5552984d71bddca6e40d69cbab",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamvsplayer_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamvsplayer",
+      "parameters": [
+        {
+          "name": "TeamID",
+          "value": "TeamID40",
+          "disabled": false
+        },
+        {
+          "name": "VsPlayerID",
+          "value": "VsPlayerID22",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType14",
+          "disabled": false
+        },
+        {
+          "name": "MeasureType",
+          "value": "MeasureType78",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode29",
+          "disabled": false
+        },
+        {
+          "name": "PlusMinus",
+          "value": "PlusMinus8",
+          "disabled": false
+        },
+        {
+          "name": "PaceAdjust",
+          "value": "PaceAdjust51",
+          "disabled": false
+        },
+        {
+          "name": "Rank",
+          "value": "Rank19",
+          "disabled": false
+        },
+        {
+          "name": "Season",
+          "value": "Season71",
+          "disabled": false
+        },
+        {
+          "name": "Outcome",
+          "value": "Outcome17",
+          "disabled": false
+        },
+        {
+          "name": "Location",
+          "value": "Location75",
+          "disabled": false
+        },
+        {
+          "name": "Month",
+          "value": "Month40",
+          "disabled": false
+        },
+        {
+          "name": "SeasonSegment",
+          "value": "SeasonSegment43",
+          "disabled": false
+        },
+        {
+          "name": "DateFrom",
+          "value": "DateFrom13",
+          "disabled": false
+        },
+        {
+          "name": "DateTo",
+          "value": "DateTo39",
+          "disabled": false
+        },
+        {
+          "name": "OpponentTeamID",
+          "value": "OpponentTeamID83",
+          "disabled": false
+        },
+        {
+          "name": "VsConference",
+          "value": "VsConference65",
+          "disabled": false
+        },
+        {
+          "name": "VsDivision",
+          "value": "VsDivision40",
+          "disabled": false
+        },
+        {
+          "name": "GameSegment",
+          "value": "GameSegment10",
+          "disabled": false
+        },
+        {
+          "name": "Period",
+          "value": "Period22",
+          "disabled": false
+        },
+        {
+          "name": "LastNGames",
+          "value": "LastNGames84",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_52168dda0dee4571aa760b5755934d32",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "Teamyearbyyearstats_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/teamyearbyyearstats",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID17",
+          "disabled": false
+        },
+        {
+          "name": "SeasonType",
+          "value": "SeasonType49",
+          "disabled": false
+        },
+        {
+          "name": "PerMode",
+          "value": "PerMode18",
+          "disabled": false
+        },
+        {
+          "name": "TeamID",
+          "value": "TeamID34",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_ab5268390c6d4b79b0459cdf3fe3cf47",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    },
+    {
+      "name": "VideoStatus_GET",
+      "method": "GET",
+      "url": "http://stats.nba.com/stats/videoStatus",
+      "parameters": [
+        {
+          "name": "LeagueID",
+          "value": "LeagueID6",
+          "disabled": false
+        },
+        {
+          "name": "GameDate",
+          "value": "GameDate59",
+          "disabled": false
+        }
+      ],
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_54f17338215045248ba059a25eb27110",
+      "parentId": "wrk_8b8d1d5383b94f26989cfdbdc3093f9c",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+FORMAT: 1A
+HOST: https://api.giphy.com/v1
+
+# Giphy API
+Giphy API
+
+## Authentication
+This API uses Custom Query Parameter for its authentication.
+
+The parameters that are needed to be sent for this type of authentication are as follows:
++ `api_key`
+
+# Group gifs
+
+## Gifs [/gifs{?ids}]
+
+### getGifsById [GET]
+A multiget version of the get GIF by ID endpoint.
++ Parameters
+    + ids (string, optional)
+
+        Filters results by specified GIF IDs, separated by commas.
+
+
++ Response 200 (application/json)
+    + Attributes (Gifs Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Gifs Random [/gifs/random{?tag,rating}]
+
+### randomGif [GET]
+Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
++ Parameters
+    + tag (string, optional)
+
+        Filters results by specified tag.
+
+    + rating (string, optional)
+
+        Filters results by specified rating.
+
+
++ Response 200 (application/json)
+    + Attributes (Gifs Random Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Gifs Search [/gifs/search{?q,limit,offset,rating,lang}]
+
+### searchGifs [GET]
+Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.
++ Parameters
+    + q (string, required)
+
+        Search query term or prhase.
+
+    + limit (number, optional) -
+
+        The maximum number of records to return.
+
+        + Default: 25
+    + offset (number, optional) -
+
+        An optional results offset.
+
+        + Default: 0
+    + rating (string, optional)
+
+        Filters results by specified rating.
+
+    + lang (string, optional)
+
+        Specify default language for regional content; use a 2-letter ISO 639-1 language code.
+
+
++ Response 200 (application/json)
+
+        Search results
+
+    + Attributes (Gifs Search Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Gifs Translate [/gifs/translate{?s}]
+
+### translateGif [GET]
+The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF
++ Parameters
+    + s (string, required)
+
+        Search term.
+
+
++ Response 200 (application/json)
+    + Attributes (Gifs Translate Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Gifs Trending [/gifs/trending{?limit,offset,rating}]
+
+### trendingGifs [GET]
+Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
++ Parameters
+    + limit (number, optional) -
+
+        The maximum number of records to return.
+
+        + Default: 25
+        + Sample: 25
+    + offset (number, optional) -
+
+        An optional results offset.
+
+        + Default: 0
+        + Sample: 0
+    + rating (string, optional)
+
+        Filters results by specified rating.
+
+
++ Response 200 (application/json)
+    + Attributes (Gifs Trending Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Gifs By GifId [/gifs/{gifId}]
+
++ Parameters
+    + gifId (number, required)
+
+        Filters results by specified GIF ID.
+
+
+### getGifById [GET]
+Returns a GIF given that GIF's unique ID
+
++ Response 200 (application/json)
+    + Attributes (Gifs Response1)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+
+# Group stickers
+
+## Stickers Random [/stickers/random{?tag,rating}]
+
+### randomSticker [GET]
+Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
++ Parameters
+    + tag (string, optional)
+
+        Filters results by specified tag.
+
+    + rating (string, optional)
+
+        Filters results by specified rating.
+
+
++ Response 200 (application/json)
+    + Attributes (Stickers Random Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Stickers Search [/stickers/search{?q,limit,offset,rating,lang}]
+
+### searchStickers [GET]
+Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.
++ Parameters
+    + q (string, required)
+
+        Search query term or prhase.
+
+    + limit (number, optional) -
+
+        The maximum number of records to return.
+
+        + Default: 25
+    + offset (number, optional) -
+
+        An optional results offset.
+
+        + Default: 0
+    + rating (string, optional)
+
+        Filters results by specified rating.
+
+    + lang (string, optional)
+
+        Specify default language for regional content; use a 2-letter ISO 639-1 language code.
+
+
++ Response 200 (application/json)
+
+        Search results
+
+    + Attributes (Stickers Search Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Stickers Translate [/stickers/translate{?s}]
+
+### translateSticker [GET]
+The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
++ Parameters
+    + s (string, required)
+
+        Search term.
+
+
++ Response 200 (application/json)
+    + Attributes (Stickers Translate Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+## Stickers Trending [/stickers/trending{?limit,offset,rating}]
+
+### trendingStickers [GET]
+Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
++ Parameters
+    + limit (number, optional) -
+
+        The maximum number of records to return.
+
+        + Default: 25
+        + Sample: 25
+    + offset (number, optional) -
+
+        An optional results offset.
+
+        + Default: 0
+        + Sample: 0
+    + rating (string, optional)
+
+        Filters results by specified rating.
+
+
++ Response 200 (application/json)
+    + Attributes (Stickers Trending Response)
+
+
+
++ Response 400 
+
+        Your request was formatted incorrectly or missing required parameters.
+
+
+
+
++ Response 403 
+
+        You weren't authorized to make your request; most likely this indicates an issue with your API Key.
+
+
+
+
++ Response 404 
+
+        The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.
+
+
+
+
++ Response 429 
+
+        Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.
+
+
+
+
+
+
+# Data Structures
+
+## Gif (object)
+
+
+### Properties
++ `bitly_url`: `http://gph.is/1gsWDcL` (string, optional) - The unique bit.ly URL for this GIF
++ `content_url` (string, optional) - Currently unused
++ `create_datetime`: `2013-08-01 12:41:48` (string, optional) - The date this GIF was added to the GIPHY database.
++ `embded_url`: `http://giphy.com/embed/YsTs5ltWtEhnq` (string, optional) - A URL used for embedding this GIF
++ `featured_tags` (array[string], optional) - An array of featured tags for this GIF (Note: Not available when using the Public Beta Key)
++ `id`: `YsTs5ltWtEhnq` (string, optional) - This GIF's unique ID
++ `images` (Images, optional) - An object containing data for various available formats and sizes of this GIF.
++ `import_datetime`: `2013-08-01 12:41:48` (string, optional) - The creation or upload date from this GIF's source.
++ `rating`: `g` (string, optional) - The MPAA-style rating for this content. Examples include Y, G, PG, PG-13 and R
++ `slug`: `confused-flying-YsTs5ltWtEhnq` (string, optional) - The unique slug used in this GIF's URL
++ `source`: `http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/` (string, optional) - The page on which this GIF was found
++ `source_post_url`: `http://cheezburger.com/5282328320` (string, optional) - The URL of the webpage on which this GIF was found.
++ `source_tld`: `cheezburger.com` (string, optional) - The top level domain of the source URL.
++ `tags` (array[string], optional) - An array of tags for this GIF (Note: Not available when using the Public Beta Key)
++ `trending_datetime`: `2013-08-01 12:41:48` (string, optional) - The date on which this gif was marked trending, if applicable.
++ `type` (enum[string], optional) - Type of the gif. By default, this is almost always gif
+    + `gif`
++ `update_datetime`: `2013-08-01 12:41:48` (string, optional) - The date on which this GIF was last updated.
++ `url`: `http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq` (string, optional) - The unique URL for this GIF
++ `user` (User, optional) - The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
++ `username`: `JoeCool4000` (string, optional) - The username this GIF is attached to, if applicable
+
+
+## Image (object)
+
+
+### Properties
++ `frames`: `15` (string, optional) - The number of frames in this GIF.
++ `height`: `200` (string, optional) - The height of this GIF in pixels.
++ `mp4`: `https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4` (string, optional) - The URL for this GIF in .MP4 format.
++ `mp4_size`: `25123` (string, optional) - The size in bytes of the .MP4 file corresponding to this GIF.
++ `size`: `32381` (string, optional) - The size of this GIF in bytes.
++ `url`: `https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif` (string, optional) - The publicly-accessible direct URL for this GIF.
++ `webp`: `https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp` (string, optional) - The URL for this GIF in .webp format.
++ `webp_size`: `12321` (string, optional) - The size in bytes of the .webp file corresponding to this GIF.
++ `width`: `320` (string, optional) - The width of this GIF in pixels.
+
+
+## Meta (object)
+The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+
+### Properties
++ `msg`: `OK` (string, optional) - HTTP Response Message
++ `response_id`: `57eea03c72381f86e05c35d2` (string, optional) - A unique ID paired with this response from the API.
++ `status`: `200` (number, optional) - HTTP Response Code
+
+
+## Pagination (object)
+The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+
+### Properties
++ `count`: `25` (number, optional) - Total number of items returned.
++ `offset`: `75` (number, optional) - Position in pagination.
++ `total_count`: `250` (number, optional) - Total number of items available.
+
+
+## User (object)
+The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
+
+### Properties
++ `avatar_url`: `https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif` (string, optional) - The URL for this user's avatar image.
++ `banner_url`: `https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg` (string, optional) - The URL for the banner image that appears atop this user's profile page.
++ `display_name`: `JoeCool4000` (string, optional) - The display name associated with this user (contains formatting the base username might not).
++ `profile_url`: `https://giphy.com/cheezburger/` (string, optional) - The URL for this user's profile.
++ `twitter`: `@joecool4000` (string, optional) - The Twitter username associated with this user, if applicable.
++ `username`: `joecool4000` (string, optional) - The username associated with this user.
+
+
+## Gifs Random Response (object)
+
+
+### Properties
++ `data` (Gif, optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+
+
+## Gifs Response (object)
+
+
+### Properties
++ `data` (array[Gif], optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
++ `pagination` (Pagination, optional) - The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+
+
+## Gifs Response1 (object)
+
+
+### Properties
++ `data` (Gif, optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+
+
+## Gifs Search Response (object)
+
+
+### Properties
++ `data` (array[Gif], optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
++ `pagination` (Pagination, optional) - The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+
+
+## Gifs Translate Response (object)
+
+
+### Properties
++ `data` (Gif, optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+
+
+## Gifs Trending Response (object)
+
+
+### Properties
++ `data` (array[Gif], optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
++ `pagination` (Pagination, optional) - The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+
+
+## Images (object)
+An object containing data for various available formats and sizes of this GIF.
+
+### Properties
++ `downsized` (Image, optional) 
++ `downsized_large` (Image, optional) 
++ `downsized_medium` (Image, optional) 
++ `downsized_small` (Image, optional) 
++ `downsized_still` (Image, optional) 
++ `fixed_height` (Image, optional) 
++ `fixed_height_downsampled` (Image, optional) 
++ `fixed_height_small` (Image, optional) 
++ `fixed_height_small_still` (Image, optional) 
++ `fixed_height_still` (Image, optional) 
++ `fixed_width` (Image, optional) 
++ `fixed_width_downsampled` (Image, optional) 
++ `fixed_width_small` (Image, optional) 
++ `fixed_width_small_still` (Image, optional) 
++ `fixed_width_still` (Image, optional) 
++ `looping` (Image, optional) 
++ `original` (Image, optional) 
++ `original_still` (Image, optional) 
++ `preview` (Image, optional) 
++ `preview_gif` (Image, optional) 
+
+
+## Stickers Random Response (object)
+
+
+### Properties
++ `data` (Gif, optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+
+
+## Stickers Search Response (object)
+
+
+### Properties
++ `data` (array[Gif], optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
++ `pagination` (Pagination, optional) - The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+
+
+## Stickers Translate Response (object)
+
+
+### Properties
++ `data` (Gif, optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
+
+
+## Stickers Trending Response (object)
+
+
+### Properties
++ `data` (array[Gif], optional) 
++ `meta` (Meta, optional) - The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
++ `pagination` (Pagination, optional) - The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
+

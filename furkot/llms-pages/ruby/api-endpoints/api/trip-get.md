@@ -1,0 +1,43 @@
+# Trip GET
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/#/ruby/x-redirect/JTI0ZSUyRiUyRlRyaXBfR0VU
+
+list user's trips
+
+```ruby
+def trip_get
+```
+
+
+# Authentication
+
+This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/llms-pages/ruby/getting-started/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/llms-pages/ruby/getting-started/authorization.md)
+
+
+# Requires scope
+
+## furkot_auth_access_code
+
+`read:trips`
+
+## furkot_auth_implicit
+
+`read:trips`
+
+
+# Response Type
+
+**200**: Successful response
+
+[`Array[Trip]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/llms-pages/ruby/models/structures/trip.md)
+
+
+# Example Usage
+
+```ruby
+result = client_controller.trip_get
+puts result
+```
+
+
+

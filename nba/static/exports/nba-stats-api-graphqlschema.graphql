@@ -1,0 +1,1411 @@
+# API Name: "NBA Stats API"
+# Host: http://stats.nba.com/stats
+# The destination for current and historic NBA statistics.
+
+input GetAllstarballotpredictorGETInput {
+    westPlayer1: String!
+    westPlayer2: String!
+    westPlayer3: String!
+    westPlayer4: String!
+    westPlayer5: String!
+    eastPlayer1: String!
+    eastPlayer2: String!
+    eastPlayer3: String!
+    eastPlayer4: String!
+    eastPlayer5: String!
+    pointCap: String!
+}
+
+input GetBoxscoreGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoreadvancedGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoreadvancedv2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscorefourfactorsGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscorefourfactorsv2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoremiscGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoremiscv2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoreplayertrackv2GETInput {
+    gameID: String!
+}
+
+input GetBoxscorescoringGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscorescoringv2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoresummaryv2GETInput {
+    gameID: String!
+}
+
+input GetBoxscoretraditionalv2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoreusageGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetBoxscoreusagev2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+    startRange: String!
+    endRange: String!
+    rangeType: String!
+}
+
+input GetCommonteamyearsGETInput {
+    leagueID: String!
+}
+
+input GetCommonallplayersGETInput {
+    leagueID: String!
+    season: String!
+    isOnlyCurrentSeason: String!
+}
+
+input GetCommonplayerinfoGETInput {
+    playerID: String!
+}
+
+input GetCommonplayoffseriesGETInput {
+    leagueID: String!
+    season: String!
+}
+
+input GetCommonteamrosterGETInput {
+    season: String!
+    teamID: String!
+}
+
+input GetDraftcombinedrillresultsGETInput {
+    leagueID: String!
+    seasonYear: String!
+}
+
+input GetDraftcombinenonstationaryshootingGETInput {
+    leagueID: String!
+    seasonYear: String!
+}
+
+input GetDraftcombineplayeranthroGETInput {
+    leagueID: String!
+    seasonYear: String!
+}
+
+input GetDraftcombinespotshootingGETInput {
+    leagueID: String!
+    seasonYear: String!
+}
+
+input GetDraftcombinestatsGETInput {
+    leagueID: String!
+    seasonYear: String!
+}
+
+input GetDrafthistoryGETInput {
+    leagueID: String!
+}
+
+input GetFranchisehistoryGETInput {
+    leagueID: String!
+}
+
+input GetHomepageleadersGETInput {
+    statCategory: String!
+    leagueID: String!
+    season: String!
+    seasonType: String!
+    playerOrTeam: String!
+    playerScope: String!
+    gameScope: String!
+    game: String!
+    player: String!
+}
+
+input GetHomepagev2GETInput {
+    statType: String!
+    leagueID: String!
+    season: String!
+    seasonType: String!
+    playerOrTeam: String!
+    playerScope: String!
+    gameScope: String!
+    game: String!
+    player: String!
+}
+
+input GetLeaderstilesGETInput {
+    stat: String!
+    leagueID: String!
+    season: String!
+    seasonType: String!
+    playerOrTeam: String!
+    playerScope: String!
+    gameScope: String!
+    game: String!
+    player: String!
+}
+
+input GetLeaguedashlineupsGETInput {
+    groupQuantity: String!
+    seasonType: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetLeaguedashplayerbiostatsGETInput {
+    perMode: String!
+    leagueID: String!
+    season: String!
+    seasonType: String!
+}
+
+input GetLeaguedashplayerclutchGETInput {
+    clutchTime: String!
+    aheadBehind: String!
+    pointDiff: String!
+    gameScope: String!
+    playerExperience: String!
+    playerPosition: String!
+    starterBench: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetLeaguedashplayerptshotGETInput {
+    leagueID: String!
+    perMode: String!
+    season: String!
+    seasonType: String!
+}
+
+input GetLeaguedashplayershotlocationsGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+    distanceRange: String!
+    gameScope: String!
+    playerExperience: String!
+    playerPosition: String!
+    starterBench: String!
+}
+
+input GetLeaguedashplayerstatsGETInput {
+    gameScope: String!
+    playerExperience: String!
+    playerPosition: String!
+    starterBench: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetLeaguedashptdefendGETInput {
+    leagueID: String!
+    perMode: String!
+    season: String!
+    seasonType: String!
+    defenseCategory: String!
+}
+
+input GetLeaguedashptteamdefendGETInput {
+    leagueID: String!
+    perMode: String!
+    season: String!
+    seasonType: String!
+    defenseCategory: String!
+}
+
+input GetLeaguedashteamclutchGETInput {
+    clutchTime: String!
+    aheadBehind: String!
+    pointDiff: String!
+    gameScope: String!
+    playerExperience: String!
+    playerPosition: String!
+    starterBench: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetLeaguedashteamptshotGETInput {
+    leagueID: String!
+    perMode: String!
+    season: String!
+    seasonType: String!
+}
+
+input GetLeaguedashteamshotlocationsGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+    distanceRange: String!
+    gameScope: String!
+    playerExperience: String!
+    playerPosition: String!
+    starterBench: String!
+}
+
+input GetLeaguedashteamstatsGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetLeagueleadersGETInput {
+    leagueID: String!
+    perMode: String!
+    season: String!
+    seasonType: String!
+    scope: String!
+    statCategory: String!
+}
+
+input GetPlaybyplayGETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+}
+
+input GetPlaybyplayv2GETInput {
+    gameID: String!
+    startPeriod: String!
+    endPeriod: String!
+}
+
+input GetPlayercareerstatsGETInput {
+    perMode: String!
+    playerID: String!
+}
+
+input GetPlayercompareGETInput {
+    playerIDList: String!
+    vsPlayerIDList: String!
+    seasonType: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbyclutchGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbygamesplitsGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbygeneralsplitsGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbylastngamesGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbyopponentGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbyshootingsplitsGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbyteamperformanceGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashboardbyyearoveryearGETInput {
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashptpassGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashptrebGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashptreboundlogsGETInput {
+    season: String!
+    seasonType: String!
+    playerID: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashptshotdefendGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayerdashptshotlogGETInput {
+    leagueID: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    teamID: String!
+}
+
+input GetPlayerdashptshotsGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    playerID: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayergamelogGETInput {
+    playerID: String!
+    season: String!
+    seasonType: String!
+}
+
+input GetPlayerprofileGETInput {
+    leagueID: String!
+    playerID: String!
+    season: String!
+    seasonType: String!
+    graphStartSeason: String!
+    graphEndSeason: String!
+    graphStat: String!
+}
+
+input GetPlayerprofilev2GETInput {
+    perMode: String!
+    playerID: String!
+}
+
+input GetPlayersvsplayersGETInput {
+    playerTeamID: String!
+    playerID1: String!
+    playerID2: String!
+    playerID3: String!
+    playerID4: String!
+    playerID5: String!
+    vsTeamID: String!
+    vsPlayerID1: String!
+    vsPlayerID2: String!
+    vsPlayerID3: String!
+    vsPlayerID4: String!
+    vsPlayerID5: String!
+    seasonType: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayervsplayerGETInput {
+    playerID: String!
+    vsPlayerID: String!
+    seasonType: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetPlayoffpictureGETInput {
+    leagueID: String!
+    seasonID: String!
+}
+
+input GetScoreboardGETInput {
+    gameDate: String!
+    leagueID: String!
+    dayOffset: String!
+}
+
+input GetScoreboardv2GETInput {
+    gameDate: String!
+    leagueID: String!
+    dayOffset: String!
+}
+
+input GetShotchartdetailGETInput {
+    seasonType: String!
+    teamID: String!
+    playerID: String!
+    gameID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    position: String!
+    rookieYear: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+    contextMeasure: String!
+}
+
+input GetShotchartlineupdetailGETInput {
+    leagueID: String!
+    season: String!
+    seasonType: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+    gameID: String!
+    gROUPID: String!
+    contextMeasure: String!
+    contextFilter: String!
+}
+
+input GetTeamdashboardbyclutchGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbygamesplitsGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbygeneralsplitsGETInput {
+    seasonType: String!
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbylastngamesGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbyopponentGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbyshootingsplitsGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbyteamperformanceGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashboardbyyearoveryearGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashlineupsGETInput {
+    groupQuantity: String!
+    gameID: String!
+    seasonType: String!
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashptpassGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    lastNGames: String!
+}
+
+input GetTeamdashptrebGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamdashptshotsGETInput {
+    perMode: String!
+    season: String!
+    seasonType: String!
+    teamID: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamgamelogGETInput {
+    teamID: String!
+    season: String!
+    seasonType: String!
+}
+
+input GetTeaminfocommonGETInput {
+    season: String!
+    teamID: String!
+    leagueID: String!
+    seasonType: String!
+}
+
+input GetTeamplayerdashboardGETInput {
+    seasonType: String!
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamplayeronoffdetailsGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamplayeronoffsummaryGETInput {
+    teamID: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    seasonType: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamvsplayerGETInput {
+    teamID: String!
+    vsPlayerID: String!
+    seasonType: String!
+    measureType: String!
+    perMode: String!
+    plusMinus: String!
+    paceAdjust: String!
+    rank: String!
+    season: String!
+    outcome: String!
+    location: String!
+    month: String!
+    seasonSegment: String!
+    dateFrom: String!
+    dateTo: String!
+    opponentTeamID: String!
+    vsConference: String!
+    vsDivision: String!
+    gameSegment: String!
+    period: String!
+    lastNGames: String!
+}
+
+input GetTeamyearbyyearstatsGETInput {
+    leagueID: String!
+    seasonType: String!
+    perMode: String!
+    teamID: String!
+}
+
+input GetVideostatusGETInput {
+    leagueID: String!
+    gameDate: String!
+}
+
+type Query {
+    getAllstarballotpredictorGET(input: GetAllstarballotpredictorGETInput!): String
+    getBoxscoreGET(input: GetBoxscoreGETInput!): String
+    getBoxscoreadvancedGET(input: GetBoxscoreadvancedGETInput!): String
+    getBoxscoreadvancedv2GET(input: GetBoxscoreadvancedv2GETInput!): String
+    getBoxscorefourfactorsGET(input: GetBoxscorefourfactorsGETInput!): String
+    getBoxscorefourfactorsv2GET(input: GetBoxscorefourfactorsv2GETInput!): String
+    getBoxscoremiscGET(input: GetBoxscoremiscGETInput!): String
+    getBoxscoremiscv2GET(input: GetBoxscoremiscv2GETInput!): String
+    getBoxscoreplayertrackv2GET(input: GetBoxscoreplayertrackv2GETInput!): String
+    getBoxscorescoringGET(input: GetBoxscorescoringGETInput!): String
+    getBoxscorescoringv2GET(input: GetBoxscorescoringv2GETInput!): String
+    getBoxscoresummaryv2GET(input: GetBoxscoresummaryv2GETInput!): String
+    getBoxscoretraditionalv2GET(input: GetBoxscoretraditionalv2GETInput!): String
+    getBoxscoreusageGET(input: GetBoxscoreusageGETInput!): String
+    getBoxscoreusagev2GET(input: GetBoxscoreusagev2GETInput!): String
+    getCommonteamyearsGET(input: GetCommonteamyearsGETInput!): String
+    getCommonallplayersGET(input: GetCommonallplayersGETInput!): String
+    getCommonplayerinfoGET(input: GetCommonplayerinfoGETInput!): String
+    getCommonplayoffseriesGET(input: GetCommonplayoffseriesGETInput!): String
+    getCommonteamrosterGET(input: GetCommonteamrosterGETInput!): String
+    getDraftcombinedrillresultsGET(input: GetDraftcombinedrillresultsGETInput!): String
+    getDraftcombinenonstationaryshootingGET(input: GetDraftcombinenonstationaryshootingGETInput!): String
+    getDraftcombineplayeranthroGET(input: GetDraftcombineplayeranthroGETInput!): String
+    getDraftcombinespotshootingGET(input: GetDraftcombinespotshootingGETInput!): String
+    getDraftcombinestatsGET(input: GetDraftcombinestatsGETInput!): String
+    getDrafthistoryGET(input: GetDrafthistoryGETInput!): String
+    getFranchisehistoryGET(input: GetFranchisehistoryGETInput!): String
+    getHomepageleadersGET(input: GetHomepageleadersGETInput!): String
+    getHomepagev2GET(input: GetHomepagev2GETInput!): String
+    getLeaderstilesGET(input: GetLeaderstilesGETInput!): String
+    getLeaguedashlineupsGET(input: GetLeaguedashlineupsGETInput!): String
+    getLeaguedashplayerbiostatsGET(input: GetLeaguedashplayerbiostatsGETInput!): String
+    getLeaguedashplayerclutchGET(input: GetLeaguedashplayerclutchGETInput!): String
+    getLeaguedashplayerptshotGET(input: GetLeaguedashplayerptshotGETInput!): String
+    getLeaguedashplayershotlocationsGET(input: GetLeaguedashplayershotlocationsGETInput!): String
+    getLeaguedashplayerstatsGET(input: GetLeaguedashplayerstatsGETInput!): String
+    getLeaguedashptdefendGET(input: GetLeaguedashptdefendGETInput!): String
+    getLeaguedashptteamdefendGET(input: GetLeaguedashptteamdefendGETInput!): String
+    getLeaguedashteamclutchGET(input: GetLeaguedashteamclutchGETInput!): String
+    getLeaguedashteamptshotGET(input: GetLeaguedashteamptshotGETInput!): String
+    getLeaguedashteamshotlocationsGET(input: GetLeaguedashteamshotlocationsGETInput!): String
+    getLeaguedashteamstatsGET(input: GetLeaguedashteamstatsGETInput!): String
+    getLeagueleadersGET(input: GetLeagueleadersGETInput!): String
+    getPlaybyplayGET(input: GetPlaybyplayGETInput!): String
+    getPlaybyplayv2GET(input: GetPlaybyplayv2GETInput!): String
+    getPlayercareerstatsGET(input: GetPlayercareerstatsGETInput!): String
+    getPlayercompareGET(input: GetPlayercompareGETInput!): String
+    getPlayerdashboardbyclutchGET(input: GetPlayerdashboardbyclutchGETInput!): String
+    getPlayerdashboardbygamesplitsGET(input: GetPlayerdashboardbygamesplitsGETInput!): String
+    getPlayerdashboardbygeneralsplitsGET(input: GetPlayerdashboardbygeneralsplitsGETInput!): String
+    getPlayerdashboardbylastngamesGET(input: GetPlayerdashboardbylastngamesGETInput!): String
+    getPlayerdashboardbyopponentGET(input: GetPlayerdashboardbyopponentGETInput!): String
+    getPlayerdashboardbyshootingsplitsGET(input: GetPlayerdashboardbyshootingsplitsGETInput!): String
+    getPlayerdashboardbyteamperformanceGET(input: GetPlayerdashboardbyteamperformanceGETInput!): String
+    getPlayerdashboardbyyearoveryearGET(input: GetPlayerdashboardbyyearoveryearGETInput!): String
+    getPlayerdashptpassGET(input: GetPlayerdashptpassGETInput!): String
+    getPlayerdashptrebGET(input: GetPlayerdashptrebGETInput!): String
+    getPlayerdashptreboundlogsGET(input: GetPlayerdashptreboundlogsGETInput!): String
+    getPlayerdashptshotdefendGET(input: GetPlayerdashptshotdefendGETInput!): String
+    getPlayerdashptshotlogGET(input: GetPlayerdashptshotlogGETInput!): String
+    getPlayerdashptshotsGET(input: GetPlayerdashptshotsGETInput!): String
+    getPlayergamelogGET(input: GetPlayergamelogGETInput!): String
+    getPlayerprofileGET(input: GetPlayerprofileGETInput!): String
+    getPlayerprofilev2GET(input: GetPlayerprofilev2GETInput!): String
+    getPlayersvsplayersGET(input: GetPlayersvsplayersGETInput!): String
+    getPlayervsplayerGET(input: GetPlayervsplayerGETInput!): String
+    getPlayoffpictureGET(input: GetPlayoffpictureGETInput!): String
+    getScoreboardGET(input: GetScoreboardGETInput!): String
+    getScoreboardv2GET(input: GetScoreboardv2GETInput!): String
+    getShotchartdetailGET(input: GetShotchartdetailGETInput!): String
+    getShotchartlineupdetailGET(input: GetShotchartlineupdetailGETInput!): String
+    getTeamdashboardbyclutchGET(input: GetTeamdashboardbyclutchGETInput!): String
+    getTeamdashboardbygamesplitsGET(input: GetTeamdashboardbygamesplitsGETInput!): String
+    getTeamdashboardbygeneralsplitsGET(input: GetTeamdashboardbygeneralsplitsGETInput!): String
+    getTeamdashboardbylastngamesGET(input: GetTeamdashboardbylastngamesGETInput!): String
+    getTeamdashboardbyopponentGET(input: GetTeamdashboardbyopponentGETInput!): String
+    getTeamdashboardbyshootingsplitsGET(input: GetTeamdashboardbyshootingsplitsGETInput!): String
+    getTeamdashboardbyteamperformanceGET(input: GetTeamdashboardbyteamperformanceGETInput!): String
+    getTeamdashboardbyyearoveryearGET(input: GetTeamdashboardbyyearoveryearGETInput!): String
+    getTeamdashlineupsGET(input: GetTeamdashlineupsGETInput!): String
+    getTeamdashptpassGET(input: GetTeamdashptpassGETInput!): String
+    getTeamdashptrebGET(input: GetTeamdashptrebGETInput!): String
+    getTeamdashptshotsGET(input: GetTeamdashptshotsGETInput!): String
+    getTeamgamelogGET(input: GetTeamgamelogGETInput!): String
+    getTeaminfocommonGET(input: GetTeaminfocommonGETInput!): String
+    getTeamplayerdashboardGET(input: GetTeamplayerdashboardGETInput!): String
+    getTeamplayeronoffdetailsGET(input: GetTeamplayeronoffdetailsGETInput!): String
+    getTeamplayeronoffsummaryGET(input: GetTeamplayeronoffsummaryGETInput!): String
+    getTeamvsplayerGET(input: GetTeamvsplayerGETInput!): String
+    getTeamyearbyyearstatsGET(input: GetTeamyearbyyearstatsGETInput!): String
+    getVideostatusGET(input: GetVideostatusGETInput!): String
+}
+
+type Mutation {
+    _: Boolean
+}
+
+schema {
+    mutation: Mutation
+    query: Query
+}

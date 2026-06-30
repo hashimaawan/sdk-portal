@@ -1,0 +1,87 @@
+# API Name: "Furkot Trips"
+# Host: https://trips.furkot.com/pub/api
+# Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+
+"travel mode"
+enum Mode {
+    BICYCLE
+    CAR
+    MOTORCYCLE
+    OTHER
+    WALK
+}
+
+type Step {
+    "address of the stop"
+    address: String!
+    "arrival at the stop in its local timezone as YYYY-MM-DDThh:mm"
+    arrival: String!
+    "geographical coordinates of the stop"
+    coordinates: Coordinates!
+    "departure from the stop in its local timezone as YYYY-MM-DDThh:mm"
+    departure: String!
+    "name of the stop"
+    name: String!
+    "number of nights"
+    nights: Int!
+    "true for pass-through points anchoring route"
+    passthru: Boolean!
+    "route leading to the stop"
+    route: Route!
+    "url of the page with more information about the stop"
+    url: String!
+}
+
+type Trip {
+    "begin of the trip in its local timezone as YYYY-MM-DDThh:mm"
+    begin: String!
+    "description of the trip (truncated to 200 characters)"
+    description: String!
+    "end of the trip in its local timezone as YYYY-MM-DDThh:mm"
+    end: String!
+    "Unique ID of the trip"
+    id: String!
+    "name of the trip"
+    name: String!
+}
+
+"geographical coordinates of the stop"
+type Coordinates {
+    "latitude"
+    lat: Float!
+    "longitude"
+    lon: Float!
+}
+
+"route leading to the stop"
+type Route {
+    "route distance in meters"
+    distance: Int!
+    "route duration in seconds"
+    duration: Int!
+    "travel mode"
+    mode: Mode!
+    "route path compatible with Google polyline encoding algorithm"
+    polyline: String!
+}
+
+input GetTripstopbytripidGETInput {
+    "id of the trip"
+    tripId: String!
+}
+
+type Query {
+    "list user's trips"
+    getTripGET: [Trip!]
+    "list stops for a trip identified by {trip_id}"
+    getTripstopbytripidGET(input: GetTripstopbytripidGETInput!): [Step!]
+}
+
+type Mutation {
+    _: Boolean
+}
+
+schema {
+    mutation: Mutation
+    query: Query
+}

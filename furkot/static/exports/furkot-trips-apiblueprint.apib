@@ -1,0 +1,100 @@
+FORMAT: 1A
+HOST: https://trips.furkot.com/pub/api
+
+# Furkot Trips
+Furkot provides Rest API to access user trip data.
+Using Furkot API an application can list user trips and display stops for a specific trip.
+Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+
+
+## Authentication
+This API uses OAuth v2 Authorization Code Grant for its authentication.
+
+The properties required for this OAuth implentation are as follows:
++ Access Token Url - /access_token
++ Authorization Url - /authorize
+
+# Trip [/trip]
+
+## TripGET [GET]
+list user's trips
+
++ Response 200 (application/json)
+
+        Successful response
+
+    + Attributes (array[Trip])
+
+
+
+
+# Trip Stop By Trip Id [/trip/{trip_id}/stop]
+
++ Parameters
+    + trip_id (string, required)
+
+        id of the trip
+
+
+## TripStopByTripIdGET [GET]
+list stops for a trip identified by {trip_id}
+
++ Response 200 (application/json)
+
+        Successful response
+
+    + Attributes (array[Step])
+
+
+
+
+# Data Structures
+
+## Step (object)
+
+
+### Properties
++ `address` (string, optional) - address of the stop
++ `arrival` (string, optional) - arrival at the stop in its local timezone as YYYY-MM-DDThh:mm
++ `coordinates` (Coordinates, optional) - geographical coordinates of the stop
++ `departure` (string, optional) - departure from the stop in its local timezone as YYYY-MM-DDThh:mm
++ `name` (string, optional) - name of the stop
++ `nights` (number, optional) - number of nights
++ `passthru` (boolean, optional) - true for pass-through points anchoring route
++ `route` (Route, optional) - route leading to the stop
++ `url` (string, optional) - url of the page with more information about the stop
+
+
+## Trip (object)
+
+
+### Properties
++ `begin` (string, optional) - begin of the trip in its local timezone as YYYY-MM-DDThh:mm
++ `description` (string, optional) - description of the trip (truncated to 200 characters)
++ `end` (string, optional) - end of the trip in its local timezone as YYYY-MM-DDThh:mm
++ `id` (string, optional) - Unique ID of the trip
++ `name` (string, optional) - name of the trip
+
+
+## Coordinates (object)
+geographical coordinates of the stop
+
+### Properties
++ `lat` (number, optional) - latitude
++ `lon` (number, optional) - longitude
+
+
+## Route (object)
+route leading to the stop
+
+### Properties
++ `distance` (number, optional) - route distance in meters
++ `duration` (number, optional) - route duration in seconds
++ `mode` (enum[string], optional) - travel mode
+    + `car`
+    + `motorcycle`
+    + `bicycle`
+    + `walk`
+    + `other`
++ `polyline` (string, optional) - route path compatible with Google polyline encoding algorithm
+

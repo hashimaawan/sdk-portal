@@ -1,0 +1,4294 @@
+# API Name: "Hetzner Cloud API"
+# Host: https://api.hetzner.cloud/v1
+# This is the official API documentation for the Public Hetzner Cloud.\n\n## Introduction\n\nThe Hetzner Cloud API operates over HTTPS and uses JSON as its data format. The API is a RESTful API and utilizes HTTP methods and HTTP status codes to specify requests and responses.\n\nAs an alternative to working directly with our API you may also consider to use:\n* Our CLI program [hcloud](https://github.com/hetznercloud/cli)\n* Our [library for Go](https://github.com/hetznercloud/hcloud-go)\n* Our [library for Python](https://github.com/hetznercloud/hcloud-python)\n\nAlso you can find a [list of libraries, tools, and integrations on GitHub](https://github.com/hetznercloud/awesome-hcloud).\n\nIf you are developing integrations based on our API and your product is Open Source you may be eligible for a free one time €50 (excl. VAT) credit on your account. Please contact us via the the support page on your Cloud Console and let us know the following:\n* The type of integration you would like to develop\n* Link to the GitHub repo you will use for the Project\n* Link to some other Open Source work you have already done (if you have done so)\n\n## Getting Started\nTo get started using the API you first need an API token. Sign in into the [Hetzner Cloud Console](https://console.hetzner.cloud/) choose a Project, go to `Security` → `API Tokens`, and generate a new token. Make sure to copy the token because it won’t be shown to you again. A token is bound to a Project, to interact with the API of another Project you have to create a new token inside the Project. Let’s say your new token is `jEheVytlAoFl7F8MqUQ7jAo2hOXASztX`.\n\nYou’re now ready to do your first request against the API. To get a list of all Servers in your Project, issue the example request on the right side using [curl](https://curl.haxx.se/).\n\nMake sure to replace the token in the example command with the token you have just created. Since your Project probably does not contain any Servers yet, the example response will look like the response on the right side. We will almost always provide a resource root like `servers` inside the example response. A response can also contain a `meta` object with information like [Pagination](https://docs.hetzner.cloud/#overview-pagination).\n\n**Example Request**\n```bash\ncurl -H \"Authorization: Bearer jEheVytlAoFl7F8MqUQ7jAo2hOXASztX\" \\\n    https://api.hetzner.cloud/v1/servers\n```\n\n**Example Response**\n```json\n{\n    \"servers\": [],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"per_page\": 25,\n            \"previous_page\": null,\n            \"next_page\": null,\n            \"last_page\": 1,\n            \"total_entries\": 0\n        }\n    }\n}\n```\n\n## Authentication\nAll requests to the Hetzner Cloud API must be authenticated via a API token. Include your secret API token in every request you send to the API with the `Authorization` HTTP header.\n\nTo create a new API token for your Project, switch into the [Hetzner Cloud Console](https://console.hetzner.cloud/) choose a Project, go to `Security` → `API Tokens`, and generate a new token.\n\n**Example Authorization header**\n```html\nAuthorization: Bearer LRK9DAWQ1ZAEFSrCNEEzLCUwhYX1U3g7wMg4dTlkkDC96fyDuyJ39nVbVjCKSDfj\n```\n\n## Errors\nErrors are indicated by HTTP status codes. Further, the response of the request which generated the error contains an error code, an error message, and, optionally, error details. The schema of the error details object depends on the error code.\n\nThe error response contains the following keys:\n\n| Keys      | Meaning                                                               |\n|-----------|-----------------------------------------------------------------------|\n| `code`    | Short string indicating the type of error (machine-parsable)          |\n| `message` | Textual description on what has gone wrong                            |\n| `details` | An object providing for details on the error (schema depends on code) |\n\n**Example response**\n```json\n{\n  \"error\": {\n    \"code\": \"invalid_input\",\n    \"message\": \"invalid input in field 'broken_field': is too long\",\n    \"details\": {\n      \"fields\": [\n        {\n          \"name\": \"broken_field\",\n          \"messages\": [\"is too long\"]\n        }\n      ]\n    }\n  }\n}\n```\n\n### Error Codes\n\n| Code                      | Description                                                                      |\n|---------------------------|----------------------------------------------------------------------------------|\n| `forbidden`               | Insufficient permissions for this request                                        |\n| `invalid_input`           | Error while parsing or processing the input                                      |\n| `json_error`              | Invalid JSON input in your request                                               |\n| `locked`                  | The item you are trying to access is locked (there is already an Action running) |\n| `not_found`               | Entity not found                                                                 |\n| `rate_limit_exceeded`     | Error when sending too many requests                                             |\n| `resource_limit_exceeded` | Error when exceeding the maximum quantity of a resource for an account           |\n| `resource_unavailable`    | The requested resource is currently unavailable                                  |\n| `service_error`           | Error within a service                                                           |\n| `uniqueness_error`        | One or more of the objects fields must be unique                                 |\n| `protected`               | The Action you are trying to start is protected for this resource                |\n| `maintenance`             | Cannot perform operation due to maintenance                                      |\n| `conflict`                | The resource has changed during the request, please retry                        |\n| `unsupported_error`       | The corresponding resource does not support the Action                           |\n| `token_readonly`          | The token is only allowed to perform GET requests                                |\n| `unavailable`             | A service or product is currently not available                                  |\n\n**invalid_input**\n```json\n{\n  \"error\": {\n    \"code\": \"invalid_input\",\n    \"message\": \"invalid input in field 'broken_field': is too long\",\n    \"details\": {\n      \"fields\": [\n        {\n          \"name\": \"broken_field\",\n          \"messages\": [\"is too long\"]\n        }\n      ]\n    }\n  }\n}\n```\n\n**uniqueness_error**\n```json\n{\n  \"error\": {\n    \"code\": \"uniqueness_error\",\n    \"message\": \"SSH key with the same fingerprint already exists\",\n    \"details\": {\n      \"fields\": [\n        {\n          \"name\": \"public_key\"\n        }\n      ]\n    }\n  }\n}\n```\n\n**resource_limit_exceeded**\n```json\n{\n  \"error\": {\n    \"code\": \"resource_limit_exceeded\",\n    \"message\": \"project limit exceeded\",\n    \"details\": {\n      \"limits\": [\n        {\n          \"name\": \"project_limit\"\n        }\n      ]\n    }\n  }\n}\n```\n\n## Labels\nLabels are `key/value` pairs that can be attached to all resources.\n\nValid label keys have two segments: an optional prefix and name, separated by a slash (`/`). The name segment is required and must be a string of 63 characters or less, beginning and ending with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between. The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots (`.`), not longer than 253 characters in total, followed by a slash (`/`).\n\nValid label values must be a string of 63 characters or less and must be empty or begin and end with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.\n\nThe `hetzner.cloud/` prefix is reserved and cannot be used.\n\n**Example Labels**\n```json\n{\n  \"labels\": {\n    \"environment\":\"development\",\n    \"service\":\"backend\",\n    \"example.com/my\":\"label\",\n    \"just-a-key\":\"\"\n  }\n}\n```\n\n## Label Selector\nFor resources with labels, you can filter resources by their labels using the label selector query language.\n\n| Expression           | Meaning                                                             |\n|----------------------|---------------------------------------------------------------------|\n| `k==v` / `k=v`       | Value of key `k` does equal value `v`                               |\n| `k!=v`               | Value of key `k` does not equal value `v`                           |\n| `k`                  | Key `k` is present                                                  |\n| `!k`                 | Key `k` is not present                                              |\n| `k in (v1,v2,v3)`    | Value of key `k` is `v1`, `v2`, or `v3`                             |\n| `k notin (v1,v2,v3)` | Value of key `k` is neither `v1`, nor `v2`, nor `v3`                |\n| `k1==v,!k2`          | Value of key `k1` is `v` and key `k2` is not present                |\n\n### Examples\n* Returns all resources that have a `env=production` label and that don't have a `type=database` label:\n\n  `env=production,type!=database`\n* Returns all resources that have a `env=testing` or `env=staging` label:\n\n    `env in (testing,staging)`\n* Returns all resources that don't have a `type` label:\n\n    `!type`\n\n## Pagination\nResponses which return multiple items support pagination. If they do support pagination, it can be controlled with following query string parameters:\n\n* A `page` parameter specifies the page to fetch. The number of the first page is 1.\n* A `per_page` parameter specifies the number of items returned per page. The default value is 25, the maximum value is 50 except otherwise specified in the documentation.\n\nResponses contain a `Link` header with pagination information.\n\nAdditionally, if the response body is JSON and the root object is an object, that object has a `pagination` object inside the `meta` object with pagination information:\n\n**Example Pagination**\n```json\n{\n    \"servers\": [...],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 2,\n            \"per_page\": 25,\n            \"previous_page\": 1,\n            \"next_page\": 3,\n            \"last_page\": 4,\n            \"total_entries\": 100\n        }\n    }\n}\n```\n\nThe keys `previous_page`, `next_page`, `last_page`, and `total_entries` may be `null` when on the first page, last page, or when the total number of entries is unknown.\n\n**Example Pagination Link header**\n```bash\nLink: <https://api.hetzner.cloud/v1/actions?page=2&per_page=5>; rel=\"prev\",\n      <https://api.hetzner.cloud/v1/actions?page=4&per_page=5>; rel=\"next\",\n      <https://api.hetzner.cloud/v1/actions?page=6&per_page=5>; rel=\"last\"\n```\n\nLine breaks have been added for display purposes only and responses may only contain some of the above `rel` values.\n\n## Rate Limiting\nAll requests, whether they are authenticated or not, are subject to rate limiting. If you have reached your limit, your requests will be handled with a `429 Too Many Requests` error. Burst requests are allowed. Responses contain serveral headers which provide information about your current rate limit status.\n\n* The `RateLimit-Limit` header contains the total number of requests you can perform per hour.\n* The `RateLimit-Remaining` header contains the number of requests remaining in the current rate limit time frame.\n* The `RateLimit-Reset` header contains a UNIX timestamp of the point in time when your rate limit will have recovered and you will have the full number of requests available again.\n\nThe default limit is 3600 requests per hour and per Project. The number of remaining requests increases gradually. For example, when your limit is 3600 requests per hour, the number of remaining requests will increase by 1 every second.\n\n## Server Metadata\nYour Server can discover metadata about itself by doing a HTTP request to specific URLs. The following data is available:\n\n| Data              | Format | Contents                                                     |\n|-------------------|--------|--------------------------------------------------------------|\n| hostname          | text   | Name of the Server as set in the api                         |\n| instance-id       | number | ID of the server                                             |\n| public-ipv4       | text   | Primary public IPv4 address                                  |\n| private-networks  | yaml   | Details about the private networks the Server is attached to |\n| availability-zone | text   | Name of the availability zone that Server runs in            |\n| region            | text   | Network zone, e.g. eu-central                                |\n\n**Example: Summary**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata\n```\n\n```yaml\navailability-zone: hel1-dc2\nhostname: my-server\ninstance-id: 42\npublic-ipv4: 1.2.3.4\nregion: eu-central\n```\n\n**Example: Hostname**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata/hostname\nmy-server\n```\n\n**Example: Instance ID**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata/instance-id\n42\n```\n\n**Example: Public IPv4**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata/public-ipv4\n1.2.3.4\n```\n\n**Example: Private Networks**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata/private-networks\n```\n\n```json\n- ip: 10.0.0.2\n  alias_ips: [10.0.0.3, 10.0.0.4]\n  interface_num: 1\n  mac_address: 86:00:00:2a:7d:e0\n  network_id: 1234\n  network_name: nw-test1\n  network: 10.0.0.0/8\n  subnet: 10.0.0.0/24\n  gateway: 10.0.0.1\n- ip: 192.168.0.2\n  alias_ips: []\n  interface_num: 2\n  mac_address: 86:00:00:2a:7d:e1\n  network_id: 4321\n  network_name: nw-test2\n  network: 192.168.0.0/16\n  subnet: 192.168.0.0/24\n  gateway: 192.168.0.1\n```\n\n**Example: Availability Zone**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata/availability-zone\nhel1-dc2\n```\n\n**Example: Region**\n```bash\n$ curl http://169.254.169.254/hetzner/v1/metadata/region\neu-central\n```\n\n## Sorting\nSome responses which return multiple items support sorting. If they do support sorting the documentation states which fields can be used for sorting. You specify sorting with the `sort` query string parameter. You can sort by multiple fields. You can set the sort direction by appending `:asc` or `:desc` to the field name. By default, ascending sorting is used.\n\n**Example: Sorting**\n```bash\nhttps://api.hetzner.cloud/v1/actions?sort=status\nhttps://api.hetzner.cloud/v1/actions?sort=status:asc\nhttps://api.hetzner.cloud/v1/actions?sort=status:desc\nhttps://api.hetzner.cloud/v1/actions?sort=status:asc&sort=command:desc\n```
+
+enum ParameterSort {
+    COMMAND
+    COMMANDASC
+    COMMANDDESC
+    FINISHED
+    FINISHEDASC
+    FINISHEDDESC
+    ID
+    IDASC
+    IDDESC
+    PROGRESS
+    PROGRESSASC
+    PROGRESSDESC
+    STARTED
+    STARTEDASC
+    STARTEDDESC
+    STATUS
+    STATUSASC
+    STATUSDESC
+}
+
+enum ParameterStatus {
+    ERROR
+    RUNNING
+    SUCCESS
+}
+
+"Status of the Action"
+enum Status {
+    ERROR
+    RUNNING
+    SUCCESS
+}
+
+enum Sort {
+    CREATED
+    CREATEDASC
+    CREATEDDESC
+    ID
+    IDASC
+    IDDESC
+    NAME
+    NAMEASC
+    NAMEDESC
+}
+
+enum ParameterType {
+    MANAGED
+    UPLOADED
+}
+
+"Status of the issuance process of the Certificate"
+enum Issuance {
+    COMPLETED
+    FAILED
+    PENDING
+}
+
+"Status of the renewal process of the Certificate."
+enum Renewal {
+    FAILED
+    PENDING
+    SCHEDULED
+    UNAVAILABLE
+}
+
+"Type of the Certificate"
+enum Type {
+    MANAGED
+    UPLOADED
+}
+
+"Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`."
+enum Type1 {
+    MANAGED
+    UPLOADED
+}
+
+"Type of resource referenced"
+enum Type5 {
+    SERVER
+}
+
+"Type of resource referenced"
+enum Type6 {
+    LABEL_SELECTOR
+    SERVER
+}
+
+"Select traffic direction on which rule should be applied. Use `source_ips` for direction `in` and `destination_ips` for direction `out`."
+enum Direction {
+    IN
+    OUT
+}
+
+"Type of traffic to allow"
+enum Protocol {
+    ESP
+    GRE
+    ICMP
+    TCP
+    UDP
+}
+
+"Type of the resource"
+enum Type7 {
+    LABEL_SELECTOR
+    SERVER
+}
+
+enum Sort2 {
+    CREATED
+    CREATEDASC
+    CREATEDDESC
+    ID
+    IDASC
+    IDDESC
+}
+
+"Type of the Floating IP"
+enum Type16 {
+    IPV4
+    IPV6
+}
+
+"Floating IP type"
+enum Type17 {
+    IPV4
+    IPV6
+}
+
+enum Type21 {
+    APP
+    BACKUP
+    SNAPSHOT
+    SYSTEM
+}
+
+enum Status23 {
+    AVAILABLE
+    CREATING
+}
+
+"Flavor of operating system contained in the Image"
+enum OsFlavor {
+    CENTOS
+    DEBIAN
+    FEDORA
+    UBUNTU
+    UNKNOWN
+}
+
+"Whether the Image can be used or if it's still being created or unavailable"
+enum Status24 {
+    AVAILABLE
+    CREATING
+    UNAVAILABLE
+}
+
+"Type of the Image"
+enum Type22 {
+    APP
+    BACKUP
+    SNAPSHOT
+    SYSTEM
+    TEMPORARY
+}
+
+"Destination Image type to convert to"
+enum Type24 {
+    SNAPSHOT
+}
+
+"Type of the ISO"
+enum Type26 {
+    PRIVATE
+    PUBLIC
+}
+
+"Type of the algorithm"
+enum Type28 {
+    LEAST_CONNECTIONS
+    ROUND_ROBIN
+}
+
+"Type of the health check"
+enum Protocol6 {
+    HTTP
+    TCP
+}
+
+"Protocol of the Load Balancer"
+enum Protocol7 {
+    HTTP
+    HTTPS
+    TCP
+}
+
+enum Status30 {
+    HEALTHY
+    UNHEALTHY
+    UNKNOWN
+}
+
+"Type of the resource"
+enum Type29 {
+    IP
+    LABEL_SELECTOR
+    SERVER
+}
+
+"Algorithm of the Load Balancer"
+enum Type39 {
+    LEAST_CONNECTIONS
+    ROUND_ROBIN
+}
+
+enum Type41 {
+    BANDWIDTH
+    CONNECTIONS_PER_SECOND
+    OPEN_CONNECTIONS
+    REQUESTS_PER_SECOND
+}
+
+"Type of Subnetwork"
+enum Type42 {
+    CLOUD
+    SERVER
+    VSWITCH
+}
+
+enum ParameterType1 {
+    SPREAD
+}
+
+"The type of the Floating IP"
+enum Type48 {
+    IPV4
+    IPV6
+}
+
+"The type of the Primary IP"
+enum Type49 {
+    IPV4
+    IPV6
+}
+
+"Type of the Primary IP"
+enum Type50 {
+    IPV4
+    IPV6
+}
+
+"Primary IP type"
+enum Type51 {
+    IPV4
+    IPV6
+}
+
+"Type of cpu"
+enum CpuType {
+    DEDICATED
+    SHARED
+}
+
+"Type of Server boot drive. Local has higher speed. Network has better availability."
+enum StorageType {
+    LOCAL
+    NETWORK
+}
+
+enum Status70 {
+    DELETING
+    INITIALIZING
+    MIGRATING
+    OFF
+    REBUILDING
+    RUNNING
+    STARTING
+    STOPPING
+    UNKNOWN
+}
+
+"Status of the Firewall on the Server"
+enum Status72 {
+    APPLIED
+    PENDING
+}
+
+"Status of the Server"
+enum Status73 {
+    DELETING
+    INITIALIZING
+    MIGRATING
+    OFF
+    REBUILDING
+    RUNNING
+    STARTING
+    STOPPING
+    UNKNOWN
+}
+
+"Type of Image to create (default: `snapshot`)"
+enum Type63 {
+    BACKUP
+    SNAPSHOT
+}
+
+"Type of rescue system to boot (default: `linux64`)"
+enum Type65 {
+    LINUX32
+    LINUX64
+}
+
+enum Type66 {
+    CPU
+    DISK
+    NETWORK
+}
+
+enum Sort8 {
+    ID
+    IDASC
+    IDDESC
+    NAME
+    NAMEASC
+    NAMEDESC
+}
+
+"Current status of the Volume"
+enum Status113 {
+    AVAILABLE
+    CREATING
+}
+
+type ActionsResponse {
+    actions: [Action!]
+    meta: Meta!
+}
+
+type Action {
+    "Command executed in the Action"
+    command: String!
+    "Error message for the Action if error occurred, otherwise null"
+    error: Error
+    "Point in time when the Action was finished (in ISO-8601 format). Only set if the Action is finished otherwise null."
+    finished: String
+    "ID of the Resource"
+    id: Int!
+    "Progress of Action in percent"
+    progress: Float!
+    "Resources the Action relates to"
+    resources: [Resource!]
+    "Point in time when the Action was started (in ISO-8601 format)"
+    started: String!
+    "Status of the Action"
+    status: Status!
+}
+
+"Error message for the Action if error occurred, otherwise null"
+type Error {
+    "Fixed machine readable code"
+    code: String!
+    "Humanized error message"
+    message: String!
+}
+
+type Resource {
+    "ID of the Resource"
+    id: Int!
+    "Type of resource referenced"
+    type: String!
+}
+
+type Meta {
+    pagination: Pagination!
+}
+
+type Pagination {
+    "ID of the last page available. Can be null if the current page is the last one."
+    lastPage: Float
+    "ID of the next page. Can be null if the current page is the last one."
+    nextPage: Float
+    "Current page number"
+    page: Float!
+    "Maximum number of items shown per page in the response"
+    perPage: Float!
+    "ID of the previous page. Can be null if the current page is the first one."
+    previousPage: Float
+    "The total number of entries that exist in the database for this query. Nullable if unknown."
+    totalEntries: Float
+}
+
+type ActionResponse {
+    action: Action!
+}
+
+type CertificatesResponse {
+    certificates: [Certificate!]
+    meta: Meta!
+}
+
+type Certificate {
+    "Certificate and chain in PEM format, in order so that each record directly certifies the one preceding"
+    certificate: String
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Domains and subdomains covered by the Certificate"
+    domainNames: [String!]
+    "SHA256 fingerprint of the Certificate"
+    fingerprint: String
+    "ID of the Resource"
+    id: Int!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Point in time when the Certificate stops being valid (in ISO-8601 format)"
+    notValidAfter: String
+    "Point in time when the Certificate becomes valid (in ISO-8601 format)"
+    notValidBefore: String
+    "Current status of a type `managed` Certificate, always *null* for type `uploaded` Certificates"
+    status: Status2
+    "Type of the Certificate"
+    type: Type!
+    "Resources currently using the Certificate"
+    usedBy: [UsedBy!]
+}
+
+"Current status of a type `managed` Certificate, always *null* for type `uploaded` Certificates"
+type Status2 {
+    "If issuance or renewal reports `failed`, this property contains information about what happened"
+    error: Error2
+    "Status of the issuance process of the Certificate"
+    issuance: Issuance!
+    "Status of the renewal process of the Certificate."
+    renewal: Renewal!
+}
+
+"If issuance or renewal reports `failed`, this property contains information about what happened"
+type Error2 {
+    code: String!
+    message: String!
+}
+
+type UsedBy {
+    "ID of resource referenced"
+    id: Int!
+    "Type of resource referenced"
+    type: String!
+}
+
+type CreateCertificateRequest {
+    "Certificate and chain in PEM format, in order so that each record directly certifies the one preceding. Required for type `uploaded` Certificates."
+    certificate: String!
+    "Domains and subdomains that should be contained in the Certificate issued by *Let's Encrypt*. Required for type `managed` Certificates."
+    domainNames: [String!]
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Certificate"
+    name: String!
+    "Certificate key in PEM format. Required for type `uploaded` Certificates."
+    privateKey: String!
+    "Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`."
+    type: Type1!
+}
+
+type CreateCertificateResponse {
+    action: NullableAction
+    certificate: Certificate!
+}
+
+type NullableAction {
+    "Command executed in the Action"
+    command: String!
+    "Error message for the Action if error occurred, otherwise null"
+    error: Error
+    "Point in time when the Action was finished (in ISO-8601 format). Only set if the Action is finished otherwise null."
+    finished: String
+    "ID of the Resource"
+    id: Int!
+    "Progress of Action in percent"
+    progress: Float!
+    "Resources the Action relates to"
+    resources: [Resource!]
+    "Point in time when the Action was started (in ISO-8601 format)"
+    started: String!
+    "Status of the Action"
+    status: Status!
+}
+
+type CertificateResponse {
+    certificate: Certificate!
+}
+
+type UpdateCertificateRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New Certificate name"
+    name: String!
+}
+
+type DatacentersResponse {
+    datacenters: [Datacenter!]
+    "The Datacenter which is recommended to be used to create new Servers."
+    recommendation: Float!
+}
+
+type Datacenter {
+    "Description of the Datacenter"
+    description: String!
+    "ID of the Resource"
+    id: Int!
+    location: Location!
+    "Unique identifier of the Datacenter"
+    name: String!
+    "The Server types the Datacenter can handle"
+    serverTypes: ServerTypes!
+}
+
+type Location {
+    "City the Location is closest to"
+    city: String!
+    "ISO 3166-1 alpha-2 code of the country the Location resides in"
+    country: String!
+    "Description of the Location"
+    description: String!
+    "ID of the Location"
+    id: Float!
+    "Latitude of the city closest to the Location"
+    latitude: Float!
+    "Longitude of the city closest to the Location"
+    longitude: Float!
+    "Unique identifier of the Location"
+    name: String!
+    "Name of network zone this Location resides in"
+    networkZone: String!
+}
+
+"The Server types the Datacenter can handle"
+type ServerTypes {
+    "IDs of Server types that are supported and for which the Datacenter has enough resources left"
+    available: [Float!]
+    "IDs of Server types that are supported and for which the Datacenter has enough resources left"
+    availableForMigration: [Float!]
+    "IDs of Server types that are supported in the Datacenter"
+    supported: [Float!]
+}
+
+type DatacentersResponse1 {
+    datacenter: Datacenter!
+}
+
+type FirewallsResponse {
+    firewalls: [Firewall!]
+    meta: Meta!
+}
+
+type Firewall {
+    appliedTo: [AppliedTo!]
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "ID of the Resource"
+    id: Int!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    rules: [Rule!]
+}
+
+type AppliedTo {
+    appliedToResources: [AppliedToResource!]
+    labelSelector: LabelSelector!
+    server: Server!
+    "Type of resource referenced"
+    type: Type6!
+}
+
+type AppliedToResource {
+    server: Server!
+    "Type of resource referenced"
+    type: Type5!
+}
+
+type Server {
+    "ID of the Resource"
+    id: Int!
+}
+
+type LabelSelector {
+    "Label selector"
+    selector: String!
+}
+
+type Rule {
+    "Description of the Rule"
+    description: String
+    "List of permitted IPv4/IPv6 addresses in CIDR notation. Use `0.0.0.0/0` to allow all IPv4 addresses and `::/0` to allow all IPv6 addresses. You can specify 100 CIDRs at most."
+    destinationIps: [String!]
+    "Select traffic direction on which rule should be applied. Use `source_ips` for direction `in` and `destination_ips` for direction `out`."
+    direction: Direction!
+    "Port or port range to which traffic will be allowed, only applicable for protocols TCP and UDP. A port range can be specified by separating two ports with a dash, e.g `1024-5000`."
+    port: String!
+    "Type of traffic to allow"
+    protocol: Protocol!
+    "List of permitted IPv4/IPv6 addresses in CIDR notation. Use `0.0.0.0/0` to allow all IPv4 addresses and `::/0` to allow all IPv6 addresses. You can specify 100 CIDRs at most."
+    sourceIps: [String!]
+}
+
+type CreateFirewallRequest {
+    "Resources the Firewall should be applied to after creation"
+    applyTo: [ApplyTo!]
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Firewall"
+    name: String!
+    "Array of rules"
+    rules: [Rule!]
+}
+
+type ApplyTo {
+    "Configuration for type LabelSelector, required if type is `label_selector`"
+    labelSelector: LabelSelector1!
+    "Configuration for type Server, required if type is `server`"
+    server: Server2!
+    "Type of the resource"
+    type: Type7!
+}
+
+"Configuration for type LabelSelector, required if type is `label_selector`"
+type LabelSelector1 {
+    "Label selector"
+    selector: String!
+}
+
+"Configuration for type Server, required if type is `server`"
+type Server2 {
+    "ID of the Server"
+    id: Int!
+}
+
+type CreateFirewallResponse {
+    actions: [Action!]
+    firewall: Firewall!
+}
+
+type FirewallResponse {
+    firewall: Firewall!
+}
+
+type UpdateFirewallRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New Firewall name"
+    name: String!
+}
+
+type ApplyToResourcesRequest {
+    "Resources the Firewall should be applied to"
+    applyTo: [FirewallApplyToResources!]
+}
+
+type FirewallApplyToResources {
+    "Configuration for type label_selector, required if type is `label_selector`"
+    labelSelector: LabelSelector5!
+    "Configuration for type server, required if type is `server`"
+    server: Server9!
+    "Type of the resource"
+    type: Type7!
+}
+
+"Configuration for type label_selector, required if type is `label_selector`"
+type LabelSelector5 {
+    "Label selector"
+    selector: String!
+}
+
+"Configuration for type server, required if type is `server`"
+type Server9 {
+    "ID of the Server"
+    id: Int!
+}
+
+type RemoveFromResourcesRequest {
+    "Resources the Firewall should be removed from"
+    removeFrom: [FirewallRemoveFromResources!]
+}
+
+type FirewallRemoveFromResources {
+    "Configuration for type label_selector, required if type is `label_selector`"
+    labelSelector: LabelSelector5!
+    "Configuration for type server, required if type is `server`"
+    server: Server9!
+    "Type of the resource"
+    type: Type7!
+}
+
+type SetRulesRequest {
+    "Array of rules"
+    rules: [Rule!]
+}
+
+type FloatingIpsResponse {
+    floatingIps: [FloatingIp!]
+    meta: Meta!
+}
+
+type FloatingIp {
+    "Whether the IP is blocked"
+    blocked: Boolean!
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Description of the Resource"
+    description: String
+    "Array of reverse DNS entries"
+    dnsPtr: [DnsPtr!]
+    "Location the Floating IP was created in. Routing is optimized for this Location."
+    homeLocation: HomeLocation!
+    "ID of the Resource"
+    id: Int!
+    "IP address"
+    ip: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Protection configuration for the Resource"
+    protection: Protection!
+    "ID of the Server the Floating IP is assigned to, null if it is not assigned at all"
+    server: Int
+    "Type of the Floating IP"
+    type: Type16!
+}
+
+type DnsPtr {
+    "DNS pointer for the specific IP address"
+    dnsPtr: String!
+    "Single IPv4 or IPv6 address"
+    ip: String!
+}
+
+"Location the Floating IP was created in. Routing is optimized for this Location."
+type HomeLocation {
+    "City the Location is closest to"
+    city: String!
+    "ISO 3166-1 alpha-2 code of the country the Location resides in"
+    country: String!
+    "Description of the Location"
+    description: String!
+    "ID of the Location"
+    id: Float!
+    "Latitude of the city closest to the Location"
+    latitude: Float!
+    "Longitude of the city closest to the Location"
+    longitude: Float!
+    "Unique identifier of the Location"
+    name: String!
+    "Name of network zone this Location resides in"
+    networkZone: String!
+}
+
+"Protection configuration for the Resource"
+type Protection {
+    "If true, prevents the Resource from being deleted"
+    delete: Boolean!
+}
+
+type CreateFloatingIPRequest {
+    description: String!
+    "Home Location (routing is optimized for that Location). Only optional if Server argument is passed."
+    homeLocation: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    name: String!
+    "Server to assign the Floating IP to"
+    server: Int!
+    "Floating IP type"
+    type: Type17!
+}
+
+type FloatingIpsResponse1 {
+    action: Action!
+    floatingIp: FloatingIp!
+}
+
+type FloatingIpsResponse2 {
+    floatingIp: FloatingIp!
+}
+
+type UpdateFloatingIPRequest {
+    "New Description to set"
+    description: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New unique name to set"
+    name: String!
+}
+
+type FloatingIpsActionsResponse {
+    actions: [Action!]
+}
+
+"#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `floating_ip_assigned`        | The floating IP is already assigned                           |"
+type AssignFloatingIPRequest {
+    "ID of the Server the Floating IP shall be assigned to"
+    server: Int!
+}
+
+type ChangeDNSPTRRequest {
+    "Hostname to set as a reverse DNS PTR entry, will reset to original default value if `null`"
+    dnsPtr: String
+    "IP address for which to set the reverse DNS entry"
+    ip: String!
+}
+
+type ChangeProtectionRequest {
+    "If true, prevents the Floating IP from being deleted"
+    delete: Boolean!
+}
+
+type ImagesResponse {
+    images: [Image!]
+    meta: Meta!
+}
+
+type Image {
+    "ID of Server the Image is bound to. Only set for Images of type `backup`."
+    boundTo: Int
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Information about the Server the Image was created from"
+    createdFrom: CreatedFrom
+    "Point in time where the Image was deleted (in ISO-8601 format)"
+    deleted: String
+    "Point in time when the Image is considered to be deprecated (in ISO-8601 format)"
+    deprecated: String
+    "Description of the Image"
+    description: String!
+    "Size of the disk contained in the Image in GB"
+    diskSize: Float!
+    "ID of the Resource"
+    id: Int!
+    "Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image."
+    imageSize: Float
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Unique identifier of the Image. This value is only set for system Images."
+    name: String
+    "Flavor of operating system contained in the Image"
+    osFlavor: OsFlavor!
+    "Operating system version"
+    osVersion: String
+    "Protection configuration for the Resource"
+    protection: Protection!
+    "Indicates that rapid deploy of the Image is available"
+    rapidDeploy: Boolean!
+    "Whether the Image can be used or if it's still being created or unavailable"
+    status: Status24!
+    "Type of the Image"
+    type: Type22!
+}
+
+"Information about the Server the Image was created from"
+type CreatedFrom {
+    "ID of the Server the Image was created from"
+    id: Int!
+    "Server name at the time the Image was created"
+    name: String!
+}
+
+type ImagesResponse1 {
+    image: Image!
+}
+
+type UpdateImageRequest {
+    "New description of Image"
+    description: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Destination Image type to convert to"
+    type: Type24!
+}
+
+type ImagesActionsChangeProtectionRequest {
+    "If true, prevents the snapshot from being deleted"
+    delete: Boolean!
+}
+
+type IsosResponse {
+    isos: [Iso!]
+    meta: Meta!
+}
+
+type Iso {
+    "ISO 8601 timestamp of deprecation, null if ISO is still available. After the deprecation time it will no longer be possible to attach the ISO to Servers."
+    deprecated: String
+    "Description of the ISO"
+    description: String!
+    "ID of the Resource"
+    id: Int!
+    "Unique identifier of the ISO. Only set for public ISOs"
+    name: String
+    "Type of the ISO"
+    type: Type26!
+}
+
+type IsosResponse1 {
+    iso: Iso!
+}
+
+type LoadBalancerTypesResponse {
+    loadBalancerTypes: [LoadBalancerType!]
+}
+
+type LoadBalancerType {
+    "Point in time when the Load Balancer type is deprecated (in ISO-8601 format)"
+    deprecated: String
+    "Description of the Load Balancer type"
+    description: String!
+    "ID of the Load Balancer type"
+    id: Float!
+    "Number of SSL Certificates that can be assigned to a single Load Balancer"
+    maxAssignedCertificates: Float!
+    "Number of maximum simultaneous open connections"
+    maxConnections: Float!
+    "Number of services a Load Balancer of this type can have"
+    maxServices: Float!
+    "Number of targets a single Load Balancer can have"
+    maxTargets: Float!
+    "Unique identifier of the Load Balancer type"
+    name: String!
+    "Prices in different network zones"
+    prices: [Price!]
+}
+
+type Price {
+    "Name of the Location the price is for"
+    location: String!
+    "Hourly costs for a Resource in this Location"
+    priceHourly: PriceHourly!
+    "Monthly costs for a Resource in this Location"
+    priceMonthly: PriceMonthly!
+}
+
+"Hourly costs for a Resource in this Location"
+type PriceHourly {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"Monthly costs for a Resource in this Location"
+type PriceMonthly {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+type LoadBalancerTypesResponse1 {
+    loadBalancerType: LoadBalancerType!
+}
+
+type LoadBalancersResponse {
+    loadBalancers: [LoadBalancer!]
+    meta: Meta!
+}
+
+type LoadBalancer {
+    "Algorithm of the Load Balancer"
+    algorithm: Algorithm!
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "ID of the Resource"
+    id: Int!
+    "Free Traffic for the current billing period in bytes"
+    includedTraffic: Int!
+    "Inbound Traffic for the current billing period in bytes"
+    ingoingTraffic: Int
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    loadBalancerType: LoadBalancerType!
+    location: Location!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Outbound Traffic for the current billing period in bytes"
+    outgoingTraffic: Int
+    "Private networks information"
+    privateNet: [PrivateNet!]
+    "Protection configuration for the Resource"
+    protection: Protection!
+    "Public network information"
+    publicNet: PublicNet!
+    "List of services that belong to this Load Balancer"
+    services: [LoadBalancerService!]
+    "List of targets that belong to this Load Balancer"
+    targets: [LoadBalancerTarget!]
+}
+
+"Algorithm of the Load Balancer"
+type Algorithm {
+    "Type of the algorithm"
+    type: Type28!
+}
+
+type PrivateNet {
+    ip: String!
+    network: Int!
+}
+
+"Public network information"
+type PublicNet {
+    "Public Interface enabled or not"
+    enabled: Boolean!
+    "IP address (v4)"
+    ipv4: Ipv4!
+    "IP address (v6)"
+    ipv6: Ipv6!
+}
+
+"IP address (v4)"
+type Ipv4 {
+    "Reverse DNS PTR entry for the IPv4 address of this Load Balancer"
+    dnsPtr: String
+    "IP address (v4) of this Load Balancer"
+    ip: String
+}
+
+"IP address (v6)"
+type Ipv6 {
+    "Reverse DNS PTR entry for the IPv6 address of this Load Balancer"
+    dnsPtr: String
+    "IP address (v6) of this Load Balancer"
+    ip: String
+}
+
+type LoadBalancerService {
+    "Port the Load Balancer will balance to"
+    destinationPort: Int!
+    "Service health check"
+    healthCheck: LoadBalancerServiceHealthCheck!
+    "Configuration option for protocols http and https"
+    http: LoadBalancerServiceHTTP!
+    "Port the Load Balancer listens on"
+    listenPort: Int!
+    "Protocol of the Load Balancer"
+    protocol: Protocol7!
+    "Is Proxyprotocol enabled or not"
+    proxyprotocol: Boolean!
+}
+
+"Service health check"
+type LoadBalancerServiceHealthCheck {
+    "Additional configuration for protocol http"
+    http: Http!
+    "Time interval in seconds health checks are performed"
+    interval: Int!
+    "Port the health check will be performed on"
+    port: Int!
+    "Type of the health check"
+    protocol: Protocol6!
+    "Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again"
+    retries: Int!
+    "Time in seconds after an attempt is considered a timeout"
+    timeout: Int!
+}
+
+"Additional configuration for protocol http"
+type Http {
+    "Host header to send in the HTTP request. May not contain spaces, percent or backslash symbols. Can be null, in that case no host header is sent."
+    domain: String
+    "HTTP path to use for health checks. May not contain literal spaces, use percent-encoding instead."
+    path: String!
+    "String that must be contained in HTTP response in order to pass the health check"
+    response: String!
+    "List of returned HTTP status codes in order to pass the health check. Supports the wildcards `?` for exactly one character and `*` for multiple ones. The default is to pass the health check for any status code between 2?? and 3??."
+    statusCodes: [String!]
+    "Use HTTPS for health check"
+    tls: Boolean!
+}
+
+"Configuration option for protocols http and https"
+type LoadBalancerServiceHTTP {
+    "IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is \"http\""
+    certificates: [Int!]
+    "Lifetime of the cookie used for sticky sessions"
+    cookieLifetime: Int!
+    "Name of the cookie used for sticky sessions"
+    cookieName: String!
+    "Redirect HTTP requests to HTTPS. Only available if protocol is \"https\". Default `false`"
+    redirectHttp: Boolean!
+    "Use sticky sessions. Only available if protocol is \"http\" or \"https\". Default `false`"
+    stickySessions: Boolean!
+}
+
+type LoadBalancerTarget {
+    "List of health statuses of the services on this target"
+    healthStatus: [HealthStatus!]
+    "IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+    ip: Ip!
+    "Label selector and a list of selected targets"
+    labelSelector: LabelSelector7!
+    "Server where the traffic should be routed through"
+    server: LoadBalancerTargetServer!
+    "List of selected targets"
+    targets: [Target!]
+    "Type of the resource"
+    type: Type29!
+    "Use the private network IP instead of the public IP. Default value is false."
+    usePrivateIp: Boolean!
+}
+
+type HealthStatus {
+    listenPort: Int!
+    status: Status30!
+}
+
+"IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+type Ip {
+    "IP of a server that belongs to the same customer (public IPv4/IPv6) or private IP in a Subnetwork type vswitch."
+    ip: String!
+}
+
+"Label selector and a list of selected targets"
+type LabelSelector7 {
+    "Label selector"
+    selector: String!
+}
+
+"Server where the traffic should be routed through"
+type LoadBalancerTargetServer {
+    "ID of the Server"
+    id: Int!
+}
+
+type Target {
+    healthStatus: [HealthStatus!]
+    server: Server11!
+    type: String!
+    usePrivateIp: Boolean!
+}
+
+type Server11 {
+    "ID of the Server"
+    id: Int!
+}
+
+type CreateLoadBalancerRequest {
+    "Algorithm of the Load Balancer"
+    algorithm: LoadBalancerAlgorithm!
+    "User-defined labels (key-value pairs)"
+    labels: Labels!
+    "ID or name of the Load Balancer type this Load Balancer should be created with"
+    loadBalancerType: String!
+    "ID or name of Location to create Load Balancer in"
+    location: String!
+    "Name of the Load Balancer"
+    name: String!
+    "ID of the network the Load Balancer should be attached to on creation"
+    network: Int!
+    "Name of network zone"
+    networkZone: String!
+    "Enable or disable the public interface of the Load Balancer"
+    publicInterface: Boolean!
+    "Array of services"
+    services: [LoadBalancerService!]
+    "Array of targets"
+    targets: [LoadBalancerTarget!]
+}
+
+"Algorithm of the Load Balancer"
+type LoadBalancerAlgorithm {
+    "Type of the algorithm"
+    type: Type28!
+}
+
+"User-defined labels (key-value pairs)"
+type Labels {
+    "New label"
+    labelkey: String!
+}
+
+type LoadBalancersResponse1 {
+    action: Action!
+    loadBalancer: LoadBalancer!
+}
+
+type LoadBalancersResponse2 {
+    loadBalancer: LoadBalancer!
+}
+
+type LoadBalancersRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New Load Balancer name"
+    name: String!
+}
+
+type AddTargetRequest {
+    "IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+    ip: Ip!
+    "Configuration for label selector targets, required if type is `label_selector`"
+    labelSelector: LabelSelector12!
+    "Configuration for type Server, required if type is `server`"
+    server: Server16!
+    "Type of the resource"
+    type: Type29!
+    "Use the private network IP instead of the public IP of the Server, requires the Server and Load Balancer to be in the same network. Default value is false."
+    usePrivateIp: Boolean!
+}
+
+"Configuration for label selector targets, required if type is `label_selector`"
+type LabelSelector12 {
+    "Label selector"
+    selector: String!
+}
+
+"Configuration for type Server, required if type is `server`"
+type Server16 {
+    "ID of the Server"
+    id: Float!
+}
+
+type LoadBalancersActionsAttachToNetworkRequest {
+    "IP to request to be assigned to this Load Balancer; if you do not provide this then you will be auto assigned an IP address"
+    ip: String!
+    "ID of an existing network to attach the Load Balancer to"
+    network: Float!
+}
+
+type LoadBalancersActionsChangeAlgorithmRequest {
+    "Algorithm of the Load Balancer"
+    type: Type39!
+}
+
+type ChangeLoadbalancerDnsPtrRequest {
+    "Hostname to set as a reverse DNS PTR entry"
+    dnsPtr: String
+    "Public IP address for which the reverse DNS entry should be set"
+    ip: String!
+}
+
+type LoadBalancersActionsChangeProtectionRequest {
+    "If true, prevents the Load Balancer from being deleted"
+    delete: Boolean!
+}
+
+type ChangeTypeRequest {
+    "ID or name of Load Balancer type the Load Balancer should migrate to"
+    loadBalancerType: String!
+}
+
+type LoadBalancersActionsDeleteServiceRequest {
+    "The listen port of the service you want to delete"
+    listenPort: Float!
+}
+
+type LoadBalancersActionsDetachFromNetworkRequest {
+    "ID of an existing network to detach the Load Balancer from"
+    network: Float!
+}
+
+type RemoveTargetRequest {
+    "IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+    ip: Ip!
+    "Configuration for label selector targets, required if type is `label_selector`"
+    labelSelector: LabelSelector12!
+    "Configuration for type Server, required if type is `server`"
+    server: Server16!
+    "Type of the resource"
+    type: Type29!
+}
+
+type LoadBalancersMetricsResponse {
+    metrics: Metrics!
+}
+
+type Metrics {
+    "End of period of metrics reported (in ISO-8601 format)"
+    end: String!
+    "Start of period of metrics reported (in ISO-8601 format)"
+    start: String!
+    "Resolution of results in seconds."
+    step: Float!
+    "Hash with timeseries information, containing the name of timeseries as key"
+    timeSeries: TimeSeries!
+}
+
+type TimeSeries {
+    "Metrics Timestamps with values"
+    values: [[String!]]
+}
+
+type LocationsResponse {
+    locations: [Location!]
+}
+
+type LocationsResponse1 {
+    location: Location!
+}
+
+type NetworksResponse {
+    meta: Meta!
+    networks: [Network!]
+}
+
+type Network {
+    "Point in time when the Network was created (in ISO-8601 format)"
+    created: String!
+    "ID of the Network"
+    id: Int!
+    "IPv4 prefix of the whole Network"
+    ipRange: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Array of IDs of Load Balancers attached to this Network"
+    loadBalancers: [Int!]
+    "Name of the Network"
+    name: String!
+    "Protection configuration for the Network"
+    protection: Protection11!
+    "Array of routes set in this Network"
+    routes: [Route!]
+    "Array of IDs of Servers attached to this Network"
+    servers: [Int!]
+    "Array subnets allocated in this Network"
+    subnets: [Subnet!]
+}
+
+"Protection configuration for the Network"
+type Protection11 {
+    "If true, prevents the Network from being deleted"
+    delete: Boolean!
+}
+
+type Route {
+    "Destination network or host of this route. Must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first IP of the networks ip_range or with 172.31.1.1. Must be one of the private IPv4 ranges of RFC1918."
+    destination: String!
+    "Gateway for the route. Cannot be the first IP of the networks ip_range and also cannot be 172.31.1.1 as this IP is being used as a gateway for the public network interface of Servers."
+    gateway: String!
+}
+
+type Subnet {
+    "Gateway for Servers attached to this subnet. For subnets of type Server this is always the first IP of the network IP range."
+    gateway: String!
+    "Range to allocate IPs from. Must be a Subnet of the ip_range of the parent network object and must not overlap with any other subnets or with any destinations in routes. Minimum Network size is /30. We suggest that you pick a bigger Network with a /24 netmask."
+    ipRange: String!
+    "Name of Network zone. The Location object contains the `network_zone` property each Location belongs to."
+    networkZone: String!
+    "Type of Subnetwork"
+    type: Type42!
+}
+
+type CreateNetworkRequest {
+    "IP range of the whole network which must span all included subnets. Must be one of the private IPv4 ranges of RFC1918. Minimum network size is /24. We highly recommend that you pick a larger network with a /16 netmask."
+    ipRange: String!
+    "User-defined labels (key-value pairs)"
+    labels: Labels!
+    "Name of the network"
+    name: String!
+    "Array of routes set in this network. The destination of the route must be one of the private IPv4 ranges of RFC1918. The gateway must be a subnet/IP of the ip_range of the network object. The destination must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first IP of the networks ip_range or with 172.31.1.1. The gateway cannot be the first IP of the networks ip_range and also cannot be 172.31.1.1."
+    routes: [Route!]
+    "Array of subnets allocated."
+    subnets: [Subnet1!]
+}
+
+type Subnet1 {
+    "Range to allocate IPs from. Must be a Subnet of the ip_range of the parent network object and must not overlap with any other subnets or with any destinations in routes. Minimum Network size is /30. We suggest that you pick a bigger Network with a /24 netmask."
+    ipRange: String!
+    "Name of Network zone. The Location object contains the `network_zone` property each Location belongs to."
+    networkZone: String!
+    "Type of Subnetwork"
+    type: Type42!
+}
+
+type NetworksResponse1 {
+    network: Network!
+}
+
+type UpdateNetworkRequest {
+    "User-defined labels (key-value pairs)"
+    labels: Labels2!
+    "New network name"
+    name: String!
+}
+
+"User-defined labels (key-value pairs)"
+type Labels2 {
+    labelkey: String!
+}
+
+type AddDeleteRouteRequest {
+    "Destination network or host of this route. Must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first IP of the networks ip_range or with 172.31.1.1. Must be one of the private IPv4 ranges of RFC1918."
+    destination: String!
+    "Gateway for the route. Cannot be the first IP of the networks ip_range, an IP behind a vSwitch or 172.31.1.1, as this IP is being used as a gateway for the public network interface of Servers."
+    gateway: String!
+}
+
+type AddSubnetRequest {
+    "Range to allocate IPs from. Must be a Subnet of the ip_range of the parent network object and must not overlap with any other subnets or with any destinations in routes. If the Subnet is of type vSwitch, it also can not overlap with any gateway in routes. Minimum Network size is /30. We suggest that you pick a bigger Network with a /24 netmask."
+    ipRange: String!
+    "Name of Network zone. The Location object contains the `network_zone` property each Location belongs to."
+    networkZone: String!
+    "Type of Subnetwork"
+    type: Type42!
+    "ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch."
+    vswitchId: Int!
+}
+
+type ChangeIPRangeRequest {
+    "The new prefix for the whole Network"
+    ipRange: String!
+}
+
+type ChangeProtectionRequest1 {
+    "If true, prevents the Network from being deleted"
+    delete: Boolean!
+}
+
+type DeleteSubnetRequest {
+    "IP range of subnet to delete"
+    ipRange: String!
+}
+
+type PlacementGroupsResponse {
+    meta: Meta!
+    placementGroups: [PlacementGroup!]
+}
+
+type PlacementGroup {
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "ID of the Resource"
+    id: Int!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Array of IDs of Servers that are part of this Placement Group"
+    servers: [Int!]
+    "Type of the Placement Group"
+    type: String!
+}
+
+type CreatePlacementGroupRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the PlacementGroup"
+    name: String!
+    "Define the Placement Group Type."
+    type: String!
+}
+
+type CreatePlacementGroupResponse {
+    action: NullableAction
+    placementGroup: PlacementGroup!
+}
+
+type PlacementGroupResponse {
+    placementGroup: PlacementGroup!
+}
+
+type UpdatePlacementGroupRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New PlacementGroup name"
+    name: String!
+}
+
+type PricingResponse {
+    pricing: Pricing!
+}
+
+type Pricing {
+    "Currency the returned prices are expressed in, coded according to ISO 4217"
+    currency: String!
+    "The cost of one Floating IP per month"
+    floatingIp: FloatingIp4!
+    "Costs of Floating IPs types per Location and type"
+    floatingIps: [FloatingIp5!]
+    "The cost of Image per GB/month"
+    image: Image3!
+    "Costs of Load Balancer types per Location and type"
+    loadBalancerTypes: [LoadBalancerType6!]
+    "Costs of Primary IPs types per Location"
+    primaryIps: [PrimaryIp!]
+    "Will increase base Server costs by specific percentage"
+    serverBackup: ServerBackup!
+    "Costs of Server types per Location and type"
+    serverTypes: [ServerTypes2!]
+    "The cost of additional traffic per TB"
+    traffic: Traffic!
+    "The VAT rate used for calculating prices with VAT"
+    vatRate: String!
+    "The cost of Volume per GB/month"
+    volume: Volume!
+}
+
+"The cost of one Floating IP per month"
+type FloatingIp4 {
+    priceMonthly: PriceMonthly6!
+}
+
+type PriceMonthly6 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+type FloatingIp5 {
+    "Floating IP type costs per Location"
+    prices: [Price6!]
+    "The type of the Floating IP"
+    type: Type48!
+}
+
+type Price6 {
+    "Name of the Location the price is for"
+    location: String!
+    "Monthly costs for a Floating IP type in this Location"
+    priceMonthly: PriceMonthly7!
+}
+
+"Monthly costs for a Floating IP type in this Location"
+type PriceMonthly7 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"The cost of Image per GB/month"
+type Image3 {
+    pricePerGbMonth: PricePerGbMonth!
+}
+
+type PricePerGbMonth {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+type LoadBalancerType6 {
+    "ID of the Load Balancer type the price is for"
+    id: Float!
+    "Name of the Load Balancer type the price is for"
+    name: String!
+    "Load Balancer type costs per Location"
+    prices: [Price7!]
+}
+
+type Price7 {
+    "Name of the Location the price is for"
+    location: String!
+    "Hourly costs for a Load Balancer type in this network zone"
+    priceHourly: PriceHourly6!
+    "Monthly costs for a Load Balancer type in this network zone"
+    priceMonthly: PriceMonthly8!
+}
+
+"Hourly costs for a Load Balancer type in this network zone"
+type PriceHourly6 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"Monthly costs for a Load Balancer type in this network zone"
+type PriceMonthly8 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+type PrimaryIp {
+    "Primary IP type costs per Location"
+    prices: [Price8!]
+    "The type of the Primary IP"
+    type: Type49!
+}
+
+type Price8 {
+    "Name of the Location the price is for"
+    location: String!
+    "Hourly costs for a Primary IP type in this Location"
+    priceHourly: PriceHourly7!
+    "Monthly costs for a Primary IP type in this Location"
+    priceMonthly: PriceMonthly9!
+}
+
+"Hourly costs for a Primary IP type in this Location"
+type PriceHourly7 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"Monthly costs for a Primary IP type in this Location"
+type PriceMonthly9 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"Will increase base Server costs by specific percentage"
+type ServerBackup {
+    "Percentage by how much the base price will increase"
+    percentage: String!
+}
+
+type ServerTypes2 {
+    "ID of the Server type the price is for"
+    id: Float!
+    "Name of the Server type the price is for"
+    name: String!
+    "Server type costs per Location"
+    prices: [Price9!]
+}
+
+type Price9 {
+    "Name of the Location the price is for"
+    location: String!
+    "Hourly costs for a Server type in this Location"
+    priceHourly: PriceHourly8!
+    "Monthly costs for a Server type in this Location"
+    priceMonthly: PriceMonthly10!
+}
+
+"Hourly costs for a Server type in this Location"
+type PriceHourly8 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"Monthly costs for a Server type in this Location"
+type PriceMonthly10 {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"The cost of additional traffic per TB"
+type Traffic {
+    pricePerTb: PricePerTb!
+}
+
+type PricePerTb {
+    "Price with VAT added"
+    gross: String!
+    "Price without VAT"
+    net: String!
+}
+
+"The cost of Volume per GB/month"
+type Volume {
+    pricePerGbMonth: PricePerGbMonth!
+}
+
+type PrimaryIPsResponse {
+    meta: Meta!
+    primaryIps: [PrimaryIP1!]
+}
+
+type PrimaryIP1 {
+    "ID of the resource the Primary IP is assigned to, null if it is not assigned at all"
+    assigneeId: Int
+    "Resource type the Primary IP can be assigned to"
+    assigneeType: String!
+    "Delete this Primary IP when the resource it is assigned to is deleted"
+    autoDelete: Boolean!
+    "Whether the IP is blocked"
+    blocked: Boolean!
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Datacenter this Primary IP is located at"
+    datacenter: Datacenter2!
+    "Array of reverse DNS entries"
+    dnsPtr: [DnsPtr!]
+    "ID of the Resource"
+    id: Int!
+    "IP address"
+    ip: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Protection configuration for the Resource"
+    protection: Protection!
+    "Type of the Primary IP"
+    type: Type50!
+}
+
+"Datacenter this Primary IP is located at"
+type Datacenter2 {
+    "Description of the Datacenter"
+    description: String!
+    "ID of the Resource"
+    id: Int!
+    location: Location!
+    "Unique identifier of the Datacenter"
+    name: String!
+    "The Server types the Datacenter can handle"
+    serverTypes: ServerTypes!
+}
+
+type CreatePrimaryIPRequest {
+    "ID of the resource the Primary IP should be assigned to. Omitted if it should not be assigned."
+    assigneeId: Int!
+    "Resource type the Primary IP can be assigned to"
+    assigneeType: String!
+    "Delete the Primary IP when the Server it is assigned to is deleted. If omitted defaults to `false`."
+    autoDelete: Boolean!
+    "ID or name of Datacenter the Primary IP will be bound to. Needs to be omitted if `assignee_id` is passed."
+    datacenter: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    name: String!
+    "Primary IP type"
+    type: Type51!
+}
+
+type CreatePrimaryIPResponse {
+    action: Action!
+    primaryIp: PrimaryIP1!
+}
+
+type PrimaryIPResponse {
+    primaryIp: PrimaryIP1!
+}
+
+type UpdatePrimaryIPRequest {
+    "Delete this Primary IP when the resource it is assigned to is deleted"
+    autoDelete: Boolean!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New unique name to set"
+    name: String!
+}
+
+type AssignPrimaryIPRequest {
+    "ID of a resource of type `assignee_type`"
+    assigneeId: Int!
+    "Type of resource assigning the Primary IP to"
+    assigneeType: String!
+}
+
+type ChangeProtectionRequest2 {
+    "If true, prevents the Primary IP from being deleted"
+    delete: Boolean!
+}
+
+type ServerTypesResponse {
+    serverTypes: [ServerTypes7!]
+}
+
+type ServerTypes7 {
+    "Number of cpu cores a Server of this type will have"
+    cores: Float!
+    "Type of cpu"
+    cpuType: CpuType!
+    "True if Server type is deprecated"
+    deprecated: Boolean!
+    "Description of the Server type"
+    description: String!
+    "Disk size a Server of this type will have in GB"
+    disk: Float!
+    "ID of the Server type"
+    id: Float!
+    "Memory a Server of this type will have in GB"
+    memory: Float!
+    "Unique identifier of the Server type"
+    name: String!
+    "Prices in different Locations"
+    prices: [Price9!]
+    "Type of Server boot drive. Local has higher speed. Network has better availability."
+    storageType: StorageType!
+}
+
+type ServerTypesResponse1 {
+    serverType: ServerType!
+}
+
+type ServerType {
+    "Number of cpu cores a Server of this type will have"
+    cores: Float!
+    "Type of cpu"
+    cpuType: CpuType!
+    "True if Server type is deprecated"
+    deprecated: Boolean!
+    "Description of the Server type"
+    description: String!
+    "Disk size a Server of this type will have in GB"
+    disk: Float!
+    "ID of the Server type"
+    id: Float!
+    "Memory a Server of this type will have in GB"
+    memory: Float!
+    "Unique identifier of the Server type"
+    name: String!
+    "Prices in different Locations"
+    prices: [Price9!]
+    "Type of Server boot drive. Local has higher speed. Network has better availability."
+    storageType: StorageType!
+}
+
+type ServersResponse {
+    meta: Meta!
+    servers: [Server18!]
+}
+
+type Server18 {
+    "Time window (UTC) in which the backup will run, or null if the backups are not enabled"
+    backupWindow: String
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Datacenter this Resource is located at"
+    datacenter: Datacenter6!
+    "ID of the Resource"
+    id: Int!
+    image: Image
+    "Free Traffic for the current billing period in bytes"
+    includedTraffic: Float
+    "Inbound Traffic for the current billing period in bytes"
+    ingoingTraffic: Float
+    "ISO Image that is attached to this Server. Null if no ISO is attached."
+    iso: Iso2
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    loadBalancers: [Int!]
+    "True if Server has been locked and is not available to user"
+    locked: Boolean!
+    "Name of the Server (must be unique per Project and a valid hostname as per RFC 1123)"
+    name: String!
+    "Outbound Traffic for the current billing period in bytes"
+    outgoingTraffic: Float
+    placementGroup: PlacementGroupNullable
+    "Size of the primary Disk"
+    primaryDiskSize: Float!
+    "Private networks information"
+    privateNet: [PrivateNet4!]
+    "Protection configuration for the Server"
+    protection: Protection20!
+    "Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip`"
+    publicNet: PublicNet4!
+    "True if rescue mode is enabled. Server will then boot into rescue system on next reboot"
+    rescueEnabled: Boolean!
+    "Type of Server - determines how much ram, disk and cpu a Server has"
+    serverType: ServerType1!
+    "Status of the Server"
+    status: Status73!
+    "IDs of Volumes assigned to this Server"
+    volumes: [Int!]
+}
+
+"Datacenter this Resource is located at"
+type Datacenter6 {
+    "Description of the Datacenter"
+    description: String!
+    "ID of the Resource"
+    id: Int!
+    location: Location!
+    "Unique identifier of the Datacenter"
+    name: String!
+    "The Server types the Datacenter can handle"
+    serverTypes: ServerTypes!
+}
+
+"ISO Image that is attached to this Server. Null if no ISO is attached."
+type Iso2 {
+    "ISO 8601 timestamp of deprecation, null if ISO is still available. After the deprecation time it will no longer be possible to attach the ISO to Servers."
+    deprecated: String
+    "Description of the ISO"
+    description: String!
+    "ID of the Resource"
+    id: Int!
+    "Unique identifier of the ISO. Only set for public ISOs"
+    name: String
+    "Type of the ISO"
+    type: Type26!
+}
+
+type PlacementGroupNullable {
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "ID of the Resource"
+    id: Int!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Array of IDs of Servers that are part of this Placement Group"
+    servers: [Int!]
+    "Type of the Placement Group"
+    type: String!
+}
+
+type PrivateNet4 {
+    aliasIps: [String!]
+    ip: String!
+    macAddress: String!
+    network: Int!
+}
+
+"Protection configuration for the Server"
+type Protection20 {
+    "If true, prevents the Server from being deleted"
+    delete: Boolean!
+    "If true, prevents the Server from being rebuilt"
+    rebuild: Boolean!
+}
+
+"Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip`"
+type PublicNet4 {
+    "Firewalls applied to the public network interface of this Server"
+    firewalls: [ServerPublicNetFirewall!]
+    "IDs of Floating IPs assigned to this Server"
+    floatingIps: [Int!]
+    "IP address (v4) and its reverse DNS entry of this Server"
+    ipv4: Ipv44
+    "IPv6 network assigned to this Server and its reverse DNS entry"
+    ipv6: Ipv64
+}
+
+type ServerPublicNetFirewall {
+    "ID of the Resource"
+    id: Int!
+    "Status of the Firewall on the Server"
+    status: Status72!
+}
+
+"IP address (v4) and its reverse DNS entry of this Server"
+type Ipv44 {
+    "If the IP is blocked by our anti abuse dept"
+    blocked: Boolean!
+    "Reverse DNS PTR entry for the IPv4 addresses of this Server"
+    dnsPtr: String!
+    "ID of the Resource"
+    id: Int!
+    "IP address (v4) of this Server"
+    ip: String!
+}
+
+"IPv6 network assigned to this Server and its reverse DNS entry"
+type Ipv64 {
+    "If the IP is blocked by our anti abuse dept"
+    blocked: Boolean!
+    "Reverse DNS PTR entries for the IPv6 addresses of this Server, `null` by default"
+    dnsPtr: [DnsPtr8]
+    "ID of the Resource"
+    id: Int!
+    "IP address (v6) of this Server"
+    ip: String!
+}
+
+type DnsPtr8 {
+    "DNS pointer for the specific IP address"
+    dnsPtr: String!
+    "Single IPv6 address of this Server for which the reverse DNS entry has been set up"
+    ip: String!
+}
+
+"Type of Server - determines how much ram, disk and cpu a Server has"
+type ServerType1 {
+    "Number of cpu cores a Server of this type will have"
+    cores: Float!
+    "Type of cpu"
+    cpuType: CpuType!
+    "True if Server type is deprecated"
+    deprecated: Boolean!
+    "Description of the Server type"
+    description: String!
+    "Disk size a Server of this type will have in GB"
+    disk: Float!
+    "ID of the Server type"
+    id: Int!
+    "Memory a Server of this type will have in GB"
+    memory: Float!
+    "Unique identifier of the Server type"
+    name: String!
+    "Prices in different Locations"
+    prices: [Price9!]
+    "Type of Server boot drive. Local has higher speed. Network has better availability."
+    storageType: StorageType!
+}
+
+type CreateServerRequest {
+    "Auto-mount Volumes after attach"
+    automount: Boolean!
+    "ID or name of Datacenter to create Server in (must not be used together with location)"
+    datacenter: String!
+    "Firewalls which should be applied on the Server's public network interface at creation time"
+    firewalls: [Firewall4!]
+    "ID or name of the Image the Server is created from"
+    image: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "ID or name of Location to create Server in (must not be used together with datacenter)"
+    location: String!
+    "Name of the Server to create (must be unique per Project and a valid hostname as per RFC 1123)"
+    name: String!
+    "Network IDs which should be attached to the Server private network interface at the creation time"
+    networks: [Int!]
+    "ID of the Placement Group the server should be in"
+    placementGroup: Int!
+    "Public Network options"
+    publicNet: PublicNet5!
+    "ID or name of the Server type this Server should be created with"
+    serverType: String!
+    "SSH key IDs (`integer`) or names (`string`) which should be injected into the Server at creation time"
+    sshKeys: [String!]
+    "Start Server right after creation. Defaults to true."
+    startAfterCreate: Boolean!
+    "Cloud-Init user data to use during Server creation. This field is limited to 32KiB."
+    userData: String!
+    "Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location."
+    volumes: [Int!]
+}
+
+type Firewall4 {
+    "ID of the Firewall"
+    firewall: Int!
+}
+
+"Public Network options"
+type PublicNet5 {
+    "Attach an IPv4 on the public NIC. If false, no IPv4 address will be attached. Defaults to true."
+    enableIpv4: Boolean!
+    "Attach an IPv6 on the public NIC. If false, no IPv6 address will be attached. Defaults to true."
+    enableIpv6: Boolean!
+    "ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created."
+    ipv4: Int
+    "ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created."
+    ipv6: Int
+}
+
+type CreateServerResponse {
+    action: Action!
+    nextActions: [Action!]
+    "Root password when no SSH keys have been specified"
+    rootPassword: String
+    server: Server18!
+}
+
+type ServersResponse1 {
+    action: Action!
+}
+
+type ServersResponse2 {
+    server: Server18!
+}
+
+type UpdateServerRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New name to set"
+    name: String!
+}
+
+type AddToPlacementGroupRequest {
+    "ID of Placement Group the Server should be added to"
+    placementGroup: Int!
+}
+
+type ServersActionsAttachIsoRequest {
+    "ID or name of ISO to attach to the Server as listed in GET `/isos`"
+    iso: String!
+}
+
+type AttachToNetworkRequest {
+    "Additional IPs to be assigned to this Server"
+    aliasIps: [String!]
+    "IP to request to be assigned to this Server; if you do not provide this then you will be auto assigned an IP address"
+    ip: String!
+    "ID of an existing network to attach the Server to"
+    network: Int!
+}
+
+type ServersActionsChangeAliasIpsRequest {
+    "New alias IPs to set for this Server"
+    aliasIps: [String!]
+    "ID of an existing Network already attached to the Server"
+    network: Int!
+}
+
+type ServersActionsChangeDnsPtrRequest {
+    "Hostname to set as a reverse DNS PTR entry, reset to original value if `null`"
+    dnsPtr: String
+    "Primary IP address for which the reverse DNS entry should be set"
+    ip: String!
+}
+
+type ServersActionsChangeProtectionRequest {
+    "If true, prevents the Server from being deleted (currently delete and rebuild attribute needs to have the same value)"
+    delete: Boolean!
+    "If true, prevents the Server from being rebuilt (currently delete and rebuild attribute needs to have the same value)"
+    rebuild: Boolean!
+}
+
+type ServersActionsChangeTypeRequest {
+    "ID or name of Server type the Server should migrate to"
+    serverType: String!
+    "If false, do not upgrade the disk (this allows downgrading the Server type later)"
+    upgradeDisk: Boolean!
+}
+
+type CreateImageRequest {
+    "Description of the Image, will be auto-generated if not set"
+    description: String!
+    "User-defined labels (key-value pairs)"
+    labels: Labels!
+    "Type of Image to create (default: `snapshot`)"
+    type: Type63!
+}
+
+type ServersActionsCreateImageResponse {
+    action: Action!
+    image: Image!
+}
+
+type DetachFromNetworkRequest {
+    "ID of an existing network to detach the Server from"
+    network: Int!
+}
+
+type ServersActionsEnableRescueRequest {
+    "Array of SSH key IDs which should be injected into the rescue system."
+    sshKeys: [Int!]
+    "Type of rescue system to boot (default: `linux64`)"
+    type: Type65!
+}
+
+type ServersActionsEnableRescueResponse {
+    action: Action!
+    "Password that will be set for this Server once the Action succeeds"
+    rootPassword: String!
+}
+
+type RebuildServerRequest {
+    "ID or name of Image to rebuilt from."
+    image: String!
+}
+
+type ServersActionsRebuildResponse {
+    action: Action!
+    "New root password when not using SSH keys"
+    rootPassword: String
+}
+
+type ServersActionsRequestConsoleResponse {
+    action: Action!
+    "VNC password to use for this connection (this password only works in combination with a wss_url with valid token)"
+    password: String!
+    "URL of websocket proxy to use; this includes a token which is valid for a limited time only"
+    wssUrl: String!
+}
+
+type ServersActionsResetPasswordResponse {
+    action: Action!
+    "Password that will be set for this Server once the Action succeeds"
+    rootPassword: String!
+}
+
+type ServersMetricsResponse {
+    metrics: Metrics!
+}
+
+type SshKeysResponse {
+    meta: Meta!
+    sshKeys: [SshKey!]
+}
+
+type SshKey {
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Fingerprint of public key"
+    fingerprint: String!
+    "ID of the Resource"
+    id: Int!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Public key"
+    publicKey: String!
+}
+
+type SshKeysRequest {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the SSH key"
+    name: String!
+    "Public key"
+    publicKey: String!
+}
+
+type SshKeysResponse1 {
+    sshKey: SshKey!
+}
+
+type SshKeysRequest1 {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New name Name to set"
+    name: String!
+}
+
+type VolumesResponse {
+    meta: Meta!
+    volumes: [Volume1!]
+}
+
+type Volume1 {
+    "Point in time when the Resource was created (in ISO-8601 format)"
+    created: String!
+    "Filesystem of the Volume if formatted on creation, null if not formatted on creation"
+    format: String
+    "ID of the Resource"
+    id: Int!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Device path on the file system for the Volume"
+    linuxDevice: String!
+    "Location of the Volume. Volume can only be attached to Servers in the same Location."
+    location: Location16!
+    "Name of the Resource. Must be unique per Project."
+    name: String!
+    "Protection configuration for the Resource"
+    protection: Protection!
+    "ID of the Server the Volume is attached to, null if it is not attached at all"
+    server: Int
+    "Size in GB of the Volume"
+    size: Float!
+    "Current status of the Volume"
+    status: Status113!
+}
+
+"Location of the Volume. Volume can only be attached to Servers in the same Location."
+type Location16 {
+    "City the Location is closest to"
+    city: String!
+    "ISO 3166-1 alpha-2 code of the country the Location resides in"
+    country: String!
+    "Description of the Location"
+    description: String!
+    "ID of the Location"
+    id: Float!
+    "Latitude of the city closest to the Location"
+    latitude: Float!
+    "Longitude of the city closest to the Location"
+    longitude: Float!
+    "Unique identifier of the Location"
+    name: String!
+    "Name of network zone this Location resides in"
+    networkZone: String!
+}
+
+type CreateVolumeRequest {
+    "Auto-mount Volume after attach. `server` must be provided."
+    automount: Boolean!
+    "Format Volume after creation. One of: `xfs`, `ext4`"
+    format: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Location to create the Volume in (can be omitted if Server is specified)"
+    location: String!
+    "Name of the volume"
+    name: String!
+    "Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server)"
+    server: Int!
+    "Size of the Volume in GB"
+    size: Int!
+}
+
+type VolumesResponse1 {
+    action: Action!
+    nextActions: [Action!]
+    volume: Volume1!
+}
+
+type VolumesResponse2 {
+    volume: Volume1!
+}
+
+type UpdateVolumeRequest {
+    "User-defined labels (key-value pairs)"
+    labels: Labels2!
+    "New Volume name"
+    name: String!
+}
+
+type AttachVolumeRequest {
+    "Auto-mount the Volume after attaching it"
+    automount: Boolean!
+    "ID of the Server the Volume will be attached to"
+    server: Int!
+}
+
+type VolumesActionsChangeProtectionRequest {
+    "If true, prevents the Volume from being deleted"
+    delete: Boolean!
+}
+
+type VolumesActionsResizeRequest {
+    "New Volume size in GB (must be greater than current size)"
+    size: Float!
+}
+
+input GetAllActionsInput {
+    "Can be used multiple times, the response will contain only Actions with specified IDs"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input GetAnActionInput {
+    "ID of the Resource"
+    id: Int!
+}
+
+input GetAllCertificatesInput {
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+    "Can be used multiple times. The response will only contain Certificates matching the type."
+    type: ParameterType!
+}
+
+input CreateCertificateRequestInput {
+    "Certificate and chain in PEM format, in order so that each record directly certifies the one preceding. Required for type `uploaded` Certificates."
+    certificate: String!
+    "Domains and subdomains that should be contained in the Certificate issued by *Let's Encrypt*. Required for type `managed` Certificates."
+    domainNames: [String!]
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Certificate"
+    name: String!
+    "Certificate key in PEM format. Required for type `uploaded` Certificates."
+    privateKey: String!
+    "Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`."
+    type: Type1!
+}
+
+input CreateACertificateInput {
+    contentType: String!
+    body: CreateCertificateRequestInput!
+}
+
+input DeleteACertificateInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input GetACertificateInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input UpdateCertificateRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New Certificate name"
+    name: String!
+}
+
+input UpdateACertificateInput {
+    "ID of the resource"
+    id: Int!
+    contentType: String!
+    body: UpdateCertificateRequestInput!
+}
+
+input GetAllActionsForACertificateInput {
+    "ID of the Resource"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input CreateRetryIssuanceOrRenewalInput {
+    "ID of the Certificate"
+    id: Int!
+}
+
+input GetAnActionForACertificateInput {
+    "ID of the Certificate"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllDatacentersInput {
+    "Can be used to filter Datacenters by their name. The response will only contain the Datacenter matching the specified name. When the name does not match the Datacenter name format, an `invalid_input` error is returned."
+    name: String!
+}
+
+input GetADatacenterInput {
+    "ID of Datacenter"
+    id: Int!
+}
+
+input GetAllFirewallsInput {
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+}
+
+"Configuration for type LabelSelector, required if type is `label_selector`"
+input LabelSelector1Input {
+    "Label selector"
+    selector: String!
+}
+
+"Configuration for type Server, required if type is `server`"
+input Server2Input {
+    "ID of the Server"
+    id: Int!
+}
+
+input ApplyToInput {
+    "Configuration for type LabelSelector, required if type is `label_selector`"
+    labelSelector: LabelSelector1Input!
+    "Configuration for type Server, required if type is `server`"
+    server: Server2Input!
+    "Type of the resource"
+    type: Type7!
+}
+
+input RuleInput {
+    "Description of the Rule"
+    description: String
+    "List of permitted IPv4/IPv6 addresses in CIDR notation. Use `0.0.0.0/0` to allow all IPv4 addresses and `::/0` to allow all IPv6 addresses. You can specify 100 CIDRs at most."
+    destinationIps: [String!]
+    "Select traffic direction on which rule should be applied. Use `source_ips` for direction `in` and `destination_ips` for direction `out`."
+    direction: Direction!
+    "Port or port range to which traffic will be allowed, only applicable for protocols TCP and UDP. A port range can be specified by separating two ports with a dash, e.g `1024-5000`."
+    port: String!
+    "Type of traffic to allow"
+    protocol: Protocol!
+    "List of permitted IPv4/IPv6 addresses in CIDR notation. Use `0.0.0.0/0` to allow all IPv4 addresses and `::/0` to allow all IPv6 addresses. You can specify 100 CIDRs at most."
+    sourceIps: [String!]
+}
+
+input CreateFirewallRequestInput {
+    "Resources the Firewall should be applied to after creation"
+    applyTo: [ApplyToInput!]
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the Firewall"
+    name: String!
+    "Array of rules"
+    rules: [RuleInput!]
+}
+
+input CreateAFirewallInput {
+    contentType: String!
+    body: CreateFirewallRequestInput!
+}
+
+input DeleteAFirewallInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input GetAFirewallInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input UpdateFirewallRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New Firewall name"
+    name: String!
+}
+
+input UpdateAFirewallInput {
+    "ID of the resource"
+    id: Int!
+    contentType: String!
+    body: UpdateFirewallRequestInput!
+}
+
+input GetAllActionsForAFirewallInput {
+    "ID of the Resource"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+"Configuration for type label_selector, required if type is `label_selector`"
+input LabelSelector5Input {
+    "Label selector"
+    selector: String!
+}
+
+"Configuration for type server, required if type is `server`"
+input Server9Input {
+    "ID of the Server"
+    id: Int!
+}
+
+input FirewallApplyToResourcesInput {
+    "Configuration for type label_selector, required if type is `label_selector`"
+    labelSelector: LabelSelector5Input!
+    "Configuration for type server, required if type is `server`"
+    server: Server9Input!
+    "Type of the resource"
+    type: Type7!
+}
+
+input ApplyToResourcesRequestInput {
+    "Resources the Firewall should be applied to"
+    applyTo: [FirewallApplyToResourcesInput!]
+}
+
+input CreateApplyToResourcesInput {
+    "ID of the Firewall"
+    id: Int!
+    contentType: String!
+    body: ApplyToResourcesRequestInput!
+}
+
+input FirewallRemoveFromResourcesInput {
+    "Configuration for type label_selector, required if type is `label_selector`"
+    labelSelector: LabelSelector5Input!
+    "Configuration for type server, required if type is `server`"
+    server: Server9Input!
+    "Type of the resource"
+    type: Type7!
+}
+
+input RemoveFromResourcesRequestInput {
+    "Resources the Firewall should be removed from"
+    removeFrom: [FirewallRemoveFromResourcesInput!]
+}
+
+input CreateRemoveFromResourcesInput {
+    "ID of the Firewall"
+    id: Int!
+    contentType: String!
+    body: RemoveFromResourcesRequestInput!
+}
+
+input SetRulesRequestInput {
+    "Array of rules"
+    rules: [RuleInput!]
+}
+
+input CreateSetRulesInput {
+    "ID of the Firewall"
+    id: Int!
+    contentType: String!
+    body: SetRulesRequestInput!
+}
+
+input GetAnActionForAFirewallInput {
+    "ID of the Firewall"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllFloatingIpsInput {
+    "Can be used to filter Floating IPs by their name. The response will only contain the Floating IP matching the specified name."
+    name: String!
+    "Can be used to filter Floating IPs by labels. The response will only contain Floating IPs matching the label selector."
+    labelSelector: String!
+    "Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc"
+    sort: Sort2!
+}
+
+input CreateFloatingIPRequestInput {
+    description: String!
+    "Home Location (routing is optimized for that Location). Only optional if Server argument is passed."
+    homeLocation: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    name: String!
+    "Server to assign the Floating IP to"
+    server: Int!
+    "Floating IP type"
+    type: Type17!
+}
+
+input CreateAFloatingIPInput {
+    contentType: String!
+    "The `type` argument is required while `home_location` and `server` are mutually exclusive."
+    body: CreateFloatingIPRequestInput!
+}
+
+input DeleteAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+}
+
+input GetAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+}
+
+input UpdateFloatingIPRequestInput {
+    "New Description to set"
+    description: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New unique name to set"
+    name: String!
+}
+
+input UpdateAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+    contentType: String!
+    body: UpdateFloatingIPRequestInput!
+}
+
+input GetAllActionsForAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+"#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `floating_ip_assigned`        | The floating IP is already assigned                           |"
+input AssignFloatingIPRequestInput {
+    "ID of the Server the Floating IP shall be assigned to"
+    server: Int!
+}
+
+input CreateAssignAFloatingIPToAServerInput {
+    "ID of the Floating IP"
+    id: Int!
+    contentType: String!
+    body: AssignFloatingIPRequestInput!
+}
+
+input ChangeDNSPTRRequestInput {
+    "Hostname to set as a reverse DNS PTR entry, will reset to original default value if `null`"
+    dnsPtr: String
+    "IP address for which to set the reverse DNS entry"
+    ip: String!
+}
+
+input ChangeReverseDNSEntryForAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+    contentType: String!
+    "Select the IP address for which to change the DNS entry by passing `ip`. For a Floating IP of type `ipv4` this must exactly match the IP address of the Floating IP. For a Floating IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Floating IP.\n\nThe target hostname is set by passing `dns_ptr`."
+    body: ChangeDNSPTRRequestInput!
+}
+
+input ChangeProtectionRequestInput {
+    "If true, prevents the Floating IP from being deleted"
+    delete: Boolean!
+}
+
+input ChangeFloatingIPProtectionInput {
+    "ID of the Floating IP"
+    id: Int!
+    contentType: String!
+    body: ChangeProtectionRequestInput!
+}
+
+input CreateUnassignAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+}
+
+input GetAnActionForAFloatingIPInput {
+    "ID of the Floating IP"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllImagesInput {
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used multiple times."
+    type: Type21!
+    "Can be used multiple times. The response will only contain Images matching the status."
+    status: Status23!
+    "Can be used multiple times. Server ID linked to the Image. Only available for Images of type `backup`"
+    boundTo: String!
+    "Can be used multiple times."
+    includeDeprecated: Boolean!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+}
+
+input DeleteAnImageInput {
+    "ID of the Image"
+    id: Int!
+}
+
+input GetAnImageInput {
+    "ID of the Image"
+    id: Int!
+}
+
+input UpdateImageRequestInput {
+    "New description of Image"
+    description: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Destination Image type to convert to"
+    type: Type24!
+}
+
+input UpdateAnImageInput {
+    "ID of the Image"
+    id: Int!
+    contentType: String!
+    body: UpdateImageRequestInput!
+}
+
+input GetAllActionsForAnImageInput {
+    "ID of the Image"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input ImagesActionsChangeProtectionRequestInput {
+    "If true, prevents the snapshot from being deleted"
+    delete: Boolean!
+}
+
+input ChangeImageProtectionInput {
+    "ID of the Image"
+    id: Int!
+    contentType: String!
+    body: ImagesActionsChangeProtectionRequestInput!
+}
+
+input GetAnActionForAnImageInput {
+    "ID of the Image"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllIsosInput {
+    "Can be used to filter ISOs by their name. The response will only contain the ISO matching the specified name."
+    name: String!
+}
+
+input GetAnISOInput {
+    "ID of the ISO"
+    id: Int!
+}
+
+input GetAllLoadBalancersInput {
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+}
+
+"Algorithm of the Load Balancer"
+input LoadBalancerAlgorithmInput {
+    "Type of the algorithm"
+    type: Type28!
+}
+
+"User-defined labels (key-value pairs)"
+input LabelsInput {
+    "New label"
+    labelkey: String!
+}
+
+"Additional configuration for protocol http"
+input HttpInput {
+    "Host header to send in the HTTP request. May not contain spaces, percent or backslash symbols. Can be null, in that case no host header is sent."
+    domain: String
+    "HTTP path to use for health checks. May not contain literal spaces, use percent-encoding instead."
+    path: String!
+    "String that must be contained in HTTP response in order to pass the health check"
+    response: String!
+    "List of returned HTTP status codes in order to pass the health check. Supports the wildcards `?` for exactly one character and `*` for multiple ones. The default is to pass the health check for any status code between 2?? and 3??."
+    statusCodes: [String!]
+    "Use HTTPS for health check"
+    tls: Boolean!
+}
+
+"Service health check"
+input LoadBalancerServiceHealthCheckInput {
+    "Additional configuration for protocol http"
+    http: HttpInput!
+    "Time interval in seconds health checks are performed"
+    interval: Int!
+    "Port the health check will be performed on"
+    port: Int!
+    "Type of the health check"
+    protocol: Protocol6!
+    "Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again"
+    retries: Int!
+    "Time in seconds after an attempt is considered a timeout"
+    timeout: Int!
+}
+
+"Configuration option for protocols http and https"
+input LoadBalancerServiceHTTPInput {
+    "IDs of the Certificates to use for TLS/SSL termination by the Load Balancer; empty for TLS/SSL passthrough or if `protocol` is \"http\""
+    certificates: [Int!]
+    "Lifetime of the cookie used for sticky sessions"
+    cookieLifetime: Int!
+    "Name of the cookie used for sticky sessions"
+    cookieName: String!
+    "Redirect HTTP requests to HTTPS. Only available if protocol is \"https\". Default `false`"
+    redirectHttp: Boolean!
+    "Use sticky sessions. Only available if protocol is \"http\" or \"https\". Default `false`"
+    stickySessions: Boolean!
+}
+
+input LoadBalancerServiceInput {
+    "Port the Load Balancer will balance to"
+    destinationPort: Int!
+    "Service health check"
+    healthCheck: LoadBalancerServiceHealthCheckInput!
+    "Configuration option for protocols http and https"
+    http: LoadBalancerServiceHTTPInput!
+    "Port the Load Balancer listens on"
+    listenPort: Int!
+    "Protocol of the Load Balancer"
+    protocol: Protocol7!
+    "Is Proxyprotocol enabled or not"
+    proxyprotocol: Boolean!
+}
+
+input HealthStatusInput {
+    listenPort: Int!
+    status: Status30!
+}
+
+"IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+input IpInput {
+    "IP of a server that belongs to the same customer (public IPv4/IPv6) or private IP in a Subnetwork type vswitch."
+    ip: String!
+}
+
+"Label selector and a list of selected targets"
+input LabelSelector7Input {
+    "Label selector"
+    selector: String!
+}
+
+"Server where the traffic should be routed through"
+input LoadBalancerTargetServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input Server11Input {
+    "ID of the Server"
+    id: Int!
+}
+
+input TargetInput {
+    healthStatus: [HealthStatusInput!]
+    server: Server11Input!
+    type: String!
+    usePrivateIp: Boolean!
+}
+
+input LoadBalancerTargetInput {
+    "List of health statuses of the services on this target"
+    healthStatus: [HealthStatusInput!]
+    "IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+    ip: IpInput!
+    "Label selector and a list of selected targets"
+    labelSelector: LabelSelector7Input!
+    "Server where the traffic should be routed through"
+    server: LoadBalancerTargetServerInput!
+    "List of selected targets"
+    targets: [TargetInput!]
+    "Type of the resource"
+    type: Type29!
+    "Use the private network IP instead of the public IP. Default value is false."
+    usePrivateIp: Boolean!
+}
+
+input CreateLoadBalancerRequestInput {
+    "Algorithm of the Load Balancer"
+    algorithm: LoadBalancerAlgorithmInput!
+    "User-defined labels (key-value pairs)"
+    labels: LabelsInput!
+    "ID or name of the Load Balancer type this Load Balancer should be created with"
+    loadBalancerType: String!
+    "ID or name of Location to create Load Balancer in"
+    location: String!
+    "Name of the Load Balancer"
+    name: String!
+    "ID of the network the Load Balancer should be attached to on creation"
+    network: Int!
+    "Name of network zone"
+    networkZone: String!
+    "Enable or disable the public interface of the Load Balancer"
+    publicInterface: Boolean!
+    "Array of services"
+    services: [LoadBalancerServiceInput!]
+    "Array of targets"
+    targets: [LoadBalancerTargetInput!]
+}
+
+input CreateALoadBalancerInput {
+    contentType: String!
+    body: CreateLoadBalancerRequestInput!
+}
+
+input DeleteALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+}
+
+input GetALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+}
+
+input LoadBalancersRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New Load Balancer name"
+    name: String!
+}
+
+input UpdateALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancersRequestInput!
+}
+
+input GetMetricsForALoadbalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+    "Type of metrics to get"
+    type: Type41!
+    "Start of period to get Metrics for (in ISO-8601 format)"
+    start: String!
+    "End of period to get Metrics for (in ISO-8601 format)"
+    end: String!
+    "Resolution of results in seconds"
+    step: String!
+}
+
+input GetAllActionsForALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input AddServiceInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancerServiceInput!
+}
+
+"Configuration for label selector targets, required if type is `label_selector`"
+input LabelSelector12Input {
+    "Label selector"
+    selector: String!
+}
+
+"Configuration for type Server, required if type is `server`"
+input Server16Input {
+    "ID of the Server"
+    id: Float!
+}
+
+input AddTargetRequestInput {
+    "IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+    ip: IpInput!
+    "Configuration for label selector targets, required if type is `label_selector`"
+    labelSelector: LabelSelector12Input!
+    "Configuration for type Server, required if type is `server`"
+    server: Server16Input!
+    "Type of the resource"
+    type: Type29!
+    "Use the private network IP instead of the public IP of the Server, requires the Server and Load Balancer to be in the same network. Default value is false."
+    usePrivateIp: Boolean!
+}
+
+input AddTargetInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: AddTargetRequestInput!
+}
+
+input LoadBalancersActionsAttachToNetworkRequestInput {
+    "IP to request to be assigned to this Load Balancer; if you do not provide this then you will be auto assigned an IP address"
+    ip: String!
+    "ID of an existing network to attach the Load Balancer to"
+    network: Float!
+}
+
+input CreateAttachALoadBalancerToANetworkInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancersActionsAttachToNetworkRequestInput!
+}
+
+input LoadBalancersActionsChangeAlgorithmRequestInput {
+    "Algorithm of the Load Balancer"
+    type: Type39!
+}
+
+input ChangeAlgorithmInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancersActionsChangeAlgorithmRequestInput!
+}
+
+input ChangeLoadbalancerDnsPtrRequestInput {
+    "Hostname to set as a reverse DNS PTR entry"
+    dnsPtr: String
+    "Public IP address for which the reverse DNS entry should be set"
+    ip: String!
+}
+
+input ChangeReverseDNSEntryForThisLoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    "Select the IP address for which to change the DNS entry by passing `ip`. It can be either IPv4 or IPv6. The target hostname is set by passing `dns_ptr`."
+    body: ChangeLoadbalancerDnsPtrRequestInput!
+}
+
+input LoadBalancersActionsChangeProtectionRequestInput {
+    "If true, prevents the Load Balancer from being deleted"
+    delete: Boolean!
+}
+
+input ChangeLoadBalancerProtectionInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancersActionsChangeProtectionRequestInput!
+}
+
+input ChangeTypeRequestInput {
+    "ID or name of Load Balancer type the Load Balancer should migrate to"
+    loadBalancerType: String!
+}
+
+input ChangeTheTypeOfALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: ChangeTypeRequestInput!
+}
+
+input LoadBalancersActionsDeleteServiceRequestInput {
+    "The listen port of the service you want to delete"
+    listenPort: Float!
+}
+
+input CreateDeleteServiceInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancersActionsDeleteServiceRequestInput!
+}
+
+input LoadBalancersActionsDetachFromNetworkRequestInput {
+    "ID of an existing network to detach the Load Balancer from"
+    network: Float!
+}
+
+input CreateDetachALoadBalancerFromANetworkInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancersActionsDetachFromNetworkRequestInput!
+}
+
+input CreateDisableThePublicInterfaceOfALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+}
+
+input CreateEnableThePublicInterfaceOfALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+}
+
+input RemoveTargetRequestInput {
+    "IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well."
+    ip: IpInput!
+    "Configuration for label selector targets, required if type is `label_selector`"
+    labelSelector: LabelSelector12Input!
+    "Configuration for type Server, required if type is `server`"
+    server: Server16Input!
+    "Type of the resource"
+    type: Type29!
+}
+
+input CreateRemoveTargetInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: RemoveTargetRequestInput!
+}
+
+input UpdateServiceInput {
+    "ID of the Load Balancer"
+    id: Int!
+    contentType: String!
+    body: LoadBalancerServiceInput!
+}
+
+input GetAnActionForALoadBalancerInput {
+    "ID of the Load Balancer"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllLoadBalancerTypesInput {
+    "Can be used to filter Load Balancer types by their name. The response will only contain the Load Balancer type matching the specified name."
+    name: String!
+}
+
+input GetALoadBalancerTypeInput {
+    "ID of Load Balancer type"
+    id: Int!
+}
+
+input GetAllLocationsInput {
+    "Can be used to filter Locations by their name. The response will only contain the Location matching the specified name."
+    name: String!
+}
+
+input GetALocationInput {
+    "ID of Location"
+    id: Int!
+}
+
+input GetAllPrimaryIpsInput {
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+    "Can be used to filter resources by their ip. The response will only contain the resources matching the specified ip."
+    ip: String!
+    "Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc"
+    sort: Sort2!
+}
+
+input CreatePrimaryIPRequestInput {
+    "ID of the resource the Primary IP should be assigned to. Omitted if it should not be assigned."
+    assigneeId: Int!
+    "Resource type the Primary IP can be assigned to"
+    assigneeType: String!
+    "Delete the Primary IP when the Server it is assigned to is deleted. If omitted defaults to `false`."
+    autoDelete: Boolean!
+    "ID or name of Datacenter the Primary IP will be bound to. Needs to be omitted if `assignee_id` is passed."
+    datacenter: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    name: String!
+    "Primary IP type"
+    type: Type51!
+}
+
+input CreateAPrimaryIPInput {
+    contentType: String!
+    "The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive."
+    body: CreatePrimaryIPRequestInput!
+}
+
+input DeleteAPrimaryIPInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input GetAPrimaryIPInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input UpdatePrimaryIPRequestInput {
+    "Delete this Primary IP when the resource it is assigned to is deleted"
+    autoDelete: Boolean!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New unique name to set"
+    name: String!
+}
+
+input UpdateAPrimaryIPInput {
+    "ID of the resource"
+    id: Int!
+    contentType: String!
+    body: UpdatePrimaryIPRequestInput!
+}
+
+input AssignPrimaryIPRequestInput {
+    "ID of a resource of type `assignee_type`"
+    assigneeId: Int!
+    "Type of resource assigning the Primary IP to"
+    assigneeType: String!
+}
+
+input CreateAssignAPrimaryIPToAResourceInput {
+    "ID of the Primary IP"
+    id: Int!
+    contentType: String!
+    body: AssignPrimaryIPRequestInput!
+}
+
+input ChangeReverseDNSEntryForAPrimaryIPInput {
+    "ID of the Primary IP"
+    id: Int!
+    contentType: String!
+    "Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.\n\nThe target hostname is set by passing `dns_ptr`."
+    body: ChangeDNSPTRRequestInput!
+}
+
+input ChangeProtectionRequest2Input {
+    "If true, prevents the Primary IP from being deleted"
+    delete: Boolean!
+}
+
+input ChangePrimaryIPProtectionInput {
+    "ID of the Primary IP"
+    id: Int!
+    contentType: String!
+    body: ChangeProtectionRequest2Input!
+}
+
+input CreateUnassignAPrimaryIPFromAResourceInput {
+    "ID of the Primary IP"
+    id: Int!
+}
+
+input GetAllNetworksInput {
+    "Can be used to filter networks by their name. The response will only contain the networks matching the specified name."
+    name: String!
+    "Can be used to filter networks by labels. The response will only contain networks with a matching label selector pattern."
+    labelSelector: String!
+}
+
+input RouteInput {
+    "Destination network or host of this route. Must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first IP of the networks ip_range or with 172.31.1.1. Must be one of the private IPv4 ranges of RFC1918."
+    destination: String!
+    "Gateway for the route. Cannot be the first IP of the networks ip_range and also cannot be 172.31.1.1 as this IP is being used as a gateway for the public network interface of Servers."
+    gateway: String!
+}
+
+input Subnet1Input {
+    "Range to allocate IPs from. Must be a Subnet of the ip_range of the parent network object and must not overlap with any other subnets or with any destinations in routes. Minimum Network size is /30. We suggest that you pick a bigger Network with a /24 netmask."
+    ipRange: String!
+    "Name of Network zone. The Location object contains the `network_zone` property each Location belongs to."
+    networkZone: String!
+    "Type of Subnetwork"
+    type: Type42!
+}
+
+input CreateNetworkRequestInput {
+    "IP range of the whole network which must span all included subnets. Must be one of the private IPv4 ranges of RFC1918. Minimum network size is /24. We highly recommend that you pick a larger network with a /16 netmask."
+    ipRange: String!
+    "User-defined labels (key-value pairs)"
+    labels: LabelsInput!
+    "Name of the network"
+    name: String!
+    "Array of routes set in this network. The destination of the route must be one of the private IPv4 ranges of RFC1918. The gateway must be a subnet/IP of the ip_range of the network object. The destination must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first IP of the networks ip_range or with 172.31.1.1. The gateway cannot be the first IP of the networks ip_range and also cannot be 172.31.1.1."
+    routes: [RouteInput!]
+    "Array of subnets allocated."
+    subnets: [Subnet1Input!]
+}
+
+input CreateANetworkInput {
+    contentType: String!
+    body: CreateNetworkRequestInput!
+}
+
+input DeleteANetworkInput {
+    "ID of the network"
+    id: Int!
+}
+
+input GetANetworkInput {
+    "ID of the network"
+    id: Int!
+}
+
+"User-defined labels (key-value pairs)"
+input Labels2Input {
+    labelkey: String!
+}
+
+input UpdateNetworkRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: Labels2Input!
+    "New network name"
+    name: String!
+}
+
+input UpdateANetworkInput {
+    "ID of the network"
+    id: Int!
+    contentType: String!
+    body: UpdateNetworkRequestInput!
+}
+
+input GetAllActionsForANetworkInput {
+    "ID of the Network"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input AddDeleteRouteRequestInput {
+    "Destination network or host of this route. Must not overlap with an existing ip_range in any subnets or with any destinations in other routes or with the first IP of the networks ip_range or with 172.31.1.1. Must be one of the private IPv4 ranges of RFC1918."
+    destination: String!
+    "Gateway for the route. Cannot be the first IP of the networks ip_range, an IP behind a vSwitch or 172.31.1.1, as this IP is being used as a gateway for the public network interface of Servers."
+    gateway: String!
+}
+
+input AddARouteToANetworkInput {
+    "ID of the Network"
+    id: Int!
+    contentType: String!
+    body: AddDeleteRouteRequestInput!
+}
+
+input AddSubnetRequestInput {
+    "Range to allocate IPs from. Must be a Subnet of the ip_range of the parent network object and must not overlap with any other subnets or with any destinations in routes. If the Subnet is of type vSwitch, it also can not overlap with any gateway in routes. Minimum Network size is /30. We suggest that you pick a bigger Network with a /24 netmask."
+    ipRange: String!
+    "Name of Network zone. The Location object contains the `network_zone` property each Location belongs to."
+    networkZone: String!
+    "Type of Subnetwork"
+    type: Type42!
+    "ID of the robot vSwitch. Must be supplied if the subnet is of type vswitch."
+    vswitchId: Int!
+}
+
+input AddASubnetToANetworkInput {
+    "ID of the Network"
+    id: Int!
+    contentType: String!
+    body: AddSubnetRequestInput!
+}
+
+input ChangeIPRangeRequestInput {
+    "The new prefix for the whole Network"
+    ipRange: String!
+}
+
+input ChangeIPRangeOfANetworkInput {
+    "ID of the Network"
+    id: Int!
+    contentType: String!
+    body: ChangeIPRangeRequestInput!
+}
+
+input ChangeProtectionRequest1Input {
+    "If true, prevents the Network from being deleted"
+    delete: Boolean!
+}
+
+input ChangeNetworkProtectionInput {
+    "ID of the Network"
+    id: Int!
+    contentType: String!
+    body: ChangeProtectionRequest1Input!
+}
+
+input CreateDeleteARouteFromANetworkInput {
+    "ID of the Network"
+    id: Int!
+    contentType: String!
+    body: AddDeleteRouteRequestInput!
+}
+
+input DeleteSubnetRequestInput {
+    "IP range of subnet to delete"
+    ipRange: String!
+}
+
+input CreateDeleteASubnetFromANetworkInput {
+    "ID of the Network"
+    id: Int!
+    contentType: String!
+    body: DeleteSubnetRequestInput!
+}
+
+input GetAnActionForANetworkInput {
+    "ID of the Network"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllPlacementgroupsInput {
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+    "Can be used multiple times. The response will only contain PlacementGroups matching the type."
+    type: ParameterType1!
+}
+
+input CreatePlacementGroupRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the PlacementGroup"
+    name: String!
+    "Define the Placement Group Type."
+    type: String!
+}
+
+input CreateAPlacementgroupInput {
+    contentType: String!
+    body: CreatePlacementGroupRequestInput!
+}
+
+input DeleteAPlacementgroupInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input GetAPlacementgroupInput {
+    "ID of the resource"
+    id: Int!
+}
+
+input UpdatePlacementGroupRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New PlacementGroup name"
+    name: String!
+}
+
+input UpdateAPlacementgroupInput {
+    "ID of the resource"
+    id: Int!
+    contentType: String!
+    body: UpdatePlacementGroupRequestInput!
+}
+
+input GetAllServersInput {
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used multiple times. The response will only contain Server matching the status"
+    status: Status70!
+}
+
+input Firewall4Input {
+    "ID of the Firewall"
+    firewall: Int!
+}
+
+"Public Network options"
+input PublicNet5Input {
+    "Attach an IPv4 on the public NIC. If false, no IPv4 address will be attached. Defaults to true."
+    enableIpv4: Boolean!
+    "Attach an IPv6 on the public NIC. If false, no IPv6 address will be attached. Defaults to true."
+    enableIpv6: Boolean!
+    "ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created."
+    ipv4: Int
+    "ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created."
+    ipv6: Int
+}
+
+input CreateServerRequestInput {
+    "Auto-mount Volumes after attach"
+    automount: Boolean!
+    "ID or name of Datacenter to create Server in (must not be used together with location)"
+    datacenter: String!
+    "Firewalls which should be applied on the Server's public network interface at creation time"
+    firewalls: [Firewall4Input!]
+    "ID or name of the Image the Server is created from"
+    image: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "ID or name of Location to create Server in (must not be used together with datacenter)"
+    location: String!
+    "Name of the Server to create (must be unique per Project and a valid hostname as per RFC 1123)"
+    name: String!
+    "Network IDs which should be attached to the Server private network interface at the creation time"
+    networks: [Int!]
+    "ID of the Placement Group the server should be in"
+    placementGroup: Int!
+    "Public Network options"
+    publicNet: PublicNet5Input!
+    "ID or name of the Server type this Server should be created with"
+    serverType: String!
+    "SSH key IDs (`integer`) or names (`string`) which should be injected into the Server at creation time"
+    sshKeys: [String!]
+    "Start Server right after creation. Defaults to true."
+    startAfterCreate: Boolean!
+    "Cloud-Init user data to use during Server creation. This field is limited to 32KiB."
+    userData: String!
+    "Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location."
+    volumes: [Int!]
+}
+
+input CreateAServerInput {
+    contentType: String!
+    "Please note that Server names must be unique per Project and valid hostnames as per RFC 1123 (i.e. may only contain letters, digits, periods, and dashes).\n\nFor `server_type` you can either use the ID as listed in `/server_types` or its name.\n\nFor `image` you can either use the ID as listed in `/images` or its name.\n\nIf you want to create the Server in a Location, you must set `location` to the ID or name as listed in `/locations`. This is the recommended way. You can be even more specific by setting `datacenter` to the ID or name as listed in `/datacenters`. However we only recommend this if you want to assign a specific Primary IP to the Server which is located in the specified Datacenter.\n\nSome properties like `start_after_create` or `automount` will trigger Actions after the Server is created. Those Actions are listed in the `next_actions` field in the response.\n\nFor accessing your Server we strongly recommend to use SSH keys by passing the respective key IDs in `ssh_keys`. If you do not specify any `ssh_keys` we will generate a root password for you and return it in the response.\n\nPlease note that provided user-data is stored in our systems. While we take measures to protect it we highly recommend that you don’t use it to store passwords or other sensitive information.\n\n#### Call specific error codes\n\n| Code                             | Description                                                |\n|----------------------------------|------------------------------------------------------------|\n| `placement_error`                | An error during the placement occurred                     |\n| `primary_ip_assigned`            | The specified Primary IP is already assigned to a server   |\n| `primary_ip_datacenter_mismatch` | The specified Primary IP is in a different datacenter      |\n| `primary_ip_version_mismatch`    | The specified Primary IP has the wrong IP Version          |"
+    body: CreateServerRequestInput!
+}
+
+input DeleteAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input GetAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input UpdateServerRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New name to set"
+    name: String!
+}
+
+input UpdateAServerInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: UpdateServerRequestInput!
+}
+
+input GetMetricsForAServerInput {
+    "ID of the Server"
+    id: Int!
+    "Type of metrics to get"
+    type: Type66!
+    "Start of period to get Metrics for (in ISO-8601 format)"
+    start: String!
+    "End of period to get Metrics for (in ISO-8601 format)"
+    end: String!
+    "Resolution of results in seconds"
+    step: String!
+}
+
+input GetAllActionsForAServerInput {
+    "ID of the Resource"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input AddToPlacementGroupRequestInput {
+    "ID of Placement Group the Server should be added to"
+    placementGroup: Int!
+}
+
+input AddAServerToAPlacementGroupInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: AddToPlacementGroupRequestInput!
+}
+
+input ServersActionsAttachIsoRequestInput {
+    "ID or name of ISO to attach to the Server as listed in GET `/isos`"
+    iso: String!
+}
+
+input CreateAttachAnISOToAServerInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: ServersActionsAttachIsoRequestInput!
+}
+
+input AttachToNetworkRequestInput {
+    "Additional IPs to be assigned to this Server"
+    aliasIps: [String!]
+    "IP to request to be assigned to this Server; if you do not provide this then you will be auto assigned an IP address"
+    ip: String!
+    "ID of an existing network to attach the Server to"
+    network: Int!
+}
+
+input CreateAttachAServerToANetworkInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: AttachToNetworkRequestInput!
+}
+
+input ServersActionsChangeAliasIpsRequestInput {
+    "New alias IPs to set for this Server"
+    aliasIps: [String!]
+    "ID of an existing Network already attached to the Server"
+    network: Int!
+}
+
+input ChangeAliasIpsOfANetworkInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: ServersActionsChangeAliasIpsRequestInput!
+}
+
+input ServersActionsChangeDnsPtrRequestInput {
+    "Hostname to set as a reverse DNS PTR entry, reset to original value if `null`"
+    dnsPtr: String
+    "Primary IP address for which the reverse DNS entry should be set"
+    ip: String!
+}
+
+input ChangeReverseDNSEntryForThisServerInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    "Select the IP address for which to change the DNS entry by passing `ip`. It can be either IPv4 or IPv6. The target hostname is set by passing `dns_ptr`."
+    body: ServersActionsChangeDnsPtrRequestInput!
+}
+
+input ServersActionsChangeProtectionRequestInput {
+    "If true, prevents the Server from being deleted (currently delete and rebuild attribute needs to have the same value)"
+    delete: Boolean!
+    "If true, prevents the Server from being rebuilt (currently delete and rebuild attribute needs to have the same value)"
+    rebuild: Boolean!
+}
+
+input ChangeServerProtectionInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: ServersActionsChangeProtectionRequestInput!
+}
+
+input ServersActionsChangeTypeRequestInput {
+    "ID or name of Server type the Server should migrate to"
+    serverType: String!
+    "If false, do not upgrade the disk (this allows downgrading the Server type later)"
+    upgradeDisk: Boolean!
+}
+
+input ChangeTheTypeOfAServerInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: ServersActionsChangeTypeRequestInput!
+}
+
+input CreateImageRequestInput {
+    "Description of the Image, will be auto-generated if not set"
+    description: String!
+    "User-defined labels (key-value pairs)"
+    labels: LabelsInput!
+    "Type of Image to create (default: `snapshot`)"
+    type: Type63!
+}
+
+input CreateImageFromAServerInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: CreateImageRequestInput!
+}
+
+input DetachFromNetworkRequestInput {
+    "ID of an existing network to detach the Server from"
+    network: Int!
+}
+
+input CreateDetachAServerFromANetworkInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: DetachFromNetworkRequestInput!
+}
+
+input CreateDetachAnISOFromAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateDisableBackupsForAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateDisableRescueModeForAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateEnableAndConfigureBackupsForAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input ServersActionsEnableRescueRequestInput {
+    "Array of SSH key IDs which should be injected into the rescue system."
+    sshKeys: [Int!]
+    "Type of rescue system to boot (default: `linux64`)"
+    type: Type65!
+}
+
+input CreateEnableRescueModeForAServerInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    body: ServersActionsEnableRescueRequestInput!
+}
+
+input CreatePowerOffAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreatePowerOnAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateSoftRebootAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input RebuildServerRequestInput {
+    "ID or name of Image to rebuilt from."
+    image: String!
+}
+
+input CreateRebuildAServerFromAnImageInput {
+    "ID of the Server"
+    id: Int!
+    contentType: String!
+    "To select which Image to rebuild from you can either pass an ID or a name as the `image` argument. Passing a name only works for `system` Images since the other Image types do not have a name set."
+    body: RebuildServerRequestInput!
+}
+
+input CreateRemoveFromPlacementGroupInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateRequestConsoleForAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateResetAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateResetRootPasswordOfAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input CreateShutdownAServerInput {
+    "ID of the Server"
+    id: Int!
+}
+
+input GetAnActionForAServerInput {
+    "ID of the Server"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+input GetAllServerTypesInput {
+    "Can be used to filter Server types by their name. The response will only contain the Server type matching the specified name."
+    name: String!
+}
+
+input GetAServerTypeInput {
+    "ID of Server Type"
+    id: Int!
+}
+
+input GetAllSSHKeysInput {
+    "Can be used multiple times."
+    sort: Sort8!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter SSH keys by their fingerprint. The response will only contain the SSH key matching the specified fingerprint."
+    fingerprint: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+}
+
+input SshKeysRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Name of the SSH key"
+    name: String!
+    "Public key"
+    publicKey: String!
+}
+
+input CreateAnSSHKeyInput {
+    contentType: String!
+    body: SshKeysRequestInput!
+}
+
+input DeleteAnSSHKeyInput {
+    "ID of the SSH key"
+    id: String!
+}
+
+input GetASSHKeyInput {
+    "ID of the SSH key"
+    id: Int!
+}
+
+input SshKeysRequest1Input {
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "New name Name to set"
+    name: String!
+}
+
+input UpdateAnSSHKeyInput {
+    "ID of the SSH key"
+    id: String!
+    contentType: String!
+    body: SshKeysRequest1Input!
+}
+
+input GetAllVolumesInput {
+    "Can be used multiple times. The response will only contain Volumes matching the status."
+    status: Status23!
+    "Can be used multiple times."
+    sort: Sort!
+    "Can be used to filter resources by their name. The response will only contain the resources matching the specified name"
+    name: String!
+    "Can be used to filter resources by labels. The response will only contain resources matching the label selector."
+    labelSelector: String!
+}
+
+input CreateVolumeRequestInput {
+    "Auto-mount Volume after attach. `server` must be provided."
+    automount: Boolean!
+    "Format Volume after creation. One of: `xfs`, `ext4`"
+    format: String!
+    "User-defined labels (key-value pairs)"
+    labels: String!
+    "Location to create the Volume in (can be omitted if Server is specified)"
+    location: String!
+    "Name of the volume"
+    name: String!
+    "Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server)"
+    server: Int!
+    "Size of the Volume in GB"
+    size: Int!
+}
+
+input CreateAVolumeInput {
+    contentType: String!
+    body: CreateVolumeRequestInput!
+}
+
+input DeleteAVolumeInput {
+    "ID of the Volume"
+    id: String!
+}
+
+input GetAVolumeInput {
+    "ID of the Volume"
+    id: Int!
+}
+
+input UpdateVolumeRequestInput {
+    "User-defined labels (key-value pairs)"
+    labels: Labels2Input!
+    "New Volume name"
+    name: String!
+}
+
+input UpdateAVolumeInput {
+    "ID of the Volume to update"
+    id: String!
+    contentType: String!
+    body: UpdateVolumeRequestInput!
+}
+
+input GetAllActionsForAVolumeInput {
+    "ID of the Volume"
+    id: Int!
+    "Can be used multiple times."
+    sort: ParameterSort!
+    "Can be used multiple times, the response will contain only Actions with specified statuses"
+    status: ParameterStatus!
+}
+
+input AttachVolumeRequestInput {
+    "Auto-mount the Volume after attaching it"
+    automount: Boolean!
+    "ID of the Server the Volume will be attached to"
+    server: Int!
+}
+
+input CreateAttachVolumeToAServerInput {
+    "ID of the Volume"
+    id: Int!
+    contentType: String!
+    body: AttachVolumeRequestInput!
+}
+
+input VolumesActionsChangeProtectionRequestInput {
+    "If true, prevents the Volume from being deleted"
+    delete: Boolean!
+}
+
+input ChangeVolumeProtectionInput {
+    "ID of the Volume"
+    id: Int!
+    contentType: String!
+    body: VolumesActionsChangeProtectionRequestInput!
+}
+
+input CreateDetachVolumeInput {
+    "ID of the Volume"
+    id: Int!
+}
+
+input VolumesActionsResizeRequestInput {
+    "New Volume size in GB (must be greater than current size)"
+    size: Float!
+}
+
+input CreateResizeVolumeInput {
+    "ID of the Volume"
+    id: Int!
+    contentType: String!
+    body: VolumesActionsResizeRequestInput!
+}
+
+input GetAnActionForAVolumeInput {
+    "ID of the Volume"
+    id: Int!
+    "ID of the Action"
+    actionId: Int!
+}
+
+type Query {
+    "Returns all Action objects. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter."
+    getAllActions(input: GetAllActionsInput!): ActionsResponse!
+    "Returns a specific Action object."
+    getAnAction(input: GetAnActionInput!): ActionResponse!
+    "Returns all Certificate objects."
+    getAllCertificates(input: GetAllCertificatesInput!): CertificatesResponse!
+    "Gets a specific Certificate object."
+    getACertificate(input: GetACertificateInput!): CertificateResponse!
+    "Returns all Action objects for a Certificate. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.\n\nOnly type `managed` Certificates can have Actions. For type `uploaded` Certificates the `actions` key will always contain an empty array."
+    getAllActionsForACertificate(input: GetAllActionsForACertificateInput!): ActionsResponse!
+    "Returns a specific Action for a Certificate. Only type `managed` Certificates have Actions."
+    getAnActionForACertificate(input: GetAnActionForACertificateInput!): ActionResponse!
+    "Returns all Datacenter objects."
+    getAllDatacenters(input: GetAllDatacentersInput!): DatacentersResponse!
+    "Returns a specific Datacenter object."
+    getADatacenter(input: GetADatacenterInput!): DatacentersResponse1!
+    "Returns all Firewall objects."
+    getAllFirewalls(input: GetAllFirewallsInput!): FirewallsResponse!
+    "Gets a specific Firewall object."
+    getAFirewall(input: GetAFirewallInput!): FirewallResponse!
+    "Returns all Action objects for a Firewall. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    getAllActionsForAFirewall(input: GetAllActionsForAFirewallInput!): ActionsResponse!
+    "Returns a specific Action for a Firewall."
+    getAnActionForAFirewall(input: GetAnActionForAFirewallInput!): ActionResponse!
+    "Returns all Floating IP objects."
+    getAllFloatingIps(input: GetAllFloatingIpsInput!): FloatingIpsResponse!
+    "Returns a specific Floating IP object."
+    getAFloatingIP(input: GetAFloatingIPInput!): FloatingIpsResponse2!
+    "Returns all Action objects for a Floating IP. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    getAllActionsForAFloatingIP(input: GetAllActionsForAFloatingIPInput!): FloatingIpsActionsResponse!
+    "Returns a specific Action object for a Floating IP."
+    getAnActionForAFloatingIP(input: GetAnActionForAFloatingIPInput!): ActionResponse!
+    "Returns all Image objects. You can select specific Image types only and sort the results by using URI parameters."
+    getAllImages(input: GetAllImagesInput!): ImagesResponse!
+    "Returns a specific Image object."
+    getAnImage(input: GetAnImageInput!): ImagesResponse1!
+    "Returns all Action objects for an Image. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    getAllActionsForAnImage(input: GetAllActionsForAnImageInput!): ActionsResponse!
+    "Returns a specific Action for an Image."
+    getAnActionForAnImage(input: GetAnActionForAnImageInput!): ActionResponse!
+    "Returns all available ISO objects."
+    getAllIsos(input: GetAllIsosInput!): IsosResponse!
+    "Returns a specific ISO object."
+    getAnISO(input: GetAnISOInput!): IsosResponse1!
+    "Gets all existing Load Balancers that you have available."
+    getAllLoadBalancers(input: GetAllLoadBalancersInput!): LoadBalancersResponse!
+    "Gets a specific Load Balancer object."
+    getALoadBalancer(input: GetALoadBalancerInput!): LoadBalancersResponse2!
+    "You must specify the type of metric to get: `open_connections`, `connections_per_second`, `requests_per_second` or `bandwidth`. You can also specify more than one type by comma separation, e.g. `requests_per_second,bandwidth`.\n\nDepending on the type you will get different time series data:\n\n|Type | Timeseries | Unit | Description |\n|---- |------------|------|-------------|\n| open_connections | open_connections | number | Open connections |\n| connections_per_second | connections_per_second | connections/s | Connections per second |\n| requests_per_second | requests_per_second | requests/s | Requests per second |\n| bandwidth | bandwidth.in | bytes/s | Ingress bandwidth |\n|| bandwidth.out | bytes/s | Egress bandwidth |\n\nMetrics are available for the last 30 days only.\n\nIf you do not provide the step argument we will automatically adjust it so that 200 samples are returned.\n\nWe limit the number of samples to a maximum of 500 and will adjust the step parameter accordingly."
+    getMetricsForALoadbalancer(input: GetMetricsForALoadbalancerInput!): LoadBalancersMetricsResponse!
+    "Returns all Action objects for a Load Balancer. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    getAllActionsForALoadBalancer(input: GetAllActionsForALoadBalancerInput!): ActionsResponse!
+    "Returns a specific Action for a Load Balancer."
+    getAnActionForALoadBalancer(input: GetAnActionForALoadBalancerInput!): ActionResponse!
+    "Gets all Load Balancer type objects."
+    getAllLoadBalancerTypes(input: GetAllLoadBalancerTypesInput!): LoadBalancerTypesResponse!
+    "Gets a specific Load Balancer type object."
+    getALoadBalancerType(input: GetALoadBalancerTypeInput!): LoadBalancerTypesResponse1!
+    "Returns all Location objects."
+    getAllLocations(input: GetAllLocationsInput!): LocationsResponse!
+    "Returns a specific Location object."
+    getALocation(input: GetALocationInput!): LocationsResponse1!
+    "Returns all Primary IP objects."
+    getAllPrimaryIps(input: GetAllPrimaryIpsInput!): PrimaryIPsResponse!
+    "Returns a specific Primary IP object."
+    getAPrimaryIP(input: GetAPrimaryIPInput!): PrimaryIPResponse!
+    "Gets all existing networks that you have available."
+    getAllNetworks(input: GetAllNetworksInput!): NetworksResponse!
+    "Gets a specific network object."
+    getANetwork(input: GetANetworkInput!): NetworksResponse1!
+    "Returns all Action objects for a Network. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter."
+    getAllActionsForANetwork(input: GetAllActionsForANetworkInput!): ActionsResponse!
+    "Returns a specific Action for a Network."
+    getAnActionForANetwork(input: GetAnActionForANetworkInput!): ActionResponse!
+    "Returns all PlacementGroup objects."
+    getAllPlacementgroups(input: GetAllPlacementgroupsInput!): PlacementGroupsResponse!
+    "Gets a specific PlacementGroup object."
+    getAPlacementgroup(input: GetAPlacementgroupInput!): PlacementGroupResponse!
+    "Returns prices for all resources available on the platform. VAT and currency of the Project owner are used for calculations.\n\nBoth net and gross prices are included in the response."
+    getAllPrices: PricingResponse!
+    "Returns all existing Server objects"
+    getAllServers(input: GetAllServersInput!): ServersResponse!
+    "Returns a specific Server object. The Server must exist inside the Project"
+    getAServer(input: GetAServerInput!): ServersResponse2!
+    "Get Metrics for specified Server.\n\nYou must specify the type of metric to get: cpu, disk or network. You can also specify more than one type by comma separation, e.g. cpu,disk.\n\nDepending on the type you will get different time series data\n\n| Type    | Timeseries              | Unit      | Description                                          |\n|---------|-------------------------|-----------|------------------------------------------------------|\n| cpu     | cpu                     | percent   | Percent CPU usage                                    |\n| disk    | disk.0.iops.read        | iop/s     | Number of read IO operations per second              |\n|         | disk.0.iops.write       | iop/s     | Number of write IO operations per second             |\n|         | disk.0.bandwidth.read   | bytes/s   | Bytes read per second                                |\n|         | disk.0.bandwidth.write  | bytes/s   | Bytes written per second                             |\n| network | network.0.pps.in        | packets/s | Public Network interface packets per second received |\n|         | network.0.pps.out       | packets/s | Public Network interface packets per second sent     |\n|         | network.0.bandwidth.in  | bytes/s   | Public Network interface bytes/s received            |\n|         | network.0.bandwidth.out | bytes/s   | Public Network interface bytes/s sent                |\n\nMetrics are available for the last 30 days only.\n\nIf you do not provide the step argument we will automatically adjust it so that a maximum of 200 samples are returned.\n\nWe limit the number of samples returned to a maximum of 500 and will adjust the step parameter accordingly."
+    getMetricsForAServer(input: GetMetricsForAServerInput!): ServersMetricsResponse!
+    "Returns all Action objects for a Server. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter."
+    getAllActionsForAServer(input: GetAllActionsForAServerInput!): ActionsResponse!
+    "Returns a specific Action object for a Server."
+    getAnActionForAServer(input: GetAnActionForAServerInput!): ActionResponse!
+    "Gets all Server type objects."
+    getAllServerTypes(input: GetAllServerTypesInput!): ServerTypesResponse!
+    "Gets a specific Server type object."
+    getAServerType(input: GetAServerTypeInput!): ServerTypesResponse1!
+    "Returns all SSH key objects."
+    getAllSSHKeys(input: GetAllSSHKeysInput!): SshKeysResponse!
+    "Returns a specific SSH key object."
+    getASSHKey(input: GetASSHKeyInput!): SshKeysResponse1!
+    "Gets all existing Volumes that you have available."
+    getAllVolumes(input: GetAllVolumesInput!): VolumesResponse!
+    "Gets a specific Volume object."
+    getAVolume(input: GetAVolumeInput!): VolumesResponse2!
+    "Returns all Action objects for a Volume. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter."
+    getAllActionsForAVolume(input: GetAllActionsForAVolumeInput!): ActionsResponse!
+    "Returns a specific Action for a Volume."
+    getAnActionForAVolume(input: GetAnActionForAVolumeInput!): ActionResponse!
+}
+
+type Mutation {
+    "Creates a new Certificate.\n\nThe default type **uploaded** allows for uploading your existing `certificate` and `private_key` in PEM format. You have to monitor its expiration date and handle renewal yourself.\n\nIn contrast, type **managed** requests a new Certificate from *Let's Encrypt* for the specified `domain_names`. Only domains managed by *Hetzner DNS* are supported. We handle renewal and timely alert the project owner via email if problems occur.\n\nFor type `managed` Certificates the `action` key of the response contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null."
+    createACertificate(input: CreateACertificateInput!): CreateCertificateResponse!
+    "Deletes a Certificate."
+    deleteACertificate(input: DeleteACertificateInput!): String
+    "Updates the Certificate properties.\n\nNote that when updating labels, the Certificate’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Certificate object changes during the request, the response will be a “conflict” error."
+    updateACertificate(input: UpdateACertificateInput!): CertificateResponse!
+    "Retry a failed Certificate issuance or renewal.\n\nOnly applicable if the type of the Certificate is `managed` and the issuance or renewal status is `failed`.\n\n#### Call specific error codes\n\n| Code                                                    | Description                                                               |\n|---------------------------------------------------------|---------------------------------------------------------------------------|\n| `caa_record_does_not_allow_ca`                          | CAA record does not allow certificate authority                           |\n| `ca_dns_validation_failed`                              | Certificate Authority: DNS validation failed                              |\n| `ca_too_many_authorizations_failed_recently`            | Certificate Authority: Too many authorizations failed recently            |\n| `ca_too_many_certificates_issued_for_registered_domain` | Certificate Authority: Too many certificates issued for registered domain |\n| `ca_too_many_duplicate_certificates`                    | Certificate Authority: Too many duplicate certificates                    |\n| `could_not_verify_domain_delegated_to_zone`             | Could not verify domain delegated to zone                                 |\n| `dns_zone_not_found`                                    | DNS zone not found                                                        |\n| `dns_zone_is_secondary_zone`                            | DNS zone is a secondary zone                                              |"
+    createRetryIssuanceOrRenewal(input: CreateRetryIssuanceOrRenewalInput!): ActionResponse!
+    "Creates a new Firewall.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_already_added`        | Server added more than one time to resource                   |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |"
+    createAFirewall(input: CreateAFirewallInput!): CreateFirewallResponse!
+    "Deletes a Firewall.\n\n#### Call specific error codes\n\n| Code                 | Description                               |\n|--------------------- |-------------------------------------------|\n| `resource_in_use`    | Firewall must not be in use to be deleted |"
+    deleteAFirewall(input: DeleteAFirewallInput!): String
+    "Updates the Firewall.\n\nNote that when updating labels, the Firewall's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Firewall object changes during the request, the response will be a “conflict” error."
+    updateAFirewall(input: UpdateAFirewallInput!): FirewallResponse!
+    "Applies one Firewall to multiple resources.\n\nCurrently servers (public network interface) and label selectors are supported.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|-------------------------------|---------------------------------------------------------------|\n| `firewall_already_applied`    | Firewall was already applied on resource                      |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |"
+    createApplyToResources(input: CreateApplyToResourcesInput!): ActionsResponse!
+    "Removes one Firewall from multiple resources.\n\nCurrently only Servers (and their public network interfaces) are supported.\n\n#### Call specific error codes\n\n| Code                                  | Description                                                            |\n|---------------------------------------|------------------------------------------------------------------------|\n| `firewall_already_removed`            | Firewall was already removed from the resource                         |\n| `firewall_resource_not_found`         | The resource the Firewall should be attached to was not found          |\n| `firewall_managed_by_label_selector`  | Firewall was applied via label selector and cannot be removed manually |"
+    createRemoveFromResources(input: CreateRemoveFromResourcesInput!): ActionsResponse!
+    "Sets the rules of a Firewall.\n\nAll existing rules will be overwritten. Pass an empty `rules` array to remove all rules.\nThe maximum amount of rules that can be defined is 50.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|-------------------------------|---------------------------------------------------------------|\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |"
+    createSetRules(input: CreateSetRulesInput!): ActionsResponse!
+    "Creates a new Floating IP assigned to a Server. If you want to create a Floating IP that is not bound to a Server, you need to provide the `home_location` key instead of `server`. This can be either the ID or the name of the Location this IP shall be created in. Note that a Floating IP can be assigned to a Server in any Location later on. For optimal routing it is advised to use the Floating IP in the same Location it was created in."
+    createAFloatingIP(input: CreateAFloatingIPInput!): FloatingIpsResponse1!
+    "Deletes a Floating IP. If it is currently assigned to a Server it will automatically get unassigned."
+    deleteAFloatingIP(input: DeleteAFloatingIPInput!): String
+    "Updates the description or labels of a Floating IP.\nAlso note that when updating labels, the Floating IP’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    updateAFloatingIP(input: UpdateAFloatingIPInput!): FloatingIpsResponse2!
+    "Assigns a Floating IP to a Server."
+    createAssignAFloatingIPToAServer(input: CreateAssignAFloatingIPToAServerInput!): ActionResponse!
+    "Changes the hostname that will appear when getting the hostname belonging to this Floating IP."
+    changeReverseDNSEntryForAFloatingIP(input: ChangeReverseDNSEntryForAFloatingIPInput!): ActionResponse!
+    "Changes the protection configuration of the Floating IP."
+    changeFloatingIPProtection(input: ChangeFloatingIPProtectionInput!): ActionResponse!
+    "Unassigns a Floating IP, resulting in it being unreachable. You may assign it to a Server again at a later time."
+    createUnassignAFloatingIP(input: CreateUnassignAFloatingIPInput!): ActionResponse!
+    "Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted."
+    deleteAnImage(input: DeleteAnImageInput!): String
+    "Updates the Image. You may change the description, convert a Backup Image to a Snapshot Image or change the Image labels. Only Images of type `snapshot` and `backup` can be updated.\n\nNote that when updating labels, the current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    updateAnImage(input: UpdateAnImageInput!): ImagesResponse1!
+    "Changes the protection configuration of the Image. Can only be used on snapshots."
+    changeImageProtection(input: ChangeImageProtectionInput!): ActionResponse!
+    "Creates a Load Balancer.\n\n#### Call specific error codes\n\n| Code                                    | Description                                                                                           |\n|-----------------------------------------|-------------------------------------------------------------------------------------------------------|\n| `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |\n| `ip_not_owned`                          | The IP is not owned by the owner of the project of the Load Balancer                                  |\n| `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |\n| `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |\n| `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |\n| `source_port_already_used`              | The source port you are trying to add is already in use                                               |\n| `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |"
+    createALoadBalancer(input: CreateALoadBalancerInput!): LoadBalancersResponse1!
+    "Deletes a Load Balancer."
+    deleteALoadBalancer(input: DeleteALoadBalancerInput!): String
+    "Updates a Load Balancer. You can update a Load Balancer’s name and a Load Balancer’s labels.\n\nNote that when updating labels, the Load Balancer’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the Load Balancer object changes during the request, the response will be a “conflict” error."
+    updateALoadBalancer(input: UpdateALoadBalancerInput!): LoadBalancersResponse2!
+    "Adds a service to a Load Balancer.\n\n#### Call specific error codes\n\n| Code                       | Description                                             |\n|----------------------------|---------------------------------------------------------|\n| `source_port_already_used` | The source port you are trying to add is already in use |"
+    addService(input: AddServiceInput!): ActionResponse!
+    "Adds a target to a Load Balancer.\n\n#### Call specific error codes\n\n| Code                                    | Description                                                                                           |\n|-----------------------------------------|-------------------------------------------------------------------------------------------------------|\n| `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |\n| `ip_not_owned`                          | The IP you are trying to add as a target is not owned by the Project owner                            |\n| `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |\n| `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |\n| `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |\n| `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |"
+    addTarget(input: AddTargetInput!): ActionResponse!
+    "Attach a Load Balancer to a Network.\n\n**Call specific error codes**\n\n| Code                             | Description                                                           |\n|----------------------------------|-----------------------------------------------------------------------|\n| `load_balancer_already_attached` | The Load Balancer is already attached to a network                    |\n| `ip_not_available`               | The provided Network IP is not available                              |\n| `no_subnet_available`            | No Subnet or IP is available for the Load Balancer within the network |"
+    createAttachALoadBalancerToANetwork(input: CreateAttachALoadBalancerToANetworkInput!): ActionResponse!
+    "Change the algorithm that determines to which target new requests are sent."
+    changeAlgorithm(input: ChangeAlgorithmInput!): ActionResponse!
+    "Changes the hostname that will appear when getting the hostname belonging to the public IPs (IPv4 and IPv6) of this Load Balancer.\n\nFloating IPs assigned to the Server are not affected by this."
+    changeReverseDNSEntryForThisLoadBalancer(input: ChangeReverseDNSEntryForThisLoadBalancerInput!): ActionResponse!
+    "Changes the protection configuration of a Load Balancer."
+    changeLoadBalancerProtection(input: ChangeLoadBalancerProtectionInput!): ActionResponse!
+    "Changes the type (Max Services, Max Targets and Max Connections) of a Load Balancer.\n\n**Call specific error codes**\n\n| Code                         | Description                                                     |\n|------------------------------|-----------------------------------------------------------------|\n| `invalid_load_balancer_type` | The Load Balancer type does not fit for the given Load Balancer |"
+    changeTheTypeOfALoadBalancer(input: ChangeTheTypeOfALoadBalancerInput!): ActionResponse!
+    "Delete a service of a Load Balancer."
+    createDeleteService(input: CreateDeleteServiceInput!): ActionResponse!
+    "Detaches a Load Balancer from a network."
+    createDetachALoadBalancerFromANetwork(input: CreateDetachALoadBalancerFromANetworkInput!): ActionResponse!
+    "Disable the public interface of a Load Balancer. The Load Balancer will be not accessible from the internet via its public IPs.\n\n#### Call specific error codes\n\n| Code                                      | Description                                                                    |\n|-------------------------------------------|--------------------------------------------------------------------------------|\n| `load_balancer_not_attached_to_network`   |  The Load Balancer is not attached to a network                                |\n| `targets_without_use_private_ip`          | The Load Balancer has targets that use the public IP instead of the private IP |"
+    createDisableThePublicInterfaceOfALoadBalancer(input: CreateDisableThePublicInterfaceOfALoadBalancerInput!): ActionResponse!
+    "Enable the public interface of a Load Balancer. The Load Balancer will be accessible from the internet via its public IPs."
+    createEnableThePublicInterfaceOfALoadBalancer(input: CreateEnableThePublicInterfaceOfALoadBalancerInput!): ActionResponse!
+    "Removes a target from a Load Balancer."
+    createRemoveTarget(input: CreateRemoveTargetInput!): ActionResponse!
+    "Updates a Load Balancer Service.\n\n#### Call specific error codes\n\n| Code                       | Description                                             |\n|----------------------------|---------------------------------------------------------|\n| `source_port_already_used` | The source port you are trying to add is already in use |"
+    updateService(input: UpdateServiceInput!): ActionResponse!
+    "Creates a new Primary IP, optionally assigned to a Server.\n\nIf you want to create a Primary IP that is not assigned to a Server, you need to provide the `datacenter` key instead of `assignee_id`. This can be either the ID or the name of the Datacenter this Primary IP shall be created in.\n\nNote that a Primary IP can only be assigned to a Server in the same Datacenter later on.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_not_stopped`          | The specified server is running, but needs to be powered off  |\n| `server_has_ipv4`             | The server already has an ipv4 address                        |\n| `server_has_ipv6`             | The server already has an ipv6 address                        |"
+    createAPrimaryIP(input: CreateAPrimaryIPInput!): CreatePrimaryIPResponse!
+    "Deletes a Primary IP.\n\nThe Primary IP may be assigned to a Server. In this case it is unassigned automatically. The Server must be powered off (status `off`) in order for this operation to succeed."
+    deleteAPrimaryIP(input: DeleteAPrimaryIPInput!): String
+    "Updates the Primary IP.\n\nNote that when updating labels, the Primary IP's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nIf the Primary IP object changes during the request, the response will be a “conflict” error."
+    updateAPrimaryIP(input: UpdateAPrimaryIPInput!): PrimaryIPResponse!
+    "Assigns a Primary IP to a Server.\n\nA Server can only have one Primary IP of type `ipv4` and one of type `ipv6` assigned. If you need more IPs use Floating IPs.\n\nThe Server must be powered off (status `off`) in order for this operation to succeed.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_not_stopped`          | The server is running, but needs to be powered off            |\n| `primary_ip_already_assigned` | Primary ip is already assigned to a different server          |\n| `server_has_ipv4`             | The server already has an ipv4 address                        |\n| `server_has_ipv6`             | The server already has an ipv6 address                        |"
+    createAssignAPrimaryIPToAResource(input: CreateAssignAPrimaryIPToAResourceInput!): ActionResponse!
+    "Changes the hostname that will appear when getting the hostname belonging to this Primary IP."
+    changeReverseDNSEntryForAPrimaryIP(input: ChangeReverseDNSEntryForAPrimaryIPInput!): ActionResponse!
+    "Changes the protection configuration of a Primary IP.\n\nA Primary IP can only be delete protected if its `auto_delete` property is set to `false`."
+    changePrimaryIPProtection(input: ChangePrimaryIPProtectionInput!): ActionResponse!
+    "Unassigns a Primary IP from a Server.\n\nThe Server must be powered off (status `off`) in order for this operation to succeed.\n\nNote that only Servers that have at least one network interface (public or private) attached can be powered on.\n\n#### Call specific error codes\n\n| Code                              | Description                                                   |\n|---------------------------------- |-------------------------------------------------------------- |\n| `server_not_stopped`              | The server is running, but needs to be powered off            |\n| `server_is_load_balancer_target`  | The server ipv4 address is a loadbalancer target              |"
+    createUnassignAPrimaryIPFromAResource(input: CreateUnassignAPrimaryIPFromAResourceInput!): ActionResponse!
+    "Creates a network with the specified `ip_range`.\n\nYou may specify one or more `subnets`. You can also add more Subnets later by using the [add subnet action](https://docs.hetzner.cloud/#network-actions-add-a-subnet-to-a-network). If you do not specify an `ip_range` in the subnet we will automatically pick the first available /24 range for you.\n\nYou may specify one or more routes in `routes`. You can also add more routes later by using the [add route action](https://docs.hetzner.cloud/#network-actions-add-a-route-to-a-network)."
+    createANetwork(input: CreateANetworkInput!): NetworksResponse1!
+    "Deletes a network. If there are Servers attached they will be detached in the background.\n\nNote: if the network object changes during the request, the response will be a “conflict” error."
+    deleteANetwork(input: DeleteANetworkInput!): String
+    "Updates the network properties.\n\nNote that when updating labels, the network’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the network object changes during the request, the response will be a “conflict” error."
+    updateANetwork(input: UpdateANetworkInput!): NetworksResponse1!
+    "Adds a route entry to a Network.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error."
+    addARouteToANetwork(input: AddARouteToANetworkInput!): ActionResponse!
+    "Adds a new subnet object to the Network. If you do not specify an `ip_range` for the subnet we will automatically pick the first available /24 range for you if possible.\n\nNote: if the parent Network object changes during the request, the response will be a “conflict” error."
+    addASubnetToANetwork(input: AddASubnetToANetworkInput!): ActionResponse!
+    "Changes the IP range of a Network. IP ranges can only be extended and never shrunk. You can only add IPs at the end of an existing IP range. This means that the IP part of your existing range must stay the same and you can only change its netmask.\n\nFor example if you have a range `10.0.0.0/16` you want to extend then your new range must also start with the IP `10.0.0.0`. Your CIDR netmask `/16` may change to a number that is smaller than `16` thereby increasing the IP range. So valid entries would be `10.0.0.0/15`, `10.0.0.0/14`, `10.0.0.0/13` and so on.\n\nAfter changing the IP range you will have to adjust the routes on your connected Servers by either rebooting them or manually changing the routes to your private Network interface.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error."
+    changeIPRangeOfANetwork(input: ChangeIPRangeOfANetworkInput!): ActionResponse!
+    "Changes the protection configuration of a Network.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error."
+    changeNetworkProtection(input: ChangeNetworkProtectionInput!): ActionResponse!
+    "Delete a route entry from a Network.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error."
+    createDeleteARouteFromANetwork(input: CreateDeleteARouteFromANetworkInput!): ActionResponse!
+    "Deletes a single subnet entry from a Network. You cannot delete subnets which still have Servers attached. If you have Servers attached you first need to detach all Servers that use IPs from this subnet before you can delete the subnet.\n\nNote: if the Network object changes during the request, the response will be a “conflict” error."
+    createDeleteASubnetFromANetwork(input: CreateDeleteASubnetFromANetworkInput!): ActionResponse!
+    "Creates a new PlacementGroup."
+    createAPlacementgroup(input: CreateAPlacementgroupInput!): CreatePlacementGroupResponse!
+    "Deletes a PlacementGroup."
+    deleteAPlacementgroup(input: DeleteAPlacementgroupInput!): String
+    "Updates the PlacementGroup properties.\n\nNote that when updating labels, the PlacementGroup’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.\n\nNote: if the PlacementGroup object changes during the request, the response will be a “conflict” error."
+    updateAPlacementgroup(input: UpdateAPlacementgroupInput!): PlacementGroupResponse!
+    "Creates a new Server. Returns preliminary information about the Server as well as an Action that covers progress of creation."
+    createAServer(input: CreateAServerInput!): CreateServerResponse!
+    "Deletes a Server. This immediately removes the Server from your account, and it is no longer accessible."
+    deleteAServer(input: DeleteAServerInput!): ServersResponse1!
+    "Updates a Server. You can update a Server’s name and a Server’s labels.\nPlease note that Server names must be unique per Project and valid hostnames as per RFC 1123 (i.e. may only contain letters, digits, periods, and dashes).\nAlso note that when updating labels, the Server’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    updateAServer(input: UpdateAServerInput!): ServersResponse2!
+    "Adds a Server to a Placement Group.\n\nServer must be powered off for this command to succeed.\n\n#### Call specific error codes\n\n| Code                          | Description                                                          |\n|-------------------------------|----------------------------------------------------------------------|\n| `server_not_stopped`          | The action requires a stopped server                                 |"
+    addAServerToAPlacementGroup(input: AddAServerToAPlacementGroupInput!): ActionResponse!
+    "Attaches an ISO to a Server. The Server will immediately see it as a new disk. An already attached ISO will automatically be detached before the new ISO is attached.\n\nServers with attached ISOs have a modified boot order: They will try to boot from the ISO first before falling back to hard disk."
+    createAttachAnISOToAServer(input: CreateAttachAnISOToAServerInput!): ActionResponse!
+    "Attaches a Server to a network. This will complement the fixed public Server interface by adding an additional ethernet interface to the Server which is connected to the specified network.\n\nThe Server will get an IP auto assigned from a subnet of type `server` in the same `network_zone`.\n\nUsing the `alias_ips` attribute you can also define one or more additional IPs to the Servers. Please note that you will have to configure these IPs by hand on your Server since only the primary IP will be given out by DHCP.\n\n**Call specific error codes**\n\n| Code                             | Description                                                           |\n|----------------------------------|-----------------------------------------------------------------------|\n| `server_already_attached`        | The server is already attached to the network                         |\n| `ip_not_available`               | The provided Network IP is not available                              |\n| `no_subnet_available`            | No Subnet or IP is available for the Server within the network        |\n| `networks_overlap`               | The network IP range overlaps with one of the server networks         |"
+    createAttachAServerToANetwork(input: CreateAttachAServerToANetworkInput!): ActionResponse!
+    "Changes the alias IPs of an already attached Network. Note that the existing aliases for the specified Network will be replaced with these provided in the request body. So if you want to add an alias IP, you have to provide the existing ones from the Network plus the new alias IP in the request body."
+    changeAliasIpsOfANetwork(input: ChangeAliasIpsOfANetworkInput!): ActionResponse!
+    "Changes the hostname that will appear when getting the hostname belonging to the primary IPs (IPv4 and IPv6) of this Server.\n\nFloating IPs assigned to the Server are not affected by this."
+    changeReverseDNSEntryForThisServer(input: ChangeReverseDNSEntryForThisServerInput!): ActionResponse!
+    "Changes the protection configuration of the Server."
+    changeServerProtection(input: ChangeServerProtectionInput!): ActionResponse!
+    "Changes the type (Cores, RAM and disk sizes) of a Server.\n\nServer must be powered off for this command to succeed.\n\nThis copies the content of its disk, and starts it again.\n\nYou can only migrate to Server types with the same `storage_type` and equal or bigger disks. Shrinking disks is not possible as it might destroy data.\n\nIf the disk gets upgraded, the Server type can not be downgraded any more. If you plan to downgrade the Server type, set `upgrade_disk` to `false`.\n\n#### Call specific error codes\n\n| Code                          | Description                                                          |\n|-------------------------------|----------------------------------------------------------------------|\n| `invalid_server_type`         | The server type does not fit for the given server or is deprecated   |\n| `server_not_stopped`          | The action requires a stopped server                                 |"
+    changeTheTypeOfAServer(input: ChangeTheTypeOfAServerInput!): ActionResponse!
+    "Creates an Image (snapshot) from a Server by copying the contents of its disks. This creates a snapshot of the current state of the disk and copies it into an Image. If the Server is currently running you must make sure that its disk content is consistent. Otherwise, the created Image may not be readable.\n\nTo make sure disk content is consistent, we recommend to shut down the Server prior to creating an Image.\n\nYou can either create a `backup` Image that is bound to the Server and therefore will be deleted when the Server is deleted, or you can create an `snapshot` Image which is completely independent of the Server it was created from and will survive Server deletion. Backup Images are only available when the backup option is enabled for the Server. Snapshot Images are billed on a per GB basis."
+    createImageFromAServer(input: CreateImageFromAServerInput!): ServersActionsCreateImageResponse!
+    "Detaches a Server from a network. The interface for this network will vanish."
+    createDetachAServerFromANetwork(input: CreateDetachAServerFromANetworkInput!): ActionResponse!
+    "Detaches an ISO from a Server. In case no ISO Image is attached to the Server, the status of the returned Action is immediately set to `success`"
+    createDetachAnISOFromAServer(input: CreateDetachAnISOFromAServerInput!): ActionResponse!
+    "Disables the automatic backup option and deletes all existing Backups for a Server. No more additional charges for backups will be made.\n\nCaution: This immediately removes all existing backups for the Server!"
+    createDisableBackupsForAServer(input: CreateDisableBackupsForAServerInput!): ActionResponse!
+    "Disables the Hetzner Rescue System for a Server. This makes a Server start from its disks on next reboot.\n\nRescue Mode is automatically disabled when you first boot into it or if you do not use it for 60 minutes.\n\nDisabling rescue mode will not reboot your Server — you will have to do this yourself."
+    createDisableRescueModeForAServer(input: CreateDisableRescueModeForAServerInput!): ActionResponse!
+    "Enables and configures the automatic daily backup option for the Server. Enabling automatic backups will increase the price of the Server by 20%. In return, you will get seven slots where Images of type backup can be stored.\n\nBackups are automatically created daily."
+    createEnableAndConfigureBackupsForAServer(input: CreateEnableAndConfigureBackupsForAServerInput!): ActionResponse!
+    "Enable the Hetzner Rescue System for this Server. The next time a Server with enabled rescue mode boots it will start a special minimal Linux distribution designed for repair and reinstall.\n\nIn case a Server cannot boot on its own you can use this to access a Server’s disks.\n\nRescue Mode is automatically disabled when you first boot into it or if you do not use it for 60 minutes.\n\nEnabling rescue mode will not [reboot](https://docs.hetzner.cloud/#server-actions-soft-reboot-a-server) your Server — you will have to do this yourself."
+    createEnableRescueModeForAServer(input: CreateEnableRescueModeForAServerInput!): ServersActionsEnableRescueResponse!
+    "Cuts power to the Server. This forcefully stops it without giving the Server operating system time to gracefully stop. May lead to data loss, equivalent to pulling the power cord. Power off should only be used when shutdown does not work."
+    createPowerOffAServer(input: CreatePowerOffAServerInput!): ActionResponse!
+    "Starts a Server by turning its power on."
+    createPowerOnAServer(input: CreatePowerOnAServerInput!): ActionResponse!
+    "Reboots a Server gracefully by sending an ACPI request. The Server operating system must support ACPI and react to the request, otherwise the Server will not reboot."
+    createSoftRebootAServer(input: CreateSoftRebootAServerInput!): ActionResponse!
+    "Rebuilds a Server overwriting its disk with the content of an Image, thereby **destroying all data** on the target Server\n\nThe Image can either be one you have created earlier (`backup` or `snapshot` Image) or it can be a completely fresh `system` Image provided by us. You can get a list of all available Images with `GET /images`.\n\nYour Server will automatically be powered off before the rebuild command executes."
+    createRebuildAServerFromAnImage(input: CreateRebuildAServerFromAnImageInput!): ServersActionsRebuildResponse!
+    "Removes a Server from a Placement Group."
+    createRemoveFromPlacementGroup(input: CreateRemoveFromPlacementGroupInput!): ActionResponse!
+    "Requests credentials for remote access via VNC over websocket to keyboard, monitor, and mouse for a Server. The provided URL is valid for 1 minute, after this period a new url needs to be created to connect to the Server. How long the connection is open after the initial connect is not subject to this timeout."
+    createRequestConsoleForAServer(input: CreateRequestConsoleForAServerInput!): ServersActionsRequestConsoleResponse!
+    "Cuts power to a Server and starts it again. This forcefully stops it without giving the Server operating system time to gracefully stop. This may lead to data loss, it’s equivalent to pulling the power cord and plugging it in again. Reset should only be used when reboot does not work."
+    createResetAServer(input: CreateResetAServerInput!): ActionResponse!
+    "Resets the root password. Only works for Linux systems that are running the qemu guest agent. Server must be powered on (status `running`) in order for this operation to succeed.\n\nThis will generate a new password for this Server and return it.\n\nIf this does not succeed you can use the rescue system to netboot the Server and manually change your Server password by hand."
+    createResetRootPasswordOfAServer(input: CreateResetRootPasswordOfAServerInput!): ServersActionsResetPasswordResponse!
+    "Shuts down a Server gracefully by sending an ACPI shutdown request. The Server operating system must support ACPI and react to the request, otherwise the Server will not shut down."
+    createShutdownAServer(input: CreateShutdownAServerInput!): ActionResponse!
+    "Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is created, it can be used in other calls such as creating Servers."
+    createAnSSHKey(input: CreateAnSSHKeyInput!): SshKeysResponse1!
+    "Deletes an SSH key. It cannot be used anymore."
+    deleteAnSSHKey(input: DeleteAnSSHKeyInput!): String
+    "Updates an SSH key. You can update an SSH key name and an SSH key labels.\n\nPlease note that when updating labels, the SSH key current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    updateAnSSHKey(input: UpdateAnSSHKeyInput!): SshKeysResponse1!
+    "Creates a new Volume attached to a Server. If you want to create a Volume that is not attached to a Server, you need to provide the `location` key instead of `server`. This can be either the ID or the name of the Location this Volume will be created in. Note that a Volume can be attached to a Server only in the same Location as the Volume itself.\n\nSpecifying the Server during Volume creation will automatically attach the Volume to that Server after it has been initialized. In that case, the `next_actions` key in the response is an array which contains a single `attach_volume` action.\n\nThe minimum Volume size is 10GB and the maximum size is 10TB (10240GB).\n\nA volume’s name can consist of alphanumeric characters, dashes, underscores, and dots, but has to start and end with an alphanumeric character. The total length is limited to 64 characters. Volume names must be unique per Project.\n\n#### Call specific error codes\n\n| Code                                | Description                                         |\n|-------------------------------------|-----------------------------------------------------|\n| `no_space_left_in_location`         | There is no volume space left in the given location |"
+    createAVolume(input: CreateAVolumeInput!): VolumesResponse1!
+    "Deletes a volume. All Volume data is irreversibly destroyed. The Volume must not be attached to a Server and it must not have delete protection enabled."
+    deleteAVolume(input: DeleteAVolumeInput!): String
+    "Updates the Volume properties.\n\nNote that when updating labels, the volume’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body."
+    updateAVolume(input: UpdateAVolumeInput!): VolumesResponse2!
+    "Attaches a Volume to a Server. Works only if the Server is in the same Location as the Volume."
+    createAttachVolumeToAServer(input: CreateAttachVolumeToAServerInput!): ActionResponse!
+    "Changes the protection configuration of a Volume."
+    changeVolumeProtection(input: ChangeVolumeProtectionInput!): ActionResponse!
+    "Detaches a Volume from the Server it’s attached to. You may attach it to a Server again at a later time."
+    createDetachVolume(input: CreateDetachVolumeInput!): ActionResponse!
+    "Changes the size of a Volume. Note that downsizing a Volume is not possible."
+    createResizeVolume(input: CreateResizeVolumeInput!): ActionResponse!
+}
+
+schema {
+    mutation: Mutation
+    query: Query
+}

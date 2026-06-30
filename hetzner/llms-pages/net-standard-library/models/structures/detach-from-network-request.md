@@ -1,0 +1,30 @@
+# Detach from Network Request
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/#/net-standard-library/x-redirect/JTI0bSUyRkRldGFjaEZyb21OZXR3b3JrUmVxdWVzdA
+
+
+# Class Name
+
+`DetachFromNetworkRequest`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `Network` | `int` | Required | ID of an existing network to detach the Server from |
+
+
+# Example
+
+```csharp
+using HetznerCloudAPI.Standard.Models;
+
+DetachFromNetworkRequest detachFromNetworkRequest = new DetachFromNetworkRequest
+{
+    Network = 4711,
+};
+```
+
+
+

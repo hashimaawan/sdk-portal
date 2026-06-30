@@ -1,0 +1,141 @@
+{
+  "id": "11d7adec-c4fc-4dc6-bf9d-bbc565923244",
+  "name": "Furkot Trips",
+  "description": "Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.\n",
+  "order": [
+    "4839a1d5-0443-43a6-9892-dcb3e40360c5",
+    "f50c24a6-3c34-4d05-9141-3be60d405088"
+  ],
+  "folders": [],
+  "requests": [
+    {
+      "id": "4839a1d5-0443-43a6-9892-dcb3e40360c5",
+      "name": "Trip_GET",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "list user's trips",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "{{default}}/trip",
+      "responses": [
+        {
+          "request": "4839a1d5-0443-43a6-9892-dcb3e40360c5",
+          "id": "1f181eaa-108e-41f4-8ffe-b7fde9b292ce",
+          "name": "Response_200",
+          "status": "Successful response",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Successful response"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "[\n  {\n    \"begin\": \"2026-07-21T12:20:49.4832085Z\",\n    \"description\": \"description27\",\n    \"end\": \"2026-09-01T12:20:49.4845464Z\",\n    \"id\": \"id5\",\n    \"name\": \"name91\"\n  }\n]",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "11d7adec-c4fc-4dc6-bf9d-bbc565923244",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "id": "f50c24a6-3c34-4d05-9141-3be60d405088",
+      "name": "TripStopByTripId_GET",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "list stops for a trip identified by {trip_id}",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {
+        "trip_id": "trip_id88"
+      },
+      "url": "{{default}}/trip/:trip_id/stop",
+      "responses": [
+        {
+          "request": "f50c24a6-3c34-4d05-9141-3be60d405088",
+          "id": "cbcb7669-f20f-4eab-a79b-f5f7490f7497",
+          "name": "Response_200",
+          "status": "Successful response",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Successful response"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "[\n  {\n    \"address\": \"address68\",\n    \"arrival\": \"2026-09-27T12:20:49.5365515Z\",\n    \"coordinates\": {\n      \"lat\": 106.36535146766339,\n      \"lon\": 221.2327966568222\n    },\n    \"departure\": \"2026-07-25T12:20:49.540559Z\",\n    \"name\": \"name24\",\n    \"nights\": 184,\n    \"passthru\": true,\n    \"route\": {\n      \"distance\": 13,\n      \"duration\": 114,\n      \"mode\": \"motorcycle\",\n      \"polyline\": \"polyline47\"\n    },\n    \"url\": \"url34\"\n  }\n]",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "11d7adec-c4fc-4dc6-bf9d-bbc565923244",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": [
+        {
+          "key": "trip_id",
+          "value": "trip_id88",
+          "description": "id of the trip"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "key": "default",
+      "value": "https://trips.furkot.com/pub/api"
+    },
+    {
+      "key": "auth server",
+      "value": "https://trips.furkot.com/oauth"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://trips.furkot.com/pub/api/access_token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://trips.furkot.com/oauth/authorize",
+        "type": "string"
+      },
+      {
+        "key": "scope",
+        "value": "read:trips",
+        "type": "string"
+      }
+    ]
+  }
+}

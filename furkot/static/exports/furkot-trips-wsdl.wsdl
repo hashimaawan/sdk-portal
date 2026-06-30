@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="https://trips.furkot.com/pub/api/schemas" xmlns:wsdl="https://trips.furkot.com/pub/api/wsdl" targetNamespace="https://trips.furkot.com/pub/api/wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns:tns="https://trips.furkot.com/pub/api/schemas" targetNamespace="https://trips.furkot.com/pub/api/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GET_Trip_GET_InputMessage" type="schemas:GET_Trip_GET_InputMessage" />
+      <xs:element name="GET_Trip_GET_OutputMessage" type="schemas:GET_Trip_GET_OutputMessage" />
+      <xs:element name="GET_TripStopByTripId_GET_InputMessage" type="schemas:GET_TripStopByTripId_GET_InputMessage" />
+      <xs:element name="GET_TripStopByTripId_GET_OutputMessage" type="schemas:GET_TripStopByTripId_GET_OutputMessage" />
+      <xs:complexType name="Step">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>address of the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="arrival" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>arrival at the stop in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="coordinates" type="schemas:Coordinates">
+            <xs:annotation>
+              <xs:documentation>geographical coordinates of the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="departure" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>departure from the stop in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>name of the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="nights" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>number of nights</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="passthru" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>true for pass-through points anchoring route</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="route" type="schemas:Route">
+            <xs:annotation>
+              <xs:documentation>route leading to the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="url" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>url of the page with more information about the stop</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Trip">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="begin" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>begin of the trip in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="description" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>description of the trip (truncated to 200 characters)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="end" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>end of the trip in its local timezone as YYYY-MM-DDThh:mm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Unique ID of the trip</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>name of the trip</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Coordinates">
+        <xs:annotation>
+          <xs:documentation>geographical coordinates of the stop</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lat" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>latitude</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lon" type="xs:double">
+            <xs:annotation>
+              <xs:documentation>longitude</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Mode">
+        <xs:annotation>
+          <xs:documentation>travel mode</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="car" />
+          <xs:enumeration value="motorcycle" />
+          <xs:enumeration value="bicycle" />
+          <xs:enumeration value="walk" />
+          <xs:enumeration value="other" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Route">
+        <xs:annotation>
+          <xs:documentation>route leading to the stop</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element minOccurs="0" name="distance" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>route distance in meters</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="duration" type="xs:long">
+            <xs:annotation>
+              <xs:documentation>route duration in seconds</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="mode" type="schemas:Mode">
+            <xs:annotation>
+              <xs:documentation>travel mode</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="polyline" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>route path compatible with Google polyline encoding algorithm</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_Trip_GET_InputMessage">
+        <xs:sequence>
+          <xs:any />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_Trip_GET_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="response" type="schemas:Trip">
+            <xs:annotation>
+              <xs:documentation>Successful response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_TripStopByTripId_GET_InputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="trip_id" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>id of the trip</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GET_TripStopByTripId_GET_OutputMessage">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="response" type="schemas:Step">
+            <xs:annotation>
+              <xs:documentation>Successful response</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="GET_Trip_GET_InputMessage">
+    <part name="GET_Trip_GET_InputMessage" element="schemas:GET_Trip_GET_InputMessage" />
+  </message>
+  <message name="GET_Trip_GET_OutputMessage">
+    <part name="GET_Trip_GET_OutputMessage" element="schemas:GET_Trip_GET_OutputMessage" />
+  </message>
+  <message name="GET_TripStopByTripId_GET_InputMessage">
+    <part name="GET_TripStopByTripId_GET_InputMessage" element="schemas:GET_TripStopByTripId_GET_InputMessage" />
+  </message>
+  <message name="GET_TripStopByTripId_GET_OutputMessage">
+    <part name="GET_TripStopByTripId_GET_OutputMessage" element="schemas:GET_TripStopByTripId_GET_OutputMessage" />
+  </message>
+  <portType name="default_PortType">
+    <operation name="GET_Trip_GET">
+      <documentation>list user's trips</documentation>
+      <input message="wsdl:GET_Trip_GET_InputMessage" />
+      <output message="wsdl:GET_Trip_GET_OutputMessage">
+        <documentation>Successful response</documentation>
+      </output>
+    </operation>
+    <operation name="GET_TripStopByTripId_GET">
+      <documentation>list stops for a trip identified by {trip_id}</documentation>
+      <input message="wsdl:GET_TripStopByTripId_GET_InputMessage" />
+      <output message="wsdl:GET_TripStopByTripId_GET_OutputMessage">
+        <documentation>Successful response</documentation>
+      </output>
+    </operation>
+  </portType>
+  <portType name="authserver_PortType" />
+  <binding name="default_Binding" type="wsdl:default_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="GET_Trip_GET">
+      <soap:operation soapAction="GET_Trip_GET" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GET_TripStopByTripId_GET">
+      <soap:operation soapAction="GET_TripStopByTripId_GET" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output>
+        <soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="authserver_Binding" type="wsdl:authserver_PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+  </binding>
+  <service name="Furkot_x0020_Trips">
+    <documentation>Furkot provides Rest API to access user trip data.
+Using Furkot API an application can list user trips and display stops for a specific trip.
+Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+</documentation>
+    <port name="default_Port" binding="wsdl:default_Binding">
+      <soap:address location="https://trips.furkot.com/pub/api" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+    <port name="authserver_Port" binding="wsdl:authserver_Binding">
+      <soap:address location="https://trips.furkot.com/oauth" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

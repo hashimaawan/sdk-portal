@@ -1,0 +1,28 @@
+# Type 21
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/#/ruby/x-redirect/JTI0bSUyRnR5cGUyMQ
+
+
+# Enum Type Name
+
+`Type21Enum`
+
+
+# Fields
+
+| Name |
+|  --- |
+| `SYSTEM` |
+| `SNAPSHOT` |
+| `BACKUP` |
+| `APP` |
+
+
+# Example
+
+```ruby
+type21 = Type21Enum::BACKUP
+```
+
+
+

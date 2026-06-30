@@ -1,0 +1,52 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "https://1forge.com/forex-quotes",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/quotes",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get quotes",
+          "nickname": "Getquotesforallsymbols",
+          "parameters": [],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "uniqueItems": false,
+          "type": "void"
+        }
+      ]
+    },
+    {
+      "path": "/symbols",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Symbol List",
+          "nickname": "Getalistofsymbolsforwhichweproviderealtimequotes",
+          "parameters": [],
+          "produces": [
+            "application/json"
+          ],
+          "responseMessages": [],
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": false,
+          "type": "array"
+        }
+      ]
+    }
+  ],
+  "models": {},
+  "authorizations": {},
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ]
+}

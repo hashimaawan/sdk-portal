@@ -1,0 +1,33 @@
+#%RAML 0.8
+title: 1Forge Finance APIs
+version: 0.0.1
+documentation:
+- title: 1Forge Finance APIs
+  content: Stock and Forex Data and Realtime Quotes
+baseUri: https://1forge.com/forex-quotes
+protocols:
+- HTTPS
+- HTTP
+baseUriParameters: {}
+/quotes:
+  get:
+    description: Get quotes
+    responses:
+      '200':
+        description: A list of quotes
+/symbols:
+  get:
+    description: Symbol List
+    responses:
+      '200':
+        description: A list of symbols
+        body:
+          application/json:
+            schema: |
+              {
+                "description": "",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }

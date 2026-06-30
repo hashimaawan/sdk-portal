@@ -1,0 +1,67 @@
+swagger: '2.0'
+info:
+  version: '0.0.1'
+  title: 1Forge Finance APIs
+  description: Stock and Forex Data and Realtime Quotes
+  contact:
+    email: contact@1forge.com
+    name: 1Forge
+    url: http://1forge.com
+host: 1forge.com
+basePath: /forex-quotes
+securityDefinitions: {}
+schemes:
+- https
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /quotes:
+    get:
+      description: Get quotes
+      summary: Get quotes for all symbols
+      tags:
+      - forex
+      - finance
+      - quotes
+      operationId: Getquotesforallsymbols
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: A list of quotes
+          headers: {}
+      externalDocs:
+        url: http://1forge.com/forex-data-api
+        description: Find out more
+  /symbols:
+    get:
+      description: Symbol List
+      summary: Get a list of symbols for which we provide real-time quotes
+      tags:
+      - forex
+      - finance
+      - quotes
+      operationId: Getalistofsymbolsforwhichweprovidereal-timequotes
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: A list of symbols
+          schema:
+            type: array
+            items:
+              type: string
+          headers: {}
+      externalDocs:
+        url: http://1forge.com/forex-data-api
+        description: Find out more
+tags:
+- name: forex
+  description: ''

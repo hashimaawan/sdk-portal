@@ -1,0 +1,91 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "1Forge Finance APIs",
+    "description": "Stock and Forex Data and Realtime Quotes",
+    "contact": {
+      "name": "1Forge",
+      "url": "http://1forge.com",
+      "email": "contact@1forge.com"
+    },
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://1forge.com/forex-quotes",
+      "variables": {}
+    },
+    {
+      "url": "http://1forge.com/forex-quotes",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/quotes": {
+      "get": {
+        "tags": [
+          "forex",
+          "finance",
+          "quotes"
+        ],
+        "summary": "Get quotes for all symbols",
+        "description": "Get quotes",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://1forge.com/forex-data-api"
+        },
+        "operationId": "Getquotesforallsymbols",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of quotes",
+            "headers": {},
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/symbols": {
+      "get": {
+        "tags": [
+          "forex",
+          "finance",
+          "quotes"
+        ],
+        "summary": "Get a list of symbols for which we provide real-time quotes",
+        "description": "Symbol List",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://1forge.com/forex-data-api"
+        },
+        "operationId": "Getalistofsymbolsforwhichweprovidereal-timequotes",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "A list of symbols",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": ""
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "forex",
+      "description": ""
+    }
+  ]
+}

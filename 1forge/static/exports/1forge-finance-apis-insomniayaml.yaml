@@ -1,0 +1,36 @@
+_type: export
+__export_format: 4
+__export_source: apimatic.transformer
+resources:
+- name: 1Forge Finance APIs
+  _type: workspace
+  _id: wrk_f3b5b09490dc4fb88f585bb03f2f4b48
+  description: Stock and Forex Data and Realtime Quotes
+- name: production
+  data:
+    server1: https://1forge.com/forex-quotes
+    server2: http://1forge.com/forex-quotes
+  _type: environment
+  _id: env_16b7c15098164d11a98f19cc9def64b9
+  parentId: wrk_f3b5b09490dc4fb88f585bb03f2f4b48
+- name: forex
+  _type: request_group
+  _id: fld_b3817c15bb9b46bd90d02cff2069a161
+  parentId: wrk_f3b5b09490dc4fb88f585bb03f2f4b48
+  description: ''
+- name: Get quotes for all symbols
+  method: GET
+  url: '{{server1}}/quotes'
+  authentication: {}
+  _type: request
+  _id: req_e3d621f5faa04efdaadf93044593f079
+  parentId: fld_b3817c15bb9b46bd90d02cff2069a161
+  description: Get quotes
+- name: Get a list of symbols for which we provide real-time quotes
+  method: GET
+  url: '{{server1}}/symbols'
+  authentication: {}
+  _type: request
+  _id: req_41e21eaeea964b41ad3f09fbc56ea643
+  parentId: fld_b3817c15bb9b46bd90d02cff2069a161
+  description: Symbol List

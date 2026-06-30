@@ -1,0 +1,33 @@
+#%RAML 1.0
+title: 1Forge Finance APIs
+version: 0.0.1
+baseUri: https://1forge.com/forex-quotes
+baseUriParameters: {}
+protocols:
+- HTTPS
+- HTTP
+documentation:
+- title: 1Forge Finance APIs
+  content: Stock and Forex Data and Realtime Quotes
+/quotes:
+  get:
+    displayName: Getquotesforallsymbols
+    description: Get quotes
+    responses:
+      '200':
+        description: A list of quotes
+        body: {}
+/symbols:
+  get:
+    displayName: Getalistofsymbolsforwhichweprovidereal-timequotes
+    description: Symbol List
+    responses:
+      '200':
+        description: A list of symbols
+        body:
+          application/json:
+            displayName: response
+            description: ''
+            type: array
+            items:
+              type: string

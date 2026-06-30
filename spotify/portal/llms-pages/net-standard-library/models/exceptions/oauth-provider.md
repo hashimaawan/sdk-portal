@@ -1,6 +1,6 @@
 # OAuth Provider
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk9BdXRoUHJvdmlkZXI
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRk9BdXRoUHJvdmlkZXI
 
 OAuth 2 Authorization endpoint exception.
 
@@ -16,7 +16,7 @@ OAuth 2 Authorization endpoint exception.
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Error` | [`OauthProviderError`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/enumerations/oauth-provider-error.md) | Required | Gets or sets error code. |
+| `Error` | [`OauthProviderError`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/enumerations/oauth-provider-error.md) | Required | Gets or sets error code. |
 | `ErrorDescription` | `string` | Optional | Gets or sets human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. |
 | `ErrorUri` | `string` | Optional | Gets or sets a URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |

@@ -1,6 +1,6 @@
 # Save-Albums-User
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0ZSUyRkFsYnVtcyUyRnNhdmUtYWxidW1zLXVzZXI
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0ZSUyRkFsYnVtcyUyRnNhdmUtYWxidW1zLXVzZXI
 
 Save one or more albums to the current user's 'Your Music' library.
 
@@ -12,7 +12,7 @@ def save_albums_user(ids,
 
 # Authentication
 
-This endpoint requires [oauth_2_0](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/getting-started/quickstart/authorization.md)
+This endpoint requires [oauth_2_0](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -20,7 +20,7 @@ This endpoint requires [oauth_2_0](https://github.com/hashimaawan/sdk-portal/tre
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ids` | `String` | Query, Required | - |
-| `body` | [`MeAlbumsRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/me-albums-request.md) | Body, Optional | - |
+| `body` | [`MeAlbumsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/me-albums-request.md) | Body, Optional | - |
 
 
 # Requires scope
@@ -34,7 +34,7 @@ This endpoint requires [oauth_2_0](https://github.com/hashimaawan/sdk-portal/tre
 
 **200**: The album is saved
 
-This method returns an [`ApiResponse`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -56,9 +56,9 @@ end
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Bad or expired token. This can happen if the user revoked a token or<br>the access token has expired. You should re-authenticate the user. | [`UnauthorizedException`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/exceptions/unauthorized.md) |
-| 403 | Bad OAuth request (wrong consumer key, bad nonce, expired<br>timestamp...). Unfortunately, re-authenticating the user won't help here. | [`ForbiddenException`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/exceptions/forbidden.md) |
-| 429 | The app has exceeded its rate limits. | [`TooManyRequestsException`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/exceptions/too-many-requests.md) |
+| 401 | Bad or expired token. This can happen if the user revoked a token or<br>the access token has expired. You should re-authenticate the user. | [`UnauthorizedException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/exceptions/unauthorized.md) |
+| 403 | Bad OAuth request (wrong consumer key, bad nonce, expired<br>timestamp...). Unfortunately, re-authenticating the user won't help here. | [`ForbiddenException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/exceptions/forbidden.md) |
+| 429 | The app has exceeded its rate limits. | [`TooManyRequestsException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/exceptions/too-many-requests.md) |
 
 
 

@@ -1,6 +1,6 @@
 # Category Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
 
 *This model accepts additional fields of type object.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Href` | `string` | Required | A link to the Web API endpoint returning full details of the category. |
-| `Icons` | [`List<ImageObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/image-object.md) | Required | The category icon, in various sizes. |
+| `Icons` | [`List<ImageObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/image-object.md) | Required | The category icon, in various sizes. |
 | `Id` | `string` | Required | The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) of the category. |
 | `Name` | `string` | Required | The name of the category. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |

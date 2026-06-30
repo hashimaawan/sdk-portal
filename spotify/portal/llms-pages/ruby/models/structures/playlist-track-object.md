@@ -1,6 +1,6 @@
 # Playlist Track Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -15,9 +15,9 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `added_at` | `DateTime` | Optional | The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._ |
-| `added_by` | [`PlaylistUserObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
+| `added_by` | [`PlaylistUserObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
 | `is_local` | `TrueClass \| FalseClass` | Optional | Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not. |
-| `track` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/episode-object.md) \| nil | Optional | This is a container for one-of cases. |
+| `track` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/episode-object.md) \| nil | Optional | This is a container for one-of cases. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # What APIMatic Offers
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/cGFnZSUzQXdoeS1hcGltYXRpYyUyRndoYXQtYXBpbWF0aWMtb2ZmZXJz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/cGFnZSUzQXdoeS1hcGltYXRpYyUyRndoYXQtYXBpbWF0aWMtb2ZmZXJz
 
 This developer portal is powered by **APIMatic**. The same platform that generated this experience can turn any OpenAPI specification into a complete developer portal — interactive documentation, auto-generated SDKs in multiple languages, live API testing, and AI-assisted onboarding — in minutes.
 

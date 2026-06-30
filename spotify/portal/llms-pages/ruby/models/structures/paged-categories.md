@@ -1,6 +1,6 @@
 # Paged Categories
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `categories` | [`Categories`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/categories.md) | Required | - |
+| `categories` | [`Categories`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/categories.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

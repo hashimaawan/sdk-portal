@@ -1,6 +1,6 @@
 # ApiResponse
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
 
 
 Represents the result of an API call, including response metadata and the returned data of type `T`.
@@ -9,7 +9,7 @@ Represents the result of an API call, including response metadata and the return
 
 | Name | Type | Description |
 |  --- | --- | --- |
-| request | [`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/sdk-infrastructure/http/httprequest.md) | Original request that resulted in this response. |
+| request | [`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/sdk-infrastructure/http/httprequest.md) | Original request that resulted in this response. |
 | statusCode | `number` | Response status codee. |
 | headers | `Record<string, string>` | Response headers. |
 | result | `T` | Response data. |

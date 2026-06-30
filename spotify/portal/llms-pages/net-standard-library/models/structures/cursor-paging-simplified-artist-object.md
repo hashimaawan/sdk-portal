@@ -1,6 +1,6 @@
 # Cursor Paging Simplified Artist Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ1NpbXBsaWZpZWRBcnRpc3RPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ1NpbXBsaWZpZWRBcnRpc3RPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -17,9 +17,9 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 | `Href` | `string` | Optional | A link to the Web API endpoint returning the full result of the request. |
 | `Limit` | `int?` | Optional | The maximum number of items in the response (as set in the query or by default). |
 | `Next` | `string` | Optional | URL to the next page of items. ( `null` if none) |
-| `Cursors` | [`CursorObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
+| `Cursors` | [`CursorObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
 | `Total` | `int?` | Optional | The total number of items available to return. |
-| `Items` | [`List<ArtistObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/artist-object.md) | Optional | - |
+| `Items` | [`List<ArtistObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/artist-object.md) | Optional | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

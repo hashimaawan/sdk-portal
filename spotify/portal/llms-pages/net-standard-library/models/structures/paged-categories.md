@@ -1,6 +1,6 @@
 # Paged Categories
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
 
 *This model accepts additional fields of type object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Categories` | [`Categories`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/categories.md) | Required | - |
+| `Categories` | [`Categories`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/categories.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

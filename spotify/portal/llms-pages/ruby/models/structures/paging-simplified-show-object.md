@@ -1,6 +1,6 @@
 # Paging Simplified Show Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRTaG93T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRTaG93T2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 | `offset` | `Integer` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `String` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `Integer` | Required | The total number of items available to return. |
-| `items` | [`Array[ShowBase]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/show-base.md) | Required | - |
+| `items` | [`Array[ShowBase]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/show-base.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

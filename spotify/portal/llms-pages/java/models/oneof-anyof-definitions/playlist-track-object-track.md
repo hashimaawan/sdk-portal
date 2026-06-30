@@ -1,6 +1,6 @@
 # Playlist Track Object Track
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3RUcmFjaw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3RUcmFjaw
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Type | Factory Method |
 |  --- | --- |
-| [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/track-object.md) | PlaylistTrackObjectTrack.fromTrackObject(TrackObject trackObject) |
-| [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-object.md) | PlaylistTrackObjectTrack.fromEpisodeObject(EpisodeObject episodeObject) |
+| [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/track-object.md) | PlaylistTrackObjectTrack.fromTrackObject(TrackObject trackObject) |
+| [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/episode-object.md) | PlaylistTrackObjectTrack.fromEpisodeObject(EpisodeObject episodeObject) |
 
 
 # TrackObject

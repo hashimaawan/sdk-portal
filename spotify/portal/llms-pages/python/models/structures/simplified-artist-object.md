@@ -1,6 +1,6 @@
 # Simplified Artist Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlNpbXBsaWZpZWRBcnRpc3RPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRlNpbXBsaWZpZWRBcnRpc3RPYmplY3Q
 
 *This model accepts additional fields of type Any.*
 
@@ -14,11 +14,11 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `external_urls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/external-url-object.md) | Optional | Known external URLs for this artist. |
+| `external_urls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/external-url-object.md) | Optional | Known external URLs for this artist. |
 | `href` | `str` | Optional | A link to the Web API endpoint providing full details of the artist. |
 | `id` | `str` | Optional | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the artist. |
 | `name` | `str` | Optional | The name of the artist. |
-| `mtype` | [`Type`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/enumerations/type.md) | Optional | The object type. |
+| `mtype` | [`Type`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/enumerations/type.md) | Optional | The object type. |
 | `uri` | `str` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the artist. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

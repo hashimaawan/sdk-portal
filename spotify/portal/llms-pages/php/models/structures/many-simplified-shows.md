@@ -1,6 +1,6 @@
 # Many Simplified Shows
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
 
 *This model accepts additional fields of type array.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `shows` | [`ShowBase[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/show-base.md) | Required | - | getShows(): array | setShows(array shows): void |
+| `shows` | [`ShowBase[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/show-base.md) | Required | - | getShows(): array | setShows(array shows): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

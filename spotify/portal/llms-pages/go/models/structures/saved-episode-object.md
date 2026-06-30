@@ -1,6 +1,6 @@
 # Saved Episode Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlNhdmVkRXBpc29kZU9iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlNhdmVkRXBpc29kZU9iamVjdA
 
 *This model accepts additional fields of type interface{}.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `AddedAt` | `*time.Time` | Optional | The date and time the episode was saved.<br>Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ. |
-| `Episode` | [`*models.EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/episode-object.md) | Optional | Information about the episode. |
+| `Episode` | [`*models.EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/episode-object.md) | Optional | Information about the episode. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

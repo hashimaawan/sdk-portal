@@ -1,6 +1,6 @@
 # Paged Albums
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2VkQWxidW1z
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlBhZ2VkQWxidW1z
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Albums` | [`PagingSimplifiedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-simplified-album-object.md) | Required | - | PagingSimplifiedAlbumObject getAlbums() | setAlbums(PagingSimplifiedAlbumObject albums) |
+| `Albums` | [`PagingSimplifiedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/paging-simplified-album-object.md) | Required | - | PagingSimplifiedAlbumObject getAlbums() | setAlbums(PagingSimplifiedAlbumObject albums) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

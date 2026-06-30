@@ -1,6 +1,6 @@
 # Many Tracks
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlUcmFja3M
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRk1hbnlUcmFja3M
 
 *This model accepts additional fields of type Any.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `tracks` | [`List[TrackObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/track-object.md) | Required | - |
+| `tracks` | [`List[TrackObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/track-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

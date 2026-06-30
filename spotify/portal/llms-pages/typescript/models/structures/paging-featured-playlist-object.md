@@ -1,6 +1,6 @@
 # Paging Featured Playlist Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `message` | `string \| undefined` | Optional | The localized message of a playlist. |
-| `playlists` | [`PagingPlaylistObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-playlist-object.md) | Optional | - |
+| `playlists` | [`PagingPlaylistObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/paging-playlist-object.md) | Optional | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

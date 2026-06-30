@@ -1,6 +1,6 @@
 # Many Chapters
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRk1hbnlDaGFwdGVycw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRk1hbnlDaGFwdGVycw
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Chapters` | [`[]models.ChapterObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/chapter-object.md) | Required | - |
+| `Chapters` | [`[]models.ChapterObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/chapter-object.md) | Required | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

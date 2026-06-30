@@ -1,6 +1,6 @@
 # Many Artists
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
 
 *This model accepts additional fields of type array.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `artists` | [`ArtistObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/artist-object.md) | Required | - | getArtists(): array | setArtists(array artists): void |
+| `artists` | [`ArtistObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/artist-object.md) | Required | - | getArtists(): array | setArtists(array artists): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

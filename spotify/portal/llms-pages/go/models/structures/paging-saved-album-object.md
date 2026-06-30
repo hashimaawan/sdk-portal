@@ -1,6 +1,6 @@
 # Paging Saved Album Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkQWxidW1PYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkQWxidW1PYmplY3Q
 
 *This model accepts additional fields of type interface{}.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 | `Offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `Previous` | `*string` | Required | URL to the previous page of items. ( `null` if none) |
 | `Total` | `int` | Required | The total number of items available to return. |
-| `Items` | [`[]models.SavedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/saved-album-object.md) | Required | - |
+| `Items` | [`[]models.SavedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/saved-album-object.md) | Required | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

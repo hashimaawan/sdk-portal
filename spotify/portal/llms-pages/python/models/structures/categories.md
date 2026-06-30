@@ -1,6 +1,6 @@
 # Categories
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkNhdGVnb3JpZXM
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRkNhdGVnb3JpZXM
 
 *This model accepts additional fields of type Any.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 | `offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `str` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `int` | Required | The total number of items available to return. |
-| `items` | [`List[CategoryObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/category-object.md) | Required | - |
+| `items` | [`List[CategoryObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/category-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

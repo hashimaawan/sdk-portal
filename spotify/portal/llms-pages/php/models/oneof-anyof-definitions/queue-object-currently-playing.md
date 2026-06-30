@@ -1,6 +1,6 @@
 # Queue Object Currently Playing
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0Q3VycmVudGx5UGxheWluZw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0Q3VycmVudGx5UGxheWluZw
 
 
 # Data Type
@@ -12,8 +12,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Type |
 |  --- |
-| [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/track-object.md) |
-| [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/episode-object.md) |
+| [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/track-object.md) |
+| [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/episode-object.md) |
 
 
 # TrackObject

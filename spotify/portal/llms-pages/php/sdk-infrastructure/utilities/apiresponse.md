@@ -1,6 +1,6 @@
 # ApiResponse
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
 
 
 Represents the result of an API call, including the request details, response metadata, and the returned data.
@@ -9,7 +9,7 @@ Represents the result of an API call, including the request details, response me
 
 | Name | Type | Description |
 |  --- | --- | --- |
-| `getRequest()` | [`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/sdk-infrastructure/http/httprequest.md) | Returns the original request that resulted in this response. |
+| `getRequest()` | [`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/sdk-infrastructure/http/httprequest.md) | Returns the original request that resulted in this response. |
 | `getStatusCode()` | `?int` | Returns the response status code. |
 | `getHeaders()` | `?array` | Returns the response headers. |
 | `getResult()` | `mixed` | Returns the response data. |

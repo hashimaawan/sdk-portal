@@ -1,6 +1,6 @@
 # Time Interval Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlRpbWVJbnRlcnZhbE9iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlRpbWVJbnRlcnZhbE9iamVjdA
 
 *This model accepts additional fields of type object.*
 

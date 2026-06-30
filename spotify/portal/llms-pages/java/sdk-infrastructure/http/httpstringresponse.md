@@ -1,6 +1,6 @@
 # HttpStringResponse
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBTdHJpbmdSZXNwb25zZQ
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBTdHJpbmdSZXNwb25zZQ
 
 Class to hold response body as string.
 
@@ -9,7 +9,7 @@ Class to hold response body as string.
 | Name | Description | Return Type |
 |  --- | --- | --- |
 | `getStatusCode()` | HTTP Status code of the http response. | `int` |
-| `getHeaders()` | Headers of the http response. | [`Headers`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/http/headers.md) |
+| `getHeaders()` | Headers of the http response. | [`Headers`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/http/headers.md) |
 | `getBody()` | String body of the http response. | `String` |
 
 

@@ -1,6 +1,6 @@
 # Chapter Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkNoYXB0ZXJPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRkNoYXB0ZXJPYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -21,20 +21,20 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 | `htmlDescription` | `string` | Required | A description of the chapter. This field may contain HTML tags. |
 | `durationMs` | `number` | Required | The chapter length in milliseconds. |
 | `explicit` | `boolean` | Required | Whether or not the chapter has explicit content (true = yes it does; false = no it does not OR unknown). |
-| `externalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Required | External URLs for this chapter. |
+| `externalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/external-url-object.md) | Required | External URLs for this chapter. |
 | `href` | `string` | Required | A link to the Web API endpoint providing full details of the chapter. |
 | `id` | `string` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the chapter. |
-| `images` | [`ImageObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/image-object.md) | Required | The cover art for the chapter in various sizes, widest first. |
+| `images` | [`ImageObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/image-object.md) | Required | The cover art for the chapter in various sizes, widest first. |
 | `isPlayable` | `boolean` | Required | True if the chapter is playable in the given market. Otherwise false. |
 | `languages` | `string[]` | Required | A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code. |
 | `name` | `string` | Required | The name of the chapter. |
 | `releaseDate` | `string` | Required | The date the chapter was first released, for example `"1981-12-15"`. Depending on the precision, it might be shown as `"1981"` or `"1981-12"`. |
-| `releaseDatePrecision` | [`ReleaseDatePrecision`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. |
-| `resumePoint` | [`ResumePointObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/resume-point-object.md) | Optional | The user's most recent position in the chapter. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. |
+| `releaseDatePrecision` | [`ReleaseDatePrecision`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. |
+| `resumePoint` | [`ResumePointObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/resume-point-object.md) | Optional | The user's most recent position in the chapter. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. |
 | `type` | `string` | Required, Constant | The object type.<br><br>**Value**: `'episode'` |
 | `uri` | `string` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the chapter. |
-| `restrictions` | [`ChapterRestrictionObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/chapter-restriction-object.md) | Optional | Included in the response when a content restriction is applied. |
-| `audiobook` | [`AudiobookBase`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/audiobook-base.md) | Required | The audiobook for which the chapter belongs. |
+| `restrictions` | [`ChapterRestrictionObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/chapter-restriction-object.md) | Optional | Included in the response when a content restriction is applied. |
+| `audiobook` | [`AudiobookBase`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/audiobook-base.md) | Required | The audiobook for which the chapter belongs. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

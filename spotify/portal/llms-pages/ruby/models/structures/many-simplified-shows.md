@@ -1,6 +1,6 @@
 # Many Simplified Shows
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `shows` | [`Array[ShowBase]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/show-base.md) | Required | - |
+| `shows` | [`Array[ShowBase]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/show-base.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

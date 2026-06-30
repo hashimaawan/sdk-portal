@@ -1,6 +1,6 @@
 # HttpContext
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBDb250ZXh0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBDb250ZXh0
 
 Represents the contextual information of HTTP request and response.
 
@@ -8,8 +8,8 @@ Represents the contextual information of HTTP request and response.
 
 | Name | Description | Type |
 |  --- | --- | --- |
-| <code>Request</code> | Gets the http request in the current context. | [`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/http/httprequest.md) |
-| <code>Response</code> | Gets the http response in the current context. | [`HttpResponse`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/http/httpresponse.md) |
+| <code>Request</code> | Gets the http request in the current context. | [`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/sdk-infrastructure/http/httprequest.md) |
+| <code>Response</code> | Gets the http response in the current context. | [`HttpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/sdk-infrastructure/http/httpresponse.md) |
 
 
 

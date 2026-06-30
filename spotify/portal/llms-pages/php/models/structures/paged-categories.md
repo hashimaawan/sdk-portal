@@ -1,6 +1,6 @@
 # Paged Categories
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
 
 *This model accepts additional fields of type array.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `categories` | [`Categories`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/categories.md) | Required | - | getCategories(): Categories | setCategories(Categories categories): void |
+| `categories` | [`Categories`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/categories.md) | Required | - | getCategories(): Categories | setCategories(Categories categories): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

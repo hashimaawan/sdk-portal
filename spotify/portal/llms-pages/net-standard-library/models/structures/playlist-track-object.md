@@ -1,6 +1,6 @@
 # Playlist Track Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -15,9 +15,9 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `AddedAt` | `DateTime?` | Optional | The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._ |
-| `AddedBy` | [`PlaylistUserObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
+| `AddedBy` | [`PlaylistUserObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
 | `IsLocal` | `bool?` | Optional | Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not. |
-| `Track` | [`PlaylistTrackObjectTrack`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. |
+| `Track` | [`PlaylistTrackObjectTrack`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # Meta
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRk1ldGE
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRk1ldGE
 
 *This model accepts additional fields of type Object.*
 

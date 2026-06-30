@@ -1,6 +1,6 @@
 # Overview
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkNhdGVnb3JpZXMlMkZPdmVydmlldw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkNhdGVnb3JpZXMlMkZPdmVydmlldw
 
 
 # Get singleton instance

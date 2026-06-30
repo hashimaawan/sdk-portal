@@ -1,6 +1,6 @@
 # Saved Show Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlNhdmVkU2hvd09iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRlNhdmVkU2hvd09iamVjdA
 
 *This model accepts additional fields of type array.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `addedAt` | `?DateTime` | Optional | The date and time the show was saved.<br>Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.<br>If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object. | getAddedAt(): ?\DateTime | setAddedAt(?\DateTime addedAt): void |
-| `show` | [`?ShowBase`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/show-base.md) | Optional | Information about the show. | getShow(): ?ShowBase | setShow(?ShowBase show): void |
+| `show` | [`?ShowBase`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/show-base.md) | Optional | Information about the show. | getShow(): ?ShowBase | setShow(?ShowBase show): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

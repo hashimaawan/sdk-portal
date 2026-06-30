@@ -1,6 +1,6 @@
 # Paging Saved Episode Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkRXBpc29kZU9iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkRXBpc29kZU9iamVjdA
 
 *This model accepts additional fields of type interface{}.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 | `Offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `Previous` | `*string` | Required | URL to the previous page of items. ( `null` if none) |
 | `Total` | `int` | Required | The total number of items available to return. |
-| `Items` | [`[]models.SavedEpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/saved-episode-object.md) | Required | - |
+| `Items` | [`[]models.SavedEpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/saved-episode-object.md) | Required | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

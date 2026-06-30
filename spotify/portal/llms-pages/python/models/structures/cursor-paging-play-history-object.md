@@ -1,6 +1,6 @@
 # Cursor Paging Play History Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ1BsYXlIaXN0b3J5T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ1BsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type Any.*
 
@@ -17,9 +17,9 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 | `href` | `str` | Optional | A link to the Web API endpoint returning the full result of the request. |
 | `limit` | `int` | Optional | The maximum number of items in the response (as set in the query or by default). |
 | `next` | `str` | Optional | URL to the next page of items. ( `null` if none) |
-| `cursors` | [`CursorObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
+| `cursors` | [`CursorObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
 | `total` | `int` | Optional | The total number of items available to return. |
-| `items` | [`List[PlayHistoryObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/play-history-object.md) | Optional | - |
+| `items` | [`List[PlayHistoryObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/play-history-object.md) | Optional | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # Play History Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -14,9 +14,9 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Track` | [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/track-object.md) | Optional | The track the user listened to. | TrackObject getTrack() | setTrack(TrackObject track) |
+| `Track` | [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/track-object.md) | Optional | The track the user listened to. | TrackObject getTrack() | setTrack(TrackObject track) |
 | `PlayedAt` | `LocalDateTime` | Optional | The date and time the track was played. | LocalDateTime getPlayedAt() | setPlayedAt(LocalDateTime playedAt) |
-| `Context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/context-object.md) | Optional | The context the track was played from. | ContextObject getContext() | setContext(ContextObject context) |
+| `Context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/context-object.md) | Optional | The context the track was played from. | ContextObject getContext() | setContext(ContextObject context) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

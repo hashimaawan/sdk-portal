@@ -1,6 +1,6 @@
 # Paged Categories
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Categories` | [`models.Categories`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/categories.md) | Required | - |
+| `Categories` | [`models.Categories`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/categories.md) | Required | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

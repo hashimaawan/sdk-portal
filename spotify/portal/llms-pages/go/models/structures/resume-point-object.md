@@ -1,6 +1,6 @@
 # Resume Point Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlJlc3VtZVBvaW50T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlJlc3VtZVBvaW50T2JqZWN0
 
 *This model accepts additional fields of type interface{}.*
 

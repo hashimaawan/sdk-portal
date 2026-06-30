@@ -1,6 +1,6 @@
 # Currently Playing Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
 
 *This model accepts additional fields of type Any.*
 
@@ -14,13 +14,13 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
+| `context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
 | `timestamp` | `int` | Optional | Unix Millisecond Timestamp when data was fetched |
 | `progress_ms` | `int` | Optional | Progress into the currently playing track or episode. Can be `null`. |
 | `is_playing` | `bool` | Optional | If something is currently playing, return `true`. |
-| `item` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/episode-object.md) \| None | Optional | This is a container for one-of cases. |
+| `item` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/episode-object.md) \| None | Optional | This is a container for one-of cases. |
 | `currently_playing_type` | `str` | Optional | The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`. |
-| `actions` | [`DisallowsObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
+| `actions` | [`DisallowsObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

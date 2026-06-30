@@ -1,6 +1,6 @@
 # Paging Simplified Episode Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRFcGlzb2RlT2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRFcGlzb2RlT2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 | `Offset` | `int` | Required | The offset of the items returned (as set in the query or by default) | int getOffset() | setOffset(int offset) |
 | `Previous` | `String` | Required | URL to the previous page of items. ( `null` if none) | String getPrevious() | setPrevious(String previous) |
 | `Total` | `int` | Required | The total number of items available to return. | int getTotal() | setTotal(int total) |
-| `Items` | [`List<EpisodeBase>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-base.md) | Required | - | List<EpisodeBase> getItems() | setItems(List<EpisodeBase> items) |
+| `Items` | [`List<EpisodeBase>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/episode-base.md) | Required | - | List<EpisodeBase> getItems() | setItems(List<EpisodeBase> items) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

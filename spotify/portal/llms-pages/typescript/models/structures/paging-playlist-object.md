@@ -1,6 +1,6 @@
 # Paging Playlist Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ1BsYXlsaXN0T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ1BsYXlsaXN0T2JqZWN0
 
 *This model accepts additional fields of type unknown.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 | `offset` | `number` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `string \| null` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `number` | Required | The total number of items available to return. |
-| `items` | [`SimplifiedPlaylistObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/simplified-playlist-object.md) | Required | - |
+| `items` | [`SimplifiedPlaylistObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/simplified-playlist-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

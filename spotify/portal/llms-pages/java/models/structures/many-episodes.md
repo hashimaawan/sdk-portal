@@ -1,6 +1,6 @@
 # Many Episodes
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRk1hbnlFcGlzb2Rlcw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRk1hbnlFcGlzb2Rlcw
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Episodes` | [`List<EpisodeObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-object.md) | Required | - | List<EpisodeObject> getEpisodes() | setEpisodes(List<EpisodeObject> episodes) |
+| `Episodes` | [`List<EpisodeObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/episode-object.md) | Required | - | List<EpisodeObject> getEpisodes() | setEpisodes(List<EpisodeObject> episodes) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

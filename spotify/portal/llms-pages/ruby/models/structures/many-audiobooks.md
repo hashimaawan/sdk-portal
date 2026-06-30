@@ -1,6 +1,6 @@
 # Many Audiobooks
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlBdWRpb2Jvb2tz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRk1hbnlBdWRpb2Jvb2tz
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `audiobooks` | [`Array[AudiobookObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/audiobook-object.md) | Required | - |
+| `audiobooks` | [`Array[AudiobookObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/audiobook-object.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

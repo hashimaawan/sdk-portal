@@ -1,6 +1,6 @@
 # Queue Object Queue
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0UXVldWU
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0UXVldWU
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Type | Factory Method |
 |  --- | --- |
-| [`models.TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/track-object.md) | models.QueueObjectQueueContainer.FromTrackObject(models.TrackObject trackObject) |
-| [`models.EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/episode-object.md) | models.QueueObjectQueueContainer.FromEpisodeObject(models.EpisodeObject episodeObject) |
+| [`models.TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/track-object.md) | models.QueueObjectQueueContainer.FromTrackObject(models.TrackObject trackObject) |
+| [`models.EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/episode-object.md) | models.QueueObjectQueueContainer.FromEpisodeObject(models.EpisodeObject episodeObject) |
 
 
 # models.TrackObject

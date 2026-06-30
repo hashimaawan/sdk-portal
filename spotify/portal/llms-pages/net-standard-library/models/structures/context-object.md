@@ -1,6 +1,6 @@
 # Context Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkNvbnRleHRPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNvbnRleHRPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -16,7 +16,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 |  --- | --- | --- | --- |
 | `Type` | `string` | Optional | The object type, e.g. "artist", "playlist", "album", "show". |
 | `Href` | `string` | Optional | A link to the Web API endpoint providing full details of the track. |
-| `ExternalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Optional | External URLs for this context. |
+| `ExternalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/external-url-object.md) | Optional | External URLs for this context. |
 | `Uri` | `string` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the context. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 

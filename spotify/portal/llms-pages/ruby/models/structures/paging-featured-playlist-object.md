@@ -1,6 +1,6 @@
 # Paging Featured Playlist Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `message` | `String` | Optional | The localized message of a playlist. |
-| `playlists` | [`PagingPlaylistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/paging-playlist-object.md) | Optional | - |
+| `playlists` | [`PagingPlaylistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/paging-playlist-object.md) | Optional | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

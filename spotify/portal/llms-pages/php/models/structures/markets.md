@@ -1,6 +1,6 @@
 # Markets
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRk1hcmtldHM
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRk1hcmtldHM
 
 *This model accepts additional fields of type array.*
 

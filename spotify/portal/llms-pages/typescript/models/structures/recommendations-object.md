@@ -1,6 +1,6 @@
 # Recommendations Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `seeds` | [`RecommendationSeedObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
-| `tracks` | [`TrackObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
+| `seeds` | [`RecommendationSeedObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
+| `tracks` | [`TrackObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

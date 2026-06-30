@@ -1,6 +1,6 @@
 # Meta
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRk1ldGE
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRk1ldGE
 
 *This model accepts additional fields of type interface{}.*
 

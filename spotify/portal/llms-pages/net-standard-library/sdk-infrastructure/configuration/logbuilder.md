@@ -1,6 +1,6 @@
 # LogBuilder
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ0J1aWxkZXI
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ0J1aWxkZXI
 
 The builder for logging configuration. Create instance using `LogBuilder.Build()`
 
@@ -11,8 +11,8 @@ The builder for logging configuration. Create instance using `LogBuilder.Build()
 | <code>Logger(ILogger logger)</code> | Sets the implementation of Microsoft.Extensions.Logging.ILogger for logging. **The default implementation is ConsoleLogger.** |
 | <code>LogLevel(LogLevel? logLevel)</code> | Sets the Microsoft.Extensions.Logging.LogLevel, which defines logging severity levels. **The default value is LogLevel.Information.** |
 | <code>MaskSensitiveHeaders(bool maskSensitiveHeaders)</code> | Sets the global setting to mask sensitive HTTP headers in both requests and responses before logging, safeguarding confidential data. **The default value is True.** |
-| <code>RequestConfig(Action<[`LogRequestBuilder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/logrequestbuilder.md)> action)</code> | Sets the request logging configuration with the provided builder action. **By default, request logging is enabled, excluding both the body and headers.** |
-| <code>ResponseConfig(Action<[`LogResponseBuilder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/logresponsebuilder.md)> action)</code> | Sets the response logging configuration with the provided builder action. **By default, response logging is enabled, excluding both the body and headers.** |
+| <code>RequestConfig(Action<[`LogRequestBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/logrequestbuilder.md)> action)</code> | Sets the request logging configuration with the provided builder action. **By default, request logging is enabled, excluding both the body and headers.** |
+| <code>ResponseConfig(Action<[`LogResponseBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/logresponsebuilder.md)> action)</code> | Sets the response logging configuration with the provided builder action. **By default, response logging is enabled, excluding both the body and headers.** |
 
 # Usage Example
 

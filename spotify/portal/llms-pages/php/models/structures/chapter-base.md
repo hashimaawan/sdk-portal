@@ -1,6 +1,6 @@
 # Chapter Base
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRkNoYXB0ZXJCYXNl
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRkNoYXB0ZXJCYXNl
 
 *This model accepts additional fields of type array.*
 
@@ -21,19 +21,19 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 | `htmlDescription` | `string` | Required | A description of the chapter. This field may contain HTML tags. | getHtmlDescription(): string | setHtmlDescription(string htmlDescription): void |
 | `durationMs` | `int` | Required | The chapter length in milliseconds. | getDurationMs(): int | setDurationMs(int durationMs): void |
 | `explicit` | `bool` | Required | Whether or not the chapter has explicit content (true = yes it does; false = no it does not OR unknown). | getExplicit(): bool | setExplicit(bool explicit): void |
-| `externalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/external-url-object.md) | Required | External URLs for this chapter. | getExternalUrls(): ExternalUrlObject | setExternalUrls(ExternalUrlObject externalUrls): void |
+| `externalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/external-url-object.md) | Required | External URLs for this chapter. | getExternalUrls(): ExternalUrlObject | setExternalUrls(ExternalUrlObject externalUrls): void |
 | `href` | `string` | Required | A link to the Web API endpoint providing full details of the chapter. | getHref(): string | setHref(string href): void |
 | `id` | `string` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the chapter. | getId(): string | setId(string id): void |
-| `images` | [`ImageObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/image-object.md) | Required | The cover art for the chapter in various sizes, widest first. | getImages(): array | setImages(array images): void |
+| `images` | [`ImageObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/image-object.md) | Required | The cover art for the chapter in various sizes, widest first. | getImages(): array | setImages(array images): void |
 | `isPlayable` | `bool` | Required | True if the chapter is playable in the given market. Otherwise false. | getIsPlayable(): bool | setIsPlayable(bool isPlayable): void |
 | `languages` | `string[]` | Required | A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code. | getLanguages(): array | setLanguages(array languages): void |
 | `name` | `string` | Required | The name of the chapter. | getName(): string | setName(string name): void |
 | `releaseDate` | `string` | Required | The date the chapter was first released, for example `"1981-12-15"`. Depending on the precision, it might be shown as `"1981"` or `"1981-12"`. | getReleaseDate(): string | setReleaseDate(string releaseDate): void |
-| `releaseDatePrecision` | [`string(ReleaseDatePrecision)`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. | getReleaseDatePrecision(): string | setReleaseDatePrecision(string releaseDatePrecision): void |
-| `resumePoint` | [`?ResumePointObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/resume-point-object.md) | Optional | The user's most recent position in the chapter. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. | getResumePoint(): ?ResumePointObject | setResumePoint(?ResumePointObject resumePoint): void |
+| `releaseDatePrecision` | [`string(ReleaseDatePrecision)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. | getReleaseDatePrecision(): string | setReleaseDatePrecision(string releaseDatePrecision): void |
+| `resumePoint` | [`?ResumePointObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/resume-point-object.md) | Optional | The user's most recent position in the chapter. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. | getResumePoint(): ?ResumePointObject | setResumePoint(?ResumePointObject resumePoint): void |
 | `type` | `string` | Required, Constant | The object type.<br><br>**Value**: `'episode'` | getType(): string | setType(string type): void |
 | `uri` | `string` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the chapter. | getUri(): string | setUri(string uri): void |
-| `restrictions` | [`?ChapterRestrictionObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/chapter-restriction-object.md) | Optional | Included in the response when a content restriction is applied. | getRestrictions(): ?ChapterRestrictionObject | setRestrictions(?ChapterRestrictionObject restrictions): void |
+| `restrictions` | [`?ChapterRestrictionObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/chapter-restriction-object.md) | Optional | Included in the response when a content restriction is applied. | getRestrictions(): ?ChapterRestrictionObject | setRestrictions(?ChapterRestrictionObject restrictions): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

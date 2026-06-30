@@ -1,6 +1,6 @@
 # Episode Base
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkVwaXNvZGVCYXNl
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRkVwaXNvZGVCYXNl
 
 *This model accepts additional fields of type Any.*
 
@@ -19,21 +19,21 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 | `html_description` | `str` | Required | A description of the episode. This field may contain HTML tags. |
 | `duration_ms` | `int` | Required | The episode length in milliseconds. |
 | `explicit` | `bool` | Required | Whether or not the episode has explicit content (true = yes it does; false = no it does not OR unknown). |
-| `external_urls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/external-url-object.md) | Required | External URLs for this episode. |
+| `external_urls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/external-url-object.md) | Required | External URLs for this episode. |
 | `href` | `str` | Required | A link to the Web API endpoint providing full details of the episode. |
 | `id` | `str` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the episode. |
-| `images` | [`List[ImageObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/image-object.md) | Required | The cover art for the episode in various sizes, widest first. |
+| `images` | [`List[ImageObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/image-object.md) | Required | The cover art for the episode in various sizes, widest first. |
 | `is_externally_hosted` | `bool` | Required | True if the episode is hosted outside of Spotify's CDN. |
 | `is_playable` | `bool` | Required | True if the episode is playable in the given market. Otherwise false. |
 | `language` | `str` | Optional | The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the `languages` field instead. |
 | `languages` | `List[str]` | Required | A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code. |
 | `name` | `str` | Required | The name of the episode. |
 | `release_date` | `str` | Required | The date the episode was first released, for example `"1981-12-15"`. Depending on the precision, it might be shown as `"1981"` or `"1981-12"`. |
-| `release_date_precision` | [`ReleaseDatePrecision`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. |
-| `resume_point` | [`ResumePointObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/resume-point-object.md) | Optional | The user's most recent position in the episode. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. |
+| `release_date_precision` | [`ReleaseDatePrecision`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. |
+| `resume_point` | [`ResumePointObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/resume-point-object.md) | Optional | The user's most recent position in the episode. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. |
 | `mtype` | `str` | Required, Constant | The object type.<br><br>**Value**: `"episode"` |
 | `uri` | `str` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the episode. |
-| `restrictions` | [`EpisodeRestrictionObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/episode-restriction-object.md) | Optional | Included in the response when a content restriction is applied. |
+| `restrictions` | [`EpisodeRestrictionObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/episode-restriction-object.md) | Optional | Included in the response when a content restriction is applied. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

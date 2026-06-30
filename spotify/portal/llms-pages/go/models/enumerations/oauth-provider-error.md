@@ -1,6 +1,6 @@
 # OAuth Provider Error
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRk9BdXRoUHJvdmlkZXJFcnJvcg
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRk9BdXRoUHJvdmlkZXJFcnJvcg
 
 OAuth 2 Authorization error codes
 

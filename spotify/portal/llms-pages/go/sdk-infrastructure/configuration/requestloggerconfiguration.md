@@ -1,6 +1,6 @@
 # RequestLoggerConfiguration
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRlJlcXVlc3RMb2dnZXJDb25maWd1cmF0aW9u
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRlJlcXVlc3RMb2dnZXJDb25maWd1cmF0aW9u
 
 Represents the logging configurations for API requests.
 

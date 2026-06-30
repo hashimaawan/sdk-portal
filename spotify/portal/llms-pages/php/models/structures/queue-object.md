@@ -1,6 +1,6 @@
 # Queue Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
 
 *This model accepts additional fields of type array.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `currentlyPlaying` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/track-object.md)\|[EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/episode-object.md)\|null | Optional | This is a container for one-of cases. | getCurrentlyPlaying(): | setCurrentlyPlaying( currentlyPlaying): void |
-| `queue` | array<[TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/track-object.md)\|[EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/episode-object.md)>\|null | Optional | This is Array of a container for one-of cases. | getQueue(): ?array | setQueue(?array queue): void |
+| `currentlyPlaying` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/track-object.md)\|[EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/episode-object.md)\|null | Optional | This is a container for one-of cases. | getCurrentlyPlaying(): | setCurrentlyPlaying( currentlyPlaying): void |
+| `queue` | array<[TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/track-object.md)\|[EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/episode-object.md)>\|null | Optional | This is Array of a container for one-of cases. | getQueue(): ?array | setQueue(?array queue): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

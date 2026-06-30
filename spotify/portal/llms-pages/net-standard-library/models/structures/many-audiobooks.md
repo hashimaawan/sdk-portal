@@ -1,6 +1,6 @@
 # Many Audiobooks
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlBdWRpb2Jvb2tz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlBdWRpb2Jvb2tz
 
 *This model accepts additional fields of type object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Audiobooks` | [`List<AudiobookObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/audiobook-object.md) | Required | - |
+| `Audiobooks` | [`List<AudiobookObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/audiobook-object.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

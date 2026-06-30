@@ -1,6 +1,6 @@
 # Recommendations Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
 
 *This model accepts additional fields of type Object.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Seeds` | [`List<RecommendationSeedObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. | List<RecommendationSeedObject> getSeeds() | setSeeds(List<RecommendationSeedObject> seeds) |
-| `Tracks` | [`List<TrackObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. | List<TrackObject> getTracks() | setTracks(List<TrackObject> tracks) |
+| `Seeds` | [`List<RecommendationSeedObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. | List<RecommendationSeedObject> getSeeds() | setSeeds(List<RecommendationSeedObject> seeds) |
+| `Tracks` | [`List<TrackObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. | List<TrackObject> getTracks() | setTracks(List<TrackObject> tracks) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

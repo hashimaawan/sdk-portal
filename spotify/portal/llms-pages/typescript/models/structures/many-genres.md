@@ -1,6 +1,6 @@
 # Many Genres
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk1hbnlHZW5yZXM
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRk1hbnlHZW5yZXM
 
 *This model accepts additional fields of type unknown.*
 

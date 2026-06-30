@@ -1,6 +1,6 @@
 # Paging Featured Playlist Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `Message` | `String` | Optional | The localized message of a playlist. | String getMessage() | setMessage(String message) |
-| `Playlists` | [`PagingPlaylistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-playlist-object.md) | Optional | - | PagingPlaylistObject getPlaylists() | setPlaylists(PagingPlaylistObject playlists) |
+| `Playlists` | [`PagingPlaylistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/paging-playlist-object.md) | Optional | - | PagingPlaylistObject getPlaylists() | setPlaylists(PagingPlaylistObject playlists) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

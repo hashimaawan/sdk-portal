@@ -1,6 +1,6 @@
 # LoggerConfiguration
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ2dlckNvbmZpZ3VyYXRpb24
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ2dlckNvbmZpZ3VyYXRpb24
 
 Represents the logging configurations for API calls.
 
@@ -11,8 +11,8 @@ Represents the logging configurations for API calls.
 | logger | `LoggerInterface` | Takes in your custom implementation of the LoggerInterface. **Default: `ConsoleLogger`** | `WithLogger` |
 | level | `Level` | Defines the log message severity (e.g., DEBUG, INFO, etc). **Default : `Level_INFO`** | `WithLevel` |
 | maskSensitiveHeaders | `bool` | Toggles the global setting to mask sensitive HTTP headers in both requests and responses before logging, safeguarding confidential data. **Default : `true`** | `WithMaskSensitiveHeaders` |
-| request | [`RequestLoggerConfiguration`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/sdk-infrastructure/configuration/requestloggerconfiguration.md) | The logging configurations for an API request. | `WithRequestConfiguration` |
-| response | [`ResponseLoggerConfiguration`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/sdk-infrastructure/configuration/responseloggerconfiguration.md) | The logging configurations for an API response. | `WithResponseConfiguration` |
+| request | [`RequestLoggerConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/sdk-infrastructure/configuration/requestloggerconfiguration.md) | The logging configurations for an API request. | `WithRequestConfiguration` |
+| response | [`ResponseLoggerConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/sdk-infrastructure/configuration/responseloggerconfiguration.md) | The logging configurations for an API response. | `WithResponseConfiguration` |
 
 # Usage Example
 

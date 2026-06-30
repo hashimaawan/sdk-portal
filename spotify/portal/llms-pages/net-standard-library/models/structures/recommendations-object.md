@@ -1,6 +1,6 @@
 # Recommendations Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
 
 *This model accepts additional fields of type object.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Seeds` | [`List<RecommendationSeedObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
-| `Tracks` | [`List<TrackObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
+| `Seeds` | [`List<RecommendationSeedObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
+| `Tracks` | [`List<TrackObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

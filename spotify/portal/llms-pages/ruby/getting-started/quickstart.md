@@ -1,6 +1,6 @@
 # Quickstart
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0aCUyRl9fZ2V0dGluZ19zdGFydGVk
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0aCUyRl9fZ2V0dGluZ19zdGFydGVk
 
 
 # Introduction
@@ -96,7 +96,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | [`Environment`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | connection | `Faraday::Connection` | The Faraday connection object passed by the SDK user for making requests |
 | adapter | `Faraday::Adapter` | The Faraday adapter object passed by the SDK user for performing http requests |
 | timeout | `Float` | The value to use for connection timeout. <br> **Default: 30** |
@@ -106,9 +106,9 @@ The following parameters are configurable for the API Client:
 | retry_statuses | `Array` | A list of HTTP statuses to retry. <br> **Default: [408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524]** |
 | retry_methods | `Array` | A list of HTTP methods to retry. <br> **Default: %i[get put get put]** |
 | http_callback | `HttpCallBack` | The Http CallBack allows defining callables for pre and post API calls. |
-| proxy_settings | [`ProxySettings`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/sdk-infrastructure/configuration/proxysettings.md) | Optional proxy configuration to route HTTP requests through a proxy server. |
-| logging_configuration | [`LoggingConfiguration`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/sdk-infrastructure/configuration/loggingconfiguration.md) | The SDK logging configuration for API calls |
-| authorization_code_auth_credentials | [`AuthorizationCodeAuthCredentials`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/getting-started/quickstart/authorization.md) | The credential object for OAuth 2 Authorization Code Grant |
+| proxy_settings | [`ProxySettings`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/sdk-infrastructure/configuration/proxysettings.md) | Optional proxy configuration to route HTTP requests through a proxy server. |
+| logging_configuration | [`LoggingConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/sdk-infrastructure/configuration/loggingconfiguration.md) | The SDK logging configuration for API calls |
+| authorization_code_auth_credentials | [`AuthorizationCodeAuthCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/getting-started/quickstart/authorization.md) | The credential object for OAuth 2 Authorization Code Grant |
 
 The API client can be initialized as follows:
 
@@ -151,14 +151,14 @@ include SpotifyWebApiWithFixesAndImprovementsFromSonallux
 client = Client.from_env
 ```
 
-See the [`Environment-Based Client Initialization`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/sdk-infrastructure/configuration/environment-based-client-initialization.md) section for details.
+See the [`Environment-Based Client Initialization`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/sdk-infrastructure/configuration/environment-based-client-initialization.md) section for details.
 
 
 # Authorization
 
 This API uses the following authentication schemes.
 
-* [`oauth_2_0 (OAuth 2 Authorization Code Grant)`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/getting-started/quickstart/authorization.md)
+* [`oauth_2_0 (OAuth 2 Authorization Code Grant)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/getting-started/quickstart/authorization.md)
 
 ## oauth_2_0 (OAuth 2 Authorization Code Grant)
 
@@ -250,7 +250,7 @@ end
 
 ### Scopes
 
-Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the [`OauthScope`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/enumerations/oauth-scope.md) enumeration.
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the [`OauthScope`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/enumerations/oauth-scope.md) enumeration.
 
 | Scope Name | Description |
 |  --- | --- |

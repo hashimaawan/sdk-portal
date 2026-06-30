@@ -1,6 +1,6 @@
 # Recommendations Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Seeds` | [`[]models.RecommendationSeedObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
-| `Tracks` | [`[]models.TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
+| `Seeds` | [`[]models.RecommendationSeedObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
+| `Tracks` | [`[]models.TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

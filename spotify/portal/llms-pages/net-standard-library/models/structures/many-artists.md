@@ -1,6 +1,6 @@
 # Many Artists
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
 
 *This model accepts additional fields of type object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Artists` | [`List<ArtistObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/artist-object.md) | Required | - |
+| `Artists` | [`List<ArtistObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/artist-object.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

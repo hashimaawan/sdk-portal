@@ -1,6 +1,6 @@
 # Currently Playing Object Item
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3RJdGVt
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3RJdGVt
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 
 | Type | Factory Method |
 |  --- | --- |
-| [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/track-object.md) | CurrentlyPlayingObjectItem.FromTrackObject(TrackObject trackObject) |
-| [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/episode-object.md) | CurrentlyPlayingObjectItem.FromEpisodeObject(EpisodeObject episodeObject) |
+| [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/track-object.md) | CurrentlyPlayingObjectItem.FromTrackObject(TrackObject trackObject) |
+| [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/episode-object.md) | CurrentlyPlayingObjectItem.FromEpisodeObject(EpisodeObject episodeObject) |
 
 
 # TrackObject

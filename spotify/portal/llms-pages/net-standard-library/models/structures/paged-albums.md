@@ -1,6 +1,6 @@
 # Paged Albums
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2VkQWxidW1z
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2VkQWxidW1z
 
 *This model accepts additional fields of type object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Albums` | [`PagingSimplifiedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/paging-simplified-album-object.md) | Required | - |
+| `Albums` | [`PagingSimplifiedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/paging-simplified-album-object.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

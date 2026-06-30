@@ -1,6 +1,6 @@
 # Currently Playing Context Object Item
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0SXRlbQ
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0SXRlbQ
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Type | Factory Method |
 |  --- | --- |
-| [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/track-object.md) | CurrentlyPlayingContextObjectItem.fromTrackObject(TrackObject trackObject) |
-| [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-object.md) | CurrentlyPlayingContextObjectItem.fromEpisodeObject(EpisodeObject episodeObject) |
+| [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/track-object.md) | CurrentlyPlayingContextObjectItem.fromTrackObject(TrackObject trackObject) |
+| [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/episode-object.md) | CurrentlyPlayingContextObjectItem.fromEpisodeObject(EpisodeObject episodeObject) |
 
 
 # TrackObject

@@ -1,6 +1,6 @@
 # Many Audiobooks
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlBdWRpb2Jvb2tz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRk1hbnlBdWRpb2Jvb2tz
 
 *This model accepts additional fields of type Any.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `audiobooks` | [`List[AudiobookObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/audiobook-object.md) | Required | - |
+| `audiobooks` | [`List[AudiobookObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/audiobook-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

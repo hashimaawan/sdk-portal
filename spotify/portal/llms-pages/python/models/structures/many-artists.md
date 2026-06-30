@@ -1,6 +1,6 @@
 # Many Artists
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
 
 *This model accepts additional fields of type Any.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-r
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `artists` | [`List[ArtistObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/artist-object.md) | Required | - |
+| `artists` | [`List[ArtistObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/models/structures/artist-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # Album Type
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRkFsYnVtVHlwZQ
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRkFsYnVtVHlwZQ
 
 The type of the album.
 

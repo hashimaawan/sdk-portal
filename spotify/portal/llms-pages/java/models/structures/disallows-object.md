@@ -1,6 +1,6 @@
 # Disallows Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkRpc2FsbG93c09iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRkRpc2FsbG93c09iamVjdA
 
 *This model accepts additional fields of type Object.*
 

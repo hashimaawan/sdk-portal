@@ -1,6 +1,6 @@
 # Paging Simplified Audiobook Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRBdWRpb2Jvb2tPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRBdWRpb2Jvb2tPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -20,7 +20,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 | `Offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `Previous` | `string` | Required | URL to the previous page of items. ( `null` if none) |
 | `Total` | `int` | Required | The total number of items available to return. |
-| `Items` | [`List<AudiobookBase>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/audiobook-base.md) | Required | - |
+| `Items` | [`List<AudiobookBase>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/audiobook-base.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

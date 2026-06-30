@@ -1,6 +1,6 @@
 # OAuth Provider
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRk9BdXRoUHJvdmlkZXI
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRk9BdXRoUHJvdmlkZXI
 
 OAuth 2 Authorization endpoint exception.
 
@@ -16,7 +16,7 @@ OAuth 2 Authorization endpoint exception.
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `error` | [`string(OauthProviderError)`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/enumerations/oauth-provider-error.md) | Required | Gets or sets error code. | getError(): string | setError(string error): void |
+| `error` | [`string(OauthProviderError)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/enumerations/oauth-provider-error.md) | Required | Gets or sets error code. | getError(): string | setError(string error): void |
 | `errorDescription` | `?string` | Optional | Gets or sets human-readable text providing additional information on error.<br>Used to assist the client developer in understanding the error that occurred. | getErrorDescription(): ?string | setErrorDescription(?string errorDescription): void |
 | `errorUri` | `?string` | Optional | Gets or sets a URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error. | getErrorUri(): ?string | setErrorUri(?string errorUri): void |
 | `additionalProperties` | `array<string, array\|null>` | Optional | - | findAdditionalProperty(string key): array\|null | additionalProperty(string key, array\|null value): void |

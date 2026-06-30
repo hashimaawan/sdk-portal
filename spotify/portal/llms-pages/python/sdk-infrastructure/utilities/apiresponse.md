@@ -1,6 +1,6 @@
 # ApiResponse
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/python/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
 
 
 An object with the response value as well as other useful information such as status codes and headers.
@@ -13,7 +13,7 @@ An object with the response value as well as other useful information such as st
 | reason_phrase | `str` | The reason phrase returned with the status code. |
 | headers | `dict[str, str]` | The HTTP response headers. |
 | text | `str` | The raw response body as a string. |
-| request | [`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/sdk-infrastructure/http/httprequest.md) | The original HTTP request sent. |
+| request | [`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/python/sdk-infrastructure/http/httprequest.md) | The original HTTP request sent. |
 | body | `Any` | The parsed response data, if applicable. |
 
 # Usage Example

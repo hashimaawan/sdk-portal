@@ -1,6 +1,6 @@
 # Many Chapters
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk1hbnlDaGFwdGVycw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRk1hbnlDaGFwdGVycw
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `chapters` | [`ChapterObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/chapter-object.md) | Required | - |
+| `chapters` | [`ChapterObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/chapter-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

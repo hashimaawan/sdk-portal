@@ -1,6 +1,6 @@
 # Many Tracks
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk1hbnlUcmFja3M
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRk1hbnlUcmFja3M
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `tracks` | [`TrackObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/track-object.md) | Required | - |
+| `tracks` | [`TrackObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/track-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

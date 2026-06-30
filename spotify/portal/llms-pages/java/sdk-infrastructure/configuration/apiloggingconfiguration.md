@@ -1,6 +1,6 @@
 # ApiLoggingConfiguration
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaUxvZ2dpbmdDb25maWd1cmF0aW9u
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaUxvZ2dpbmdDb25maWd1cmF0aW9u
 
 Class for holding logging configuration.
 
@@ -14,7 +14,7 @@ Class for holding logging configuration.
 | `getRequestConfig()` | Getter for request log configuration. | `ReadonlyRequestLoggingConfiguration` |
 | `getResponseConfig()` | Getter for response log configuration. | `ReadonlyResponseLoggingConfiguration` |
 | `toString()` | Converts this ApiLoggingConfiguration into string format. | `String` |
-| `newBuilder()` | Builds a new ApiLoggingConfiguration.Builder object. Creates the instance with the current state. | [`ApiLoggingConfiguration.Builder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration-builder.md) |
+| `newBuilder()` | Builds a new ApiLoggingConfiguration.Builder object. Creates the instance with the current state. | [`ApiLoggingConfiguration.Builder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration-builder.md) |
 
 
 

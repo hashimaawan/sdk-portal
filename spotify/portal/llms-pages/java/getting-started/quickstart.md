@@ -1,6 +1,6 @@
 # Quickstart
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fZ2V0dGluZ19zdGFydGVk
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0aCUyRl9fZ2V0dGluZ19zdGFydGVk
 
 
 # Introduction
@@ -113,10 +113,10 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| environment | [`Environment`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
-| httpClientConfig | [`Consumer<HttpClientConfiguration.Builder>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/httpclientconfiguration-builder.md) | Set up Http Client Configuration instance. |
-| loggingConfig | [`Consumer<ApiLoggingConfiguration.Builder>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration-builder.md) | Set up Logging Configuration instance. |
-| authorizationCodeAuth | [`AuthorizationCodeAuth`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/getting-started/quickstart/authorization.md) | The Credentials Setter for OAuth 2 Authorization Code Grant |
+| environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| httpClientConfig | [`Consumer<HttpClientConfiguration.Builder>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/httpclientconfiguration-builder.md) | Set up Http Client Configuration instance. |
+| loggingConfig | [`Consumer<ApiLoggingConfiguration.Builder>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration-builder.md) | Set up Logging Configuration instance. |
+| authorizationCodeAuth | [`AuthorizationCodeAuth`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/getting-started/quickstart/authorization.md) | The Credentials Setter for OAuth 2 Authorization Code Grant |
 
 The API client can be initialized as follows:
 
@@ -163,7 +163,7 @@ public class Program {
 
 This API uses the following authentication schemes.
 
-* [`oauth_2_0 (OAuth 2 Authorization Code Grant)`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/getting-started/quickstart/authorization.md)
+* [`oauth_2_0 (OAuth 2 Authorization Code Grant)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 ## oauth_2_0 (OAuth 2 Authorization Code Grant)
 
@@ -266,7 +266,7 @@ try {
 
 ### Scopes
 
-Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the [`OauthScope`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/enumerations/oauth-scope.md) enumeration.
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the [`OauthScope`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/enumerations/oauth-scope.md) enumeration.
 
 | Scope Name | Description |
 |  --- | --- |

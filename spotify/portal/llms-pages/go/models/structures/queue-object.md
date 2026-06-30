@@ -1,6 +1,6 @@
 # Queue Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `CurrentlyPlaying` | [`*models.QueueObjectCurrentlyPlaying`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/oneof-anyof-definitions/queue-object-currently-playing.md) | Optional | This is a container for one-of cases. |
-| `Queue` | [`[]models.QueueObjectQueue`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/oneof-anyof-definitions/queue-object-queue.md) | Optional | This is Array of a container for one-of cases. |
+| `CurrentlyPlaying` | [`*models.QueueObjectCurrentlyPlaying`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/oneof-anyof-definitions/queue-object-currently-playing.md) | Optional | This is a container for one-of cases. |
+| `Queue` | [`[]models.QueueObjectQueue`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/oneof-anyof-definitions/queue-object-queue.md) | Optional | This is Array of a container for one-of cases. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

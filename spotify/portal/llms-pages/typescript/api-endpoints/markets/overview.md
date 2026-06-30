@@ -1,6 +1,6 @@
 # Overview
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRk1hcmtldHMlMkZPdmVydmlldw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRk1hcmtldHMlMkZPdmVydmlldw
 
 
 # Create Instance

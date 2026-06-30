@@ -1,6 +1,6 @@
 # Narrator Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk5hcnJhdG9yT2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRk5hcnJhdG9yT2JqZWN0
 
 *This model accepts additional fields of type object.*
 

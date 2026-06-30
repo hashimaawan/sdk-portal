@@ -1,6 +1,6 @@
 # Context Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkNvbnRleHRPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRkNvbnRleHRPYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -16,7 +16,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 |  --- | --- | --- | --- |
 | `type` | `string \| undefined` | Optional | The object type, e.g. "artist", "playlist", "album", "show". |
 | `href` | `string \| undefined` | Optional | A link to the Web API endpoint providing full details of the track. |
-| `externalUrls` | [`ExternalUrlObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Optional | External URLs for this context. |
+| `externalUrls` | [`ExternalUrlObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/external-url-object.md) | Optional | External URLs for this context. |
 | `uri` | `string \| undefined` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the context. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 

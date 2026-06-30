@@ -1,6 +1,6 @@
 # Cursor Paged Artists
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRkN1cnNvclBhZ2VkQXJ0aXN0cw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRkN1cnNvclBhZ2VkQXJ0aXN0cw
 
 *This model accepts additional fields of type array.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `artists` | [`CursorPagingSimplifiedArtistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/cursor-paging-simplified-artist-object.md) | Required | - | getArtists(): CursorPagingSimplifiedArtistObject | setArtists(CursorPagingSimplifiedArtistObject artists): void |
+| `artists` | [`CursorPagingSimplifiedArtistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/cursor-paging-simplified-artist-object.md) | Required | - | getArtists(): CursorPagingSimplifiedArtistObject | setArtists(CursorPagingSimplifiedArtistObject artists): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

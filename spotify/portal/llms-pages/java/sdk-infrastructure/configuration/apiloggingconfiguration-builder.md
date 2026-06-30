@@ -1,6 +1,6 @@
 # ApiLoggingConfiguration.Builder
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaUxvZ2dpbmdDb25maWd1cmF0aW9uLkJ1aWxkZXI
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaUxvZ2dpbmdDb25maWd1cmF0aW9uLkJ1aWxkZXI
 
 Class to build instances of ApiLoggingConfiguration.
 
@@ -17,9 +17,9 @@ Class to build instances of ApiLoggingConfiguration.
 | `level(org.slf4j.event.Level level)` | Set level for logging. Default level is INFO. Other available levels are `ERROR`, `WARN`, `DEBUG`, and `TRACE`. |
 | `logger(org.slf4j.Logger logger)` | Set Logger for logging. Here you can provide custom slf4j implementation if needed. |
 | `maskSensitiveHeaders(boolean maskSensitiveHeaders)` | Set mask sensitive headers flag. Default value is true. |
-| `requestConfig(Consumer<ApiRequestLoggingConfiguration.Builder> consumer)` | Sets the [`ApiRequestLoggingConfiguration.Builder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/apirequestloggingconfiguration-builder.md) for the builder. |
-| `responseConfig(Consumer<ApiResponseLoggingConfiguration.Builder> consumer)` | Sets the [`ApiResponseLoggingConfiguration.Builder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/apiresponseloggingconfiguration-builder.md) for the builder. |
-| `build()` | Builds a new [`ApiLoggingConfiguration`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration.md) object using the set fields. |
+| `requestConfig(Consumer<ApiRequestLoggingConfiguration.Builder> consumer)` | Sets the [`ApiRequestLoggingConfiguration.Builder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/apirequestloggingconfiguration-builder.md) for the builder. |
+| `responseConfig(Consumer<ApiResponseLoggingConfiguration.Builder> consumer)` | Sets the [`ApiResponseLoggingConfiguration.Builder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/apiresponseloggingconfiguration-builder.md) for the builder. |
+| `build()` | Builds a new [`ApiLoggingConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration.md) object using the set fields. |
 
 # Usage Example
 

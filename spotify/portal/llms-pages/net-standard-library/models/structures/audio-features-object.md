@@ -1,6 +1,6 @@
 # Audio Features Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkF1ZGlvRmVhdHVyZXNPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRkF1ZGlvRmVhdHVyZXNPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -29,7 +29,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 | `Tempo` | `double?` | Optional | The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. |
 | `TimeSignature` | `int?` | Optional | An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of "3/4", to "7/4".<br><br>**Constraints**: `>= 3`, `<= 7` |
 | `TrackHref` | `string` | Optional | A link to the Web API endpoint providing full details of the track. |
-| `Type` | [`Type5?`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/enumerations/type-5.md) | Optional | The object type. |
+| `Type` | [`Type5?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/enumerations/type-5.md) | Optional | The object type. |
 | `Uri` | `string` | Optional | The Spotify URI for the track. |
 | `Valence` | `double?` | Optional | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).<br><br>**Constraints**: `>= 0`, `<= 1` |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |

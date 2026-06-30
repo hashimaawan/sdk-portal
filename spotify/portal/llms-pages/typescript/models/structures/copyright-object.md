@@ -1,6 +1,6 @@
 # Copyright Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkNvcHlyaWdodE9iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRkNvcHlyaWdodE9iamVjdA
 
 *This model accepts additional fields of type unknown.*
 

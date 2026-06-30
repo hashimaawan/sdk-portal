@@ -1,6 +1,6 @@
 # Playlist Track Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -15,9 +15,9 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `AddedAt` | `LocalDateTime` | Optional | The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._ | LocalDateTime getAddedAt() | setAddedAt(LocalDateTime addedAt) |
-| `AddedBy` | [`PlaylistUserObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ | PlaylistUserObject getAddedBy() | setAddedBy(PlaylistUserObject addedBy) |
+| `AddedBy` | [`PlaylistUserObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ | PlaylistUserObject getAddedBy() | setAddedBy(PlaylistUserObject addedBy) |
 | `IsLocal` | `Boolean` | Optional | Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not. | Boolean getIsLocal() | setIsLocal(Boolean isLocal) |
-| `Track` | [`PlaylistTrackObjectTrack`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. | PlaylistTrackObjectTrack getTrack() | setTrack(PlaylistTrackObjectTrack track) |
+| `Track` | [`PlaylistTrackObjectTrack`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. | PlaylistTrackObjectTrack getTrack() | setTrack(PlaylistTrackObjectTrack track) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

@@ -1,6 +1,6 @@
 # Release Date Precision
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlJlbGVhc2VEYXRlUHJlY2lzaW9u
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlJlbGVhc2VEYXRlUHJlY2lzaW9u
 
 The precision with which `release_date` value is known.
 

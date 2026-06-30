@@ -1,6 +1,6 @@
 # HttpRequest
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBSZXF1ZXN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBSZXF1ZXN0
 
 Class for creating and managing HTTP Requests.
 
@@ -9,7 +9,7 @@ Class for creating and managing HTTP Requests.
 | Name | Description | Return Type |
 |  --- | --- | --- |
 | `getHttpMethod()` | HttpMethod for the http request. | `HttpMethod` |
-| `getHeaders()` | Headers for the http request. | [`Headers`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/http/headers.md) |
+| `getHeaders()` | Headers for the http request. | [`Headers`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/http/headers.md) |
 | `getQueryUrl()` | Query url for the http request. | `String` |
 | `getParameters()` | Parameters for the http request. | `List<SimpleEntry<String, Object>>` |
 | `getQueryParameters()` | Query parameters for the http request. | `Map<String, Object>` |

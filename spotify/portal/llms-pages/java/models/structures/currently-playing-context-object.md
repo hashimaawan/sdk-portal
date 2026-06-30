@@ -1,6 +1,6 @@
 # Currently Playing Context Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -14,16 +14,16 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Device` | [`DeviceObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/device-object.md) | Optional | The device that is currently active. | DeviceObject getDevice() | setDevice(DeviceObject device) |
+| `Device` | [`DeviceObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/device-object.md) | Optional | The device that is currently active. | DeviceObject getDevice() | setDevice(DeviceObject device) |
 | `RepeatState` | `String` | Optional | off, track, context | String getRepeatState() | setRepeatState(String repeatState) |
 | `ShuffleState` | `Boolean` | Optional | If shuffle is on or off. | Boolean getShuffleState() | setShuffleState(Boolean shuffleState) |
-| `Context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. | ContextObject getContext() | setContext(ContextObject context) |
+| `Context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. | ContextObject getContext() | setContext(ContextObject context) |
 | `Timestamp` | `Long` | Optional | Unix Millisecond Timestamp when data was fetched. | Long getTimestamp() | setTimestamp(Long timestamp) |
 | `ProgressMs` | `Integer` | Optional | Progress into the currently playing track or episode. Can be `null`. | Integer getProgressMs() | setProgressMs(Integer progressMs) |
 | `IsPlaying` | `Boolean` | Optional | If something is currently playing, return `true`. | Boolean getIsPlaying() | setIsPlaying(Boolean isPlaying) |
-| `Item` | [`CurrentlyPlayingContextObjectItem`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/oneof-anyof-definitions/currently-playing-context-object-item.md) | Optional | This is a container for one-of cases. | CurrentlyPlayingContextObjectItem getItem() | setItem(CurrentlyPlayingContextObjectItem item) |
+| `Item` | [`CurrentlyPlayingContextObjectItem`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/oneof-anyof-definitions/currently-playing-context-object-item.md) | Optional | This is a container for one-of cases. | CurrentlyPlayingContextObjectItem getItem() | setItem(CurrentlyPlayingContextObjectItem item) |
 | `CurrentlyPlayingType` | `String` | Optional | The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`. | String getCurrentlyPlayingType() | setCurrentlyPlayingType(String currentlyPlayingType) |
-| `Actions` | [`DisallowsObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. | DisallowsObject getActions() | setActions(DisallowsObject actions) |
+| `Actions` | [`DisallowsObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. | DisallowsObject getActions() | setActions(DisallowsObject actions) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

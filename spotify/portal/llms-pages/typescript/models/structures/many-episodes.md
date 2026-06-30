@@ -1,6 +1,6 @@
 # Many Episodes
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk1hbnlFcGlzb2Rlcw
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRk1hbnlFcGlzb2Rlcw
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `episodes` | [`EpisodeObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/episode-object.md) | Required | - |
+| `episodes` | [`EpisodeObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/episode-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

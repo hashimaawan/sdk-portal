@@ -1,6 +1,6 @@
 # Many Simplified Shows
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Shows` | [`[]models.ShowBase`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/show-base.md) | Required | - |
+| `Shows` | [`[]models.ShowBase`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/show-base.md) | Required | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

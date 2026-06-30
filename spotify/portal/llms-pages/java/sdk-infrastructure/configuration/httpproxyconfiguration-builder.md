@@ -1,9 +1,9 @@
 # HttpProxyConfiguration.Builder
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkh0dHBQcm94eUNvbmZpZ3VyYXRpb24uQnVpbGRlcg
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkh0dHBQcm94eUNvbmZpZ3VyYXRpb24uQnVpbGRlcg
 
 
-Class to build instances of [HttpProxyConfiguration](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/httpproxyconfiguration.md).
+Class to build instances of [HttpProxyConfiguration](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/httpproxyconfiguration.md).
 
 # Constructors
 
@@ -17,7 +17,7 @@ Class to build instances of [HttpProxyConfiguration](https://github.com/hashimaa
 |  --- | --- | --- |
 | `Builder(String address, int port)` | Constructs HttpProxyConfiguration.Builder with proxy address and port. | `HttpProxyConfiguration.Builder` |
 | `auth(String username, String password)` | Sets the username and password for proxy auth. | `HttpProxyConfiguration.Builder` |
-| `build()` | Builds a new HttpProxyConfiguration object using the set fields. | [`HttpProxyConfiguration`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/configuration/httpproxyconfiguration.md) |
+| `build()` | Builds a new HttpProxyConfiguration object using the set fields. | [`HttpProxyConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/sdk-infrastructure/configuration/httpproxyconfiguration.md) |
 
 ## Client Initialization with Proxy Configuration
 

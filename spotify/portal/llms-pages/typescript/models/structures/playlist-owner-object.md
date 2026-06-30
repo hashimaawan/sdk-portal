@@ -1,6 +1,6 @@
 # Playlist Owner Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBsYXlsaXN0T3duZXJPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRlBsYXlsaXN0T3duZXJPYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,11 +14,11 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `externalUrls` | [`ExternalUrlObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
-| `followers` | [`FollowersObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
+| `externalUrls` | [`ExternalUrlObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
+| `followers` | [`FollowersObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
 | `href` | `string \| undefined` | Optional | A link to the Web API endpoint for this user. |
 | `id` | `string \| undefined` | Optional | The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
-| `type` | [`Type3 \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/enumerations/type-3.md) | Optional | The object type. |
+| `type` | [`Type3 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/enumerations/type-3.md) | Optional | The object type. |
 | `uri` | `string \| undefined` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
 | `displayName` | `string \| null \| undefined` | Optional | The name displayed on the user's profile. `null` if not available. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |

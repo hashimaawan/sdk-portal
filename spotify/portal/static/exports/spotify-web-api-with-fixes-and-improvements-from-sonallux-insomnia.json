@@ -6,7 +6,7 @@
     {
       "name": "Spotify Web API with fixes and improvements from sonallux",
       "_type": "workspace",
-      "_id": "wrk_3c13ecb2848e446696c95c099ccec465",
+      "_id": "wrk_6f8826cb682540b7aa1cdb35d508d5bc",
       "description": "You can use Spotify's Web API to discover music and podcasts, manage your Spotify library, control audio playback, and much more. Browse our available Web API endpoints using the sidebar at left, or via the navigation bar on top of this page on smaller screens.\n\nIn order to make successful Web API requests your app will need a valid access token. One can be obtained through <a href=\"https://developer.spotify.com/documentation/general/guides/authorization-guide/\">OAuth 2.0</a>.\n\nThe base URI for all Web API requests is `https://api.spotify.com/v1`.\n\nNeed help? See our <a href=\"https://developer.spotify.com/documentation/web-api/guides/\">Web API guides</a> for more information, or visit the <a href=\"https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer\">Spotify for Developers community forum</a> to ask questions and connect with other developers.\n"
     },
     {
@@ -16,98 +16,98 @@
         "authserver": "https://accounts.spotify.com"
       },
       "_type": "environment",
-      "_id": "env_3fe3482c1c29430ab295b6e989fbbf65",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "env_43583331359c47edb27bf914c0cd3485",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Albums",
       "_type": "request_group",
-      "_id": "fld_40a9a76cbf6e4b7a84766e542bab99af",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_439449519b454522968a713ae851dd96",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Artists",
       "_type": "request_group",
-      "_id": "fld_956703f429894060a5420cc34d8d91fa",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_144c7ba281804b9589b770818d0d5549",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Audiobooks",
       "_type": "request_group",
-      "_id": "fld_37066901e3b14b45a3b74a8e5ef691c9",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_7f781606209b4a75843a184d17743827",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Categories",
       "_type": "request_group",
-      "_id": "fld_1f6db79879854eeab56c0766c941e77c",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_4ff59491a4684a6da1adfd0474fa55fb",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Chapters",
       "_type": "request_group",
-      "_id": "fld_9bf932360211421783a01be04519d034",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_feec10233447438da90942224dbd2c10",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Episodes",
       "_type": "request_group",
-      "_id": "fld_79442f3b1de64db993d38bed942de5d1",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Library",
       "_type": "request_group",
-      "_id": "fld_2d8ec0f0fe914e20af56d0da2ccade10",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_7d606e5b4b8e47899fedc40d41b58221",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Genres",
       "_type": "request_group",
-      "_id": "fld_94ebd5207e974b82badeff6f1e02d14e",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_950ac6f695bf4b1cb6e825a674d0c235",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Markets",
       "_type": "request_group",
-      "_id": "fld_3420e76999ee48b6bea6f940c662b42a",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_60f8153ed81c4b36891004e498f13266",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Player",
       "_type": "request_group",
-      "_id": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_7bd448439d42449a9cc729999dbdfde2",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Playlists",
       "_type": "request_group",
-      "_id": "fld_70527c355f7b46afaacd004fe3d8c159",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_131fec3fc4b74e3d833cb2601dffd07b",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Search",
       "_type": "request_group",
-      "_id": "fld_59861b4c626f434aaad50372df4f75a3",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_3a6990f40aee4ea09d22e3e361ad4251",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Shows",
       "_type": "request_group",
-      "_id": "fld_e53b29feb9014940afed90253bfffd4f",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_66fd145bd35841e9814f25907c52a35f",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Tracks",
       "_type": "request_group",
-      "_id": "fld_c9b9fceba4de41edaa0a60c946449376",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_495493746df74009baffa73666287925",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "Users",
       "_type": "request_group",
-      "_id": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
-      "parentId": "wrk_3c13ecb2848e446696c95c099ccec465"
+      "_id": "fld_778a2925db1044bdba3166e880465add",
+      "parentId": "wrk_6f8826cb682540b7aa1cdb35d508d5bc"
     },
     {
       "name": "get-an-album",
@@ -127,8 +127,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_3631e0dee8694b36b670694c5c08233e",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_1f58ee60fa874e989c712d71ea56719b",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Get Spotify catalog information for a single album.\n"
     },
     {
@@ -154,8 +154,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_8929a76858a04196800a8f45bce5e2b4",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_affa681543504cf9a128f56cf2dd2e63",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Get Spotify catalog information for multiple albums identified by their Spotify IDs.\n"
     },
     {
@@ -186,8 +186,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_77fb50920d314ae4be276fc525928afe",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_bb063b237fa54c618c0b7f05563d93a0",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Get Spotify catalog information about an album’s tracks.\nOptional parameters can be used to limit the number of tracks returned.\n"
     },
     {
@@ -218,8 +218,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_7f62238aca7a4aa1b5fe83b09b987723",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_bfb9839ddac94d0baadcba6be7c77e4f",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Get a list of the albums saved in the current Spotify user's 'Your Music' library.\n"
     },
     {
@@ -228,7 +228,7 @@
       "url": "{{default}}/me/albums",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids75\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids45\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -251,8 +251,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_99e96000e9ed436fa24246a5ca784292",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_1ad502952fee4a7dbb20302ad72bd46b",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Save one or more albums to the current user's 'Your Music' library.\n"
     },
     {
@@ -261,7 +261,7 @@
       "url": "{{default}}/me/albums",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids75\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids45\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -284,8 +284,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_ea32be6e52554342be0de323b3e1313e",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_193091260ef847b9acb0274e141d9d68",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Remove one or more albums from the current user's 'Your Music' library.\n"
     },
     {
@@ -306,8 +306,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_ecda046b9d3348a4939b068cb1ad0aac",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_0930fd5700584a27932dc02583bb2d53",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Check if one or more albums is already saved in the current Spotify user's 'Your Music' library.\n"
     },
     {
@@ -333,8 +333,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_a157c094007e4448a9c32522e74382c7",
-      "parentId": "fld_40a9a76cbf6e4b7a84766e542bab99af",
+      "_id": "req_27ae70a554d34dd49dce1661178b24f3",
+      "parentId": "fld_439449519b454522968a713ae851dd96",
       "description": "Get a list of new album releases featured in Spotify (shown, for example, on a Spotify player’s “Browse” tab).\n"
     },
     {
@@ -348,8 +348,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_955d17d429d74b3e9d893ac971949432",
-      "parentId": "fld_956703f429894060a5420cc34d8d91fa",
+      "_id": "req_c5845b65c1a144c3835ea206d8f12922",
+      "parentId": "fld_144c7ba281804b9589b770818d0d5549",
       "description": "Get Spotify catalog information for a single artist identified by their unique Spotify ID.\n"
     },
     {
@@ -370,8 +370,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_2710d6da20df4280a816fadeb6b371b7",
-      "parentId": "fld_956703f429894060a5420cc34d8d91fa",
+      "_id": "req_7473a2b7bc2b444d811b54eda7ddc464",
+      "parentId": "fld_144c7ba281804b9589b770818d0d5549",
       "description": "Get Spotify catalog information for several artists based on their Spotify IDs.\n"
     },
     {
@@ -407,8 +407,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_30d6bf943be945c591c6b903d5823099",
-      "parentId": "fld_956703f429894060a5420cc34d8d91fa",
+      "_id": "req_547370f0e2d947618d228ee43d6dc4a0",
+      "parentId": "fld_144c7ba281804b9589b770818d0d5549",
       "description": "Get Spotify catalog information about an artist's albums.\n"
     },
     {
@@ -429,8 +429,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_72e49be4615c4624aa7ae8a10dd2a7e8",
-      "parentId": "fld_956703f429894060a5420cc34d8d91fa",
+      "_id": "req_bb3ac7d215e54f7da9c7bf860310837a",
+      "parentId": "fld_144c7ba281804b9589b770818d0d5549",
       "description": "Get Spotify catalog information about an artist's top tracks by country.\n"
     },
     {
@@ -444,8 +444,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_6156948dde3042f2b2a20fe8d7a3c88a",
-      "parentId": "fld_956703f429894060a5420cc34d8d91fa",
+      "_id": "req_1792e2c345184b6fb5ba64171cb68a2a",
+      "parentId": "fld_144c7ba281804b9589b770818d0d5549",
       "description": "Get Spotify catalog information about artists similar to a given artist. Similarity is based on analysis of the Spotify community's listening history.\n"
     },
     {
@@ -466,8 +466,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_1fea5600c5e442e2b61f2c7b5f79cfe0",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_e2c47d34191d4955b3b01241954fc1ce",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Get Spotify catalog information for a single audiobook. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
     },
     {
@@ -493,8 +493,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_24ac9e7bde3842298016422e5e186375",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_f3a73f73293b4a0082873bff635e7747",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Get Spotify catalog information for several audiobooks identified by their Spotify IDs. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
     },
     {
@@ -525,8 +525,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_5c0b009d1c5141c1aabf636836da0b8b",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_2cbf99ca91ad4e91a340839cf25e5f32",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Get Spotify catalog information about an audiobook's chapters. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
     },
     {
@@ -552,8 +552,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_9c7ea30fbcc34a0484a6fbd47867468f",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_300ef18f72674eeb971e1d1a522958ec",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Get a list of the audiobooks saved in the current Spotify user's 'Your Music' library.\n"
     },
     {
@@ -574,8 +574,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_cc95b51ecc7b43d7b96bd6121b81c55d",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_0c41bbe892224d1e9d03bc251436c6ed",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Save one or more audiobooks to the current Spotify user's library.\n"
     },
     {
@@ -596,8 +596,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_a5913b56e5fc4503afab8e7bcc7a7030",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_2275d7e8f0394b3c9a6e2492fc6ebf00",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Remove one or more audiobooks from the Spotify user's library.\n"
     },
     {
@@ -618,8 +618,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4406fc6440724bddbd3f09916eca786c",
-      "parentId": "fld_37066901e3b14b45a3b74a8e5ef691c9",
+      "_id": "req_e3fa6bd43dec4218b788632438af5f68",
+      "parentId": "fld_7f781606209b4a75843a184d17743827",
       "description": "Check if one or more audiobooks are already saved in the current Spotify user's library.\n"
     },
     {
@@ -650,8 +650,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c4d62fea3fef46909d2824f438472c8b",
-      "parentId": "fld_1f6db79879854eeab56c0766c941e77c",
+      "_id": "req_0a373540a86f46749309607b564a9134",
+      "parentId": "fld_4ff59491a4684a6da1adfd0474fa55fb",
       "description": "Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).\n"
     },
     {
@@ -672,8 +672,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_89be08a753a5407c93d33f9efe5757c4",
-      "parentId": "fld_1f6db79879854eeab56c0766c941e77c",
+      "_id": "req_b20689e74afb4455a30e9833a517b08e",
+      "parentId": "fld_4ff59491a4684a6da1adfd0474fa55fb",
       "description": "Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).\n"
     },
     {
@@ -694,8 +694,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_2a8cef04f3454efcb11df28d7ce89669",
-      "parentId": "fld_9bf932360211421783a01be04519d034",
+      "_id": "req_89bc105a32694f0dac0504daa115cb14",
+      "parentId": "fld_feec10233447438da90942224dbd2c10",
       "description": "Get Spotify catalog information for a single audiobook chapter. Chapters are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
     },
     {
@@ -721,8 +721,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_1809df43d0dc43ca9b92114be44eeadf",
-      "parentId": "fld_9bf932360211421783a01be04519d034",
+      "_id": "req_46a72b400fd149efb01d521d0638128d",
+      "parentId": "fld_feec10233447438da90942224dbd2c10",
       "description": "Get Spotify catalog information for several audiobook chapters identified by their Spotify IDs. Chapters are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
     },
     {
@@ -743,8 +743,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_882627b4c5d349208c7be5ef11c438c0",
-      "parentId": "fld_79442f3b1de64db993d38bed942de5d1",
+      "_id": "req_50278952237f46a48c6f7e55bbb32ae0",
+      "parentId": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
       "description": "Get Spotify catalog information for a single episode identified by its\nunique Spotify ID.\n"
     },
     {
@@ -770,8 +770,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_b87a7a77b6834aa1b4f271a80dfafd9e",
-      "parentId": "fld_79442f3b1de64db993d38bed942de5d1",
+      "_id": "req_eb95eec10f0b4bbd8a51a62ee453b04f",
+      "parentId": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
       "description": "Get Spotify catalog information for several episodes based on their Spotify IDs.\n"
     },
     {
@@ -802,8 +802,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_a845e70b6ac54a41b4981f00c32d2ca7",
-      "parentId": "fld_79442f3b1de64db993d38bed942de5d1",
+      "_id": "req_51a23d48a45c415797bd6393ccae8174",
+      "parentId": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
       "description": "Get a list of the episodes saved in the current Spotify user's library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).\n"
     },
     {
@@ -812,7 +812,7 @@
       "url": "{{default}}/me/episodes",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids46\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids77\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -835,8 +835,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_356f231a3a2940239e4b8ca8c091eae2",
-      "parentId": "fld_79442f3b1de64db993d38bed942de5d1",
+      "_id": "req_0f6aebb0c7a74c749ae934ef6ab5f327",
+      "parentId": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
       "description": "Save one or more episodes to the current user's library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).\n"
     },
     {
@@ -845,7 +845,7 @@
       "url": "{{default}}/me/episodes",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids38\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids2\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -868,8 +868,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_14619279576c4cc38b8e7098a4ddc695",
-      "parentId": "fld_79442f3b1de64db993d38bed942de5d1",
+      "_id": "req_94ce64c800ae4f6aa0525b9851ac7a42",
+      "parentId": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
       "description": "Remove one or more episodes from the current user's library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).\n"
     },
     {
@@ -890,8 +890,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_a9dd452a3b434910b3ec9f37e88a9030",
-      "parentId": "fld_79442f3b1de64db993d38bed942de5d1",
+      "_id": "req_19bba59b9dca41359b426eca5d506457",
+      "parentId": "fld_1c1da1c103f64d6b9e428e911f0d1e1d",
       "description": "Check if one or more episodes is already saved in the current Spotify user's 'Your Episodes' library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer)..\n"
     },
     {
@@ -905,8 +905,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_f6fa8d59418246719e8d18d6c5199211",
-      "parentId": "fld_94ebd5207e974b82badeff6f1e02d14e",
+      "_id": "req_4e3ef7df08bb43198eae79af076adaab",
+      "parentId": "fld_950ac6f695bf4b1cb6e825a674d0c235",
       "description": "Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/get-recommendations).\n"
     },
     {
@@ -920,8 +920,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4163c23a3afc4b96adbc744725e7470b",
-      "parentId": "fld_3420e76999ee48b6bea6f940c662b42a",
+      "_id": "req_36c3e83fc3bf41da8cef1ac4a9f5bb87",
+      "parentId": "fld_60f8153ed81c4b36891004e498f13266",
       "description": "Get the list of markets where Spotify is available.\n"
     },
     {
@@ -936,7 +936,7 @@
         },
         {
           "name": "additional_types",
-          "value": "additional_types58",
+          "value": "additional_types84",
           "disabled": false
         }
       ],
@@ -947,8 +947,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_9e96bf2a19024a7285decf45f1dac09d",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_7eed9b6e52dc472aa9274e9a69360909",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Get information about the user’s current playback state, including track or episode, progress, and active device.\n"
     },
     {
@@ -957,7 +957,7 @@
       "url": "{{default}}/me/player",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"device_ids\": [\n    \"device_ids55\"\n  ],\n  \"play\": false\n}"
+        "text": "{\n  \"device_ids\": [\n    \"device_ids95\"\n  ],\n  \"play\": true\n}"
       },
       "headers": [
         {
@@ -973,8 +973,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4831e57f1ab446ac9735ff4b7aa20f9c",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_13e33dfc907f48109fe938dd6aa5a4c5",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Transfer playback to a new device and optionally begin playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -988,8 +988,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_e23006d2d5d34f18ac7f321aa2f4abac",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_3865aab152f246b088061afee730e193",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Get information about a user’s available Spotify Connect devices. Some device models are not supported and will not be listed in the API response.\n"
     },
     {
@@ -1004,7 +1004,7 @@
         },
         {
           "name": "additional_types",
-          "value": "additional_types96",
+          "value": "additional_types70",
           "disabled": false
         }
       ],
@@ -1015,8 +1015,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_7d1aeb4f01724d079de035de7d269585",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_4405580b21db49b1b8691530c20c5989",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Get the object currently being played on the user's Spotify account.\n"
     },
     {
@@ -1025,7 +1025,7 @@
       "url": "{{default}}/me/player/play",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"context_uri\": \"context_uri43\",\n  \"uris\": [\n    \"uris78\"\n  ],\n  \"offset\": {\n    \"offset0\": \"offset48\",\n    \"offset1\": \"offset92\"\n  },\n  \"position_ms\": 103\n}"
+        "text": "{\n  \"context_uri\": \"context_uri37\",\n  \"uris\": [\n    \"uris76\"\n  ],\n  \"offset\": {\n    \"offset0\": \"offset32\"\n  },\n  \"position_ms\": 210\n}"
       },
       "parameters": [
         {
@@ -1048,8 +1048,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_ced65ac9003447c99e3a6bcca89cfaee",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_d17cc8bc4cf64eb88b1edc3a7b2a88df",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Start a new context or resume current playback on the user's active device. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1070,8 +1070,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c1b2ded31f1e4289a2d86863f5f3467b",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_ad2610cf70d54d81b2bc2babef9e69c1",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Pause playback on the user's account. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1092,8 +1092,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4f44b0e2e0974b09802e340aed9fa369",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_460ce95d14c24fada015ef89e9e1eccc",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Skips to next track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1114,8 +1114,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_93c652ae75cf4eb08d041343f8f1aa3f",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_52fc6875f176434a94d7afc3570f6371",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Skips to previous track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1141,8 +1141,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_8cbd3f8a022348f98cc378e3ab462252",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_4972819d9674472bad8f5a643c60dfc5",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Seeks to the given position in the user’s currently playing track. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1168,8 +1168,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_7f0db70161044f5081b8cda5e767236f",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_b2119d4a05854dfdbff994ff62c131e1",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Set the repeat mode for the user's playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1195,8 +1195,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_21a0e23a4ede42cb916fc2cf8dbd5f65",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_9e6ac8e2df864cae95d314c15b108d25",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Set the volume for the user’s current playback device. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1222,8 +1222,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_aad8bbf6939f4d1898ec9e83fb57ac07",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_e6587dd580c54db8b31f8747835375e0",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Toggle shuffle on or off for user’s playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1243,7 +1243,7 @@
         },
         {
           "name": "before",
-          "value": "202",
+          "value": "252",
           "disabled": false
         }
       ],
@@ -1254,8 +1254,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c3080f6731c741c3b1ac3fb70ed5d562",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_ec3b0055271e4e23a4947fe537aa2372",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Get tracks from the current user's recently played tracks.\n_**Note**: Currently doesn't support podcast episodes._\n"
     },
     {
@@ -1269,8 +1269,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_2072b60209eb4ac89317df18e2a0866d",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_bc8f6cec89bd48308b30860433738730",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Get the list of objects that make up the user's queue.\n"
     },
     {
@@ -1296,8 +1296,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_53121008548e45409ccb60d2175dc77b",
-      "parentId": "fld_86ae1c038c9f48a9ad41be6bebfcec12",
+      "_id": "req_823c5ea8e81d4999b0787ac36cb0bcb3",
+      "parentId": "fld_7bd448439d42449a9cc729999dbdfde2",
       "description": "Add an item to the end of the user's current playback queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
     },
     {
@@ -1317,7 +1317,7 @@
         },
         {
           "name": "additional_types",
-          "value": "additional_types35",
+          "value": "additional_types73",
           "disabled": false
         }
       ],
@@ -1328,8 +1328,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_a2529ece08314480a25afe4b930f67f5",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_a96e3c1c6f324faab7a9feccdea68769",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get a playlist owned by a Spotify user.\n"
     },
     {
@@ -1338,7 +1338,7 @@
       "url": "{{default}}/playlists/{playlist_id}",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"name\": \"name30\",\n  \"public\": false,\n  \"collaborative\": true,\n  \"description\": \"description45\"\n}"
+        "text": "{\n  \"name\": \"name61\",\n  \"public\": false,\n  \"collaborative\": false,\n  \"description\": \"description26\"\n}"
       },
       "headers": [
         {
@@ -1354,8 +1354,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_010797461b9d40389e9e495f6e535483",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_d7e31ae899914ed9ac6b963cec3ec23d",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Change a playlist's name and public/private state. (The user must, of\ncourse, own the playlist.)\n"
     },
     {
@@ -1385,7 +1385,7 @@
         },
         {
           "name": "additional_types",
-          "value": "additional_types10",
+          "value": "additional_types9",
           "disabled": false
         }
       ],
@@ -1396,8 +1396,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_5b5c6c8c668a4028a0fdae88202716ba",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_2e93810341b34412894a9209a8e13a11",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get full details of the items of a playlist owned by a Spotify user.\n"
     },
     {
@@ -1406,7 +1406,7 @@
       "url": "{{default}}/playlists/{playlist_id}/tracks",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"uris\": [\n    \"uris61\"\n  ],\n  \"position\": 242\n}"
+        "text": "{\n  \"uris\": [\n    \"uris50\"\n  ],\n  \"position\": 175\n}"
       },
       "parameters": [
         {
@@ -1434,8 +1434,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_80d735be757e4fd8a7c691782ced6ab8",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_08dfb1674e9e4f00bc95db1baacedbd5",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Add one or more items to a user's playlist.\n"
     },
     {
@@ -1444,12 +1444,12 @@
       "url": "{{default}}/playlists/{playlist_id}/tracks",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"uris\": [\n    \"uris54\"\n  ],\n  \"range_start\": 172,\n  \"insert_before\": 242,\n  \"range_length\": 103,\n  \"snapshot_id\": \"snapshot_id37\"\n}"
+        "text": "{\n  \"uris\": [\n    \"uris23\"\n  ],\n  \"range_start\": 138,\n  \"insert_before\": 49,\n  \"range_length\": 187,\n  \"snapshot_id\": \"snapshot_id27\"\n}"
       },
       "parameters": [
         {
           "name": "uris",
-          "value": "uris81",
+          "value": "uris33",
           "disabled": false
         }
       ],
@@ -1467,8 +1467,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_56221517721c4011a795bebbab89055e",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_2e19e36bb18b4709a7c6fb7d59e302e6",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Either reorder or replace items in a playlist depending on the request's parameters.\nTo reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request's body.\nTo replace items, include `uris` as either a query parameter or in the request's body.\nReplacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.\n<br/>\n**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.\nThese operations can't be applied together in a single request.\n"
     },
     {
@@ -1477,7 +1477,7 @@
       "url": "{{default}}/playlists/{playlist_id}/tracks",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"tracks\": [\n    {\n      \"uri\": \"uri80\"\n    }\n  ],\n  \"snapshot_id\": \"snapshot_id83\"\n}"
+        "text": "{\n  \"tracks\": [\n    {\n      \"uri\": \"uri97\"\n    }\n  ],\n  \"snapshot_id\": \"snapshot_id45\"\n}"
       },
       "headers": [
         {
@@ -1493,8 +1493,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_9875eb4acbe2460f8323bd6ac3caefd3",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_f2b07b0735504584b80eb6803f55fed3",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Remove one or more items from a user's playlist.\n"
     },
     {
@@ -1520,8 +1520,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_f24c40ca20e4463eaf748c63eb7c505b",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_02108de977084525bd02828639654b08",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get a list of the playlists owned or followed by the current Spotify\nuser.\n"
     },
     {
@@ -1547,8 +1547,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_127d89bd0c1640e6bf5c4dc042ff9a58",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_f86338e725fd4c358e081e85dc7c39b8",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get a list of the playlists owned or followed by a Spotify user.\n"
     },
     {
@@ -1557,7 +1557,7 @@
       "url": "{{default}}/users/{user_id}/playlists",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"name\": \"name29\",\n  \"public\": false,\n  \"collaborative\": false,\n  \"description\": \"description53\"\n}"
+        "text": "{\n  \"name\": \"name60\",\n  \"public\": true,\n  \"collaborative\": true,\n  \"description\": \"description5\"\n}"
       },
       "headers": [
         {
@@ -1573,8 +1573,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_cf2ebf980c3c44448ad742d1097b23a5",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_21b0238f53464b32a632829fa06ecd1f",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Create a playlist for a Spotify user. (The playlist will be empty until\nyou [add tracks](/documentation/web-api/reference/add-tracks-to-playlist).)\nEach user is generally limited to a maximum of 11000 playlists.\n"
     },
     {
@@ -1605,8 +1605,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_6d2a7b89ab49434f8463aede9e2fba8f",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_9484327c083b4be3a60119cd0d535da1",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get a list of Spotify featured playlists (shown, for example, on a Spotify player's 'Browse' tab).\n"
     },
     {
@@ -1632,8 +1632,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_9f6e7f852b724b62a8363bc5f045cacf",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_54ae3ac696f5428b899c6da93de05463",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get a list of Spotify playlists tagged with a particular category.\n"
     },
     {
@@ -1647,8 +1647,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c055739dac3f4559bc060c21f28b6dde",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_a911fe23846b44808c7bd40917adde4c",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Get the current image associated with a specific playlist.\n"
     },
     {
@@ -1666,8 +1666,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c60890c1630f4b7b810b80d0d4ef264d",
-      "parentId": "fld_70527c355f7b46afaacd004fe3d8c159",
+      "_id": "req_c26516f6c46a4b62b63bb2d87b1ab36f",
+      "parentId": "fld_131fec3fc4b74e3d833cb2601dffd07b",
       "description": "Replace the image used to represent a specific playlist.\n"
     },
     {
@@ -1682,7 +1682,7 @@
         },
         {
           "name": "type",
-          "value": "[\"show\"]",
+          "value": "[\"episode\"]",
           "disabled": false
         },
         {
@@ -1713,8 +1713,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_eedf4e5d22804d029bd2c0188fab8d9e",
-      "parentId": "fld_59861b4c626f434aaad50372df4f75a3",
+      "_id": "req_228e6670127848e6a3bf17ef95c6da03",
+      "parentId": "fld_3a6990f40aee4ea09d22e3e361ad4251",
       "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks\nthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
     },
     {
@@ -1735,8 +1735,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_6e5f7cbb00b54b12a694df6c701ebbf1",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_9a4642259eb14f8194477211d2dc91ca",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Get Spotify catalog information for a single show identified by its\nunique Spotify ID.\n"
     },
     {
@@ -1762,8 +1762,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_9823f02049bd480cb8866ff983009032",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_543028d043b94f72be6bfced595d8204",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Get Spotify catalog information for several shows based on their Spotify IDs.\n"
     },
     {
@@ -1794,8 +1794,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4205e20ed88e4bd5bf9ee09b6e5bec5c",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_7f5e6a60406d4eea89fc096f92b46bf3",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Get Spotify catalog information about an show’s episodes. Optional parameters can be used to limit the number of episodes returned.\n"
     },
     {
@@ -1821,8 +1821,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c71d8fe7919a4e1ea7659fffdb78efc9",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_d00db3c485544a53a0872f11ef540ed4",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Get a list of shows saved in the current Spotify user's library. Optional parameters can be used to limit the number of shows returned.\n"
     },
     {
@@ -1831,7 +1831,7 @@
       "url": "{{default}}/me/shows",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids48\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids9\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -1854,8 +1854,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_135bc7d4a26f43728896452bc27712f2",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_69bcedc8a008404e9df6a9f987dd0265",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Save one or more shows to current Spotify user's library.\n"
     },
     {
@@ -1864,7 +1864,7 @@
       "url": "{{default}}/me/shows",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids48\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids9\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -1892,8 +1892,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_bc8e540918c843f49ce515d2d19a18a3",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_23fcc6ca355140e5ad939f4ae391269d",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Delete one or more shows from current Spotify user's library.\n"
     },
     {
@@ -1914,8 +1914,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_3b7292a4e33c429ba4191b7fa931e917",
-      "parentId": "fld_e53b29feb9014940afed90253bfffd4f",
+      "_id": "req_c26a7d5f4db8475393eacb05f52bcce4",
+      "parentId": "fld_66fd145bd35841e9814f25907c52a35f",
       "description": "Check if one or more shows is already saved in the current Spotify user's library.\n"
     },
     {
@@ -1936,8 +1936,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_714a6b7c768344a2b76f32b5928c38fa",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_b1f72b36cdf84ed5b9f54e1e44d33bd1",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Get Spotify catalog information for a single track identified by its\nunique Spotify ID.\n"
     },
     {
@@ -1963,8 +1963,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_eb720a06f1244b84a21f7fb082ab1ed1",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_3f32aa54feaa4b62a361d517a0238485",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Get Spotify catalog information for multiple tracks based on their Spotify IDs.\n"
     },
     {
@@ -1995,8 +1995,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_56c0a588d08a40e7a0c0333f86baa8f9",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_9ea3a45db3bd4766bab98fefeb23dcfa",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Get a list of the songs saved in the current Spotify user's 'Your Music' library.\n"
     },
     {
@@ -2005,7 +2005,7 @@
       "url": "{{default}}/me/tracks",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids13\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids44\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -2028,8 +2028,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_098ea872fd4d4148a6a66e2423a095c8",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_694f72dde40a44108bde3646b7a47de0",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Save one or more tracks to the current user's 'Your Music' library.\n"
     },
     {
@@ -2038,7 +2038,7 @@
       "url": "{{default}}/me/tracks",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids93\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids97\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -2061,8 +2061,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_2e5a593ea096419ca06eb3e91dfb71d2",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_f857c39ab2ee4036875d4faa2cc28dfe",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Remove one or more tracks from the current user's 'Your Music' library.\n"
     },
     {
@@ -2083,8 +2083,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_e74c5b970e5947248cd786d854954eba",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_bc26adf2dd21401ba0f83d0090f77ed7",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Check if one or more tracks is already saved in the current Spotify user's 'Your Music' library.\n"
     },
     {
@@ -2105,8 +2105,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_fa1f295c951243fd976cb7fb2d0fd664",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_e66ed589de03484896def8128895584b",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Get audio features for multiple tracks based on their Spotify IDs.\n"
     },
     {
@@ -2120,8 +2120,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_7ac70f23dfe145eea5121b029592126a",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_24fd82966e5f4cb9aedb19e6fd157a8a",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Get audio feature information for a single track identified by its unique\nSpotify ID.\n"
     },
     {
@@ -2135,8 +2135,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_bedac9a4461f40fa81142dd0aa2ebcfb",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_3488f8f5657c4e7db3794ba24a50540e",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Get a low-level audio analysis for a track in the Spotify catalog. The audio analysis describes the track’s structure and musical content, including rhythm, pitch, and timbre.\n"
     },
     {
@@ -2171,122 +2171,122 @@
         },
         {
           "name": "min_acousticness",
-          "value": "0.9009517428621749",
+          "value": "0.6663536919299051",
           "disabled": false
         },
         {
           "name": "max_acousticness",
-          "value": "0.5999215815128898",
+          "value": "0.6026863006773489",
           "disabled": false
         },
         {
           "name": "target_acousticness",
-          "value": "0.8151333919224675",
+          "value": "0.7614314837053414",
           "disabled": false
         },
         {
           "name": "min_danceability",
-          "value": "0.6956202039929081",
+          "value": "0.6713572431056862",
           "disabled": false
         },
         {
           "name": "max_danceability",
-          "value": "0.7659354415517856",
+          "value": "0.696257108248122",
           "disabled": false
         },
         {
           "name": "target_danceability",
-          "value": "0.504314903855271",
+          "value": "0.8897183267821701",
           "disabled": false
         },
         {
           "name": "min_duration_ms",
-          "value": "220",
+          "value": "109",
           "disabled": false
         },
         {
           "name": "max_duration_ms",
-          "value": "116",
+          "value": "232",
           "disabled": false
         },
         {
           "name": "target_duration_ms",
-          "value": "243",
+          "value": "122",
           "disabled": false
         },
         {
           "name": "min_energy",
-          "value": "0.8671043265644275",
+          "value": "0.9397860076973559",
           "disabled": false
         },
         {
           "name": "max_energy",
-          "value": "0.5437694691301317",
+          "value": "0.8951803120424353",
           "disabled": false
         },
         {
           "name": "target_energy",
-          "value": "0.49670057274055823",
+          "value": "0.6923138787638758",
           "disabled": false
         },
         {
           "name": "min_instrumentalness",
-          "value": "0.8135160852424599",
+          "value": "0.12771226283606574",
           "disabled": false
         },
         {
           "name": "max_instrumentalness",
-          "value": "0.31116549833978635",
+          "value": "0.8443640155130824",
           "disabled": false
         },
         {
           "name": "target_instrumentalness",
-          "value": "0.11928345204486812",
+          "value": "0.05922563426060101",
           "disabled": false
         },
         {
           "name": "min_key",
-          "value": "8",
-          "disabled": false
-        },
-        {
-          "name": "max_key",
-          "value": "7",
-          "disabled": false
-        },
-        {
-          "name": "target_key",
           "value": "6",
           "disabled": false
         },
         {
+          "name": "max_key",
+          "value": "4",
+          "disabled": false
+        },
+        {
+          "name": "target_key",
+          "value": "3",
+          "disabled": false
+        },
+        {
           "name": "min_liveness",
-          "value": "0.1264678705074338",
+          "value": "0.36280777464422886",
           "disabled": false
         },
         {
           "name": "max_liveness",
-          "value": "0.47290640872303524",
+          "value": "0.8048029004419077",
           "disabled": false
         },
         {
           "name": "target_liveness",
-          "value": "0.8280665341156578",
+          "value": "0.33846772685838555",
           "disabled": false
         },
         {
           "name": "min_loudness",
-          "value": "190.5191849748197",
+          "value": "237.83627713478336",
           "disabled": false
         },
         {
           "name": "max_loudness",
-          "value": "239.71543750896734",
+          "value": "195.90410373259658",
           "disabled": false
         },
         {
           "name": "target_loudness",
-          "value": "97.56341911837552",
+          "value": "43.32459880460302",
           "disabled": false
         },
         {
@@ -2306,77 +2306,77 @@
         },
         {
           "name": "min_popularity",
-          "value": "95",
+          "value": "82",
           "disabled": false
         },
         {
           "name": "max_popularity",
-          "value": "70",
+          "value": "97",
           "disabled": false
         },
         {
           "name": "target_popularity",
-          "value": "31",
+          "value": "89",
           "disabled": false
         },
         {
           "name": "min_speechiness",
-          "value": "0.48293833061163915",
+          "value": "0.790652826468831",
           "disabled": false
         },
         {
           "name": "max_speechiness",
-          "value": "0.08589461353105765",
+          "value": "0.14782549663032563",
           "disabled": false
         },
         {
           "name": "target_speechiness",
-          "value": "0.30055259698013603",
+          "value": "0.37975235745730884",
           "disabled": false
         },
         {
           "name": "min_tempo",
-          "value": "140.1273619714335",
+          "value": "59.19439671042571",
           "disabled": false
         },
         {
           "name": "max_tempo",
-          "value": "48.286738328620686",
+          "value": "49.862104902814295",
           "disabled": false
         },
         {
           "name": "target_tempo",
-          "value": "123.27765394142637",
+          "value": "200.53781845354843",
           "disabled": false
         },
         {
           "name": "min_time_signature",
-          "value": "10",
+          "value": "9",
           "disabled": false
         },
         {
           "name": "max_time_signature",
-          "value": "244",
+          "value": "212",
           "disabled": false
         },
         {
           "name": "target_time_signature",
-          "value": "49",
+          "value": "4",
           "disabled": false
         },
         {
           "name": "min_valence",
-          "value": "0.522030814120338",
+          "value": "0.6652457242091459",
           "disabled": false
         },
         {
           "name": "max_valence",
-          "value": "0.8059472074837647",
+          "value": "0.7152453179353035",
           "disabled": false
         },
         {
           "name": "target_valence",
-          "value": "0.8263247350807099",
+          "value": "0.6610497307698515",
           "disabled": false
         }
       ],
@@ -2387,8 +2387,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_c0767c6da710418cbc4a660be1b89822",
-      "parentId": "fld_c9b9fceba4de41edaa0a60c946449376",
+      "_id": "req_1794d8f891a94c8c8b45152c8dde2652",
+      "parentId": "fld_495493746df74009baffa73666287925",
       "description": "Recommendations are generated based on the available information for a given seed entity and matched against similar artists and tracks. If there is sufficient information about the provided seeds, a list of tracks will be returned together with pool size details.\n\nFor artists and tracks that are very new or obscure there might not be enough data to generate a list of tracks.\n"
     },
     {
@@ -2402,8 +2402,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_8afcf331f19843c9acfc2cbe79834587",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_06f3c28910f74fefa0a89d6e1c8bfe62",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Get detailed profile information about the current user (including the\ncurrent user's username).\n"
     },
     {
@@ -2417,8 +2417,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_53f4e04ad3304f748907a67bc8d196a7",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_3ed197589e594cdca45bdb6287e94905",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Get public profile information about a Spotify user.\n"
     },
     {
@@ -2443,8 +2443,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4da44e4c39274ea4bfae72623baac2af",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_244e2fed984a42639e1be2c183d81d20",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Add the current user as a follower of a playlist.\n"
     },
     {
@@ -2458,8 +2458,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_5d878e912638415e9c0547c3dbc6fc52",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_3531946ee6234297a575fb4fc7af817d",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Remove the current user as a follower of a playlist.\n"
     },
     {
@@ -2490,8 +2490,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_4b8727277cd644c7ba3107713ac7880c",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_cf571be5b4924c06a503f47924b2c04d",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Get the current user's followed artists.\n"
     },
     {
@@ -2500,7 +2500,7 @@
       "url": "{{default}}/me/following",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids38\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids73\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -2528,8 +2528,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_9d14b41274f54b93a859ca2b1650f540",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_51c9805fb0554f6890b408935061dafa",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Add the current user as a follower of one or more artists or other Spotify users.\n"
     },
     {
@@ -2538,7 +2538,7 @@
       "url": "{{default}}/me/following",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ids\": [\n    \"ids26\"\n  ]\n}"
+        "text": "{\n  \"ids\": [\n    \"ids30\"\n  ]\n}"
       },
       "parameters": [
         {
@@ -2566,8 +2566,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_7739fb1304724caf9292f87e0579320f",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_3caa29c4dd49497a9fbb561df0876a0b",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Remove the current user as a follower of one or more artists or other Spotify users.\n"
     },
     {
@@ -2593,8 +2593,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_f5779a9c2acd436c8a24031359dd8c3b",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_e65ee6e01980478b9dccdae38d7426e0",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Check to see if the current user is following one or more artists or other Spotify users.\n"
     },
     {
@@ -2615,8 +2615,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_14009bee20d647ffa50f1e796c79913d",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_87a6873dea3443fea37dc21eb110869e",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Check to see if one or more Spotify users are following a specified playlist.\n"
     },
     {
@@ -2647,8 +2647,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_31f377b53c964b5aac41811edb7c5acc",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_89fd96b265c44931b4a950d4a2bdce95",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Get the current user's top artists based on calculated affinity.\n"
     },
     {
@@ -2679,8 +2679,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_3e73ec52d48945219e9884df6bb2b4a3",
-      "parentId": "fld_1ebfa74aac4a4275bcea35d22f0fb37e",
+      "_id": "req_b76ea8b6896441b9a9cda606547ce14f",
+      "parentId": "fld_778a2925db1044bdba3166e880465add",
       "description": "Get the current user's top tracks based on calculated affinity.\n"
     }
   ]

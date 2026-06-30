@@ -1,6 +1,6 @@
 # Playlist User Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBsYXlsaXN0VXNlck9iamVjdA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/go/x-redirect/JTI0bSUyRlBsYXlsaXN0VXNlck9iamVjdA
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,11 +14,11 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redir
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `ExternalUrls` | [`*models.ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
-| `Followers` | [`*models.FollowersObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
+| `ExternalUrls` | [`*models.ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
+| `Followers` | [`*models.FollowersObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
 | `Href` | `*string` | Optional | A link to the Web API endpoint for this user. |
 | `Id` | `*string` | Optional | The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
-| `Type` | [`*models.Type3`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/enumerations/type-3.md) | Optional | The object type. |
+| `Type` | [`*models.Type3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/go/models/enumerations/type-3.md) | Optional | The object type. |
 | `Uri` | `*string` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 

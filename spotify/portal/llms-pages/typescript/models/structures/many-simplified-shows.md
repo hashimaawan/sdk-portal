@@ -1,6 +1,6 @@
 # Many Simplified Shows
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/typescript/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `shows` | [`ShowBase[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/show-base.md) | Required | - |
+| `shows` | [`ShowBase[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/typescript/models/structures/show-base.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

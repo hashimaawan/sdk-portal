@@ -1,6 +1,6 @@
 # Public User Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlB1YmxpY1VzZXJPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/net-standard-library/x-redirect/JTI0bSUyRlB1YmxpY1VzZXJPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -15,12 +15,12 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standa
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `DisplayName` | `string` | Optional | The name displayed on the user's profile. `null` if not available. |
-| `ExternalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
-| `Followers` | [`FollowersObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
+| `ExternalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
+| `Followers` | [`FollowersObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
 | `Href` | `string` | Optional | A link to the Web API endpoint for this user. |
 | `Id` | `string` | Optional | The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
-| `Images` | [`List<ImageObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/image-object.md) | Optional | The user's profile image. |
-| `Type` | [`Type3?`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/enumerations/type-3.md) | Optional | The object type. |
+| `Images` | [`List<ImageObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/structures/image-object.md) | Optional | The user's profile image. |
+| `Type` | [`Type3?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/net-standard-library/models/enumerations/type-3.md) | Optional | The object type. |
 | `Uri` | `string` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 

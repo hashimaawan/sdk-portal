@@ -1,6 +1,6 @@
 # Many Artists
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRk1hbnlBcnRpc3Rz
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `artists` | [`Array[ArtistObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/artist-object.md) | Required | - |
+| `artists` | [`Array[ArtistObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/artist-object.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

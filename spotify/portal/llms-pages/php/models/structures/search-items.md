@@ -1,6 +1,6 @@
 # Search Items
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
 
 *This model accepts additional fields of type array.*
 
@@ -14,13 +14,13 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `tracks` | [`?PagingTrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-track-object.md) | Optional | - | getTracks(): ?PagingTrackObject | setTracks(?PagingTrackObject tracks): void |
-| `artists` | [`?PagingArtistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-artist-object.md) | Optional | - | getArtists(): ?PagingArtistObject | setArtists(?PagingArtistObject artists): void |
-| `albums` | [`?PagingSimplifiedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-simplified-album-object.md) | Optional | - | getAlbums(): ?PagingSimplifiedAlbumObject | setAlbums(?PagingSimplifiedAlbumObject albums): void |
-| `playlists` | [`?PagingPlaylistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-playlist-object.md) | Optional | - | getPlaylists(): ?PagingPlaylistObject | setPlaylists(?PagingPlaylistObject playlists): void |
-| `shows` | [`?PagingSimplifiedShowObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-simplified-show-object.md) | Optional | - | getShows(): ?PagingSimplifiedShowObject | setShows(?PagingSimplifiedShowObject shows): void |
-| `episodes` | [`?PagingSimplifiedEpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-simplified-episode-object.md) | Optional | - | getEpisodes(): ?PagingSimplifiedEpisodeObject | setEpisodes(?PagingSimplifiedEpisodeObject episodes): void |
-| `audiobooks` | [`?PagingSimplifiedAudiobookObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-simplified-audiobook-object.md) | Optional | - | getAudiobooks(): ?PagingSimplifiedAudiobookObject | setAudiobooks(?PagingSimplifiedAudiobookObject audiobooks): void |
+| `tracks` | [`?PagingTrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-track-object.md) | Optional | - | getTracks(): ?PagingTrackObject | setTracks(?PagingTrackObject tracks): void |
+| `artists` | [`?PagingArtistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-artist-object.md) | Optional | - | getArtists(): ?PagingArtistObject | setArtists(?PagingArtistObject artists): void |
+| `albums` | [`?PagingSimplifiedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-simplified-album-object.md) | Optional | - | getAlbums(): ?PagingSimplifiedAlbumObject | setAlbums(?PagingSimplifiedAlbumObject albums): void |
+| `playlists` | [`?PagingPlaylistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-playlist-object.md) | Optional | - | getPlaylists(): ?PagingPlaylistObject | setPlaylists(?PagingPlaylistObject playlists): void |
+| `shows` | [`?PagingSimplifiedShowObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-simplified-show-object.md) | Optional | - | getShows(): ?PagingSimplifiedShowObject | setShows(?PagingSimplifiedShowObject shows): void |
+| `episodes` | [`?PagingSimplifiedEpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-simplified-episode-object.md) | Optional | - | getEpisodes(): ?PagingSimplifiedEpisodeObject | setEpisodes(?PagingSimplifiedEpisodeObject episodes): void |
+| `audiobooks` | [`?PagingSimplifiedAudiobookObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/paging-simplified-audiobook-object.md) | Optional | - | getAudiobooks(): ?PagingSimplifiedAudiobookObject | setAudiobooks(?PagingSimplifiedAudiobookObject audiobooks): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

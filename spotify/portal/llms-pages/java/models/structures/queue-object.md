@@ -1,6 +1,6 @@
 # Queue Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -14,8 +14,8 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `CurrentlyPlaying` | [`QueueObjectCurrentlyPlaying`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/oneof-anyof-definitions/queue-object-currently-playing.md) | Optional | This is a container for one-of cases. | QueueObjectCurrentlyPlaying getCurrentlyPlaying() | setCurrentlyPlaying(QueueObjectCurrentlyPlaying currentlyPlaying) |
-| `Queue` | [`List<QueueObjectQueue>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/oneof-anyof-definitions/queue-object-queue.md) | Optional | This is List of a container for one-of cases. | List<QueueObjectQueue> getQueue() | setQueue(List<QueueObjectQueue> queue) |
+| `CurrentlyPlaying` | [`QueueObjectCurrentlyPlaying`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/oneof-anyof-definitions/queue-object-currently-playing.md) | Optional | This is a container for one-of cases. | QueueObjectCurrentlyPlaying getCurrentlyPlaying() | setCurrentlyPlaying(QueueObjectCurrentlyPlaying currentlyPlaying) |
+| `Queue` | [`List<QueueObjectQueue>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/oneof-anyof-definitions/queue-object-queue.md) | Optional | This is List of a container for one-of cases. | List<QueueObjectQueue> getQueue() | setQueue(List<QueueObjectQueue> queue) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

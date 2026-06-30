@@ -1,6 +1,6 @@
 # Saved Audiobook Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlNhdmVkQXVkaW9ib29rT2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRlNhdmVkQXVkaW9ib29rT2JqZWN0
 
 *This model accepts additional fields of type array.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redi
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `addedAt` | `?DateTime` | Optional | The date and time the audiobook was saved<br>Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.<br>If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object. | getAddedAt(): ?\DateTime | setAddedAt(?\DateTime addedAt): void |
-| `audiobook` | [`?AudiobookObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/audiobook-object.md) | Optional | Information about the audiobook. | getAudiobook(): ?AudiobookObject | setAudiobook(?AudiobookObject audiobook): void |
+| `audiobook` | [`?AudiobookObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/php/models/structures/audiobook-object.md) | Optional | Information about the audiobook. | getAudiobook(): ?AudiobookObject | setAudiobook(?AudiobookObject audiobook): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

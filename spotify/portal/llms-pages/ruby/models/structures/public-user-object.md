@@ -1,6 +1,6 @@
 # Public User Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlB1YmxpY1VzZXJPYmplY3Q
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRlB1YmxpY1VzZXJPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -15,12 +15,12 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-red
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `display_name` | `String` | Optional | The name displayed on the user's profile. `null` if not available. |
-| `external_urls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
-| `followers` | [`FollowersObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
+| `external_urls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
+| `followers` | [`FollowersObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
 | `href` | `String` | Optional | A link to the Web API endpoint for this user. |
 | `id` | `String` | Optional | The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
-| `images` | [`Array[ImageObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/image-object.md) | Optional | The user's profile image. |
-| `type` | [`Type3`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/enumerations/type-3.md) | Optional | The object type. |
+| `images` | [`Array[ImageObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/structures/image-object.md) | Optional | The user's profile image. |
+| `type` | [`Type3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/ruby/models/enumerations/type-3.md) | Optional | The object type. |
 | `uri` | `String` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 

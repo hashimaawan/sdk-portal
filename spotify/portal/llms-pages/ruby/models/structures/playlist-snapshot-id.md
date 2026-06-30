@@ -1,6 +1,6 @@
 # Playlist Snapshot Id
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBsYXlsaXN0U25hcHNob3RJZA
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/ruby/x-redirect/JTI0bSUyRlBsYXlsaXN0U25hcHNob3RJZA
 
 *This model accepts additional fields of type Object.*
 

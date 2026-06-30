@@ -1,6 +1,6 @@
 # Category Object
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/java/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -15,7 +15,7 @@ Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-red
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `Href` | `String` | Required | A link to the Web API endpoint returning full details of the category. | String getHref() | setHref(String href) |
-| `Icons` | [`List<ImageObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/image-object.md) | Required | The category icon, in various sizes. | List<ImageObject> getIcons() | setIcons(List<ImageObject> icons) |
+| `Icons` | [`List<ImageObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/llms-pages/java/models/structures/image-object.md) | Required | The category icon, in various sizes. | List<ImageObject> getIcons() | setIcons(List<ImageObject> icons) |
 | `Id` | `String` | Required | The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) of the category. | String getId() | setId(String id) |
 | `Name` | `String` | Required | The name of the category. | String getName() | setName(String name) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |

@@ -1,6 +1,6 @@
 # OAuth Scope
 
-Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRk9BdXRoJTI1MjBTY29wZQ
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/spotify/portal/#/php/x-redirect/JTI0bSUyRk9BdXRoJTI1MjBTY29wZQ
 
 OAuth 2 scopes supported by the API
 

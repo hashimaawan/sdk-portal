@@ -1,0 +1,26 @@
+# Result
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1password/#/ruby/x-redirect/JTI0bSUyRlJlc3VsdA
+
+
+# Enum Type Name
+
+`Result`
+
+
+# Fields
+
+| Name |
+|  --- |
+| `SUCCESS` |
+| `DENY` |
+
+
+# Example
+
+```ruby
+result = Result::SUCCESS
+```
+
+
+

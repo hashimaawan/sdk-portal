@@ -1,6 +1,6 @@
 # ApiRequestLoggingConfiguration.Builder
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaVJlcXVlc3RMb2dnaW5nQ29uZmlndXJhdGlvbi5CdWlsZGVy
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaVJlcXVlc3RMb2dnaW5nQ29uZmlndXJhdGlvbi5CdWlsZGVy
 
 Class to build instances of RequestLoggingConfiguration.
 

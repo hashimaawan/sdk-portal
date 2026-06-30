@@ -1,6 +1,6 @@
 # Linked Track Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRkxpbmtlZFRyYWNrT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRkxpbmtlZFRyYWNrT2JqZWN0
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `ExternalUrls` | [`*models.ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/external-url-object.md) | Optional | Known external URLs for this track. |
+| `ExternalUrls` | [`*models.ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/external-url-object.md) | Optional | Known external URLs for this track. |
 | `Href` | `*string` | Optional | A link to the Web API endpoint providing full details of the track. |
 | `Id` | `*string` | Optional | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track. |
 | `Type` | `*string` | Optional | The object type: "track". |

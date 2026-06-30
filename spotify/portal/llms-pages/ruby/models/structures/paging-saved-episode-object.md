@@ -1,6 +1,6 @@
 # Paging Saved Episode Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkRXBpc29kZU9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkRXBpc29kZU9iamVjdA
 
 *This model accepts additional fields of type Object.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 | `offset` | `Integer` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `String` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `Integer` | Required | The total number of items available to return. |
-| `items` | [`Array[SavedEpisodeObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/saved-episode-object.md) | Required | - |
+| `items` | [`Array[SavedEpisodeObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/saved-episode-object.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

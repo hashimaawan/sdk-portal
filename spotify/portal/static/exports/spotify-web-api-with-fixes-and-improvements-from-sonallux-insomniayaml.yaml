@@ -4,7 +4,7 @@ __export_source: apimatic.transformer
 resources:
 - name: Spotify Web API with fixes and improvements from sonallux
   _type: workspace
-  _id: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
   description: >
     You can use Spotify's Web API to discover music and podcasts, manage your Spotify library, control audio playback, and much more. Browse our available Web API endpoints using the sidebar at left, or via the navigation bar on top of this page on smaller screens.
 
@@ -21,68 +21,68 @@ resources:
     default: https://api.spotify.com/v1
     authserver: https://accounts.spotify.com
   _type: environment
-  _id: env_3709ab4970f7497a9b3b906b33979588
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: env_b3bc27b5584d40be89e875b14386722d
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Albums
   _type: request_group
-  _id: fld_e8b48edfbedd4413be7f66f3a40f7d8d
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_f2970656a766467cb3b11df5b3e52100
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Artists
   _type: request_group
-  _id: fld_953596cd244942e9915e0be668732dce
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_d4a7addc75874a7eaca2e5b6ac62e553
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Audiobooks
   _type: request_group
-  _id: fld_2140ee431040453ca3443b404b8d347c
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_e89c2aaccaaf461595f6670da22f8081
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Categories
   _type: request_group
-  _id: fld_3f684baec28b4a12bf09e90a8cf609d6
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_012f8b65942c4a60b97b91277d10f4b9
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Chapters
   _type: request_group
-  _id: fld_1187348d216d46848ba89db5f933100a
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_6ffe25b6f4214296864f86a637136fb5
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Episodes
   _type: request_group
-  _id: fld_547db1e2287f48db9452263c026fc0a8
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_26f174a66bba4a2fad94daf7f141306e
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Library
   _type: request_group
-  _id: fld_4230af987c3648ab9aff2039150fb291
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_6a70be764da5480a9289b3f04b478cad
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Genres
   _type: request_group
-  _id: fld_41c9b2760ed54341a1d5a563bdc90bdc
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_1fb4b567383e469e8aff7b3a742aa46b
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Markets
   _type: request_group
-  _id: fld_212cdf95ff304f11b077e3ce2541bde4
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_2794d850c6d44f788ca40b4d0b566c9a
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Player
   _type: request_group
-  _id: fld_1d0e54cd9f764bba8f1aa40e709e1d51
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_5178509aae93401eb3e0e3d255657e83
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Playlists
   _type: request_group
-  _id: fld_7aa9d13a63de42a0a86306320f529a9f
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_9382ea0880d742b096d462809550cc3e
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Search
   _type: request_group
-  _id: fld_12cfb020344f4d00ad698ecf2fc45bb0
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_e8deed9b89904fb8ba3d000092791d53
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Shows
   _type: request_group
-  _id: fld_8ad17ed81d4b4c36ba136716471272da
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_157f7b41f2b547848e4799371c4e3693
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Tracks
   _type: request_group
-  _id: fld_14b91a216f2648eb88c439407e297551
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_6526c7b46b3b4019b30986f31719ffcc
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: Users
   _type: request_group
-  _id: fld_4ba88285a2af402798e895cbc223438b
-  parentId: wrk_f53cc3ed55364219b32e9f98533e020c
+  _id: fld_85c4f417617f486a88ac5dc23e5298f7
+  parentId: wrk_e37b7f0cfc5d428eb3307f67e09f49bd
 - name: get-an-album
   method: GET
   url: '{{default}}/albums/{id}'
@@ -96,8 +96,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_74728a27b9fd49f88738984036076f35
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_5b4ca1ca2bbd45e294dbc94a51d8b8fc
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Get Spotify catalog information for a single album.
 - name: get-multiple-albums
@@ -116,8 +116,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_5749a1e362b54ecbbce72c2b752d9b51
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_29f23f424c5747e191d724e0de179e22
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Get Spotify catalog information for multiple albums identified by their Spotify IDs.
 - name: get-an-albums-tracks
@@ -139,8 +139,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_70df777e262b4005ae5744a47e5db181
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_caf443f97f3344b4ac4ec5326081f69b
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Get Spotify catalog information about an album’s tracks.
 
@@ -164,8 +164,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_b77c3126297547da9f9167e409c3d9b3
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_428954a482c046d09dd5a2c329a015f3
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Get a list of the albums saved in the current Spotify user's 'Your Music' library.
 - name: save-albums-user
@@ -176,7 +176,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids10"
+          "ids25"
         ]
       }
   parameters:
@@ -193,8 +193,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_1585ac93dc7144c2bcdc3d9abfd3d93f
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_00d8f2d8a94945528e68eca57c799357
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Save one or more albums to the current user's 'Your Music' library.
 - name: remove-albums-user
@@ -205,7 +205,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids10"
+          "ids25"
         ]
       }
   parameters:
@@ -222,8 +222,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_f6f405ff668c47b9b1145b4eae321837
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_e1bd03fbe9964c0eab37a21639f11eee
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Remove one or more albums from the current user's 'Your Music' library.
 - name: check-users-saved-albums
@@ -239,8 +239,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c93bfad21072447fba64e1cca47fdcb5
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_92bd9f83f9ca45729d6edcc24c87af6c
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Check if one or more albums is already saved in the current Spotify user's 'Your Music' library.
 - name: get-new-releases
@@ -259,8 +259,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_68d8783abedd4d648691ecc47af73948
-  parentId: fld_e8b48edfbedd4413be7f66f3a40f7d8d
+  _id: req_ea3ab1538633439abe7ef78fcc0e70d7
+  parentId: fld_f2970656a766467cb3b11df5b3e52100
   description: >
     Get a list of new album releases featured in Spotify (shown, for example, on a Spotify player’s “Browse” tab).
 - name: get-an-artist
@@ -272,8 +272,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_a18faff36e1142d19fafb08179843d53
-  parentId: fld_953596cd244942e9915e0be668732dce
+  _id: req_08a20697640d47169958fe973194e739
+  parentId: fld_d4a7addc75874a7eaca2e5b6ac62e553
   description: >
     Get Spotify catalog information for a single artist identified by their unique Spotify ID.
 - name: get-multiple-artists
@@ -289,8 +289,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_ade9bedabbf2410fb704236fe0ea42c5
-  parentId: fld_953596cd244942e9915e0be668732dce
+  _id: req_6995b3b77bb04e47b08c0e85df996bac
+  parentId: fld_d4a7addc75874a7eaca2e5b6ac62e553
   description: >
     Get Spotify catalog information for several artists based on their Spotify IDs.
 - name: get-an-artists-albums
@@ -315,8 +315,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_bb4e6a95c11a48b7a9ee249abedb273f
-  parentId: fld_953596cd244942e9915e0be668732dce
+  _id: req_b34bc26a1ab7448295f6522b931e161e
+  parentId: fld_d4a7addc75874a7eaca2e5b6ac62e553
   description: >
     Get Spotify catalog information about an artist's albums.
 - name: get-an-artists-top-tracks
@@ -332,8 +332,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_e1a815fd99e2438b9692ea7667795ad8
-  parentId: fld_953596cd244942e9915e0be668732dce
+  _id: req_550c005576b14f41beadf7abaa0632e7
+  parentId: fld_d4a7addc75874a7eaca2e5b6ac62e553
   description: >
     Get Spotify catalog information about an artist's top tracks by country.
 - name: get-an-artists-related-artists
@@ -345,8 +345,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_900e11297d32434faa4b875ad5b00640
-  parentId: fld_953596cd244942e9915e0be668732dce
+  _id: req_79dd90476c12476cbb15a98305fed3af
+  parentId: fld_d4a7addc75874a7eaca2e5b6ac62e553
   description: >
     Get Spotify catalog information about artists similar to a given artist. Similarity is based on analysis of the Spotify community's listening history.
 - name: get-an-audiobook
@@ -362,8 +362,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_56d22ce62b624d3b838b7bd7594a8d9d
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_3d4925117b524d68b303509a07b8a4d7
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Get Spotify catalog information for a single audiobook. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
 - name: get-multiple-audiobooks
@@ -382,8 +382,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_f7a741ead2e44eb1bf88ba477ebfa40a
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_c538a9c74e2c49b5af7a7e635cda703a
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Get Spotify catalog information for several audiobooks identified by their Spotify IDs. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
 - name: get-audiobook-chapters
@@ -405,8 +405,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_16b7ed0655b7430385294bdb267d66f7
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_71b55047d4c74f90beca9850ae8c06fe
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Get Spotify catalog information about an audiobook's chapters. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
 - name: get-users-saved-audiobooks
@@ -425,8 +425,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_4ac9d2b22db1407289b0621c8228bf61
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_6751b7c3f402463996428c94ca07304d
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Get a list of the audiobooks saved in the current Spotify user's 'Your Music' library.
 - name: save-audiobooks-user
@@ -442,8 +442,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_4ee5be0b9d61468d87dc4e84a24b2243
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_4311c41dd0624b9db0227f08756f07c2
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Save one or more audiobooks to the current Spotify user's library.
 - name: remove-audiobooks-user
@@ -459,8 +459,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_25096133a1564cb4b8565608bce73870
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_7b81ac6048174d85aab1e96e5ea1b3db
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Remove one or more audiobooks from the Spotify user's library.
 - name: check-users-saved-audiobooks
@@ -476,8 +476,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_39fd674a7c60425991e88ed776e13fb9
-  parentId: fld_2140ee431040453ca3443b404b8d347c
+  _id: req_9e9a00d6ca164bd1a2c701b0a8ea5e78
+  parentId: fld_e89c2aaccaaf461595f6670da22f8081
   description: >
     Check if one or more audiobooks are already saved in the current Spotify user's library.
 - name: get-categories
@@ -499,8 +499,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c91bbed51d04474aa02857719106c3e7
-  parentId: fld_3f684baec28b4a12bf09e90a8cf609d6
+  _id: req_30840659fbf645d8b62839beab1ded77
+  parentId: fld_012f8b65942c4a60b97b91277d10f4b9
   description: >
     Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
 - name: get-a-category
@@ -516,8 +516,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_2e1111a26bf548e4b14f562cef4d461a
-  parentId: fld_3f684baec28b4a12bf09e90a8cf609d6
+  _id: req_b4e84b7c85c3453896cade1c4e95e16c
+  parentId: fld_012f8b65942c4a60b97b91277d10f4b9
   description: >
     Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
 - name: get-a-chapter
@@ -533,8 +533,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c130656b62bd45d5aca6ea28be96f9c3
-  parentId: fld_1187348d216d46848ba89db5f933100a
+  _id: req_a821de64d5724a46aa33edd525d285de
+  parentId: fld_6ffe25b6f4214296864f86a637136fb5
   description: >
     Get Spotify catalog information for a single audiobook chapter. Chapters are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
 - name: get-several-chapters
@@ -553,8 +553,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_b61133a0be8640249f72a5c578142745
-  parentId: fld_1187348d216d46848ba89db5f933100a
+  _id: req_79c2688f4efe4133b7c5ed501997d89b
+  parentId: fld_6ffe25b6f4214296864f86a637136fb5
   description: >
     Get Spotify catalog information for several audiobook chapters identified by their Spotify IDs. Chapters are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
 - name: get-an-episode
@@ -570,8 +570,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_ebdd8cde2af845898159cfa32b9060b0
-  parentId: fld_547db1e2287f48db9452263c026fc0a8
+  _id: req_6d5708ec86e8494eba58bd0d34c72134
+  parentId: fld_26f174a66bba4a2fad94daf7f141306e
   description: >
     Get Spotify catalog information for a single episode identified by its
 
@@ -592,8 +592,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_bfba7dfa485a41e19a1e4cddaee55dd2
-  parentId: fld_547db1e2287f48db9452263c026fc0a8
+  _id: req_e25bcda78ba746659e1e7f4aa0d80000
+  parentId: fld_26f174a66bba4a2fad94daf7f141306e
   description: >
     Get Spotify catalog information for several episodes based on their Spotify IDs.
 - name: get-users-saved-episodes
@@ -615,8 +615,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_287e666f15c24d60af0ba96fb6922ac8
-  parentId: fld_547db1e2287f48db9452263c026fc0a8
+  _id: req_58e8386e60304a51bf06dda1d2dfad33
+  parentId: fld_26f174a66bba4a2fad94daf7f141306e
   description: >
     Get a list of the episodes saved in the current Spotify user's library.<br/>
 
@@ -629,7 +629,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids10"
+          "ids92"
         ]
       }
   parameters:
@@ -646,8 +646,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_08b382b2a99144e29a02290b13bd8250
-  parentId: fld_547db1e2287f48db9452263c026fc0a8
+  _id: req_6c3162f0ad424a16968fceecd90af605
+  parentId: fld_26f174a66bba4a2fad94daf7f141306e
   description: >
     Save one or more episodes to the current user's library.<br/>
 
@@ -660,7 +660,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids79"
+          "ids2"
         ]
       }
   parameters:
@@ -677,8 +677,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_5f8d7fadd47f4666a42fd283d4c9956a
-  parentId: fld_547db1e2287f48db9452263c026fc0a8
+  _id: req_fb401b29329347dca4eb36c51b8e38ea
+  parentId: fld_26f174a66bba4a2fad94daf7f141306e
   description: >
     Remove one or more episodes from the current user's library.<br/>
 
@@ -696,8 +696,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c6e21c3449eb45f98df0ebbd61701e1f
-  parentId: fld_547db1e2287f48db9452263c026fc0a8
+  _id: req_0cb2fce4807e412bb9a9475ee4a09c84
+  parentId: fld_26f174a66bba4a2fad94daf7f141306e
   description: >
     Check if one or more episodes is already saved in the current Spotify user's 'Your Episodes' library.<br/>
 
@@ -711,8 +711,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_d3102ecc2b2e43c4bc01783a78fe2d71
-  parentId: fld_41c9b2760ed54341a1d5a563bdc90bdc
+  _id: req_14573bb4630f4add917f46e3b6ae9879
+  parentId: fld_1fb4b567383e469e8aff7b3a742aa46b
   description: >
     Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/get-recommendations).
 - name: get-available-markets
@@ -724,8 +724,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_9e00b690bfad40208ae33f5cc2598bb5
-  parentId: fld_212cdf95ff304f11b077e3ce2541bde4
+  _id: req_5d75ac7e5f354616921c3e5f2a566ae5
+  parentId: fld_2794d850c6d44f788ca40b4d0b566c9a
   description: >
     Get the list of markets where Spotify is available.
 - name: get-information-about-the-users-current-playback
@@ -736,7 +736,7 @@ resources:
     value: ES
     disabled: false
   - name: additional_types
-    value: additional_types33
+    value: additional_types10
     disabled: false
   authentication:
     type: oauth2
@@ -744,8 +744,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c6d272dd0611475fa38a7fea04c77d4e
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_d128d6b015f84b0f8dc2c70e1330d3ed
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Get information about the user’s current playback state, including track or episode, progress, and active device.
 - name: transfer-a-users-playback
@@ -756,7 +756,7 @@ resources:
     text: >-
       {
         "device_ids": [
-          "device_ids33"
+          "device_ids85"
         ],
         "play": true
       }
@@ -770,8 +770,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c89298c056e54350923b1c127589db26
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_509741ab55764ee7a73edc2f36655ebf
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Transfer playback to a new device and optionally begin playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: get-a-users-available-devices
@@ -783,8 +783,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_82222d1fbdac433d80aa1e1f2f3c0a41
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_62cc8a6d5dfa476ab4f1b2ef1c9907cf
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Get information about a user’s available Spotify Connect devices. Some device models are not supported and will not be listed in the API response.
 - name: get-the-users-currently-playing-track
@@ -795,7 +795,7 @@ resources:
     value: ES
     disabled: false
   - name: additional_types
-    value: additional_types58
+    value: additional_types83
     disabled: false
   authentication:
     type: oauth2
@@ -803,8 +803,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_269536ff5914424c802ba58866b14f66
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_86c94575c0854903ac96169ca959a076
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Get the object currently being played on the user's Spotify account.
 - name: start-a-users-playback
@@ -814,14 +814,14 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "context_uri": "context_uri54",
+        "context_uri": "context_uri32",
         "uris": [
-          "uris18"
+          "uris2"
         ],
         "offset": {
-          "offset0": "offset80"
+          "offset0": "offset72"
         },
-        "position_ms": 190
+        "position_ms": 240
       }
   parameters:
   - name: device_id
@@ -837,8 +837,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_6bacf43d940645d48a347914332cedbd
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_c324ea9056564ed8bb24eb52691aaee7
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Start a new context or resume current playback on the user's active device. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: pause-a-users-playback
@@ -854,8 +854,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_96629e8f2ee145d89ed06d0771ccf73f
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_aa5ec906409a4365998331bfea8f1ecf
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Pause playback on the user's account. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: skip-users-playback-to-next-track
@@ -871,8 +871,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c48eb30208c844cd9a2b72b7d4914d8a
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_5b47d4d933094dc8a4ec350474caa2b4
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Skips to next track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: skip-users-playback-to-previous-track
@@ -888,8 +888,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_19235883fdc14cb6a0ba0bddd2f2619b
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_4f9e3f19e6444a5893a65593c56b5302
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Skips to previous track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: seek-to-position-in-currently-playing-track
@@ -908,8 +908,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_6fdf6c3ca741410b96f3658256b65937
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_834ac9fc748149bbb51770ff13941949
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Seeks to the given position in the user’s currently playing track. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: set-repeat-mode-on-users-playback
@@ -928,8 +928,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_f6b1a2b7c2604b91b399a4ec7b508d1f
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_48012212c3f04925bbfd55cb775aafab
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Set the repeat mode for the user's playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: set-volume-for-users-playback
@@ -948,8 +948,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_8d82026bfc51429c80ac979e148b78f9
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_b5fe5a9071fc4696a96a284d17df4c1a
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Set the volume for the user’s current playback device. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: toggle-shuffle-for-users-playback
@@ -968,8 +968,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_1ff633ef2b1a42a08a71f12f3ded5f1d
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_31b4b915a176478ab0fc6108a307b652
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Toggle shuffle on or off for user’s playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: get-recently-played
@@ -983,7 +983,7 @@ resources:
     value: '1484811043508'
     disabled: false
   - name: before
-    value: '95'
+    value: '142'
     disabled: false
   authentication:
     type: oauth2
@@ -991,8 +991,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_5c9d6837090d4bb58a940d1d375e655e
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_458503f8c47847b39ea2e4e67e69c5db
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Get tracks from the current user's recently played tracks.
 
@@ -1006,8 +1006,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_ed977d97b42c4289ae6b02af690bc871
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_813edbb7b4dc405ab858475863daab8f
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Get the list of objects that make up the user's queue.
 - name: add-to-queue
@@ -1026,8 +1026,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_bb444112bb1d4e88b9b5468f22c9b204
-  parentId: fld_1d0e54cd9f764bba8f1aa40e709e1d51
+  _id: req_7077f17cb8e643f8983a9e6133b0ad79
+  parentId: fld_5178509aae93401eb3e0e3d255657e83
   description: >
     Add an item to the end of the user's current playback queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 - name: get-playlist
@@ -1041,7 +1041,7 @@ resources:
     value: items(added_by.id,track(name,href,album(name,href)))
     disabled: false
   - name: additional_types
-    value: additional_types57
+    value: additional_types98
     disabled: false
   authentication:
     type: oauth2
@@ -1049,8 +1049,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_5ffc886863fe449fa28cdeba958b1dd5
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_9cb3975974e6407a8d51c0b90ec7d27a
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get a playlist owned by a Spotify user.
 - name: change-playlist-details
@@ -1060,10 +1060,10 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "name": "name94",
+        "name": "name17",
         "public": true,
-        "collaborative": false,
-        "description": "description18"
+        "collaborative": true,
+        "description": "description17"
       }
   headers:
   - name: Content-Type
@@ -1075,8 +1075,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_9e66fda16bab43f3b26b571e71b02266
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_40cd202ebb2c4dcc8eec7cdb385b6d1f
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Change a playlist's name and public/private state. (The user must, of
 
@@ -1098,7 +1098,7 @@ resources:
     value: '0'
     disabled: false
   - name: additional_types
-    value: additional_types78
+    value: additional_types27
     disabled: false
   authentication:
     type: oauth2
@@ -1106,8 +1106,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_604e29c60b404b1a889c3e5f53cb468a
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_537b8fbc3fe54371a5789550b8ebce52
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get full details of the items of a playlist owned by a Spotify user.
 - name: add-tracks-to-playlist
@@ -1118,9 +1118,9 @@ resources:
     text: >-
       {
         "uris": [
-          "uris37"
+          "uris61"
         ],
-        "position": 55
+        "position": 35
       }
   parameters:
   - name: position
@@ -1139,8 +1139,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_36b03c5d27dc407aa4ecccb876cd5a8f
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_fcc7a8b1d6d540928f2d9147cde9a14b
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Add one or more items to a user's playlist.
 - name: reorder-or-replace-playlists-tracks
@@ -1151,16 +1151,16 @@ resources:
     text: >-
       {
         "uris": [
-          "uris2"
+          "uris35"
         ],
-        "range_start": 118,
-        "insert_before": 167,
-        "range_length": 95,
-        "snapshot_id": "snapshot_id53"
+        "range_start": 141,
+        "insert_before": 75,
+        "range_length": 151,
+        "snapshot_id": "snapshot_id19"
       }
   parameters:
   - name: uris
-    value: uris57
+    value: uris38
     disabled: false
   headers:
   - name: Content-Type
@@ -1172,8 +1172,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_2c6a534ff1fe4c9186f9107144d36a16
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_23f4a2f2b4dd437c91289889e9081ab9
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Either reorder or replace items in a playlist depending on the request's parameters.
 
@@ -1197,10 +1197,10 @@ resources:
       {
         "tracks": [
           {
-            "uri": "uri5"
+            "uri": "uri9"
           }
         ],
-        "snapshot_id": "snapshot_id83"
+        "snapshot_id": "snapshot_id64"
       }
   headers:
   - name: Content-Type
@@ -1212,8 +1212,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_6db45872755f4cd2ad34144732db4d22
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_084181289571494487604dbca7ce0e14
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Remove one or more items from a user's playlist.
 - name: get-a-list-of-current-users-playlists
@@ -1232,8 +1232,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_f83cff1165f847ee9c09a590153036d9
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_de8942d5331f4949903d51ee4fc87d2e
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get a list of the playlists owned or followed by the current Spotify
 
@@ -1254,8 +1254,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_0f14b51635c54f24850490a0f9043f7d
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_8b40588489844630b9d51404bc5cd831
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get a list of the playlists owned or followed by a Spotify user.
 - name: create-playlist
@@ -1265,10 +1265,10 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "name": "name86",
+        "name": "name34",
         "public": true,
         "collaborative": false,
-        "description": "description59"
+        "description": "description81"
       }
   headers:
   - name: Content-Type
@@ -1280,8 +1280,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_bc21b3aee72049b6a9d078d8aea95028
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_17dd88c8886d4290a69598de865e8e41
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Create a playlist for a Spotify user. (The playlist will be empty until
 
@@ -1307,8 +1307,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_05d8911b852d472c88e5dda61fb81560
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_b660bd89bf174fd096da07b1a2790d19
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get a list of Spotify featured playlists (shown, for example, on a Spotify player's 'Browse' tab).
 - name: get-a-categories-playlists
@@ -1327,8 +1327,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_d42858d7955d4c76b65db0ef36607fd8
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_adb2ae24c73e457d8117bff49ed9778d
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get a list of Spotify playlists tagged with a particular category.
 - name: get-playlist-cover
@@ -1340,8 +1340,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_2393f3404c7d483e9016528d1f5d0e16
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_1cb74325babc4faf953ee3e8fc6ea572
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Get the current image associated with a specific playlist.
 - name: upload-custom-playlist-cover
@@ -1356,8 +1356,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_8c39959d4d64403fbb1be16e520a3d4e
-  parentId: fld_7aa9d13a63de42a0a86306320f529a9f
+  _id: req_2e9ff6b1b7a94fa397c679676c1cd00a
+  parentId: fld_9382ea0880d742b096d462809550cc3e
   description: >
     Replace the image used to represent a specific playlist.
 - name: search
@@ -1388,8 +1388,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_9fe02d9e9303446483f378157d9c75b9
-  parentId: fld_12cfb020344f4d00ad698ecf2fc45bb0
+  _id: req_21af5b35944b45eab98214a1387c1eda
+  parentId: fld_e8deed9b89904fb8ba3d000092791d53
   description: >
     Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks
 
@@ -1407,8 +1407,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_1f97a48d780e4d06b6d042c7640f4c0d
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_41a42fe8028141d69101b109bf429ba1
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Get Spotify catalog information for a single show identified by its
 
@@ -1429,8 +1429,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_4306ee57ac7140049140b84a4ab0155a
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_cbc62e98f9d1468c99a1625f0ecb6502
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Get Spotify catalog information for several shows based on their Spotify IDs.
 - name: get-a-shows-episodes
@@ -1452,8 +1452,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_01c2ffb65b5942858a04c42c6e0ca9fd
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_288668ea7997463986fb498330485fd2
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Get Spotify catalog information about an show’s episodes. Optional parameters can be used to limit the number of episodes returned.
 - name: get-users-saved-shows
@@ -1472,8 +1472,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_23b9c15dd37243099a1253efe79b3931
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_83b138dd4f954da3a0d1b1fc30ea1373
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Get a list of shows saved in the current Spotify user's library. Optional parameters can be used to limit the number of shows returned.
 - name: save-shows-user
@@ -1501,8 +1501,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_efcaea2433ab497fab365759de88bb29
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_b67492d2265c4a9994991ab264aa4a1e
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Save one or more shows to current Spotify user's library.
 - name: remove-shows-user
@@ -1533,8 +1533,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_9ec84c581b2f4644bdf75eb6d351fcbf
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_83fbf2335af04ff9a85ede0b9a85ec3e
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Delete one or more shows from current Spotify user's library.
 - name: check-users-saved-shows
@@ -1550,8 +1550,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_78fda9672b574a799f4edd48942c10a5
-  parentId: fld_8ad17ed81d4b4c36ba136716471272da
+  _id: req_0cf75cd7021e4200aaa2f7a9917f8b09
+  parentId: fld_157f7b41f2b547848e4799371c4e3693
   description: >
     Check if one or more shows is already saved in the current Spotify user's library.
 - name: get-track
@@ -1567,8 +1567,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_26625ae526c14e10b1964a88937bfe7d
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_514448ac47a04720ab561198d74afd3e
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Get Spotify catalog information for a single track identified by its
 
@@ -1589,8 +1589,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_df6418987acf4e74abf7a48990fb13f6
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_c721afd0f7764d108d530ccf1a58ecb2
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Get Spotify catalog information for multiple tracks based on their Spotify IDs.
 - name: get-users-saved-tracks
@@ -1612,8 +1612,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_6861b476ec0042c9be92a15e7cf0d4ea
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_9125efaadfa141fdb0cb46da7788cb1f
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Get a list of the songs saved in the current Spotify user's 'Your Music' library.
 - name: save-tracks-user
@@ -1624,7 +1624,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids58"
+          "ids73"
         ]
       }
   parameters:
@@ -1641,8 +1641,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_d79c1ba69a5647faa242cad861e039d2
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_19c8a5b297484bdf8c5418f9a5b1b525
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Save one or more tracks to the current user's 'Your Music' library.
 - name: remove-tracks-user
@@ -1653,7 +1653,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids86"
+          "ids67"
         ]
       }
   parameters:
@@ -1670,8 +1670,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_7bca1599fc5f44db9ba63e218b4fa58d
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_5a2da0d5812a4fa6b44432b87d7682b9
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Remove one or more tracks from the current user's 'Your Music' library.
 - name: check-users-saved-tracks
@@ -1687,8 +1687,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_b32ce45b546a4b35b9ebd3bb5f7e6647
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_671fddbb92d64c9cba998462f41ce3a7
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Check if one or more tracks is already saved in the current Spotify user's 'Your Music' library.
 - name: get-several-audio-features
@@ -1704,8 +1704,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_0f6e8d0a78334c1d9e496b48151e0a9d
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_c5ed5e462166410095a6927bd2ee1995
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Get audio features for multiple tracks based on their Spotify IDs.
 - name: get-audio-features
@@ -1717,8 +1717,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_2e72e9463624476cac0c17d05ed97052
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_740dbe0fd8ba4003abbb2b561e3f5a7b
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Get audio feature information for a single track identified by its unique
 
@@ -1732,8 +1732,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_5237d13a7d844870b80f0c84f8439227
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_a4d9e4d22d234c32b3362bdfa8e71e14
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Get a low-level audio analysis for a track in the Spotify catalog. The audio analysis describes the track’s structure and musical content, including rhythm, pitch, and timbre.
 - name: get-recommendations
@@ -1756,76 +1756,76 @@ resources:
     value: 0c6xIDDpzE81m2q797ordA
     disabled: false
   - name: min_acousticness
-    value: '0.2876981038128794'
+    value: '0.6674927315502357'
     disabled: false
   - name: max_acousticness
-    value: '0.6317279522347872'
+    value: '0.2499603354102159'
     disabled: false
   - name: target_acousticness
-    value: '0.8875019772748354'
+    value: '0.06225610993985031'
     disabled: false
   - name: min_danceability
-    value: '0.8600556017693692'
+    value: '0.7091113978378153'
     disabled: false
   - name: max_danceability
-    value: '0.8455730276675075'
+    value: '0.5840217196052846'
     disabled: false
   - name: target_danceability
-    value: '0.4129462586493502'
+    value: '0.31884820126196334'
     disabled: false
   - name: min_duration_ms
-    value: '54'
+    value: '159'
     disabled: false
   - name: max_duration_ms
-    value: '248'
+    value: '97'
     disabled: false
   - name: target_duration_ms
-    value: '247'
+    value: '78'
     disabled: false
   - name: min_energy
-    value: '0.5426382018597934'
+    value: '0.5987617753227866'
     disabled: false
   - name: max_energy
-    value: '0.07151561530000672'
+    value: '0.004239998460442651'
     disabled: false
   - name: target_energy
-    value: '0.23289739556881284'
+    value: '0.7479866683746179'
     disabled: false
   - name: min_instrumentalness
-    value: '0.6310954529177306'
+    value: '0.9617561806395883'
     disabled: false
   - name: max_instrumentalness
-    value: '0.046246787659050215'
+    value: '0.20294091525616553'
     disabled: false
   - name: target_instrumentalness
-    value: '0.6894117006811024'
+    value: '0.7078833424936632'
     disabled: false
   - name: min_key
-    value: '3'
+    value: '5'
     disabled: false
   - name: max_key
     value: '7'
     disabled: false
   - name: target_key
-    value: '2'
+    value: '6'
     disabled: false
   - name: min_liveness
-    value: '0.4871939598309921'
+    value: '0.3153859148420767'
     disabled: false
   - name: max_liveness
-    value: '0.7961219167075493'
+    value: '0.4585779245811541'
     disabled: false
   - name: target_liveness
-    value: '0.06526576366434456'
+    value: '0.4559345668140813'
     disabled: false
   - name: min_loudness
-    value: '220.57711825052135'
+    value: '208.35245728970804'
     disabled: false
   - name: max_loudness
-    value: '223.20092200967966'
+    value: '215.81263602843762'
     disabled: false
   - name: target_loudness
-    value: '152.1054981169293'
+    value: '1.6710732377919135'
     disabled: false
   - name: min_mode
     value: '0'
@@ -1837,49 +1837,49 @@ resources:
     value: '0'
     disabled: false
   - name: min_popularity
-    value: '14'
+    value: '27'
     disabled: false
   - name: max_popularity
-    value: '93'
+    value: '73'
     disabled: false
   - name: target_popularity
-    value: '70'
+    value: '65'
     disabled: false
   - name: min_speechiness
-    value: '0.9338342084110549'
+    value: '0.9114173804904848'
     disabled: false
   - name: max_speechiness
-    value: '0.4155873436662061'
+    value: '0.17727819221122476'
     disabled: false
   - name: target_speechiness
-    value: '0.09542520561514956'
+    value: '0.7803787083423182'
     disabled: false
   - name: min_tempo
-    value: '199.9345418766113'
+    value: '218.76676230868134'
     disabled: false
   - name: max_tempo
-    value: '104.9941444838232'
+    value: '162.25090322788333'
     disabled: false
   - name: target_tempo
-    value: '178.3004348548637'
+    value: '166.66096769951696'
     disabled: false
   - name: min_time_signature
-    value: '7'
+    value: '9'
     disabled: false
   - name: max_time_signature
-    value: '28'
+    value: '195'
     disabled: false
   - name: target_time_signature
-    value: '229'
+    value: '118'
     disabled: false
   - name: min_valence
-    value: '0.39496844067656733'
+    value: '0.9005934269738859'
     disabled: false
   - name: max_valence
-    value: '0.9784489459308146'
+    value: '0.6993835264543774'
     disabled: false
   - name: target_valence
-    value: '0.1921567054577027'
+    value: '0.9618162004030252'
     disabled: false
   authentication:
     type: oauth2
@@ -1887,8 +1887,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_dd7fd3eef98f44569b54b5f935926068
-  parentId: fld_14b91a216f2648eb88c439407e297551
+  _id: req_09afb1ddfd2e4383ad50e3d9a9ccfb0f
+  parentId: fld_6526c7b46b3b4019b30986f31719ffcc
   description: >
     Recommendations are generated based on the available information for a given seed entity and matched against similar artists and tracks. If there is sufficient information about the provided seeds, a list of tracks will be returned together with pool size details.
 
@@ -1903,8 +1903,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_fd030ff9d2974d749ca27bd00fa70b5e
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_b229cbad54f648fc8808bc707978caf0
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Get detailed profile information about the current user (including the
 
@@ -1918,8 +1918,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_671030faeb644e12bdc0379eb61c7939
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_d46aae5e5bc4474481f604021eee97e1
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Get public profile information about a Spotify user.
 - name: follow-playlist
@@ -1941,8 +1941,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_bfd3c53157174b94ba27e504264f46b8
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_4811eff423db41fda4865882e6314e53
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Add the current user as a follower of a playlist.
 - name: unfollow-playlist
@@ -1954,8 +1954,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_007eff821bdd4ec3a7badbfc17f340d6
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_fe542945a8c14cdab7ced4cb5192c132
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Remove the current user as a follower of a playlist.
 - name: get-followed
@@ -1977,8 +1977,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_708e680703304677ab404a303b70d71f
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_db77dfd4834d4c408352823c18bd470b
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Get the current user's followed artists.
 - name: follow-artists-users
@@ -1989,7 +1989,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids16"
+          "ids26"
         ]
       }
   parameters:
@@ -2009,8 +2009,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_1a720d443b9547ac8bec9357514536c9
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_3855a59004994d39bdcada7765423199
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Add the current user as a follower of one or more artists or other Spotify users.
 - name: unfollow-artists-users
@@ -2021,7 +2021,7 @@ resources:
     text: >-
       {
         "ids": [
-          "ids64"
+          "ids12"
         ]
       }
   parameters:
@@ -2041,8 +2041,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_c2f901fa26884d0f96f71ae48bb327fb
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_5164fb2f395e43488ef9789e1bf03eae
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Remove the current user as a follower of one or more artists or other Spotify users.
 - name: check-current-user-follows
@@ -2061,8 +2061,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_de242225f8e9481bb6b7267ad1ff3e3e
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_654a0021739845ccacb4e1a49b4b51c9
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Check to see if the current user is following one or more artists or other Spotify users.
 - name: check-if-user-follows-playlist
@@ -2078,8 +2078,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_049a30ac981b4199a110f9fb04cd6b62
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_89ffb0a3e20841d3b23cade4e9a4158c
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Check to see if one or more Spotify users are following a specified playlist.
 - name: get-users-top-artists
@@ -2101,8 +2101,8 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_1a8d951c6ce149fa88a551998336b5bb
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_510bb8a2cbca43f9ac494e1a39d488bb
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Get the current user's top artists based on calculated affinity.
 - name: get-users-top-tracks
@@ -2124,7 +2124,7 @@ resources:
     authorizationUrl: https://accounts.spotify.com/authorize
     grantType: authorization_code
   _type: request
-  _id: req_d6a0892f841741f08ae7269c08241fb7
-  parentId: fld_4ba88285a2af402798e895cbc223438b
+  _id: req_1f081a5ef3a34328be9a06cff8388dd0
+  parentId: fld_85c4f417617f486a88ac5dc23e5298f7
   description: >
     Get the current user's top tracks based on calculated affinity.

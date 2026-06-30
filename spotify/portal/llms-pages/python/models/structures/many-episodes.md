@@ -1,6 +1,6 @@
 # Many Episodes
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlFcGlzb2Rlcw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlFcGlzb2Rlcw
 
 *This model accepts additional fields of type Any.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `episodes` | [`List[EpisodeObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/episode-object.md) | Required | - |
+| `episodes` | [`List[EpisodeObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/episode-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

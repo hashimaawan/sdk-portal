@@ -1,6 +1,6 @@
 # Album Group
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRkFsYnVtR3JvdXA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkFsYnVtR3JvdXA
 
 This field describes the relationship between the artist and the album.
 

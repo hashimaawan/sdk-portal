@@ -1,6 +1,6 @@
 # Queue Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -14,8 +14,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `currently_playing` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/episode-object.md) \| nil | Optional | This is a container for one-of cases. |
-| `queue` | Array[[TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/episode-object.md)] \| nil | Optional | This is Array of a container for one-of cases. |
+| `currently_playing` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/episode-object.md) \| nil | Optional | This is a container for one-of cases. |
+| `queue` | Array[[TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/episode-object.md)] \| nil | Optional | This is Array of a container for one-of cases. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

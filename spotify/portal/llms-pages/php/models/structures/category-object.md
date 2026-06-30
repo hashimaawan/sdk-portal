@@ -1,6 +1,6 @@
 # Category Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
 
 *This model accepts additional fields of type array.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `href` | `string` | Required | A link to the Web API endpoint returning full details of the category. | getHref(): string | setHref(string href): void |
-| `icons` | [`ImageObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/image-object.md) | Required | The category icon, in various sizes. | getIcons(): array | setIcons(array icons): void |
+| `icons` | [`ImageObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/image-object.md) | Required | The category icon, in various sizes. | getIcons(): array | setIcons(array icons): void |
 | `id` | `string` | Required | The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) of the category. | getId(): string | setId(string id): void |
 | `name` | `string` | Required | The name of the category. | getName(): string | setName(string name): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |

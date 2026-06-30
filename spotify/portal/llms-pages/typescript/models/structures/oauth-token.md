@@ -1,6 +1,6 @@
 # OAuth Token
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRk9BdXRoVG9rZW4
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk9BdXRoVG9rZW4
 
 OAuth 2 Authorization endpoint response
 

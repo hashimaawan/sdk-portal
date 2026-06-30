@@ -1,6 +1,6 @@
 # Recommendations Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
 
 *This model accepts additional fields of type array.*
 
@@ -14,8 +14,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `seeds` | [`RecommendationSeedObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. | getSeeds(): array | setSeeds(array seeds): void |
-| `tracks` | [`TrackObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. | getTracks(): array | setTracks(array tracks): void |
+| `seeds` | [`RecommendationSeedObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. | getSeeds(): array | setSeeds(array seeds): void |
+| `tracks` | [`TrackObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. | getTracks(): array | setTracks(array tracks): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

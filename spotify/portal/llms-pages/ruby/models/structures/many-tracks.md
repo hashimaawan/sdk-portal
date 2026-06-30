@@ -1,6 +1,6 @@
 # Many Tracks
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlUcmFja3M
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlUcmFja3M
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `tracks` | [`Array[TrackObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/track-object.md) | Required | - |
+| `tracks` | [`Array[TrackObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/track-object.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

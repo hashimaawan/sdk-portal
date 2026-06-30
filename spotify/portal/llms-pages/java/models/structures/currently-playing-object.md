@@ -1,6 +1,6 @@
 # Currently Playing Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. | ContextObject getContext() | setContext(ContextObject context) |
+| `Context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. | ContextObject getContext() | setContext(ContextObject context) |
 | `Timestamp` | `Long` | Optional | Unix Millisecond Timestamp when data was fetched | Long getTimestamp() | setTimestamp(Long timestamp) |
 | `ProgressMs` | `Integer` | Optional | Progress into the currently playing track or episode. Can be `null`. | Integer getProgressMs() | setProgressMs(Integer progressMs) |
 | `IsPlaying` | `Boolean` | Optional | If something is currently playing, return `true`. | Boolean getIsPlaying() | setIsPlaying(Boolean isPlaying) |
-| `Item` | [`CurrentlyPlayingObjectItem`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/oneof-anyof-definitions/currently-playing-object-item.md) | Optional | This is a container for one-of cases. | CurrentlyPlayingObjectItem getItem() | setItem(CurrentlyPlayingObjectItem item) |
+| `Item` | [`CurrentlyPlayingObjectItem`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/oneof-anyof-definitions/currently-playing-object-item.md) | Optional | This is a container for one-of cases. | CurrentlyPlayingObjectItem getItem() | setItem(CurrentlyPlayingObjectItem item) |
 | `CurrentlyPlayingType` | `String` | Optional | The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`. | String getCurrentlyPlayingType() | setCurrentlyPlayingType(String currentlyPlayingType) |
-| `Actions` | [`DisallowsObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. | DisallowsObject getActions() | setActions(DisallowsObject actions) |
+| `Actions` | [`DisallowsObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. | DisallowsObject getActions() | setActions(DisallowsObject actions) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

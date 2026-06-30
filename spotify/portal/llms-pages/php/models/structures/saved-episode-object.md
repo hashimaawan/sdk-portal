@@ -1,6 +1,6 @@
 # Saved Episode Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlNhdmVkRXBpc29kZU9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlNhdmVkRXBpc29kZU9iamVjdA
 
 *This model accepts additional fields of type array.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `addedAt` | `?DateTime` | Optional | The date and time the episode was saved.<br>Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ. | getAddedAt(): ?\DateTime | setAddedAt(?\DateTime addedAt): void |
-| `episode` | [`?EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/episode-object.md) | Optional | Information about the episode. | getEpisode(): ?EpisodeObject | setEpisode(?EpisodeObject episode): void |
+| `episode` | [`?EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/episode-object.md) | Optional | Information about the episode. | getEpisode(): ?EpisodeObject | setEpisode(?EpisodeObject episode): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

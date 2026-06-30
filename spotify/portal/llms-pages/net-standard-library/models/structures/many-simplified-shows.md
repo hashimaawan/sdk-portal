@@ -1,6 +1,6 @@
 # Many Simplified Shows
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
 
 *This model accepts additional fields of type object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Shows` | [`List<ShowBase>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/show-base.md) | Required | - |
+| `Shows` | [`List<ShowBase>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/show-base.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

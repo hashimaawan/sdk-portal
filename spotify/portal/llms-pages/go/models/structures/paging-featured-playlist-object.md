@@ -1,6 +1,6 @@
 # Paging Featured Playlist Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ0ZlYXR1cmVkUGxheWxpc3RPYmplY3Q
 
 *This model accepts additional fields of type interface{}.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Message` | `*string` | Optional | The localized message of a playlist. |
-| `Playlists` | [`*models.PagingPlaylistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/paging-playlist-object.md) | Optional | - |
+| `Playlists` | [`*models.PagingPlaylistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/paging-playlist-object.md) | Optional | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

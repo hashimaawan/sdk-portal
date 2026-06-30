@@ -1,6 +1,6 @@
 # Type 5
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlR5cGU1
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlR5cGU1
 
 The object type.
 

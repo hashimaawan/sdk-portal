@@ -1,6 +1,6 @@
 # Paging Simplified Album Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRBbGJ1bU9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRBbGJ1bU9iamVjdA
 
 *This model accepts additional fields of type array.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 | `offset` | `int` | Required | The offset of the items returned (as set in the query or by default) | getOffset(): int | setOffset(int offset): void |
 | `previous` | `?string` | Required | URL to the previous page of items. ( `null` if none) | getPrevious(): ?string | setPrevious(?string previous): void |
 | `total` | `int` | Required | The total number of items available to return. | getTotal(): int | setTotal(int total): void |
-| `items` | [`SimplifiedAlbumObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/simplified-album-object.md) | Required | - | getItems(): array | setItems(array items): void |
+| `items` | [`SimplifiedAlbumObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/simplified-album-object.md) | Required | - | getItems(): array | setItems(array items): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

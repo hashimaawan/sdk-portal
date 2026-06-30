@@ -1,6 +1,6 @@
 # Many Devices
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlEZXZpY2Vz
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRk1hbnlEZXZpY2Vz
 
 *This model accepts additional fields of type object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Devices` | [`List<DeviceObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/device-object.md) | Required | - |
+| `Devices` | [`List<DeviceObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/device-object.md) | Required | - |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

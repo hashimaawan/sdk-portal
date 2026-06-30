@@ -1,6 +1,6 @@
 # Many Audio Features
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlBdWRpb0ZlYXR1cmVz
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRk1hbnlBdWRpb0ZlYXR1cmVz
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `audio_features` | [`Array[AudioFeaturesObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/audio-features-object.md) | Required | - |
+| `audio_features` | [`Array[AudioFeaturesObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/audio-features-object.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

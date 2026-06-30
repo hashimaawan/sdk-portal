@@ -1,6 +1,6 @@
 # Audiobook Base
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkF1ZGlvYm9va0Jhc2U
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkF1ZGlvYm9va0Jhc2U
 
 *This model accepts additional fields of type object.*
 
@@ -14,21 +14,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Authors` | [`List<AuthorObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/author-object.md) | Required | The author(s) for the audiobook. |
+| `Authors` | [`List<AuthorObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/author-object.md) | Required | The author(s) for the audiobook. |
 | `AvailableMarkets` | `List<string>` | Required | A list of the countries in which the audiobook can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code. |
-| `Copyrights` | [`List<CopyrightObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/copyright-object.md) | Required | The copyright statements of the audiobook. |
+| `Copyrights` | [`List<CopyrightObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/copyright-object.md) | Required | The copyright statements of the audiobook. |
 | `Description` | `string` | Required | A description of the audiobook. HTML tags are stripped away from this field, use `html_description` field in case HTML tags are needed. |
 | `HtmlDescription` | `string` | Required | A description of the audiobook. This field may contain HTML tags. |
 | `Edition` | `string` | Optional | The edition of the audiobook. |
 | `Explicit` | `bool` | Required | Whether or not the audiobook has explicit content (true = yes it does; false = no it does not OR unknown). |
-| `ExternalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Required | External URLs for this audiobook. |
+| `ExternalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Required | External URLs for this audiobook. |
 | `Href` | `string` | Required | A link to the Web API endpoint providing full details of the audiobook. |
 | `Id` | `string` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the audiobook. |
-| `Images` | [`List<ImageObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/image-object.md) | Required | The cover art for the audiobook in various sizes, widest first. |
+| `Images` | [`List<ImageObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/image-object.md) | Required | The cover art for the audiobook in various sizes, widest first. |
 | `Languages` | `List<string>` | Required | A list of the languages used in the audiobook, identified by their [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. |
 | `MediaType` | `string` | Required | The media type of the audiobook. |
 | `Name` | `string` | Required | The name of the audiobook. |
-| `Narrators` | [`List<NarratorObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/narrator-object.md) | Required | The narrator(s) for the audiobook. |
+| `Narrators` | [`List<NarratorObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/narrator-object.md) | Required | The narrator(s) for the audiobook. |
 | `Publisher` | `string` | Required | The publisher of the audiobook. |
 | `Type` | `string` | Required, Constant | The object type.<br><br>**Value**: `"audiobook"` |
 | `Uri` | `string` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the audiobook. |

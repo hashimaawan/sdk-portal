@@ -1,6 +1,6 @@
 # Currently Playing Context Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -14,16 +14,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `device` | [`DeviceObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/device-object.md) | Optional | The device that is currently active. |
+| `device` | [`DeviceObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/device-object.md) | Optional | The device that is currently active. |
 | `repeat_state` | `String` | Optional | off, track, context |
 | `shuffle_state` | `TrueClass \| FalseClass` | Optional | If shuffle is on or off. |
-| `context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
+| `context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
 | `timestamp` | `Integer` | Optional | Unix Millisecond Timestamp when data was fetched. |
 | `progress_ms` | `Integer` | Optional | Progress into the currently playing track or episode. Can be `null`. |
 | `is_playing` | `TrueClass \| FalseClass` | Optional | If something is currently playing, return `true`. |
-| `item` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/episode-object.md) \| nil | Optional | This is a container for one-of cases. |
+| `item` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/episode-object.md) \| nil | Optional | This is a container for one-of cases. |
 | `currently_playing_type` | `String` | Optional | The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`. |
-| `actions` | [`DisallowsObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
+| `actions` | [`DisallowsObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

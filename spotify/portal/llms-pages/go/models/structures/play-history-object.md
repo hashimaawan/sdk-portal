@@ -1,6 +1,6 @@
 # Play History Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,9 +14,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Track` | [`*models.TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/track-object.md) | Optional | The track the user listened to. |
+| `Track` | [`*models.TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/track-object.md) | Optional | The track the user listened to. |
 | `PlayedAt` | `*time.Time` | Optional | The date and time the track was played. |
-| `Context` | [`*models.ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/context-object.md) | Optional | The context the track was played from. |
+| `Context` | [`*models.ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/context-object.md) | Optional | The context the track was played from. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # Many Audio Features
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRk1hbnlBdWRpb0ZlYXR1cmVz
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRk1hbnlBdWRpb0ZlYXR1cmVz
 
 *This model accepts additional fields of type array.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `audioFeatures` | [`AudioFeaturesObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/audio-features-object.md) | Required | - | getAudioFeatures(): array | setAudioFeatures(array audioFeatures): void |
+| `audioFeatures` | [`AudioFeaturesObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/audio-features-object.md) | Required | - | getAudioFeatures(): array | setAudioFeatures(array audioFeatures): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

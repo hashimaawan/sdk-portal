@@ -1,6 +1,6 @@
 # Many Simplified Shows
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRk1hbnlTaW1wbGlmaWVkU2hvd3M
 
 *This model accepts additional fields of type Any.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `shows` | [`List[ShowBase]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/show-base.md) | Required | - |
+| `shows` | [`List[ShowBase]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/show-base.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

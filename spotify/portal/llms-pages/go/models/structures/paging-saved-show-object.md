@@ -1,6 +1,6 @@
 # Paging Saved Show Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkU2hvd09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkU2hvd09iamVjdA
 
 *This model accepts additional fields of type interface{}.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 | `Offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `Previous` | `*string` | Required | URL to the previous page of items. ( `null` if none) |
 | `Total` | `int` | Required | The total number of items available to return. |
-| `Items` | [`[]models.SavedShowObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/saved-show-object.md) | Required | - |
+| `Items` | [`[]models.SavedShowObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/saved-show-object.md) | Required | - |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

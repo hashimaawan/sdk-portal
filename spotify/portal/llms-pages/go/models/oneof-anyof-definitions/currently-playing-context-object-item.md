@@ -1,6 +1,6 @@
 # Currently Playing Context Object Item
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0SXRlbQ
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdDb250ZXh0T2JqZWN0SXRlbQ
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 
 | Type | Factory Method |
 |  --- | --- |
-| [`models.TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/track-object.md) | models.CurrentlyPlayingContextObjectItemContainer.FromTrackObject(models.TrackObject trackObject) |
-| [`models.EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/episode-object.md) | models.CurrentlyPlayingContextObjectItemContainer.FromEpisodeObject(models.EpisodeObject episodeObject) |
+| [`models.TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/track-object.md) | models.CurrentlyPlayingContextObjectItemContainer.FromTrackObject(models.TrackObject trackObject) |
+| [`models.EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/episode-object.md) | models.CurrentlyPlayingContextObjectItemContainer.FromEpisodeObject(models.EpisodeObject episodeObject) |
 
 
 # models.TrackObject

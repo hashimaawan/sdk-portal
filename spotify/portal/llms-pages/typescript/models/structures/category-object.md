@@ -1,6 +1,6 @@
 # Category Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
 
 *This model accepts additional fields of type unknown.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `href` | `string` | Required | A link to the Web API endpoint returning full details of the category. |
-| `icons` | [`ImageObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/image-object.md) | Required | The category icon, in various sizes. |
+| `icons` | [`ImageObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/image-object.md) | Required | The category icon, in various sizes. |
 | `id` | `string` | Required | The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) of the category. |
 | `name` | `string` | Required | The name of the category. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |

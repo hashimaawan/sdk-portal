@@ -1,6 +1,6 @@
 # Paged Categories
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2VkQ2F0ZWdvcmllcw
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Categories` | [`Categories`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/categories.md) | Required | - | Categories getCategories() | setCategories(Categories categories) |
+| `Categories` | [`Categories`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/categories.md) | Required | - | Categories getCategories() | setCategories(Categories categories) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

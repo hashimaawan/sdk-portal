@@ -1,6 +1,6 @@
 # Queue Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
 
 *This model accepts additional fields of type Any.*
 
@@ -14,8 +14,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `currently_playing` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/episode-object.md) \| None | Optional | This is a container for one-of cases. |
-| `queue` | List[[TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/track-object.md) \| [EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/episode-object.md)] \| None | Optional | This is List of a container for one-of cases. |
+| `currently_playing` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/episode-object.md) \| None | Optional | This is a container for one-of cases. |
+| `queue` | List[[TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/track-object.md) \| [EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/episode-object.md)] \| None | Optional | This is List of a container for one-of cases. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

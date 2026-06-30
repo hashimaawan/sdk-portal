@@ -1,6 +1,6 @@
 # Cursor Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRkN1cnNvck9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkN1cnNvck9iamVjdA
 
 *This model accepts additional fields of type Object.*
 

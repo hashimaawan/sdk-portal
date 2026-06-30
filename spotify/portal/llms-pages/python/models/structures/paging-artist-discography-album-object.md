@@ -1,6 +1,6 @@
 # Paging Artist Discography Album Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlBhZ2luZ0FydGlzdERpc2NvZ3JhcGh5QWxidW1PYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlBhZ2luZ0FydGlzdERpc2NvZ3JhcGh5QWxidW1PYmplY3Q
 
 *This model accepts additional fields of type Any.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 | `offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `str` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `int` | Required | The total number of items available to return. |
-| `items` | [`List[ArtistDiscographyAlbumObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/artist-discography-album-object.md) | Required | - |
+| `items` | [`List[ArtistDiscographyAlbumObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/artist-discography-album-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

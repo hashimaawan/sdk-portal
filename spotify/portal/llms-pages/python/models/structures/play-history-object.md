@@ -1,6 +1,6 @@
 # Play History Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type Any.*
 
@@ -14,9 +14,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `track` | [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/track-object.md) | Optional | The track the user listened to. |
+| `track` | [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/track-object.md) | Optional | The track the user listened to. |
 | `played_at` | `datetime` | Optional | The date and time the track was played. |
-| `context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/context-object.md) | Optional | The context the track was played from. |
+| `context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/context-object.md) | Optional | The context the track was played from. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

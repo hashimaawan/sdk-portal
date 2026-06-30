@@ -1,6 +1,6 @@
 # Category Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRkNhdGVnb3J5T2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `href` | `String` | Required | A link to the Web API endpoint returning full details of the category. |
-| `icons` | [`Array[ImageObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/image-object.md) | Required | The category icon, in various sizes. |
+| `icons` | [`Array[ImageObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/image-object.md) | Required | The category icon, in various sizes. |
 | `id` | `String` | Required | The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) of the category. |
 | `name` | `String` | Required | The name of the category. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |

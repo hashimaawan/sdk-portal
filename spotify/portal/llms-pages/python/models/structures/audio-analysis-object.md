@@ -1,6 +1,6 @@
 # Audio Analysis Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRkF1ZGlvQW5hbHlzaXNPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkF1ZGlvQW5hbHlzaXNPYmplY3Q
 
 *This model accepts additional fields of type Any.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/meta.md) | Optional | - |
-| `track` | [`Track`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/track.md) | Optional | - |
-| `bars` | [`List[TimeIntervalObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/time-interval-object.md) | Optional | The time intervals of the bars throughout the track. A bar (or measure) is a segment of time defined as a given number of beats. |
-| `beats` | [`List[TimeIntervalObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/time-interval-object.md) | Optional | The time intervals of beats throughout the track. A beat is the basic time unit of a piece of music; for example, each tick of a metronome. Beats are typically multiples of tatums. |
-| `sections` | [`List[SectionObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/section-object.md) | Optional | Sections are defined by large variations in rhythm or timbre, e.g. chorus, verse, bridge, guitar solo, etc. Each section contains its own descriptions of tempo, key, mode, time_signature, and loudness. |
-| `segments` | [`List[SegmentObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/segment-object.md) | Optional | Each segment contains a roughly conisistent sound throughout its duration. |
-| `tatums` | [`List[TimeIntervalObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/time-interval-object.md) | Optional | A tatum represents the lowest regular pulse train that a listener intuitively infers from the timing of perceived musical events (segments). |
+| `meta` | [`Meta`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/meta.md) | Optional | - |
+| `track` | [`Track`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/track.md) | Optional | - |
+| `bars` | [`List[TimeIntervalObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/time-interval-object.md) | Optional | The time intervals of the bars throughout the track. A bar (or measure) is a segment of time defined as a given number of beats. |
+| `beats` | [`List[TimeIntervalObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/time-interval-object.md) | Optional | The time intervals of beats throughout the track. A beat is the basic time unit of a piece of music; for example, each tick of a metronome. Beats are typically multiples of tatums. |
+| `sections` | [`List[SectionObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/section-object.md) | Optional | Sections are defined by large variations in rhythm or timbre, e.g. chorus, verse, bridge, guitar solo, etc. Each section contains its own descriptions of tempo, key, mode, time_signature, and loudness. |
+| `segments` | [`List[SegmentObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/segment-object.md) | Optional | Each segment contains a roughly conisistent sound throughout its duration. |
+| `tatums` | [`List[TimeIntervalObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/time-interval-object.md) | Optional | A tatum represents the lowest regular pulse train that a listener intuitively infers from the timing of perceived musical events (segments). |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

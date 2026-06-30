@@ -1,6 +1,6 @@
 # Paged Albums
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlBhZ2VkQWxidW1z
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlBhZ2VkQWxidW1z
 
 *This model accepts additional fields of type array.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `albums` | [`PagingSimplifiedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/paging-simplified-album-object.md) | Required | - | getAlbums(): PagingSimplifiedAlbumObject | setAlbums(PagingSimplifiedAlbumObject albums): void |
+| `albums` | [`PagingSimplifiedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/paging-simplified-album-object.md) | Required | - | getAlbums(): PagingSimplifiedAlbumObject | setAlbums(PagingSimplifiedAlbumObject albums): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

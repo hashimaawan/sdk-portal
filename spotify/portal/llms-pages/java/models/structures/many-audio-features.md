@@ -1,6 +1,6 @@
 # Many Audio Features
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRk1hbnlBdWRpb0ZlYXR1cmVz
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRk1hbnlBdWRpb0ZlYXR1cmVz
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `AudioFeatures` | [`List<AudioFeaturesObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/audio-features-object.md) | Required | - | List<AudioFeaturesObject> getAudioFeatures() | setAudioFeatures(List<AudioFeaturesObject> audioFeatures) |
+| `AudioFeatures` | [`List<AudioFeaturesObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/audio-features-object.md) | Required | - | List<AudioFeaturesObject> getAudioFeatures() | setAudioFeatures(List<AudioFeaturesObject> audioFeatures) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

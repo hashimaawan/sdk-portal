@@ -1,6 +1,6 @@
 # Linked Track Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRkxpbmtlZFRyYWNrT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkxpbmtlZFRyYWNrT2JqZWN0
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `externalUrls` | [`ExternalUrlObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Optional | Known external URLs for this track. |
+| `externalUrls` | [`ExternalUrlObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Optional | Known external URLs for this track. |
 | `href` | `string \| undefined` | Optional | A link to the Web API endpoint providing full details of the track. |
 | `id` | `string \| undefined` | Optional | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track. |
 | `type` | `string \| undefined` | Optional | The object type: "track". |

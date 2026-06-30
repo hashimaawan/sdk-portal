@@ -1,6 +1,6 @@
 # HttpClientConfiguration
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkh0dHBDbGllbnRDb25maWd1cmF0aW9u
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkh0dHBDbGllbnRDb25maWd1cmF0aW9u
 
 HttpClientConfiguration represents the current state of the Http Client.
 
@@ -22,7 +22,7 @@ HttpClientConfiguration represents the current state of the Http Client.
 
 | Name | Description | Return Type |
 |  --- | --- | --- |
-| `ToBuilder()` | Creates an object of the HttpClientConfiguration using the values provided for the builder. | [`Builder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/httpclientconfigurationbuilder.md) |
+| `ToBuilder()` | Creates an object of the HttpClientConfiguration using the values provided for the builder. | [`Builder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/httpclientconfigurationbuilder.md) |
 
 
 

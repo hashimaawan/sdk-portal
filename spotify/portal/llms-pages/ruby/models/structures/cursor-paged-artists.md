@@ -1,6 +1,6 @@
 # Cursor Paged Artists
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRkN1cnNvclBhZ2VkQXJ0aXN0cw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRkN1cnNvclBhZ2VkQXJ0aXN0cw
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `artists` | [`CursorPagingSimplifiedArtistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/cursor-paging-simplified-artist-object.md) | Required | - |
+| `artists` | [`CursorPagingSimplifiedArtistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/cursor-paging-simplified-artist-object.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

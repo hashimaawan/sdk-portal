@@ -1,6 +1,6 @@
 # Saved Audiobook Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlNhdmVkQXVkaW9ib29rT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlNhdmVkQXVkaW9ib29rT2JqZWN0
 
 *This model accepts additional fields of type Any.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `added_at` | `datetime` | Optional | The date and time the audiobook was saved<br>Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.<br>If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object. |
-| `audiobook` | [`AudiobookObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/audiobook-object.md) | Optional | Information about the audiobook. |
+| `audiobook` | [`AudiobookObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/audiobook-object.md) | Optional | Information about the audiobook. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

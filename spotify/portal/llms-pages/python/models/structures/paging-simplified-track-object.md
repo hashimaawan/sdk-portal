@@ -1,6 +1,6 @@
 # Paging Simplified Track Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRUcmFja09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRUcmFja09iamVjdA
 
 *This model accepts additional fields of type Any.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 | `offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `str` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `int` | Required | The total number of items available to return. |
-| `items` | [`List[SimplifiedTrackObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/simplified-track-object.md) | Required | - |
+| `items` | [`List[SimplifiedTrackObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/simplified-track-object.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

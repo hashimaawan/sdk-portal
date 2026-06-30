@@ -1,6 +1,6 @@
 # Playlist User Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBsYXlsaXN0VXNlck9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBsYXlsaXN0VXNlck9iamVjdA
 
 *This model accepts additional fields of type object.*
 
@@ -14,11 +14,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `ExternalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
-| `Followers` | [`FollowersObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
+| `ExternalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
+| `Followers` | [`FollowersObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
 | `Href` | `string` | Optional | A link to the Web API endpoint for this user. |
 | `Id` | `string` | Optional | The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
-| `Type` | [`Type3?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/enumerations/type-3.md) | Optional | The object type. |
+| `Type` | [`Type3?`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/enumerations/type-3.md) | Optional | The object type. |
 | `Uri` | `string` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 

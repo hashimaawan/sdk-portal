@@ -1,6 +1,6 @@
 # Paging Saved Show Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkU2hvd09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkU2hvd09iamVjdA
 
 *This model accepts additional fields of type unknown.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 | `offset` | `number` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `string \| null` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `number` | Required | The total number of items available to return. |
-| `items` | [`SavedShowObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/saved-show-object.md) | Required | - |
+| `items` | [`SavedShowObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/saved-show-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

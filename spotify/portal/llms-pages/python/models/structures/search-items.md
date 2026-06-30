@@ -1,6 +1,6 @@
 # Search Items
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
 
 *This model accepts additional fields of type Any.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `tracks` | [`PagingTrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-track-object.md) | Optional | - |
-| `artists` | [`PagingArtistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-artist-object.md) | Optional | - |
-| `albums` | [`PagingSimplifiedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-simplified-album-object.md) | Optional | - |
-| `playlists` | [`PagingPlaylistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-playlist-object.md) | Optional | - |
-| `shows` | [`PagingSimplifiedShowObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-simplified-show-object.md) | Optional | - |
-| `episodes` | [`PagingSimplifiedEpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-simplified-episode-object.md) | Optional | - |
-| `audiobooks` | [`PagingSimplifiedAudiobookObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/paging-simplified-audiobook-object.md) | Optional | - |
+| `tracks` | [`PagingTrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-track-object.md) | Optional | - |
+| `artists` | [`PagingArtistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-artist-object.md) | Optional | - |
+| `albums` | [`PagingSimplifiedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-simplified-album-object.md) | Optional | - |
+| `playlists` | [`PagingPlaylistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-playlist-object.md) | Optional | - |
+| `shows` | [`PagingSimplifiedShowObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-simplified-show-object.md) | Optional | - |
+| `episodes` | [`PagingSimplifiedEpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-simplified-episode-object.md) | Optional | - |
+| `audiobooks` | [`PagingSimplifiedAudiobookObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/paging-simplified-audiobook-object.md) | Optional | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # Playlist Track Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
 
 *This model accepts additional fields of type array.*
 
@@ -15,9 +15,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `addedAt` | `?DateTime` | Optional | The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._ | getAddedAt(): ?\DateTime | setAddedAt(?\DateTime addedAt): void |
-| `addedBy` | [`?PlaylistUserObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ | getAddedBy(): ?PlaylistUserObject | setAddedBy(?PlaylistUserObject addedBy): void |
+| `addedBy` | [`?PlaylistUserObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ | getAddedBy(): ?PlaylistUserObject | setAddedBy(?PlaylistUserObject addedBy): void |
 | `isLocal` | `?bool` | Optional | Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not. | getIsLocal(): ?bool | setIsLocal(?bool isLocal): void |
-| `track` | [TrackObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/track-object.md)\|[EpisodeObject](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/episode-object.md)\|null | Optional | This is a container for one-of cases. | getTrack(): | setTrack( track): void |
+| `track` | [TrackObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/track-object.md)\|[EpisodeObject](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/episode-object.md)\|null | Optional | This is a container for one-of cases. | getTrack(): | setTrack( track): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

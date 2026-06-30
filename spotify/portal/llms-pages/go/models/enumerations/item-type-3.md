@@ -1,6 +1,6 @@
 # Item Type 3
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRkl0ZW0lMjUyMFR5cGUz
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRkl0ZW0lMjUyMFR5cGUz
 
 The ID type: either `artist` or `user`.
 

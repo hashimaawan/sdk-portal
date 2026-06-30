@@ -1,6 +1,6 @@
 # External Id Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRkV4dGVybmFsSWRPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRkV4dGVybmFsSWRPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 

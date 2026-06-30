@@ -1,6 +1,6 @@
 # Search Items
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `tracks` | [`PagingTrackObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-track-object.md) | Optional | - |
-| `artists` | [`PagingArtistObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-artist-object.md) | Optional | - |
-| `albums` | [`PagingSimplifiedAlbumObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-simplified-album-object.md) | Optional | - |
-| `playlists` | [`PagingPlaylistObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-playlist-object.md) | Optional | - |
-| `shows` | [`PagingSimplifiedShowObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-simplified-show-object.md) | Optional | - |
-| `episodes` | [`PagingSimplifiedEpisodeObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-simplified-episode-object.md) | Optional | - |
-| `audiobooks` | [`PagingSimplifiedAudiobookObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/paging-simplified-audiobook-object.md) | Optional | - |
+| `tracks` | [`PagingTrackObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-track-object.md) | Optional | - |
+| `artists` | [`PagingArtistObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-artist-object.md) | Optional | - |
+| `albums` | [`PagingSimplifiedAlbumObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-simplified-album-object.md) | Optional | - |
+| `playlists` | [`PagingPlaylistObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-playlist-object.md) | Optional | - |
+| `shows` | [`PagingSimplifiedShowObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-simplified-show-object.md) | Optional | - |
+| `episodes` | [`PagingSimplifiedEpisodeObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-simplified-episode-object.md) | Optional | - |
+| `audiobooks` | [`PagingSimplifiedAudiobookObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/paging-simplified-audiobook-object.md) | Optional | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

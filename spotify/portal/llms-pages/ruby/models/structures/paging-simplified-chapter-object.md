@@ -1,6 +1,6 @@
 # Paging Simplified Chapter Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRDaGFwdGVyT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRDaGFwdGVyT2JqZWN0
 
 *This model accepts additional fields of type Object.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 | `offset` | `Integer` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `String` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `Integer` | Required | The total number of items available to return. |
-| `items` | [`Array[ChapterBase]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/chapter-base.md) | Required | - |
+| `items` | [`Array[ChapterBase]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/chapter-base.md) | Required | - |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

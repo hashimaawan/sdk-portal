@@ -1,6 +1,6 @@
 # Error Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRkVycm9yT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkVycm9yT2JqZWN0
 
 *This model accepts additional fields of type unknown.*
 

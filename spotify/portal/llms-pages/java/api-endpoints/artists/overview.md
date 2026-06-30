@@ -1,6 +1,6 @@
 # Overview
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkFydGlzdHMlMkZPdmVydmlldw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkFydGlzdHMlMkZPdmVydmlldw
 
 
 # Get instance

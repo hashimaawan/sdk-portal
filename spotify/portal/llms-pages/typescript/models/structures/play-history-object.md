@@ -1,6 +1,6 @@
 # Play History Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,9 +14,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `track` | [`TrackObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/track-object.md) | Optional | The track the user listened to. |
+| `track` | [`TrackObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/track-object.md) | Optional | The track the user listened to. |
 | `playedAt` | `string \| undefined` | Optional | The date and time the track was played. |
-| `context` | [`ContextObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/context-object.md) | Optional | The context the track was played from. |
+| `context` | [`ContextObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/context-object.md) | Optional | The context the track was played from. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

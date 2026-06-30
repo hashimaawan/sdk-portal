@@ -1,6 +1,6 @@
 # Audiobook Base
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRkF1ZGlvYm9va0Jhc2U
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkF1ZGlvYm9va0Jhc2U
 
 *This model accepts additional fields of type Any.*
 
@@ -14,21 +14,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `authors` | [`List[AuthorObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/author-object.md) | Required | The author(s) for the audiobook. |
+| `authors` | [`List[AuthorObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/author-object.md) | Required | The author(s) for the audiobook. |
 | `available_markets` | `List[str]` | Required | A list of the countries in which the audiobook can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code. |
-| `copyrights` | [`List[CopyrightObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/copyright-object.md) | Required | The copyright statements of the audiobook. |
+| `copyrights` | [`List[CopyrightObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/copyright-object.md) | Required | The copyright statements of the audiobook. |
 | `description` | `str` | Required | A description of the audiobook. HTML tags are stripped away from this field, use `html_description` field in case HTML tags are needed. |
 | `html_description` | `str` | Required | A description of the audiobook. This field may contain HTML tags. |
 | `edition` | `str` | Optional | The edition of the audiobook. |
 | `explicit` | `bool` | Required | Whether or not the audiobook has explicit content (true = yes it does; false = no it does not OR unknown). |
-| `external_urls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/external-url-object.md) | Required | External URLs for this audiobook. |
+| `external_urls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/external-url-object.md) | Required | External URLs for this audiobook. |
 | `href` | `str` | Required | A link to the Web API endpoint providing full details of the audiobook. |
 | `id` | `str` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the audiobook. |
-| `images` | [`List[ImageObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/image-object.md) | Required | The cover art for the audiobook in various sizes, widest first. |
+| `images` | [`List[ImageObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/image-object.md) | Required | The cover art for the audiobook in various sizes, widest first. |
 | `languages` | `List[str]` | Required | A list of the languages used in the audiobook, identified by their [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. |
 | `media_type` | `str` | Required | The media type of the audiobook. |
 | `name` | `str` | Required | The name of the audiobook. |
-| `narrators` | [`List[NarratorObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/narrator-object.md) | Required | The narrator(s) for the audiobook. |
+| `narrators` | [`List[NarratorObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/narrator-object.md) | Required | The narrator(s) for the audiobook. |
 | `publisher` | `str` | Required | The publisher of the audiobook. |
 | `mtype` | `str` | Required, Constant | The object type.<br><br>**Value**: `"audiobook"` |
 | `uri` | `str` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the audiobook. |

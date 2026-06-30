@@ -1,6 +1,6 @@
 # Environment-Based Client Initialization
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkVudmlyb25tZW50LUJhc2VkJTI1MjBDbGllbnQlMjUyMEluaXRpYWxpemF0aW9u
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkVudmlyb25tZW50LUJhc2VkJTI1MjBDbGllbnQlMjUyMEluaXRpYWxpemF0aW9u
 
 The SDK client can be initialized directly from environment variables using the `fromEnvironment` static method available on the `Client` class. This allows you to configure the SDK through environment variables, making it easier to manage different settings across different environments.
 

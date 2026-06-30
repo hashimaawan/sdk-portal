@@ -1,6 +1,6 @@
 # Currently Playing Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
+| `Context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
 | `Timestamp` | `long?` | Optional | Unix Millisecond Timestamp when data was fetched |
 | `ProgressMs` | `int?` | Optional | Progress into the currently playing track or episode. Can be `null`. |
 | `IsPlaying` | `bool?` | Optional | If something is currently playing, return `true`. |
-| `Item` | [`CurrentlyPlayingObjectItem`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/oneof-anyof-definitions/currently-playing-object-item.md) | Optional | This is a container for one-of cases. |
+| `Item` | [`CurrentlyPlayingObjectItem`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/oneof-anyof-definitions/currently-playing-object-item.md) | Optional | This is a container for one-of cases. |
 | `CurrentlyPlayingType` | `string` | Optional | The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`. |
-| `Actions` | [`DisallowsObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
+| `Actions` | [`DisallowsObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

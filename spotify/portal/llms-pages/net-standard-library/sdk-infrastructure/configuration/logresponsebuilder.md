@@ -1,6 +1,6 @@
 # LogResponseBuilder
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ1Jlc3BvbnNlQnVpbGRlcg
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ1Jlc3BvbnNlQnVpbGRlcg
 
 The builder for response logging configuration. Create instance using `LogResponseBuilder.Build()`
 

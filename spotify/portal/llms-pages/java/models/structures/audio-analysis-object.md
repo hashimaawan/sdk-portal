@@ -1,6 +1,6 @@
 # Audio Analysis Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRkF1ZGlvQW5hbHlzaXNPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkF1ZGlvQW5hbHlzaXNPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/meta.md) | Optional | - | Meta getMeta() | setMeta(Meta meta) |
-| `Track` | [`Track`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/track.md) | Optional | - | Track getTrack() | setTrack(Track track) |
-| `Bars` | [`List<TimeIntervalObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/time-interval-object.md) | Optional | The time intervals of the bars throughout the track. A bar (or measure) is a segment of time defined as a given number of beats. | List<TimeIntervalObject> getBars() | setBars(List<TimeIntervalObject> bars) |
-| `Beats` | [`List<TimeIntervalObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/time-interval-object.md) | Optional | The time intervals of beats throughout the track. A beat is the basic time unit of a piece of music; for example, each tick of a metronome. Beats are typically multiples of tatums. | List<TimeIntervalObject> getBeats() | setBeats(List<TimeIntervalObject> beats) |
-| `Sections` | [`List<SectionObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/section-object.md) | Optional | Sections are defined by large variations in rhythm or timbre, e.g. chorus, verse, bridge, guitar solo, etc. Each section contains its own descriptions of tempo, key, mode, time_signature, and loudness. | List<SectionObject> getSections() | setSections(List<SectionObject> sections) |
-| `Segments` | [`List<SegmentObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/segment-object.md) | Optional | Each segment contains a roughly conisistent sound throughout its duration. | List<SegmentObject> getSegments() | setSegments(List<SegmentObject> segments) |
-| `Tatums` | [`List<TimeIntervalObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/time-interval-object.md) | Optional | A tatum represents the lowest regular pulse train that a listener intuitively infers from the timing of perceived musical events (segments). | List<TimeIntervalObject> getTatums() | setTatums(List<TimeIntervalObject> tatums) |
+| `Meta` | [`Meta`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/meta.md) | Optional | - | Meta getMeta() | setMeta(Meta meta) |
+| `Track` | [`Track`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/track.md) | Optional | - | Track getTrack() | setTrack(Track track) |
+| `Bars` | [`List<TimeIntervalObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/time-interval-object.md) | Optional | The time intervals of the bars throughout the track. A bar (or measure) is a segment of time defined as a given number of beats. | List<TimeIntervalObject> getBars() | setBars(List<TimeIntervalObject> bars) |
+| `Beats` | [`List<TimeIntervalObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/time-interval-object.md) | Optional | The time intervals of beats throughout the track. A beat is the basic time unit of a piece of music; for example, each tick of a metronome. Beats are typically multiples of tatums. | List<TimeIntervalObject> getBeats() | setBeats(List<TimeIntervalObject> beats) |
+| `Sections` | [`List<SectionObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/section-object.md) | Optional | Sections are defined by large variations in rhythm or timbre, e.g. chorus, verse, bridge, guitar solo, etc. Each section contains its own descriptions of tempo, key, mode, time_signature, and loudness. | List<SectionObject> getSections() | setSections(List<SectionObject> sections) |
+| `Segments` | [`List<SegmentObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/segment-object.md) | Optional | Each segment contains a roughly conisistent sound throughout its duration. | List<SegmentObject> getSegments() | setSegments(List<SegmentObject> segments) |
+| `Tatums` | [`List<TimeIntervalObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/time-interval-object.md) | Optional | A tatum represents the lowest regular pulse train that a listener intuitively infers from the timing of perceived musical events (segments). | List<TimeIntervalObject> getTatums() | setTatums(List<TimeIntervalObject> tatums) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

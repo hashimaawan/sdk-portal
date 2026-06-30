@@ -1,6 +1,6 @@
 # Playlist Track Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
 
 *This model accepts additional fields of type interface{}.*
 
@@ -15,9 +15,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `AddedAt` | `*time.Time` | Optional | The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._ |
-| `AddedBy` | [`*models.PlaylistUserObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
+| `AddedBy` | [`*models.PlaylistUserObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
 | `IsLocal` | `*bool` | Optional | Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not. |
-| `Track` | [`*models.PlaylistTrackObjectTrack`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. |
+| `Track` | [`*models.PlaylistTrackObjectTrack`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

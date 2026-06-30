@@ -1,6 +1,6 @@
 # ApiResponseLoggingConfiguration.Builder
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaVJlc3BvbnNlTG9nZ2luZ0NvbmZpZ3VyYXRpb24uQnVpbGRlcg
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkFwaVJlc3BvbnNlTG9nZ2luZ0NvbmZpZ3VyYXRpb24uQnVpbGRlcg
 
 Class to build instances of ResponseLoggingConfiguration.
 

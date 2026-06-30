@@ -1,6 +1,6 @@
 # LoggingConfigurationBuilder
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ2dpbmdDb25maWd1cmF0aW9uQnVpbGRlcg
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkxvZ2dpbmdDb25maWd1cmF0aW9uQnVpbGRlcg
 
 Represents the logging configurations for API calls. Create instance using `LoggingConfigurationBuilder::init()`
 
@@ -11,8 +11,8 @@ Represents the logging configurations for API calls. Create instance using `Logg
 | `logger` | `LoggerInterface` | Takes in your custom implementation of the Psr\Log\LoggerInterface.php. **Default Implementation : `ConsoleLogger`** |
 | `level` | `string(LogLevel)` | Defines the log message severity mentioned in Psr\Log\LogLevel.php (e.g., DEBUG, INFO, etc). **Default : `logLevel::INFO`** |
 | `maskSensitiveHeaders` | `bool` | Toggles the global setting to mask sensitive HTTP headers in both requests and responses before logging, safeguarding confidential data. **Default : `true`** |
-| `requestConfiguration` | [`RequestLoggingConfigurationBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/sdk-infrastructure/configuration/requestloggingconfigurationbuilder.md) | The logging configurations for an API request. |
-| `responseConfiguration` | [`ResponseLoggingConfigurationBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/sdk-infrastructure/configuration/responseloggingconfigurationbuilder.md) | The logging configurations for an API response. |
+| `requestConfiguration` | [`RequestLoggingConfigurationBuilder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/sdk-infrastructure/configuration/requestloggingconfigurationbuilder.md) | The logging configurations for an API request. |
+| `responseConfiguration` | [`ResponseLoggingConfigurationBuilder`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/sdk-infrastructure/configuration/responseloggingconfigurationbuilder.md) | The logging configurations for an API response. |
 
 # Usage Example
 

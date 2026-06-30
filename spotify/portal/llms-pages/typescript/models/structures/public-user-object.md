@@ -1,6 +1,6 @@
 # Public User Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlB1YmxpY1VzZXJPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlB1YmxpY1VzZXJPYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -15,12 +15,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `displayName` | `string \| null \| undefined` | Optional | The name displayed on the user's profile. `null` if not available. |
-| `externalUrls` | [`ExternalUrlObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
-| `followers` | [`FollowersObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
+| `externalUrls` | [`ExternalUrlObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/external-url-object.md) | Optional | Known public external URLs for this user. |
+| `followers` | [`FollowersObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/followers-object.md) | Optional | Information about the followers of this user. |
 | `href` | `string \| undefined` | Optional | A link to the Web API endpoint for this user. |
 | `id` | `string \| undefined` | Optional | The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
-| `images` | [`ImageObject[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/image-object.md) | Optional | The user's profile image. |
-| `type` | [`Type3 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/enumerations/type-3.md) | Optional | The object type. |
+| `images` | [`ImageObject[] \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/image-object.md) | Optional | The user's profile image. |
+| `type` | [`Type3 \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/enumerations/type-3.md) | Optional | The object type. |
 | `uri` | `string \| undefined` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 

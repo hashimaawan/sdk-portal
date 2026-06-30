@@ -1,6 +1,6 @@
 # Type 2
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlR5cGUy
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlR5cGUy
 
 The object type: "track".
 

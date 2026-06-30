@@ -1,6 +1,6 @@
 # PartialRequestLoggingOptions
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRlBhcnRpYWxSZXF1ZXN0TG9nZ2luZ09wdGlvbnM
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRlBhcnRpYWxSZXF1ZXN0TG9nZ2luZ09wdGlvbnM
 
 Represents the request logging configurations for API calls.
 

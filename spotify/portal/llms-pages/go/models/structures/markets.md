@@ -1,6 +1,6 @@
 # Markets
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRk1hcmtldHM
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRk1hcmtldHM
 
 *This model accepts additional fields of type interface{}.*
 

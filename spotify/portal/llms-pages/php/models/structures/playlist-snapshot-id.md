@@ -1,6 +1,6 @@
 # Playlist Snapshot Id
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlBsYXlsaXN0U25hcHNob3RJZA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlBsYXlsaXN0U25hcHNob3RJZA
 
 *This model accepts additional fields of type array.*
 

@@ -1,6 +1,6 @@
 # ApiResponse
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGVXRpbGl0aWVzJTJGQXBpUmVzcG9uc2U
 
 
 Represents the complete HTTP response received from the API.
@@ -13,7 +13,7 @@ Represents the complete HTTP response received from the API.
 | reason_phrase | `String` | The reason phrase returned with the status code. |
 | headers | `Hash<String, String>` | The HTTP response headers. |
 | raw_body | `String` | The raw response body as a string. |
-| request | [`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/sdk-infrastructure/http/httprequest.md) | The original HTTP request sent. |
+| request | [`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/sdk-infrastructure/http/httprequest.md) | The original HTTP request sent. |
 | data | `Object` | The parsed response data, if applicable. |
 
 # Usage Example

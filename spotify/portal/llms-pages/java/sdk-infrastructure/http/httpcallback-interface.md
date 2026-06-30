@@ -1,6 +1,6 @@
 # HttpCallback Interface
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBDYWxsYmFjayUyNTIwSW50ZXJmYWNl
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBDYWxsYmFjayUyNTIwSW50ZXJmYWNl
 
 Callback to be called before and after the HTTP call for an endpoint is made.
 
@@ -8,8 +8,8 @@ Callback to be called before and after the HTTP call for an endpoint is made.
 
 | Name | Description | Return Type |
 |  --- | --- | --- |
-| <code>onBeforeRequest([`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/sdk-infrastructure/http/httprequest.md) request)</code> | Callback called just before the HTTP request is sent. | `void` |
-| <code>onAfterResponse([`HttpContext`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/sdk-infrastructure/http/httpcontext.md) context)</code> | Callback called just after the HTTP response is received. | `void` |
+| <code>onBeforeRequest([`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/http/httprequest.md) request)</code> | Callback called just before the HTTP request is sent. | `void` |
+| <code>onAfterResponse([`HttpContext`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/sdk-infrastructure/http/httpcontext.md) context)</code> | Callback called just after the HTTP response is received. | `void` |
 
 
 

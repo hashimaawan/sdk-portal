@@ -1,6 +1,6 @@
 # Resume Point Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlJlc3VtZVBvaW50T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlJlc3VtZVBvaW50T2JqZWN0
 
 *This model accepts additional fields of type Any.*
 

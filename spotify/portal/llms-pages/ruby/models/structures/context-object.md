@@ -1,6 +1,6 @@
 # Context Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRkNvbnRleHRPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRkNvbnRleHRPYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -16,7 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 |  --- | --- | --- | --- |
 | `type` | `String` | Optional | The object type, e.g. "artist", "playlist", "album", "show". |
 | `href` | `String` | Optional | A link to the Web API endpoint providing full details of the track. |
-| `external_urls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/external-url-object.md) | Optional | External URLs for this context. |
+| `external_urls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/external-url-object.md) | Optional | External URLs for this context. |
 | `uri` | `String` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the context. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 

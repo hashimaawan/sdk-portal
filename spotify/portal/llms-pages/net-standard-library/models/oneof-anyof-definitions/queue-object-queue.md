@@ -1,6 +1,6 @@
 # Queue Object Queue
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0UXVldWU
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0UXVldWU
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Type | Factory Method |
 |  --- | --- |
-| [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/track-object.md) | QueueObjectQueue.FromTrackObject(TrackObject trackObject) |
-| [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/episode-object.md) | QueueObjectQueue.FromEpisodeObject(EpisodeObject episodeObject) |
+| [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/track-object.md) | QueueObjectQueue.FromTrackObject(TrackObject trackObject) |
+| [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/episode-object.md) | QueueObjectQueue.FromEpisodeObject(EpisodeObject episodeObject) |
 
 
 # TrackObject

@@ -1,6 +1,6 @@
 # Configuration-Based Client Initialization
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkNvbmZpZ3VyYXRpb24tQmFzZWQlMjUyMENsaWVudCUyNTIwSW5pdGlhbGl6YXRpb24
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkNvbmZpZ3VyYXRpb24tQmFzZWQlMjUyMENsaWVudCUyNTIwSW5pdGlhbGl6YXRpb24
 
 The SDK client can be initialized directly from a JSON configuration file using the `fromJsonConfig` static method available on the `Client` class.` This allows you to store and load configuration settings from JSON files, making it easier to organize and manage different configurations across environments.
 

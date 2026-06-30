@@ -1,6 +1,6 @@
 # Cursor Paged Artists
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRkN1cnNvclBhZ2VkQXJ0aXN0cw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkN1cnNvclBhZ2VkQXJ0aXN0cw
 
 *This model accepts additional fields of type Object.*
 
@@ -14,7 +14,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Artists` | [`CursorPagingSimplifiedArtistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/cursor-paging-simplified-artist-object.md) | Required | - | CursorPagingSimplifiedArtistObject getArtists() | setArtists(CursorPagingSimplifiedArtistObject artists) |
+| `Artists` | [`CursorPagingSimplifiedArtistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/cursor-paging-simplified-artist-object.md) | Required | - | CursorPagingSimplifiedArtistObject getArtists() | setArtists(CursorPagingSimplifiedArtistObject artists) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

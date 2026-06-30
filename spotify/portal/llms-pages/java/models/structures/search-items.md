@@ -1,6 +1,6 @@
 # Search Items
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlNlYXJjaEl0ZW1z
 
 *This model accepts additional fields of type Object.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `Tracks` | [`PagingTrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-track-object.md) | Optional | - | PagingTrackObject getTracks() | setTracks(PagingTrackObject tracks) |
-| `Artists` | [`PagingArtistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-artist-object.md) | Optional | - | PagingArtistObject getArtists() | setArtists(PagingArtistObject artists) |
-| `Albums` | [`PagingSimplifiedAlbumObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-simplified-album-object.md) | Optional | - | PagingSimplifiedAlbumObject getAlbums() | setAlbums(PagingSimplifiedAlbumObject albums) |
-| `Playlists` | [`PagingPlaylistObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-playlist-object.md) | Optional | - | PagingPlaylistObject getPlaylists() | setPlaylists(PagingPlaylistObject playlists) |
-| `Shows` | [`PagingSimplifiedShowObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-simplified-show-object.md) | Optional | - | PagingSimplifiedShowObject getShows() | setShows(PagingSimplifiedShowObject shows) |
-| `Episodes` | [`PagingSimplifiedEpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-simplified-episode-object.md) | Optional | - | PagingSimplifiedEpisodeObject getEpisodes() | setEpisodes(PagingSimplifiedEpisodeObject episodes) |
-| `Audiobooks` | [`PagingSimplifiedAudiobookObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/paging-simplified-audiobook-object.md) | Optional | - | PagingSimplifiedAudiobookObject getAudiobooks() | setAudiobooks(PagingSimplifiedAudiobookObject audiobooks) |
+| `Tracks` | [`PagingTrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-track-object.md) | Optional | - | PagingTrackObject getTracks() | setTracks(PagingTrackObject tracks) |
+| `Artists` | [`PagingArtistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-artist-object.md) | Optional | - | PagingArtistObject getArtists() | setArtists(PagingArtistObject artists) |
+| `Albums` | [`PagingSimplifiedAlbumObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-simplified-album-object.md) | Optional | - | PagingSimplifiedAlbumObject getAlbums() | setAlbums(PagingSimplifiedAlbumObject albums) |
+| `Playlists` | [`PagingPlaylistObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-playlist-object.md) | Optional | - | PagingPlaylistObject getPlaylists() | setPlaylists(PagingPlaylistObject playlists) |
+| `Shows` | [`PagingSimplifiedShowObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-simplified-show-object.md) | Optional | - | PagingSimplifiedShowObject getShows() | setShows(PagingSimplifiedShowObject shows) |
+| `Episodes` | [`PagingSimplifiedEpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-simplified-episode-object.md) | Optional | - | PagingSimplifiedEpisodeObject getEpisodes() | setEpisodes(PagingSimplifiedEpisodeObject episodes) |
+| `Audiobooks` | [`PagingSimplifiedAudiobookObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/paging-simplified-audiobook-object.md) | Optional | - | PagingSimplifiedAudiobookObject getAudiobooks() | setAudiobooks(PagingSimplifiedAudiobookObject audiobooks) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

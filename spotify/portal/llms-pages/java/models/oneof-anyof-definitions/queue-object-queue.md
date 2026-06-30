@@ -1,6 +1,6 @@
 # Queue Object Queue
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0UXVldWU
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0UXVldWU
 
 
 # Class Name
@@ -12,8 +12,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 
 | Type | Factory Method |
 |  --- | --- |
-| [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/track-object.md) | QueueObjectQueue.fromTrackObject(TrackObject trackObject) |
-| [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/episode-object.md) | QueueObjectQueue.fromEpisodeObject(EpisodeObject episodeObject) |
+| [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/track-object.md) | QueueObjectQueue.fromTrackObject(TrackObject trackObject) |
+| [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-object.md) | QueueObjectQueue.fromEpisodeObject(EpisodeObject episodeObject) |
 
 
 # TrackObject

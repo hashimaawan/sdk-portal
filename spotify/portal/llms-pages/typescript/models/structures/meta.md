@@ -1,6 +1,6 @@
 # Meta
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRk1ldGE
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRk1ldGE
 
 *This model accepts additional fields of type unknown.*
 

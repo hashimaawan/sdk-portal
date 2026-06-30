@@ -1,6 +1,6 @@
 # Paging Simplified Chapter Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRDaGFwdGVyT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRlBhZ2luZ1NpbXBsaWZpZWRDaGFwdGVyT2JqZWN0
 
 *This model accepts additional fields of type Any.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 | `offset` | `int` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `str` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `int` | Required | The total number of items available to return. |
-| `items` | [`List[ChapterBase]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/chapter-base.md) | Required | - |
+| `items` | [`List[ChapterBase]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/chapter-base.md) | Required | - |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 

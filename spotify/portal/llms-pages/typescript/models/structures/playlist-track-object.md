@@ -1,6 +1,6 @@
 # Playlist Track Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBsYXlsaXN0VHJhY2tPYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -15,9 +15,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `addedAt` | `string \| undefined` | Optional | The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._ |
-| `addedBy` | [`PlaylistUserObject \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
+| `addedBy` | [`PlaylistUserObject \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/playlist-user-object.md) | Optional | The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._ |
 | `isLocal` | `boolean \| undefined` | Optional | Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not. |
-| `track` | [`PlaylistTrackObjectTrack \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. |
+| `track` | [`PlaylistTrackObjectTrack \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/oneof-anyof-definitions/playlist-track-object-track.md) | Optional | This is a container for one-of cases. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

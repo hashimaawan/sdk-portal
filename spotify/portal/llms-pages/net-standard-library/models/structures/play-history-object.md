@@ -1,6 +1,6 @@
 # Play History Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type object.*
 
@@ -14,9 +14,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Track` | [`TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/track-object.md) | Optional | The track the user listened to. |
+| `Track` | [`TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/track-object.md) | Optional | The track the user listened to. |
 | `PlayedAt` | `DateTime?` | Optional | The date and time the track was played. |
-| `Context` | [`ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/context-object.md) | Optional | The context the track was played from. |
+| `Context` | [`ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/context-object.md) | Optional | The context the track was played from. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

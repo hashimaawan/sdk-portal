@@ -1,6 +1,6 @@
 # Episode Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkVwaXNvZGVPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkVwaXNvZGVPYmplY3Q
 
 *This model accepts additional fields of type object.*
 
@@ -19,22 +19,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 | `HtmlDescription` | `string` | Required | A description of the episode. This field may contain HTML tags. |
 | `DurationMs` | `int` | Required | The episode length in milliseconds. |
 | `Explicit` | `bool` | Required | Whether or not the episode has explicit content (true = yes it does; false = no it does not OR unknown). |
-| `ExternalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Required | External URLs for this episode. |
+| `ExternalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/external-url-object.md) | Required | External URLs for this episode. |
 | `Href` | `string` | Required | A link to the Web API endpoint providing full details of the episode. |
 | `Id` | `string` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the episode. |
-| `Images` | [`List<ImageObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/image-object.md) | Required | The cover art for the episode in various sizes, widest first. |
+| `Images` | [`List<ImageObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/image-object.md) | Required | The cover art for the episode in various sizes, widest first. |
 | `IsExternallyHosted` | `bool` | Required | True if the episode is hosted outside of Spotify's CDN. |
 | `IsPlayable` | `bool` | Required | True if the episode is playable in the given market. Otherwise false. |
 | `Language` | `string` | Optional | The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the `languages` field instead. |
 | `Languages` | `List<string>` | Required | A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code. |
 | `Name` | `string` | Required | The name of the episode. |
 | `ReleaseDate` | `string` | Required | The date the episode was first released, for example `"1981-12-15"`. Depending on the precision, it might be shown as `"1981"` or `"1981-12"`. |
-| `ReleaseDatePrecision` | [`ReleaseDatePrecision`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. |
-| `ResumePoint` | [`ResumePointObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/resume-point-object.md) | Optional | The user's most recent position in the episode. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. |
+| `ReleaseDatePrecision` | [`ReleaseDatePrecision`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. |
+| `ResumePoint` | [`ResumePointObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/resume-point-object.md) | Optional | The user's most recent position in the episode. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. |
 | `Type` | `string` | Required, Constant | The object type.<br><br>**Value**: `"episode"` |
 | `Uri` | `string` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the episode. |
-| `Restrictions` | [`EpisodeRestrictionObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/episode-restriction-object.md) | Optional | Included in the response when a content restriction is applied. |
-| `Show` | [`ShowBase`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/show-base.md) | Required | The show on which the episode belongs. |
+| `Restrictions` | [`EpisodeRestrictionObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/episode-restriction-object.md) | Optional | Included in the response when a content restriction is applied. |
+| `Show` | [`ShowBase`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/show-base.md) | Required | The show on which the episode belongs. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 

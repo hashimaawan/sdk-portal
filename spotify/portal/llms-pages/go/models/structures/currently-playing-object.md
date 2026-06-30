@@ -1,6 +1,6 @@
 # Currently Playing Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRkN1cnJlbnRseVBsYXlpbmdPYmplY3Q
 
 *This model accepts additional fields of type interface{}.*
 
@@ -14,13 +14,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Context` | [`*models.ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
+| `Context` | [`*models.ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/context-object.md) | Optional | A Context Object. Can be `null`. |
 | `Timestamp` | `*int64` | Optional | Unix Millisecond Timestamp when data was fetched |
 | `ProgressMs` | `*int` | Optional | Progress into the currently playing track or episode. Can be `null`. |
 | `IsPlaying` | `*bool` | Optional | If something is currently playing, return `true`. |
-| `Item` | [`*models.CurrentlyPlayingObjectItem`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/oneof-anyof-definitions/currently-playing-object-item.md) | Optional | This is a container for one-of cases. |
+| `Item` | [`*models.CurrentlyPlayingObjectItem`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/oneof-anyof-definitions/currently-playing-object-item.md) | Optional | This is a container for one-of cases. |
 | `CurrentlyPlayingType` | `*string` | Optional | The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`. |
-| `Actions` | [`*models.DisallowsObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
+| `Actions` | [`*models.DisallowsObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/disallows-object.md) | Optional | Allows to update the user interface based on which playback actions are available within the current context. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

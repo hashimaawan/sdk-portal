@@ -1,6 +1,6 @@
 # Overview
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkF1ZGlvYm9va3MlMkZPdmVydmlldw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkF1ZGlvYm9va3MlMkZPdmVydmlldw
 
 
 # Get instance

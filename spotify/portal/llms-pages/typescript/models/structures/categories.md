@@ -1,6 +1,6 @@
 # Categories
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRkNhdGVnb3JpZXM
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRkNhdGVnb3JpZXM
 
 *This model accepts additional fields of type unknown.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 | `offset` | `number` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `string \| null` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `number` | Required | The total number of items available to return. |
-| `items` | [`CategoryObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/category-object.md) | Required | - |
+| `items` | [`CategoryObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/category-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

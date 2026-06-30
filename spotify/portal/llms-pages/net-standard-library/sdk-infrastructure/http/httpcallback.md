@@ -1,6 +1,6 @@
 # HttpCallback
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBDYWxsYmFjaw
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBDYWxsYmFjaw
 
 Class to provide callbacks for the Http request and response of an API call.
 
@@ -8,8 +8,8 @@ Class to provide callbacks for the Http request and response of an API call.
 
 | Name | Description | Return Type |
 |  --- | --- | --- |
-| <code>OnBeforeRequest([`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/sdk-infrastructure/http/httprequest.md) request)</code> | Override to provide callback for the Http request. | `void` |
-| <code>OnAfterResponse([`HttpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/sdk-infrastructure/http/httpresponse.md) response)</code> | Override to provide callback for the Http response. | `void` |
+| <code>OnBeforeRequest([`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/http/httprequest.md) request)</code> | Override to provide callback for the Http request. | `void` |
+| <code>OnAfterResponse([`HttpResponse`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/http/httpresponse.md) response)</code> | Override to provide callback for the Http response. | `void` |
 
 
 

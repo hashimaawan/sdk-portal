@@ -1,6 +1,6 @@
 # Cursor Paging Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ09iamVjdA
 
 *This model accepts additional fields of type Any.*
 
@@ -17,7 +17,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/pytho
 | `href` | `str` | Optional | A link to the Web API endpoint returning the full result of the request. |
 | `limit` | `int` | Optional | The maximum number of items in the response (as set in the query or by default). |
 | `next` | `str` | Optional | URL to the next page of items. ( `null` if none) |
-| `cursors` | [`CursorObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
+| `cursors` | [`CursorObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
 | `total` | `int` | Optional | The total number of items available to return. |
 | `additional_properties` | `Dict[str, Any]` | Optional | - |
 

@@ -1,6 +1,6 @@
 # Paging Artist Discography Album Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2luZ0FydGlzdERpc2NvZ3JhcGh5QWxidW1PYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlBhZ2luZ0FydGlzdERpc2NvZ3JhcGh5QWxidW1PYmplY3Q
 
 *This model accepts additional fields of type Object.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 | `Offset` | `int` | Required | The offset of the items returned (as set in the query or by default) | int getOffset() | setOffset(int offset) |
 | `Previous` | `String` | Required | URL to the previous page of items. ( `null` if none) | String getPrevious() | setPrevious(String previous) |
 | `Total` | `int` | Required | The total number of items available to return. | int getTotal() | setTotal(int total) |
-| `Items` | [`List<ArtistDiscographyAlbumObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/artist-discography-album-object.md) | Required | - | List<ArtistDiscographyAlbumObject> getItems() | setItems(List<ArtistDiscographyAlbumObject> items) |
+| `Items` | [`List<ArtistDiscographyAlbumObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/artist-discography-album-object.md) | Required | - | List<ArtistDiscographyAlbumObject> getItems() | setItems(List<ArtistDiscographyAlbumObject> items) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

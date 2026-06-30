@@ -1,6 +1,6 @@
 # Recommendations Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRlJlY29tbWVuZGF0aW9uc09iamVjdA
 
 *This model accepts additional fields of type Object.*
 
@@ -14,8 +14,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `seeds` | [`Array[RecommendationSeedObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
-| `tracks` | [`Array[TrackObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
+| `seeds` | [`Array[RecommendationSeedObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/recommendation-seed-object.md) | Required | An array of recommendation seed objects. |
+| `tracks` | [`Array[TrackObject]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/ruby/models/structures/track-object.md) | Required | An array of track objects ordered according to the parameters supplied. |
 | `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 

@@ -1,6 +1,6 @@
 # HttpClientConfigurationBuilder
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkh0dHBDbGllbnRDb25maWd1cmF0aW9uQnVpbGRlcg
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkh0dHBDbGllbnRDb25maWd1cmF0aW9uQnVpbGRlcg
 
 Class to build instances of HttpClientConfiguration.
 
@@ -15,9 +15,9 @@ Class to build instances of HttpClientConfiguration.
 | <code>MaximumRetryWaitTime(TimeSpan maximumRetryWaitTime)</code> | The maximum retry wait time. | `Builder` |
 | <code>StatusCodesToRetry(IList<int> statusCodesToRetry)</code> | List of Http status codes to invoke retry. | `Builder` |
 | <code>RequestMethodsToRetry(IList<HttpMethod> requestMethodsToRetry)</code> | List of Http request methods to invoke retry. | `Builder` |
-| <code>ProxyConfiguration([ProxyConfigurationBuilder](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/proxyconfigurationbuilder.md) proxyConfiguration)</code> | Configures the proxy server settings used for outbound API calls. | `Builder` |
+| <code>ProxyConfiguration([ProxyConfigurationBuilder](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/proxyconfigurationbuilder.md) proxyConfiguration)</code> | Configures the proxy server settings used for outbound API calls. | `Builder` |
 | <code>HttpClientInstance(HttpClient httpClientInstance)</code> | HttpClient instance used to make the HTTP calls | `Builder` |
-| `Build()` | Builds a new HttpClientConfiguration object using the set fields. | [`HttpClientConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/httpclientconfiguration.md) |
+| `Build()` | Builds a new HttpClientConfiguration object using the set fields. | [`HttpClientConfiguration`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/sdk-infrastructure/configuration/httpclientconfiguration.md) |
 
 
 

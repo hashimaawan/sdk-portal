@@ -1,6 +1,6 @@
 # Cursor Paging Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/net-standard-library/x-redirect/JTI0bSUyRkN1cnNvclBhZ2luZ09iamVjdA
 
 *This model accepts additional fields of type object.*
 
@@ -17,7 +17,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/net-s
 | `Href` | `string` | Optional | A link to the Web API endpoint returning the full result of the request. |
 | `Limit` | `int?` | Optional | The maximum number of items in the response (as set in the query or by default). |
 | `Next` | `string` | Optional | URL to the next page of items. ( `null` if none) |
-| `Cursors` | [`CursorObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/net-standard-library/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
+| `Cursors` | [`CursorObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/net-standard-library/models/structures/cursor-object.md) | Optional | The cursors used to find the next set of items. |
 | `Total` | `int?` | Optional | The total number of items available to return. |
 | `AdditionalProperties` | `object this[string key]` | Optional | - |
 

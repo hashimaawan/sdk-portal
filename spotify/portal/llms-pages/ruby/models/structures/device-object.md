@@ -1,6 +1,6 @@
 # Device Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRkRldmljZU9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0bSUyRkRldmljZU9iamVjdA
 
 *This model accepts additional fields of type Object.*
 

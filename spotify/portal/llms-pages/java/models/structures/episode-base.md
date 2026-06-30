@@ -1,6 +1,6 @@
 # Episode Base
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRkVwaXNvZGVCYXNl
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRkVwaXNvZGVCYXNl
 
 *This model accepts additional fields of type Object.*
 
@@ -19,21 +19,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 | `HtmlDescription` | `String` | Required | A description of the episode. This field may contain HTML tags. | String getHtmlDescription() | setHtmlDescription(String htmlDescription) |
 | `DurationMs` | `int` | Required | The episode length in milliseconds. | int getDurationMs() | setDurationMs(int durationMs) |
 | `Explicit` | `boolean` | Required | Whether or not the episode has explicit content (true = yes it does; false = no it does not OR unknown). | boolean getExplicit() | setExplicit(boolean explicit) |
-| `ExternalUrls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/external-url-object.md) | Required | External URLs for this episode. | ExternalUrlObject getExternalUrls() | setExternalUrls(ExternalUrlObject externalUrls) |
+| `ExternalUrls` | [`ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/external-url-object.md) | Required | External URLs for this episode. | ExternalUrlObject getExternalUrls() | setExternalUrls(ExternalUrlObject externalUrls) |
 | `Href` | `String` | Required | A link to the Web API endpoint providing full details of the episode. | String getHref() | setHref(String href) |
 | `Id` | `String` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the episode. | String getId() | setId(String id) |
-| `Images` | [`List<ImageObject>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/image-object.md) | Required | The cover art for the episode in various sizes, widest first. | List<ImageObject> getImages() | setImages(List<ImageObject> images) |
+| `Images` | [`List<ImageObject>`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/image-object.md) | Required | The cover art for the episode in various sizes, widest first. | List<ImageObject> getImages() | setImages(List<ImageObject> images) |
 | `IsExternallyHosted` | `boolean` | Required | True if the episode is hosted outside of Spotify's CDN. | boolean getIsExternallyHosted() | setIsExternallyHosted(boolean isExternallyHosted) |
 | `IsPlayable` | `boolean` | Required | True if the episode is playable in the given market. Otherwise false. | boolean getIsPlayable() | setIsPlayable(boolean isPlayable) |
 | `Language` | `String` | Optional | The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the `languages` field instead. | String getLanguage() | setLanguage(String language) |
 | `Languages` | `List<String>` | Required | A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code. | List<String> getLanguages() | setLanguages(List<String> languages) |
 | `Name` | `String` | Required | The name of the episode. | String getName() | setName(String name) |
 | `ReleaseDate` | `String` | Required | The date the episode was first released, for example `"1981-12-15"`. Depending on the precision, it might be shown as `"1981"` or `"1981-12"`. | String getReleaseDate() | setReleaseDate(String releaseDate) |
-| `ReleaseDatePrecision` | [`ReleaseDatePrecision`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. | ReleaseDatePrecision getReleaseDatePrecision() | setReleaseDatePrecision(ReleaseDatePrecision releaseDatePrecision) |
-| `ResumePoint` | [`ResumePointObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/resume-point-object.md) | Optional | The user's most recent position in the episode. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. | ResumePointObject getResumePoint() | setResumePoint(ResumePointObject resumePoint) |
+| `ReleaseDatePrecision` | [`ReleaseDatePrecision`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/enumerations/release-date-precision.md) | Required | The precision with which `release_date` value is known. | ReleaseDatePrecision getReleaseDatePrecision() | setReleaseDatePrecision(ReleaseDatePrecision releaseDatePrecision) |
+| `ResumePoint` | [`ResumePointObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/resume-point-object.md) | Optional | The user's most recent position in the episode. Set if the supplied access token is a user token and has the scope 'user-read-playback-position'. | ResumePointObject getResumePoint() | setResumePoint(ResumePointObject resumePoint) |
 | `Type` | `String` | Required, Constant | The object type.<br><br>**Value**: `"episode"` | String getType() | setType(String type) |
 | `Uri` | `String` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the episode. | String getUri() | setUri(String uri) |
-| `Restrictions` | [`EpisodeRestrictionObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/episode-restriction-object.md) | Optional | Included in the response when a content restriction is applied. | EpisodeRestrictionObject getRestrictions() | setRestrictions(EpisodeRestrictionObject restrictions) |
+| `Restrictions` | [`EpisodeRestrictionObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-restriction-object.md) | Optional | Included in the response when a content restriction is applied. | EpisodeRestrictionObject getRestrictions() | setRestrictions(EpisodeRestrictionObject restrictions) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

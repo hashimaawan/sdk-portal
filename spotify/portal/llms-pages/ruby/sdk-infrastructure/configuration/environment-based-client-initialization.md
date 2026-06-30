@@ -1,6 +1,6 @@
 # Environment-Based Client Initialization
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkVudmlyb25tZW50LUJhc2VkJTI1MjBDbGllbnQlMjUyMEluaXRpYWxpemF0aW9u
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/ruby/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRkVudmlyb25tZW50LUJhc2VkJTI1MjBDbGllbnQlMjUyMEluaXRpYWxpemF0aW9u
 
 The SDK client can also be initialized directly from environment variables using the `from_env` class method. This allows the SDK to automatically read configuration values from the runtime environment or a `.env` file.
 

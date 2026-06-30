@@ -1,6 +1,6 @@
 # Author Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRkF1dGhvck9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0bSUyRkF1dGhvck9iamVjdA
 
 *This model accepts additional fields of type Any.*
 

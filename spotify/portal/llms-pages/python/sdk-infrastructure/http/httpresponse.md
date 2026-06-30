@@ -1,6 +1,6 @@
 # HttpResponse
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBSZXNwb25zZQ
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/python/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGSFRUUCUyRkh0dHBSZXNwb25zZQ
 
 Http response received.
 
@@ -12,7 +12,7 @@ Http response received.
 | reason_phrase | `str` | The reason phrase returned by the server. |
 | headers | `dict` | Response headers. |
 | text | `str` | Response body. |
-| request | [`HttpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/python/sdk-infrastructure/http/httprequest.md) | The request that resulted in this response. |
+| request | [`HttpRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/python/sdk-infrastructure/http/httprequest.md) | The request that resulted in this response. |
 
 
 

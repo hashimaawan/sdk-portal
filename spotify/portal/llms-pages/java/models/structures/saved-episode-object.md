@@ -1,6 +1,6 @@
 # Saved Episode Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0bSUyRlNhdmVkRXBpc29kZU9iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0bSUyRlNhdmVkRXBpc29kZU9iamVjdA
 
 *This model accepts additional fields of type Object.*
 
@@ -15,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `AddedAt` | `LocalDateTime` | Optional | The date and time the episode was saved.<br>Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ. | LocalDateTime getAddedAt() | setAddedAt(LocalDateTime addedAt) |
-| `Episode` | [`EpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/episode-object.md) | Optional | Information about the episode. | EpisodeObject getEpisode() | setEpisode(EpisodeObject episode) |
+| `Episode` | [`EpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/episode-object.md) | Optional | Information about the episode. | EpisodeObject getEpisode() | setEpisode(EpisodeObject episode) |
 | `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 

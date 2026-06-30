@@ -1,6 +1,6 @@
 # Queue Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlF1ZXVlT2JqZWN0
 
 *This model accepts additional fields of type unknown.*
 
@@ -14,8 +14,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `currentlyPlaying` | [`QueueObjectCurrentlyPlaying \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/oneof-anyof-definitions/queue-object-currently-playing.md) | Optional | This is a container for one-of cases. |
-| `queue` | [`QueueObjectQueue[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/oneof-anyof-definitions/queue-object-queue.md) | Optional | This is Array of a container for one-of cases. |
+| `currentlyPlaying` | [`QueueObjectCurrentlyPlaying \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/oneof-anyof-definitions/queue-object-currently-playing.md) | Optional | This is a container for one-of cases. |
+| `queue` | [`QueueObjectQueue[] \| undefined`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/oneof-anyof-definitions/queue-object-queue.md) | Optional | This is Array of a container for one-of cases. |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

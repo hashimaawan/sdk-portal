@@ -1,6 +1,6 @@
 # Paging Saved Album Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkQWxidW1PYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/typescript/x-redirect/JTI0bSUyRlBhZ2luZ1NhdmVkQWxidW1PYmplY3Q
 
 *This model accepts additional fields of type unknown.*
 
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/types
 | `offset` | `number` | Required | The offset of the items returned (as set in the query or by default) |
 | `previous` | `string \| null` | Required | URL to the previous page of items. ( `null` if none) |
 | `total` | `number` | Required | The total number of items available to return. |
-| `items` | [`SavedAlbumObject[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/typescript/models/structures/saved-album-object.md) | Required | - |
+| `items` | [`SavedAlbumObject[]`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/typescript/models/structures/saved-album-object.md) | Required | - |
 | `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 

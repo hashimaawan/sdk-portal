@@ -1,6 +1,6 @@
 # Save-Episodes-User
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/java/x-redirect/JTI0ZSUyRkVwaXNvZGVzJTJGc2F2ZS1lcGlzb2Rlcy11c2Vy
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/java/x-redirect/JTI0ZSUyRkVwaXNvZGVzJTJGc2F2ZS1lcGlzb2Rlcy11c2Vy
 
 Save one or more episodes to the current user's library.<br/>
 This API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).
@@ -14,7 +14,7 @@ CompletableFuture<ApiResponse<Void>> saveEpisodesUserAsync(
 
 # Authentication
 
-This endpoint requires [oauth_2_0](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/getting-started/quickstart/authorization.md)
+This endpoint requires [oauth_2_0](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -22,7 +22,7 @@ This endpoint requires [oauth_2_0](https://raw.githubusercontent.com/hashimaawan
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ids` | `String` | Query, Required | - |
-| `body` | [`MeEpisodesRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/structures/me-episodes-request.md) | Body, Optional | - |
+| `body` | [`MeEpisodesRequest`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/structures/me-episodes-request.md) | Body, Optional | - |
 
 
 # Requires scope
@@ -72,9 +72,9 @@ episodesApi.saveEpisodesUserAsync(ids, null).thenAccept(result -> {
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Bad or expired token. This can happen if the user revoked a token or<br>the access token has expired. You should re-authenticate the user. | [`UnauthorizedException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/exceptions/unauthorized.md) |
-| 403 | Bad OAuth request (wrong consumer key, bad nonce, expired<br>timestamp...). Unfortunately, re-authenticating the user won't help here. | [`ForbiddenException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/exceptions/forbidden.md) |
-| 429 | The app has exceeded its rate limits. | [`TooManyRequestsException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/java/models/exceptions/too-many-requests.md) |
+| 401 | Bad or expired token. This can happen if the user revoked a token or<br>the access token has expired. You should re-authenticate the user. | [`UnauthorizedException`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/exceptions/unauthorized.md) |
+| 403 | Bad OAuth request (wrong consumer key, bad nonce, expired<br>timestamp...). Unfortunately, re-authenticating the user won't help here. | [`ForbiddenException`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/exceptions/forbidden.md) |
+| 429 | The app has exceeded its rate limits. | [`TooManyRequestsException`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/java/models/exceptions/too-many-requests.md) |
 
 
 

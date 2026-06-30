@@ -1,6 +1,6 @@
 # Paging Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ09iamVjdA
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlBhZ2luZ09iamVjdA
 
 *This model accepts additional fields of type interface{}.*
 

@@ -1,6 +1,6 @@
 # Item Type
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRkl0ZW0lMjUyMHR5cGU
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRkl0ZW0lMjUyMHR5cGU
 
 
 # Enum Type Name

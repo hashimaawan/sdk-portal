@@ -1,6 +1,6 @@
 # Show Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-redirect/JTI0bSUyRlNob3dPYmplY3Q
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/go/x-redirect/JTI0bSUyRlNob3dPYmplY3Q
 
 *This model accepts additional fields of type interface{}.*
 
@@ -15,14 +15,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `AvailableMarkets` | `[]string` | Required | A list of the countries in which the show can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code. |
-| `Copyrights` | [`[]models.CopyrightObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/copyright-object.md) | Required | The copyright statements of the show. |
+| `Copyrights` | [`[]models.CopyrightObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/copyright-object.md) | Required | The copyright statements of the show. |
 | `Description` | `string` | Required | A description of the show. HTML tags are stripped away from this field, use `html_description` field in case HTML tags are needed. |
 | `HtmlDescription` | `string` | Required | A description of the show. This field may contain HTML tags. |
 | `Explicit` | `bool` | Required | Whether or not the show has explicit content (true = yes it does; false = no it does not OR unknown). |
-| `ExternalUrls` | [`models.ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/external-url-object.md) | Required | External URLs for this show. |
+| `ExternalUrls` | [`models.ExternalUrlObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/external-url-object.md) | Required | External URLs for this show. |
 | `Href` | `string` | Required | A link to the Web API endpoint providing full details of the show. |
 | `Id` | `string` | Required | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the show. |
-| `Images` | [`[]models.ImageObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/image-object.md) | Required | The cover art for the show in various sizes, widest first. |
+| `Images` | [`[]models.ImageObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/image-object.md) | Required | The cover art for the show in various sizes, widest first. |
 | `IsExternallyHosted` | `bool` | Required | True if all of the shows episodes are hosted outside of Spotify's CDN. This field might be `null` in some cases. |
 | `Languages` | `[]string` | Required | A list of the languages used in the show, identified by their [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. |
 | `MediaType` | `string` | Required | The media type of the show. |
@@ -31,7 +31,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/go/x-
 | `Type` | `string` | Required, Constant | The object type.<br><br>**Value**: `"show"` |
 | `Uri` | `string` | Required | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the show. |
 | `TotalEpisodes` | `int` | Required | The total number of episodes in the show. |
-| `Episodes` | [`models.PagingSimplifiedEpisodeObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/go/models/structures/paging-simplified-episode-object.md) | Required | The episodes of the show. |
+| `Episodes` | [`models.PagingSimplifiedEpisodeObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/go/models/structures/paging-simplified-episode-object.md) | Required | The episodes of the show. |
 | `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 

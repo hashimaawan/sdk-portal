@@ -1,6 +1,6 @@
 # Play History Object
 
-Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
+Source: https://github.com/hashimaawan/sdk-portal/tree/main/spotify/#/php/x-redirect/JTI0bSUyRlBsYXlIaXN0b3J5T2JqZWN0
 
 *This model accepts additional fields of type array.*
 
@@ -14,9 +14,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `track` | [`?TrackObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/track-object.md) | Optional | The track the user listened to. | getTrack(): ?TrackObject | setTrack(?TrackObject track): void |
+| `track` | [`?TrackObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/track-object.md) | Optional | The track the user listened to. | getTrack(): ?TrackObject | setTrack(?TrackObject track): void |
 | `playedAt` | `?DateTime` | Optional | The date and time the track was played. | getPlayedAt(): ?\DateTime | setPlayedAt(?\DateTime playedAt): void |
-| `context` | [`?ContextObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/php/models/structures/context-object.md) | Optional | The context the track was played from. | getContext(): ?ContextObject | setContext(?ContextObject context): void |
+| `context` | [`?ContextObject`](https://github.com/hashimaawan/sdk-portal/tree/main/spotify/llms-pages/php/models/structures/context-object.md) | Optional | The context the track was played from. | getContext(): ?ContextObject | setContext(?ContextObject context): void |
 | `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 

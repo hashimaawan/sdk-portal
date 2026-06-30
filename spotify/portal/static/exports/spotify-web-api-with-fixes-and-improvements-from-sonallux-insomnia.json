@@ -1,0 +1,2687 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "apimatic.transformer",
+  "resources": [
+    {
+      "name": "Spotify Web API with fixes and improvements from sonallux",
+      "_type": "workspace",
+      "_id": "wrk_c272f0f2cbff4a2698ee80dd6561d08b",
+      "description": "You can use Spotify's Web API to discover music and podcasts, manage your Spotify library, control audio playback, and much more. Browse our available Web API endpoints using the sidebar at left, or via the navigation bar on top of this page on smaller screens.\n\nIn order to make successful Web API requests your app will need a valid access token. One can be obtained through <a href=\"https://developer.spotify.com/documentation/general/guides/authorization-guide/\">OAuth 2.0</a>.\n\nThe base URI for all Web API requests is `https://api.spotify.com/v1`.\n\nNeed help? See our <a href=\"https://developer.spotify.com/documentation/web-api/guides/\">Web API guides</a> for more information, or visit the <a href=\"https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer\">Spotify for Developers community forum</a> to ask questions and connect with other developers.\n"
+    },
+    {
+      "name": "production",
+      "data": {
+        "default": "https://api.spotify.com/v1",
+        "authserver": "https://accounts.spotify.com"
+      },
+      "_type": "environment",
+      "_id": "env_9d1e6124819e4d9b8afa78f160ed32d0",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Albums",
+      "_type": "request_group",
+      "_id": "fld_2845030432f84f7987439cbe052823cb",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Artists",
+      "_type": "request_group",
+      "_id": "fld_c1efe767f7ec416d9bc4acb8b57487c3",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Audiobooks",
+      "_type": "request_group",
+      "_id": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Categories",
+      "_type": "request_group",
+      "_id": "fld_4b03befd794242bfb40925877fb4bb97",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Chapters",
+      "_type": "request_group",
+      "_id": "fld_40c6d81d141b49f0bc1c7f676074506d",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Episodes",
+      "_type": "request_group",
+      "_id": "fld_46de386667d447f7bdbd69f197565628",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Library",
+      "_type": "request_group",
+      "_id": "fld_6750983e3d3b4b73b4372535f3c678ab",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Genres",
+      "_type": "request_group",
+      "_id": "fld_fdcc3376f44643218b2850ecce3056b1",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Markets",
+      "_type": "request_group",
+      "_id": "fld_24bb2748f03f4adf921911b318cdd84e",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Player",
+      "_type": "request_group",
+      "_id": "fld_759026588a4a40009728640340725f47",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Playlists",
+      "_type": "request_group",
+      "_id": "fld_2ea445b45eae467e975268f19ccf2144",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Search",
+      "_type": "request_group",
+      "_id": "fld_7cd2d69e9ef74349837af2a75f3bffc3",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Shows",
+      "_type": "request_group",
+      "_id": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Tracks",
+      "_type": "request_group",
+      "_id": "fld_f84996c722e947a49b15becfc08b1111",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "Users",
+      "_type": "request_group",
+      "_id": "fld_c0c83fe21f814f21b7c600231312615a",
+      "parentId": "wrk_c272f0f2cbff4a2698ee80dd6561d08b"
+    },
+    {
+      "name": "get-an-album",
+      "method": "GET",
+      "url": "{{default}}/albums/{id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_baee9f5734ca4557ac509a337cdd1c10",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Get Spotify catalog information for a single album.\n"
+    },
+    {
+      "name": "get-multiple-albums",
+      "method": "GET",
+      "url": "{{default}}/albums",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_cf7acddb34c046ebb6c4eff10cfa5b0e",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Get Spotify catalog information for multiple albums identified by their Spotify IDs.\n"
+    },
+    {
+      "name": "get-an-albums-tracks",
+      "method": "GET",
+      "url": "{{default}}/albums/{id}/tracks",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_c520ef93c7294b26b7ee1e2f00097ea9",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Get Spotify catalog information about an album’s tracks.\nOptional parameters can be used to limit the number of tracks returned.\n"
+    },
+    {
+      "name": "get-users-saved-albums",
+      "method": "GET",
+      "url": "{{default}}/me/albums",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_1ca333f0ec564586aa3aea2e235eb223",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Get a list of the albums saved in the current Spotify user's 'Your Music' library.\n"
+    },
+    {
+      "name": "save-albums-user",
+      "method": "PUT",
+      "url": "{{default}}/me/albums",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids34\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_214b74060ef448d9a86c742ca039eb9d",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Save one or more albums to the current user's 'Your Music' library.\n"
+    },
+    {
+      "name": "remove-albums-user",
+      "method": "DELETE",
+      "url": "{{default}}/me/albums",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids34\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_7e22c8808a184f25acd522af810d7ff2",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Remove one or more albums from the current user's 'Your Music' library.\n"
+    },
+    {
+      "name": "check-users-saved-albums",
+      "method": "GET",
+      "url": "{{default}}/me/albums/contains",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_22450853708647a2a4205d42eac9cce1",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Check if one or more albums is already saved in the current Spotify user's 'Your Music' library.\n"
+    },
+    {
+      "name": "get-new-releases",
+      "method": "GET",
+      "url": "{{default}}/browse/new-releases",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_c0fe96491da84e6c82b03045e0206ccf",
+      "parentId": "fld_2845030432f84f7987439cbe052823cb",
+      "description": "Get a list of new album releases featured in Spotify (shown, for example, on a Spotify player’s “Browse” tab).\n"
+    },
+    {
+      "name": "get-an-artist",
+      "method": "GET",
+      "url": "{{default}}/artists/{id}",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_bc2177041d6d47f28b0d89221782baa6",
+      "parentId": "fld_c1efe767f7ec416d9bc4acb8b57487c3",
+      "description": "Get Spotify catalog information for a single artist identified by their unique Spotify ID.\n"
+    },
+    {
+      "name": "get-multiple-artists",
+      "method": "GET",
+      "url": "{{default}}/artists",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_05235730e44c4e65b1bda4a5a2805124",
+      "parentId": "fld_c1efe767f7ec416d9bc4acb8b57487c3",
+      "description": "Get Spotify catalog information for several artists based on their Spotify IDs.\n"
+    },
+    {
+      "name": "get-an-artists-albums",
+      "method": "GET",
+      "url": "{{default}}/artists/{id}/albums",
+      "parameters": [
+        {
+          "name": "include_groups",
+          "value": "single,appears_on",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_3512eae3002140ef9fd579ce82524ec5",
+      "parentId": "fld_c1efe767f7ec416d9bc4acb8b57487c3",
+      "description": "Get Spotify catalog information about an artist's albums.\n"
+    },
+    {
+      "name": "get-an-artists-top-tracks",
+      "method": "GET",
+      "url": "{{default}}/artists/{id}/top-tracks",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_1cf24d061ec54676993a965ea87fd0d6",
+      "parentId": "fld_c1efe767f7ec416d9bc4acb8b57487c3",
+      "description": "Get Spotify catalog information about an artist's top tracks by country.\n"
+    },
+    {
+      "name": "get-an-artists-related-artists",
+      "method": "GET",
+      "url": "{{default}}/artists/{id}/related-artists",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_5c064a3b754a4727b18d996f37e07c9c",
+      "parentId": "fld_c1efe767f7ec416d9bc4acb8b57487c3",
+      "description": "Get Spotify catalog information about artists similar to a given artist. Similarity is based on analysis of the Spotify community's listening history.\n"
+    },
+    {
+      "name": "get-an-audiobook",
+      "method": "GET",
+      "url": "{{default}}/audiobooks/{id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_6c8f07deff2b42349cdf84204d9df2ee",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Get Spotify catalog information for a single audiobook. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
+    },
+    {
+      "name": "get-multiple-audiobooks",
+      "method": "GET",
+      "url": "{{default}}/audiobooks",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_54d49993bf6c43fd9f3e75466621ab13",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Get Spotify catalog information for several audiobooks identified by their Spotify IDs. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
+    },
+    {
+      "name": "get-audiobook-chapters",
+      "method": "GET",
+      "url": "{{default}}/audiobooks/{id}/chapters",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_7f99d36f248f4bc69c8ead32abab935f",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Get Spotify catalog information about an audiobook's chapters. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
+    },
+    {
+      "name": "get-users-saved-audiobooks",
+      "method": "GET",
+      "url": "{{default}}/me/audiobooks",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_a4bf2d1342484731b1ff122f55989992",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Get a list of the audiobooks saved in the current Spotify user's 'Your Music' library.\n"
+    },
+    {
+      "name": "save-audiobooks-user",
+      "method": "PUT",
+      "url": "{{default}}/me/audiobooks",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_b38f21bcb82f4b7a9aad9657dfe62da3",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Save one or more audiobooks to the current Spotify user's library.\n"
+    },
+    {
+      "name": "remove-audiobooks-user",
+      "method": "DELETE",
+      "url": "{{default}}/me/audiobooks",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_12cab87673934b5cb2ad6f495e050fd9",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Remove one or more audiobooks from the Spotify user's library.\n"
+    },
+    {
+      "name": "check-users-saved-audiobooks",
+      "method": "GET",
+      "url": "{{default}}/me/audiobooks/contains",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ,7iHfbu1YPACw6oZPAFJtqe",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_08de9b993ec84c89887c80bd0a027d8d",
+      "parentId": "fld_8e2c77129b6a4e03983db30818c61c8a",
+      "description": "Check if one or more audiobooks are already saved in the current Spotify user's library.\n"
+    },
+    {
+      "name": "get-categories",
+      "method": "GET",
+      "url": "{{default}}/browse/categories",
+      "parameters": [
+        {
+          "name": "locale",
+          "value": "sv_SE",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_dd6b12ff7a824cfeac225e447ce5c9a9",
+      "parentId": "fld_4b03befd794242bfb40925877fb4bb97",
+      "description": "Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).\n"
+    },
+    {
+      "name": "get-a-category",
+      "method": "GET",
+      "url": "{{default}}/browse/categories/{category_id}",
+      "parameters": [
+        {
+          "name": "locale",
+          "value": "sv_SE",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_4deb0b790efd4644832ce2ee68e610db",
+      "parentId": "fld_4b03befd794242bfb40925877fb4bb97",
+      "description": "Get a single category used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).\n"
+    },
+    {
+      "name": "get-a-chapter",
+      "method": "GET",
+      "url": "{{default}}/chapters/{id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_c31cca9df40a4f78af0efda4d87de754",
+      "parentId": "fld_40c6d81d141b49f0bc1c7f676074506d",
+      "description": "Get Spotify catalog information for a single audiobook chapter. Chapters are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
+    },
+    {
+      "name": "get-several-chapters",
+      "method": "GET",
+      "url": "{{default}}/chapters",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "0IsXVP0JmcB2adSE338GkK,3ZXb8FKZGU0EHALYX6uCzU,0D5wENdkdwbqlrHoaJ9g29",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_e9a87b988b4b45a2ab41558cae00de42",
+      "parentId": "fld_40c6d81d141b49f0bc1c7f676074506d",
+      "description": "Get Spotify catalog information for several audiobook chapters identified by their Spotify IDs. Chapters are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
+    },
+    {
+      "name": "get-an-episode",
+      "method": "GET",
+      "url": "{{default}}/episodes/{id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_6b7b29be0d004b688c5fde608f96ee2d",
+      "parentId": "fld_46de386667d447f7bdbd69f197565628",
+      "description": "Get Spotify catalog information for a single episode identified by its\nunique Spotify ID.\n"
+    },
+    {
+      "name": "get-multiple-episodes",
+      "method": "GET",
+      "url": "{{default}}/episodes",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "77o6BIVlYM3msb4MMIL1jH,0Q86acNRm6V9GYx55SXKwf",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_33b2176131d044f894a6ed0358edb414",
+      "parentId": "fld_46de386667d447f7bdbd69f197565628",
+      "description": "Get Spotify catalog information for several episodes based on their Spotify IDs.\n"
+    },
+    {
+      "name": "get-users-saved-episodes",
+      "method": "GET",
+      "url": "{{default}}/me/episodes",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_a72c232712984961bd7065e743444722",
+      "parentId": "fld_46de386667d447f7bdbd69f197565628",
+      "description": "Get a list of the episodes saved in the current Spotify user's library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).\n"
+    },
+    {
+      "name": "save-episodes-user",
+      "method": "PUT",
+      "url": "{{default}}/me/episodes",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids70\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "77o6BIVlYM3msb4MMIL1jH,0Q86acNRm6V9GYx55SXKwf",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_060cd4de4e344fbab7cfce74978ffc61",
+      "parentId": "fld_46de386667d447f7bdbd69f197565628",
+      "description": "Save one or more episodes to the current user's library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).\n"
+    },
+    {
+      "name": "remove-episodes-user",
+      "method": "DELETE",
+      "url": "{{default}}/me/episodes",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids27\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_bda61921c17f4ceebae03ca542f01f82",
+      "parentId": "fld_46de386667d447f7bdbd69f197565628",
+      "description": "Remove one or more episodes from the current user's library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).\n"
+    },
+    {
+      "name": "check-users-saved-episodes",
+      "method": "GET",
+      "url": "{{default}}/me/episodes/contains",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "77o6BIVlYM3msb4MMIL1jH,0Q86acNRm6V9GYx55SXKwf",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_a25f5ead0af94ae7b45239af2b627b6e",
+      "parentId": "fld_46de386667d447f7bdbd69f197565628",
+      "description": "Check if one or more episodes is already saved in the current Spotify user's 'Your Episodes' library.<br/>\nThis API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer)..\n"
+    },
+    {
+      "name": "get-recommendation-genres",
+      "method": "GET",
+      "url": "{{default}}/recommendations/available-genre-seeds",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_0e0a0364ea8544338f0d1775a688a48f",
+      "parentId": "fld_fdcc3376f44643218b2850ecce3056b1",
+      "description": "Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/get-recommendations).\n"
+    },
+    {
+      "name": "get-available-markets",
+      "method": "GET",
+      "url": "{{default}}/markets",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_49ea05dca9c244c3a58a7e9601d76d71",
+      "parentId": "fld_24bb2748f03f4adf921911b318cdd84e",
+      "description": "Get the list of markets where Spotify is available.\n"
+    },
+    {
+      "name": "get-information-about-the-users-current-playback",
+      "method": "GET",
+      "url": "{{default}}/me/player",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "additional_types",
+          "value": "additional_types53",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_beef3efed0414b43ae35f88329d05e41",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Get information about the user’s current playback state, including track or episode, progress, and active device.\n"
+    },
+    {
+      "name": "transfer-a-users-playback",
+      "method": "PUT",
+      "url": "{{default}}/me/player",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"device_ids\": [\n    \"device_ids70\"\n  ],\n  \"play\": true\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_d2aa4524cb444d3d8dd020d27afaf855",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Transfer playback to a new device and optionally begin playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "get-a-users-available-devices",
+      "method": "GET",
+      "url": "{{default}}/me/player/devices",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_3b7657142be14a5c8e94bae91875ff66",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Get information about a user’s available Spotify Connect devices. Some device models are not supported and will not be listed in the API response.\n"
+    },
+    {
+      "name": "get-the-users-currently-playing-track",
+      "method": "GET",
+      "url": "{{default}}/me/player/currently-playing",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "additional_types",
+          "value": "additional_types40",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_243a704e47e64ebf996ae9c3c4fa345c",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Get the object currently being played on the user's Spotify account.\n"
+    },
+    {
+      "name": "start-a-users-playback",
+      "method": "PUT",
+      "url": "{{default}}/me/player/play",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"context_uri\": \"context_uri45\",\n  \"uris\": [\n    \"uris6\"\n  ],\n  \"offset\": {},\n  \"position_ms\": 254\n}"
+      },
+      "parameters": [
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_80e0225b54b748e39a038fdd591f95af",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Start a new context or resume current playback on the user's active device. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "pause-a-users-playback",
+      "method": "PUT",
+      "url": "{{default}}/me/player/pause",
+      "parameters": [
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_a4796c485fdc454e937b589cee465cf6",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Pause playback on the user's account. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "skip-users-playback-to-next-track",
+      "method": "POST",
+      "url": "{{default}}/me/player/next",
+      "parameters": [
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_085bd566a9b248739321612c1ceec202",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Skips to next track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "skip-users-playback-to-previous-track",
+      "method": "POST",
+      "url": "{{default}}/me/player/previous",
+      "parameters": [
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_5ff117aa6abc4ecea0f347f3b8a64739",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Skips to previous track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "seek-to-position-in-currently-playing-track",
+      "method": "PUT",
+      "url": "{{default}}/me/player/seek",
+      "parameters": [
+        {
+          "name": "position_ms",
+          "value": "25000",
+          "disabled": false
+        },
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_689f7a7c3ad84a3090bbf1913420e46a",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Seeks to the given position in the user’s currently playing track. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "set-repeat-mode-on-users-playback",
+      "method": "PUT",
+      "url": "{{default}}/me/player/repeat",
+      "parameters": [
+        {
+          "name": "state",
+          "value": "context",
+          "disabled": false
+        },
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_5a20bd99a2b541c78330e4a073535e59",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Set the repeat mode for the user's playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "set-volume-for-users-playback",
+      "method": "PUT",
+      "url": "{{default}}/me/player/volume",
+      "parameters": [
+        {
+          "name": "volume_percent",
+          "value": "50",
+          "disabled": false
+        },
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_0a2117a93820401f9515fc4133d09fcc",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Set the volume for the user’s current playback device. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "toggle-shuffle-for-users-playback",
+      "method": "PUT",
+      "url": "{{default}}/me/player/shuffle",
+      "parameters": [
+        {
+          "name": "state",
+          "value": "true",
+          "disabled": false
+        },
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_514a028fa6724d65b0a4592a04df19f9",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Toggle shuffle on or off for user’s playback. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "get-recently-played",
+      "method": "GET",
+      "url": "{{default}}/me/player/recently-played",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "after",
+          "value": "1484811043508",
+          "disabled": false
+        },
+        {
+          "name": "before",
+          "value": "49",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_219bd2b1a62648179aa8b8466165e548",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Get tracks from the current user's recently played tracks.\n_**Note**: Currently doesn't support podcast episodes._\n"
+    },
+    {
+      "name": "get-queue",
+      "method": "GET",
+      "url": "{{default}}/me/player/queue",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_ca8ce9cb7b1f463faa312cb747cc6041",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Get the list of objects that make up the user's queue.\n"
+    },
+    {
+      "name": "add-to-queue",
+      "method": "POST",
+      "url": "{{default}}/me/player/queue",
+      "parameters": [
+        {
+          "name": "uri",
+          "value": "spotify:track:4iV5W9uYEdYUVa79Axb7Rh",
+          "disabled": false
+        },
+        {
+          "name": "device_id",
+          "value": "0d1841b0976bae2a3a310dd74c0f3df354899bc8",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_35675d78c4b546efba5a67e5a5ad26c3",
+      "parentId": "fld_759026588a4a40009728640340725f47",
+      "description": "Add an item to the end of the user's current playback queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.\n"
+    },
+    {
+      "name": "get-playlist",
+      "method": "GET",
+      "url": "{{default}}/playlists/{playlist_id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "fields",
+          "value": "items(added_by.id,track(name,href,album(name,href)))",
+          "disabled": false
+        },
+        {
+          "name": "additional_types",
+          "value": "additional_types11",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_e6dd8aaffd1a4551bc46050a9ccd58fa",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get a playlist owned by a Spotify user.\n"
+    },
+    {
+      "name": "change-playlist-details",
+      "method": "PUT",
+      "url": "{{default}}/playlists/{playlist_id}",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"name42\",\n  \"public\": false,\n  \"collaborative\": true,\n  \"description\": \"description34\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_2e30bd3135c941fa831f2562feeaca5b",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Change a playlist's name and public/private state. (The user must, of\ncourse, own the playlist.)\n"
+    },
+    {
+      "name": "get-playlists-tracks",
+      "method": "GET",
+      "url": "{{default}}/playlists/{playlist_id}/tracks",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "fields",
+          "value": "items(added_by.id,track(name,href,album(name,href)))",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "additional_types",
+          "value": "additional_types92",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_83e757e74d0b453292edade4ab9df13d",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get full details of the items of a playlist owned by a Spotify user.\n"
+    },
+    {
+      "name": "add-tracks-to-playlist",
+      "method": "POST",
+      "url": "{{default}}/playlists/{playlist_id}/tracks",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"uris\": [\n    \"uris2\"\n  ],\n  \"position\": 203\n}"
+      },
+      "parameters": [
+        {
+          "name": "position",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "uris",
+          "value": "spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_983453dd14ee40f89038932ec6450d28",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Add one or more items to a user's playlist.\n"
+    },
+    {
+      "name": "reorder-or-replace-playlists-tracks",
+      "method": "PUT",
+      "url": "{{default}}/playlists/{playlist_id}/tracks",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"uris\": [\n    \"uris1\"\n  ],\n  \"range_start\": 41,\n  \"insert_before\": 44,\n  \"range_length\": 19,\n  \"snapshot_id\": \"snapshot_id34\"\n}"
+      },
+      "parameters": [
+        {
+          "name": "uris",
+          "value": "uris30",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_fcdfa91287104c489c45d18817e02e6f",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Either reorder or replace items in a playlist depending on the request's parameters.\nTo reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request's body.\nTo replace items, include `uris` as either a query parameter or in the request's body.\nReplacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.\n<br/>\n**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.\nThese operations can't be applied together in a single request.\n"
+    },
+    {
+      "name": "remove-tracks-playlist",
+      "method": "DELETE",
+      "url": "{{default}}/playlists/{playlist_id}/tracks",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tracks\": [\n    {\n      \"uri\": \"uri77\"\n    }\n  ],\n  \"snapshot_id\": \"snapshot_id9\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_8dcf0791f0344a589ae6263543b68613",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Remove one or more items from a user's playlist.\n"
+    },
+    {
+      "name": "get-a-list-of-current-users-playlists",
+      "method": "GET",
+      "url": "{{default}}/me/playlists",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_981d39b662ee4c62b63560e4d5c7f3ab",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get a list of the playlists owned or followed by the current Spotify\nuser.\n"
+    },
+    {
+      "name": "get-list-users-playlists",
+      "method": "GET",
+      "url": "{{default}}/users/{user_id}/playlists",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_8a8d9b7942314d37953a9eb3b23cecdc",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get a list of the playlists owned or followed by a Spotify user.\n"
+    },
+    {
+      "name": "create-playlist",
+      "method": "POST",
+      "url": "{{default}}/users/{user_id}/playlists",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"name1\",\n  \"public\": false,\n  \"collaborative\": false,\n  \"description\": \"description79\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_63f5c4cefe594756a9f5749eed82d29e",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Create a playlist for a Spotify user. (The playlist will be empty until\nyou [add tracks](/documentation/web-api/reference/add-tracks-to-playlist).)\nEach user is generally limited to a maximum of 11000 playlists.\n"
+    },
+    {
+      "name": "get-featured-playlists",
+      "method": "GET",
+      "url": "{{default}}/browse/featured-playlists",
+      "parameters": [
+        {
+          "name": "locale",
+          "value": "sv_SE",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_456442f2a78a40f5bc1fc7ecac6db1ac",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get a list of Spotify featured playlists (shown, for example, on a Spotify player's 'Browse' tab).\n"
+    },
+    {
+      "name": "get-a-categories-playlists",
+      "method": "GET",
+      "url": "{{default}}/browse/categories/{category_id}/playlists",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_5c2787c7fc8e4e3e8e6cc517279aa4aa",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get a list of Spotify playlists tagged with a particular category.\n"
+    },
+    {
+      "name": "get-playlist-cover",
+      "method": "GET",
+      "url": "{{default}}/playlists/{playlist_id}/images",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_b4545f7ec91746b0a4967dc11c2bc5b7",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Get the current image associated with a specific playlist.\n"
+    },
+    {
+      "name": "upload-custom-playlist-cover",
+      "method": "PUT",
+      "url": "{{default}}/playlists/{playlist_id}/images",
+      "body": {
+        "mimeType": "application/json",
+        "text": "any"
+      },
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_594b7b6f7c4649dc9cf1b5178cc66096",
+      "parentId": "fld_2ea445b45eae467e975268f19ccf2144",
+      "description": "Replace the image used to represent a specific playlist.\n"
+    },
+    {
+      "name": "search",
+      "method": "GET",
+      "url": "{{default}}/search",
+      "parameters": [
+        {
+          "name": "q",
+          "value": "remaster%20track:Doxy%20artist:Miles%20Davis",
+          "disabled": false
+        },
+        {
+          "name": "type",
+          "value": "[\"track\"]",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "include_external",
+          "value": "audio",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_2a2e836f39d449b0b8912a72546df9d8",
+      "parentId": "fld_7cd2d69e9ef74349837af2a75f3bffc3",
+      "description": "Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooks\nthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.\n"
+    },
+    {
+      "name": "get-a-show",
+      "method": "GET",
+      "url": "{{default}}/shows/{id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_089a4ae49f184bdcab33b7a7c1bcb61f",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Get Spotify catalog information for a single show identified by its\nunique Spotify ID.\n"
+    },
+    {
+      "name": "get-multiple-shows",
+      "method": "GET",
+      "url": "{{default}}/shows",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_636224f47fa34c30b43169b9211272d4",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Get Spotify catalog information for several shows based on their Spotify IDs.\n"
+    },
+    {
+      "name": "get-a-shows-episodes",
+      "method": "GET",
+      "url": "{{default}}/shows/{id}/episodes",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_14e555b655e34d42be0ece273b7d25ab",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Get Spotify catalog information about an show’s episodes. Optional parameters can be used to limit the number of episodes returned.\n"
+    },
+    {
+      "name": "get-users-saved-shows",
+      "method": "GET",
+      "url": "{{default}}/me/shows",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_05e2838af9b34524a00dd7897576c37f",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Get a list of shows saved in the current Spotify user's library. Optional parameters can be used to limit the number of shows returned.\n"
+    },
+    {
+      "name": "save-shows-user",
+      "method": "PUT",
+      "url": "{{default}}/me/shows",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids67\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_57f8ef6f0f2b492a9f01866313903611",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Save one or more shows to current Spotify user's library.\n"
+    },
+    {
+      "name": "remove-shows-user",
+      "method": "DELETE",
+      "url": "{{default}}/me/shows",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids67\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_09690f37510049b38c80a213e8fa3e64",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Delete one or more shows from current Spotify user's library.\n"
+    },
+    {
+      "name": "check-users-saved-shows",
+      "method": "GET",
+      "url": "{{default}}/me/shows/contains",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "5CfCWKI5pZ28U0uOzXkDHe,5as3aKmN2k11yfDDDSrvaZ",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_ed60777e689748d9999a01080f6c6ba2",
+      "parentId": "fld_8214b0c4e15f42a7b7b4b81a81343455",
+      "description": "Check if one or more shows is already saved in the current Spotify user's library.\n"
+    },
+    {
+      "name": "get-track",
+      "method": "GET",
+      "url": "{{default}}/tracks/{id}",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_9e396ca366f9457bb2e3053fd657e3c0",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Get Spotify catalog information for a single track identified by its\nunique Spotify ID.\n"
+    },
+    {
+      "name": "get-several-tracks",
+      "method": "GET",
+      "url": "{{default}}/tracks",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_821dbc627a5a4482a25a45cb14285f85",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Get Spotify catalog information for multiple tracks based on their Spotify IDs.\n"
+    },
+    {
+      "name": "get-users-saved-tracks",
+      "method": "GET",
+      "url": "{{default}}/me/tracks",
+      "parameters": [
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_421d7034bd0f4111bae7d59e1a047c17",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Get a list of the songs saved in the current Spotify user's 'Your Music' library.\n"
+    },
+    {
+      "name": "save-tracks-user",
+      "method": "PUT",
+      "url": "{{default}}/me/tracks",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids61\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_82b0ed10e9784e3faa3225ec283393fc",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Save one or more tracks to the current user's 'Your Music' library.\n"
+    },
+    {
+      "name": "remove-tracks-user",
+      "method": "DELETE",
+      "url": "{{default}}/me/tracks",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids85\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_604de1afd2c748c5b1ed48900a458d15",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Remove one or more tracks from the current user's 'Your Music' library.\n"
+    },
+    {
+      "name": "check-users-saved-tracks",
+      "method": "GET",
+      "url": "{{default}}/me/tracks/contains",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_def7488d793148988cf6af9b5bc697be",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Check if one or more tracks is already saved in the current Spotify user's 'Your Music' library.\n"
+    },
+    {
+      "name": "get-several-audio-features",
+      "method": "GET",
+      "url": "{{default}}/audio-features",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_abae1e06812d432ea3daa4f80b684171",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Get audio features for multiple tracks based on their Spotify IDs.\n"
+    },
+    {
+      "name": "get-audio-features",
+      "method": "GET",
+      "url": "{{default}}/audio-features/{id}",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_249473a35f064245820cd89803b5087f",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Get audio feature information for a single track identified by its unique\nSpotify ID.\n"
+    },
+    {
+      "name": "get-audio-analysis",
+      "method": "GET",
+      "url": "{{default}}/audio-analysis/{id}",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_2ef541060abf468d929e597c987d475b",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Get a low-level audio analysis for a track in the Spotify catalog. The audio analysis describes the track’s structure and musical content, including rhythm, pitch, and timbre.\n"
+    },
+    {
+      "name": "get-recommendations",
+      "method": "GET",
+      "url": "{{default}}/recommendations",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "market",
+          "value": "ES",
+          "disabled": false
+        },
+        {
+          "name": "seed_artists",
+          "value": "4NHQUGzhtTLFvgF5SZesLK",
+          "disabled": false
+        },
+        {
+          "name": "seed_genres",
+          "value": "classical,country",
+          "disabled": false
+        },
+        {
+          "name": "seed_tracks",
+          "value": "0c6xIDDpzE81m2q797ordA",
+          "disabled": false
+        },
+        {
+          "name": "min_acousticness",
+          "value": "0.5783645856011674",
+          "disabled": false
+        },
+        {
+          "name": "max_acousticness",
+          "value": "0.26040500301287306",
+          "disabled": false
+        },
+        {
+          "name": "target_acousticness",
+          "value": "0.7795421957924095",
+          "disabled": false
+        },
+        {
+          "name": "min_danceability",
+          "value": "0.8142958166032505",
+          "disabled": false
+        },
+        {
+          "name": "max_danceability",
+          "value": "0.2020622810268986",
+          "disabled": false
+        },
+        {
+          "name": "target_danceability",
+          "value": "0.07336825857146745",
+          "disabled": false
+        },
+        {
+          "name": "min_duration_ms",
+          "value": "190",
+          "disabled": false
+        },
+        {
+          "name": "max_duration_ms",
+          "value": "138",
+          "disabled": false
+        },
+        {
+          "name": "target_duration_ms",
+          "value": "244",
+          "disabled": false
+        },
+        {
+          "name": "min_energy",
+          "value": "0.23765778670056525",
+          "disabled": false
+        },
+        {
+          "name": "max_energy",
+          "value": "0.1144771914519862",
+          "disabled": false
+        },
+        {
+          "name": "target_energy",
+          "value": "0.30473463994622907",
+          "disabled": false
+        },
+        {
+          "name": "min_instrumentalness",
+          "value": "0.4229908381773475",
+          "disabled": false
+        },
+        {
+          "name": "max_instrumentalness",
+          "value": "0.6236496474556833",
+          "disabled": false
+        },
+        {
+          "name": "target_instrumentalness",
+          "value": "0.5600418707756776",
+          "disabled": false
+        },
+        {
+          "name": "min_key",
+          "value": "9",
+          "disabled": false
+        },
+        {
+          "name": "max_key",
+          "value": "5",
+          "disabled": false
+        },
+        {
+          "name": "target_key",
+          "value": "1",
+          "disabled": false
+        },
+        {
+          "name": "min_liveness",
+          "value": "0.6344209722543952",
+          "disabled": false
+        },
+        {
+          "name": "max_liveness",
+          "value": "0.4077280289707901",
+          "disabled": false
+        },
+        {
+          "name": "target_liveness",
+          "value": "0.8279626208408484",
+          "disabled": false
+        },
+        {
+          "name": "min_loudness",
+          "value": "18.13171296244256",
+          "disabled": false
+        },
+        {
+          "name": "max_loudness",
+          "value": "55.52145795849362",
+          "disabled": false
+        },
+        {
+          "name": "target_loudness",
+          "value": "122.96618484407695",
+          "disabled": false
+        },
+        {
+          "name": "min_mode",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "max_mode",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "target_mode",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "min_popularity",
+          "value": "31",
+          "disabled": false
+        },
+        {
+          "name": "max_popularity",
+          "value": "87",
+          "disabled": false
+        },
+        {
+          "name": "target_popularity",
+          "value": "76",
+          "disabled": false
+        },
+        {
+          "name": "min_speechiness",
+          "value": "0.09388352308268544",
+          "disabled": false
+        },
+        {
+          "name": "max_speechiness",
+          "value": "0.4278231075398078",
+          "disabled": false
+        },
+        {
+          "name": "target_speechiness",
+          "value": "0.9953144605902496",
+          "disabled": false
+        },
+        {
+          "name": "min_tempo",
+          "value": "189.1645765658749",
+          "disabled": false
+        },
+        {
+          "name": "max_tempo",
+          "value": "210.91391489603592",
+          "disabled": false
+        },
+        {
+          "name": "target_tempo",
+          "value": "197.47308474984408",
+          "disabled": false
+        },
+        {
+          "name": "min_time_signature",
+          "value": "8",
+          "disabled": false
+        },
+        {
+          "name": "max_time_signature",
+          "value": "33",
+          "disabled": false
+        },
+        {
+          "name": "target_time_signature",
+          "value": "27",
+          "disabled": false
+        },
+        {
+          "name": "min_valence",
+          "value": "0.29478741299438116",
+          "disabled": false
+        },
+        {
+          "name": "max_valence",
+          "value": "0.6268190094482448",
+          "disabled": false
+        },
+        {
+          "name": "target_valence",
+          "value": "0.18429077628332025",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_1714cb21c4684b86b4fca86da603079e",
+      "parentId": "fld_f84996c722e947a49b15becfc08b1111",
+      "description": "Recommendations are generated based on the available information for a given seed entity and matched against similar artists and tracks. If there is sufficient information about the provided seeds, a list of tracks will be returned together with pool size details.\n\nFor artists and tracks that are very new or obscure there might not be enough data to generate a list of tracks.\n"
+    },
+    {
+      "name": "get-current-users-profile",
+      "method": "GET",
+      "url": "{{default}}/me",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_b38e7e84d1914a10a546e6a008e805d4",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Get detailed profile information about the current user (including the\ncurrent user's username).\n"
+    },
+    {
+      "name": "get-users-profile",
+      "method": "GET",
+      "url": "{{default}}/users/{user_id}",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_85611ff8db7b4cd3af3c251109ebc30f",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Get public profile information about a Spotify user.\n"
+    },
+    {
+      "name": "follow-playlist",
+      "method": "PUT",
+      "url": "{{default}}/playlists/{playlist_id}/followers",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"public\": true\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_13aa99baa0024253b97b2e666b87a7d7",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Add the current user as a follower of a playlist.\n"
+    },
+    {
+      "name": "unfollow-playlist",
+      "method": "DELETE",
+      "url": "{{default}}/playlists/{playlist_id}/followers",
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_e9f2a4f53142481dba3e2b892c4ba49e",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Remove the current user as a follower of a playlist.\n"
+    },
+    {
+      "name": "get-followed",
+      "method": "GET",
+      "url": "{{default}}/me/following",
+      "parameters": [
+        {
+          "name": "type",
+          "value": "artist",
+          "disabled": false
+        },
+        {
+          "name": "after",
+          "value": "0I2XqVXqHScXjHhk6AYYRe",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_cbdc699a6e0b460b8d2943aa983cb7f2",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Get the current user's followed artists.\n"
+    },
+    {
+      "name": "follow-artists-users",
+      "method": "PUT",
+      "url": "{{default}}/me/following",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids90\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "type",
+          "value": "artist",
+          "disabled": false
+        },
+        {
+          "name": "ids",
+          "value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_f74d24fab2c74e3193dcadda4df97215",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Add the current user as a follower of one or more artists or other Spotify users.\n"
+    },
+    {
+      "name": "unfollow-artists-users",
+      "method": "DELETE",
+      "url": "{{default}}/me/following",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"ids\": [\n    \"ids21\"\n  ]\n}"
+      },
+      "parameters": [
+        {
+          "name": "type",
+          "value": "artist",
+          "disabled": false
+        },
+        {
+          "name": "ids",
+          "value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_ed010e606c264f1a8db1bd8cbdb5a666",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Remove the current user as a follower of one or more artists or other Spotify users.\n"
+    },
+    {
+      "name": "check-current-user-follows",
+      "method": "GET",
+      "url": "{{default}}/me/following/contains",
+      "parameters": [
+        {
+          "name": "type",
+          "value": "artist",
+          "disabled": false
+        },
+        {
+          "name": "ids",
+          "value": "2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_762ba27079634a73aad3255be47ba26b",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Check to see if the current user is following one or more artists or other Spotify users.\n"
+    },
+    {
+      "name": "check-if-user-follows-playlist",
+      "method": "GET",
+      "url": "{{default}}/playlists/{playlist_id}/followers/contains",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "jmperezperez,thelinmichael,wizzler",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_0e3b694561d247f6a44eece8f837357f",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Check to see if one or more Spotify users are following a specified playlist.\n"
+    },
+    {
+      "name": "get-users-top-artists",
+      "method": "GET",
+      "url": "{{default}}/me/top/artists",
+      "parameters": [
+        {
+          "name": "time_range",
+          "value": "medium_term",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_2f00d96b6e264ce1911e9c3b3c7d8bcf",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Get the current user's top artists based on calculated affinity.\n"
+    },
+    {
+      "name": "get-users-top-tracks",
+      "method": "GET",
+      "url": "{{default}}/me/top/tracks",
+      "parameters": [
+        {
+          "name": "time_range",
+          "value": "medium_term",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "20",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        }
+      ],
+      "authentication": {
+        "type": "oauth2",
+        "accessTokenUrl": "https://accounts.spotify.com/api/token",
+        "authorizationUrl": "https://accounts.spotify.com/authorize",
+        "grantType": "authorization_code"
+      },
+      "_type": "request",
+      "_id": "req_86cbb5e054374800a32e82f241ec5a42",
+      "parentId": "fld_c0c83fe21f814f21b7c600231312615a",
+      "description": "Get the current user's top tracks based on calculated affinity.\n"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Me Episodes Request 1
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/typescript/x-redirect/JTI0bSUyRk1lJTI1MjBFcGlzb2RlcyUyNTIwUmVxdWVzdDE
+
+*This model accepts additional fields of type unknown.*
+
+
+# Interface Name
+
+`MeEpisodesRequest1`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `ids` | `string[] \| undefined` | Optional | A JSON array of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). <br/>A maximum of 50 items can be specified in one request. _**Note**: if the `ids` parameter is present in the query string, any IDs listed here in the body will be ignored._ |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+
+
+# Example
+
+```ts
+import {
+  MeEpisodesRequest1,
+} from 'spotify-web-api-with-fixes-and-improvements-from-sonalluxlib';
+
+const meEpisodesRequest1: MeEpisodesRequest1 = {
+  ids: [
+    'ids5'
+  ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
+};
+```
+
+
+

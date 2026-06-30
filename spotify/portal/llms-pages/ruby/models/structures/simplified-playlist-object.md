@@ -1,0 +1,54 @@
+# Simplified Playlist Object
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/ruby/x-redirect/JTI0bSUyRlNpbXBsaWZpZWRQbGF5bGlzdE9iamVjdA
+
+*This model accepts additional fields of type Object.*
+
+
+# Class Name
+
+`SimplifiedPlaylistObject`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `collaborative` | `TrueClass \| FalseClass` | Optional | `true` if the owner allows other users to modify the playlist. |
+| `description` | `String` | Optional | The playlist description. _Only returned for modified, verified playlists, otherwise_ `null`. |
+| `external_urls` | [`ExternalUrlObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/external-url-object.md) | Optional | Known external URLs for this playlist. |
+| `href` | `String` | Optional | A link to the Web API endpoint providing full details of the playlist. |
+| `id` | `String` | Optional | The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the playlist. |
+| `images` | [`Array[ImageObject]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/image-object.md) | Optional | Images for the playlist. The array may be empty or contain up to three images. The images are returned by size in descending order. See [Working with Playlists](/documentation/web-api/concepts/playlists). _**Note**: If returned, the source URL for the image (`url`) is temporary and will expire in less than a day._ |
+| `name` | `String` | Optional | The name of the playlist. |
+| `owner` | [`PlaylistOwnerObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/playlist-owner-object.md) | Optional | The user who owns the playlist |
+| `public` | `TrueClass \| FalseClass` | Optional | The playlist's public/private status: `true` the playlist is public, `false` the playlist is private, `null` the playlist status is not relevant. For more about public/private status, see [Working with Playlists](/documentation/web-api/concepts/playlists) |
+| `snapshot_id` | `String` | Optional | The version identifier for the current playlist. Can be supplied in other requests to target a specific playlist version |
+| `tracks` | [`PlaylistTracksRefObject`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/llms-pages/ruby/models/structures/playlist-tracks-ref-object.md) | Optional | A collection containing a link ( `href` ) to the Web API endpoint where full details of the playlist's tracks can be retrieved, along with the `total` number of tracks in the playlist. Note, a track object may be `null`. This can happen if a track is no longer available. |
+| `type` | `String` | Optional | The object type: "playlist" |
+| `uri` | `String` | Optional | The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the playlist. |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
+
+
+# Example
+
+```ruby
+simplified_playlist_object = SimplifiedPlaylistObject.new(
+  collaborative: false,
+  description: 'description8',
+  external_urls: ExternalUrlObject.new(
+    spotify: 'spotify6',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  href: 'href0',
+  id: 'id8',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
+)
+```
+
+
+

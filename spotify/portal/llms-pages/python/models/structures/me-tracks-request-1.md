@@ -1,0 +1,40 @@
+# Me Tracks Request 1
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/python/x-redirect/JTI0bSUyRk1lJTI1MjBUcmFja3MlMjUyMFJlcXVlc3Qx
+
+*This model accepts additional fields of type Any.*
+
+
+# Class Name
+
+`MeTracksRequest1`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `ids` | `List[str]` | Optional | A JSON array of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `["4iV5W9uYEdYUVa79Axb7Rh", "1301WleyT98MSxVHPZCA6M"]`<br/>A maximum of 50 items can be specified in one request. _**Note**: if the `ids` parameter is present in the query string, any IDs listed here in the body will be ignored._ |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
+
+
+# Example
+
+```python
+import jsonpickle
+
+from spotifywebapiwithfixesandimprovementsfromsonallux.models.me_tracks_request_1 import MeTracksRequest1
+
+me_tracks_request_1 = MeTracksRequest1(
+    ids=[
+        'ids1',
+        'ids2'
+    ],
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
+)
+```
+
+
+

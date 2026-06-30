@@ -1,0 +1,36 @@
+# Copyright Object
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/spotify/#/php/x-redirect/JTI0bSUyRkNvcHlyaWdodE9iamVjdA
+
+*This model accepts additional fields of type array.*
+
+
+# Class Name
+
+`CopyrightObject`
+
+
+# Fields
+
+| Name | Type | Tags | Description | Getter | Setter |
+|  --- | --- | --- | --- | --- | --- |
+| `text` | `?string` | Optional | The copyright text for this content. | getText(): ?string | setText(?string text): void |
+| `type` | `?string` | Optional | The type of copyright: `C` = the copyright, `P` = the sound recording (performance) copyright. | getType(): ?string | setType(?string type): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
+
+
+# Example
+
+```php
+use SpotifyWebApiWithFixesAndImprovementsFromSonalluxLib\Models\Builders\CopyrightObjectBuilder;
+use SpotifyWebApiWithFixesAndImprovementsFromSonalluxLib\ApiHelper;
+
+$copyrightObject = CopyrightObjectBuilder::init()
+    ->text('text4')
+    ->type('type4')
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
+```
+
+
+

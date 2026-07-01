@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function teamplayerdashboardGET(
+function teamplayerdashboardGet(
     string $seasonType,
-    string $teamID,
+    string $teamId,
     string $measureType,
     string $perMode,
     string $plusMinus,
@@ -20,13 +20,13 @@ function teamplayerdashboardGET(
     string $seasonSegment,
     string $dateFrom,
     string $dateTo,
-    string $opponentTeamID,
+    string $opponentTeamId,
     string $vsConference,
     string $vsDivision,
     string $gameSegment,
     string $period,
     string $lastNGames
-): void
+): ApiResponse
 ```
 
 
@@ -35,7 +35,7 @@ function teamplayerdashboardGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `plusMinus` | `string` | Query, Required | - |
@@ -48,7 +48,7 @@ function teamplayerdashboardGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -60,7 +60,7 @@ function teamplayerdashboardGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -68,7 +68,7 @@ function teamplayerdashboardGET(
 ```php
 $seasonType = 'SeasonType8';
 
-$teamID = 'TeamID8';
+$teamId = 'TeamID8';
 
 $measureType = 'MeasureType8';
 
@@ -94,7 +94,7 @@ $dateFrom = 'DateFrom6';
 
 $dateTo = 'DateTo0';
 
-$opponentTeamID = 'OpponentTeamID6';
+$opponentTeamId = 'OpponentTeamID6';
 
 $vsConference = 'VsConference6';
 
@@ -106,33 +106,41 @@ $period = 'Period2';
 
 $lastNGames = 'LastNGames4';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->teamplayerdashboardGet(
+    $seasonType,
+    $teamId,
+    $measureType,
+    $perMode,
+    $plusMinus,
+    $paceAdjust,
+    $rank,
+    $season,
+    $outcome,
+    $location,
+    $month,
+    $seasonSegment,
+    $dateFrom,
+    $dateTo,
+    $opponentTeamId,
+    $vsConference,
+    $vsDivision,
+    $gameSegment,
+    $period,
+    $lastNGames
+);
 
-try {
-    $aPIController->teamplayerdashboardGET(
-        $seasonType,
-        $teamID,
-        $measureType,
-        $perMode,
-        $plusMinus,
-        $paceAdjust,
-        $rank,
-        $season,
-        $outcome,
-        $location,
-        $month,
-        $seasonSegment,
-        $dateFrom,
-        $dateTo,
-        $opponentTeamID,
-        $vsConference,
-        $vsDivision,
-        $gameSegment,
-        $period,
-        $lastNGames
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

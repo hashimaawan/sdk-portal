@@ -7,7 +7,7 @@ Type of the algorithm
 
 # Enum Type Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the algorithm
 # Example
 
 ```python
-from hetznercloudapi.models.type_28_enum import Type28Enum
+from hetznercloudapi.models.type_28 import Type28
 
-type_28 = Type28Enum.ROUND_ROBIN
+type_28 = Type28.ROUND_ROBIN
 ```
 
 

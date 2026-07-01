@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-VideoStatusGETAsync(
-    string leagueID,
+VideoStatusGetAsync(
+    string leagueId,
     string gameDate)
 ```
 
@@ -15,7 +15,7 @@ VideoStatusGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `gameDate` | `string` | Query, Required | - |
 
 
@@ -29,12 +29,12 @@ VideoStatusGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string gameDate = "GameDate8";
 try
 {
-    await aPIController.VideoStatusGETAsync(
-        leagueID,
+    await api.VideoStatusGetAsync(
+        leagueId,
         gameDate
     );
 }

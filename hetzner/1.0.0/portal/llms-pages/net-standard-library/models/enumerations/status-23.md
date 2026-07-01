@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status23Enum`
+`Status23`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Status23Enum status23 = Status23Enum.Available;
+Status23 status23 = Status23.Available;
 ```
 
 

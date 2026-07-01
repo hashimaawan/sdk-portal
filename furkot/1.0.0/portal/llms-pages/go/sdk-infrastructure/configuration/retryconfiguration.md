@@ -22,18 +22,18 @@ The retryConfiguration can be initialized as follows:
 package main
 
 import (
-    "furkottrips"
+    "furkotTrips"
 )
 
 func main() {
-    retryConfiguration := furkottrips.CreateRetryConfiguration(
-        furkottrips.WithMaxRetryAttempts(0),
-        furkottrips.WithRetryOnTimeout(true),
-        furkottrips.WithRetryInterval(1),
-        furkottrips.WithMaximumRetryWaitTime(0),
-        furkottrips.WithBackoffFactor(2),
-        furkottrips.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
-        furkottrips.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
+    retryConfiguration := furkotTrips.CreateRetryConfiguration(
+        furkotTrips.WithMaxRetryAttempts(0),
+        furkotTrips.WithRetryOnTimeout(true),
+        furkotTrips.WithRetryInterval(1),
+        furkotTrips.WithMaximumRetryWaitTime(0),
+        furkotTrips.WithBackoffFactor(2),
+        furkotTrips.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
+        furkotTrips.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
     )
 }
 ```

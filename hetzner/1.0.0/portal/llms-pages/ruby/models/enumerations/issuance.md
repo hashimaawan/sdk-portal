@@ -7,7 +7,7 @@ Status of the issuance process of the Certificate
 
 # Enum Type Name
 
-`IssuanceEnum`
+`Issuance`
 
 
 # Fields
@@ -22,7 +22,7 @@ Status of the issuance process of the Certificate
 # Example
 
 ```ruby
-issuance = IssuanceEnum::FAILED
+issuance = Issuance::FAILED
 ```
 
 

@@ -7,7 +7,7 @@ Returns a specific ISO object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetAnISO(
+GetAnIso(
     ctx context.Context,
     id int) (
     models.ApiResponse[models.IsosResponse1],
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := iSOsController.GetAnISO(ctx, id)
+apiResponse, err := isOsApi.GetAnIso(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

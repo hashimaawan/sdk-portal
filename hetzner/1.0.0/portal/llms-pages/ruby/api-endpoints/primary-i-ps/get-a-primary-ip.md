@@ -22,7 +22,7 @@ def get_a_primary_ip(id)
 
 **200**: The `primary_ip` key contains a Primary IP object
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -30,8 +30,13 @@ def get_a_primary_ip(id)
 ```ruby
 id = 112
 
-result = primary_i_ps_controller.get_a_primary_ip(id)
-puts result
+result = primary_i_ps_api.get_a_primary_ip(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

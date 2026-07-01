@@ -56,7 +56,7 @@ def shotchartdetail_get(season_type,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -100,7 +100,7 @@ last_n_games = 'LastNGames4'
 
 context_measure = 'ContextMeasure2'
 
-client_controller.shotchartdetail_get(
+result = client_api.shotchartdetail_get(
   season_type,
   team_id,
   player_id,
@@ -121,6 +121,12 @@ client_controller.shotchartdetail_get(
   last_n_games,
   context_measure
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

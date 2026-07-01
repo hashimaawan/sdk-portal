@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlcg
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -27,11 +29,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `public_net` | [`PublicNet`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/public-net.md) | Required | Public network information |
 | `services` | [`List[LoadBalancerService]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancer-service.md) | Required | List of services that belong to this Load Balancer |
 | `targets` | [`List[LoadBalancerTarget]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancer-target.md) | Required | List of targets that belong to this Load Balancer |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.algorithm import Algorithm
 from hetznercloudapi.models.health_status import HealthStatus
 from hetznercloudapi.models.http import Http
@@ -42,7 +47,7 @@ from hetznercloudapi.models.label_selector_7 import LabelSelector7
 from hetznercloudapi.models.load_balancer import LoadBalancer
 from hetznercloudapi.models.load_balancer_service import LoadBalancerService
 from hetznercloudapi.models.load_balancer_service_health_check import LoadBalancerServiceHealthCheck
-from hetznercloudapi.models.load_balancer_service_http import LoadBalancerServiceHTTP
+from hetznercloudapi.models.load_balancer_service_http import LoadBalancerServiceHttp
 from hetznercloudapi.models.load_balancer_target import LoadBalancerTarget
 from hetznercloudapi.models.load_balancer_target_server import LoadBalancerTargetServer
 from hetznercloudapi.models.load_balancer_type import LoadBalancerType
@@ -52,18 +57,21 @@ from hetznercloudapi.models.price_hourly import PriceHourly
 from hetznercloudapi.models.price_monthly import PriceMonthly
 from hetznercloudapi.models.private_net import PrivateNet
 from hetznercloudapi.models.protection import Protection
-from hetznercloudapi.models.protocol_6_enum import Protocol6Enum
-from hetznercloudapi.models.protocol_7_enum import Protocol7Enum
+from hetznercloudapi.models.protocol_6 import Protocol6
+from hetznercloudapi.models.protocol_7 import Protocol7
 from hetznercloudapi.models.public_net import PublicNet
 from hetznercloudapi.models.server_11 import Server11
-from hetznercloudapi.models.status_30_enum import Status30Enum
+from hetznercloudapi.models.status_30 import Status30
 from hetznercloudapi.models.target import Target
-from hetznercloudapi.models.type_28_enum import Type28Enum
-from hetznercloudapi.models.type_29_enum import Type29Enum
+from hetznercloudapi.models.type_28 import Type28
+from hetznercloudapi.models.type_29 import Type29
 
 load_balancer = LoadBalancer(
     algorithm=Algorithm(
-        mtype=Type28Enum.ROUND_ROBIN
+        mtype=Type28.ROUND_ROBIN,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     created='2016-01-30T23:55:00+00:00',
     id=42,
@@ -87,14 +95,26 @@ load_balancer = LoadBalancer(
                 location='fsn1',
                 price_hourly=PriceHourly(
                     gross='1.1900000000000000',
-                    net='1.0000000000'
+                    net='1.0000000000',
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 ),
                 price_monthly=PriceMonthly(
                     gross='1.1900000000000000',
-                    net='1.0000000000'
-                )
+                    net='1.0000000000',
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
+                ),
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             )
-        ]
+        ],
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     location=Location(
         city='Falkenstein',
@@ -104,29 +124,47 @@ load_balancer = LoadBalancer(
         latitude=50.47612,
         longitude=12.370071,
         name='fsn1',
-        network_zone='eu-central'
+        network_zone='eu-central',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     name='my-resource',
     outgoing_traffic=42,
     private_net=[
         PrivateNet(
             ip='10.0.0.2',
-            network=4711
+            network=4711,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     protection=Protection(
-        delete=False
+        delete=False,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     public_net=PublicNet(
         enabled=False,
         ipv_4=Ipv4(
             dns_ptr='lb1.example.com',
-            ip='1.2.3.4'
+            ip='1.2.3.4',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         ipv_6=Ipv6(
             dns_ptr='lb1.example.com',
-            ip='2001:db8::1'
-        )
+            ip='2001:db8::1',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     services=[
         LoadBalancerService(
@@ -134,7 +172,7 @@ load_balancer = LoadBalancer(
             health_check=LoadBalancerServiceHealthCheck(
                 interval=15,
                 port=4711,
-                protocol=Protocol6Enum.HTTP,
+                protocol=Protocol6.HTTP,
                 retries=3,
                 timeout=10,
                 http=Http(
@@ -150,96 +188,159 @@ load_balancer = LoadBalancer(
                 )
             ),
             listen_port=443,
-            protocol=Protocol7Enum.HTTPS,
+            protocol=Protocol7.HTTPS,
             proxyprotocol=False,
-            http=LoadBalancerServiceHTTP(
+            http=LoadBalancerServiceHttp(
                 certificates=[
                     180
                 ],
                 cookie_lifetime=160,
                 cookie_name='cookie_name6',
                 redirect_http=False,
-                sticky_sessions=False
-            )
+                sticky_sessions=False,
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
+            ),
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     targets=[
         LoadBalancerTarget(
-            mtype=Type29Enum.IP,
+            mtype=Type29.IP,
             health_status=[
                 HealthStatus(
                     listen_port=142,
-                    status=Status30Enum.UNKNOWN
+                    status=Status30.UNKNOWN,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 ),
                 HealthStatus(
                     listen_port=142,
-                    status=Status30Enum.UNKNOWN
+                    status=Status30.UNKNOWN,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
             ],
             ip=Ip(
-                ip='ip8'
+                ip='ip8',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             label_selector=LabelSelector7(
-                selector='selector8'
+                selector='selector8',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             server=LoadBalancerTargetServer(
-                id=14
+                id=14,
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             targets=[
                 Target(
                     health_status=[
                         HealthStatus(
                             listen_port=142,
-                            status=Status30Enum.UNKNOWN
+                            status=Status30.UNKNOWN,
+                            additional_properties={
+                                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                            }
                         ),
                         HealthStatus(
                             listen_port=142,
-                            status=Status30Enum.UNKNOWN
+                            status=Status30.UNKNOWN,
+                            additional_properties={
+                                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                            }
                         )
                     ],
                     server=Server11(
-                        id=14
+                        id=14,
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     mtype='type2',
-                    use_private_ip=False
+                    use_private_ip=False,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 ),
                 Target(
                     health_status=[
                         HealthStatus(
                             listen_port=142,
-                            status=Status30Enum.UNKNOWN
+                            status=Status30.UNKNOWN,
+                            additional_properties={
+                                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                            }
                         ),
                         HealthStatus(
                             listen_port=142,
-                            status=Status30Enum.UNKNOWN
+                            status=Status30.UNKNOWN,
+                            additional_properties={
+                                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                            }
                         )
                     ],
                     server=Server11(
-                        id=14
+                        id=14,
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     mtype='type2',
-                    use_private_ip=False
+                    use_private_ip=False,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 ),
                 Target(
                     health_status=[
                         HealthStatus(
                             listen_port=142,
-                            status=Status30Enum.UNKNOWN
+                            status=Status30.UNKNOWN,
+                            additional_properties={
+                                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                            }
                         ),
                         HealthStatus(
                             listen_port=142,
-                            status=Status30Enum.UNKNOWN
+                            status=Status30.UNKNOWN,
+                            additional_properties={
+                                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                            }
                         )
                     ],
                     server=Server11(
-                        id=14
+                        id=14,
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     mtype='type2',
-                    use_private_ip=False
+                    use_private_ip=False,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
-            ]
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
-    ]
+    ],
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

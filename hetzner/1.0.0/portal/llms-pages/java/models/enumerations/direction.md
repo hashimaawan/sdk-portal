@@ -7,7 +7,7 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 
 # Enum Type Name
 
-`DirectionEnum`
+`Direction`
 
 
 # Fields
@@ -21,9 +21,9 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 # Example
 
 ```java
-import cloud.hetzner.api.models.DirectionEnum;
+import cloud.hetzner.api.models.Direction;
 
-DirectionEnum direction = DirectionEnum.IN;
+Direction direction = Direction.IN;
 ```
 
 

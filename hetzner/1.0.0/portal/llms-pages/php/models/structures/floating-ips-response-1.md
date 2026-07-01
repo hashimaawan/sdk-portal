@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkZsb2F0aW5nJTI1MjBJcHMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,21 +16,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`?Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Optional | - | getAction(): ?Action | setAction(?Action action): void |
 | `floatingIp` | [`FloatingIp`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ip.md) | Required | - | getFloatingIp(): FloatingIp | setFloatingIp(FloatingIp floatingIp): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\FloatingIpsResponse1Builder;
-use HetznerCloudAPILib\Models\Builders\FloatingIpBuilder;
-use HetznerCloudAPILib\Models\Builders\DnsPtrBuilder;
-use HetznerCloudAPILib\Models\Builders\HomeLocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Type16Enum;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\FloatingIpsResponse1Builder;
+use HetznerCloudApiLib\Models\Builders\FloatingIpBuilder;
+use HetznerCloudApiLib\Models\Builders\DnsPtrBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\HomeLocationBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Type16;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
 
 $floatingIpsResponse1 = FloatingIpsResponse1Builder::init(
     FloatingIpBuilder::init(
@@ -38,7 +42,9 @@ $floatingIpsResponse1 = FloatingIpsResponse1Builder::init(
             DnsPtrBuilder::init(
                 'server.example.com',
                 '2001:db8::1'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
         HomeLocationBuilder::init(
             'Falkenstein',
@@ -49,7 +55,9 @@ $floatingIpsResponse1 = FloatingIpsResponse1Builder::init(
             12.370071,
             'fsn1',
             'eu-central'
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         42,
         '131.232.99.1',
         [
@@ -60,11 +68,14 @@ $floatingIpsResponse1 = FloatingIpsResponse1Builder::init(
         'my-resource',
         ProtectionBuilder::init(
             false
-        )->build(),
-        Type16Enum::IPV4
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
+        Type16::IPV4
     )
         ->description('this describes my resource')
         ->server(42)
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
 )
     ->action(
@@ -76,28 +87,38 @@ $floatingIpsResponse1 = FloatingIpsResponse1Builder::init(
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             'started8',
-            StatusEnum::RUNNING
+            Status::RUNNING
         )
             ->error(
                 ErrorBuilder::init(
                     'code2',
                     'message4'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('finished0')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

@@ -26,7 +26,7 @@ def teaminfocommon_get(season,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -40,12 +40,18 @@ league_id = 'LeagueID4'
 
 season_type = 'SeasonType8'
 
-client_controller.teaminfocommon_get(
+result = client_api.teaminfocommon_get(
   season,
   team_id,
   league_id,
   season_type
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

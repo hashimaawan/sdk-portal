@@ -7,7 +7,7 @@ Type of the Image
 
 # Enum Type Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of the Image
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type22Enum;
+use HetznerCloudApiLib\Models\Type22;
 
-$type22 = Type22Enum::TEMPORARY;
+$type22 = Type22::TEMPORARY;
 ```
 
 

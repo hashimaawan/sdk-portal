@@ -23,7 +23,7 @@ GetAllLoadBalancerTypesAsync(
 
 **200**: The `load_balancer_types` key in the reply contains an array of Load Balancer type objects with this structure
 
-[`Task<Models.LoadBalancerTypesResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-types-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.LoadBalancerTypesResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-types-response.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ GetAllLoadBalancerTypesAsync(
 ```csharp
 try
 {
-    LoadBalancerTypesResponse result = await loadBalancerTypesController.GetAllLoadBalancerTypesAsync();
+    ApiResponse<LoadBalancerTypesResponse> result = await loadBalancerTypesApi.GetAllLoadBalancerTypesAsync();
 }
 catch (ApiException e)
 {

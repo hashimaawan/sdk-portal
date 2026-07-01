@@ -17,7 +17,7 @@ Currently only Servers (and their public network interfaces) are supported.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function removeFromResources(int $id, ?RemoveFromResourcesRequest $body = null): ActionsResponse
+function removeFromResources(int $id, ?RemoveFromResourcesRequest $body = null): ApiResponse
 ```
 
 
@@ -33,7 +33,7 @@ function removeFromResources(int $id, ?RemoveFromResourcesRequest $body = null):
 
 **201**: The `actions` key contains multiple `remove_firewall` Actions
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -49,22 +49,28 @@ $body = RemoveFromResourcesRequestBuilder::init(
                     42
                 )->build()
             )
-            ->type(Type7Enum::SERVER)
+            ->type(Type7::SERVER)
             ->build()
     ]
 )->build();
 
-$firewallActionsController = $client->getFirewallActionsController();
+$firewallActionsApi = $client->getFirewallActionsApi();
+$apiResponse = $firewallActionsApi->removeFromResources(
+    $id,
+    $body
+);
 
-try {
-    $result = $firewallActionsController->removeFromResources(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

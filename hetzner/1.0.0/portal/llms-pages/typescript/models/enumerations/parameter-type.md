@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterTypeEnum`
+`ParameterType`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { ParameterTypeEnum } from 'hetzner-cloud-apilib';
+import { ParameterType } from 'hetzner-cloud-apilib';
 
-const parameterType = ParameterTypeEnum.Uploaded;
+const parameterType = ParameterType.Uploaded;
 ```
 
 

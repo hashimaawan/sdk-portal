@@ -50,7 +50,7 @@ const body: LoadBalancersActionsAttachToNetworkRequest = {
 };
 
 try {
-  const response = await loadBalancerActionsController.attachALoadBalancerToANetwork(
+  const response = await loadBalancerActionsApi.attachALoadBalancerToANetwork(
     id,
     body
   );

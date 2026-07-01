@@ -39,7 +39,7 @@ const id = 112;
 const actionId = 224;
 
 try {
-  const response = await volumeActionsController.getAnActionForAVolume(
+  const response = await volumeActionsApi.getAnActionForAVolume(
     id,
     actionId
   );

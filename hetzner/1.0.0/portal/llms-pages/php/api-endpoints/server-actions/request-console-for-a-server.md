@@ -7,7 +7,7 @@ Requests credentials for remote access via VNC over websocket to keyboard, monit
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function requestConsoleForAServer(int $id): ServersActionsRequestConsoleResponse
+function requestConsoleForAServer(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function requestConsoleForAServer(int $id): ServersActionsRequestConsoleResponse
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsRequestConsoleResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-request-console-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersActionsRequestConsoleResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-request-console-response.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function requestConsoleForAServer(int $id): ServersActionsRequestConsoleResponse
 ```php
 $id = 112;
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->requestConsoleForAServer($id);
 
-try {
-    $result = $serverActionsController->requestConsoleForAServer($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersActionsRequestConsoleResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

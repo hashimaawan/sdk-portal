@@ -22,18 +22,18 @@ The retryConfiguration can be initialized as follows:
 package main
 
 import (
-    "hetznercloudapi"
+    "hetznerCloudApi"
 )
 
 func main() {
-    retryConfiguration := hetznercloudapi.CreateRetryConfiguration(
-        hetznercloudapi.WithMaxRetryAttempts(0),
-        hetznercloudapi.WithRetryOnTimeout(true),
-        hetznercloudapi.WithRetryInterval(1),
-        hetznercloudapi.WithMaximumRetryWaitTime(0),
-        hetznercloudapi.WithBackoffFactor(2),
-        hetznercloudapi.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
-        hetznercloudapi.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
+    retryConfiguration := hetznerCloudApi.CreateRetryConfiguration(
+        hetznerCloudApi.WithMaxRetryAttempts(0),
+        hetznerCloudApi.WithRetryOnTimeout(true),
+        hetznerCloudApi.WithRetryInterval(1),
+        hetznerCloudApi.WithMaximumRetryWaitTime(0),
+        hetznerCloudApi.WithBackoffFactor(2),
+        hetznerCloudApi.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
+        hetznerCloudApi.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
     )
 }
 ```

@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-PlayerdashptreboundlogsGETAsync(
+PlayerdashptreboundlogsGetAsync(
     string season = null,
     string seasonType = null,
-    string playerID = null,
-    string teamID = null,
+    string playerId = null,
+    string teamId = null,
     string outcome = null,
     string location = null,
     string month = null,
     string seasonSegment = null,
     string dateFrom = null,
     string dateTo = null,
-    string opponentTeamID = null,
+    string opponentTeamId = null,
     string vsConference = null,
     string vsDivision = null,
     string gameSegment = null,
@@ -31,15 +31,15 @@ PlayerdashptreboundlogsGETAsync(
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Optional | - |
 | `seasonType` | `string` | Query, Optional | - |
-| `playerID` | `string` | Query, Optional | - |
-| `teamID` | `string` | Query, Optional | - |
+| `playerId` | `string` | Query, Optional | - |
+| `teamId` | `string` | Query, Optional | - |
 | `outcome` | `string` | Query, Optional | - |
 | `location` | `string` | Query, Optional | - |
 | `month` | `string` | Query, Optional | - |
 | `seasonSegment` | `string` | Query, Optional | - |
 | `dateFrom` | `string` | Query, Optional | - |
 | `dateTo` | `string` | Query, Optional | - |
-| `opponentTeamID` | `string` | Query, Optional | - |
+| `opponentTeamId` | `string` | Query, Optional | - |
 | `vsConference` | `string` | Query, Optional | - |
 | `vsDivision` | `string` | Query, Optional | - |
 | `gameSegment` | `string` | Query, Optional | - |
@@ -59,7 +59,7 @@ PlayerdashptreboundlogsGETAsync(
 ```csharp
 try
 {
-    await aPIController.PlayerdashptreboundlogsGETAsync();
+    await api.PlayerdashptreboundlogsGetAsync();
 }
 catch (ApiException e)
 {

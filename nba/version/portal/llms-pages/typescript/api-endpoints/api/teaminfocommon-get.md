@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async teaminfocommonGET(
+async teaminfocommonGet(
   season: string,
-  teamID: string,
-  leagueID: string,
+  teamId: string,
+  leagueId: string,
   seasonType: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
@@ -20,8 +20,8 @@ async teaminfocommonGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -38,17 +38,17 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const season = 'Season0';
 
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const seasonType = 'SeasonType8';
 
 try {
-  const response = await apiController.teaminfocommonGET(
+  const response = await api.teaminfocommonGet(
     season,
-    teamID,
-    leagueID,
+    teamId,
+    leagueId,
     seasonType
   );
 

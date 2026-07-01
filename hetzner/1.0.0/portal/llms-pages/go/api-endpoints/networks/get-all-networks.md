@@ -36,7 +36,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := networksController.GetAllNetworks(ctx, nil, nil)
+apiResponse, err := networksApi.GetAllNetworks(ctx, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

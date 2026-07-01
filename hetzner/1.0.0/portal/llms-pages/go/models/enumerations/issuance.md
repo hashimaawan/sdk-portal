@@ -7,16 +7,16 @@ Status of the issuance process of the Certificate
 
 # Class Name
 
-`IssuanceEnum`
+`Issuance`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `PENDING` |
-| `COMPLETED` |
-| `FAILED` |
+| `Pending` |
+| `Completed` |
+| `Failed` |
 
 
 # Example
@@ -25,11 +25,11 @@ Status of the issuance process of the Certificate
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    issuance := models.IssuanceEnum_FAILED
+    issuance := models.Issuance_Failed
 
 }
 ```

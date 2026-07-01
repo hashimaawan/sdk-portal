@@ -4,10 +4,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration option for protocols http and https
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
-`LoadBalancerServiceHTTP`
+`LoadBalancerServiceHttp`
 
 
 # Fields
@@ -19,21 +21,27 @@ Configuration option for protocols http and https
 | `cookie_name` | `str` | Optional | Name of the cookie used for sticky sessions |
 | `redirect_http` | `bool` | Optional | Redirect HTTP requests to HTTPS. Only available if protocol is "https". Default `false` |
 | `sticky_sessions` | `bool` | Optional | Use sticky sessions. Only available if protocol is "http" or "https". Default `false` |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-from hetznercloudapi.models.load_balancer_service_http import LoadBalancerServiceHTTP
+import jsonpickle
 
-load_balancer_service_http = LoadBalancerServiceHTTP(
+from hetznercloudapi.models.load_balancer_service_http import LoadBalancerServiceHttp
+
+load_balancer_service_http = LoadBalancerServiceHttp(
     certificates=[
         897
     ],
     cookie_lifetime=300,
     cookie_name='HCLBSTICKY',
     redirect_http=True,
-    sticky_sessions=True
+    sticky_sessions=True,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

@@ -41,10 +41,10 @@ ctx := context.Background()
 id := 112
 
 body := models.DeleteSubnetRequest{
-    IpRange:              "10.0.1.0/24",
+    IpRange:               "10.0.1.0/24",
 }
 
-apiResponse, err := networkActionsController.DeleteASubnetFromANetwork(ctx, id, &body)
+apiResponse, err := networkActionsApi.DeleteASubnetFromANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

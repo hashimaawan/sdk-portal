@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyME1ldHJpY3MlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -13,13 +15,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Metrics` | [`Metrics`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/metrics.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
-using HetznerCloudAPI.Standard.Models.Containers;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Models.Containers;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 ServersMetricsResponse serversMetricsResponse = new ServersMetricsResponse
@@ -46,9 +50,12 @@ ServersMetricsResponse serversMetricsResponse = new ServersMetricsResponse
                         TimeSeriesValues.FromString("43"),
                     },
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

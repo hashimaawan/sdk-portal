@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkFjdGlvblJlc3BvbnNl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -13,12 +15,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/action.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { ActionResponse, StatusEnum } from 'hetzner-cloud-apilib';
+import { ActionResponse, Status } from 'hetzner-cloud-apilib';
 
 const actionResponse: ActionResponse = {
   action: {
@@ -26,6 +29,9 @@ const actionResponse: ActionResponse = {
     error: {
       code: 'action_failed',
       message: 'Action failed',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: '2016-01-30T23:55:00+00:00',
     id: 42,
@@ -34,10 +40,19 @@ const actionResponse: ActionResponse = {
       {
         id: 42,
         type: 'server',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: '2016-01-30T23:55:00+00:00',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

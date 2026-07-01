@@ -7,7 +7,7 @@ Changes the protection configuration of the Floating IP.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function changeFloatingIPProtection(int $id, ?ChangeProtectionRequest $body = null): ActionResponse
+function changeFloatingIpProtection(int $id, ?ChangeProtectionRequest $body = null): ApiResponse
 ```
 
 
@@ -23,7 +23,7 @@ function changeFloatingIPProtection(int $id, ?ChangeProtectionRequest $body = nu
 
 **201**: The `action` key contains the `change_protection` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,17 +35,23 @@ $body = ChangeProtectionRequestBuilder::init()
     ->delete(true)
     ->build();
 
-$floatingIPActionsController = $client->getFloatingIPActionsController();
+$floatingIpActionsApi = $client->getFloatingIpActionsApi();
+$apiResponse = $floatingIpActionsApi->changeFloatingIpProtection(
+    $id,
+    $body
+);
 
-try {
-    $result = $floatingIPActionsController->changeFloatingIPProtection(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

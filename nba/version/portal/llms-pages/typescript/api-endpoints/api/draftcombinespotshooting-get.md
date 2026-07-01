@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async draftcombinespotshootingGET(
-  leagueID: string,
+async draftcombinespotshootingGet(
+  leagueId: string,
   seasonYear: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
@@ -17,7 +17,7 @@ async draftcombinespotshootingGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonYear` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -32,13 +32,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const seasonYear = 'SeasonYear6';
 
 try {
-  const response = await apiController.draftcombinespotshootingGET(
-    leagueID,
+  const response = await api.draftcombinespotshootingGet(
+    leagueId,
     seasonYear
   );
 

@@ -7,11 +7,7 @@ Returns all Firewall objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllFirewalls(
-    ?string $sort = null,
-    ?string $name = null,
-    ?string $labelSelector = null
-): FirewallsResponse
+function getAllFirewalls(?string $sort = null, ?string $name = null, ?string $labelSelector = null): ApiResponse
 ```
 
 
@@ -19,7 +15,7 @@ function getAllFirewalls(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`?string(SortEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`?string(Sort)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `?string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `?string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 
@@ -28,20 +24,26 @@ function getAllFirewalls(
 
 **200**: The `firewalls` key contains an array of Firewall objects
 
-[`FirewallsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewalls-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`FirewallsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewalls-response.md).
 
 
 # Example Usage
 
 ```php
-$firewallsController = $client->getFirewallsController();
+$firewallsApi = $client->getFirewallsApi();
+$apiResponse = $firewallsApi->getAllFirewalls();
 
-try {
-    $result = $firewallsController->getAllFirewalls();
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'FirewallsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

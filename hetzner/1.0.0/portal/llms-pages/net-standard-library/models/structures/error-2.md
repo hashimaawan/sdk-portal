@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 If issuance or renewal reports `failed`, this property contains information about what happened
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -16,17 +18,20 @@ If issuance or renewal reports `failed`, this property contains information abou
 |  --- | --- | --- | --- |
 | `Code` | `string` | Optional | - |
 | `Message` | `string` | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 Error2 error2 = new Error2
 {
     Code = "code2",
     Message = "message4",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

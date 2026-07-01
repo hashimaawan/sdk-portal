@@ -7,7 +7,7 @@ Deletes a PlacementGroup.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAPlacementGroupAsync(
+CompletableFuture<ApiResponse<Void>> deleteAPlacementGroupAsync(
     final int id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteAPlacementGroupAsync(
 ```java
 int id = 112;
 
-placementGroupsController.deleteAPlacementGroupAsync(id).thenAccept(result -> {
+placementGroupsApi.deleteAPlacementGroupAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

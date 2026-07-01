@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> teamplayeronoffdetailsGETAsync(
-    final String teamID,
+CompletableFuture<ApiResponse<Void>> teamplayeronoffdetailsGetAsync(
+    final String teamId,
     final String measureType,
     final String perMode,
     final String plusMinus,
@@ -20,7 +20,7 @@ CompletableFuture<Void> teamplayeronoffdetailsGETAsync(
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String gameSegment,
@@ -33,7 +33,7 @@ CompletableFuture<Void> teamplayeronoffdetailsGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `teamID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
 | `measureType` | `String` | Query, Required | - |
 | `perMode` | `String` | Query, Required | - |
 | `plusMinus` | `String` | Query, Required | - |
@@ -47,7 +47,7 @@ CompletableFuture<Void> teamplayeronoffdetailsGETAsync(
 | `seasonSegment` | `String` | Query, Required | - |
 | `dateFrom` | `String` | Query, Required | - |
 | `dateTo` | `String` | Query, Required | - |
-| `opponentTeamID` | `String` | Query, Required | - |
+| `opponentTeamId` | `String` | Query, Required | - |
 | `vsConference` | `String` | Query, Required | - |
 | `vsDivision` | `String` | Query, Required | - |
 | `gameSegment` | `String` | Query, Required | - |
@@ -65,7 +65,7 @@ CompletableFuture<Void> teamplayeronoffdetailsGETAsync(
 # Example Usage
 
 ```java
-String teamID = "TeamID8";
+String teamId = "TeamID8";
 String measureType = "MeasureType8";
 String perMode = "PerMode6";
 String plusMinus = "PlusMinus0";
@@ -79,15 +79,16 @@ String month = "Month0";
 String seasonSegment = "SeasonSegment8";
 String dateFrom = "DateFrom6";
 String dateTo = "DateTo0";
-String opponentTeamID = "OpponentTeamID6";
+String opponentTeamId = "OpponentTeamID6";
 String vsConference = "VsConference6";
 String vsDivision = "VsDivision6";
 String gameSegment = "GameSegment6";
 String period = "Period2";
 String lastNGames = "LastNGames4";
 
-aPIController.teamplayeronoffdetailsGETAsync(teamID, measureType, perMode, plusMinus, paceAdjust, rank, season, seasonType, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
+api.teamplayeronoffdetailsGetAsync(teamId, measureType, perMode, plusMinus, paceAdjust, rank, season, seasonType, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

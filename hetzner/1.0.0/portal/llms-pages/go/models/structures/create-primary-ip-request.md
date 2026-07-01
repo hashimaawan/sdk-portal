@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkNyZWF0ZVByaW1hcnlJUFJlcXVlc3Q
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
-`CreatePrimaryIPRequest`
+`CreatePrimaryIpRequest`
 
 
 # Fields
@@ -18,7 +20,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Datacenter` | `*string` | Optional | ID or name of Datacenter the Primary IP will be bound to. Needs to be omitted if `assignee_id` is passed. |
 | `Labels` | `*interface{}` | Optional | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | - |
-| `Type` | [`models.Type51Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-51.md) | Required | Primary IP type |
+| `Type` | [`models.Type51`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-51.md) | Required | Primary IP type |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,18 +30,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    createPrimaryIPRequest := models.CreatePrimaryIPRequest{
-        AssigneeId:           models.ToPointer(17),
-        AssigneeType:         "server",
-        AutoDelete:           models.ToPointer(false),
-        Datacenter:           models.ToPointer("fsn1-dc8"),
-        Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-        Name:                 "my-ip",
-        Type:                 models.Type51Enum_IPV4,
+    createPrimaryIpRequest := models.CreatePrimaryIpRequest{
+        AssigneeId:            models.ToPointer(17),
+        AssigneeType:          "server",
+        AutoDelete:            models.ToPointer(false),
+        Datacenter:            models.ToPointer("fsn1-dc8"),
+        Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+        Name:                  "my-ip",
+        Type:                  models.Type51_Ipv4,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

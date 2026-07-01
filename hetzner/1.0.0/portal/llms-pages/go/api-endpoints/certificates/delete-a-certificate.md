@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := certificatesController.DeleteACertificate(ctx, id)
+resp, err := certificatesApi.DeleteACertificate(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

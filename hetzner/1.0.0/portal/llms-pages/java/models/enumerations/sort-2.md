@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort2Enum`
+`Sort2`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.Sort2Enum;
+import cloud.hetzner.api.models.Sort2;
 
-Sort2Enum sort2 = Sort2Enum.ENUM_CREATEDASC;
+Sort2 sort2 = Sort2.ENUM_CREATEDASC;
 ```
 
 

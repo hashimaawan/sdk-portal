@@ -42,7 +42,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := firewallsController.DeleteAFirewall(ctx, id)
+resp, err := firewallsApi.DeleteAFirewall(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

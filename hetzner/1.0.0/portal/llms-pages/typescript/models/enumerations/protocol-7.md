@@ -7,7 +7,7 @@ Protocol of the Load Balancer
 
 # Enum Type Name
 
-`Protocol7Enum`
+`Protocol7`
 
 
 # Fields
@@ -22,9 +22,9 @@ Protocol of the Load Balancer
 # Example
 
 ```ts
-import { Protocol7Enum } from 'hetzner-cloud-apilib';
+import { Protocol7 } from 'hetzner-cloud-apilib';
 
-const protocol7 = Protocol7Enum.Http;
+const protocol7 = Protocol7.Http;
 ```
 
 

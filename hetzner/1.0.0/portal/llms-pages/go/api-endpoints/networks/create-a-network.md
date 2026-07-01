@@ -39,11 +39,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreateNetworkRequest{
-    IpRange:              "10.0.0.0/16",
-    Name:                 "mynet",
+    IpRange:               "10.0.0.0/16",
+    Name:                  "mynet",
 }
 
-apiResponse, err := networksController.CreateANetwork(ctx, &body)
+apiResponse, err := networksApi.CreateANetwork(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

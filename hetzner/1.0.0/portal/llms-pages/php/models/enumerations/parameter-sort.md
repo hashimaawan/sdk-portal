@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterSortEnum`
+`ParameterSort`
 
 
 # Fields
@@ -35,9 +35,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\ParameterSortEnum;
+use HetznerCloudApiLib\Models\ParameterSort;
 
-$parameterSort = ParameterSortEnum::ENUM_STATUSDESC;
+$parameterSort = ParameterSort::ENUM_STATUSDESC;
 ```
 
 

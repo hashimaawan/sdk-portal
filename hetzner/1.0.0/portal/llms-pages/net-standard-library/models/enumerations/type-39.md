@@ -7,7 +7,7 @@ Algorithm of the Load Balancer
 
 # Enum Type Name
 
-`Type39Enum`
+`Type39`
 
 
 # Fields
@@ -21,9 +21,9 @@ Algorithm of the Load Balancer
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type39Enum type39 = Type39Enum.RoundRobin;
+Type39 type39 = Type39.RoundRobin;
 ```
 
 

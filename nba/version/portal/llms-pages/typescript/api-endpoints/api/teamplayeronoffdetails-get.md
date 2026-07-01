@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async teamplayeronoffdetailsGET(
-  teamID: string,
+async teamplayeronoffdetailsGet(
+  teamId: string,
   measureType: string,
   perMode: string,
   plusMinus: string,
@@ -20,7 +20,7 @@ async teamplayeronoffdetailsGET(
   seasonSegment: string,
   dateFrom: string,
   dateTo: string,
-  opponentTeamID: string,
+  opponentTeamId: string,
   vsConference: string,
   vsDivision: string,
   gameSegment: string,
@@ -35,7 +35,7 @@ async teamplayeronoffdetailsGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `plusMinus` | `string` | Query, Required | - |
@@ -49,7 +49,7 @@ async teamplayeronoffdetailsGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -68,7 +68,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
 const measureType = 'MeasureType8';
 
@@ -96,7 +96,7 @@ const dateFrom = 'DateFrom6';
 
 const dateTo = 'DateTo0';
 
-const opponentTeamID = 'OpponentTeamID6';
+const opponentTeamId = 'OpponentTeamID6';
 
 const vsConference = 'VsConference6';
 
@@ -109,8 +109,8 @@ const period = 'Period2';
 const lastNGames = 'LastNGames4';
 
 try {
-  const response = await apiController.teamplayeronoffdetailsGET(
-    teamID,
+  const response = await api.teamplayeronoffdetailsGet(
+    teamId,
     measureType,
     perMode,
     plusMinus,
@@ -124,7 +124,7 @@ try {
     seasonSegment,
     dateFrom,
     dateTo,
-    opponentTeamID,
+    opponentTeamId,
     vsConference,
     vsDivision,
     gameSegment,

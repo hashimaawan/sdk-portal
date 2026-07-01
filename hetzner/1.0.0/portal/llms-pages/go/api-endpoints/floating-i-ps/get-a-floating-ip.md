@@ -7,7 +7,7 @@ Returns a specific Floating IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetAFloatingIP(
+GetAFloatingIp(
     ctx context.Context,
     id int) (
     models.ApiResponse[models.FloatingIpsResponse2],
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := floatingIPsController.GetAFloatingIP(ctx, id)
+apiResponse, err := floatingIPsApi.GetAFloatingIp(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

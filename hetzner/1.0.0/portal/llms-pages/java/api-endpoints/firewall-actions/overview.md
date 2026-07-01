@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get instance
 
-An instance of the `FirewallActionsController` class can be accessed from the API Client.
+An instance of the `FirewallActionsApi` class can be accessed from the API Client.
 
 ```
-FirewallActionsController firewallActionsController = client.getFirewallActionsController();
+FirewallActionsApi firewallActionsApi = client.getFirewallActionsApi();
 ```
 
 

@@ -42,7 +42,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.ResetRootPasswordOfAServer(ctx, id)
+apiResponse, err := serverActionsApi.ResetRootPasswordOfAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

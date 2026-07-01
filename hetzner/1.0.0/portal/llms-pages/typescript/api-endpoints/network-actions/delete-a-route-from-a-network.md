@@ -44,7 +44,7 @@ const body: AddDeleteRouteRequest = {
 };
 
 try {
-  const response = await networkActionsController.deleteARouteFromANetwork(
+  const response = await networkActionsApi.deleteARouteFromANetwork(
     id,
     body
   );

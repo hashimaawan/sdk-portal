@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IP address (v4)
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -16,16 +18,22 @@ IP address (v4)
 |  --- | --- | --- | --- |
 | `dns_ptr` | `str` | Optional | Reverse DNS PTR entry for the IPv4 address of this Load Balancer |
 | `ip` | `str` | Optional | IP address (v4) of this Load Balancer |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.ipv_4 import Ipv4
 
 ipv_4 = Ipv4(
     dns_ptr='lb1.example.com',
-    ip='1.2.3.4'
+    ip='1.2.3.4',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

@@ -7,7 +7,7 @@ Gets a specific PlacementGroup object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAPlacementGroup(int $id): PlacementGroupResponse
+function getAPlacementGroup(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAPlacementGroup(int $id): PlacementGroupResponse
 
 **200**: The `placement_group` key contains a PlacementGroup object
 
-[`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAPlacementGroup(int $id): PlacementGroupResponse
 ```php
 $id = 112;
 
-$placementGroupsController = $client->getPlacementGroupsController();
+$placementGroupsApi = $client->getPlacementGroupsApi();
+$apiResponse = $placementGroupsApi->getAPlacementGroup($id);
 
-try {
-    $result = $placementGroupsController->getAPlacementGroup($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'PlacementGroupResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

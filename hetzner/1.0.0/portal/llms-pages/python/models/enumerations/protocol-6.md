@@ -7,7 +7,7 @@ Type of the health check
 
 # Enum Type Name
 
-`Protocol6Enum`
+`Protocol6`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the health check
 # Example
 
 ```python
-from hetznercloudapi.models.protocol_6_enum import Protocol6Enum
+from hetznercloudapi.models.protocol_6 import Protocol6
 
-protocol_6 = Protocol6Enum.TCP
+protocol_6 = Protocol6.TCP
 ```
 
 

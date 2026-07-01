@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := datacentersController.GetADatacenter(ctx, id)
+apiResponse, err := datacentersApi.GetADatacenter(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

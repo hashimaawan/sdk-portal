@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkxhYmVsU2VsZWN0b3I
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Selector` | `string` | Required | Label selector |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -21,12 +24,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     labelSelector := models.LabelSelector{
-        Selector:             "env=prod",
+        Selector:              "env=prod",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

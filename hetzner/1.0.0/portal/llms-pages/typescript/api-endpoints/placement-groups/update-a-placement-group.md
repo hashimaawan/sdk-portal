@@ -46,7 +46,7 @@ const body: UpdatePlacementGroupRequest = {
 };
 
 try {
-  const response = await placementGroupsController.updateAPlacementGroup(
+  const response = await placementGroupsApi.updateAPlacementGroup(
     id,
     body
   );

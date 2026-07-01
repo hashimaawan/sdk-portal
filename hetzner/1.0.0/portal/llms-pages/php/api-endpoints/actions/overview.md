@@ -7,10 +7,10 @@ Actions show the results and progress of asynchronous requests to the API.
 
 # Get singleton instance
 
-The singleton instance of the `ActionsController` class can be accessed from the API Client.
+The singleton instance of the `ActionsApi` class can be accessed from the API Client.
 
 ```
-$actionsController = $client->getActionsController();
+$actionsApi = $client->getActionsApi();
 ```
 
 

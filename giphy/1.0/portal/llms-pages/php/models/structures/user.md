@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -20,12 +22,14 @@ The User Object contains information about the user associated with a GIF and UR
 | `profileUrl` | `?string` | Optional | The URL for this user's profile. | getProfileUrl(): ?string | setProfileUrl(?string profileUrl): void |
 | `twitter` | `?string` | Optional | The Twitter username associated with this user, if applicable. | getTwitter(): ?string | setTwitter(?string twitter): void |
 | `username` | `?string` | Optional | The username associated with this user. | getUsername(): ?string | setUsername(?string username): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use GiphyAPILib\Models\Builders\UserBuilder;
+use GiphyApiLib\Models\Builders\UserBuilder;
+use GiphyApiLib\ApiHelper;
 
 $user = UserBuilder::init()
     ->avatarUrl('https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif')
@@ -34,6 +38,7 @@ $user = UserBuilder::init()
     ->profileUrl('https://giphy.com/cheezburger/')
     ->twitter('@joecool4000')
     ->username('joecool4000')
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

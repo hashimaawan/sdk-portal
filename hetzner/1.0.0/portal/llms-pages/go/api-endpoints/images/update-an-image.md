@@ -41,11 +41,11 @@ ctx := context.Background()
 id := 112
 
 body := models.UpdateImageRequest{
-    Description:          models.ToPointer("My new Image description"),
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
+    Description:           models.ToPointer("My new Image description"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
 }
 
-apiResponse, err := imagesController.UpdateAnImage(ctx, id, &body)
+apiResponse, err := imagesApi.UpdateAnImage(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -39,7 +39,7 @@ const id = 112;
 const actionId = 224;
 
 try {
-  const response = await networkActionsController.getAnActionForANetwork(
+  const response = await networkActionsApi.getAnActionForANetwork(
     id,
     actionId
   );

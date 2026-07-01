@@ -11,10 +11,10 @@ To attach an ISO to your Server use `POST /servers/{id}/actions/attach_iso`.
 
 # Get instance
 
-An instance of the `ISOsController` class can be accessed from the API Client.
+An instance of the `IsOsApi` class can be accessed from the API Client.
 
 ```
-is_os_controller = client.is_os
+is_os_api = client.is_os
 ```
 
 

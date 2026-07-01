@@ -11,7 +11,7 @@ def translate_sticker(s)
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -25,7 +25,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`StickersTranslateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/stickers-translate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`StickersTranslateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/stickers-translate-response.md).
 
 
 # Example Usage
@@ -33,8 +33,13 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 ```ruby
 s = 's8'
 
-result = stickers_controller.translate_sticker(s)
-puts result
+result = stickers_api.translate_sticker(s)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

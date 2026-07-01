@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkFwcGxpZWRUbw
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,28 +17,44 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `applied_to_resources` | [`Array[AppliedToResource]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/applied-to-resource.md) | Optional | - |
 | `label_selector` | [`LabelSelector`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/label-selector.md) | Optional | - |
 | `server` | [`Server`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/server.md) | Optional | - |
-| `type` | [`Type6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-6.md) | Required | Type of resource referenced |
+| `type` | [`Type6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-6.md) | Required | Type of resource referenced |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 applied_to = AppliedTo.new(
-  Type6Enum::SERVER,
-  [
+  type: Type6::SERVER,
+  applied_to_resources: [
     AppliedToResource.new(
-      Server.new(
-        14
+      server: Server.new(
+        id: 14,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      Type5Enum::SERVER
+      type: Type5::SERVER,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  LabelSelector.new(
-    'selector8'
+  label_selector: LabelSelector.new(
+    selector: 'selector8',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Server.new(
-    14
-  )
+  server: Server.new(
+    id: 14,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

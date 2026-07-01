@@ -19,10 +19,10 @@ Note that a Primary IP can only be assigned to a Server in the same Datacenter l
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CreateAPrimaryIP(
+CreateAPrimaryIp(
     ctx context.Context,
-    body *models.CreatePrimaryIPRequest) (
-    models.ApiResponse[models.CreatePrimaryIPResponse],
+    body *models.CreatePrimaryIpRequest) (
+    models.ApiResponse[models.CreatePrimaryIpResponse],
     error)
 ```
 
@@ -31,14 +31,14 @@ CreateAPrimaryIP(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`*models.CreatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`*models.CreatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.CreatePrimaryIPResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/create-primary-ip-response.md).
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.CreatePrimaryIpResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
@@ -46,17 +46,17 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-body := models.CreatePrimaryIPRequest{
-    AssigneeId:           models.ToPointer(17),
-    AssigneeType:         "server",
-    AutoDelete:           models.ToPointer(false),
-    Datacenter:           models.ToPointer("fsn1-dc8"),
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 "my-ip",
-    Type:                 models.Type51Enum_IPV4,
+body := models.CreatePrimaryIpRequest{
+    AssigneeId:            models.ToPointer(17),
+    AssigneeType:          "server",
+    AutoDelete:            models.ToPointer(false),
+    Datacenter:            models.ToPointer("fsn1-dc8"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  "my-ip",
+    Type:                  models.Type51_Ipv4,
 }
 
-apiResponse, err := primaryIPsController.CreateAPrimaryIP(ctx, &body)
+apiResponse, err := primaryIPsApi.CreateAPrimaryIp(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

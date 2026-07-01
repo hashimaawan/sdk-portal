@@ -13,10 +13,7 @@ Enabling rescue mode will not [reboot](https://docs.hetzner.cloud/#server-action
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function enableRescueModeForAServer(
-    int $id,
-    ?ServersActionsEnableRescueRequest $body = null
-): ServersActionsEnableRescueResponse
+function enableRescueModeForAServer(int $id, ?ServersActionsEnableRescueRequest $body = null): ApiResponse
 ```
 
 
@@ -34,7 +31,7 @@ function enableRescueModeForAServer(
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-enable-rescue-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-enable-rescue-response.md).
 
 
 # Example Usage
@@ -50,17 +47,23 @@ $body = ServersActionsEnableRescueRequestBuilder::init()
     )
     ->build();
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->enableRescueModeForAServer(
+    $id,
+    $body
+);
 
-try {
-    $result = $serverActionsController->enableRescueModeForAServer(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersActionsEnableRescueResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

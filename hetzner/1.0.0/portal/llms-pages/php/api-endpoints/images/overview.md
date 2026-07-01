@@ -27,10 +27,10 @@ Prebuild images with specific software configurations, e.g. “Wordpress”. All
 
 # Get singleton instance
 
-The singleton instance of the `ImagesController` class can be accessed from the API Client.
+The singleton instance of the `ImagesApi` class can be accessed from the API Client.
 
 ```
-$imagesController = $client->getImagesController();
+$imagesApi = $client->getImagesApi();
 ```
 
 

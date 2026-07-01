@@ -7,7 +7,7 @@ The type of the Floating IP
 
 # Enum Type Name
 
-`Type48Enum`
+`Type48`
 
 
 # Fields
@@ -21,9 +21,9 @@ The type of the Floating IP
 # Example
 
 ```python
-from hetznercloudapi.models.type_48_enum import Type48Enum
+from hetznercloudapi.models.type_48 import Type48
 
-type_48 = Type48Enum.IPV4
+type_48 = Type48.IPV4
 ```
 
 

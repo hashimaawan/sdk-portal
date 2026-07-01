@@ -7,7 +7,7 @@ Status of the issuance process of the Certificate
 
 # Enum Type Name
 
-`IssuanceEnum`
+`Issuance`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the issuance process of the Certificate
 # Example
 
 ```ts
-import { IssuanceEnum } from 'hetzner-cloud-apilib';
+import { Issuance } from 'hetzner-cloud-apilib';
 
-const issuance = IssuanceEnum.Failed;
+const issuance = Issuance.Failed;
 ```
 
 

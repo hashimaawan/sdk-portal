@@ -23,7 +23,7 @@ def get_a_primary_ip(self,
 
 **200**: The `primary_ip` key contains a Primary IP object
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_a_primary_ip(self,
 ```python
 id = 112
 
-result = primary_i_ps_controller.get_a_primary_ip(id)
-print(result)
+result = primary_i_ps_api.get_a_primary_ip(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

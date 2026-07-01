@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location of the Volume. Volume can only be attached to Servers in the same Location.
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -22,20 +24,24 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 | `longitude` | `Float` | Required | Longitude of the city closest to the Location |
 | `name` | `String` | Required | Unique identifier of the Location |
 | `network_zone` | `String` | Required | Name of network zone this Location resides in |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 location16 = Location16.new(
-  'Falkenstein',
-  'DE',
-  'Falkenstein DC Park 1',
-  1,
-  50.47612,
-  12.370071,
-  'fsn1',
-  'eu-central'
+  city: 'Falkenstein',
+  country: 'DE',
+  description: 'Falkenstein DC Park 1',
+  id: 1,
+  latitude: 50.47612,
+  longitude: 12.370071,
+  name: 'fsn1',
+  network_zone: 'eu-central',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

@@ -44,11 +44,11 @@ const id = 112;
 
 const body: CreateImageRequest = {
   description: 'my image',
-  type: Type63Enum.Snapshot,
+  type: Type63.Snapshot,
 };
 
 try {
-  const response = await serverActionsController.createImageFromAServer(
+  const response = await serverActionsApi.createImageFromAServer(
     id,
     body
   );

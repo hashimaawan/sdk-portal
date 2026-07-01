@@ -7,7 +7,7 @@ Gets a specific Server type object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAServerType(int $id): ServerTypesResponse1
+function getAServerType(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAServerType(int $id): ServerTypesResponse1
 
 **200**: The `server_type` key in the reply contains a Server type object with this structure
 
-[`ServerTypesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/server-types-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServerTypesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/server-types-response-1.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAServerType(int $id): ServerTypesResponse1
 ```php
 $id = 112;
 
-$serverTypesController = $client->getServerTypesController();
+$serverTypesApi = $client->getServerTypesApi();
+$apiResponse = $serverTypesApi->getAServerType($id);
 
-try {
-    $result = $serverTypesController->getAServerType($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServerTypesResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

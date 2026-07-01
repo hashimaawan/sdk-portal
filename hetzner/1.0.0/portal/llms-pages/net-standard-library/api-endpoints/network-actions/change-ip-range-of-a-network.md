@@ -13,9 +13,9 @@ Note: if the Network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-ChangeIPRangeOfANetworkAsync(
+ChangeIpRangeOfANetworkAsync(
     int id,
-    Models.ChangeIPRangeRequest body = null)
+    Models.ChangeIpRangeRequest body = null)
 ```
 
 
@@ -24,28 +24,28 @@ ChangeIPRangeOfANetworkAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Network |
-| `body` | [`ChangeIPRangeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/change-ip-range-request.md) | Body, Optional | - |
+| `body` | [`ChangeIpRangeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/change-ip-range-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **201**: The `action` key contains the `change_ip_range` Action
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-ChangeIPRangeRequest body = new ChangeIPRangeRequest
+ChangeIpRangeRequest body = new ChangeIpRangeRequest
 {
     IpRange = "10.0.0.0/12",
 };
 
 try
 {
-    ActionResponse result = await networkActionsController.ChangeIPRangeOfANetworkAsync(
+    ApiResponse<ActionResponse> result = await networkActionsApi.ChangeIpRangeOfANetworkAsync(
         id,
         body
     );

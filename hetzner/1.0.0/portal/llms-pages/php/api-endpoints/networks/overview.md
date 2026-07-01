@@ -61,10 +61,10 @@ Networks also support the notion of routes which are automatically applied to pr
 
 # Get singleton instance
 
-The singleton instance of the `NetworksController` class can be accessed from the API Client.
+The singleton instance of the `NetworksApi` class can be accessed from the API Client.
 
 ```
-$networksController = $client->getNetworksController();
+$networksApi = $client->getNetworksApi();
 ```
 
 

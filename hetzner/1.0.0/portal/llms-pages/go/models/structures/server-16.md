@@ -23,7 +23,7 @@ Configuration for type Server, required if type is `server`
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {

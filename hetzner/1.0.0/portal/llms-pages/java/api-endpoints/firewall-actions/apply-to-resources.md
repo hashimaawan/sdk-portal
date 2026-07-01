@@ -17,7 +17,7 @@ Currently servers (public network interface) and label selectors are supported.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionsResponse> applyToResourcesAsync(
+CompletableFuture<ApiResponse<ActionsResponse>> applyToResourcesAsync(
     final int id,
     final ApplyToResourcesRequest body)
 ```
@@ -35,7 +35,7 @@ CompletableFuture<ActionsResponse> applyToResourcesAsync(
 
 **201**: The `actions` key contains multiple `apply_firewall` Actions
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -49,13 +49,13 @@ ApplyToResourcesRequest body = new ApplyToResourcesRequest.Builder(
                 42
             )
             .build())
-            .type(Type7Enum.SERVER)
+            .type(Type7.SERVER)
             .build()
     )
 )
 .build();
 
-firewallActionsController.applyToResourcesAsync(id, body).thenAccept(result -> {
+firewallActionsApi.applyToResourcesAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

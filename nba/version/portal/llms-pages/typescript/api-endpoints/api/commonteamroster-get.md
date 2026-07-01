@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async commonteamrosterGET(
+async commonteamrosterGet(
   season: string,
-  teamID: string,
+  teamId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -18,7 +18,7 @@ async commonteamrosterGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -34,12 +34,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const season = 'Season0';
 
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
 try {
-  const response = await apiController.commonteamrosterGET(
+  const response = await api.commonteamrosterGet(
     season,
-    teamID
+    teamId
   );
 
   // Extracting fully parsed response body.

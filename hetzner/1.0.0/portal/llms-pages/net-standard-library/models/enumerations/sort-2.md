@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort2Enum`
+`Sort2`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Sort2Enum sort2 = Sort2Enum.EnumCreatedasc;
+Sort2 sort2 = Sort2.EnumCreatedasc;
 ```
 
 

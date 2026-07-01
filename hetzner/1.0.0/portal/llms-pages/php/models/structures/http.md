@@ -24,7 +24,7 @@ Additional configuration for protocol http
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\HttpBuilder;
+use HetznerCloudApiLib\Models\Builders\HttpBuilder;
 
 $http = HttpBuilder::init(
     '/'

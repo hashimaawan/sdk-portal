@@ -33,7 +33,7 @@ def set_rules(id,
 
 **201**: The `action` key contains one `set_firewall_rules` Action plus one `apply_firewall` Action per resource where the Firewall is active
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -42,14 +42,13 @@ def set_rules(id,
 id = 112
 
 body = SetRulesRequest.new(
-  [
+  rules: [
     Rule.new(
-      DirectionEnum::ENUM_IN,
-      ProtocolEnum::TCP,
-      'Allow port 80',
-      [],
-      '80',
-      [
+      direction: Direction::ENUM_IN,
+      protocol: Protocol::TCP,
+      description: 'Allow port 80',
+      port: '80',
+      source_ips: [
         '28.239.13.1/32',
         '28.239.14.0/24',
         'ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128'
@@ -58,11 +57,16 @@ body = SetRulesRequest.new(
   ]
 )
 
-result = firewall_actions_controller.set_rules(
+result = firewall_actions_api.set_rules(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

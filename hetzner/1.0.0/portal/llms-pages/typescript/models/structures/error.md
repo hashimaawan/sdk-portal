@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Error message for the Action if error occurred, otherwise null
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,6 +18,7 @@ Error message for the Action if error occurred, otherwise null
 |  --- | --- | --- | --- |
 | `code` | `string` | Required | Fixed machine readable code |
 | `message` | `string` | Required | Humanized error message |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -26,6 +29,9 @@ import { Error } from 'hetzner-cloud-apilib';
 const error: Error = {
   code: 'action_failed',
   message: 'Action failed',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

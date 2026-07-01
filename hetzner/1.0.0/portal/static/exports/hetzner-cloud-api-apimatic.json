@@ -234,28 +234,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Actions",
-          "Description": "Returns all Action objects. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -647,29 +626,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Certificates",
-          "Description": "Returns all Certificate objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"certificates\":[{\"certificate\":\"-----BEGIN CERTIFICATE-----\\n...\",\"created\":\"2019-01-08T12:10:00+00:00\",\"domain_names\":[\"example.com\",\"webmail.example.com\",\"www.example.com\"],\"fingerprint\":\"03:c7:55:9b:2a:d1:04:17:09:f6:d0:7f:18:34:63:d4:3e:5f\",\"id\":897,\"labels\":{\"env\":\"dev\"},\"name\":\"my website cert\",\"not_valid_after\":\"2019-07-08T09:59:59+00:00\",\"not_valid_before\":\"2019-01-08T10:00:00+00:00\",\"status\":null,\"type\":\"uploaded\",\"used_by\":[{\"id\":4711,\"type\":\"load_balancer\"}]}]}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -884,40 +841,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Certificate",
-          "Description": "Creates a new Certificate.\n\nThe default type **uploaded** allows for uploading your existing `certificate` and `private_key` in PEM format. You have to monitor its expiration date and handle renewal yourself.\n\nIn contrast, type **managed** requests a new Certificate from *Let's Encrypt* for the specified `domain_names`. Only domains managed by *Hetzner DNS* are supported. We handle renewal and timely alert the project owner via email if problems occur.\n\nFor type `managed` Certificates the `action` key of the response contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "body",
-              "Value": "{\"domain_names\":[\"example.com\",\"webmail.example.com\",\"www.example.com\"],\"name\":\"my website cert\",\"type\":\"managed\"}"
-            },
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"action\":{\"command\":\"create_certificate\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":13,\"progress\":0,\"resources\":[{\"id\":879,\"type\":\"certificate\"}],\"started\":\"2019-01-08T12:10:00+00:00\",\"status\":\"running\"},\"certificate\":{\"certificate\":null,\"created\":\"2019-01-08T12:10:00+00:00\",\"domain_names\":[\"example.com\",\"webmail.example.com\",\"www.example.com\"],\"fingerprint\":null,\"id\":897,\"labels\":{\"env\":\"dev\"},\"name\":\"my website cert\",\"not_valid_after\":null,\"not_valid_before\":null,\"status\":{\"error\":null,\"issuance\":\"pending\",\"renewal\":\"unavailable\"},\"type\":\"managed\",\"used_by\":[{\"id\":4711,\"type\":\"load_balancer\"}]}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -2069,28 +1993,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Datacenters",
-          "Description": "Returns all Datacenter objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -2449,28 +2352,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Firewalls",
-          "Description": "Returns all Firewall objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -2655,39 +2537,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Firewall",
-          "Description": "Creates a new Firewall.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_already_added`        | Server added more than one time to resource                   |\n| `incompatible_network_type`   | The Network type is incompatible for the given resource       |\n| `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "body",
-              "Value": "{\"apply_to\":[{\"server\":{\"id\":42},\"type\":\"server\"}],\"labels\":{\"env\":\"dev\"},\"name\":\"Corporate Intranet Protection\",\"rules\":[{\"description\":\"Allow port 80\",\"direction\":\"in\",\"port\":\"80\",\"protocol\":\"tcp\",\"source_ips\":[\"28.239.13.1/32\",\"28.239.14.0/24\",\"ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128\"]}]}"
-            },
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -4395,28 +4245,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Floating IPs",
-          "Description": "Returns all Floating IP objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -4597,35 +4426,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Floating IP",
-          "Description": "Creates a new Floating IP assigned to a Server. If you want to create a Floating IP that is not bound to a Server, you need to provide the `home_location` key instead of `server`. This can be either the ID or the name of the Location this IP shall be created in. Note that a Floating IP can be assigned to a Server in any Location later on. For optimal routing it is advised to use the Floating IP in the same Location it was created in.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"action\":{\"command\":\"create_floating_ip\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":13,\"progress\":0,\"resources\":[{\"id\":42,\"type\":\"server\"}],\"started\":\"2016-01-30T23:50:00+00:00\",\"status\":\"running\"},\"floating_ip\":{\"blocked\":false,\"created\":\"2016-01-30T23:50:00+00:00\",\"description\":\"Web Frontend\",\"dns_ptr\":[{\"dns_ptr\":\"server.example.com\",\"ip\":\"2001:db8::1\"}],\"home_location\":{\"city\":\"Falkenstein\",\"country\":\"DE\",\"description\":\"Falkenstein DC Park 1\",\"id\":1,\"latitude\":50.47612,\"longitude\":12.370071,\"name\":\"fsn1\",\"network_zone\":\"eu-central\"},\"id\":4711,\"ip\":\"131.232.99.1\",\"labels\":{\"env\":\"dev\"},\"name\":\"Web Frontend\",\"protection\":{\"delete\":false},\"server\":42,\"type\":\"ipv4\"}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -6602,28 +6403,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Images",
-          "Description": "Returns all Image objects. You can select specific Image types only and sort the results by using URI parameters.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -7836,28 +7616,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all ISOs",
-          "Description": "Returns all available ISO objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -8216,28 +7975,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Load Balancers",
-          "Description": "Gets all existing Load Balancers that you have available.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -8418,35 +8156,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Load Balancer",
-          "Description": "Creates a Load Balancer.\n\n#### Call specific error codes\n\n| Code                                    | Description                                                                                           |\n|-----------------------------------------|-------------------------------------------------------------------------------------------------------|\n| `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |\n| `ip_not_owned`                          | The IP is not owned by the owner of the project of the Load Balancer                                  |\n| `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |\n| `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |\n| `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |\n| `source_port_already_used`              | The source port you are trying to add is already in use                                               |\n| `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"action\":{\"command\":\"create_load_balancer\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":\"2016-01-30T23:56:00+00:00\",\"id\":13,\"progress\":100,\"resources\":[{\"id\":4711,\"type\":\"load_balancer\"}],\"started\":\"2016-01-30T23:55:00+00:00\",\"status\":\"success\"},\"load_balancer\":{\"algorithm\":{\"type\":\"round_robin\"},\"created\":\"2016-01-30T23:50:00+00:00\",\"id\":4711,\"included_traffic\":654321,\"ingoing_traffic\":123456,\"labels\":{\"env\":\"dev\"},\"load_balancer_type\":{\"deprecated\":\"2016-01-30T23:50:00+00:00\",\"description\":\"LB11\",\"id\":1,\"max_assigned_certificates\":10,\"max_connections\":20000,\"max_services\":5,\"max_targets\":25,\"name\":\"lb11\",\"prices\":[{\"location\":\"fsn1\",\"price_hourly\":{\"gross\":\"1.1900000000000000\",\"net\":\"1.0000000000\"},\"price_monthly\":{\"gross\":\"1.1900000000000000\",\"net\":\"1.0000000000\"}}]},\"location\":{\"city\":\"Falkenstein\",\"country\":\"DE\",\"description\":\"Falkenstein DC Park 1\",\"id\":1,\"latitude\":50.47612,\"longitude\":12.370071,\"name\":\"fsn1\",\"network_zone\":\"eu-central\"},\"name\":\"Web Frontend\",\"outgoing_traffic\":123456,\"private_net\":[{\"ip\":\"10.0.0.2\",\"network\":4711}],\"protection\":{\"delete\":false},\"public_net\":{\"enabled\":false,\"ipv4\":{\"ip\":\"1.2.3.4\"},\"ipv6\":{\"ip\":\"2001:db8::1\"}},\"services\":[{\"destination_port\":80,\"health_check\":{\"http\":{\"domain\":\"example.com\",\"path\":\"/\",\"response\":\"{\\\"status\\\": \\\"ok\\\"}\",\"status_codes\":[\"2??,3??\"],\"tls\":false},\"interval\":15,\"port\":4711,\"protocol\":\"http\",\"retries\":3,\"timeout\":10},\"http\":{\"certificates\":[897],\"cookie_lifetime\":300,\"cookie_name\":\"HCLBSTICKY\",\"redirect_http\":true,\"sticky_sessions\":true},\"listen_port\":443,\"protocol\":\"http\",\"proxyprotocol\":false}],\"targets\":[{\"health_status\":[{\"listen_port\":443,\"status\":\"healthy\"}],\"server\":{\"id\":80},\"targets\":[{\"health_status\":[{\"listen_port\":443,\"status\":\"healthy\"}],\"label_selector\":null,\"server\":{\"id\":80},\"type\":\"server\",\"use_private_ip\":true}],\"type\":\"server\",\"use_private_ip\":true}]}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -12364,28 +12074,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Load Balancer Types",
-          "Description": "Gets all Load Balancer type objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -12681,28 +12370,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Locations",
-          "Description": "Returns all Location objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -13094,34 +12762,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Primary IPs",
-          "Description": "Returns all Primary IP objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "ip",
-              "Value": "127.0.0.1"
-            }
-          ],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -13302,35 +12943,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Primary IP",
-          "Description": "Creates a new Primary IP, optionally assigned to a Server.\n\nIf you want to create a Primary IP that is not assigned to a Server, you need to provide the `datacenter` key instead of `assignee_id`. This can be either the ID or the name of the Datacenter this Primary IP shall be created in.\n\nNote that a Primary IP can only be assigned to a Server in the same Datacenter later on.\n\n#### Call specific error codes\n\n| Code                          | Description                                                   |\n|------------------------------ |-------------------------------------------------------------- |\n| `server_not_stopped`          | The specified server is running, but needs to be powered off  |\n| `server_has_ipv4`             | The server already has an ipv4 address                        |\n| `server_has_ipv6`             | The server already has an ipv6 address                        |\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"action\":{\"command\":\"create_primary_ip\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":13,\"progress\":0,\"resources\":[{\"id\":17,\"type\":\"server\"}],\"started\":\"2016-01-30T23:50:00+00:00\",\"status\":\"running\"},\"primary_ip\":{\"assignee_id\":17,\"assignee_type\":\"server\",\"auto_delete\":true,\"blocked\":false,\"created\":\"2016-01-30T23:50:00+00:00\",\"datacenter\":{\"description\":\"Falkenstein DC Park 8\",\"id\":42,\"location\":{\"city\":\"Falkenstein\",\"country\":\"DE\",\"description\":\"Falkenstein DC Park 1\",\"id\":1,\"latitude\":50.47612,\"longitude\":12.370071,\"name\":\"fsn1\",\"network_zone\":\"eu-central\"},\"name\":\"fsn1-dc8\",\"server_types\":{\"available\":[1,2,3],\"available_for_migration\":[1,2,3],\"supported\":[1,2,3]}},\"dns_ptr\":[{\"dns_ptr\":\"server.example.com\",\"ip\":\"2001:db8::1\"}],\"id\":42,\"ip\":\"131.232.99.1\",\"labels\":{\"labelkey\":\"value\"},\"name\":\"my-ip\",\"protection\":{\"delete\":false},\"type\":\"ipv4\"}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -14755,28 +14368,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Networks",
-          "Description": "Gets all existing networks that you have available.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -14955,34 +14547,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Network",
-          "Description": "Creates a network with the specified `ip_range`.\n\nYou may specify one or more `subnets`. You can also add more Subnets later by using the [add subnet action](https://docs.hetzner.cloud/#network-actions-add-a-subnet-to-a-network). If you do not specify an `ip_range` in the subnet we will automatically pick the first available /24 range for you.\n\nYou may specify one or more routes in `routes`. You can also add more routes later by using the [add route action](https://docs.hetzner.cloud/#network-actions-add-a-route-to-a-network).\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -17356,29 +16921,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all PlacementGroups",
-          "Description": "Returns all PlacementGroup objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"placement_groups\":[{\"created\":\"2019-01-08T12:10:00+00:00\",\"id\":897,\"labels\":{\"key\":\"value\"},\"name\":\"my Placement Group\",\"servers\":[4711,4712],\"type\":\"spread\"}]}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -17578,40 +17121,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a PlacementGroup",
-          "Description": "Creates a new PlacementGroup.\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "body",
-              "Value": "{\"name\":\"my Placement Group\",\"type\":\"spread\"}"
-            },
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"placement_group\":{\"created\":\"2019-01-08T12:10:00+00:00\",\"id\":897,\"labels\":{\"key\":\"value\"},\"name\":\"my Placement Group\",\"servers\":[],\"type\":\"spread\"}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -18186,28 +17696,7 @@
       "CollectParameters": false,
       "Parameters": [],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all prices",
-          "Description": "Returns prices for all resources available on the platform. VAT and currency of the Project owner are used for calculations.\n\nBoth net and gross prices are included in the response.\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -18510,32 +17999,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Servers",
-          "Description": "Returns all existing Server objects",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": false,
-              "Name": "x-next"
-            },
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -18716,35 +18180,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Server",
-          "Description": "Creates a new Server. Returns preliminary information about the Server as well as an Action that covers progress of creation.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"action\":{\"command\":\"create_server\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":1,\"progress\":0,\"resources\":[{\"id\":42,\"type\":\"server\"}],\"started\":\"2016-01-30T23:50:00+00:00\",\"status\":\"running\"},\"next_actions\":[{\"command\":\"start_server\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":13,\"progress\":0,\"resources\":[{\"id\":42,\"type\":\"server\"}],\"started\":\"2016-01-30T23:50:00+00:00\",\"status\":\"running\"}],\"root_password\":\"YItygq1v3GYjjMomLaKc\",\"server\":{\"backup_window\":\"22-02\",\"created\":\"2016-01-30T23:50:00+00:00\",\"datacenter\":{\"description\":\"Falkenstein 1 DC 8\",\"id\":1,\"location\":{\"city\":\"Falkenstein\",\"country\":\"DE\",\"description\":\"Falkenstein DC Park 1\",\"id\":1,\"latitude\":50.47612,\"longitude\":12.370071,\"name\":\"fsn1\",\"network_zone\":\"eu-central\"},\"name\":\"fsn1-dc8\",\"server_types\":{\"available\":[1,2,3],\"available_for_migration\":[1,2,3],\"supported\":[1,2,3]}},\"id\":42,\"image\":{\"bound_to\":null,\"created\":\"2016-01-30T23:50:00+00:00\",\"created_from\":{\"id\":1,\"name\":\"Server\"},\"deleted\":null,\"deprecated\":\"2018-02-28T00:00:00+00:00\",\"description\":\"Ubuntu 20.04 Standard 64 bit\",\"disk_size\":10,\"id\":4711,\"image_size\":2.3,\"labels\":{\"env\":\"dev\"},\"name\":\"ubuntu-20.04\",\"os_flavor\":\"ubuntu\",\"os_version\":\"20.04\",\"protection\":{\"delete\":false},\"rapid_deploy\":false,\"status\":\"available\",\"type\":\"snapshot\"},\"included_traffic\":654321,\"ingoing_traffic\":123456,\"iso\":{\"deprecated\":\"2018-02-28T00:00:00+00:00\",\"description\":\"FreeBSD 11.0 x64\",\"id\":4711,\"name\":\"FreeBSD-11.0-RELEASE-amd64-dvd1\",\"type\":\"public\"},\"labels\":{\"env\":\"dev\"},\"load_balancers\":[],\"locked\":false,\"name\":\"my-server\",\"outgoing_traffic\":123456,\"primary_disk_size\":50,\"private_net\":[{\"alias_ips\":[],\"ip\":\"10.0.0.2\",\"mac_address\":\"86:00:ff:2a:7d:e1\",\"network\":4711}],\"protection\":{\"delete\":false,\"rebuild\":false},\"public_net\":{\"firewalls\":[{\"id\":38,\"status\":\"applied\"}],\"floating_ips\":[478],\"ipv4\":{\"blocked\":false,\"dns_ptr\":\"server01.example.com\",\"ip\":\"1.2.3.4\"},\"ipv6\":{\"blocked\":false,\"dns_ptr\":[{\"dns_ptr\":\"server.example.com\",\"ip\":\"2001:db8::1\"}],\"ip\":\"2001:db8::/64\"}},\"rescue_enabled\":false,\"server_type\":{\"cores\":1,\"cpu_type\":\"shared\",\"deprecated\":true,\"description\":\"CX11\",\"disk\":25,\"id\":1,\"memory\":1,\"name\":\"cx11\",\"prices\":[{\"location\":\"fsn1\",\"price_hourly\":{\"gross\":\"1.1900000000000000\",\"net\":\"1.0000000000\"},\"price_monthly\":{\"gross\":\"1.1900000000000000\",\"net\":\"1.0000000000\"}}],\"storage_type\":\"local\"},\"status\":\"initializing\",\"volumes\":[]}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -24211,28 +23647,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Server Types",
-          "Description": "Gets all Server type objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -24623,28 +24038,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all SSH keys",
-          "Description": "Returns all SSH key objects.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -24823,34 +24217,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create an SSH key",
-          "Description": "Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is created, it can be used in other calls such as creating Servers.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -25550,28 +24917,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Get all Volumes",
-          "Description": "Gets all existing Volumes that you have available.",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [],
-          "ExpectedStatus": "200",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBodyMatchMode": "NONE",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -25753,40 +25099,7 @@
         }
       ],
       "Errors": [],
-      "TestCases": [
-        {
-          "Name": "Test Create a Volume",
-          "Description": "Creates a new Volume attached to a Server. If you want to create a Volume that is not attached to a Server, you need to provide the `location` key instead of `server`. This can be either the ID or the name of the Location this Volume will be created in. Note that a Volume can be attached to a Server only in the same Location as the Volume itself.\n\nSpecifying the Server during Volume creation will automatically attach the Volume to that Server after it has been initialized. In that case, the `next_actions` key in the response is an array which contains a single `attach_volume` action.\n\nThe minimum Volume size is 10GB and the maximum size is 10TB (10240GB).\n\nA volume’s name can consist of alphanumeric characters, dashes, underscores, and dots, but has to start and end with an alphanumeric character. The total length is limited to 64 characters. Volume names must be unique per Project.\n\n#### Call specific error codes\n\n| Code                                | Description                                         |\n|-------------------------------------|-----------------------------------------------------|\n| `no_space_left_in_location`         | There is no volume space left in the given location |\n",
-          "Enabled": true,
-          "ShouldPass": true,
-          "InputParameters": [
-            {
-              "IsNull": false,
-              "Name": "body",
-              "Value": "{\"automount\":false,\"format\":\"xfs\",\"labels\":{\"labelkey\":\"value\"},\"location\":\"nbg1\",\"name\":\"test-database\",\"size\":42}"
-            },
-            {
-              "IsNull": false,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedStatus": "201",
-          "ExpectedHeaders": [
-            {
-              "CheckValue": true,
-              "Name": "Content-Type",
-              "Value": "application/json"
-            }
-          ],
-          "ExpectedHeadersAllowExtra": true,
-          "ExpectedBody": "{\"action\":{\"command\":\"create_volume\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":13,\"progress\":0,\"resources\":[{\"id\":42,\"type\":\"server\"},{\"id\":554,\"type\":\"volume\"}],\"started\":\"2016-01-30T23:50:00+00:00\",\"status\":\"running\"},\"next_actions\":[{\"command\":\"attach_volume\",\"error\":{\"code\":\"action_failed\",\"message\":\"Action failed\"},\"finished\":null,\"id\":13,\"progress\":0,\"resources\":[{\"id\":42,\"type\":\"server\"},{\"id\":554,\"type\":\"volume\"}],\"started\":\"2016-01-30T23:50:00+00:00\",\"status\":\"running\"}],\"volume\":{\"created\":\"2016-01-30T23:50:11+00:00\",\"format\":\"xfs\",\"id\":4711,\"labels\":{\"env\":\"dev\"},\"linux_device\":\"/dev/disk/by-id/scsi-0HC_Volume_4711\",\"location\":{\"city\":\"Falkenstein\",\"country\":\"DE\",\"description\":\"Falkenstein DC Park 1\",\"id\":1,\"latitude\":50.47612,\"longitude\":12.370071,\"name\":\"fsn1\",\"network_zone\":\"eu-central\"},\"name\":\"database-storage\",\"protection\":{\"delete\":false},\"server\":12,\"size\":42,\"status\":\"available\"}}",
-          "ExpectedBodyMatchMode": "KEYS",
-          "ExpectedArrayOrderedMatching": false,
-          "ExpectedArrayCheckCount": false,
-          "ResponseMatchSchema": true
-        }
-      ],
+      "TestCases": [],
       "WrapBodyInObject": false,
       "Deprecated": false,
       "XmlRequest": false,
@@ -56014,10 +55327,11 @@
     "UseHttpMethodPrefix": false,
     "UseModelPrefix": false,
     "UseExceptionPrefix": true,
-    "UseEnumPrefix": true,
+    "UseEnumPrefix": false,
     "UseControllerPrefix": true,
+    "ControllerPostfix": "Api",
     "UseConstructorsForConfig": false,
-    "Timeout": 0.0,
+    "Timeout": 30.0,
     "AndroidUseAppManifest": false,
     "iOSUseAppInfoPlist": false,
     "iOSGenerateCoreData": false,
@@ -56031,10 +55345,11 @@
     "JavaUsePropertiesConfig": false,
     "PHPHttpClient": "UNIREST",
     "EnablePHPComposerVersionString": false,
+    "UserAgent": "{language}-SDK/{version} (OS: {os-info}, Engine: {engine}/{engine-version})",
     "EnableGlobalUserAgent": true,
     "EnableAdditionalModelProperties": false,
     "PreserveParameterOrder": true,
-    "ValidateRequiredParameters": false,
+    "ValidateRequiredParameters": true,
     "AppendContentHeaders": true,
     "GenerateInterfaces": false,
     "UseCommonSDKLibrary": false,
@@ -56049,7 +55364,7 @@
     "GenerateCircleConfig": false,
     "GenerateAppveyorConfig": false,
     "GenerateJenkinsConfig": false,
-    "EnableLogging": false,
+    "EnableLogging": true,
     "EnableHttpCache": false,
     "Retries": 0,
     "RetryInterval": 1.0,
@@ -56103,8 +55418,10 @@
     "LiftParameterDescriptionFromCustomType": false,
     "AllowSkippingSSLCertVerification": false,
     "ApplyCustomizations": [],
-    "DoNotSplitWords": [],
-    "ReturnCompleteHttpResponse": false,
+    "DoNotSplitWords": [
+      "oauth"
+    ],
+    "ReturnCompleteHttpResponse": true,
     "ThrowForHttpErrorStatusCodes": true,
     "GenerateModels": true,
     "GenerateEnums": true,
@@ -56113,7 +55430,7 @@
       "Type": "Simple"
     },
     "ForceKeywordArgsInRuby": false,
-    "SymbolizeHashKeysInRuby": false,
+    "SymbolizeHashKeysInRuby": true,
     "UsageExampleEndpoint": {
       "Description": "",
       "EndpointGroupName": "",
@@ -56133,17 +55450,17 @@
     "PascalCaseEnumForCSharp": false,
     "PascalCaseEnumForTypeScript": false,
     "DisableMultipleAuth": false,
-    "AddSingleAuthDeprecatedCode": true,
+    "AddSingleAuthDeprecatedCode": false,
     "EnableExperimentalTypeCombinatorGeneration": false,
     "UseSecuritySchemeNameForSingleAuth": false,
-    "EnableModelKeywordArgsInRuby": false,
+    "EnableModelKeywordArgsInRuby": true,
     "NullifyEmptyResponses": false,
-    "ExtendedAdditionalPropertiesSupport": false,
-    "EnforceStandardizedCasing": false,
+    "ExtendedAdditionalPropertiesSupport": true,
+    "EnforceStandardizedCasing": true,
     "ErrorTemplates": {},
     "GenerateMetadataForTypeScript": false,
-    "CSharpSkipEqualityMethods": false,
-    "CSharpResolveExceptionPropertyCollisions": false,
+    "CSharpSkipEqualityMethods": true,
+    "CSharpResolveExceptionPropertyCollisions": true,
     "PhpMapErrorTypesInCompleteResponse": false,
     "GroupEndpointsByMultipleTags": false
   },

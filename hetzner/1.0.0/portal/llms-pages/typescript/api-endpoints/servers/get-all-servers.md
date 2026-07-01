@@ -10,8 +10,8 @@ Returns all existing Server objects
 async getAllServers(
   name?: string,
   labelSelector?: string,
-  sort?: SortEnum,
-  status?: Status70Enum,
+  sort?: Sort,
+  status?: Status70,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ServersResponse>>
 ```
@@ -23,8 +23,8 @@ async getAllServers(
 |  --- | --- | --- | --- |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `sort` | [`SortEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`Status70Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-70.md) | Query, Optional | Can be used multiple times. The response will only contain Server matching the status |
+| `sort` | [`Sort \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`Status70 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-70.md) | Query, Optional | Can be used multiple times. The response will only contain Server matching the status |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -39,7 +39,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await serversController.getAllServers();
+  const response = await serversApi.getAllServers();
 
   // Extracting fully parsed response body.
   console.log(response.result);

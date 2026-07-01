@@ -8,9 +8,9 @@ The following parameters are configurable for the HttpConfiguration:
 
 | Name | Type | Description | Setter | Getter |
 |  --- | --- | --- | --- | --- |
-| timeout | `float64` | Timeout in seconds.<br>*Default*: `0` | `WithTimeout` | `Timeout()` |
+| timeout | `float64` | Timeout in seconds.<br>*Default*: `30` | `WithTimeout` | `Timeout()` |
 | transport | `httpRoundTripper` | Establishes network connection and caches them for reuse.<br>*Default*: `http.DefaultTransport` | `WithTransport` | `Transport()` |
-| retryConfiguration | [`nbastatsapiRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `nbastatsapi.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
+| retryConfiguration | [`nbaStatsApiRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `nbaStatsApi.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
 
 The httpConfiguration can be initialized as follows:
 
@@ -18,15 +18,15 @@ The httpConfiguration can be initialized as follows:
 package main
 
 import (
-    "nbastatsapi"
+    "nbaStatsApi"
     "net/http"
 )
 
 func main() {
-    httpConfiguration := nbastatsapi.CreateHttpConfiguration(
-        nbastatsapi.WithTimeout(0),
-        nbastatsapi.WithTransport(http.DefaultTransport),
-        nbastatsapi.WithRetryConfiguration(nbastatsapi.DefaultRetryConfiguration()),
+    httpConfiguration := nbaStatsApi.CreateHttpConfiguration(
+        nbaStatsApi.WithTimeout(30),
+        nbaStatsApi.WithTransport(http.DefaultTransport),
+        nbaStatsApi.WithRetryConfiguration(nbaStatsApi.DefaultRetryConfiguration()),
     )
 }
 ```

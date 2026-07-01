@@ -52,13 +52,13 @@ const body: ApplyToResourcesRequest = {
       server: {
         id: 42,
       },
-      type: Type7Enum.Server,
+      type: Type7.Server,
     }
   ],
 };
 
 try {
-  const response = await firewallActionsController.applyToResources(
+  const response = await firewallActionsApi.applyToResources(
     id,
     body
   );

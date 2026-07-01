@@ -19,15 +19,15 @@ def get_all_actions_for_a_floating_ip(self,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `sort` | [`ParameterSortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`ParameterStatusEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`ParameterSort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`ParameterStatus`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
 
 **200**: The `actions` key contains a list of Actions
 
-[`FloatingIpsActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/floating-ips-actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`FloatingIpsActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/floating-ips-actions-response.md).
 
 
 # Example Usage
@@ -35,8 +35,12 @@ def get_all_actions_for_a_floating_ip(self,
 ```python
 id = 112
 
-result = floating_ip_actions_controller.get_all_actions_for_a_floating_ip(id)
-print(result)
+result = floating_ip_actions_api.get_all_actions_for_a_floating_ip(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

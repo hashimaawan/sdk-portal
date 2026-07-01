@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterSortEnum`
+`ParameterSort`
 
 
 # Fields
@@ -35,9 +35,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { ParameterSortEnum } from 'hetzner-cloud-apilib';
+import { ParameterSort } from 'hetzner-cloud-apilib';
 
-const parameterSort = ParameterSortEnum.EnumStatusdesc;
+const parameterSort = ParameterSort.EnumStatusdesc;
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkZsb2F0aW5nSXA
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -23,17 +25,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. | getName(): string | setName(string name): void |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/protection.md) | Required | Protection configuration for the Resource | getProtection(): Protection | setProtection(Protection protection): void |
 | `server` | `?int` | Required | ID of the Server the Floating IP is assigned to, null if it is not assigned at all | getServer(): ?int | setServer(?int server): void |
-| `type` | [`string(Type16Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-16.md) | Required | Type of the Floating IP | getType(): string | setType(string type): void |
+| `type` | [`string(Type16)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-16.md) | Required | Type of the Floating IP | getType(): string | setType(string type): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\FloatingIpBuilder;
-use HetznerCloudAPILib\Models\Builders\DnsPtrBuilder;
-use HetznerCloudAPILib\Models\Builders\HomeLocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Type16Enum;
+use HetznerCloudApiLib\Models\Builders\FloatingIpBuilder;
+use HetznerCloudApiLib\Models\Builders\DnsPtrBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\HomeLocationBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Type16;
 
 $floatingIp = FloatingIpBuilder::init(
     false,
@@ -42,7 +46,9 @@ $floatingIp = FloatingIpBuilder::init(
         DnsPtrBuilder::init(
             'server.example.com',
             '2001:db8::1'
-        )->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     HomeLocationBuilder::init(
         'Falkenstein',
@@ -53,7 +59,9 @@ $floatingIp = FloatingIpBuilder::init(
         12.370071,
         'fsn1',
         'eu-central'
-    )->build(),
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     42,
     '131.232.99.1',
     [
@@ -62,11 +70,14 @@ $floatingIp = FloatingIpBuilder::init(
     'my-resource',
     ProtectionBuilder::init(
         false
-    )->build(),
-    Type16Enum::IPV4
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
+    Type16::IPV4
 )
     ->description('this describes my resource')
     ->server(42)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

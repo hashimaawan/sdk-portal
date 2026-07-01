@@ -7,7 +7,7 @@ Status of the Firewall on the Server
 
 # Enum Type Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
@@ -21,7 +21,7 @@ Status of the Firewall on the Server
 # Example
 
 ```ruby
-status72 = Status72Enum::APPLIED
+status72 = Status72::APPLIED
 ```
 
 

@@ -27,7 +27,7 @@ CreateANetworkAsync(
 
 **201**: The `network` key contains the network that was just created
 
-[`Task<Models.NetworksResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.NetworksResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -41,7 +41,7 @@ CreateNetworkRequest body = new CreateNetworkRequest
 
 try
 {
-    NetworksResponse1 result = await networksController.CreateANetworkAsync(body);
+    ApiResponse<NetworksResponse1> result = await networksApi.CreateANetworkAsync(body);
 }
 catch (ApiException e)
 {

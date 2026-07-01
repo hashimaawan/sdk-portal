@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function leaderstilesGET(
+function leaderstilesGet(
     string $stat,
-    string $leagueID,
+    string $leagueId,
     string $season,
     string $seasonType,
     string $playerOrTeam,
@@ -15,7 +15,7 @@ function leaderstilesGET(
     string $gameScope,
     ?string $game = null,
     ?string $player = null
-): void
+): ApiResponse
 ```
 
 
@@ -24,7 +24,7 @@ function leaderstilesGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `stat` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `playerOrTeam` | `string` | Query, Required | - |
@@ -38,7 +38,7 @@ function leaderstilesGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -46,7 +46,7 @@ function leaderstilesGET(
 ```php
 $stat = 'Stat2';
 
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $season = 'Season0';
 
@@ -58,20 +58,28 @@ $playerScope = 'PlayerScope2';
 
 $gameScope = 'GameScope0';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->leaderstilesGet(
+    $stat,
+    $leagueId,
+    $season,
+    $seasonType,
+    $playerOrTeam,
+    $playerScope,
+    $gameScope
+);
 
-try {
-    $aPIController->leaderstilesGET(
-        $stat,
-        $leagueID,
-        $season,
-        $seasonType,
-        $playerOrTeam,
-        $playerScope,
-        $gameScope
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

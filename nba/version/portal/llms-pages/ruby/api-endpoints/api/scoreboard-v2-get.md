@@ -24,7 +24,7 @@ def scoreboard_v2_get(game_date,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -36,11 +36,17 @@ league_id = 'LeagueID4'
 
 day_offset = 'DayOffset6'
 
-client_controller.scoreboard_v2_get(
+result = client_api.scoreboard_v2_get(
   game_date,
   league_id,
   day_offset
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

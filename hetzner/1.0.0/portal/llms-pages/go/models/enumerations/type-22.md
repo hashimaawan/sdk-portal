@@ -7,18 +7,18 @@ Type of the Image
 
 # Class Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SYSTEM` |
-| `APP` |
-| `SNAPSHOT` |
-| `BACKUP` |
-| `TEMPORARY` |
+| `System` |
+| `App` |
+| `Snapshot` |
+| `Backup` |
+| `Temporary` |
 
 
 # Example
@@ -27,11 +27,11 @@ Type of the Image
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type22 := models.Type22Enum_TEMPORARY
+    type22 := models.Type22_Temporary
 
 }
 ```

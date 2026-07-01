@@ -4,10 +4,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration option for protocols http and https
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
-`LoadBalancerServiceHTTP`
+`LoadBalancerServiceHttp`
 
 
 # Fields
@@ -19,6 +21,7 @@ Configuration option for protocols http and https
 | `CookieName` | `*string` | Optional | Name of the cookie used for sticky sessions |
 | `RedirectHttp` | `*bool` | Optional | Redirect HTTP requests to HTTPS. Only available if protocol is "https". Default `false` |
 | `StickySessions` | `*bool` | Optional | Use sticky sessions. Only available if protocol is "http" or "https". Default `false` |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,18 +30,21 @@ Configuration option for protocols http and https
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    loadBalancerServiceHTTP := models.LoadBalancerServiceHTTP{
-        Certificates:         []int{
+    loadBalancerServiceHttp := models.LoadBalancerServiceHttp{
+        Certificates:          []int{
             897,
         },
-        CookieLifetime:       models.ToPointer(300),
-        CookieName:           models.ToPointer("HCLBSTICKY"),
-        RedirectHttp:         models.ToPointer(true),
-        StickySessions:       models.ToPointer(true),
+        CookieLifetime:        models.ToPointer(300),
+        CookieName:            models.ToPointer("HCLBSTICKY"),
+        RedirectHttp:          models.ToPointer(true),
+        StickySessions:        models.ToPointer(true),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

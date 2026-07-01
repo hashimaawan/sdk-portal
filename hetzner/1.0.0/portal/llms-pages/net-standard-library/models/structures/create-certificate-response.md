@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVzcG9uc2U
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -14,12 +16,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Action` | [`NullableAction`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/nullable-action.md) | Optional | - |
 | `Certificate` | [`Certificate`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/certificate.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 CreateCertificateResponse createCertificateResponse = new CreateCertificateResponse
@@ -51,15 +55,18 @@ CreateCertificateResponse createCertificateResponse = new CreateCertificateRespo
             {
                 Id = 4711,
                 Type = "load_balancer",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Status = new Status2
         {
             Error = null,
-            Issuance = IssuanceEnum.Completed,
-            Renewal = RenewalEnum.Failed,
+            Issuance = Issuance.Completed,
+            Renewal = Renewal.Failed,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
-        Type = TypeEnum.Uploaded,
+        Type = HetznerCloudApi.Standard.Models.Type.Uploaded,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Action = new NullableAction
     {
@@ -68,6 +75,7 @@ CreateCertificateResponse createCertificateResponse = new CreateCertificateRespo
         {
             Code = "code2",
             Message = "message4",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Finished = "finished0",
         Id = 238,
@@ -78,21 +86,26 @@ CreateCertificateResponse createCertificateResponse = new CreateCertificateRespo
             {
                 Id = 198,
                 Type = "type0",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             new Resource
             {
                 Id = 198,
                 Type = "type0",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             new Resource
             {
                 Id = 198,
                 Type = "type0",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Started = "started8",
-        Status = StatusEnum.Running,
+        Status = Status.Running,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

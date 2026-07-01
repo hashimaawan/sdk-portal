@@ -42,7 +42,7 @@ const body: AttachVolumeRequest = {
 };
 
 try {
-  const response = await volumeActionsController.attachVolumeToAServer(
+  const response = await volumeActionsApi.attachVolumeToAServer(
     id,
     body
   );

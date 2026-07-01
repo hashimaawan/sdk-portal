@@ -20,7 +20,7 @@ def drafthistory_get(league_id)
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -28,7 +28,13 @@ def drafthistory_get(league_id)
 ```ruby
 league_id = 'LeagueID4'
 
-client_controller.drafthistory_get(league_id)
+result = client_api.drafthistory_get(league_id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

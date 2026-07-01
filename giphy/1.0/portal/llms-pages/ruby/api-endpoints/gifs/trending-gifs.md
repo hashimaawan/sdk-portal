@@ -13,7 +13,7 @@ def trending_gifs(limit: 25,
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -29,7 +29,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`GifsTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/gifs-trending-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`GifsTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/gifs-trending-response.md).
 
 
 # Example Usage
@@ -39,11 +39,16 @@ limit = 25
 
 offset = 0
 
-result = gifs_controller.trending_gifs(
+result = gifs_api.trending_gifs(
   limit: limit,
   offset: offset
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

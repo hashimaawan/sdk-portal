@@ -20,7 +20,7 @@ Configuration for type Server, required if type is `server`
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
 Server16 server16 = new Server16
 {

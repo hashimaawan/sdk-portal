@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-DraftcombineplayeranthroGET(
+DraftcombineplayeranthroGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     seasonYear string) (
     http.Response,
     error)
@@ -18,7 +18,7 @@ DraftcombineplayeranthroGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonYear` | `string` | Query, Required | - |
 
 
@@ -34,11 +34,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 seasonYear := "SeasonYear6"
 
-resp, err := aPIController.DraftcombineplayeranthroGET(ctx, leagueID, seasonYear)
+resp, err := api.DraftcombineplayeranthroGet(ctx, leagueId, seasonYear)
 if err != nil {
     log.Fatalln(err)
 } else {

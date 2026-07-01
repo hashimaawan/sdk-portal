@@ -1,13 +1,13 @@
 {
   "info": {
     "name": "Furkot Trips",
-    "_postman_id": "f2dd10e5-9fea-439e-a1cb-14602fc2c684",
+    "_postman_id": "fe408596-632d-4f00-b9ee-0ce125d397ce",
     "description": "Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.\n",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
     {
-      "id": "f938e721-82c6-4da8-b2a7-820fb8397674",
+      "id": "5dc14388-1756-45c7-9938-e7cb8567503f",
       "name": "Trip_GET",
       "request": {
         "url": {
@@ -39,16 +39,16 @@
               "disabled": false
             }
           ],
-          "body": "[\n  {\n    \"begin\": \"2026-09-11T12:06:40.5656668Z\",\n    \"description\": \"description83\",\n    \"end\": \"2026-09-06T12:06:40.5656949Z\",\n    \"id\": \"id80\",\n    \"name\": \"name55\"\n  }\n]",
+          "body": "[\n  {\n    \"begin\": \"2026-09-09T19:01:02.2095441Z\",\n    \"description\": \"description13\",\n    \"end\": \"2026-09-01T19:01:02.2184474Z\",\n    \"id\": \"id10\",\n    \"name\": \"name91\"\n  }\n]",
           "status": "Successful response",
           "code": 200,
           "name": "Response_200",
-          "id": "afce042d-eaa2-4e88-820b-bd01f4dbd7b6"
+          "id": "6be9d33e-52bf-4cb0-bb4c-8020c5a0d179"
         }
       ]
     },
     {
-      "id": "74a7e0bf-1a4d-495d-b676-a2783f01fb19",
+      "id": "90e85f58-efbc-4683-a1ee-4699c3d36cb5",
       "name": "TripStopByTripId_GET",
       "request": {
         "url": {
@@ -60,7 +60,7 @@
             {
               "id": "trip_id",
               "key": "trip_id",
-              "value": "trip_id23",
+              "value": "trip_id40",
               "type": "string",
               "description": "id of the trip"
             }
@@ -89,11 +89,11 @@
               "disabled": false
             }
           ],
-          "body": "[\n  {\n    \"address\": \"address68\",\n    \"arrival\": \"2026-08-27T12:06:40.569327Z\",\n    \"coordinates\": {\n      \"lat\": 127.52986867419683,\n      \"lon\": 101.30460317133345\n    },\n    \"departure\": \"2026-09-16T12:06:40.5706513Z\",\n    \"name\": \"name51\",\n    \"nights\": 56,\n    \"passthru\": false,\n    \"route\": {\n      \"distance\": 204,\n      \"duration\": 11,\n      \"mode\": \"bicycle\",\n      \"polyline\": \"polyline60\"\n    },\n    \"url\": \"url96\"\n  }\n]",
+          "body": "[\n  {\n    \"address\": \"address87\",\n    \"arrival\": \"2026-07-07T19:01:02.2630863Z\",\n    \"coordinates\": {\n      \"lat\": 136.25991248735883,\n      \"lon\": 197.22409276444736\n    },\n    \"departure\": \"2026-10-06T19:01:02.263154Z\",\n    \"name\": \"name5\",\n    \"nights\": 162,\n    \"passthru\": true,\n    \"route\": {\n      \"distance\": 237,\n      \"duration\": 193,\n      \"mode\": \"car\",\n      \"polyline\": \"polyline3\"\n    },\n    \"url\": \"url18\"\n  }\n]",
           "status": "Successful response",
           "code": 200,
           "name": "Response_200",
-          "id": "c8a12cf6-c0cb-48c0-8c50-928b73bb5dca"
+          "id": "cda92fd4-b1b3-44e5-b6d8-9dad6058efb9"
         }
       ]
     }

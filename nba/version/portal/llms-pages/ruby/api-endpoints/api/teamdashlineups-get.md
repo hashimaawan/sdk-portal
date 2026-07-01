@@ -62,7 +62,7 @@ def teamdashlineups_get(group_quantity,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -112,7 +112,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.teamdashlineups_get(
+result = client_api.teamdashlineups_get(
   group_quantity,
   game_id,
   season_type,
@@ -136,6 +136,12 @@ client_controller.teamdashlineups_get(
   period,
   last_n_games
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

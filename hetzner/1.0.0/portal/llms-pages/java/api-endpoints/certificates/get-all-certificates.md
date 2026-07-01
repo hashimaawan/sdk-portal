@@ -7,11 +7,11 @@ Returns all Certificate objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CertificatesResponse> getAllCertificatesAsync(
-    final SortEnum sort,
+CompletableFuture<ApiResponse<CertificatesResponse>> getAllCertificatesAsync(
+    final Sort sort,
     final String name,
     final String labelSelector,
-    final ParameterTypeEnum type)
+    final ParameterType type)
 ```
 
 
@@ -19,23 +19,23 @@ CompletableFuture<CertificatesResponse> getAllCertificatesAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`SortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`Sort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `String` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `String` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `type` | [`ParameterTypeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/parameter-type.md) | Query, Optional | Can be used multiple times. The response will only contain Certificates matching the type. |
+| `type` | [`ParameterType`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/parameter-type.md) | Query, Optional | Can be used multiple times. The response will only contain Certificates matching the type. |
 
 
 # Response Type
 
 **200**: The `certificates` key contains an array of Certificate objects
 
-[`CertificatesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificates-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CertificatesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificates-response.md).
 
 
 # Example Usage
 
 ```java
-certificatesController.getAllCertificatesAsync(null, null, null, null).thenAccept(result -> {
+certificatesApi.getAllCertificatesAsync(null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

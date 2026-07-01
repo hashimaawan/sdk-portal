@@ -7,7 +7,7 @@ Returns a specific SSH key object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async getASSHKey(
+async getASshKey(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<SshKeysResponse1>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await sSHKeysController.getASSHKey(id);
+  const response = await sshKeysApi.getASshKey(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

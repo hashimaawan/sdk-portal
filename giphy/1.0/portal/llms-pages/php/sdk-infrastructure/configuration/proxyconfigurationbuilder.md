@@ -24,10 +24,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ```php
 <?php
 
-use GiphyAPILib\GiphyAPIClientBuilder;
-use GiphyAPILib\Proxy\ProxyConfigurationBuilder;
+use GiphyApiLib\GiphyApiClientBuilder;
+use GiphyApiLib\Proxy\ProxyConfigurationBuilder;
 // initialize the sdk client using a proxy configuration
-$client = GiphyAPIClientBuilder::init()
+$client = GiphyApiClientBuilder::init()
     ->proxyConfiguration(
         ProxyConfigurationBuilder::init('http://localhost')
             ->port(8080)

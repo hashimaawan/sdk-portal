@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location the Floating IP was created in. Routing is optimized for this Location.
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -22,12 +24,14 @@ Location the Floating IP was created in. Routing is optimized for this Location.
 | `Longitude` | `double` | Required | Longitude of the city closest to the Location |
 | `Name` | `string` | Required | Unique identifier of the Location |
 | `NetworkZone` | `string` | Required | Name of network zone this Location resides in |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 HomeLocation homeLocation = new HomeLocation
 {
@@ -39,6 +43,7 @@ HomeLocation homeLocation = new HomeLocation
     Longitude = 12.370071,
     Name = "fsn1",
     NetworkZone = "eu-central",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

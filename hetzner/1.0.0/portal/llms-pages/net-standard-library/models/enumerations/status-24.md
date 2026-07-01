@@ -7,7 +7,7 @@ Whether the Image can be used or if it's still being created or unavailable
 
 # Enum Type Name
 
-`Status24Enum`
+`Status24`
 
 
 # Fields
@@ -22,9 +22,9 @@ Whether the Image can be used or if it's still being created or unavailable
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Status24Enum status24 = Status24Enum.Available;
+Status24 status24 = Status24.Available;
 ```
 
 

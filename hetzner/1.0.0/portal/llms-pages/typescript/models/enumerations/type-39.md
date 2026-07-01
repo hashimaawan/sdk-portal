@@ -7,7 +7,7 @@ Algorithm of the Load Balancer
 
 # Enum Type Name
 
-`Type39Enum`
+`Type39`
 
 
 # Fields
@@ -21,9 +21,9 @@ Algorithm of the Load Balancer
 # Example
 
 ```ts
-import { Type39Enum } from 'hetzner-cloud-apilib';
+import { Type39 } from 'hetzner-cloud-apilib';
 
-const type39 = Type39Enum.RoundRobin;
+const type39 = Type39.RoundRobin;
 ```
 
 

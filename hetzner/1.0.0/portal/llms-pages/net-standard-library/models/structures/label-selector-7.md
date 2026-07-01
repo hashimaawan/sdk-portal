@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Label selector and a list of selected targets
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -15,16 +17,19 @@ Label selector and a list of selected targets
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Selector` | `string` | Required | Label selector |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 LabelSelector7 labelSelector7 = new LabelSelector7
 {
     Selector = "env=prod",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

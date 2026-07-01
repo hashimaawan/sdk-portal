@@ -8,9 +8,9 @@ Also note that when updating labels, the Floating IP’s current set of labels w
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<FloatingIpsResponse2> updateAFloatingIPAsync(
+CompletableFuture<ApiResponse<FloatingIpsResponse2>> updateAFloatingIpAsync(
     final int id,
-    final UpdateFloatingIPRequest body)
+    final UpdateFloatingIpRequest body)
 ```
 
 
@@ -19,27 +19,27 @@ CompletableFuture<FloatingIpsResponse2> updateAFloatingIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`UpdateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/update-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/update-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `floating_ip` key in the reply contains the modified Floating IP object with the new description
 
-[`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-response-2.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-UpdateFloatingIPRequest body = new UpdateFloatingIPRequest.Builder()
+UpdateFloatingIpRequest body = new UpdateFloatingIpRequest.Builder()
     .description("Web Frontend")
     .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
     .name("Web Frontend")
     .build();
 
-floatingIPsController.updateAFloatingIPAsync(id, body).thenAccept(result -> {
+floatingIPsApi.updateAFloatingIpAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

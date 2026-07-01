@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/java/x-redirect/JTI0bSUyRkdpZg
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -27,19 +29,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `SourceTld` | `String` | Optional | The top level domain of the source URL. | String getSourceTld() | setSourceTld(String sourceTld) |
 | `Tags` | `List<String>` | Optional | An array of tags for this GIF (Note: Not available when using the Public Beta Key) | List<String> getTags() | setTags(List<String> tags) |
 | `TrendingDatetime` | `LocalDateTime` | Optional | The date on which this gif was marked trending, if applicable. | LocalDateTime getTrendingDatetime() | setTrendingDatetime(LocalDateTime trendingDatetime) |
-| `Type` | [`TypeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `TypeEnum.GIF` | TypeEnum getType() | setType(TypeEnum type) |
+| `Type` | [`Type`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `Type.GIF` | Type getType() | setType(Type type) |
 | `UpdateDatetime` | `LocalDateTime` | Optional | The date on which this GIF was last updated. | LocalDateTime getUpdateDatetime() | setUpdateDatetime(LocalDateTime updateDatetime) |
 | `Url` | `String` | Optional | The unique URL for this GIF | String getUrl() | setUrl(String url) |
 | `User` | [`User`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/user.md) | Optional | The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more. | User getUser() | setUser(User user) |
 | `Username` | `String` | Optional | The username this GIF is attached to, if applicable | String getUsername() | setUsername(String username) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import com.giphy.api.ApiHelper;
 import com.giphy.api.DateTimeHelper;
 import com.giphy.api.models.Gif;
-import com.giphy.api.models.TypeEnum;
+import com.giphy.api.models.Type;
+import java.io.IOException;
 import java.util.Arrays;
 
 Gif gif = new Gif.Builder()
@@ -58,10 +63,11 @@ Gif gif = new Gif.Builder()
     .sourcePostUrl("http://cheezburger.com/5282328320")
     .sourceTld("cheezburger.com")
     .trendingDatetime(DateTimeHelper.fromRfc8601DateTime("2013-08-01 12:41:48"))
-    .type(TypeEnum.GIF)
+    .type(Type.GIF)
     .updateDatetime(DateTimeHelper.fromRfc8601DateTime("2013-08-01 12:41:48"))
     .url("http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq")
     .username("JoeCool4000")
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

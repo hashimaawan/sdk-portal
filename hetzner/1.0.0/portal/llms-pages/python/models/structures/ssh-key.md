@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRlNzaEtleQ
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -18,11 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `Dict[str, str]` | Required | User-defined labels (key-value pairs) |
 | `name` | `str` | Required | Name of the Resource. Must be unique per Project. |
 | `public_key` | `str` | Required | Public key |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.ssh_key import SshKey
 
 ssh_key = SshKey(
@@ -33,7 +38,10 @@ ssh_key = SshKey(
         'key0': 'labels0'
     },
     name='my-resource',
-    public_key='ssh-rsa AAAjjk76kgf...Xt'
+    public_key='ssh-rsa AAAjjk76kgf...Xt',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

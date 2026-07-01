@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -34,13 +36,15 @@ An object containing data for various available formats and sizes of this GIF.
 | `originalStill` | [`?Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/image.md) | Optional | - | getOriginalStill(): ?Image | setOriginalStill(?Image originalStill): void |
 | `preview` | [`?Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/image.md) | Optional | - | getPreview(): ?Image | setPreview(?Image preview): void |
 | `previewGif` | [`?Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/image.md) | Optional | - | getPreviewGif(): ?Image | setPreviewGif(?Image previewGif): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use GiphyAPILib\Models\Builders\ImagesBuilder;
-use GiphyAPILib\Models\Builders\ImageBuilder;
+use GiphyApiLib\Models\Builders\ImagesBuilder;
+use GiphyApiLib\Models\Builders\ImageBuilder;
+use GiphyApiLib\ApiHelper;
 
 $images = ImagesBuilder::init()
     ->downsized(
@@ -50,6 +54,7 @@ $images = ImagesBuilder::init()
             ->mp4('mp40')
             ->mp4Size('mp4_size2')
             ->size('size2')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->downsizedLarge(
@@ -59,6 +64,7 @@ $images = ImagesBuilder::init()
             ->mp4('mp46')
             ->mp4Size('mp4_size8')
             ->size('size8')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->downsizedMedium(
@@ -68,6 +74,7 @@ $images = ImagesBuilder::init()
             ->mp4('mp42')
             ->mp4Size('mp4_size4')
             ->size('size4')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->downsizedSmall(
@@ -77,6 +84,7 @@ $images = ImagesBuilder::init()
             ->mp4('mp40')
             ->mp4Size('mp4_size2')
             ->size('size2')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->downsizedStill(
@@ -86,8 +94,10 @@ $images = ImagesBuilder::init()
             ->mp4('mp46')
             ->mp4Size('mp4_size8')
             ->size('size2')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

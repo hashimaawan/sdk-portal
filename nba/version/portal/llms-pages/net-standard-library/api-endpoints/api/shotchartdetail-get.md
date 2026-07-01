@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-ShotchartdetailGETAsync(
+ShotchartdetailGetAsync(
     string seasonType,
-    string teamID,
-    string playerID,
-    string gameID,
+    string teamId,
+    string playerId,
+    string gameId,
     string outcome,
     string location,
     string month,
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string position,
@@ -33,16 +33,16 @@ ShotchartdetailGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `position` | `string` | Query, Required | - |
@@ -64,16 +64,16 @@ ShotchartdetailGETAsync(
 
 ```csharp
 string seasonType = "SeasonType8";
-string teamID = "TeamID8";
-string playerID = "PlayerID6";
-string gameID = "GameID8";
+string teamId = "TeamID8";
+string playerId = "PlayerID6";
+string gameId = "GameID8";
 string outcome = "Outcome4";
 string location = "Location4";
 string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string position = "Position8";
@@ -84,18 +84,18 @@ string lastNGames = "LastNGames4";
 string contextMeasure = "ContextMeasure2";
 try
 {
-    await aPIController.ShotchartdetailGETAsync(
+    await api.ShotchartdetailGetAsync(
         seasonType,
-        teamID,
-        playerID,
-        gameID,
+        teamId,
+        playerId,
+        gameId,
         outcome,
         location,
         month,
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         position,

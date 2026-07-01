@@ -7,11 +7,7 @@ Returns all Action objects for a Floating IP. You can sort the results by using 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllActionsForAFloatingIP(
-    int $id,
-    ?string $sort = null,
-    ?string $status = null
-): FloatingIpsActionsResponse
+function getAllActionsForAFloatingIp(int $id, ?string $sort = null, ?string $status = null): ApiResponse
 ```
 
 
@@ -20,15 +16,15 @@ function getAllActionsForAFloatingIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `sort` | [`?string(ParameterSortEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`?string(ParameterStatusEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`?string(ParameterSort)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`?string(ParameterStatus)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
 
 **200**: The `actions` key contains a list of Actions
 
-[`FloatingIpsActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ips-actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`FloatingIpsActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ips-actions-response.md).
 
 
 # Example Usage
@@ -36,14 +32,20 @@ function getAllActionsForAFloatingIP(
 ```php
 $id = 112;
 
-$floatingIPActionsController = $client->getFloatingIPActionsController();
+$floatingIpActionsApi = $client->getFloatingIpActionsApi();
+$apiResponse = $floatingIpActionsApi->getAllActionsForAFloatingIp($id);
 
-try {
-    $result = $floatingIPActionsController->getAllActionsForAFloatingIP($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'FloatingIpsActionsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

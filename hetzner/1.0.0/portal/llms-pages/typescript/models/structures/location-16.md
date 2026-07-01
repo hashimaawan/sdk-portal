@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location of the Volume. Volume can only be attached to Servers in the same Location.
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -22,6 +24,7 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 | `longitude` | `number` | Required | Longitude of the city closest to the Location |
 | `name` | `string` | Required | Unique identifier of the Location |
 | `networkZone` | `string` | Required | Name of network zone this Location resides in |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -38,6 +41,9 @@ const location16: Location16 = {
   longitude: 12.370071,
   name: 'fsn1',
   networkZone: 'eu-central',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

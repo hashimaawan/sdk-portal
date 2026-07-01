@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNyZWF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -19,13 +21,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Name` | `string` | Required | Name of the volume |
 | `Server` | `int?` | Optional | Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) |
 | `Size` | `int` | Required | Size of the Volume in GB |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
-using HetznerCloudAPI.Standard.Utilities;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 CreateVolumeRequest createVolumeRequest = new CreateVolumeRequest
 {
@@ -36,6 +39,7 @@ CreateVolumeRequest createVolumeRequest = new CreateVolumeRequest
     Labels = ApiHelper.JsonDeserialize<object>("{\"labelkey\":\"value\"}"),
     Location = "nbg1",
     Server = 182,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

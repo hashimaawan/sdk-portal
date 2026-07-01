@@ -7,15 +7,15 @@ Type of cpu
 
 # Class Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SHARED` |
-| `DEDICATED` |
+| `Shared` |
+| `Dedicated` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of cpu
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    cpuType := models.CpuTypeEnum_SHARED
+    cpuType := models.CpuType_Shared
 
 }
 ```

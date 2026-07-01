@@ -28,27 +28,29 @@ def create_a_certificate(body: nil)
 
 **201**: The `certificate` key contains the Certificate that was just created. For type `managed` Certificates the `action` key contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.
 
-[`CreateCertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`CreateCertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-certificate-response.md).
 
 
 # Example Usage
 
 ```ruby
 body = CreateCertificateRequest.new(
-  'my website cert',
-  nil,
-  [
+  name: 'my website cert',
+  domain_names: [
     'example.com',
     'webmail.example.com',
     'www.example.com'
   ],
-  nil,
-  nil,
-  Type1Enum::MANAGED
+  type: Type1::MANAGED
 )
 
-result = certificates_controller.create_a_certificate(body: body)
-puts result
+result = certificates_api.create_a_certificate(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

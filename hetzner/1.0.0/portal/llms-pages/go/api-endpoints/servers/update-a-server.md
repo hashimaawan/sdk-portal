@@ -41,11 +41,11 @@ ctx := context.Background()
 id := 112
 
 body := models.UpdateServerRequest{
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("my-server"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("my-server"),
 }
 
-apiResponse, err := serversController.UpdateAServer(ctx, id, &body)
+apiResponse, err := serversApi.UpdateAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

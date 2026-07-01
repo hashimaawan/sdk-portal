@@ -18,14 +18,14 @@ def update_a_floating_ip(id,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `Integer` | Template, Required | ID of the Floating IP |
-| `body` | [`UpdateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/update-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/update-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `floating_ip` key in the reply contains the modified Floating IP object with the new description
 
-[`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/floating-ips-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/floating-ips-response-2.md).
 
 
 # Example Usage
@@ -33,17 +33,22 @@ def update_a_floating_ip(id,
 ```ruby
 id = 112
 
-body = UpdateFloatingIPRequest.new(
-  'Web Frontend',
-  { 'labelkey' => 'value' },
-  'Web Frontend'
+body = UpdateFloatingIpRequest.new(
+  description: 'Web Frontend',
+  labels: { 'labelkey' => 'value' },
+  name: 'Web Frontend'
 )
 
-result = floating_i_ps_controller.update_a_floating_ip(
+result = floating_i_ps_api.update_a_floating_ip(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

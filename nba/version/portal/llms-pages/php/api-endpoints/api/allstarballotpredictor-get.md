@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function allstarballotpredictorGET(
+function allstarballotpredictorGet(
     string $westPlayer1,
     string $westPlayer2,
     string $westPlayer3,
@@ -17,7 +17,7 @@ function allstarballotpredictorGET(
     string $eastPlayer4,
     string $eastPlayer5,
     ?string $pointCap = null
-): void
+): ApiResponse
 ```
 
 
@@ -42,7 +42,7 @@ function allstarballotpredictorGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -68,23 +68,31 @@ $eastPlayer4 = 'EastPlayer44';
 
 $eastPlayer5 = 'EastPlayer54';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->allstarballotpredictorGet(
+    $westPlayer1,
+    $westPlayer2,
+    $westPlayer3,
+    $westPlayer4,
+    $westPlayer5,
+    $eastPlayer1,
+    $eastPlayer2,
+    $eastPlayer3,
+    $eastPlayer4,
+    $eastPlayer5
+);
 
-try {
-    $aPIController->allstarballotpredictorGET(
-        $westPlayer1,
-        $westPlayer2,
-        $westPlayer3,
-        $westPlayer4,
-        $westPlayer5,
-        $eastPlayer1,
-        $eastPlayer2,
-        $eastPlayer3,
-        $eastPlayer4,
-        $eastPlayer5
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.PowerOffAServer(ctx, id)
+apiResponse, err := serverActionsApi.PowerOffAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

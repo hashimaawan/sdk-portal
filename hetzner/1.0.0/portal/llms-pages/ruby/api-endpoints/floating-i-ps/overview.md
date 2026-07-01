@@ -15,10 +15,10 @@ Floating IPs are billed on a monthly basis.
 
 # Get instance
 
-An instance of the `FloatingIPsController` class can be accessed from the API Client.
+An instance of the `FloatingIPsApi` class can be accessed from the API Client.
 
 ```
-floating_i_ps_controller = client.floating_i_ps
+floating_i_ps_api = client.floating_i_ps
 ```
 
 

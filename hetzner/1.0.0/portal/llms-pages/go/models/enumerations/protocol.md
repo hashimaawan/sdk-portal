@@ -7,18 +7,18 @@ Type of traffic to allow
 
 # Class Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `TCP` |
-| `UDP` |
-| `ICMP` |
-| `ESP` |
-| `GRE` |
+| `Tcp` |
+| `Udp` |
+| `Icmp` |
+| `Esp` |
+| `Gre` |
 
 
 # Example
@@ -27,11 +27,11 @@ Type of traffic to allow
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    protocol := models.ProtocolEnum_ESP
+    protocol := models.Protocol_Esp
 
 }
 ```

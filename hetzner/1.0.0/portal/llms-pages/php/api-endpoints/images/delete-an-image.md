@@ -7,7 +7,7 @@ Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function deleteAnImage(int $id): void
+function deleteAnImage(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function deleteAnImage(int $id): void
 
 **204**: Image deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -30,12 +30,20 @@ function deleteAnImage(int $id): void
 ```php
 $id = 112;
 
-$imagesController = $client->getImagesController();
+$imagesApi = $client->getImagesApi();
+$apiResponse = $imagesApi->deleteAnImage($id);
 
-try {
-    $imagesController->deleteAnImage($id);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

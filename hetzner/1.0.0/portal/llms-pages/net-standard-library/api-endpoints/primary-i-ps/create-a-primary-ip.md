@@ -19,8 +19,8 @@ Note that a Primary IP can only be assigned to a Server in the same Datacenter l
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-CreateAPrimaryIPAsync(
-    Models.CreatePrimaryIPRequest body = null)
+CreateAPrimaryIpAsync(
+    Models.CreatePrimaryIpRequest body = null)
 ```
 
 
@@ -28,24 +28,24 @@ CreateAPrimaryIPAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`CreatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-[`Task<Models.CreatePrimaryIPResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.CreatePrimaryIpResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
 
 ```csharp
-CreatePrimaryIPRequest body = new CreatePrimaryIPRequest
+CreatePrimaryIpRequest body = new CreatePrimaryIpRequest
 {
     AssigneeType = "server",
     Name = "my-ip",
-    Type = Type51Enum.Ipv4,
+    Type = Type51.Ipv4,
     AssigneeId = 17,
     AutoDelete = false,
     Datacenter = "fsn1-dc8",
@@ -54,7 +54,7 @@ CreatePrimaryIPRequest body = new CreatePrimaryIPRequest
 
 try
 {
-    CreatePrimaryIPResponse result = await primaryIPsController.CreateAPrimaryIPAsync(body);
+    ApiResponse<CreatePrimaryIpResponse> result = await primaryIPsApi.CreateAPrimaryIpAsync(body);
 }
 catch (ApiException e)
 {

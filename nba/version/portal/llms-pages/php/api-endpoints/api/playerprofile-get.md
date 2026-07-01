@@ -5,15 +5,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function playerprofileGET(
-    string $leagueID,
-    string $playerID,
+function playerprofileGet(
+    string $leagueId,
+    string $playerId,
     string $season,
     string $seasonType,
     string $graphStartSeason,
     string $graphEndSeason,
     string $graphStat
-): void
+): ApiResponse
 ```
 
 
@@ -21,8 +21,8 @@ function playerprofileGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `graphStartSeason` | `string` | Query, Required | - |
@@ -34,15 +34,15 @@ function playerprofileGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
-$playerID = 'PlayerID6';
+$playerId = 'PlayerID6';
 
 $season = 'Season0';
 
@@ -54,20 +54,28 @@ $graphEndSeason = 'GraphEndSeason6';
 
 $graphStat = 'GraphStat0';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->playerprofileGet(
+    $leagueId,
+    $playerId,
+    $season,
+    $seasonType,
+    $graphStartSeason,
+    $graphEndSeason,
+    $graphStat
+);
 
-try {
-    $aPIController->playerprofileGET(
-        $leagueID,
-        $playerID,
-        $season,
-        $seasonType,
-        $graphStartSeason,
-        $graphEndSeason,
-        $graphStat
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

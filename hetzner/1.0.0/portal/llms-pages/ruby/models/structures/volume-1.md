@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlZvbHVtZTE
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -22,37 +24,47 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `server` | `Integer` | Required | ID of the Server the Volume is attached to, null if it is not attached at all |
 | `size` | `Float` | Required | Size in GB of the Volume |
-| `status` | [`Status113Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `status` | [`Status113`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 volume1 = Volume1.new(
-  '2016-01-30T23:55:00+00:00',
-  'xfs',
-  42,
-  {
-    'key0': 'labels8'
+  created: '2016-01-30T23:55:00+00:00',
+  format: 'xfs',
+  id: 42,
+  labels: {
+    'key0' => 'labels8'
   },
-  '/dev/disk/by-id/scsi-0HC_Volume_4711',
-  Location16.new(
-    'Falkenstein',
-    'DE',
-    'Falkenstein DC Park 1',
-    1,
-    50.47612,
-    12.370071,
-    'fsn1',
-    'eu-central'
+  linux_device: '/dev/disk/by-id/scsi-0HC_Volume_4711',
+  location: Location16.new(
+    city: 'Falkenstein',
+    country: 'DE',
+    description: 'Falkenstein DC Park 1',
+    id: 1,
+    latitude: 50.47612,
+    longitude: 12.370071,
+    name: 'fsn1',
+    network_zone: 'eu-central',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  'my-resource',
-  Protection.new(
-    false
+  name: 'my-resource',
+  protection: Protection.new(
+    delete: false,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  12,
-  42,
-  Status113Enum::AVAILABLE
+  server: 12,
+  size: 42,
+  status: Status113::AVAILABLE,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

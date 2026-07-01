@@ -21,14 +21,14 @@ def get_all_primary_i_ps(name: nil,
 | `name` | `String` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `label_selector` | `String` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `ip` | `String` | Query, Optional | Can be used to filter resources by their ip. The response will only contain the resources matching the specified ip. |
-| `sort` | [`Sort2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`Sort2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 
 
 # Response Type
 
 **200**: The `primary_ips` key contains an array of Primary IP objects
 
-[`PrimaryIPsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/primary-i-ps-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`PrimaryIPsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/primary-i-ps-response.md).
 
 
 # Example Usage
@@ -36,8 +36,13 @@ def get_all_primary_i_ps(name: nil,
 ```ruby
 ip = '127.0.0.1'
 
-result = primary_i_ps_controller.get_all_primary_i_ps(ip: ip)
-puts result
+result = primary_i_ps_api.get_all_primary_i_ps(ip: ip)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

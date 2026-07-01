@@ -22,19 +22,24 @@ def create_an_ssh_key(body: nil)
 
 **201**: The `ssh_key` key in the reply contains the object that was just created
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
 
 ```ruby
 body = SshKeysRequest.new(
-  'My ssh key',
-  'ssh-rsa AAAjjk76kgf...Xt'
+  name: 'My ssh key',
+  public_key: 'ssh-rsa AAAjjk76kgf...Xt'
 )
 
-result = ssh_keys_controller.create_an_ssh_key(body: body)
-puts result
+result = ssh_keys_api.create_an_ssh_key(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

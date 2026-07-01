@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get Instance
 
-The instance of the `NetworkActionsController` class can be accessed from the API Client.
+The instance of the `NetworkActionsApi` class can be accessed from the API Client.
 
 ```
-networkActionsController := client.NetworkActionsController()
+networkActionsApi := client.NetworkActionsApi()
 ```
 
 

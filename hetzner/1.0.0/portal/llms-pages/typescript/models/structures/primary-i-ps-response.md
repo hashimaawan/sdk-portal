@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlByaW1hcnlJUHNSZXNwb25zZQ
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -13,13 +15,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `meta` | [`Meta \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/meta.md) | Optional | - |
-| `primaryIps` | [`PrimaryIP1[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/primary-ip-1.md) | Required | - |
+| `primaryIps` | [`PrimaryIp1[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/primary-ip-1.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { PrimaryIPsResponse, Type50Enum } from 'hetzner-cloud-apilib';
+import { PrimaryIPsResponse, Type50 } from 'hetzner-cloud-apilib';
 
 const primaryIPsResponse: PrimaryIPsResponse = {
   primaryIps: [
@@ -41,6 +44,9 @@ const primaryIPsResponse: PrimaryIPsResponse = {
           longitude: 12.370071,
           name: 'fsn1',
           networkZone: 'eu-central',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         name: 'fsn1-dc8',
         serverTypes: {
@@ -59,12 +65,21 @@ const primaryIPsResponse: PrimaryIPsResponse = {
             2,
             3
           ],
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
+        },
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
         },
       },
       dnsPtr: [
         {
           dnsPtr: 'server.example.com',
           ip: '2001:db8::1',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
       id: 42,
@@ -77,8 +92,14 @@ const primaryIPsResponse: PrimaryIPsResponse = {
       name: 'my-resource',
       protection: {
         mDelete: false,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
-      type: Type50Enum.Ipv4,
+      type: Type50.Ipv4,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   meta: {
@@ -89,7 +110,16 @@ const primaryIPsResponse: PrimaryIPsResponse = {
       perPage: 13.34,
       previousPage: 50.02,
       totalEntries: 206.64,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

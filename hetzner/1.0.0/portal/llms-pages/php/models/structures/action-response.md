@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkFjdGlvblJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,16 +15,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Required | - | getAction(): Action | setAction(Action action): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ActionResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
 
 $actionResponse = ActionResponseBuilder::init(
     ActionBuilder::init(
@@ -33,20 +37,27 @@ $actionResponse = ActionResponseBuilder::init(
             Resource2Builder::init(
                 42,
                 'server'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
         '2016-01-30T23:55:00+00:00',
-        StatusEnum::RUNNING
+        Status::RUNNING
     )
         ->error(
             ErrorBuilder::init(
                 'action_failed',
                 'Action failed'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         )
         ->finished('2016-01-30T23:55:00+00:00')
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

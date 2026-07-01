@@ -9,9 +9,9 @@ Returns all Image objects. You can select specific Image types only and sort the
 ```go
 GetAllImages(
     ctx context.Context,
-    sort *models.SortEnum,
-    mType *models.Type21Enum,
-    status *models.Status23Enum,
+    sort *models.Sort,
+    mType *models.Type21,
+    status *models.Status23,
     boundTo *string,
     includeDeprecated *bool,
     name *string,
@@ -25,9 +25,9 @@ GetAllImages(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`*models.SortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
-| `mType` | [`*models.Type21Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-21.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`*models.Status23Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Images matching the status. |
+| `sort` | [`*models.Sort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `mType` | [`*models.Type21`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-21.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`*models.Status23`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Images matching the status. |
 | `boundTo` | `*string` | Query, Optional | Can be used multiple times. Server ID linked to the Image. Only available for Images of type `backup` |
 | `includeDeprecated` | `*bool` | Query, Optional | Can be used multiple times. |
 | `name` | `*string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
@@ -46,7 +46,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := imagesController.GetAllImages(ctx, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := imagesApi.GetAllImages(ctx, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

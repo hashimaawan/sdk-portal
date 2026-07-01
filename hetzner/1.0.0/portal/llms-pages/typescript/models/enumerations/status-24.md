@@ -7,7 +7,7 @@ Whether the Image can be used or if it's still being created or unavailable
 
 # Enum Type Name
 
-`Status24Enum`
+`Status24`
 
 
 # Fields
@@ -22,9 +22,9 @@ Whether the Image can be used or if it's still being created or unavailable
 # Example
 
 ```ts
-import { Status24Enum } from 'hetzner-cloud-apilib';
+import { Status24 } from 'hetzner-cloud-apilib';
 
-const status24 = Status24Enum.Available;
+const status24 = Status24.Available;
 ```
 
 

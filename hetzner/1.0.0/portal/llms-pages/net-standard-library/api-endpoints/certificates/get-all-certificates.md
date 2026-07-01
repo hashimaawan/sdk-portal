@@ -8,10 +8,10 @@ Returns all Certificate objects.
 
 ```csharp
 GetAllCertificatesAsync(
-    Models.SortEnum? sort = null,
+    Models.Sort? sort = null,
     string name = null,
     string labelSelector = null,
-    Models.ParameterTypeEnum? type = null)
+    Models.ParameterType? type = null)
 ```
 
 
@@ -19,17 +19,17 @@ GetAllCertificatesAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`SortEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`Sort?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `type` | [`ParameterTypeEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-type.md) | Query, Optional | Can be used multiple times. The response will only contain Certificates matching the type. |
+| `type` | [`ParameterType?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-type.md) | Query, Optional | Can be used multiple times. The response will only contain Certificates matching the type. |
 
 
 # Response Type
 
 **200**: The `certificates` key contains an array of Certificate objects
 
-[`Task<Models.CertificatesResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/certificates-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.CertificatesResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/certificates-response.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ GetAllCertificatesAsync(
 ```csharp
 try
 {
-    CertificatesResponse result = await certificatesController.GetAllCertificatesAsync();
+    ApiResponse<CertificatesResponse> result = await certificatesApi.GetAllCertificatesAsync();
 }
 catch (ApiException e)
 {

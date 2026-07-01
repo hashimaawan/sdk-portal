@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Monthly costs for a Floating IP type in this Location
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -16,6 +18,7 @@ Monthly costs for a Floating IP type in this Location
 |  --- | --- | --- | --- |
 | `Gross` | `string` | Required | Price with VAT added |
 | `Net` | `string` | Required | Price without VAT |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -24,13 +27,16 @@ Monthly costs for a Floating IP type in this Location
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     priceMonthly7 := models.PriceMonthly7{
-        Gross:                "1.1900000000000000",
-        Net:                  "1.0000000000",
+        Gross:                 "1.1900000000000000",
+        Net:                   "1.0000000000",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

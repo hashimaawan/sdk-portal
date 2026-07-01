@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZUZpcmV3YWxsUmVzcG9uc2U
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,26 +16,28 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `actions` | [`?(Action[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Optional | - | getActions(): ?array | setActions(?array actions): void |
 | `firewall` | [`?Firewall`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewall.md) | Optional | - | getFirewall(): ?Firewall | setFirewall(?Firewall firewall): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreateFirewallResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
-use HetznerCloudAPILib\Models\Builders\FirewallBuilder;
-use HetznerCloudAPILib\Models\Builders\AppliedToBuilder;
-use HetznerCloudAPILib\Models\Type6Enum;
-use HetznerCloudAPILib\Models\Builders\AppliedToResourceBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerBuilder;
-use HetznerCloudAPILib\Models\Type5Enum;
-use HetznerCloudAPILib\Models\Builders\LabelSelectorBuilder;
-use HetznerCloudAPILib\Models\Builders\RuleBuilder;
-use HetznerCloudAPILib\Models\DirectionEnum;
-use HetznerCloudAPILib\Models\ProtocolEnum;
+use HetznerCloudApiLib\Models\Builders\CreateFirewallResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\FirewallBuilder;
+use HetznerCloudApiLib\Models\Builders\AppliedToBuilder;
+use HetznerCloudApiLib\Models\Type6;
+use HetznerCloudApiLib\Models\Builders\AppliedToResourceBuilder;
+use HetznerCloudApiLib\Models\Builders\ServerBuilder;
+use HetznerCloudApiLib\Models\Type5;
+use HetznerCloudApiLib\Models\Builders\LabelSelectorBuilder;
+use HetznerCloudApiLib\Models\Builders\RuleBuilder;
+use HetznerCloudApiLib\Models\Direction;
+use HetznerCloudApiLib\Models\Protocol;
 
 $createFirewallResponse = CreateFirewallResponseBuilder::init()
     ->actions(
@@ -46,18 +50,23 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
                     Resource2Builder::init(
                         38,
                         'firewall'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 ],
                 '2016-01-30T23:55:00+00:00',
-                StatusEnum::SUCCESS
+                Status::SUCCESS
             )
                 ->error(
                     ErrorBuilder::init(
                         'action_failed',
                         'Action failed'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->finished('2016-01-30T23:56:00+00:00')
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             ActionBuilder::init(
                 'apply_firewall',
@@ -67,22 +76,29 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
                     Resource2Builder::init(
                         42,
                         'server'
-                    )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build(),
                     Resource2Builder::init(
                         38,
                         'firewall'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 ],
                 '2016-01-30T23:55:00+00:00',
-                StatusEnum::SUCCESS
+                Status::SUCCESS
             )
                 ->error(
                     ErrorBuilder::init(
                         'action_failed',
                         'Action failed'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->finished('2016-01-30T23:56:00+00:00')
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -90,7 +106,7 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
         FirewallBuilder::init(
             [
                 AppliedToBuilder::init(
-                    Type6Enum::SERVER
+                    Type6::SERVER
                 )
                     ->appliedToResources(
                         [
@@ -98,24 +114,33 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
                                 ->server(
                                     ServerBuilder::init(
                                         14
-                                    )->build()
+                                    )
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                        ->build()
                                 )
-                                ->type(Type5Enum::SERVER)
+                                ->type(Type5::SERVER)
+                                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                 ->build()
                         ]
                     )
                     ->labelSelector(
                         LabelSelectorBuilder::init(
                             'selector8'
-                        )->build()
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build()
                     )
                     ->server(
                         ServerBuilder::init(
                             14
-                        )->build()
-                    )->build(),
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build()
+                    )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 AppliedToBuilder::init(
-                    Type6Enum::SERVER
+                    Type6::SERVER
                 )
                     ->appliedToResources(
                         [
@@ -123,30 +148,39 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
                                 ->server(
                                     ServerBuilder::init(
                                         14
-                                    )->build()
+                                    )
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                        ->build()
                                 )
-                                ->type(Type5Enum::SERVER)
+                                ->type(Type5::SERVER)
+                                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                 ->build()
                         ]
                     )
                     ->labelSelector(
                         LabelSelectorBuilder::init(
                             'selector8'
-                        )->build()
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build()
                     )
                     ->server(
                         ServerBuilder::init(
                             14
-                        )->build()
-                    )->build()
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build()
+                    )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             'created6',
             4,
             'name6',
             [
                 RuleBuilder::init(
-                    DirectionEnum::IN,
-                    ProtocolEnum::UDP
+                    Direction::IN,
+                    Protocol::UDP
                 )
                     ->description('description2')
                     ->destinationIps(
@@ -164,6 +198,7 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
                             'source_ips3'
                         ]
                     )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             ]
         )
@@ -173,8 +208,10 @@ $createFirewallResponse = CreateFirewallResponseBuilder::init()
                     'key1' => 'labels1'
                 ]
             )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

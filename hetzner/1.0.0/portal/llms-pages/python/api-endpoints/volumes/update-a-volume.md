@@ -27,7 +27,7 @@ def update_a_volume(self,
 
 **200**: The `volume` key contains the updated volume
 
-[`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/volumes-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/volumes-response-2.md).
 
 
 # Example Usage
@@ -39,11 +39,15 @@ body = UpdateVolumeRequest(
     name='database-storage'
 )
 
-result = volumes_controller.update_a_volume(
+result = volumes_api.update_a_volume(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

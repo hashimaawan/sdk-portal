@@ -42,7 +42,7 @@ def get_metrics_for_a_server(id,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `Integer` | Template, Required | ID of the Server |
-| `type` | [`Type66Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type66`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `String` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `mend` | `String` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `String` | Query, Optional | Resolution of results in seconds |
@@ -52,7 +52,7 @@ def get_metrics_for_a_server(id,
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-metrics-response.md).
 
 
 # Example Usage
@@ -60,19 +60,24 @@ def get_metrics_for_a_server(id,
 ```ruby
 id = 112
 
-type = Type66Enum::NETWORK
+type = Type66::NETWORK
 
 start = 'start4'
 
 mend = 'end8'
 
-result = servers_controller.get_metrics_for_a_server(
+result = servers_api.get_metrics_for_a_server(
   id,
   type,
   start,
   mend
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

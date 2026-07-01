@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-ScoreboardGETAsync(
+ScoreboardGetAsync(
     string gameDate,
-    string leagueID,
+    string leagueId,
     string dayOffset)
 ```
 
@@ -17,7 +17,7 @@ ScoreboardGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `gameDate` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `dayOffset` | `string` | Query, Required | - |
 
 
@@ -32,13 +32,13 @@ ScoreboardGETAsync(
 
 ```csharp
 string gameDate = "GameDate8";
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string dayOffset = "DayOffset6";
 try
 {
-    await aPIController.ScoreboardGETAsync(
+    await api.ScoreboardGetAsync(
         gameDate,
-        leagueID,
+        leagueId,
         dayOffset
     );
 }

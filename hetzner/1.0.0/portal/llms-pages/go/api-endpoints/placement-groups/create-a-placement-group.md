@@ -35,11 +35,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreatePlacementGroupRequest{
-    Name:                 "my Placement Group",
-    Type:                 "spread",
+    Name:                  "my Placement Group",
+    Type:                  "spread",
 }
 
-apiResponse, err := placementGroupsController.CreateAPlacementGroup(ctx, &body)
+apiResponse, err := placementGroupsApi.CreateAPlacementGroup(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

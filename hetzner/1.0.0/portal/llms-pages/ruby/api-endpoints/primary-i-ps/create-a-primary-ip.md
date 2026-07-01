@@ -27,31 +27,36 @@ def create_a_primary_ip(body: nil)
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`CreatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-[`CreatePrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`CreatePrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
 
 ```ruby
-body = CreatePrimaryIPRequest.new(
-  'server',
-  'my-ip',
-  Type51Enum::IPV4,
-  17,
-  false,
-  'fsn1-dc8',
-  { 'labelkey' => 'value' }
+body = CreatePrimaryIpRequest.new(
+  assignee_type: 'server',
+  name: 'my-ip',
+  type: Type51::IPV4,
+  assignee_id: 17,
+  auto_delete: false,
+  datacenter: 'fsn1-dc8',
+  labels: { 'labelkey' => 'value' }
 )
 
-result = primary_i_ps_controller.create_a_primary_ip(body: body)
-puts result
+result = primary_i_ps_api.create_a_primary_ip(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

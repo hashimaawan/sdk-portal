@@ -11,11 +11,11 @@ If the Primary IP object changes during the request, the response will be a “c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async updateAPrimaryIP(
+async updateAPrimaryIp(
   id: number,
-  body?: UpdatePrimaryIPRequest,
+  body?: UpdatePrimaryIpRequest,
   requestOptions?: RequestOptions
-): Promise<ApiResponse<PrimaryIPResponse>>
+): Promise<ApiResponse<PrimaryIpResponse>>
 ```
 
 
@@ -24,7 +24,7 @@ async updateAPrimaryIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the resource |
-| `body` | [`UpdatePrimaryIPRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdatePrimaryIpRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -32,7 +32,7 @@ async updateAPrimaryIP(
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/sdk-infrastructure/utilities/apiresponse.md) instance. The `result` property of this instance returns the response data which is of type [`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/primary-ip-response.md).
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/sdk-infrastructure/utilities/apiresponse.md) instance. The `result` property of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -40,14 +40,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const body: UpdatePrimaryIPRequest = {
+const body: UpdatePrimaryIpRequest = {
   autoDelete: true,
   labels: { 'labelkey': 'value' },
   name: 'my-ip',
 };
 
 try {
-  const response = await primaryIPsController.updateAPrimaryIP(
+  const response = await primaryIPsApi.updateAPrimaryIp(
     id,
     body
   );

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IP address (v6)
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -16,6 +18,7 @@ IP address (v6)
 |  --- | --- | --- | --- |
 | `DnsPtr` | `models.Optional[string]` | Optional | Reverse DNS PTR entry for the IPv6 address of this Load Balancer |
 | `Ip` | `models.Optional[string]` | Optional | IP address (v6) of this Load Balancer |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -24,13 +27,16 @@ IP address (v6)
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     ipv6 := models.Ipv6{
-        DnsPtr:               models.NewOptional(models.ToPointer("lb1.example.com")),
-        Ip:                   models.NewOptional(models.ToPointer("2001:db8::1")),
+        DnsPtr:                models.NewOptional(models.ToPointer("lb1.example.com")),
+        Ip:                    models.NewOptional(models.ToPointer("2001:db8::1")),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

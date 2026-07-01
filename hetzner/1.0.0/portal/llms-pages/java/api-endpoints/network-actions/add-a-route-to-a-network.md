@@ -9,7 +9,7 @@ Note: if the Network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> addARouteToANetworkAsync(
+CompletableFuture<ApiResponse<ActionResponse>> addARouteToANetworkAsync(
     final int id,
     final AddDeleteRouteRequest body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<ActionResponse> addARouteToANetworkAsync(
 
 **201**: The `action` key contains the `add_route` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -40,7 +40,7 @@ AddDeleteRouteRequest body = new AddDeleteRouteRequest.Builder(
 )
 .build();
 
-networkActionsController.addARouteToANetworkAsync(id, body).thenAccept(result -> {
+networkActionsApi.addARouteToANetworkAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

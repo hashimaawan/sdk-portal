@@ -35,32 +35,32 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreateServerRequest{
-    Automount:            models.ToPointer(false),
-    Datacenter:           models.ToPointer("nbg1-dc3"),
-    Firewalls:            []models.Firewall4{
+    Automount:             models.ToPointer(false),
+    Datacenter:            models.ToPointer("nbg1-dc3"),
+    Firewalls:             []models.Firewall4{
         models.Firewall4{
-            Firewall:             models.ToPointer(38),
+            Firewall:              models.ToPointer(38),
         },
     },
-    Image:                "ubuntu-20.04",
-    Location:             models.ToPointer("nbg1"),
-    Name:                 "my-server",
-    Networks:             []int{
+    Image:                 "ubuntu-20.04",
+    Location:              models.ToPointer("nbg1"),
+    Name:                  "my-server",
+    Networks:              []int{
         456,
     },
-    PlacementGroup:       models.ToPointer(1),
-    ServerType:           "cx11",
-    SshKeys:              []string{
+    PlacementGroup:        models.ToPointer(1),
+    ServerType:            "cx11",
+    SshKeys:               []string{
         "my-ssh-key",
     },
-    StartAfterCreate:     models.ToPointer(true),
-    UserData:             models.ToPointer("#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n"),
-    Volumes:              []int{
+    StartAfterCreate:      models.ToPointer(true),
+    UserData:              models.ToPointer("#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n"),
+    Volumes:               []int{
         123,
     },
 }
 
-apiResponse, err := serversController.CreateAServer(ctx, &body)
+apiResponse, err := serversApi.CreateAServer(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

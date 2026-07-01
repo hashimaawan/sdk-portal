@@ -7,7 +7,7 @@ Type of the Image
 
 # Enum Type Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of the Image
 # Example
 
 ```ts
-import { Type22Enum } from 'hetzner-cloud-apilib';
+import { Type22 } from 'hetzner-cloud-apilib';
 
-const type22 = Type22Enum.Temporary;
+const type22 = Type22.Temporary;
 ```
 
 

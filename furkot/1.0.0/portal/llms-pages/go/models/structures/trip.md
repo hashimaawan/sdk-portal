@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlRyaXA
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -17,6 +19,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `End` | `*time.Time` | Optional | end of the trip in its local timezone as YYYY-MM-DDThh:mm |
 | `Id` | `*string` | Optional | Unique ID of the trip |
 | `Name` | `*string` | Optional | name of the trip |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,7 +30,7 @@ package main
 import (
     "log"
     "time"
-    "furkottrips/models"
+    "furkotTrips/models"
 )
 
 func main() {
@@ -39,11 +42,14 @@ func main() {
         return dateTime
     }
     trip := models.Trip{
-        Begin:                models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-        Description:          models.ToPointer("description8"),
-        End:                  models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-        Id:                   models.ToPointer("id8"),
-        Name:                 models.ToPointer("name8"),
+        Begin:                 models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
+        Description:           models.ToPointer("description8"),
+        End:                   models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
+        Id:                    models.ToPointer("id8"),
+        Name:                  models.ToPointer("name8"),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

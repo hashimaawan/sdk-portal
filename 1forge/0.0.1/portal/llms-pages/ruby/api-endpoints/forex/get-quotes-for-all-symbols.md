@@ -17,13 +17,19 @@ def get_quotes_for_all_symbols
 
 **200**: A list of quotes
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```ruby
-forex_controller.get_quotes_for_all_symbols
+result = forex_api.get_quotes_for_all_symbols
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

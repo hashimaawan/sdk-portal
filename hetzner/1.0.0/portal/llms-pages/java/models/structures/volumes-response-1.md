@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlZvbHVtZXMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,20 +17,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action.md) | Required | - | Action getAction() | setAction(Action action) |
 | `NextActions` | [`List<Action>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action.md) | Required | - | List<Action> getNextActions() | setNextActions(List<Action> nextActions) |
 | `Volume` | [`Volume1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volume-1.md) | Required | - | Volume1 getVolume() | setVolume(Volume1 volume) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Action;
 import cloud.hetzner.api.models.Error;
 import cloud.hetzner.api.models.Location16;
 import cloud.hetzner.api.models.Protection;
 import cloud.hetzner.api.models.Resource;
-import cloud.hetzner.api.models.Status113Enum;
-import cloud.hetzner.api.models.StatusEnum;
+import cloud.hetzner.api.models.Status;
+import cloud.hetzner.api.models.Status113;
 import cloud.hetzner.api.models.Volume1;
 import cloud.hetzner.api.models.VolumesResponse1;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -39,6 +44,7 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1.Builder(
             "action_failed",
             "Action failed"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         "2016-01-30T23:55:00+00:00",
         42,
@@ -48,11 +54,13 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1.Builder(
                 42,
                 "server"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         ),
         "2016-01-30T23:55:00+00:00",
-        StatusEnum.RUNNING
+        Status.RUNNING
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     Arrays.asList(
         new Action.Builder(
@@ -61,6 +69,7 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1.Builder(
                 "action_failed",
                 "Action failed"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             "2016-01-30T23:55:00+00:00",
             42,
@@ -70,11 +79,13 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1.Builder(
                     42,
                     "server"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ),
             "2016-01-30T23:55:00+00:00",
-            StatusEnum.SUCCESS
+            Status.SUCCESS
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     new Volume1.Builder(
@@ -97,18 +108,22 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1.Builder(
             "fsn1",
             "eu-central"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         "my-resource",
         new Protection.Builder(
             false
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         12,
         42D,
-        Status113Enum.AVAILABLE
+        Status113.AVAILABLE
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build()
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

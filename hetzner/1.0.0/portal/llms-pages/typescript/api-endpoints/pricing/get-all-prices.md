@@ -33,7 +33,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await pricingController.getAllPrices();
+  const response = await pricingApi.getAllPrices();
 
   // Extracting fully parsed response body.
   console.log(response.result);

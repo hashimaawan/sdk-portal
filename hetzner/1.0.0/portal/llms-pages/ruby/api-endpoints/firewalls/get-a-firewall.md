@@ -22,7 +22,7 @@ def get_a_firewall(id)
 
 **200**: The `firewall` key contains a Firewall object
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -30,8 +30,13 @@ def get_a_firewall(id)
 ```ruby
 id = 112
 
-result = firewalls_controller.get_a_firewall(id)
-puts result
+result = firewalls_api.get_a_firewall(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

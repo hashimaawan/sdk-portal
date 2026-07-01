@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -34,12 +36,14 @@ An object containing data for various available formats and sizes of this GIF.
 | `OriginalStill` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/image.md) | Optional | - |
 | `Preview` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/image.md) | Optional | - |
 | `PreviewGif` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/image.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using GiphyAPI.Standard.Models;
+using GiphyApi.Standard.Models;
+using GiphyApi.Standard.Utilities;
 
 Images images = new Images
 {
@@ -50,6 +54,7 @@ Images images = new Images
         Mp4 = "mp40",
         Mp4Size = "mp4_size2",
         Size = "size2",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     DownsizedLarge = new Image
     {
@@ -58,6 +63,7 @@ Images images = new Images
         Mp4 = "mp46",
         Mp4Size = "mp4_size8",
         Size = "size8",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     DownsizedMedium = new Image
     {
@@ -66,6 +72,7 @@ Images images = new Images
         Mp4 = "mp42",
         Mp4Size = "mp4_size4",
         Size = "size4",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     DownsizedSmall = new Image
     {
@@ -74,6 +81,7 @@ Images images = new Images
         Mp4 = "mp40",
         Mp4Size = "mp4_size2",
         Size = "size2",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     DownsizedStill = new Image
     {
@@ -82,7 +90,9 @@ Images images = new Images
         Mp4 = "mp46",
         Mp4Size = "mp4_size8",
         Size = "size2",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

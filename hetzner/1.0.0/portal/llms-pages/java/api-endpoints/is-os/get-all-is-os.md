@@ -7,7 +7,7 @@ Returns all available ISO objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<IsosResponse> getAllISOsAsync(
+CompletableFuture<ApiResponse<IsosResponse>> getAllIsOsAsync(
     final String name)
 ```
 
@@ -23,13 +23,13 @@ CompletableFuture<IsosResponse> getAllISOsAsync(
 
 **200**: The `isos` key in the reply contains an array of iso objects with this structure
 
-[`IsosResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/isos-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`IsosResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/isos-response.md).
 
 
 # Example Usage
 
 ```java
-iSOsController.getAllISOsAsync(null).thenAccept(result -> {
+isOsApi.getAllIsOsAsync(null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

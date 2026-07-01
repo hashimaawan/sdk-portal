@@ -7,7 +7,7 @@ Status of the renewal process of the Certificate.
 
 # Enum Type Name
 
-`RenewalEnum`
+`Renewal`
 
 
 # Fields
@@ -23,9 +23,9 @@ Status of the renewal process of the Certificate.
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-RenewalEnum renewal = RenewalEnum.Failed;
+Renewal renewal = Renewal.Failed;
 ```
 
 

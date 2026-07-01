@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status70Enum`
+`Status70`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Status70Enum } from 'hetzner-cloud-apilib';
+import { Status70 } from 'hetzner-cloud-apilib';
 
-const status70 = Status70Enum.Migrating;
+const status70 = Status70.Migrating;
 ```
 
 

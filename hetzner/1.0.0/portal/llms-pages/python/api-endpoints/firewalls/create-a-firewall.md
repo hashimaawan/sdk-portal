@@ -31,7 +31,7 @@ def create_a_firewall(self,
 
 **201**: The `firewall` key contains the Firewall that was just created
 
-[`CreateFirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`CreateFirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-firewall-response.md).
 
 
 # Example Usage
@@ -41,7 +41,7 @@ body = CreateFirewallRequest(
     name='Corporate Intranet Protection',
     apply_to=[
         ApplyTo(
-            mtype=Type7Enum.SERVER,
+            mtype=Type7.SERVER,
             server=Server2(
                 id=42
             )
@@ -50,8 +50,8 @@ body = CreateFirewallRequest(
     labels=jsonpickle.decode('{"env":"dev"}'),
     rules=[
         Rule(
-            direction=DirectionEnum.ENUM_IN,
-            protocol=ProtocolEnum.TCP,
+            direction=Direction.ENUM_IN,
+            protocol=Protocol.TCP,
             description='Allow port 80',
             port='80',
             source_ips=[
@@ -63,10 +63,14 @@ body = CreateFirewallRequest(
     ]
 )
 
-result = firewalls_controller.create_a_firewall(
+result = firewalls_api.create_a_firewall(
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

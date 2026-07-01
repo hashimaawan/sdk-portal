@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
 
 ```java
-CompletableFuture<GifsRandomResponse> randomGifAsync(
+CompletableFuture<ApiResponse<GifsRandomResponse>> randomGifAsync(
     final String tag,
     final String rating)
 ```
@@ -13,7 +13,7 @@ CompletableFuture<GifsRandomResponse> randomGifAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -28,13 +28,13 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`GifsRandomResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/gifs-random-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GifsRandomResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/gifs-random-response.md).
 
 
 # Example Usage
 
 ```java
-gifsController.randomGifAsync(null, null).thenAccept(result -> {
+gifsApi.randomGifAsync(null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

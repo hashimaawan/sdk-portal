@@ -43,7 +43,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := loadBalancerActionsController.DisableThePublicInterfaceOfALoadBalancer(ctx, id)
+apiResponse, err := loadBalancerActionsApi.DisableThePublicInterfaceOfALoadBalancer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

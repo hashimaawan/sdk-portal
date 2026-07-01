@@ -36,7 +36,7 @@ AddTargetAsync(
 
 **201**: The `action` key contains the `add_target` Action
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
@@ -45,13 +45,13 @@ AddTargetAsync(
 int id = 112;
 AddTargetRequest body = new AddTargetRequest
 {
-    Type = Type29Enum.LabelSelector,
+    Type = Type29.LabelSelector,
     UsePrivateIp = true,
 };
 
 try
 {
-    ActionResponse result = await loadBalancerActionsController.AddTargetAsync(
+    ApiResponse<ActionResponse> result = await loadBalancerActionsApi.AddTargetAsync(
         id,
         body
     );

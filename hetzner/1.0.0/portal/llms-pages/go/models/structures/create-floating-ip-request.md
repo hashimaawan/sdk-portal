@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkNyZWF0ZUZsb2F0aW5nSVBSZXF1ZXN0
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
-`CreateFloatingIPRequest`
+`CreateFloatingIpRequest`
 
 
 # Fields
@@ -17,7 +19,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `*interface{}` | Optional | User-defined labels (key-value pairs) |
 | `Name` | `*string` | Optional | - |
 | `Server` | `*int` | Optional | Server to assign the Floating IP to |
-| `Type` | [`models.Type17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-17.md) | Required | Floating IP type |
+| `Type` | [`models.Type17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-17.md) | Required | Floating IP type |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,17 +29,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    createFloatingIPRequest := models.CreateFloatingIPRequest{
-        Description:          models.ToPointer("Web Frontend"),
-        HomeLocation:         models.ToPointer("fsn1"),
-        Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-        Name:                 models.ToPointer("Web Frontend"),
-        Server:               models.ToPointer(42),
-        Type:                 models.Type17Enum_IPV4,
+    createFloatingIpRequest := models.CreateFloatingIpRequest{
+        Description:           models.ToPointer("Web Frontend"),
+        HomeLocation:          models.ToPointer("fsn1"),
+        Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+        Name:                  models.ToPointer("Web Frontend"),
+        Server:                models.ToPointer(42),
+        Type:                  models.Type17_Ipv4,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

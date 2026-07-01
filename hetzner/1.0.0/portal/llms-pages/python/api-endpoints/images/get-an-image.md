@@ -23,7 +23,7 @@ def get_an_image(self,
 
 **200**: The `image` key in the reply contains an Image object with this structure
 
-[`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/images-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/images-response-1.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_an_image(self,
 ```python
 id = 112
 
-result = images_controller.get_an_image(id)
-print(result)
+result = images_api.get_an_image(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

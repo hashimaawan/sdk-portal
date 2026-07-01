@@ -7,7 +7,7 @@ Returns a specific Server object. The Server must exist inside the Project
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAServer(int $id): ServersResponse2
+function getAServer(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAServer(int $id): ServersResponse2
 
 **200**: The `server` key in the reply contains a Server object with this structure
 
-[`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-response-2.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAServer(int $id): ServersResponse2
 ```php
 $id = 112;
 
-$serversController = $client->getServersController();
+$serversApi = $client->getServersApi();
+$apiResponse = $serversApi->getAServer($id);
 
-try {
-    $result = $serversController->getAServer($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersResponse2:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

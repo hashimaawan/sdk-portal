@@ -9,7 +9,7 @@ Servers with attached ISOs have a modified boot order: They will try to boot fro
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async attachAnISOToAServer(
+async attachAnIsoToAServer(
   id: number,
   body?: ServersActionsAttachIsoRequest,
   requestOptions?: RequestOptions
@@ -43,7 +43,7 @@ const body: ServersActionsAttachIsoRequest = {
 };
 
 try {
-  const response = await serverActionsController.attachAnISOToAServer(
+  const response = await serverActionsApi.attachAnIsoToAServer(
     id,
     body
   );

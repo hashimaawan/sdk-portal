@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -27,6 +29,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `startAfterCreate` | `boolean \| undefined` | Optional | Start Server right after creation. Defaults to true. |
 | `userData` | `string \| undefined` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. |
 | `volumes` | `number[] \| undefined` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -43,6 +46,9 @@ const createServerRequest: CreateServerRequest = {
   firewalls: [
     {
       firewall: 38,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   labels: { 'key1': 'val1', 'key2': 'val2' },
@@ -59,6 +65,9 @@ const createServerRequest: CreateServerRequest = {
   volumes: [
     123
   ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

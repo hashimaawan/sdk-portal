@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type66Enum`
+`Type66`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-type66 = Type66Enum::NETWORK
+type66 = Type66::NETWORK
 ```
 
 

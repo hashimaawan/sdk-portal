@@ -41,10 +41,10 @@ ctx := context.Background()
 id := 112
 
 body := models.ChangeProtectionRequest1{
-    Delete:               models.ToPointer(true),
+    Delete:                models.ToPointer(true),
 }
 
-apiResponse, err := networkActionsController.ChangeNetworkProtection(ctx, id, &body)
+apiResponse, err := networkActionsApi.ChangeNetworkProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

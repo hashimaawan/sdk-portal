@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async commonplayerinfoGET(
-  playerID: string,
+async commonplayerinfoGet(
+  playerId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -16,7 +16,7 @@ async commonplayerinfoGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -30,10 +30,10 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const playerID = 'PlayerID6';
+const playerId = 'PlayerID6';
 
 try {
-  const response = await apiController.commonplayerinfoGET(playerID);
+  const response = await api.commonplayerinfoGet(playerId);
 
   // Extracting fully parsed response body.
   console.log(response.result);

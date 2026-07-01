@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Information about the Server the Image was created from
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -16,17 +18,21 @@ Information about the Server the Image was created from
 |  --- | --- | --- | --- | --- | --- |
 | `id` | `int` | Required | ID of the Server the Image was created from | getId(): int | setId(int id): void |
 | `name` | `string` | Required | Server name at the time the Image was created | getName(): string | setName(string name): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreatedFromBuilder;
+use HetznerCloudApiLib\Models\Builders\CreatedFromBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $createdFrom = CreatedFromBuilder::init(
     1,
     'Server'
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

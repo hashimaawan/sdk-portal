@@ -4,10 +4,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration option for protocols http and https
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
-`LoadBalancerServiceHTTP`
+`LoadBalancerServiceHttp`
 
 
 # Fields
@@ -19,15 +21,18 @@ Configuration option for protocols http and https
 | `CookieName` | `String` | Optional | Name of the cookie used for sticky sessions | String getCookieName() | setCookieName(String cookieName) |
 | `RedirectHttp` | `Boolean` | Optional | Redirect HTTP requests to HTTPS. Only available if protocol is "https". Default `false` | Boolean getRedirectHttp() | setRedirectHttp(Boolean redirectHttp) |
 | `StickySessions` | `Boolean` | Optional | Use sticky sessions. Only available if protocol is "http" or "https". Default `false` | Boolean getStickySessions() | setStickySessions(Boolean stickySessions) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import cloud.hetzner.api.models.LoadBalancerServiceHTTP;
+import cloud.hetzner.api.ApiHelper;
+import cloud.hetzner.api.models.LoadBalancerServiceHttp;
+import java.io.IOException;
 import java.util.Arrays;
 
-LoadBalancerServiceHTTP loadBalancerServiceHTTP = new LoadBalancerServiceHTTP.Builder()
+LoadBalancerServiceHttp loadBalancerServiceHttp = new LoadBalancerServiceHttp.Builder()
     .certificates(Arrays.asList(
         897
     ))
@@ -35,6 +40,7 @@ LoadBalancerServiceHTTP loadBalancerServiceHTTP = new LoadBalancerServiceHTTP.Bu
     .cookieName("HCLBSTICKY")
     .redirectHttp(true)
     .stickySessions(true)
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

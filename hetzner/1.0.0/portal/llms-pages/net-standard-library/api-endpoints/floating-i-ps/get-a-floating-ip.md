@@ -7,7 +7,7 @@ Returns a specific Floating IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-GetAFloatingIPAsync(
+GetAFloatingIpAsync(
     int id)
 ```
 
@@ -23,7 +23,7 @@ GetAFloatingIPAsync(
 
 **200**: The `floating_ip` key in the reply contains a Floating IP object with this structure
 
-[`Task<Models.FloatingIpsResponse2>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.FloatingIpsResponse2](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-response-2.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetAFloatingIPAsync(
 int id = 112;
 try
 {
-    FloatingIpsResponse2 result = await floatingIPsController.GetAFloatingIPAsync(id);
+    ApiResponse<FloatingIpsResponse2> result = await floatingIPsApi.GetAFloatingIpAsync(id);
 }
 catch (ApiException e)
 {

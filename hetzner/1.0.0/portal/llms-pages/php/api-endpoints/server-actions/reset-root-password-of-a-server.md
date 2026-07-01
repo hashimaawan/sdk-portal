@@ -11,7 +11,7 @@ If this does not succeed you can use the rescue system to netboot the Server and
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function resetRootPasswordOfAServer(int $id): ServersActionsResetPasswordResponse
+function resetRootPasswordOfAServer(int $id): ApiResponse
 ```
 
 
@@ -28,7 +28,7 @@ function resetRootPasswordOfAServer(int $id): ServersActionsResetPasswordRespons
 
 The `action` key in the reply contains an Action object with this structure:
 
-[`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-reset-password-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-reset-password-response.md).
 
 
 # Example Usage
@@ -36,14 +36,20 @@ The `action` key in the reply contains an Action object with this structure:
 ```php
 $id = 112;
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->resetRootPasswordOfAServer($id);
 
-try {
-    $result = $serverActionsController->resetRootPasswordOfAServer($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersActionsResetPasswordResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

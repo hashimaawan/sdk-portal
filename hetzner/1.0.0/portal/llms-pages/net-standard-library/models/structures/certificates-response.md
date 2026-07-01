@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNlcnRpZmljYXRlc1Jlc3BvbnNl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -14,12 +16,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Certificates` | [`List<Certificate>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/certificate.md) | Required | - |
 | `Meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/meta.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 CertificatesResponse certificatesResponse = new CertificatesResponse
@@ -53,15 +57,18 @@ CertificatesResponse certificatesResponse = new CertificatesResponse
                 {
                     Id = 4711,
                     Type = "load_balancer",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             Status = new Status2
             {
                 Error = null,
-                Issuance = IssuanceEnum.Completed,
-                Renewal = RenewalEnum.Failed,
+                Issuance = Issuance.Completed,
+                Renewal = Renewal.Failed,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
-            Type = TypeEnum.Uploaded,
+            Type = HetznerCloudApi.Standard.Models.Type.Uploaded,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Meta = new Meta
@@ -74,8 +81,11 @@ CertificatesResponse certificatesResponse = new CertificatesResponse
             PerPage = 13.34,
             PreviousPage = 50.02,
             TotalEntries = 206.64,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

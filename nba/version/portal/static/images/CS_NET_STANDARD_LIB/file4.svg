@@ -142,8 +142,8 @@
   <path d="M538.000,76.000 L539.000,76.000 L539.000,99.000 L538.000,99.000 L538.000,76.000 Z" class="cls-17"/>
   <rect x="214" y="103" width="16" height="16" class="cls-18"/>
   <path d="M224.625,107.000 L220.125,111.964 L218.375,110.035 L217.000,111.553 L220.125,115.000 L226.000,108.518 L224.625,107.000 Z" class="cls-19"/>
-  <text transform="translate(246 115) scale(0.36 0.36)" class="cls-4"><tspan class="cls-5">NBAStatsAPI.Standard</tspan></text>
-  <text transform="translate(650 120) scale(0.36 0.36)" class="cls-4"><tspan class="cls-5">NBAStatsAPI.Standard</tspan></text>
+  <text transform="translate(246 115) scale(0.36 0.36)" class="cls-4"><tspan class="cls-5">NbaStatsApi.Standard</tspan></text>
+  <text transform="translate(650 120) scale(0.36 0.36)" class="cls-4"><tspan class="cls-5">NbaStatsApi.Standard</tspan></text>
   <text transform="translate(649 100) scale(0.36 0.36)" class="cls-4"><tspan class="cls-5">Name:</tspan></text>
   <text transform="translate(546 115) scale(0.36 0.36)" class="cls-4"><tspan class="cls-5">C:\Users\User</tspan></text>
 </svg>

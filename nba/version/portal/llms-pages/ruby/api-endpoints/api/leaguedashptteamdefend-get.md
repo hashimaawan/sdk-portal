@@ -28,7 +28,7 @@ def leaguedashptteamdefend_get(league_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -44,13 +44,19 @@ season_type = 'SeasonType8'
 
 defense_category = 'DefenseCategory0'
 
-client_controller.leaguedashptteamdefend_get(
+result = client_api.leaguedashptteamdefend_get(
   league_id,
   per_mode,
   season,
   season_type,
   defense_category
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

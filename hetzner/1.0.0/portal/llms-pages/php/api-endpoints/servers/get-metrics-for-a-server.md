@@ -35,7 +35,7 @@ function getMetricsForAServer(
     string $start,
     string $end,
     ?string $step = null
-): ServersMetricsResponse
+): ApiResponse
 ```
 
 
@@ -44,7 +44,7 @@ function getMetricsForAServer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Server |
-| `type` | [`string(Type66Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `type` | [`string(Type66)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `?string` | Query, Optional | Resolution of results in seconds |
@@ -54,7 +54,7 @@ function getMetricsForAServer(
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-metrics-response.md).
 
 
 # Example Usage
@@ -62,25 +62,31 @@ function getMetricsForAServer(
 ```php
 $id = 112;
 
-$type = Type66Enum::NETWORK;
+$type = Type66::NETWORK;
 
 $start = 'start4';
 
 $end = 'end8';
 
-$serversController = $client->getServersController();
+$serversApi = $client->getServersApi();
+$apiResponse = $serversApi->getMetricsForAServer(
+    $id,
+    $type,
+    $start,
+    $end
+);
 
-try {
-    $result = $serversController->getMetricsForAServer(
-        $id,
-        $type,
-        $start,
-        $end
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersMetricsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

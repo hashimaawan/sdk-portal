@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlN0ZXA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -21,14 +23,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `Passthru` | `Boolean` | Optional | true for pass-through points anchoring route | Boolean getPassthru() | setPassthru(Boolean passthru) |
 | `Route` | [`Route`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/models/structures/route.md) | Optional | route leading to the stop | Route getRoute() | setRoute(Route route) |
 | `Url` | `String` | Optional | url of the page with more information about the stop | String getUrl() | setUrl(String url) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import com.furkot.trips.ApiHelper;
 import com.furkot.trips.DateTimeHelper;
 import com.furkot.trips.models.Coordinates;
 import com.furkot.trips.models.Step;
+import java.io.IOException;
 
 Step step = new Step.Builder()
     .address("address4")
@@ -36,9 +41,11 @@ Step step = new Step.Builder()
     .coordinates(new Coordinates.Builder()
         .lat(182.98D)
         .lon(16.08D)
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .departure(DateTimeHelper.fromRfc8601DateTime("2016-03-13T12:52:32.123Z"))
     .name("name8")
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

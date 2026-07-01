@@ -56,7 +56,7 @@ const body: CreateVolumeRequest = {
 };
 
 try {
-  const response = await volumesController.createAVolume(body);
+  const response = await volumesApi.createAVolume(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkZsb2F0aW5nSXA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -23,45 +25,58 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `String` | Required | Name of the Resource. Must be unique per Project. |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `server` | `Integer` | Required | ID of the Server the Floating IP is assigned to, null if it is not assigned at all |
-| `type` | [`Type16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `type` | [`Type16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 floating_ip = FloatingIp.new(
-  false,
-  '2016-01-30T23:55:00+00:00',
-  'this describes my resource',
-  [
+  blocked: false,
+  created: '2016-01-30T23:55:00+00:00',
+  description: 'this describes my resource',
+  dns_ptr: [
     DnsPtr.new(
-      'server.example.com',
-      '2001:db8::1'
+      dns_ptr: 'server.example.com',
+      ip: '2001:db8::1',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  HomeLocation.new(
-    'Falkenstein',
-    'DE',
-    'Falkenstein DC Park 1',
-    1,
-    50.47612,
-    12.370071,
-    'fsn1',
-    'eu-central'
+  home_location: HomeLocation.new(
+    city: 'Falkenstein',
+    country: 'DE',
+    description: 'Falkenstein DC Park 1',
+    id: 1,
+    latitude: 50.47612,
+    longitude: 12.370071,
+    name: 'fsn1',
+    network_zone: 'eu-central',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  42,
-  '131.232.99.1',
-  {
-    'key0': 'labels4',
-    'key1': 'labels3',
-    'key2': 'labels2'
+  id: 42,
+  ip: '131.232.99.1',
+  labels: {
+    'key0' => 'labels4',
+    'key1' => 'labels3',
+    'key2' => 'labels2'
   },
-  'my-resource',
-  Protection.new(
-    false
+  name: 'my-resource',
+  protection: Protection.new(
+    delete: false,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  42,
-  Type16Enum::IPV4
+  server: 42,
+  type: Type16::IPV4,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

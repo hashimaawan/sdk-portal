@@ -7,15 +7,15 @@ Type of the algorithm
 
 # Class Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `ROUNDROBIN` |
-| `LEASTCONNECTIONS` |
+| `RoundRobin` |
+| `LeastConnections` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of the algorithm
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type28 := models.Type28Enum_ROUNDROBIN
+    type28 := models.Type28_RoundRobin
 
 }
 ```

@@ -12,7 +12,7 @@ TranslateStickerAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -26,7 +26,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`Task<Models.StickersTranslateResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/stickers-translate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StickersTranslateResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/stickers-translate-response.md).
 
 
 # Example Usage
@@ -35,7 +35,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 string s = "s8";
 try
 {
-    StickersTranslateResponse result = await stickersController.TranslateStickerAsync(s);
+    ApiResponse<StickersTranslateResponse> result = await stickersApi.TranslateStickerAsync(s);
 }
 catch (ApiException e)
 {

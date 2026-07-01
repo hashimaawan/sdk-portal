@@ -7,7 +7,7 @@ Flavor of operating system contained in the Image
 
 # Enum Type Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
@@ -24,7 +24,7 @@ Flavor of operating system contained in the Image
 # Example
 
 ```ruby
-os_flavor = OsFlavorEnum::UNKNOWN
+os_flavor = OsFlavor::UNKNOWN
 ```
 
 

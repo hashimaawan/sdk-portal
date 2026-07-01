@@ -11,7 +11,7 @@ def get_gif_by_id(gif_id)
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -25,7 +25,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`GifsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/gifs-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`GifsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/gifs-response-1.md).
 
 
 # Example Usage
@@ -33,8 +33,13 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 ```ruby
 gif_id = 250
 
-result = gifs_controller.get_gif_by_id(gif_id)
-puts result
+result = gifs_api.get_gif_by_id(gif_id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

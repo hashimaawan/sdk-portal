@@ -9,7 +9,7 @@ A Primary IP can only be delete protected if its `auto_delete` property is set t
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async changePrimaryIPProtection(
+async changePrimaryIpProtection(
   id: number,
   body?: ChangeProtectionRequest2,
   requestOptions?: RequestOptions
@@ -43,7 +43,7 @@ const body: ChangeProtectionRequest2 = {
 };
 
 try {
-  const response = await primaryIPActionsController.changePrimaryIPProtection(
+  const response = await primaryIpActionsApi.changePrimaryIpProtection(
     id,
     body
   );

@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayergamelogGET(
+PlayergamelogGet(
     ctx context.Context,
-    playerID string,
+    playerId string,
     season string,
     seasonType string) (
     http.Response,
@@ -19,7 +19,7 @@ PlayergamelogGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
@@ -36,13 +36,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-playerID := "PlayerID6"
+playerId := "PlayerID6"
 
 season := "Season0"
 
 seasonType := "SeasonType8"
 
-resp, err := aPIController.PlayergamelogGET(ctx, playerID, season, seasonType)
+resp, err := api.PlayergamelogGet(ctx, playerId, season, seasonType)
 if err != nil {
     log.Fatalln(err)
 } else {

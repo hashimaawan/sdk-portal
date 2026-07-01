@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status30Enum`
+`Status30`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Status30Enum;
+use HetznerCloudApiLib\Models\Status30;
 
-$status30 = Status30Enum::HEALTHY;
+$status30 = Status30::HEALTHY;
 ```
 
 

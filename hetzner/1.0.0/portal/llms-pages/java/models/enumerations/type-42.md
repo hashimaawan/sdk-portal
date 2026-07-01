@@ -7,7 +7,7 @@ Type of Subnetwork
 
 # Enum Type Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of Subnetwork
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type42Enum;
+import cloud.hetzner.api.models.Type42;
 
-Type42Enum type42 = Type42Enum.CLOUD;
+Type42 type42 = Type42.CLOUD;
 ```
 
 

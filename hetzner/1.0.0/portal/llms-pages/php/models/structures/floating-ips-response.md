@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkZsb2F0aW5nJTI1MjBJcHMlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,19 +16,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `floatingIps` | [`FloatingIp[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ip.md) | Required | - | getFloatingIps(): array | setFloatingIps(array floatingIps): void |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/meta.md) | Optional | - | getMeta(): ?Meta | setMeta(?Meta meta): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\FloatingIpsResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\FloatingIpBuilder;
-use HetznerCloudAPILib\Models\Builders\DnsPtrBuilder;
-use HetznerCloudAPILib\Models\Builders\HomeLocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Type16Enum;
-use HetznerCloudAPILib\Models\Builders\MetaBuilder;
-use HetznerCloudAPILib\Models\Builders\PaginationBuilder;
+use HetznerCloudApiLib\Models\Builders\FloatingIpsResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\FloatingIpBuilder;
+use HetznerCloudApiLib\Models\Builders\DnsPtrBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\HomeLocationBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Type16;
+use HetznerCloudApiLib\Models\Builders\MetaBuilder;
+use HetznerCloudApiLib\Models\Builders\PaginationBuilder;
 
 $floatingIpsResponse = FloatingIpsResponseBuilder::init(
     [
@@ -37,7 +41,9 @@ $floatingIpsResponse = FloatingIpsResponseBuilder::init(
                 DnsPtrBuilder::init(
                     'server.example.com',
                     '2001:db8::1'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             HomeLocationBuilder::init(
                 'Falkenstein',
@@ -48,7 +54,9 @@ $floatingIpsResponse = FloatingIpsResponseBuilder::init(
                 12.370071,
                 'fsn1',
                 'eu-central'
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             42,
             '131.232.99.1',
             [
@@ -57,11 +65,14 @@ $floatingIpsResponse = FloatingIpsResponseBuilder::init(
             'my-resource',
             ProtectionBuilder::init(
                 false
-            )->build(),
-            Type16Enum::IPV4
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
+            Type16::IPV4
         )
             ->description('this describes my resource')
             ->server(42)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -75,9 +86,14 @@ $floatingIpsResponse = FloatingIpsResponseBuilder::init(
                 ->nextPage(209.18)
                 ->previousPage(50.02)
                 ->totalEntries(206.64)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build()
-    )->build();
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

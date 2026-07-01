@@ -7,7 +7,7 @@ Gets a specific Volume object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<VolumesResponse2> getAVolumeAsync(
+CompletableFuture<ApiResponse<VolumesResponse2>> getAVolumeAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<VolumesResponse2> getAVolumeAsync(
 
 **200**: The `volume` key contains the volume
 
-[`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volumes-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volumes-response-2.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<VolumesResponse2> getAVolumeAsync(
 ```java
 int id = 112;
 
-volumesController.getAVolumeAsync(id).thenAccept(result -> {
+volumesApi.getAVolumeAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

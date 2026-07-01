@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/java/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -21,12 +23,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `Webp` | `String` | Optional | The URL for this GIF in .webp format. | String getWebp() | setWebp(String webp) |
 | `WebpSize` | `String` | Optional | The size in bytes of the .webp file corresponding to this GIF. | String getWebpSize() | setWebpSize(String webpSize) |
 | `Width` | `String` | Optional | The width of this GIF in pixels. | String getWidth() | setWidth(String width) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import com.giphy.api.ApiHelper;
 import com.giphy.api.models.Image;
+import java.io.IOException;
 
 Image image = new Image.Builder()
     .frames("15")
@@ -38,6 +43,7 @@ Image image = new Image.Builder()
     .webp("https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp")
     .webpSize("12321")
     .width("320")
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

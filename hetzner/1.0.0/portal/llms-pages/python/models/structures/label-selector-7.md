@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Label selector and a list of selected targets
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -15,15 +17,21 @@ Label selector and a list of selected targets
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `selector` | `str` | Required | Label selector |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.label_selector_7 import LabelSelector7
 
 label_selector_7 = LabelSelector7(
-    selector='env=prod'
+    selector='env=prod',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

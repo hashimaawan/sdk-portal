@@ -29,7 +29,7 @@ UpdateACertificateAsync(
 
 **200**: The `certificate` key contains the Certificate that was just updated
 
-[`Task<Models.CertificateResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.CertificateResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -44,7 +44,7 @@ UpdateCertificateRequest body = new UpdateCertificateRequest
 
 try
 {
-    CertificateResponse result = await certificatesController.UpdateACertificateAsync(
+    ApiResponse<CertificateResponse> result = await certificatesApi.UpdateACertificateAsync(
         id,
         body
     );

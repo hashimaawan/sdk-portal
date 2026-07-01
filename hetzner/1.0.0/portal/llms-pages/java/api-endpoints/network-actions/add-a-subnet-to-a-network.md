@@ -9,7 +9,7 @@ Note: if the parent Network object changes during the request, the response will
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> addASubnetToANetworkAsync(
+CompletableFuture<ApiResponse<ActionResponse>> addASubnetToANetworkAsync(
     final int id,
     final AddSubnetRequest body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<ActionResponse> addASubnetToANetworkAsync(
 
 **201**: The `action` key contains the `add_subnet` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -36,13 +36,13 @@ CompletableFuture<ActionResponse> addASubnetToANetworkAsync(
 int id = 112;
 AddSubnetRequest body = new AddSubnetRequest.Builder(
     "eu-central",
-    Type42Enum.SERVER
+    Type42.SERVER
 )
 .ipRange("10.0.1.0/24")
 .vswitchId(1000)
 .build();
 
-networkActionsController.addASubnetToANetworkAsync(id, body).thenAccept(result -> {
+networkActionsApi.addASubnetToANetworkAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

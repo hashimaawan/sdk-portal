@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,16 +15,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`?Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Optional | - | getAction(): ?Action | setAction(?Action action): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServersResponse1Builder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\ServersResponse1Builder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
 
 $serversResponse1 = ServersResponse1Builder::init()
     ->action(
@@ -34,28 +38,38 @@ $serversResponse1 = ServersResponse1Builder::init()
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             'started8',
-            StatusEnum::RUNNING
+            Status::RUNNING
         )
             ->error(
                 ErrorBuilder::init(
                     'code2',
                     'message4'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('finished0')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

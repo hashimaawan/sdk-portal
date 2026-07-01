@@ -7,7 +7,7 @@ Unassigns a Floating IP, resulting in it being unreachable. You may assign it to
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async unassignAFloatingIP(
+async unassignAFloatingIp(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await floatingIPActionsController.unassignAFloatingIP(id);
+  const response = await floatingIpActionsApi.unassignAFloatingIp(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

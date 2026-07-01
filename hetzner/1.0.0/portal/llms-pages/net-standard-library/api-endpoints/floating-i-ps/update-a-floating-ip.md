@@ -8,9 +8,9 @@ Also note that when updating labels, the Floating IP’s current set of labels w
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-UpdateAFloatingIPAsync(
+UpdateAFloatingIpAsync(
     int id,
-    Models.UpdateFloatingIPRequest body = null)
+    Models.UpdateFloatingIpRequest body = null)
 ```
 
 
@@ -19,21 +19,21 @@ UpdateAFloatingIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`UpdateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/update-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/update-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `floating_ip` key in the reply contains the modified Floating IP object with the new description
 
-[`Task<Models.FloatingIpsResponse2>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.FloatingIpsResponse2](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-response-2.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-UpdateFloatingIPRequest body = new UpdateFloatingIPRequest
+UpdateFloatingIpRequest body = new UpdateFloatingIpRequest
 {
     Description = "Web Frontend",
     Labels = ApiHelper.JsonDeserialize<object>("{\"labelkey\":\"value\"}"),
@@ -42,7 +42,7 @@ UpdateFloatingIPRequest body = new UpdateFloatingIPRequest
 
 try
 {
-    FloatingIpsResponse2 result = await floatingIPsController.UpdateAFloatingIPAsync(
+    ApiResponse<FloatingIpsResponse2> result = await floatingIPsApi.UpdateAFloatingIpAsync(
         id,
         body
     );

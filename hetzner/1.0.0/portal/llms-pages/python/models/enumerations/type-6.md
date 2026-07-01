@@ -7,7 +7,7 @@ Type of resource referenced
 
 # Enum Type Name
 
-`Type6Enum`
+`Type6`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of resource referenced
 # Example
 
 ```python
-from hetznercloudapi.models.type_6_enum import Type6Enum
+from hetznercloudapi.models.type_6 import Type6
 
-type_6 = Type6Enum.SERVER
+type_6 = Type6.SERVER
 ```
 
 

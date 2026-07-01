@@ -11,7 +11,7 @@ Your Server will automatically be powered off before the rebuild command execute
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersActionsRebuildResponse> rebuildAServerFromAnImageAsync(
+CompletableFuture<ApiResponse<ServersActionsRebuildResponse>> rebuildAServerFromAnImageAsync(
     final int id,
     final RebuildServerRequest body)
 ```
@@ -29,7 +29,7 @@ CompletableFuture<ServersActionsRebuildResponse> rebuildAServerFromAnImageAsync(
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-rebuild-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-rebuild-response.md).
 
 
 # Example Usage
@@ -41,7 +41,7 @@ RebuildServerRequest body = new RebuildServerRequest.Builder(
 )
 .build();
 
-serverActionsController.rebuildAServerFromAnImageAsync(id, body).thenAccept(result -> {
+serverActionsApi.rebuildAServerFromAnImageAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

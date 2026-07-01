@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlN0ZXA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -21,27 +23,27 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `passthru` | `TrueClass \| FalseClass` | Optional | true for pass-through points anchoring route |
 | `route` | [`Route`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/ruby/models/structures/route.md) | Optional | route leading to the stop |
 | `url` | `String` | Optional | url of the page with more information about the stop |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 step = Step.new(
-  'address4',
-  DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
-  Coordinates.new(
-    182.98,
-    16.08
+  address: 'address4',
+  arrival: DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
+  coordinates: Coordinates.new(
+    lat: 182.98,
+    lon: 16.08,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
-  'name8',
-  nil,
-  nil,
-  Route.new(
-    nil,
-    nil,
-    envrr
-  )
+  departure: DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
+  name: 'name8',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

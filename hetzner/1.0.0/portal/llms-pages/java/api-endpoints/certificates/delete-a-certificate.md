@@ -7,7 +7,7 @@ Deletes a Certificate.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteACertificateAsync(
+CompletableFuture<ApiResponse<Void>> deleteACertificateAsync(
     final int id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteACertificateAsync(
 ```java
 int id = 112;
 
-certificatesController.deleteACertificateAsync(id).thenAccept(result -> {
+certificatesApi.deleteACertificateAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

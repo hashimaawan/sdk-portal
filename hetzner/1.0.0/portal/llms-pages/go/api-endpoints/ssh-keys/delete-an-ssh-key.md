@@ -7,7 +7,7 @@ Deletes an SSH key. It cannot be used anymore.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-DeleteAnSSHKey(
+DeleteAnSshKey(
     ctx context.Context,
     id string) (
     http.Response,
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := "id0"
 
-resp, err := sSHKeysController.DeleteAnSSHKey(ctx, id)
+resp, err := sshKeysApi.DeleteAnSshKey(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

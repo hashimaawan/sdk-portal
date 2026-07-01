@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> draftcombinedrillresultsGETAsync(
-    final String leagueID,
+CompletableFuture<ApiResponse<Void>> draftcombinedrillresultsGetAsync(
+    final String leagueId,
     final String seasonYear)
 ```
 
@@ -15,7 +15,7 @@ CompletableFuture<Void> draftcombinedrillresultsGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `seasonYear` | `String` | Query, Required | - |
 
 
@@ -29,11 +29,12 @@ CompletableFuture<Void> draftcombinedrillresultsGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String seasonYear = "SeasonYear6";
 
-aPIController.draftcombinedrillresultsGETAsync(leagueID, seasonYear).thenAccept(result -> {
+api.draftcombinedrillresultsGetAsync(leagueId, seasonYear).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

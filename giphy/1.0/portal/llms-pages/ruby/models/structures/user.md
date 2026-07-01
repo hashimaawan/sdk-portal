@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -20,18 +22,22 @@ The User Object contains information about the user associated with a GIF and UR
 | `profile_url` | `String` | Optional | The URL for this user's profile. |
 | `twitter` | `String` | Optional | The Twitter username associated with this user, if applicable. |
 | `username` | `String` | Optional | The username associated with this user. |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 user = User.new(
-  'https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif',
-  'https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg',
-  'JoeCool4000',
-  'https://giphy.com/cheezburger/',
-  '@joecool4000',
-  'joecool4000'
+  avatar_url: 'https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif',
+  banner_url: 'https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg',
+  display_name: 'JoeCool4000',
+  profile_url: 'https://giphy.com/cheezburger/',
+  twitter: '@joecool4000',
+  username: 'joecool4000',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

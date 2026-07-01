@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playercareerstatsGET(
+async playercareerstatsGet(
   perMode: string,
-  playerID: string,
+  playerId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -18,7 +18,7 @@ async playercareerstatsGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -34,12 +34,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const perMode = 'PerMode6';
 
-const playerID = 'PlayerID6';
+const playerId = 'PlayerID6';
 
 try {
-  const response = await apiController.playercareerstatsGET(
+  const response = await api.playercareerstatsGet(
     perMode,
-    playerID
+    playerId
   );
 
   // Extracting fully parsed response body.

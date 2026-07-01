@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status30Enum`
+`Status30`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.status_30_enum import Status30Enum
+from hetznercloudapi.models.status_30 import Status30
 
-status_30 = Status30Enum.HEALTHY
+status_30 = Status30.HEALTHY
 ```
 
 

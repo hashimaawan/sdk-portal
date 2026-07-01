@@ -7,8 +7,8 @@ Creates a new Floating IP assigned to a Server. If you want to create a Floating
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<FloatingIpsResponse1> createAFloatingIPAsync(
-    final CreateFloatingIPRequest body)
+CompletableFuture<ApiResponse<FloatingIpsResponse1>> createAFloatingIpAsync(
+    final CreateFloatingIpRequest body)
 ```
 
 
@@ -16,21 +16,21 @@ CompletableFuture<FloatingIpsResponse1> createAFloatingIPAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
+| `body` | [`CreateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `floating_ip` key in the reply contains the object that was just created
 
-[`FloatingIpsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`FloatingIpsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-response-1.md).
 
 
 # Example Usage
 
 ```java
-CreateFloatingIPRequest body = new CreateFloatingIPRequest.Builder(
-    Type17Enum.IPV4
+CreateFloatingIpRequest body = new CreateFloatingIpRequest.Builder(
+    Type17.IPV4
 )
 .description("Web Frontend")
 .homeLocation("fsn1")
@@ -39,7 +39,7 @@ CreateFloatingIPRequest body = new CreateFloatingIPRequest.Builder(
 .server(42)
 .build();
 
-floatingIPsController.createAFloatingIPAsync(body).thenAccept(result -> {
+floatingIPsApi.createAFloatingIpAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

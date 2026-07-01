@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ScoreboardGET(
+ScoreboardGet(
     ctx context.Context,
     gameDate string,
-    leagueID string,
+    leagueId string,
     dayOffset string) (
     http.Response,
     error)
@@ -20,7 +20,7 @@ ScoreboardGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `gameDate` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `dayOffset` | `string` | Query, Required | - |
 
 
@@ -38,11 +38,11 @@ ctx := context.Background()
 
 gameDate := "GameDate8"
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 dayOffset := "DayOffset6"
 
-resp, err := aPIController.ScoreboardGET(ctx, gameDate, leagueID, dayOffset)
+resp, err := api.ScoreboardGet(ctx, gameDate, leagueId, dayOffset)
 if err != nil {
     log.Fatalln(err)
 } else {

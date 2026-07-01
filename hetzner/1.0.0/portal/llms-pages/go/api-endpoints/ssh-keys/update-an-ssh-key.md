@@ -9,7 +9,7 @@ Please note that when updating labels, the SSH key current set of labels will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-UpdateAnSSHKey(
+UpdateAnSshKey(
     ctx context.Context,
     id string,
     body *models.SshKeysRequest1) (
@@ -41,11 +41,11 @@ ctx := context.Background()
 id := "id0"
 
 body := models.SshKeysRequest1{
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("My ssh key"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("My ssh key"),
 }
 
-apiResponse, err := sSHKeysController.UpdateAnSSHKey(ctx, id, &body)
+apiResponse, err := sshKeysApi.UpdateAnSshKey(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

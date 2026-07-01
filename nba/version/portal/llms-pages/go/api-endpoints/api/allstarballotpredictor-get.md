@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-AllstarballotpredictorGET(
+AllstarballotpredictorGet(
     ctx context.Context,
     westPlayer1 string,
     westPlayer2 string,
@@ -72,7 +72,7 @@ eastPlayer4 := "EastPlayer44"
 
 eastPlayer5 := "EastPlayer54"
 
-resp, err := aPIController.AllstarballotpredictorGET(ctx, westPlayer1, westPlayer2, westPlayer3, westPlayer4, westPlayer5, eastPlayer1, eastPlayer2, eastPlayer3, eastPlayer4, eastPlayer5, nil)
+resp, err := api.AllstarballotpredictorGet(ctx, westPlayer1, westPlayer2, westPlayer3, westPlayer4, westPlayer5, eastPlayer1, eastPlayer2, eastPlayer3, eastPlayer4, eastPlayer5, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -43,11 +43,11 @@ ctx := context.Background()
 id := 112
 
 body := models.UpdatePlacementGroupRequest{
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("my Placement Group"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("my Placement Group"),
 }
 
-apiResponse, err := placementGroupsController.UpdateAPlacementGroup(ctx, id, &body)
+apiResponse, err := placementGroupsApi.UpdateAPlacementGroup(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

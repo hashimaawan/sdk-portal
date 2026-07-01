@@ -7,7 +7,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Enum Type Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 # Example
 
 ```python
-from hetznercloudapi.models.storage_type_enum import StorageTypeEnum
+from hetznercloudapi.models.storage_type import StorageType
 
-storage_type = StorageTypeEnum.LOCAL
+storage_type = StorageType.LOCAL
 ```
 
 

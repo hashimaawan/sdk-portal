@@ -5,19 +5,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-PlayersvsplayersGETAsync(
-    string playerTeamID,
-    string playerID1,
-    string playerID2,
-    string playerID3,
-    string playerID4,
-    string playerID5,
-    string vsTeamID,
-    string vsPlayerID1,
-    string vsPlayerID2,
-    string vsPlayerID3,
-    string vsPlayerID4,
-    string vsPlayerID5,
+PlayersvsplayersGetAsync(
+    string playerTeamId,
+    string playerId1,
+    string playerId2,
+    string playerId3,
+    string playerId4,
+    string playerId5,
+    string vsTeamId,
+    string vsPlayerId1,
+    string vsPlayerId2,
+    string vsPlayerId3,
+    string vsPlayerId4,
+    string vsPlayerId5,
     string seasonType,
     string measureType,
     string perMode,
@@ -31,7 +31,7 @@ PlayersvsplayersGETAsync(
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string gameSegment,
@@ -44,18 +44,18 @@ PlayersvsplayersGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerTeamID` | `string` | Query, Required | - |
-| `playerID1` | `string` | Query, Required | - |
-| `playerID2` | `string` | Query, Required | - |
-| `playerID3` | `string` | Query, Required | - |
-| `playerID4` | `string` | Query, Required | - |
-| `playerID5` | `string` | Query, Required | - |
-| `vsTeamID` | `string` | Query, Required | - |
-| `vsPlayerID1` | `string` | Query, Required | - |
-| `vsPlayerID2` | `string` | Query, Required | - |
-| `vsPlayerID3` | `string` | Query, Required | - |
-| `vsPlayerID4` | `string` | Query, Required | - |
-| `vsPlayerID5` | `string` | Query, Required | - |
+| `playerTeamId` | `string` | Query, Required | - |
+| `playerId1` | `string` | Query, Required | - |
+| `playerId2` | `string` | Query, Required | - |
+| `playerId3` | `string` | Query, Required | - |
+| `playerId4` | `string` | Query, Required | - |
+| `playerId5` | `string` | Query, Required | - |
+| `vsTeamId` | `string` | Query, Required | - |
+| `vsPlayerId1` | `string` | Query, Required | - |
+| `vsPlayerId2` | `string` | Query, Required | - |
+| `vsPlayerId3` | `string` | Query, Required | - |
+| `vsPlayerId4` | `string` | Query, Required | - |
+| `vsPlayerId5` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
@@ -69,7 +69,7 @@ PlayersvsplayersGETAsync(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -87,18 +87,18 @@ PlayersvsplayersGETAsync(
 # Example Usage
 
 ```csharp
-string playerTeamID = "PlayerTeamID4";
-string playerID1 = "PlayerID18";
-string playerID2 = "PlayerID24";
-string playerID3 = "PlayerID32";
-string playerID4 = "PlayerID44";
-string playerID5 = "PlayerID54";
-string vsTeamID = "VsTeamID8";
-string vsPlayerID1 = "VsPlayerID12";
-string vsPlayerID2 = "VsPlayerID28";
-string vsPlayerID3 = "VsPlayerID38";
-string vsPlayerID4 = "VsPlayerID46";
-string vsPlayerID5 = "VsPlayerID56";
+string playerTeamId = "PlayerTeamID4";
+string playerId1 = "PlayerID18";
+string playerId2 = "PlayerID24";
+string playerId3 = "PlayerID32";
+string playerId4 = "PlayerID44";
+string playerId5 = "PlayerID54";
+string vsTeamId = "VsTeamID8";
+string vsPlayerId1 = "VsPlayerID12";
+string vsPlayerId2 = "VsPlayerID28";
+string vsPlayerId3 = "VsPlayerID38";
+string vsPlayerId4 = "VsPlayerID46";
+string vsPlayerId5 = "VsPlayerID56";
 string seasonType = "SeasonType8";
 string measureType = "MeasureType8";
 string perMode = "PerMode6";
@@ -112,7 +112,7 @@ string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string gameSegment = "GameSegment6";
@@ -120,19 +120,19 @@ string period = "Period2";
 string lastNGames = "LastNGames4";
 try
 {
-    await aPIController.PlayersvsplayersGETAsync(
-        playerTeamID,
-        playerID1,
-        playerID2,
-        playerID3,
-        playerID4,
-        playerID5,
-        vsTeamID,
-        vsPlayerID1,
-        vsPlayerID2,
-        vsPlayerID3,
-        vsPlayerID4,
-        vsPlayerID5,
+    await api.PlayersvsplayersGetAsync(
+        playerTeamId,
+        playerId1,
+        playerId2,
+        playerId3,
+        playerId4,
+        playerId5,
+        vsTeamId,
+        vsPlayerId1,
+        vsPlayerId2,
+        vsPlayerId3,
+        vsPlayerId4,
+        vsPlayerId5,
         seasonType,
         measureType,
         perMode,
@@ -146,7 +146,7 @@ try
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         gameSegment,

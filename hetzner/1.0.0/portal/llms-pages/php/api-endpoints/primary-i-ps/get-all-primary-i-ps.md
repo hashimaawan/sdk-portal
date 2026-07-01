@@ -12,7 +12,7 @@ function getAllPrimaryIPs(
     ?string $labelSelector = null,
     ?string $ip = null,
     ?string $sort = null
-): PrimaryIPsResponse
+): ApiResponse
 ```
 
 
@@ -23,14 +23,14 @@ function getAllPrimaryIPs(
 | `name` | `?string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `?string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `ip` | `?string` | Query, Optional | Can be used to filter resources by their ip. The response will only contain the resources matching the specified ip. |
-| `sort` | [`?string(Sort2Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`?string(Sort2)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 
 
 # Response Type
 
 **200**: The `primary_ips` key contains an array of Primary IP objects
 
-[`PrimaryIPsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-i-ps-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`PrimaryIPsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-i-ps-response.md).
 
 
 # Example Usage
@@ -38,18 +38,24 @@ function getAllPrimaryIPs(
 ```php
 $ip = '127.0.0.1';
 
-$primaryIPsController = $client->getPrimaryIPsController();
+$primaryIPsApi = $client->getPrimaryIPsApi();
+$apiResponse = $primaryIPsApi->getAllPrimaryIPs(
+    null,
+    null,
+    $ip
+);
 
-try {
-    $result = $primaryIPsController->getAllPrimaryIPs(
-        null,
-        null,
-        $ip
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'PrimaryIPsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -7,15 +7,15 @@ Type of the Floating IP
 
 # Class Name
 
-`Type16Enum`
+`Type16`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `IPV4` |
-| `IPV6` |
+| `Ipv4` |
+| `Ipv6` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of the Floating IP
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type16 := models.Type16Enum_IPV4
+    type16 := models.Type16_Ipv4
 
 }
 ```

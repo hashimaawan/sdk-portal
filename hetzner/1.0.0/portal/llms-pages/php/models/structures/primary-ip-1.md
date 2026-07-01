@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlByaW1hcnlJUDE
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
-`PrimaryIP1`
+`PrimaryIp1`
 
 
 # Fields
@@ -24,21 +26,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `array<string,string>` | Required | User-defined labels (key-value pairs) | getLabels(): array | setLabels(array labels): void |
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. | getName(): string | setName(string name): void |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/protection.md) | Required | Protection configuration for the Resource | getProtection(): Protection | setProtection(Protection protection): void |
-| `type` | [`string(Type50Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-50.md) | Required | Type of the Primary IP | getType(): string | setType(string type): void |
+| `type` | [`string(Type50)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-50.md) | Required | Type of the Primary IP | getType(): string | setType(string type): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\PrimaryIP1Builder;
-use HetznerCloudAPILib\Models\Builders\Datacenter2Builder;
-use HetznerCloudAPILib\Models\Builders\LocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerTypesBuilder;
-use HetznerCloudAPILib\Models\Builders\DnsPtrBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Type50Enum;
+use HetznerCloudApiLib\Models\Builders\PrimaryIp1Builder;
+use HetznerCloudApiLib\Models\Builders\Datacenter2Builder;
+use HetznerCloudApiLib\Models\Builders\LocationBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\ServerTypesBuilder;
+use HetznerCloudApiLib\Models\Builders\DnsPtrBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Type50;
 
-$primaryIP1 = PrimaryIP1Builder::init(
+$primaryIp1 = PrimaryIp1Builder::init(
     true,
     false,
     '2016-01-30T23:55:00+00:00',
@@ -54,7 +58,9 @@ $primaryIP1 = PrimaryIP1Builder::init(
             12.370071,
             'fsn1',
             'eu-central'
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         'fsn1-dc8',
         ServerTypesBuilder::init(
             [
@@ -72,27 +78,35 @@ $primaryIP1 = PrimaryIP1Builder::init(
                 2,
                 3
             ]
-        )->build()
-    )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     [
         DnsPtrBuilder::init(
             'server.example.com',
             '2001:db8::1'
-        )->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     42,
     '131.232.99.1',
     [
-        'key0' => 'labels4',
-        'key1' => 'labels3'
+        'key0' => 'labels0'
     ],
     'my-resource',
     ProtectionBuilder::init(
         false
-    )->build(),
-    Type50Enum::IPV4
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
+    Type50::IPV4
 )
     ->assigneeId(17)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

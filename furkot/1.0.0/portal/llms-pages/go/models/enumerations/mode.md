@@ -7,18 +7,18 @@ travel mode
 
 # Class Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `CAR` |
-| `MOTORCYCLE` |
-| `BICYCLE` |
-| `WALK` |
-| `OTHER` |
+| `Car` |
+| `Motorcycle` |
+| `Bicycle` |
+| `Walk` |
+| `Other` |
 
 
 # Example
@@ -27,11 +27,11 @@ travel mode
 package main
 
 import (
-    "furkottrips/models"
+    "furkotTrips/models"
 )
 
 func main() {
-    mode := models.ModeEnum_BICYCLE
+    mode := models.Mode_Bicycle
 
 }
 ```

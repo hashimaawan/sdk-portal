@@ -31,7 +31,7 @@ def create_image_from_a_server(self,
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-create-image-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-create-image-response.md).
 
 
 # Example Usage
@@ -41,14 +41,18 @@ id = 112
 
 body = CreateImageRequest(
     description='my image',
-    mtype=Type63Enum.SNAPSHOT
+    mtype=Type63.SNAPSHOT
 )
 
-result = server_actions_controller.create_image_from_a_server(
+result = server_actions_api.create_image_from_a_server(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

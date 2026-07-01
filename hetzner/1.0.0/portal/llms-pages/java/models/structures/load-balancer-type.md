@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclR5cGU
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -21,15 +23,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `MaxTargets` | `double` | Required | Number of targets a single Load Balancer can have | double getMaxTargets() | setMaxTargets(double maxTargets) |
 | `Name` | `String` | Required | Unique identifier of the Load Balancer type | String getName() | setName(String name) |
 | `Prices` | [`List<Price>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/price.md) | Required | Prices in different network zones | List<Price> getPrices() | setPrices(List<Price> prices) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.LoadBalancerType;
 import cloud.hetzner.api.models.Price;
 import cloud.hetzner.api.models.PriceHourly;
 import cloud.hetzner.api.models.PriceMonthly;
+import java.io.IOException;
 import java.util.Arrays;
 
 LoadBalancerType loadBalancerType = new LoadBalancerType.Builder(
@@ -48,16 +53,20 @@ LoadBalancerType loadBalancerType = new LoadBalancerType.Builder(
                 "1.1900000000000000",
                 "1.0000000000"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new PriceMonthly.Builder(
                 "1.1900000000000000",
                 "1.0000000000"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

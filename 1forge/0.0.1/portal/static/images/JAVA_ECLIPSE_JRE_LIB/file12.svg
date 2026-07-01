@@ -111,8 +111,8 @@
   <text transform="translate(30 116) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">Group Id:</tspan></text>
   <text transform="translate(30 161) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">Artifact Id:</tspan></text>
   <text transform="translate(30 206) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">Version:</tspan></text>
-  <text transform="translate(161 116) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">M1ForgeFinanceAPIsLib</tspan></text>
-    <text transform="translate(161 161) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">m1-forge-finance-apis-lib</tspan></text>
+  <text transform="translate(161 116) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">M1ForgeFinanceApIsLib</tspan></text>
+    <text transform="translate(161 161) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">m1-forge-finance-ap-is-lib</tspan></text>
   <text transform="translate(161 206) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">0.0.1 </tspan></text>
   <text transform="translate(585 206) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">Scope:</tspan></text>
   <text transform="translate(689 206) scale(1.05 1.05)" class="cls-14"><tspan class="cls-15">compile</tspan></text>

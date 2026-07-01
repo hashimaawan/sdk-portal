@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNlcnRpZmljYXRl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -22,19 +24,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `notValidAfter` | `?string` | Required | Point in time when the Certificate stops being valid (in ISO-8601 format) | getNotValidAfter(): ?string | setNotValidAfter(?string notValidAfter): void |
 | `notValidBefore` | `?string` | Required | Point in time when the Certificate becomes valid (in ISO-8601 format) | getNotValidBefore(): ?string | setNotValidBefore(?string notValidBefore): void |
 | `status` | [`?Status2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/status-2.md) | Optional | Current status of a type `managed` Certificate, always *null* for type `uploaded` Certificates | getStatus(): ?Status2 | setStatus(?Status2 status): void |
-| `type` | [`?string(TypeEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type.md) | Optional | Type of the Certificate | getType(): ?string | setType(?string type): void |
+| `type` | [`?string(Type)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type.md) | Optional | Type of the Certificate | getType(): ?string | setType(?string type): void |
 | `usedBy` | [`UsedBy[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/used-by.md) | Required | Resources currently using the Certificate | getUsedBy(): array | setUsedBy(array usedBy): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CertificateBuilder;
-use HetznerCloudAPILib\Models\Builders\UsedByBuilder;
-use HetznerCloudAPILib\Models\Builders\Status2Builder;
-use HetznerCloudAPILib\Models\IssuanceEnum;
-use HetznerCloudAPILib\Models\RenewalEnum;
-use HetznerCloudAPILib\Models\TypeEnum;
+use HetznerCloudApiLib\Models\Builders\CertificateBuilder;
+use HetznerCloudApiLib\Models\Builders\UsedByBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\Status2Builder;
+use HetznerCloudApiLib\Models\Issuance;
+use HetznerCloudApiLib\Models\Renewal;
+use HetznerCloudApiLib\Models\Type;
 
 $certificate = CertificateBuilder::init(
     '2016-01-30T23:55:00+00:00',
@@ -54,7 +58,9 @@ $certificate = CertificateBuilder::init(
         UsedByBuilder::init(
             4711,
             'load_balancer'
-        )->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ]
 )
     ->certificate('-----BEGIN CERTIFICATE-----
@@ -67,11 +73,13 @@ $certificate = CertificateBuilder::init(
             ->error(
                 null
             )
-            ->issuance(IssuanceEnum::COMPLETED)
-            ->renewal(RenewalEnum::FAILED)
+            ->issuance(Issuance::COMPLETED)
+            ->renewal(Renewal::FAILED)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
-    ->type(TypeEnum::UPLOADED)
+    ->type(Type::UPLOADED)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

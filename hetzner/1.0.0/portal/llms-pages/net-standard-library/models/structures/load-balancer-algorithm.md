@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Algorithm of the Load Balancer
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -14,17 +16,20 @@ Algorithm of the Load Balancer
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-28.md) | Required | Type of the algorithm |
+| `Type` | [`Type28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-28.md) | Required | Type of the algorithm |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 LoadBalancerAlgorithm loadBalancerAlgorithm = new LoadBalancerAlgorithm
 {
-    Type = Type28Enum.RoundRobin,
+    Type = Type28.RoundRobin,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

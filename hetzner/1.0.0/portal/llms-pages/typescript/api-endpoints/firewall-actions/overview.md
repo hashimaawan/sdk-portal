@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `FirewallActionsController` class can be created using the API Client.
+The instance of the `FirewallActionsApi` class can be created using the API Client.
 
 ```
-const firewallActionsController = new FirewallActionsController(client);
+const firewallActionsApi = new FirewallActionsApi(client);
 ```
 
 

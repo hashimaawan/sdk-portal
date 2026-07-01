@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkZpcmV3YWxs
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,46 +20,54 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Map<String, String>` | Optional | User-defined labels (key-value pairs) | Map<String, String> getLabels() | setLabels(Map<String, String> labels) |
 | `Name` | `String` | Required | Name of the Resource. Must be unique per Project. | String getName() | setName(String name) |
 | `Rules` | [`List<Rule>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/rule.md) | Required | - | List<Rule> getRules() | setRules(List<Rule> rules) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.AppliedTo;
 import cloud.hetzner.api.models.AppliedToResource;
-import cloud.hetzner.api.models.DirectionEnum;
+import cloud.hetzner.api.models.Direction;
 import cloud.hetzner.api.models.Firewall;
 import cloud.hetzner.api.models.LabelSelector;
-import cloud.hetzner.api.models.ProtocolEnum;
+import cloud.hetzner.api.models.Protocol;
 import cloud.hetzner.api.models.Rule;
 import cloud.hetzner.api.models.Server;
-import cloud.hetzner.api.models.Type5Enum;
-import cloud.hetzner.api.models.Type6Enum;
+import cloud.hetzner.api.models.Type5;
+import cloud.hetzner.api.models.Type6;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
 Firewall firewall = new Firewall.Builder(
     Arrays.asList(
         new AppliedTo.Builder(
-            Type6Enum.SERVER
+            Type6.SERVER
         )
         .appliedToResources(Arrays.asList(
                 new AppliedToResource.Builder()
                     .server(new Server.Builder(
                         14
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build())
-                    .type(Type5Enum.SERVER)
+                    .type(Type5.SERVER)
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
             ))
         .labelSelector(new LabelSelector.Builder(
                 "selector8"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
         .server(new Server.Builder(
                 14
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     "2016-01-30T23:55:00+00:00",
@@ -65,8 +75,8 @@ Firewall firewall = new Firewall.Builder(
     "my-resource",
     Arrays.asList(
         new Rule.Builder(
-            DirectionEnum.IN,
-            ProtocolEnum.UDP
+            Direction.IN,
+            Protocol.UDP
         )
         .description("description2")
         .destinationIps(Arrays.asList(
@@ -80,6 +90,7 @@ Firewall firewall = new Firewall.Builder(
                 "28.239.14.0/24",
                 "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
             ))
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
 )
@@ -87,6 +98,7 @@ Firewall firewall = new Firewall.Builder(
         put("key0", "labels2");
         put("key1", "labels1");
     }})
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

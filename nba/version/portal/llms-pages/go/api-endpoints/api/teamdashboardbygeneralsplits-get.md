@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-TeamdashboardbygeneralsplitsGET(
+TeamdashboardbygeneralsplitsGet(
     ctx context.Context,
     seasonType string,
-    teamID string,
+    teamId string,
     measureType string,
     perMode string,
     plusMinus string,
@@ -21,7 +21,7 @@ TeamdashboardbygeneralsplitsGET(
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
@@ -37,7 +37,7 @@ TeamdashboardbygeneralsplitsGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `plusMinus` | `string` | Query, Required | - |
@@ -50,7 +50,7 @@ TeamdashboardbygeneralsplitsGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -72,7 +72,7 @@ ctx := context.Background()
 
 seasonType := "SeasonType8"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
 measureType := "MeasureType8"
 
@@ -98,7 +98,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -110,7 +110,7 @@ period := "Period2"
 
 lastNGames := "LastNGames4"
 
-resp, err := aPIController.TeamdashboardbygeneralsplitsGET(ctx, seasonType, teamID, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames)
+resp, err := api.TeamdashboardbygeneralsplitsGet(ctx, seasonType, teamId, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames)
 if err != nil {
     log.Fatalln(err)
 } else {

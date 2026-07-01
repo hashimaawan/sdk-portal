@@ -5,13 +5,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
 
 ```php
-function trendingStickers(?int $limit = 25, ?int $offset = 0, ?string $rating = null): StickersTrendingResponse
+function trendingStickers(?int $limit = 25, ?int $offset = 0, ?string $rating = null): ApiResponse
 ```
 
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -27,7 +27,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`StickersTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/stickers-trending-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`StickersTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/stickers-trending-response.md).
 
 
 # Example Usage
@@ -37,17 +37,23 @@ $limit = 25;
 
 $offset = 0;
 
-$stickersController = $client->getStickersController();
+$stickersApi = $client->getStickersApi();
+$apiResponse = $stickersApi->trendingStickers(
+    $limit,
+    $offset
+);
 
-try {
-    $result = $stickersController->trendingStickers(
-        $limit,
-        $offset
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'StickersTrendingResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

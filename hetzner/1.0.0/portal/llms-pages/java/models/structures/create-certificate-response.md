@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVzcG9uc2U
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,22 +16,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `Action` | [`NullableAction`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/nullable-action.md) | Optional | - | NullableAction getAction() | setAction(NullableAction action) |
 | `Certificate` | [`Certificate`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificate.md) | Required | - | Certificate getCertificate() | setCertificate(Certificate certificate) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Certificate;
 import cloud.hetzner.api.models.CreateCertificateResponse;
 import cloud.hetzner.api.models.Error;
-import cloud.hetzner.api.models.IssuanceEnum;
+import cloud.hetzner.api.models.Issuance;
 import cloud.hetzner.api.models.NullableAction;
-import cloud.hetzner.api.models.RenewalEnum;
+import cloud.hetzner.api.models.Renewal;
 import cloud.hetzner.api.models.Resource;
+import cloud.hetzner.api.models.Status;
 import cloud.hetzner.api.models.Status2;
-import cloud.hetzner.api.models.StatusEnum;
-import cloud.hetzner.api.models.TypeEnum;
+import cloud.hetzner.api.models.Type;
 import cloud.hetzner.api.models.UsedBy;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -57,15 +62,18 @@ CreateCertificateResponse createCertificateResponse = new CreateCertificateRespo
                 4711,
                 "load_balancer"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         )
     )
     .status(new Status2.Builder()
             .error(null)
-            .issuance(IssuanceEnum.COMPLETED)
-            .renewal(RenewalEnum.FAILED)
+            .issuance(Issuance.COMPLETED)
+            .renewal(Renewal.FAILED)
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
-    .type(TypeEnum.UPLOADED)
+    .type(Type.UPLOADED)
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build()
 )
 .action(new NullableAction.Builder(
@@ -74,6 +82,7 @@ CreateCertificateResponse createCertificateResponse = new CreateCertificateRespo
             "code2",
             "message4"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         "finished0",
         238,
@@ -83,22 +92,27 @@ CreateCertificateResponse createCertificateResponse = new CreateCertificateRespo
                 198,
                 "type0"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Resource.Builder(
                 198,
                 "type0"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Resource.Builder(
                 198,
                 "type0"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         ),
         "started8",
-        StatusEnum.RUNNING
+        Status.RUNNING
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

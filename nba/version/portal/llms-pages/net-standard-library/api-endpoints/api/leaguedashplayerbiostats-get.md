@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-LeaguedashplayerbiostatsGETAsync(
+LeaguedashplayerbiostatsGetAsync(
     string perMode,
-    string leagueID,
+    string leagueId,
     string season,
     string seasonType)
 ```
@@ -18,7 +18,7 @@ LeaguedashplayerbiostatsGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
@@ -34,14 +34,14 @@ LeaguedashplayerbiostatsGETAsync(
 
 ```csharp
 string perMode = "PerMode6";
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string season = "Season0";
 string seasonType = "SeasonType8";
 try
 {
-    await aPIController.LeaguedashplayerbiostatsGETAsync(
+    await api.LeaguedashplayerbiostatsGetAsync(
         perMode,
-        leagueID,
+        leagueId,
         season,
         seasonType
     );

@@ -7,7 +7,7 @@ Type of Image to create (default: `snapshot`)
 
 # Enum Type Name
 
-`Type63Enum`
+`Type63`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Image to create (default: `snapshot`)
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type63Enum;
+import cloud.hetzner.api.models.Type63;
 
-Type63Enum type63 = Type63Enum.SNAPSHOT;
+Type63 type63 = Type63.SNAPSHOT;
 ```
 
 

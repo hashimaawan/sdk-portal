@@ -41,7 +41,7 @@ const body: DetachFromNetworkRequest = {
 };
 
 try {
-  const response = await serverActionsController.detachAServerFromANetwork(
+  const response = await serverActionsApi.detachAServerFromANetwork(
     id,
     body
   );

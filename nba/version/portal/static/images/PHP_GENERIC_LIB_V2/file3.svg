@@ -110,7 +110,7 @@
     <rect x="1" y="94" width="401" height="445" class="cls-2" />
     <rect x="1" y="65" width="401" height="28" class="cls-3" />
     <rect x="1" y="94" width="401" height="26" class="cls-4" />
-    <text transform="translate(31 53) scale(0.5 0.5)" class="cls-5"><tspan class="cls-6">NBAStatsAPI</tspan></text>
+    <text transform="translate(31 53) scale(0.5 0.5)" class="cls-5"><tspan class="cls-6">NbaStatsApi</tspan></text>
     <text transform="translate(39 83) scale(0.5 0.5)" class="cls-5"><tspan class="cls-6">project</tspan></text>
     <path d="M97.694,83.000 L94.771,77.937 L100.617,77.937 L97.694,83.000 Z" class="cls-7" />
     <path d="M10.694,111.000 L7.771,105.937 L13.617,105.937 L10.694,111.000 Z" class="cls-7" />
@@ -128,7 +128,7 @@
     <text transform="translate(241 22) scale(0.5 0.5)" class="cls-8"><tspan class="cls-9">Refactor</tspan></text>
     <path d="M26.000,54.000 L12.000,54.000 L12.000,42.000 L18.000,42.000 L20.000,44.000 L26.000,44.000 L26.000,54.000 Z" class="cls-10" />
     <rect x="14" y="46" width="10" height="6" class="cls-4" />
-    <text transform="translate(39 113) scale(0.5 0.5)" class="cls-5"><tspan class="cls-6">NBAStatsAPI</tspan></text>
+    <text transform="translate(39 113) scale(0.5 0.5)" class="cls-5"><tspan class="cls-6">NbaStatsApi</tspan></text>
     <path d="M34.000,114.000 L20.000,114.000 L20.000,102.000 L26.000,102.000 L28.000,104.000 L34.000,104.000 L34.000,114.000 Z" class="cls-10" />
     <rect x="22" y="106" width="10" height="6" class="cls-4" />
     <text transform="translate(64 133) scale(0.5 0.5)" class="cls-5"><tspan class="cls-6">src</tspan></text>
@@ -174,10 +174,10 @@
     <text transform="translate(167 324) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Refractor</tspan></text>
     <text transform="translate(167 344) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Add to Favorites</tspan></text>
     <text transform="translate(167 362) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Show Image Thumbnails</tspan></text>
-    <text transform="translate(167 381) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Run 'NBAStatsAPI'</tspan></text>
-    <text transform="translate(167 401) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Debug 'NBAStatsAPI'</tspan></text>
-    <text transform="translate(167 419) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Run 'NBAStatsAPI'</tspan></text>
-    <text transform="translate(167 439) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Create 'NBAStatsAPI'...</tspan></text>
+    <text transform="translate(167 381) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Run 'NbaStatsApi'</tspan></text>
+    <text transform="translate(167 401) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Debug 'NbaStatsApi'</tspan></text>
+    <text transform="translate(167 419) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Run 'NbaStatsApi'</tspan></text>
+    <text transform="translate(167 439) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Create 'NbaStatsApi'...</tspan></text>
     <text transform="translate(167 458) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Compare with...</tspan></text>
     <text transform="translate(167 476) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Mark Directry as</tspan></text>
     <text transform="translate(167 496) scale(0.32 0.32)" class="cls-16"><tspan class="cls-17">Composer</tspan></text>

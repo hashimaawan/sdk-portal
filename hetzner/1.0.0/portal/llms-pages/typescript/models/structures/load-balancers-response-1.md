@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VycyUyNTIwUmVzcG9uc2Ux
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/action.md) | Required | - |
 | `loadBalancer` | [`LoadBalancer`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -21,12 +24,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 ```ts
 import {
   LoadBalancersResponse1,
-  Protocol6Enum,
-  Protocol7Enum,
-  Status30Enum,
-  StatusEnum,
-  Type28Enum,
-  Type29Enum,
+  Protocol6,
+  Protocol7,
+  Status,
+  Status30,
+  Type28,
+  Type29,
 } from 'hetzner-cloud-apilib';
 
 const loadBalancersResponse1: LoadBalancersResponse1 = {
@@ -35,6 +38,9 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
     error: {
       code: 'action_failed',
       message: 'Action failed',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: '2016-01-30T23:55:00+00:00',
     id: 42,
@@ -43,14 +49,23 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
       {
         id: 42,
         type: 'server',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: '2016-01-30T23:55:00+00:00',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   loadBalancer: {
     algorithm: {
-      type: Type28Enum.RoundRobin,
+      type: Type28.RoundRobin,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     created: '2016-01-30T23:55:00+00:00',
     id: 42,
@@ -75,13 +90,25 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
           priceHourly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           priceMonthly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     location: {
       city: 'Falkenstein',
@@ -92,6 +119,9 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
       longitude: 12.370071,
       name: 'fsn1',
       networkZone: 'eu-central',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     name: 'my-resource',
     outgoingTraffic: 42,
@@ -99,20 +129,35 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
       {
         ip: '10.0.0.2',
         network: 4711,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     protection: {
       mDelete: false,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     publicNet: {
       enabled: false,
       ipv4: {
         dnsPtr: 'lb1.example.com',
         ip: '1.2.3.4',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       ipv6: {
         dnsPtr: 'lb1.example.com',
         ip: '2001:db8::1',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     },
     services: [
@@ -121,7 +166,7 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
         healthCheck: {
           interval: 15,
           port: 4711,
-          protocol: Protocol6Enum.Http,
+          protocol: Protocol6.Http,
           retries: 3,
           timeout: 10,
           http: {
@@ -137,7 +182,7 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
           },
         },
         listenPort: 443,
-        protocol: Protocol7Enum.Https,
+        protocol: Protocol7.Https,
         proxyprotocol: false,
         http: {
           certificates: [
@@ -147,86 +192,152 @@ const loadBalancersResponse1: LoadBalancersResponse1 = {
           cookieName: 'cookie_name6',
           redirectHttp: false,
           stickySessions: false,
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
+        },
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
         },
       }
     ],
     targets: [
       {
-        type: Type29Enum.Ip,
+        type: Type29.Ip,
         healthStatus: [
           {
             listenPort: 142,
-            status: Status30Enum.Unknown,
+            status: Status30.Unknown,
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           {
             listenPort: 142,
-            status: Status30Enum.Unknown,
+            status: Status30.Unknown,
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           }
         ],
         ip: {
           ip: 'ip8',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         labelSelector: {
           selector: 'selector8',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         server: {
           id: 14,
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         targets: [
           {
             healthStatus: [
               {
                 listenPort: 142,
-                status: Status30Enum.Unknown,
+                status: Status30.Unknown,
+                additionalProperties: {
+                  'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+                },
               },
               {
                 listenPort: 142,
-                status: Status30Enum.Unknown,
+                status: Status30.Unknown,
+                additionalProperties: {
+                  'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+                },
               }
             ],
             server: {
               id: 14,
+              additionalProperties: {
+                'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+              },
             },
             type: 'type2',
             usePrivateIp: false,
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           {
             healthStatus: [
               {
                 listenPort: 142,
-                status: Status30Enum.Unknown,
+                status: Status30.Unknown,
+                additionalProperties: {
+                  'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+                },
               },
               {
                 listenPort: 142,
-                status: Status30Enum.Unknown,
+                status: Status30.Unknown,
+                additionalProperties: {
+                  'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+                },
               }
             ],
             server: {
               id: 14,
+              additionalProperties: {
+                'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+              },
             },
             type: 'type2',
             usePrivateIp: false,
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           {
             healthStatus: [
               {
                 listenPort: 142,
-                status: Status30Enum.Unknown,
+                status: Status30.Unknown,
+                additionalProperties: {
+                  'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+                },
               },
               {
                 listenPort: 142,
-                status: Status30Enum.Unknown,
+                status: Status30.Unknown,
+                additionalProperties: {
+                  'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+                },
               }
             ],
             server: {
               id: 14,
+              additionalProperties: {
+                'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+              },
             },
             type: 'type2',
             usePrivateIp: false,
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           }
         ],
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

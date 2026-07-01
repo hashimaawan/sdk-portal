@@ -9,7 +9,7 @@ The Primary IP may be assigned to a Server. In this case it is unassigned automa
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAPrimaryIPAsync(
+CompletableFuture<ApiResponse<Void>> deleteAPrimaryIpAsync(
     final int id)
 ```
 
@@ -33,8 +33,9 @@ CompletableFuture<Void> deleteAPrimaryIPAsync(
 ```java
 int id = 112;
 
-primaryIPsController.deleteAPrimaryIPAsync(id).thenAccept(result -> {
+primaryIPsApi.deleteAPrimaryIpAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

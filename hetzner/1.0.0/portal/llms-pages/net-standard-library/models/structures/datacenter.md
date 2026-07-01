@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkRhdGFjZW50ZXI
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -17,12 +19,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Location` | [`Location`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/location.md) | Required | - |
 | `Name` | `string` | Required | Unique identifier of the Datacenter |
 | `ServerTypes` | [`ServerTypes`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/server-types.md) | Required | The Server types the Datacenter can handle |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Datacenter datacenter = new Datacenter
@@ -39,6 +43,7 @@ Datacenter datacenter = new Datacenter
         Longitude = 12.370071,
         Name = "fsn1",
         NetworkZone = "eu-central",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Name = "fsn1-dc8",
     ServerTypes = new ServerTypes
@@ -61,7 +66,9 @@ Datacenter datacenter = new Datacenter
             2,
             3,
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

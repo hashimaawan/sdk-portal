@@ -24,7 +24,7 @@ def delete_service(id,
 
 **201**: The `action` key contains the `delete_service` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -33,14 +33,19 @@ def delete_service(id,
 id = 112
 
 body = LoadBalancersActionsDeleteServiceRequest.new(
-  4711
+  listen_port: 4711
 )
 
-result = load_balancer_actions_controller.delete_service(
+result = load_balancer_actions_api.delete_service(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

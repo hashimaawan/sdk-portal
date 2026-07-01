@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZVBsYWNlbWVudEdyb3VwUmVzcG9uc2U
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,15 +16,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`NullableAction \| null \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/nullable-action.md) | Optional | - |
 | `placementGroup` | [`PlacementGroup`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/placement-group.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import {
-  CreatePlacementGroupResponse,
-  StatusEnum,
-} from 'hetzner-cloud-apilib';
+import { CreatePlacementGroupResponse, Status } from 'hetzner-cloud-apilib';
 
 const createPlacementGroupResponse: CreatePlacementGroupResponse = {
   placementGroup: {
@@ -36,12 +36,18 @@ const createPlacementGroupResponse: CreatePlacementGroupResponse = {
       42
     ],
     type: 'spread',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   action: {
     command: 'command6',
     error: {
       code: 'code2',
       message: 'message4',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: 'finished0',
     id: 238,
@@ -50,18 +56,33 @@ const createPlacementGroupResponse: CreatePlacementGroupResponse = {
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: 'started8',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

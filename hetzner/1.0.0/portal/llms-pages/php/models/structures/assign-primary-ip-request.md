@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkFzc2lnblByaW1hcnlJUFJlcXVlc3Q
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
-`AssignPrimaryIPRequest`
+`AssignPrimaryIpRequest`
 
 
 # Fields
@@ -14,16 +16,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `assigneeId` | `int` | Required | ID of a resource of type `assignee_type` | getAssigneeId(): int | setAssigneeId(int assigneeId): void |
 | `assigneeType` | `string` | Required, Constant | Type of resource assigning the Primary IP to<br><br>**Value**: `'server'` | getAssigneeType(): string | setAssigneeType(string assigneeType): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\AssignPrimaryIPRequestBuilder;
+use HetznerCloudApiLib\Models\Builders\AssignPrimaryIpRequestBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
-$assignPrimaryIPRequest = AssignPrimaryIPRequestBuilder::init(
+$assignPrimaryIpRequest = AssignPrimaryIpRequestBuilder::init(
     4711
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

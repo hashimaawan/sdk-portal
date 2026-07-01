@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playbyplayv2GETAsync(
-    final String gameID,
+CompletableFuture<ApiResponse<Void>> playbyplayv2GetAsync(
+    final String gameId,
     final String startPeriod,
     final String endPeriod)
 ```
@@ -16,7 +16,7 @@ CompletableFuture<Void> playbyplayv2GETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `String` | Query, Required | - |
+| `gameId` | `String` | Query, Required | - |
 | `startPeriod` | `String` | Query, Required | - |
 | `endPeriod` | `String` | Query, Required | - |
 
@@ -31,12 +31,13 @@ CompletableFuture<Void> playbyplayv2GETAsync(
 # Example Usage
 
 ```java
-String gameID = "GameID8";
+String gameId = "GameID8";
 String startPeriod = "StartPeriod4";
 String endPeriod = "EndPeriod0";
 
-aPIController.playbyplayv2GETAsync(gameID, startPeriod, endPeriod).thenAccept(result -> {
+api.playbyplayv2GetAsync(gameId, startPeriod, endPeriod).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

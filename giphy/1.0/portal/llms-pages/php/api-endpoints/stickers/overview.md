@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 # Get singleton instance
 
-The singleton instance of the `StickersController` class can be accessed from the API Client.
+The singleton instance of the `StickersApi` class can be accessed from the API Client.
 
 ```
-$stickersController = $client->getStickersController();
+$stickersApi = $client->getStickersApi();
 ```
 
 

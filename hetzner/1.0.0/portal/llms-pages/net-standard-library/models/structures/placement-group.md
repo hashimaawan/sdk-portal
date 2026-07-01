@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlBsYWNlbWVudEdyb3Vw
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `Servers` | `List<int>` | Required | Array of IDs of Servers that are part of this Placement Group |
 | `Type` | `string` | Required, Constant | Type of the Placement Group<br><br>**Value**: `"spread"` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 PlacementGroup placementGroup = new PlacementGroup
@@ -42,6 +46,7 @@ PlacementGroup placementGroup = new PlacementGroup
         42,
     },
     Type = "spread",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

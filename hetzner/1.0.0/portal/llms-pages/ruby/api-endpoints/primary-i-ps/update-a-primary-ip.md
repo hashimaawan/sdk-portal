@@ -21,14 +21,14 @@ def update_a_primary_ip(id,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `Integer` | Template, Required | ID of the resource |
-| `body` | [`UpdatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -36,17 +36,22 @@ def update_a_primary_ip(id,
 ```ruby
 id = 112
 
-body = UpdatePrimaryIPRequest.new(
-  true,
-  { 'labelkey' => 'value' },
-  'my-ip'
+body = UpdatePrimaryIpRequest.new(
+  auto_delete: true,
+  labels: { 'labelkey' => 'value' },
+  name: 'my-ip'
 )
 
-result = primary_i_ps_controller.update_a_primary_ip(
+result = primary_i_ps_api.update_a_primary_ip(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

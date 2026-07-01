@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get instance
 
-An instance of the `NetworkActionsController` class can be accessed from the API Client.
+An instance of the `NetworkActionsApi` class can be accessed from the API Client.
 
 ```
-network_actions_controller = client.network_actions
+network_actions_api = client.network_actions
 ```
 
 

@@ -26,7 +26,7 @@ def update_a_volume(id,
 
 **200**: The `volume` key contains the updated volume
 
-[`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/volumes-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/volumes-response-2.md).
 
 
 # Example Usage
@@ -35,15 +35,19 @@ def update_a_volume(id,
 id = 'id0'
 
 body = UpdateVolumeRequest.new(
-  'database-storage',
-  Labels2.new
+  name: 'database-storage'
 )
 
-result = volumes_controller.update_a_volume(
+result = volumes_api.update_a_volume(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

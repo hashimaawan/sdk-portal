@@ -7,7 +7,7 @@ Status of the Firewall on the Server
 
 # Enum Type Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
@@ -21,9 +21,9 @@ Status of the Firewall on the Server
 # Example
 
 ```python
-from hetznercloudapi.models.status_72_enum import Status72Enum
+from hetznercloudapi.models.status_72 import Status72
 
-status_72 = Status72Enum.APPLIED
+status_72 = Status72.APPLIED
 ```
 
 

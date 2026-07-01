@@ -9,10 +9,10 @@ Currency for all amounts is €. All prices exclude VAT.
 
 # Get instance
 
-An instance of the `ServerTypesController` class can be accessed from the API Client.
+An instance of the `ServerTypesApi` class can be accessed from the API Client.
 
 ```
-server_types_controller = client.server_types
+server_types_api = client.server_types
 ```
 
 

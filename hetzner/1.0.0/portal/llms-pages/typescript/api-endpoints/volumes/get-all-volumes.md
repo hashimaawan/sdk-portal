@@ -8,8 +8,8 @@ Gets all existing Volumes that you have available.
 
 ```ts
 async getAllVolumes(
-  status?: Status23Enum,
-  sort?: SortEnum,
+  status?: Status23,
+  sort?: Sort,
   name?: string,
   labelSelector?: string,
   requestOptions?: RequestOptions
@@ -21,8 +21,8 @@ async getAllVolumes(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `status` | [`Status23Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Volumes matching the status. |
-| `sort` | [`SortEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`Status23 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Volumes matching the status. |
+| `sort` | [`Sort \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -39,7 +39,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await volumesController.getAllVolumes();
+  const response = await volumesApi.getAllVolumes();
 
   // Extracting fully parsed response body.
   console.log(response.result);

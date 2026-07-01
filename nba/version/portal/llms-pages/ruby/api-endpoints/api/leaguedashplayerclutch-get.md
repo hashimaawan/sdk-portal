@@ -70,7 +70,7 @@ def leaguedashplayerclutch_get(clutch_time,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -128,7 +128,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.leaguedashplayerclutch_get(
+result = client_api.leaguedashplayerclutch_get(
   clutch_time,
   ahead_behind,
   point_diff,
@@ -156,6 +156,12 @@ client_controller.leaguedashplayerclutch_get(
   period,
   last_n_games
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

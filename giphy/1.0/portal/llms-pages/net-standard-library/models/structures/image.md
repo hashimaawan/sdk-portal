@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -21,12 +23,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `Webp` | `string` | Optional | The URL for this GIF in .webp format. |
 | `WebpSize` | `string` | Optional | The size in bytes of the .webp file corresponding to this GIF. |
 | `Width` | `string` | Optional | The width of this GIF in pixels. |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using GiphyAPI.Standard.Models;
+using GiphyApi.Standard.Models;
+using GiphyApi.Standard.Utilities;
 
 Image image = new Image
 {
@@ -39,6 +43,7 @@ Image image = new Image
     Webp = "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp",
     WebpSize = "12321",
     Width = "320",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlRyaXA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -17,13 +19,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `End` | `LocalDateTime` | Optional | end of the trip in its local timezone as YYYY-MM-DDThh:mm | LocalDateTime getEnd() | setEnd(LocalDateTime end) |
 | `Id` | `String` | Optional | Unique ID of the trip | String getId() | setId(String id) |
 | `Name` | `String` | Optional | name of the trip | String getName() | setName(String name) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import com.furkot.trips.ApiHelper;
 import com.furkot.trips.DateTimeHelper;
 import com.furkot.trips.models.Trip;
+import java.io.IOException;
 
 Trip trip = new Trip.Builder()
     .begin(DateTimeHelper.fromRfc8601DateTime("2016-03-13T12:52:32.123Z"))
@@ -31,6 +36,7 @@ Trip trip = new Trip.Builder()
     .end(DateTimeHelper.fromRfc8601DateTime("2016-03-13T12:52:32.123Z"))
     .id("id8")
     .name("name8")
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

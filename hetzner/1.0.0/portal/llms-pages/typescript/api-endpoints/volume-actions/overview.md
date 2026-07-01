@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `VolumeActionsController` class can be created using the API Client.
+The instance of the `VolumeActionsApi` class can be created using the API Client.
 
 ```
-const volumeActionsController = new VolumeActionsController(client);
+const volumeActionsApi = new VolumeActionsApi(client);
 ```
 
 

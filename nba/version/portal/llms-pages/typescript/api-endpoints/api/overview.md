@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 
 # Create Instance
 
-The instance of the `ApiController` class can be created using the API Client.
+The instance of the `Api` class can be created using the API Client.
 
 ```
-const apiController = new ApiController(client);
+const api = new Api(client);
 ```
 
 

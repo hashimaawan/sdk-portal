@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkRhdGFjZW50ZXJzJTI1MjBSZXNwb25zZTE
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `datacenter` | [`Datacenter`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/datacenter.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -33,6 +36,9 @@ const datacentersResponse1: DatacentersResponse1 = {
       longitude: 12.370071,
       name: 'fsn1',
       networkZone: 'eu-central',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     name: 'fsn1-dc8',
     serverTypes: {
@@ -51,7 +57,16 @@ const datacentersResponse1: DatacentersResponse1 = {
         2,
         3
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

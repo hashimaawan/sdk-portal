@@ -5,12 +5,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playerdashptshotlogGETAsync(
-    final String leagueID,
+CompletableFuture<ApiResponse<Void>> playerdashptshotlogGetAsync(
+    final String leagueId,
     final String season,
     final String seasonType,
-    final String playerID,
-    final String teamID)
+    final String playerId,
+    final String teamId)
 ```
 
 
@@ -18,11 +18,11 @@ CompletableFuture<Void> playerdashptshotlogGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Optional | - |
+| `leagueId` | `String` | Query, Optional | - |
 | `season` | `String` | Query, Optional | - |
 | `seasonType` | `String` | Query, Optional | - |
-| `playerID` | `String` | Query, Optional | - |
-| `teamID` | `String` | Query, Optional | - |
+| `playerId` | `String` | Query, Optional | - |
+| `teamId` | `String` | Query, Optional | - |
 
 
 # Response Type
@@ -35,8 +35,9 @@ CompletableFuture<Void> playerdashptshotlogGETAsync(
 # Example Usage
 
 ```java
-aPIController.playerdashptshotlogGETAsync(null, null, null, null, null).thenAccept(result -> {
+api.playerdashptshotlogGetAsync(null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVxdWVzdA
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -17,13 +19,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `unknown \| undefined` | Optional | User-defined labels (key-value pairs) |
 | `name` | `string` | Required | Name of the Certificate |
 | `privateKey` | `string \| undefined` | Optional | Certificate key in PEM format. Required for type `uploaded` Certificates. |
-| `type` | [`Type1Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-1.md) | Optional | Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`. |
+| `type` | [`Type1 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-1.md) | Optional | Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { CreateCertificateRequest, Type1Enum } from 'hetzner-cloud-apilib';
+import { CreateCertificateRequest, Type1 } from 'hetzner-cloud-apilib';
 
 const createCertificateRequest: CreateCertificateRequest = {
   name: 'my website cert',
@@ -35,7 +38,10 @@ const createCertificateRequest: CreateCertificateRequest = {
   ],
   labels: { 'key1': 'val1', 'key2': 'val2' },
   privateKey: '-----BEGIN PRIVATE KEY-----\n...',
-  type: Type1Enum.Uploaded,
+  type: Type1.Uploaded,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

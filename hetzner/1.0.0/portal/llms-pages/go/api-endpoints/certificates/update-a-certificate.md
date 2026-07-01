@@ -43,11 +43,11 @@ ctx := context.Background()
 id := 112
 
 body := models.UpdateCertificateRequest{
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("my website cert"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("my website cert"),
 }
 
-apiResponse, err := certificatesController.UpdateACertificate(ctx, id, &body)
+apiResponse, err := certificatesApi.UpdateACertificate(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

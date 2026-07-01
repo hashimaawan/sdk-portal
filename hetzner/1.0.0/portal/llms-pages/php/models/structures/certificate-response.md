@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNlcnRpZmljYXRlUmVzcG9uc2U
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,18 +15,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `certificate` | [`Certificate`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/certificate.md) | Required | - | getCertificate(): Certificate | setCertificate(Certificate certificate): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CertificateResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\CertificateBuilder;
-use HetznerCloudAPILib\Models\Builders\UsedByBuilder;
-use HetznerCloudAPILib\Models\Builders\Status2Builder;
-use HetznerCloudAPILib\Models\IssuanceEnum;
-use HetznerCloudAPILib\Models\RenewalEnum;
-use HetznerCloudAPILib\Models\TypeEnum;
+use HetznerCloudApiLib\Models\Builders\CertificateResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\CertificateBuilder;
+use HetznerCloudApiLib\Models\Builders\UsedByBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\Status2Builder;
+use HetznerCloudApiLib\Models\Issuance;
+use HetznerCloudApiLib\Models\Renewal;
+use HetznerCloudApiLib\Models\Type;
 
 $certificateResponse = CertificateResponseBuilder::init(
     CertificateBuilder::init(
@@ -45,7 +49,9 @@ $certificateResponse = CertificateResponseBuilder::init(
             UsedByBuilder::init(
                 4711,
                 'load_balancer'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ]
     )
         ->certificate('-----BEGIN CERTIFICATE-----
@@ -58,13 +64,17 @@ $certificateResponse = CertificateResponseBuilder::init(
                 ->error(
                     null
                 )
-                ->issuance(IssuanceEnum::COMPLETED)
-                ->renewal(RenewalEnum::FAILED)
+                ->issuance(Issuance::COMPLETED)
+                ->renewal(Renewal::FAILED)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         )
-        ->type(TypeEnum::UPLOADED)
+        ->type(Type::UPLOADED)
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Public network information
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -17,12 +19,14 @@ Public network information
 | `Enabled` | `bool` | Required | Public Interface enabled or not |
 | `Ipv4` | [`Ipv4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/ipv-4.md) | Required | IP address (v4) |
 | `Ipv6` | [`Ipv6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/ipv-6.md) | Required | IP address (v6) |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 PublicNet publicNet = new PublicNet
 {
@@ -31,12 +35,15 @@ PublicNet publicNet = new PublicNet
     {
         DnsPtr = "lb1.example.com",
         Ip = "1.2.3.4",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Ipv6 = new Ipv6
     {
         DnsPtr = "lb1.example.com",
         Ip = "2001:db8::1",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

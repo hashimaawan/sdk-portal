@@ -10,10 +10,10 @@ Firewalls can limit the network access to or from your resources.
 
 # Get Instance
 
-The instance of the `FirewallsController` class can be accessed from the API Client.
+The instance of the `FirewallsApi` class can be accessed from the API Client.
 
 ```
-firewallsController := client.FirewallsController()
+firewallsApi := client.FirewallsApi()
 ```
 
 

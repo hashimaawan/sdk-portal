@@ -7,7 +7,7 @@ Deletes a Server. This immediately removes the Server from your account, and it 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function deleteAServer(int $id): ServersResponse1
+function deleteAServer(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function deleteAServer(int $id): ServersResponse1
 
 **200**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-response-1.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function deleteAServer(int $id): ServersResponse1
 ```php
 $id = 112;
 
-$serversController = $client->getServersController();
+$serversApi = $client->getServersApi();
+$apiResponse = $serversApi->deleteAServer($id);
 
-try {
-    $result = $serversController->deleteAServer($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

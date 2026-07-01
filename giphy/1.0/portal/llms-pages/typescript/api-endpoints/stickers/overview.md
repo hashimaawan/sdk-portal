@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 # Create Instance
 
-The instance of the `StickersController` class can be created using the API Client.
+The instance of the `StickersApi` class can be created using the API Client.
 
 ```
-const stickersController = new StickersController(client);
+const stickersApi = new StickersApi(client);
 ```
 
 

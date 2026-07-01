@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip`
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -18,17 +20,19 @@ Public network information. The Server's IPv4 address can be found in `public_ne
 | `floatingIps` | `int[]` | Required | IDs of Floating IPs assigned to this Server | getFloatingIps(): array | setFloatingIps(array floatingIps): void |
 | `ipv4` | [`?Ipv44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/ipv-44.md) | Required | IP address (v4) and its reverse DNS entry of this Server | getIpv4(): ?Ipv44 | setIpv4(?Ipv44 ipv4): void |
 | `ipv6` | [`?Ipv64`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/ipv-64.md) | Required | IPv6 network assigned to this Server and its reverse DNS entry | getIpv6(): ?Ipv64 | setIpv6(?Ipv64 ipv6): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\PublicNet4Builder;
-use HetznerCloudAPILib\Models\Builders\ServerPublicNetFirewallBuilder;
-use HetznerCloudAPILib\Models\Status72Enum;
-use HetznerCloudAPILib\Models\Builders\Ipv44Builder;
-use HetznerCloudAPILib\Models\Builders\Ipv64Builder;
-use HetznerCloudAPILib\Models\Builders\DnsPtr8Builder;
+use HetznerCloudApiLib\Models\Builders\PublicNet4Builder;
+use HetznerCloudApiLib\Models\Builders\ServerPublicNetFirewallBuilder;
+use HetznerCloudApiLib\Models\Status72;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\Ipv44Builder;
+use HetznerCloudApiLib\Models\Builders\Ipv64Builder;
+use HetznerCloudApiLib\Models\Builders\DnsPtr8Builder;
 
 $publicNet4 = PublicNet4Builder::init(
     [
@@ -39,7 +43,8 @@ $publicNet4 = PublicNet4Builder::init(
         [
             ServerPublicNetFirewallBuilder::init()
                 ->id(250)
-                ->status(Status72Enum::APPLIED)
+                ->status(Status72::APPLIED)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -50,6 +55,7 @@ $publicNet4 = PublicNet4Builder::init(
             '1.2.3.4'
         )
             ->id(42)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->ipv6(
@@ -62,12 +68,16 @@ $publicNet4 = PublicNet4Builder::init(
                     DnsPtr8Builder::init(
                         'server.example.com',
                         '2001:db8::1'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 ]
             )
             ->id(42)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `PrimaryIPActionsController` class can be created using the API Client.
+The instance of the `PrimaryIpActionsApi` class can be created using the API Client.
 
 ```
-const primaryIPActionsController = new PrimaryIPActionsController(client);
+const primaryIpActionsApi = new PrimaryIpActionsApi(client);
 ```
 
 

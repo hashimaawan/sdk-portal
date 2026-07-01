@@ -9,7 +9,7 @@ Floating IPs assigned to the Server are not affected by this.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ChangeReverseDNSEntryForThisServer(
+ChangeReverseDnsEntryForThisServer(
     ctx context.Context,
     id int,
     body *models.ServersActionsChangeDnsPtrRequest) (
@@ -41,11 +41,11 @@ ctx := context.Background()
 id := 112
 
 body := models.ServersActionsChangeDnsPtrRequest{
-    DnsPtr:               models.ToPointer("server01.example.com"),
-    Ip:                   "1.2.3.4",
+    DnsPtr:                models.ToPointer("server01.example.com"),
+    Ip:                    "1.2.3.4",
 }
 
-apiResponse, err := serverActionsController.ChangeReverseDNSEntryForThisServer(ctx, id, &body)
+apiResponse, err := serverActionsApi.ChangeReverseDnsEntryForThisServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -7,14 +7,14 @@ Destination Image type to convert to
 
 # Class Name
 
-`Type24Enum`
+`Type24`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SNAPSHOT` |
+| `Snapshot` |
 
 
 # Example
@@ -23,11 +23,11 @@ Destination Image type to convert to
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type24 := models.Type24Enum_SNAPSHOT
+    type24 := models.Type24_Snapshot
 
 }
 ```

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNlcnRpZmljYXRl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -22,14 +24,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `NotValidAfter` | `string` | Required | Point in time when the Certificate stops being valid (in ISO-8601 format) |
 | `NotValidBefore` | `string` | Required | Point in time when the Certificate becomes valid (in ISO-8601 format) |
 | `Status` | [`Status2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/status-2.md) | Optional | Current status of a type `managed` Certificate, always *null* for type `uploaded` Certificates |
-| `Type` | [`TypeEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type.md) | Optional | Type of the Certificate |
+| `Type` | [`Type?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type.md) | Optional | Type of the Certificate |
 | `UsedBy` | [`List<UsedBy>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/used-by.md) | Required | Resources currently using the Certificate |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Certificate certificate = new Certificate
@@ -59,15 +63,18 @@ Certificate certificate = new Certificate
         {
             Id = 4711,
             Type = "load_balancer",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Status = new Status2
     {
         Error = null,
-        Issuance = IssuanceEnum.Completed,
-        Renewal = RenewalEnum.Failed,
+        Issuance = Issuance.Completed,
+        Renewal = Renewal.Failed,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
-    Type = TypeEnum.Uploaded,
+    Type = HetznerCloudApi.Standard.Models.Type.Uploaded,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

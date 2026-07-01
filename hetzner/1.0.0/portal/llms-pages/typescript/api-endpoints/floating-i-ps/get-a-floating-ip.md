@@ -7,7 +7,7 @@ Returns a specific Floating IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async getAFloatingIP(
+async getAFloatingIp(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<FloatingIpsResponse2>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await floatingIPsController.getAFloatingIP(id);
+  const response = await floatingIPsApi.getAFloatingIp(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

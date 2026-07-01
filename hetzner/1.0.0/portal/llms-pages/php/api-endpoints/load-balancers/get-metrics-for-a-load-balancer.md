@@ -29,7 +29,7 @@ function getMetricsForALoadBalancer(
     string $start,
     string $end,
     ?string $step = null
-): LoadBalancersMetricsResponse
+): ApiResponse
 ```
 
 
@@ -38,7 +38,7 @@ function getMetricsForALoadBalancer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `type` | [`string(Type41Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `type` | [`string(Type41)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `?string` | Query, Optional | Resolution of results in seconds |
@@ -48,7 +48,7 @@ function getMetricsForALoadBalancer(
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancers-metrics-response.md).
 
 
 # Example Usage
@@ -56,25 +56,31 @@ function getMetricsForALoadBalancer(
 ```php
 $id = 112;
 
-$type = Type41Enum::REQUESTS_PER_SECOND;
+$type = Type41::REQUESTS_PER_SECOND;
 
 $start = 'start4';
 
 $end = 'end8';
 
-$loadBalancersController = $client->getLoadBalancersController();
+$loadBalancersApi = $client->getLoadBalancersApi();
+$apiResponse = $loadBalancersApi->getMetricsForALoadBalancer(
+    $id,
+    $type,
+    $start,
+    $end
+);
 
-try {
-    $result = $loadBalancersController->getMetricsForALoadBalancer(
-        $id,
-        $type,
-        $start,
-        $end
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'LoadBalancersMetricsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

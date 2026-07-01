@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterType1Enum`
+`ParameterType1`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.parameter_type_1_enum import ParameterType1Enum
+from hetznercloudapi.models.parameter_type_1 import ParameterType1
 
-parameter_type_1 = ParameterType1Enum.SPREAD
+parameter_type_1 = ParameterType1.SPREAD
 ```
 
 

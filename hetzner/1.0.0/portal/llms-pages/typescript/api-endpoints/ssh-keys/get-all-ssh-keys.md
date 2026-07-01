@@ -7,8 +7,8 @@ Returns all SSH key objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async getAllSSHKeys(
-  sort?: Sort8Enum,
+async getAllSshKeys(
+  sort?: Sort8,
   name?: string,
   fingerprint?: string,
   labelSelector?: string,
@@ -21,7 +21,7 @@ async getAllSSHKeys(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`Sort8Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort-8.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`Sort8 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort-8.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `fingerprint` | `string \| undefined` | Query, Optional | Can be used to filter SSH keys by their fingerprint. The response will only contain the SSH key matching the specified fingerprint. |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
@@ -39,7 +39,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await sSHKeysController.getAllSSHKeys();
+  const response = await sshKeysApi.getAllSshKeys();
 
   // Extracting fully parsed response body.
   console.log(response.result);

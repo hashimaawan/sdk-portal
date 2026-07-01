@@ -7,7 +7,7 @@ Changes the hostname that will appear when getting the hostname belonging to thi
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function changeReverseDNSEntryForAFloatingIP(int $id, ?ChangeDNSPTRRequest $body = null): ActionResponse
+function changeReverseDnsEntryForAFloatingIp(int $id, ?ChangeDnsptrRequest $body = null): ApiResponse
 ```
 
 
@@ -16,14 +16,14 @@ function changeReverseDNSEntryForAFloatingIP(int $id, ?ChangeDNSPTRRequest $body
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`?ChangeDNSPTRRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Floating IP of type `ipv4` this must exactly match the IP address of the Floating IP. For a Floating IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Floating IP.<br><br>The target hostname is set by passing `dns_ptr`. |
+| `body` | [`?ChangeDnsptrRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Floating IP of type `ipv4` this must exactly match the IP address of the Floating IP. For a Floating IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Floating IP.<br><br>The target hostname is set by passing `dns_ptr`. |
 
 
 # Response Type
 
 **201**: The `action` key contains the `change_dns_ptr` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -31,23 +31,29 @@ function changeReverseDNSEntryForAFloatingIP(int $id, ?ChangeDNSPTRRequest $body
 ```php
 $id = 112;
 
-$body = ChangeDNSPTRRequestBuilder::init(
+$body = ChangeDnsptrRequestBuilder::init(
     '1.2.3.4'
 )
     ->dnsPtr('server02.example.com')
     ->build();
 
-$floatingIPActionsController = $client->getFloatingIPActionsController();
+$floatingIpActionsApi = $client->getFloatingIpActionsApi();
+$apiResponse = $floatingIpActionsApi->changeReverseDnsEntryForAFloatingIp(
+    $id,
+    $body
+);
 
-try {
-    $result = $floatingIPActionsController->changeReverseDNSEntryForAFloatingIP(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

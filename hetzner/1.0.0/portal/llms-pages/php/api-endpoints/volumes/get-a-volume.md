@@ -7,7 +7,7 @@ Gets a specific Volume object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAVolume(int $id): VolumesResponse2
+function getAVolume(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAVolume(int $id): VolumesResponse2
 
 **200**: The `volume` key contains the volume
 
-[`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/volumes-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/volumes-response-2.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAVolume(int $id): VolumesResponse2
 ```php
 $id = 112;
 
-$volumesController = $client->getVolumesController();
+$volumesApi = $client->getVolumesApi();
+$apiResponse = $volumesApi->getAVolume($id);
 
-try {
-    $result = $volumesController->getAVolume($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'VolumesResponse2:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

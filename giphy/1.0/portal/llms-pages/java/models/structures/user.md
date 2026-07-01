@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -20,12 +22,15 @@ The User Object contains information about the user associated with a GIF and UR
 | `ProfileUrl` | `String` | Optional | The URL for this user's profile. | String getProfileUrl() | setProfileUrl(String profileUrl) |
 | `Twitter` | `String` | Optional | The Twitter username associated with this user, if applicable. | String getTwitter() | setTwitter(String twitter) |
 | `Username` | `String` | Optional | The username associated with this user. | String getUsername() | setUsername(String username) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import com.giphy.api.ApiHelper;
 import com.giphy.api.models.User;
+import java.io.IOException;
 
 User user = new User.Builder()
     .avatarUrl("https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif")
@@ -34,6 +39,7 @@ User user = new User.Builder()
     .profileUrl("https://giphy.com/cheezburger/")
     .twitter("@joecool4000")
     .username("joecool4000")
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

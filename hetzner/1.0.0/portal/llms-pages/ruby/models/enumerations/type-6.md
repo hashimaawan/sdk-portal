@@ -7,7 +7,7 @@ Type of resource referenced
 
 # Enum Type Name
 
-`Type6Enum`
+`Type6`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of resource referenced
 # Example
 
 ```ruby
-type6 = Type6Enum::SERVER
+type6 = Type6::SERVER
 ```
 
 

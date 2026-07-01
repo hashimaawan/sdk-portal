@@ -7,7 +7,7 @@ Type of rescue system to boot (default: `linux64`)
 
 # Enum Type Name
 
-`Type65Enum`
+`Type65`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of rescue system to boot (default: `linux64`)
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type65Enum type65 = Type65Enum.Linux64;
+Type65 type65 = Type65.Linux64;
 ```
 
 

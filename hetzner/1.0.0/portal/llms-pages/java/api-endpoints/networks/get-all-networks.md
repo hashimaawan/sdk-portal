@@ -7,7 +7,7 @@ Gets all existing networks that you have available.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<NetworksResponse> getAllNetworksAsync(
+CompletableFuture<ApiResponse<NetworksResponse>> getAllNetworksAsync(
     final String name,
     final String labelSelector)
 ```
@@ -25,13 +25,13 @@ CompletableFuture<NetworksResponse> getAllNetworksAsync(
 
 **200**: The `networks` key contains a list of networks
 
-[`NetworksResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/networks-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`NetworksResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/networks-response.md).
 
 
 # Example Usage
 
 ```java
-networksController.getAllNetworksAsync(null, null).thenAccept(result -> {
+networksApi.getAllNetworksAsync(null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

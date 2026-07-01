@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkRhdGFjZW50ZXI
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -17,14 +19,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `location` | [`Location`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/location.md) | Required | - | getLocation(): Location | setLocation(Location location): void |
 | `name` | `string` | Required | Unique identifier of the Datacenter | getName(): string | setName(string name): void |
 | `serverTypes` | [`ServerTypes`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/server-types.md) | Required | The Server types the Datacenter can handle | getServerTypes(): ServerTypes | setServerTypes(ServerTypes serverTypes): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\DatacenterBuilder;
-use HetznerCloudAPILib\Models\Builders\LocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerTypesBuilder;
+use HetznerCloudApiLib\Models\Builders\DatacenterBuilder;
+use HetznerCloudApiLib\Models\Builders\LocationBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\ServerTypesBuilder;
 
 $datacenter = DatacenterBuilder::init(
     'Falkenstein DC Park 8',
@@ -38,7 +42,9 @@ $datacenter = DatacenterBuilder::init(
         12.370071,
         'fsn1',
         'eu-central'
-    )->build(),
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     'fsn1-dc8',
     ServerTypesBuilder::init(
         [
@@ -56,8 +62,12 @@ $datacenter = DatacenterBuilder::init(
             2,
             3
         ]
-    )->build()
-)->build();
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build()
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

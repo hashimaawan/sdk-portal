@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZUxvYWRCYWxhbmNlclJlcXVlc3Q
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -22,31 +24,37 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `PublicInterface` | `Boolean` | Optional | Enable or disable the public interface of the Load Balancer | Boolean getPublicInterface() | setPublicInterface(Boolean publicInterface) |
 | `Services` | [`List<LoadBalancerService>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancer-service.md) | Optional | Array of services | List<LoadBalancerService> getServices() | setServices(List<LoadBalancerService> services) |
 | `Targets` | [`List<LoadBalancerTarget>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancer-target.md) | Optional | Array of targets | List<LoadBalancerTarget> getTargets() | setTargets(List<LoadBalancerTarget> targets) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.CreateLoadBalancerRequest;
 import cloud.hetzner.api.models.Labels;
 import cloud.hetzner.api.models.LoadBalancerAlgorithm;
-import cloud.hetzner.api.models.Type28Enum;
+import cloud.hetzner.api.models.Type28;
+import java.io.IOException;
 
 CreateLoadBalancerRequest createLoadBalancerRequest = new CreateLoadBalancerRequest.Builder(
     new LoadBalancerAlgorithm.Builder(
-        Type28Enum.ROUND_ROBIN
+        Type28.ROUND_ROBIN
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     "lb11",
     "Web Frontend"
 )
 .labels(new Labels.Builder()
         .labelkey("labelkey4")
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
 .location("location2")
 .network(123)
 .networkZone("eu-central")
 .publicInterface(true)
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

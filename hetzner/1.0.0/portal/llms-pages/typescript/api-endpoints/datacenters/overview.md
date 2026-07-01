@@ -11,10 +11,10 @@ Right now there is only one Datacenter for each Location. The Datacenter numbers
 
 # Create Instance
 
-The instance of the `DatacentersController` class can be created using the API Client.
+The instance of the `DatacentersApi` class can be created using the API Client.
 
 ```
-const datacentersController = new DatacentersController(client);
+const datacentersApi = new DatacentersApi(client);
 ```
 
 

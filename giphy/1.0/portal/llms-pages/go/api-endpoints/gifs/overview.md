@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 # Get Instance
 
-The instance of the `GifsController` class can be accessed from the API Client.
+The instance of the `GifsApi` class can be accessed from the API Client.
 
 ```
-gifsController := client.GifsController()
+gifsApi := client.GifsApi()
 ```
 
 

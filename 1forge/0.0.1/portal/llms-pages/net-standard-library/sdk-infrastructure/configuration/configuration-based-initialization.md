@@ -17,9 +17,9 @@ The following code sample demonstrates how to initialize the SDK client using an
 The `Builder.FromConfiguration` method reads values from the provided configuration section and returns a builder instance, allowing you to override specific properties directly in code if needed before building the final client.
 
 ```csharp
-using M1ForgeFinanceAPIs.Standard;
+using M1ForgeFinanceApIs.Standard;
 using Microsoft.Extensions.Configuration;
-using Environment = M1ForgeFinanceAPIs.Standard.Environment;
+using Environment = M1ForgeFinanceApIs.Standard.Environment;
 
 namespace ConsoleApp;
 
@@ -30,8 +30,8 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 // Instantiate your SDK builder and configure it from IConfiguration with overrides
-var client = M1ForgeFinanceAPIsClient.Builder
-    .FromConfiguration(configuration.GetSection("M1ForgeFinanceAPIs"))
+var client = M1ForgeFinanceApIsClient.Builder
+    .FromConfiguration(configuration.GetSection("M1ForgeFinanceApIs"))
     .Environment(Environment.Production)
     .HttpClientConfig(c => c.Timeout(TimeSpan.FromSeconds(60)))
     .Build();
@@ -41,8 +41,46 @@ var client = M1ForgeFinanceAPIsClient.Builder
 
 ```csharp
 {
-  "M1ForgeFinanceAPIs": {
+  "M1ForgeFinanceApIs": {
     "Environment": "production",
+    "LoggingConfig": {
+      "LogLevel": "Debug",
+      "MaskSensitiveHeaders": true,
+      "RequestLoggingConfiguration": {
+        "Body": true,
+        "Headers": true,
+        "IncludeQueryInPath": true,
+        "HeadersToInclude": [
+          "Content-Type",
+          "X-Request-ID"
+        ],
+        "HeadersToExclude": [
+          "Authorization"
+        ],
+        "HeadersToUnmask": [
+          "X-Request-ID"
+        ],
+      },
+      "ResponseLoggingConfiguration": {
+        "Body": true,
+        "Headers": true,
+        "IncludeQueryInPath": true,
+        "HeadersToInclude": [
+          "Content-Type",
+          "X-Correlation-ID",
+          "Date",
+          "Server"
+        ],
+        "HeadersToExclude": [
+          "Set-Cookie",
+          "Authorization",
+          "X-API-Key"
+        ],
+        "HeadersToUnmask": [
+          "X-Correlation-ID"
+        ],
+      }
+    },
     "HttpClientConfig": {
       "Timeout": "00:01:00",
       "NumberOfRetries": 3,

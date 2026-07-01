@@ -7,7 +7,7 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 
 # Enum Type Name
 
-`Type1Enum`
+`Type1`
 
 
 # Fields
@@ -21,9 +21,9 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type1Enum;
+import cloud.hetzner.api.models.Type1;
 
-Type1Enum type1 = Type1Enum.UPLOADED;
+Type1 type1 = Type1.UPLOADED;
 ```
 
 

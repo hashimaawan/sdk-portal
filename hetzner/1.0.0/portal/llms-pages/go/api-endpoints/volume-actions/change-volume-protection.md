@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.VolumesActionsChangeProtectionRequest{
-    Delete:               models.ToPointer(true),
+    Delete:                models.ToPointer(true),
 }
 
-apiResponse, err := volumeActionsController.ChangeVolumeProtection(ctx, id, &body)
+apiResponse, err := volumeActionsApi.ChangeVolumeProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

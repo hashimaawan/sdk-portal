@@ -60,7 +60,7 @@ def playercompare_get(player_id_list,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -108,7 +108,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.playercompare_get(
+result = client_api.playercompare_get(
   player_id_list,
   vs_player_id_list,
   season_type,
@@ -131,6 +131,12 @@ client_controller.playercompare_get(
   period,
   last_n_games
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

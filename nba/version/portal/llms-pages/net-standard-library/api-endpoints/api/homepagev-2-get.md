@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-Homepagev2GETAsync(
+Homepagev2GetAsync(
     string statType,
-    string leagueID,
+    string leagueId,
     string season,
     string seasonType,
     string playerOrTeam,
@@ -23,7 +23,7 @@ Homepagev2GETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `statType` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `playerOrTeam` | `string` | Query, Required | - |
@@ -44,7 +44,7 @@ Homepagev2GETAsync(
 
 ```csharp
 string statType = "StatType8";
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string season = "Season0";
 string seasonType = "SeasonType8";
 string playerOrTeam = "PlayerOrTeam8";
@@ -52,9 +52,9 @@ string playerScope = "PlayerScope2";
 string gameScope = "GameScope0";
 try
 {
-    await aPIController.Homepagev2GETAsync(
+    await api.Homepagev2GetAsync(
         statType,
-        leagueID,
+        leagueId,
         season,
         seasonType,
         playerOrTeam,

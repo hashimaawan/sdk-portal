@@ -30,7 +30,7 @@ def boxscorefourfactorsv2_get(game_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -48,7 +48,7 @@ end_range = 'EndRange2'
 
 range_type = 'RangeType0'
 
-client_controller.boxscorefourfactorsv2_get(
+result = client_api.boxscorefourfactorsv2_get(
   game_id,
   start_period,
   end_period,
@@ -56,6 +56,12 @@ client_controller.boxscorefourfactorsv2_get(
   end_range,
   range_type
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

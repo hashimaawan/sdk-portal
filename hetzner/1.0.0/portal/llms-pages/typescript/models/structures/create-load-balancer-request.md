@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZUxvYWRCYWxhbmNlclJlcXVlc3Q
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -22,26 +24,36 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `publicInterface` | `boolean \| undefined` | Optional | Enable or disable the public interface of the Load Balancer |
 | `services` | [`LoadBalancerService[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer-service.md) | Optional | Array of services |
 | `targets` | [`LoadBalancerTarget[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer-target.md) | Optional | Array of targets |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { CreateLoadBalancerRequest, Type28Enum } from 'hetzner-cloud-apilib';
+import { CreateLoadBalancerRequest, Type28 } from 'hetzner-cloud-apilib';
 
 const createLoadBalancerRequest: CreateLoadBalancerRequest = {
   algorithm: {
-    type: Type28Enum.RoundRobin,
+    type: Type28.RoundRobin,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   loadBalancerType: 'lb11',
   name: 'Web Frontend',
   labels: {
     labelkey: 'labelkey4',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   location: 'location2',
   network: 123,
   networkZone: 'eu-central',
   publicInterface: true,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

@@ -7,7 +7,7 @@ Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async createAnSSHKey(
+async createAnSshKey(
   body?: SshKeysRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<SshKeysResponse1>>
@@ -38,7 +38,7 @@ const body: SshKeysRequest = {
 };
 
 try {
-  const response = await sSHKeysController.createAnSSHKey(body);
+  const response = await sshKeysApi.createAnSshKey(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

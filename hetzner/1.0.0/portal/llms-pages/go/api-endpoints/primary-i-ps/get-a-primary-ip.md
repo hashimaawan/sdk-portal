@@ -7,10 +7,10 @@ Returns a specific Primary IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetAPrimaryIP(
+GetAPrimaryIp(
     ctx context.Context,
     id int) (
-    models.ApiResponse[models.PrimaryIPResponse],
+    models.ApiResponse[models.PrimaryIpResponse],
     error)
 ```
 
@@ -26,7 +26,7 @@ GetAPrimaryIP(
 
 **200**: The `primary_ip` key contains a Primary IP object
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.PrimaryIPResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/primary-ip-response.md).
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.PrimaryIpResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := primaryIPsController.GetAPrimaryIP(ctx, id)
+apiResponse, err := primaryIPsApi.GetAPrimaryIp(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

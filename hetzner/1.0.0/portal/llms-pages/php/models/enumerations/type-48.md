@@ -7,7 +7,7 @@ The type of the Floating IP
 
 # Enum Type Name
 
-`Type48Enum`
+`Type48`
 
 
 # Fields
@@ -21,9 +21,9 @@ The type of the Floating IP
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type48Enum;
+use HetznerCloudApiLib\Models\Type48;
 
-$type48 = Type48Enum::IPV4;
+$type48 = Type48::IPV4;
 ```
 
 

@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0
 
 # Create Instance
 
-The instance of the `ForexController` class can be created using the API Client.
+The instance of the `ForexApi` class can be created using the API Client.
 
 ```
-const forexController = new ForexController(client);
+const forexApi = new ForexApi(client);
 ```
 
 

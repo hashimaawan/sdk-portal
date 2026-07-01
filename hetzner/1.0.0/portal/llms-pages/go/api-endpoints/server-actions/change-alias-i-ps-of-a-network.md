@@ -39,13 +39,13 @@ ctx := context.Background()
 id := 112
 
 body := models.ServersActionsChangeAliasIpsRequest{
-    AliasIps:             []string{
+    AliasIps:              []string{
         "10.0.1.2",
     },
-    Network:              4711,
+    Network:               4711,
 }
 
-apiResponse, err := serverActionsController.ChangeAliasIPsOfANetwork(ctx, id, &body)
+apiResponse, err := serverActionsApi.ChangeAliasIPsOfANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

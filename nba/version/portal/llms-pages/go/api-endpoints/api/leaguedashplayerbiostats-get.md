@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-LeaguedashplayerbiostatsGET(
+LeaguedashplayerbiostatsGet(
     ctx context.Context,
     perMode string,
-    leagueID string,
+    leagueId string,
     season string,
     seasonType string) (
     http.Response,
@@ -21,7 +21,7 @@ LeaguedashplayerbiostatsGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
@@ -40,13 +40,13 @@ ctx := context.Background()
 
 perMode := "PerMode6"
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 season := "Season0"
 
 seasonType := "SeasonType8"
 
-resp, err := aPIController.LeaguedashplayerbiostatsGET(ctx, perMode, leagueID, season, seasonType)
+resp, err := api.LeaguedashplayerbiostatsGet(ctx, perMode, leagueId, season, seasonType)
 if err != nil {
     log.Fatalln(err)
 } else {

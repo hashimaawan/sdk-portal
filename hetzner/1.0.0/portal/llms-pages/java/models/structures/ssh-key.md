@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlNzaEtleQ
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,12 +20,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Map<String, String>` | Required | User-defined labels (key-value pairs) | Map<String, String> getLabels() | setLabels(Map<String, String> labels) |
 | `Name` | `String` | Required | Name of the Resource. Must be unique per Project. | String getName() | setName(String name) |
 | `PublicKey` | `String` | Required | Public key | String getPublicKey() | setPublicKey(String publicKey) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.SshKey;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 
 SshKey sshKey = new SshKey.Builder(
@@ -38,6 +43,7 @@ SshKey sshKey = new SshKey.Builder(
     "my-resource",
     "ssh-rsa AAAjjk76kgf...Xt"
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

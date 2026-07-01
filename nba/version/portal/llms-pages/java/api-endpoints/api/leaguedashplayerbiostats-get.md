@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> leaguedashplayerbiostatsGETAsync(
+CompletableFuture<ApiResponse<Void>> leaguedashplayerbiostatsGetAsync(
     final String perMode,
-    final String leagueID,
+    final String leagueId,
     final String season,
     final String seasonType)
 ```
@@ -18,7 +18,7 @@ CompletableFuture<Void> leaguedashplayerbiostatsGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `String` | Query, Required | - |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `season` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 
@@ -34,12 +34,13 @@ CompletableFuture<Void> leaguedashplayerbiostatsGETAsync(
 
 ```java
 String perMode = "PerMode6";
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String season = "Season0";
 String seasonType = "SeasonType8";
 
-aPIController.leaguedashplayerbiostatsGETAsync(perMode, leagueID, season, seasonType).thenAccept(result -> {
+api.leaguedashplayerbiostatsGetAsync(perMode, leagueId, season, seasonType).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

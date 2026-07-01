@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function boxscorescoringGET(
-    ?string $gameID = null,
+function boxscorescoringGet(
+    ?string $gameId = null,
     ?string $startPeriod = null,
     ?string $endPeriod = null,
     ?string $startRange = null,
     ?string $endRange = null,
     ?string $rangeType = null
-): void
+): ApiResponse
 ```
 
 
@@ -20,7 +20,7 @@ function boxscorescoringGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `?string` | Query, Optional | - |
+| `gameId` | `?string` | Query, Optional | - |
 | `startPeriod` | `?string` | Query, Optional | - |
 | `endPeriod` | `?string` | Query, Optional | - |
 | `startRange` | `?string` | Query, Optional | - |
@@ -32,18 +32,26 @@ function boxscorescoringGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->boxscorescoringGet();
 
-try {
-    $aPIController->boxscorescoringGET();
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

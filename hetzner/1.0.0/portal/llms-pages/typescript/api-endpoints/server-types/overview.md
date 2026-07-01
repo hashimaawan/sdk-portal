@@ -9,10 +9,10 @@ Currency for all amounts is €. All prices exclude VAT.
 
 # Create Instance
 
-The instance of the `ServerTypesController` class can be created using the API Client.
+The instance of the `ServerTypesApi` class can be created using the API Client.
 
 ```
-const serverTypesController = new ServerTypesController(client);
+const serverTypesApi = new ServerTypesApi(client);
 ```
 
 

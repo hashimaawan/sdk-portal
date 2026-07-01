@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/typescript/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -21,6 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `webp` | `string \| undefined` | Optional | The URL for this GIF in .webp format. |
 | `webpSize` | `string \| undefined` | Optional | The size in bytes of the .webp file corresponding to this GIF. |
 | `width` | `string \| undefined` | Optional | The width of this GIF in pixels. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -38,6 +41,9 @@ const image: Image = {
   webp: 'https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp',
   webpSize: '12321',
   width: '320',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

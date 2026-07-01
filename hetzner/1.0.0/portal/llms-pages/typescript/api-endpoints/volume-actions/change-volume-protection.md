@@ -41,7 +41,7 @@ const body: VolumesActionsChangeProtectionRequest = {
 };
 
 try {
-  const response = await volumeActionsController.changeVolumeProtection(
+  const response = await volumeActionsApi.changeVolumeProtection(
     id,
     body
   );

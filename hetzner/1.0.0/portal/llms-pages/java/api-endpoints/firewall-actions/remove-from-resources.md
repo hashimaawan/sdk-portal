@@ -17,7 +17,7 @@ Currently only Servers (and their public network interfaces) are supported.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionsResponse> removeFromResourcesAsync(
+CompletableFuture<ApiResponse<ActionsResponse>> removeFromResourcesAsync(
     final int id,
     final RemoveFromResourcesRequest body)
 ```
@@ -35,7 +35,7 @@ CompletableFuture<ActionsResponse> removeFromResourcesAsync(
 
 **201**: The `actions` key contains multiple `remove_firewall` Actions
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -49,13 +49,13 @@ RemoveFromResourcesRequest body = new RemoveFromResourcesRequest.Builder(
                 42
             )
             .build())
-            .type(Type7Enum.SERVER)
+            .type(Type7.SERVER)
             .build()
     )
 )
 .build();
 
-firewallActionsController.removeFromResourcesAsync(id, body).thenAccept(result -> {
+firewallActionsApi.removeFromResourcesAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

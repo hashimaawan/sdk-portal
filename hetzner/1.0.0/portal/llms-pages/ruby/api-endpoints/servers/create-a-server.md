@@ -22,42 +22,45 @@ def create_a_server(body: nil)
 
 **201**: The `server` key in the reply contains a Server object with this structure
 
-[`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-server-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-server-response.md).
 
 
 # Example Usage
 
 ```ruby
 body = CreateServerRequest.new(
-  'ubuntu-20.04',
-  'my-server',
-  'cx11',
-  false,
-  'nbg1-dc3',
-  [
+  image: 'ubuntu-20.04',
+  name: 'my-server',
+  server_type: 'cx11',
+  automount: false,
+  datacenter: 'nbg1-dc3',
+  firewalls: [
     Firewall4.new(
-      38
+      firewall: 38
     )
   ],
-  nil,
-  'nbg1',
-  [
+  location: 'nbg1',
+  networks: [
     456
   ],
-  1,
-  PublicNet5.new,
-  [
+  placement_group: 1,
+  ssh_keys: [
     'my-ssh-key'
   ],
-  true,
-  '#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n',
-  [
+  start_after_create: true,
+  user_data: '#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n',
+  volumes: [
     123
   ]
 )
 
-result = servers_controller.create_a_server(body: body)
-puts result
+result = servers_api.create_a_server(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

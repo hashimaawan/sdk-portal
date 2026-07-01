@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclR5cGU
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -21,6 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `maxTargets` | `number` | Required | Number of targets a single Load Balancer can have |
 | `name` | `string` | Required | Unique identifier of the Load Balancer type |
 | `prices` | [`Price[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/price.md) | Required | Prices in different network zones |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -43,13 +46,25 @@ const loadBalancerType: LoadBalancerType = {
       priceHourly: {
         gross: '1.1900000000000000',
         net: '1.0000000000',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       priceMonthly: {
         gross: '1.1900000000000000',
         net: '1.0000000000',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     }
   ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

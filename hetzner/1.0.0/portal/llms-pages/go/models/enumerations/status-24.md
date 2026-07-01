@@ -7,16 +7,16 @@ Whether the Image can be used or if it's still being created or unavailable
 
 # Class Name
 
-`Status24Enum`
+`Status24`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `AVAILABLE` |
-| `CREATING` |
-| `UNAVAILABLE` |
+| `Available` |
+| `Creating` |
+| `Unavailable` |
 
 
 # Example
@@ -25,11 +25,11 @@ Whether the Image can be used or if it's still being created or unavailable
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status24 := models.Status24Enum_AVAILABLE
+    status24 := models.Status24_Available
 
 }
 ```

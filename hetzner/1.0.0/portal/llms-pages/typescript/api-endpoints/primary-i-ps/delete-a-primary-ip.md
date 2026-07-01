@@ -9,7 +9,7 @@ The Primary IP may be assigned to a Server. In this case it is unassigned automa
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async deleteAPrimaryIP(
+async deleteAPrimaryIp(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
@@ -37,7 +37,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await primaryIPsController.deleteAPrimaryIP(id);
+  const response = await primaryIPsApi.deleteAPrimaryIp(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

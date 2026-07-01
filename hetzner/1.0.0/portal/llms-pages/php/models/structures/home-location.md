@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location the Floating IP was created in. Routing is optimized for this Location.
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -22,12 +24,14 @@ Location the Floating IP was created in. Routing is optimized for this Location.
 | `longitude` | `float` | Required | Longitude of the city closest to the Location | getLongitude(): float | setLongitude(float longitude): void |
 | `name` | `string` | Required | Unique identifier of the Location | getName(): string | setName(string name): void |
 | `networkZone` | `string` | Required | Name of network zone this Location resides in | getNetworkZone(): string | setNetworkZone(string networkZone): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\HomeLocationBuilder;
+use HetznerCloudApiLib\Models\Builders\HomeLocationBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $homeLocation = HomeLocationBuilder::init(
     'Falkenstein',
@@ -38,7 +42,9 @@ $homeLocation = HomeLocationBuilder::init(
     12.370071,
     'fsn1',
     'eu-central'
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

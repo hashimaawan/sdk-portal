@@ -7,7 +7,7 @@ Whether the Image can be used or if it's still being created or unavailable
 
 # Enum Type Name
 
-`Status24Enum`
+`Status24`
 
 
 # Fields
@@ -22,9 +22,9 @@ Whether the Image can be used or if it's still being created or unavailable
 # Example
 
 ```java
-import cloud.hetzner.api.models.Status24Enum;
+import cloud.hetzner.api.models.Status24;
 
-Status24Enum status24 = Status24Enum.AVAILABLE;
+Status24 status24 = Status24.AVAILABLE;
 ```
 
 

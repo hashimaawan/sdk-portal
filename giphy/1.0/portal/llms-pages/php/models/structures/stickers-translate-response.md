@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/php/x-redirect/JTI0bSUyRlN0aWNrZXJzJTI1MjBUcmFuc2xhdGUlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,15 +16,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 |  --- | --- | --- | --- | --- | --- |
 | `data` | [`?Gif`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/gif.md) | Optional | - | getData(): ?Gif | setData(?Gif data): void |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/meta.md) | Optional | The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances. | getMeta(): ?Meta | setMeta(?Meta meta): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use GiphyAPILib\Models\Builders\StickersTranslateResponseBuilder;
-use GiphyAPILib\Models\Builders\GifBuilder;
-use GiphyAPILib\Utils\DateTimeHelper;
-use GiphyAPILib\Models\Builders\MetaBuilder;
+use GiphyApiLib\Models\Builders\StickersTranslateResponseBuilder;
+use GiphyApiLib\Models\Builders\GifBuilder;
+use GiphyApiLib\Utils\DateTimeHelper;
+use GiphyApiLib\ApiHelper;
+use GiphyApiLib\Models\Builders\MetaBuilder;
 
 $stickersTranslateResponse = StickersTranslateResponseBuilder::init()
     ->data(
@@ -36,6 +40,7 @@ $stickersTranslateResponse = StickersTranslateResponseBuilder::init()
                     'featured_tags0'
                 ]
             )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->meta(
@@ -43,8 +48,10 @@ $stickersTranslateResponse = StickersTranslateResponseBuilder::init()
             ->msg('msg8')
             ->responseId('response_id0')
             ->status(98)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

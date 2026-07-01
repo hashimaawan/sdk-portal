@@ -7,15 +7,15 @@ Type of the health check
 
 # Class Name
 
-`Protocol6Enum`
+`Protocol6`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `TCP` |
-| `HTTP` |
+| `Tcp` |
+| `Http` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of the health check
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    protocol6 := models.Protocol6Enum_TCP
+    protocol6 := models.Protocol6_Tcp
 
 }
 ```

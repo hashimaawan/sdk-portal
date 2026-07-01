@@ -7,7 +7,7 @@ The type of the Floating IP
 
 # Enum Type Name
 
-`Type48Enum`
+`Type48`
 
 
 # Fields
@@ -21,9 +21,9 @@ The type of the Floating IP
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type48Enum;
+import cloud.hetzner.api.models.Type48;
 
-Type48Enum type48 = Type48Enum.IPV4;
+Type48 type48 = Type48.IPV4;
 ```
 
 

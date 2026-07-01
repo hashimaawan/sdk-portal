@@ -7,7 +7,7 @@ Gets all Load Balancer type objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllLoadBalancerTypes(?string $name = null): LoadBalancerTypesResponse
+function getAllLoadBalancerTypes(?string $name = null): ApiResponse
 ```
 
 
@@ -22,20 +22,26 @@ function getAllLoadBalancerTypes(?string $name = null): LoadBalancerTypesRespons
 
 **200**: The `load_balancer_types` key in the reply contains an array of Load Balancer type objects with this structure
 
-[`LoadBalancerTypesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancer-types-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`LoadBalancerTypesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancer-types-response.md).
 
 
 # Example Usage
 
 ```php
-$loadBalancerTypesController = $client->getLoadBalancerTypesController();
+$loadBalancerTypesApi = $client->getLoadBalancerTypesApi();
+$apiResponse = $loadBalancerTypesApi->getAllLoadBalancerTypes();
 
-try {
-    $result = $loadBalancerTypesController->getAllLoadBalancerTypes();
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'LoadBalancerTypesResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

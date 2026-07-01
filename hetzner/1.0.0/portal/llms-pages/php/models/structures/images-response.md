@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkltYWdlcyUyNTIwUmVzcG9uc2U
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,20 +16,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `images` | [`Image[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/image.md) | Required | - | getImages(): array | setImages(array images): void |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/meta.md) | Optional | - | getMeta(): ?Meta | setMeta(?Meta meta): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ImagesResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\ImageBuilder;
-use HetznerCloudAPILib\Models\OsFlavorEnum;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Status24Enum;
-use HetznerCloudAPILib\Models\Type22Enum;
-use HetznerCloudAPILib\Models\Builders\CreatedFromBuilder;
-use HetznerCloudAPILib\Models\Builders\MetaBuilder;
-use HetznerCloudAPILib\Models\Builders\PaginationBuilder;
+use HetznerCloudApiLib\Models\Builders\ImagesResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\ImageBuilder;
+use HetznerCloudApiLib\Models\OsFlavor;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status24;
+use HetznerCloudApiLib\Models\Type22;
+use HetznerCloudApiLib\Models\Builders\CreatedFromBuilder;
+use HetznerCloudApiLib\Models\Builders\MetaBuilder;
+use HetznerCloudApiLib\Models\Builders\PaginationBuilder;
 
 $imagesResponse = ImagesResponseBuilder::init(
     [
@@ -40,19 +44,23 @@ $imagesResponse = ImagesResponseBuilder::init(
                 'key0' => 'labels0',
                 'key1' => 'labels1'
             ],
-            OsFlavorEnum::UBUNTU,
+            OsFlavor::UBUNTU,
             ProtectionBuilder::init(
                 false
-            )->build(),
-            Status24Enum::AVAILABLE,
-            Type22Enum::SNAPSHOT
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
+            Status24::AVAILABLE,
+            Type22::SNAPSHOT
         )
             ->boundTo(null)
             ->createdFrom(
                 CreatedFromBuilder::init(
                     1,
                     'Server'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->deleted(null)
             ->deprecated('2018-02-28T00:00:00+00:00')
@@ -60,6 +68,7 @@ $imagesResponse = ImagesResponseBuilder::init(
             ->name('ubuntu-20.04')
             ->osVersion('20.04')
             ->rapidDeploy(false)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -73,9 +82,14 @@ $imagesResponse = ImagesResponseBuilder::init(
                 ->nextPage(209.18)
                 ->previousPage(50.02)
                 ->totalEntries(206.64)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build()
-    )->build();
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

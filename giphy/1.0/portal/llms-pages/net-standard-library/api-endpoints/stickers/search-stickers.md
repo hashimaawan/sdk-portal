@@ -16,7 +16,7 @@ SearchStickersAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -34,7 +34,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**: Search results
 
-[`Task<Models.StickersSearchResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/stickers-search-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StickersSearchResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/stickers-search-response.md).
 
 
 # Example Usage
@@ -45,7 +45,7 @@ int? limit = 25;
 int? offset = 0;
 try
 {
-    StickersSearchResponse result = await stickersController.SearchStickersAsync(
+    ApiResponse<StickersSearchResponse> result = await stickersApi.SearchStickersAsync(
         q,
         limit,
         offset

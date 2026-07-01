@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMENyZWF0ZSUyNTIwSW1hZ2UlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,22 +16,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`?Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Optional | - | getAction(): ?Action | setAction(?Action action): void |
 | `image` | [`?Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/image.md) | Optional | - | getImage(): ?Image | setImage(?Image image): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServersActionsCreateImageResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
-use HetznerCloudAPILib\Models\Builders\ImageBuilder;
-use HetznerCloudAPILib\Models\OsFlavorEnum;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Status24Enum;
-use HetznerCloudAPILib\Models\Type22Enum;
-use HetznerCloudAPILib\Models\Builders\CreatedFromBuilder;
+use HetznerCloudApiLib\Models\Builders\ServersActionsCreateImageResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\ImageBuilder;
+use HetznerCloudApiLib\Models\OsFlavor;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Status24;
+use HetznerCloudApiLib\Models\Type22;
+use HetznerCloudApiLib\Models\Builders\CreatedFromBuilder;
 
 $serversActionsCreateImageResponse = ServersActionsCreateImageResponseBuilder::init()
     ->action(
@@ -41,26 +45,35 @@ $serversActionsCreateImageResponse = ServersActionsCreateImageResponseBuilder::i
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             'started8',
-            StatusEnum::RUNNING
+            Status::RUNNING
         )
             ->error(
                 ErrorBuilder::init(
                     'code2',
                     'message4'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('finished0')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->image(
@@ -72,19 +85,23 @@ $serversActionsCreateImageResponse = ServersActionsCreateImageResponseBuilder::i
             [
                 'key0' => 'labels4'
             ],
-            OsFlavorEnum::DEBIAN,
+            OsFlavor::DEBIAN,
             ProtectionBuilder::init(
                 false
-            )->build(),
-            Status24Enum::UNAVAILABLE,
-            Type22Enum::APP
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
+            Status24::UNAVAILABLE,
+            Type22::APP
         )
             ->boundTo(186)
             ->createdFrom(
                 CreatedFromBuilder::init(
                     60,
                     'name6'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->deleted('deleted4')
             ->deprecated('deprecated8')
@@ -92,8 +109,10 @@ $serversActionsCreateImageResponse = ServersActionsCreateImageResponseBuilder::i
             ->name('name6')
             ->osVersion('os_version4')
             ->rapidDeploy(false)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

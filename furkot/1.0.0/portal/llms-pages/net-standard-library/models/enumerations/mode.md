@@ -7,7 +7,7 @@ travel mode
 
 # Enum Type Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
@@ -26,7 +26,7 @@ travel mode
 ```csharp
 using FurkotTrips.Standard.Models;
 
-ModeEnum mode = ModeEnum.Bicycle;
+Mode mode = Mode.Bicycle;
 ```
 
 

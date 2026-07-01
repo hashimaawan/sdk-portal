@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVxdWVzdA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -17,21 +19,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `Object` | Optional | User-defined labels (key-value pairs) |
 | `name` | `String` | Required | Name of the Certificate |
 | `private_key` | `String` | Optional | Certificate key in PEM format. Required for type `uploaded` Certificates. |
-| `type` | [`Type1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-1.md) | Optional | Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`. |
+| `type` | [`Type1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-1.md) | Optional | Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`. |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 create_certificate_request = CreateCertificateRequest.new(
-  'my website cert',
-  '-----BEGIN CERTIFICATE-----\n...',
-  [
+  name: 'my website cert',
+  certificate: '-----BEGIN CERTIFICATE-----\n...',
+  domain_names: [
     'domain_names2'
   ],
-  { 'key1' => 'val1', 'key2' => 'val2' },
-  '-----BEGIN PRIVATE KEY-----\n...',
-  Type1Enum::UPLOADED
+  labels: { 'key1' => 'val1', 'key2' => 'val2' },
+  private_key: '-----BEGIN PRIVATE KEY-----\n...',
+  type: Type1::UPLOADED,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

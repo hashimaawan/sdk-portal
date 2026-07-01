@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/php/x-redirect/JTI0bSUyRkdpZg
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -27,19 +29,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `sourceTld` | `?string` | Optional | The top level domain of the source URL. | getSourceTld(): ?string | setSourceTld(?string sourceTld): void |
 | `tags` | `?(string[])` | Optional | An array of tags for this GIF (Note: Not available when using the Public Beta Key) | getTags(): ?array | setTags(?array tags): void |
 | `trendingDatetime` | `?DateTime` | Optional | The date on which this gif was marked trending, if applicable. | getTrendingDatetime(): ?\DateTime | setTrendingDatetime(?\DateTime trendingDatetime): void |
-| `type` | [`?string(TypeEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `TypeEnum::GIF` | getType(): ?string | setType(?string type): void |
+| `type` | [`?string(Type)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `Type::GIF` | getType(): ?string | setType(?string type): void |
 | `updateDatetime` | `?DateTime` | Optional | The date on which this GIF was last updated. | getUpdateDatetime(): ?\DateTime | setUpdateDatetime(?\DateTime updateDatetime): void |
 | `url` | `?string` | Optional | The unique URL for this GIF | getUrl(): ?string | setUrl(?string url): void |
 | `user` | [`?User`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/user.md) | Optional | The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more. | getUser(): ?User | setUser(?User user): void |
 | `username` | `?string` | Optional | The username this GIF is attached to, if applicable | getUsername(): ?string | setUsername(?string username): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use GiphyAPILib\Models\Builders\GifBuilder;
-use GiphyAPILib\Utils\DateTimeHelper;
-use GiphyAPILib\Models\TypeEnum;
+use GiphyApiLib\Models\Builders\GifBuilder;
+use GiphyApiLib\Utils\DateTimeHelper;
+use GiphyApiLib\ApiHelper;
+use GiphyApiLib\Models\Type;
 
 $gif = GifBuilder::init()
     ->bitlyUrl('http://gph.is/1gsWDcL')
@@ -59,10 +63,11 @@ $gif = GifBuilder::init()
     ->sourcePostUrl('http://cheezburger.com/5282328320')
     ->sourceTld('cheezburger.com')
     ->trendingDatetime(DateTimeHelper::fromRfc3339DateTime('2013-08-01 12:41:48'))
-    ->type(TypeEnum::GIF)
+    ->type(Type::GIF)
     ->updateDatetime(DateTimeHelper::fromRfc3339DateTime('2013-08-01 12:41:48'))
     ->url('http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq')
     ->username('JoeCool4000')
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

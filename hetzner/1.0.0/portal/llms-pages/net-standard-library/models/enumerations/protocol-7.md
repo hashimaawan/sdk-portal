@@ -7,7 +7,7 @@ Protocol of the Load Balancer
 
 # Enum Type Name
 
-`Protocol7Enum`
+`Protocol7`
 
 
 # Fields
@@ -22,9 +22,9 @@ Protocol of the Load Balancer
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Protocol7Enum protocol7 = Protocol7Enum.Http;
+Protocol7 protocol7 = Protocol7.Http;
 ```
 
 

@@ -7,7 +7,7 @@ Protocol of the Load Balancer
 
 # Enum Type Name
 
-`Protocol7Enum`
+`Protocol7`
 
 
 # Fields
@@ -22,9 +22,9 @@ Protocol of the Load Balancer
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Protocol7Enum;
+use HetznerCloudApiLib\Models\Protocol7;
 
-$protocol7 = Protocol7Enum::HTTP;
+$protocol7 = Protocol7::HTTP;
 ```
 
 

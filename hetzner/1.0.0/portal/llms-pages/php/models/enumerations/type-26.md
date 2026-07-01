@@ -7,7 +7,7 @@ Type of the ISO
 
 # Enum Type Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the ISO
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type26Enum;
+use HetznerCloudApiLib\Models\Type26;
 
-$type26 = Type26Enum::PUBLIC_;
+$type26 = Type26::PUBLIC_;
 ```
 
 

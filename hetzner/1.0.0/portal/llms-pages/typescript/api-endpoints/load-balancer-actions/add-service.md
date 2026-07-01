@@ -47,17 +47,17 @@ const body: LoadBalancerService = {
   healthCheck: {
     interval: 15,
     port: 4711,
-    protocol: Protocol6Enum.Http,
+    protocol: Protocol6.Http,
     retries: 3,
     timeout: 10,
   },
   listenPort: 443,
-  protocol: Protocol7Enum.Https,
+  protocol: Protocol7.Https,
   proxyprotocol: false,
 };
 
 try {
-  const response = await loadBalancerActionsController.addService(
+  const response = await loadBalancerActionsApi.addService(
     id,
     body
   );

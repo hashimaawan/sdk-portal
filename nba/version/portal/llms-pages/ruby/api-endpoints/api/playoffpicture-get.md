@@ -22,7 +22,7 @@ def playoffpicture_get(league_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -32,10 +32,16 @@ league_id = 'LeagueID4'
 
 season_id = 'SeasonID6'
 
-client_controller.playoffpicture_get(
+result = client_api.playoffpicture_get(
   league_id,
   season_id
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

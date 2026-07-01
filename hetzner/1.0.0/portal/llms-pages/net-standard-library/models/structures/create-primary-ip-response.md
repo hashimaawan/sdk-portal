@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNyZWF0ZVByaW1hcnlJUFJlc3BvbnNl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
-`CreatePrimaryIPResponse`
+`CreatePrimaryIpResponse`
 
 
 # Fields
@@ -13,18 +15,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action.md) | Optional | - |
-| `PrimaryIp` | [`PrimaryIP1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-ip-1.md) | Required | - |
+| `PrimaryIp` | [`PrimaryIp1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-ip-1.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
-CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
+CreatePrimaryIpResponse createPrimaryIpResponse = new CreatePrimaryIpResponse
 {
-    PrimaryIp = new PrimaryIP1
+    PrimaryIp = new PrimaryIp1
     {
         AssigneeId = 17,
         AssigneeType = "server",
@@ -45,6 +49,7 @@ CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
                 Longitude = 12.370071,
                 Name = "fsn1",
                 NetworkZone = "eu-central",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Name = "fsn1-dc8",
             ServerTypes = new ServerTypes
@@ -67,7 +72,9 @@ CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
                     2,
                     3,
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         DnsPtr = new List<DnsPtr>
         {
@@ -75,6 +82,7 @@ CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
             {
                 DnsPtrProp = "server.example.com",
                 Ip = "2001:db8::1",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Id = 42,
@@ -88,8 +96,10 @@ CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
         Protection = new Protection
         {
             Delete = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
-        Type = Type50Enum.Ipv4,
+        Type = Type50.Ipv4,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Action = new Action
     {
@@ -98,6 +108,7 @@ CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
         {
             Code = "code2",
             Message = "message4",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Finished = "finished0",
         Id = 238,
@@ -108,21 +119,26 @@ CreatePrimaryIPResponse createPrimaryIPResponse = new CreatePrimaryIPResponse
             {
                 Id = 198,
                 Type = "type0",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             new Resource
             {
                 Id = 198,
                 Type = "type0",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             new Resource
             {
                 Id = 198,
                 Type = "type0",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Started = "started8",
-        Status = StatusEnum.Running,
+        Status = Status.Running,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

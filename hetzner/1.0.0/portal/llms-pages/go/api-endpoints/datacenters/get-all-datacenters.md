@@ -34,7 +34,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := datacentersController.GetAllDatacenters(ctx, nil)
+apiResponse, err := datacentersApi.GetAllDatacenters(ctx, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

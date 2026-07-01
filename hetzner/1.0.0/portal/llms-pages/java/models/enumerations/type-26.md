@@ -7,7 +7,7 @@ Type of the ISO
 
 # Enum Type Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the ISO
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type26Enum;
+import cloud.hetzner.api.models.Type26;
 
-Type26Enum type26 = Type26Enum.ENUM_PUBLIC;
+Type26 type26 = Type26.ENUM_PUBLIC;
 ```
 
 

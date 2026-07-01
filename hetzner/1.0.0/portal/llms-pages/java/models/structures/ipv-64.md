@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IPv6 network assigned to this Server and its reverse DNS entry
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,13 +20,16 @@ IPv6 network assigned to this Server and its reverse DNS entry
 | `DnsPtr` | [`List<DnsPtr8>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/dns-ptr-8.md) | Required | Reverse DNS PTR entries for the IPv6 addresses of this Server, `null` by default | List<DnsPtr8> getDnsPtr() | setDnsPtr(List<DnsPtr8> dnsPtr) |
 | `Id` | `Integer` | Optional | ID of the Resource | Integer getId() | setId(Integer id) |
 | `Ip` | `String` | Required | IP address (v6) of this Server | String getIp() | setIp(String ip) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.DnsPtr8;
 import cloud.hetzner.api.models.Ipv64;
+import java.io.IOException;
 import java.util.Arrays;
 
 Ipv64 ipv64 = new Ipv64.Builder(
@@ -34,11 +39,13 @@ Ipv64 ipv64 = new Ipv64.Builder(
             "server.example.com",
             "2001:db8::1"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     "2001:db8::/64"
 )
 .id(42)
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

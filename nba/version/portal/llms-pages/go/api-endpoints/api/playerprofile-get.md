@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayerprofileGET(
+PlayerprofileGet(
     ctx context.Context,
-    leagueID string,
-    playerID string,
+    leagueId string,
+    playerId string,
     season string,
     seasonType string,
     graphStartSeason string,
@@ -23,8 +23,8 @@ PlayerprofileGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `graphStartSeason` | `string` | Query, Required | - |
@@ -44,9 +44,9 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
-playerID := "PlayerID6"
+playerId := "PlayerID6"
 
 season := "Season0"
 
@@ -58,7 +58,7 @@ graphEndSeason := "GraphEndSeason6"
 
 graphStat := "GraphStat0"
 
-resp, err := aPIController.PlayerprofileGET(ctx, leagueID, playerID, season, seasonType, graphStartSeason, graphEndSeason, graphStat)
+resp, err := api.PlayerprofileGet(ctx, leagueId, playerId, season, seasonType, graphStartSeason, graphEndSeason, graphStat)
 if err != nil {
     log.Fatalln(err)
 } else {

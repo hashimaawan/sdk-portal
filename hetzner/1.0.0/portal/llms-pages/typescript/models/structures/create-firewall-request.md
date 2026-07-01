@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZUZpcmV3YWxsUmVxdWVzdA
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,6 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `unknown \| undefined` | Optional | User-defined labels (key-value pairs) |
 | `name` | `string` | Required | Name of the Firewall |
 | `rules` | [`Rule[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/rule.md) | Optional | Array of rules |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -23,47 +26,74 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 ```ts
 import {
   CreateFirewallRequest,
-  DirectionEnum,
-  ProtocolEnum,
-  Type7Enum,
+  Direction,
+  Protocol,
+  Type7,
 } from 'hetzner-cloud-apilib';
 
 const createFirewallRequest: CreateFirewallRequest = {
   name: 'Corporate Intranet Protection',
   applyTo: [
     {
-      type: Type7Enum.Server,
+      type: Type7.Server,
       labelSelector: {
         selector: 'selector8',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       server: {
         id: 14,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     },
     {
-      type: Type7Enum.Server,
+      type: Type7.Server,
       labelSelector: {
         selector: 'selector8',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       server: {
         id: 14,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     },
     {
-      type: Type7Enum.Server,
+      type: Type7.Server,
       labelSelector: {
         selector: 'selector8',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       server: {
         id: 14,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     }
   ],
   labels: { 'key1': 'val1', 'key2': 'val2' },
   rules: [
     {
-      direction: DirectionEnum.In,
-      protocol: ProtocolEnum.Tcp,
+      direction: Direction.In,
+      protocol: Protocol.Tcp,
       description: 'description2',
       destinationIps: [
         'destination_ips1',
@@ -76,8 +106,14 @@ const createFirewallRequest: CreateFirewallRequest = {
         '28.239.14.0/24',
         'ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128'
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

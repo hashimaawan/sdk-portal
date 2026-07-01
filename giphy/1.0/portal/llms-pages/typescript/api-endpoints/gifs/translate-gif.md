@@ -14,7 +14,7 @@ async translateGif(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -38,7 +38,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const s = 's8';
 
 try {
-  const response = await gifsController.translateGif(s);
+  const response = await gifsApi.translateGif(s);
 
   // Extracting fully parsed response body.
   console.log(response.result);

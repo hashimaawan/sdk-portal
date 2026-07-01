@@ -32,7 +32,7 @@ def playerprofile_get(league_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -52,7 +52,7 @@ graph_end_season = 'GraphEndSeason6'
 
 graph_stat = 'GraphStat0'
 
-client_controller.playerprofile_get(
+result = client_api.playerprofile_get(
   league_id,
   player_id,
   season,
@@ -61,6 +61,12 @@ client_controller.playerprofile_get(
   graph_end_season,
   graph_stat
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

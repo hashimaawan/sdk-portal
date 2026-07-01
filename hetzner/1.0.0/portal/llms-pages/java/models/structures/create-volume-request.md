@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -19,6 +21,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Name` | `String` | Required | Name of the volume | String getName() | setName(String name) |
 | `Server` | `Integer` | Optional | Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) | Integer getServer() | setServer(Integer server) |
 | `Size` | `int` | Required | Size of the Volume in GB | int getSize() | setSize(int size) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -37,6 +40,7 @@ CreateVolumeRequest createVolumeRequest = new CreateVolumeRequest.Builder(
 .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
 .location("nbg1")
 .server(182)
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

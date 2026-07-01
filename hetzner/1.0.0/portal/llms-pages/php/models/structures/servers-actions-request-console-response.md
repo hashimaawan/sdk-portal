@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMFJlcXVlc3QlMjUyMENvbnNvbGUlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -15,16 +17,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Required | - | getAction(): Action | setAction(Action action): void |
 | `password` | `string` | Required | VNC password to use for this connection (this password only works in combination with a wss_url with valid token) | getPassword(): string | setPassword(string password): void |
 | `wssUrl` | `string` | Required | URL of websocket proxy to use; this includes a token which is valid for a limited time only | getWssUrl(): string | setWssUrl(string wssUrl): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServersActionsRequestConsoleResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\ServersActionsRequestConsoleResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
 
 $serversActionsRequestConsoleResponse = ServersActionsRequestConsoleResponseBuilder::init(
     ActionBuilder::init(
@@ -35,22 +39,29 @@ $serversActionsRequestConsoleResponse = ServersActionsRequestConsoleResponseBuil
             Resource2Builder::init(
                 42,
                 'server'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
         '2016-01-30T23:55:00+00:00',
-        StatusEnum::RUNNING
+        Status::RUNNING
     )
         ->error(
             ErrorBuilder::init(
                 'action_failed',
                 'Action failed'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         )
         ->finished('2016-01-30T23:55:00+00:00')
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build(),
     '9MQaTg2VAGI0FIpc10k3UpRXcHj2wQ6x',
     'wss://console.hetzner.cloud/?server_id=1&token=3db32d15-af2f-459c-8bf8-dee1fd05f49c'
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

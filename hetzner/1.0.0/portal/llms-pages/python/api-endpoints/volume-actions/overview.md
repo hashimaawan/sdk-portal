@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get instance
 
-An instance of the `VolumeActionsController` class can be accessed from the API Client.
+An instance of the `VolumeActionsApi` class can be accessed from the API Client.
 
 ```
-volume_actions_controller = client.volume_actions
+volume_actions_api = client.volume_actions
 ```
 
 

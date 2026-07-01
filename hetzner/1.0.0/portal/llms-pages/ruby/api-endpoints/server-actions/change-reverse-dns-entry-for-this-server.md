@@ -26,7 +26,7 @@ def change_reverse_dns_entry_for_this_server(id,
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,15 +35,20 @@ def change_reverse_dns_entry_for_this_server(id,
 id = 112
 
 body = ServersActionsChangeDnsPtrRequest.new(
-  'server01.example.com',
-  '1.2.3.4'
+  dns_ptr: 'server01.example.com',
+  ip: '1.2.3.4'
 )
 
-result = server_actions_controller.change_reverse_dns_entry_for_this_server(
+result = server_actions_api.change_reverse_dns_entry_for_this_server(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

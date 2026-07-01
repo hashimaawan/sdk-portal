@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-BoxscoremiscGETAsync(
-    string gameID = null,
+BoxscoremiscGetAsync(
+    string gameId = null,
     string startPeriod = null,
     string endPeriod = null,
     string startRange = null,
@@ -19,7 +19,7 @@ BoxscoremiscGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Optional | - |
+| `gameId` | `string` | Query, Optional | - |
 | `startPeriod` | `string` | Query, Optional | - |
 | `endPeriod` | `string` | Query, Optional | - |
 | `startRange` | `string` | Query, Optional | - |
@@ -39,7 +39,7 @@ BoxscoremiscGETAsync(
 ```csharp
 try
 {
-    await aPIController.BoxscoremiscGETAsync();
+    await api.BoxscoremiscGetAsync();
 }
 catch (ApiException e)
 {

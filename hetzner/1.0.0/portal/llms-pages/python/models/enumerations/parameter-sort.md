@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterSortEnum`
+`ParameterSort`
 
 
 # Fields
@@ -35,9 +35,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.parameter_sort_enum import ParameterSortEnum
+from hetznercloudapi.models.parameter_sort import ParameterSort
 
-parameter_sort = ParameterSortEnum.ENUM_COMMANDASC
+parameter_sort = ParameterSort.ENUM_COMMANDASC
 ```
 
 

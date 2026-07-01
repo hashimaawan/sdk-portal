@@ -48,13 +48,13 @@ ctx := context.Background()
 id := 112
 
 body := models.SetRulesRequest{
-    Rules:                []models.Rule{
+    Rules:                 []models.Rule{
         models.Rule{
-            Description:          models.NewOptional(models.ToPointer("Allow port 80")),
-            Direction:            models.DirectionEnum_IN,
-            Port:                 models.ToPointer("80"),
-            Protocol:             models.ProtocolEnum_TCP,
-            SourceIps:            []string{
+            Description:           models.NewOptional(models.ToPointer("Allow port 80")),
+            Direction:             models.Direction_In,
+            Port:                  models.ToPointer("80"),
+            Protocol:              models.Protocol_Tcp,
+            SourceIps:             []string{
                 "28.239.13.1/32",
                 "28.239.14.0/24",
                 "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128",
@@ -63,7 +63,7 @@ body := models.SetRulesRequest{
     },
 }
 
-apiResponse, err := firewallActionsController.SetRules(ctx, id, &body)
+apiResponse, err := firewallActionsApi.SetRules(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -5,31 +5,31 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`ParameterSortEnum`
+`ParameterSort`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `ID` |
-| `ENUMIDASC` |
-| `ENUMIDDESC` |
-| `COMMAND` |
-| `ENUMCOMMANDASC` |
-| `ENUMCOMMANDDESC` |
-| `STATUS` |
-| `ENUMSTATUSASC` |
-| `ENUMSTATUSDESC` |
-| `PROGRESS` |
-| `ENUMPROGRESSASC` |
-| `ENUMPROGRESSDESC` |
-| `STARTED` |
-| `ENUMSTARTEDASC` |
-| `ENUMSTARTEDDESC` |
-| `FINISHED` |
-| `ENUMFINISHEDASC` |
-| `ENUMFINISHEDDESC` |
+| `Id` |
+| `EnumIdasc` |
+| `EnumIddesc` |
+| `Command` |
+| `EnumCommandasc` |
+| `EnumCommanddesc` |
+| `Status` |
+| `EnumStatusasc` |
+| `EnumStatusdesc` |
+| `Progress` |
+| `EnumProgressasc` |
+| `EnumProgressdesc` |
+| `Started` |
+| `EnumStartedasc` |
+| `EnumStarteddesc` |
+| `Finished` |
+| `EnumFinishedasc` |
+| `EnumFinisheddesc` |
 
 
 # Example
@@ -38,11 +38,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    parameterSort := models.ParameterSortEnum_ENUMSTATUSDESC
+    parameterSort := models.ParameterSort_EnumStatusdesc
 
 }
 ```

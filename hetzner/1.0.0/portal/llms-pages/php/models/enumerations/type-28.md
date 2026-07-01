@@ -7,7 +7,7 @@ Type of the algorithm
 
 # Enum Type Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the algorithm
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type28Enum;
+use HetznerCloudApiLib\Models\Type28;
 
-$type28 = Type28Enum::ROUND_ROBIN;
+$type28 = Type28::ROUND_ROBIN;
 ```
 
 

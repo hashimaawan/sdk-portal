@@ -35,7 +35,7 @@ CreateALoadBalancerAsync(
 
 **201**: The `load_balancer` key contains the Load Balancer that was just created
 
-[`Task<Models.LoadBalancersResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancers-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.LoadBalancersResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancers-response-1.md).
 
 
 # Example Usage
@@ -45,7 +45,7 @@ CreateLoadBalancerRequest body = new CreateLoadBalancerRequest
 {
     Algorithm = new LoadBalancerAlgorithm
     {
-        Type = Type28Enum.RoundRobin,
+        Type = Type28.RoundRobin,
     },
     LoadBalancerType = "lb11",
     Name = "Web Frontend",
@@ -56,7 +56,7 @@ CreateLoadBalancerRequest body = new CreateLoadBalancerRequest
 
 try
 {
-    LoadBalancersResponse1 result = await loadBalancersController.CreateALoadBalancerAsync(body);
+    ApiResponse<LoadBalancersResponse1> result = await loadBalancersApi.CreateALoadBalancerAsync(body);
 }
 catch (ApiException e)
 {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMENyZWF0ZSUyNTIwSW1hZ2UlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,64 +16,92 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action.md) | Optional | - |
 | `image` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/image.md) | Optional | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 servers_actions_create_image_response = ServersActionsCreateImageResponse.new(
-  Action.new(
-    'command6',
-    Error.new(
-      'code2',
-      'message4'
+  action: Action.new(
+    command: 'command6',
+    error: Error.new(
+      code: 'code2',
+      message: 'message4',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    'finished0',
-    238,
-    143.26,
-    [
+    finished: 'finished0',
+    id: 238,
+    progress: 143.26,
+    resources: [
       Resource.new(
-        198,
-        'type0'
+        id: 198,
+        type: 'type0',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
       Resource.new(
-        198,
-        'type0'
+        id: 198,
+        type: 'type0',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
       Resource.new(
-        198,
-        'type0'
+        id: 198,
+        type: 'type0',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    'started8',
-    StatusEnum::RUNNING
+    started: 'started8',
+    status: Status::RUNNING,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Image.new(
-    186,
-    'created6',
-    CreatedFrom.new(
-      60,
-      'name6'
+  image: Image.new(
+    bound_to: 186,
+    created: 'created6',
+    created_from: CreatedFrom.new(
+      id: 60,
+      name: 'name6',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    'deleted4',
-    'deprecated8',
-    'description6',
-    244.18,
-    128,
-    141.34,
-    {
-      'key0': 'labels4'
+    deleted: 'deleted4',
+    deprecated: 'deprecated8',
+    description: 'description6',
+    disk_size: 244.18,
+    id: 128,
+    image_size: 141.34,
+    labels: {
+      'key0' => 'labels4'
     },
-    'name6',
-    OsFlavorEnum::DEBIAN,
-    'os_version4',
-    Protection.new(
-      false
+    name: 'name6',
+    os_flavor: OsFlavor::DEBIAN,
+    os_version: 'os_version4',
+    protection: Protection.new(
+      delete: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    Status24Enum::UNAVAILABLE,
-    Type22Enum::APP,
-    false
-  )
+    status: Status24::UNAVAILABLE,
+    type: Type22::APP,
+    rapid_deploy: false,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

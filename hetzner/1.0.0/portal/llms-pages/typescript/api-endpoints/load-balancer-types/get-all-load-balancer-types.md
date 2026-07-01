@@ -33,7 +33,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await loadBalancerTypesController.getAllLoadBalancerTypes();
+  const response = await loadBalancerTypesApi.getAllLoadBalancerTypes();
 
   // Extracting fully parsed response body.
   console.log(response.result);

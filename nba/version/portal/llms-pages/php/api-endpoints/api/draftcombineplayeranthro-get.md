@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function draftcombineplayeranthroGET(string $leagueID, string $seasonYear): void
+function draftcombineplayeranthroGet(string $leagueId, string $seasonYear): ApiResponse
 ```
 
 
@@ -13,7 +13,7 @@ function draftcombineplayeranthroGET(string $leagueID, string $seasonYear): void
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonYear` | `string` | Query, Required | - |
 
 
@@ -21,25 +21,33 @@ function draftcombineplayeranthroGET(string $leagueID, string $seasonYear): void
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $seasonYear = 'SeasonYear6';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->draftcombineplayeranthroGet(
+    $leagueId,
+    $seasonYear
+);
 
-try {
-    $aPIController->draftcombineplayeranthroGET(
-        $leagueID,
-        $seasonYear
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

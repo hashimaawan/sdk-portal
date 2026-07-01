@@ -5,13 +5,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayerdashptshotlogGET(
+PlayerdashptshotlogGet(
     ctx context.Context,
-    leagueID *string,
+    leagueId *string,
     season *string,
     seasonType *string,
-    playerID *string,
-    teamID *string) (
+    playerId *string,
+    teamId *string) (
     http.Response,
     error)
 ```
@@ -21,11 +21,11 @@ PlayerdashptshotlogGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `*string` | Query, Optional | - |
+| `leagueId` | `*string` | Query, Optional | - |
 | `season` | `*string` | Query, Optional | - |
 | `seasonType` | `*string` | Query, Optional | - |
-| `playerID` | `*string` | Query, Optional | - |
-| `teamID` | `*string` | Query, Optional | - |
+| `playerId` | `*string` | Query, Optional | - |
+| `teamId` | `*string` | Query, Optional | - |
 
 
 # Response Type
@@ -40,7 +40,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-resp, err := aPIController.PlayerdashptshotlogGET(ctx, nil, nil, nil, nil, nil)
+resp, err := api.PlayerdashptshotlogGet(ctx, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

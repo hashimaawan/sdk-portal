@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-LeaguedashplayerstatsGETAsync(
+LeaguedashplayerstatsGetAsync(
     string gameScope,
     string playerExperience,
     string playerPosition,
@@ -23,7 +23,7 @@ LeaguedashplayerstatsGETAsync(
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string gameSegment,
@@ -53,7 +53,7 @@ LeaguedashplayerstatsGETAsync(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -88,7 +88,7 @@ string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string gameSegment = "GameSegment6";
@@ -96,7 +96,7 @@ string period = "Period2";
 string lastNGames = "LastNGames4";
 try
 {
-    await aPIController.LeaguedashplayerstatsGETAsync(
+    await api.LeaguedashplayerstatsGetAsync(
         gameScope,
         playerExperience,
         playerPosition,
@@ -114,7 +114,7 @@ try
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         gameSegment,

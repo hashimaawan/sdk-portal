@@ -20,12 +20,12 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```csharp
-using HetznerCloudAPI.Standard;
-using HetznerCloudAPI.Standard.Http.Client.Proxy;
+using HetznerCloudApi.Standard;
+using HetznerCloudApi.Standard.Http.Client.Proxy;
 
 namespace ConsoleApp;
 
-var client = new HetznerCloudAPIClient.Builder()
+var client = new HetznerCloudApiClient.Builder()
 .HttpClientConfig(config => config
     .Proxy(new ProxyConfigurationBuilder("http://localhost")
             .Port(8080)

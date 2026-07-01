@@ -5,12 +5,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playerdashptshotlogGET(
-  leagueID?: string,
+async playerdashptshotlogGet(
+  leagueId?: string,
   season?: string,
   seasonType?: string,
-  playerID?: string,
-  teamID?: string,
+  playerId?: string,
+  teamId?: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -20,11 +20,11 @@ async playerdashptshotlogGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string \| undefined` | Query, Optional | - |
+| `leagueId` | `string \| undefined` | Query, Optional | - |
 | `season` | `string \| undefined` | Query, Optional | - |
 | `seasonType` | `string \| undefined` | Query, Optional | - |
-| `playerID` | `string \| undefined` | Query, Optional | - |
-| `teamID` | `string \| undefined` | Query, Optional | - |
+| `playerId` | `string \| undefined` | Query, Optional | - |
+| `teamId` | `string \| undefined` | Query, Optional | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -39,7 +39,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await apiController.playerdashptshotlogGET();
+  const response = await api.playerdashptshotlogGet();
 
   // Extracting fully parsed response body.
   console.log(response.result);

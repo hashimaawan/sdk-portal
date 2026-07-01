@@ -7,7 +7,7 @@ Type of the Image
 
 # Enum Type Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of the Image
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type22Enum;
+import cloud.hetzner.api.models.Type22;
 
-Type22Enum type22 = Type22Enum.TEMPORARY;
+Type22 type22 = Type22.TEMPORARY;
 ```
 
 

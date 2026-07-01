@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlZvbHVtZTE
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -22,16 +24,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/protection.md) | Required | Protection configuration for the Resource | getProtection(): Protection | setProtection(Protection protection): void |
 | `server` | `?int` | Required | ID of the Server the Volume is attached to, null if it is not attached at all | getServer(): ?int | setServer(?int server): void |
 | `size` | `float` | Required | Size in GB of the Volume | getSize(): float | setSize(float size): void |
-| `status` | [`string(Status113Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/status-113.md) | Required | Current status of the Volume | getStatus(): string | setStatus(string status): void |
+| `status` | [`string(Status113)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/status-113.md) | Required | Current status of the Volume | getStatus(): string | setStatus(string status): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\Volume1Builder;
-use HetznerCloudAPILib\Models\Builders\Location16Builder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Status113Enum;
+use HetznerCloudApiLib\Models\Builders\Volume1Builder;
+use HetznerCloudApiLib\Models\Builders\Location16Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Status113;
 
 $volume1 = Volume1Builder::init(
     '2016-01-30T23:55:00+00:00',
@@ -49,16 +53,21 @@ $volume1 = Volume1Builder::init(
         12.370071,
         'fsn1',
         'eu-central'
-    )->build(),
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     'my-resource',
     ProtectionBuilder::init(
         false
-    )->build(),
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     42,
-    Status113Enum::AVAILABLE
+    Status113::AVAILABLE
 )
     ->format('xfs')
     ->server(12)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

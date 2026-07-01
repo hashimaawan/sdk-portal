@@ -24,7 +24,7 @@ def teamgamelog_get(team_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -36,11 +36,17 @@ season = 'Season0'
 
 season_type = 'SeasonType8'
 
-client_controller.teamgamelog_get(
+result = client_api.teamgamelog_get(
   team_id,
   season,
   season_type
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

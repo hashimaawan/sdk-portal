@@ -11,10 +11,10 @@ To attach an ISO to your Server use `POST /servers/{id}/actions/attach_iso`.
 
 # Create Instance
 
-The instance of the `ISOsController` class can be created using the API Client.
+The instance of the `IsOsApi` class can be created using the API Client.
 
 ```
-const iSOsController = new ISOsController(client);
+const isOsApi = new IsOsApi(client);
 ```
 
 

@@ -17,10 +17,10 @@ Represents the proxy server configurations for API calls.
 # Usage Example
 
 ```python
-from m1forgefinanceapis.m_1_forgefinanceapis_client import M1forgefinanceapisClient
+from m1forgefinanceapis.m_1_forgefinanceapis_client import M1ForgefinanceapisClient
 from m1forgefinanceapis.http.proxy_settings import ProxySettings
 
-client = M1forgefinanceapisClient(
+client = M1ForgefinanceapisClient(
     proxy_settings=ProxySettings(
         address='http://localhost',
         port=8888,

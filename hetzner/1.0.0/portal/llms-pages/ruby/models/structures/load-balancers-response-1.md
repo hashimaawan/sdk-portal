@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VycyUyNTIwUmVzcG9uc2Ux
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,210 +16,319 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action.md) | Required | - |
 | `load_balancer` | [`LoadBalancer`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer.md) | Required | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 load_balancers_response1 = LoadBalancersResponse1.new(
-  Action.new(
-    'start_server',
-    Error.new(
-      'action_failed',
-      'Action failed'
+  action: Action.new(
+    command: 'start_server',
+    error: Error.new(
+      code: 'action_failed',
+      message: 'Action failed',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    '2016-01-30T23:55:00+00:00',
-    42,
-    100,
-    [
+    finished: '2016-01-30T23:55:00+00:00',
+    id: 42,
+    progress: 100,
+    resources: [
       Resource.new(
-        42,
-        'server'
+        id: 42,
+        type: 'server',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    '2016-01-30T23:55:00+00:00',
-    StatusEnum::RUNNING
+    started: '2016-01-30T23:55:00+00:00',
+    status: Status::RUNNING,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  LoadBalancer.new(
-    Algorithm.new(
-      Type28Enum::ROUND_ROBIN
+  load_balancer: LoadBalancer.new(
+    algorithm: Algorithm.new(
+      type: Type28::ROUND_ROBIN,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    '2016-01-30T23:55:00+00:00',
-    42,
-    10000,
-    216,
-    {
-      'key0': 'labels2',
-      'key1': 'labels1'
+    created: '2016-01-30T23:55:00+00:00',
+    id: 42,
+    included_traffic: 10000,
+    ingoing_traffic: 216,
+    labels: {
+      'key0' => 'labels2',
+      'key1' => 'labels1'
     },
-    LoadBalancerType.new(
-      '2016-01-30T23:50:00+00:00',
-      'LB11',
-      1,
-      10,
-      20000,
-      5,
-      25,
-      'lb11',
-      [
+    load_balancer_type: LoadBalancerType.new(
+      deprecated: '2016-01-30T23:50:00+00:00',
+      description: 'LB11',
+      id: 1,
+      max_assigned_certificates: 10,
+      max_connections: 20000,
+      max_services: 5,
+      max_targets: 25,
+      name: 'lb11',
+      prices: [
         Price.new(
-          'fsn1',
-          PriceHourly.new(
-            '1.1900000000000000',
-            '1.0000000000'
+          location: 'fsn1',
+          price_hourly: PriceHourly.new(
+            gross: '1.1900000000000000',
+            net: '1.0000000000',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           ),
-          PriceMonthly.new(
-            '1.1900000000000000',
-            '1.0000000000'
-          )
+          price_monthly: PriceMonthly.new(
+            gross: '1.1900000000000000',
+            net: '1.0000000000',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
+          ),
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
-      ]
+      ],
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    Location.new(
-      'Falkenstein',
-      'DE',
-      'Falkenstein DC Park 1',
-      1,
-      50.47612,
-      12.370071,
-      'fsn1',
-      'eu-central'
+    location: Location.new(
+      city: 'Falkenstein',
+      country: 'DE',
+      description: 'Falkenstein DC Park 1',
+      id: 1,
+      latitude: 50.47612,
+      longitude: 12.370071,
+      name: 'fsn1',
+      network_zone: 'eu-central',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    'my-resource',
-    42,
-    [
+    name: 'my-resource',
+    outgoing_traffic: 42,
+    private_net: [
       PrivateNet.new(
-        '10.0.0.2',
-        4711
+        ip: '10.0.0.2',
+        network: 4711,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    Protection.new(
-      false
+    protection: Protection.new(
+      delete: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    PublicNet.new(
-      false,
-      Ipv4.new(
-        'lb1.example.com',
-        '1.2.3.4'
+    public_net: PublicNet.new(
+      enabled: false,
+      ipv4: Ipv4.new(
+        dns_ptr: 'lb1.example.com',
+        ip: '1.2.3.4',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      Ipv6.new(
-        'lb1.example.com',
-        '2001:db8::1'
-      )
+      ipv6: Ipv6.new(
+        dns_ptr: 'lb1.example.com',
+        ip: '2001:db8::1',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
+      ),
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    [
+    services: [
       LoadBalancerService.new(
-        80,
-        LoadBalancerServiceHealthCheck.new(
-          15,
-          4711,
-          Protocol6Enum::HTTP,
-          3,
-          10,
-          Http.new(
-            'domain4',
-            'path2',
-            'response8',
-            [
+        destination_port: 80,
+        health_check: LoadBalancerServiceHealthCheck.new(
+          interval: 15,
+          port: 4711,
+          protocol: Protocol6::HTTP,
+          retries: 3,
+          timeout: 10,
+          http: Http.new(
+            domain: 'domain4',
+            path: 'path2',
+            response: 'response8',
+            status_codes: [
               'status_codes0',
               'status_codes1',
               'status_codes2'
             ],
-            false
+            tls: false
           )
         ),
-        443,
-        Protocol7Enum::HTTPS,
-        false,
-        LoadBalancerServiceHTTP.new(
-          [
+        listen_port: 443,
+        protocol: Protocol7::HTTPS,
+        proxyprotocol: false,
+        http: LoadBalancerServiceHttp.new(
+          certificates: [
             180
           ],
-          160,
-          'cookie_name6',
-          false,
-          false
-        )
+          cookie_lifetime: 160,
+          cookie_name: 'cookie_name6',
+          redirect_http: false,
+          sticky_sessions: false,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
+        ),
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    [
+    targets: [
       LoadBalancerTarget.new(
-        Type29Enum::IP,
-        [
+        type: Type29::IP,
+        health_status: [
           HealthStatus.new(
-            142,
-            Status30Enum::UNKNOWN
+            listen_port: 142,
+            status: Status30::UNKNOWN,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           ),
           HealthStatus.new(
-            142,
-            Status30Enum::UNKNOWN
+            listen_port: 142,
+            status: Status30::UNKNOWN,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
         ],
-        Ip.new(
-          'ip8'
+        ip: Ip.new(
+          ip: 'ip8',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
-        LabelSelector7.new(
-          'selector8'
+        label_selector: LabelSelector7.new(
+          selector: 'selector8',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
-        LoadBalancerTargetServer.new(
-          14
+        server: LoadBalancerTargetServer.new(
+          id: 14,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
-        [
+        targets: [
           Target.new(
-            [
+            health_status: [
               HealthStatus.new(
-                142,
-                Status30Enum::UNKNOWN
+                listen_port: 142,
+                status: Status30::UNKNOWN,
+                additional_properties: {
+                  'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+                }
               ),
               HealthStatus.new(
-                142,
-                Status30Enum::UNKNOWN
+                listen_port: 142,
+                status: Status30::UNKNOWN,
+                additional_properties: {
+                  'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+                }
               )
             ],
-            Server11.new(
-              14
+            server: Server11.new(
+              id: 14,
+              additional_properties: {
+                'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+              }
             ),
-            'type2',
-            false
+            type: 'type2',
+            use_private_ip: false,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           ),
           Target.new(
-            [
+            health_status: [
               HealthStatus.new(
-                142,
-                Status30Enum::UNKNOWN
+                listen_port: 142,
+                status: Status30::UNKNOWN,
+                additional_properties: {
+                  'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+                }
               ),
               HealthStatus.new(
-                142,
-                Status30Enum::UNKNOWN
+                listen_port: 142,
+                status: Status30::UNKNOWN,
+                additional_properties: {
+                  'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+                }
               )
             ],
-            Server11.new(
-              14
+            server: Server11.new(
+              id: 14,
+              additional_properties: {
+                'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+              }
             ),
-            'type2',
-            false
+            type: 'type2',
+            use_private_ip: false,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           ),
           Target.new(
-            [
+            health_status: [
               HealthStatus.new(
-                142,
-                Status30Enum::UNKNOWN
+                listen_port: 142,
+                status: Status30::UNKNOWN,
+                additional_properties: {
+                  'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+                }
               ),
               HealthStatus.new(
-                142,
-                Status30Enum::UNKNOWN
+                listen_port: 142,
+                status: Status30::UNKNOWN,
+                additional_properties: {
+                  'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+                }
               )
             ],
-            Server11.new(
-              14
+            server: Server11.new(
+              id: 14,
+              additional_properties: {
+                'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+              }
             ),
-            'type2',
-            false
+            type: 'type2',
+            use_private_ip: false,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
-        ]
+        ],
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
-    ]
-  )
+    ],
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

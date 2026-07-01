@@ -13,7 +13,7 @@ For type `managed` Certificates the `action` key of the response contains the Ac
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createACertificate(?CreateCertificateRequest $body = null): CreateCertificateResponse
+function createACertificate(?CreateCertificateRequest $body = null): ApiResponse
 ```
 
 
@@ -28,7 +28,7 @@ function createACertificate(?CreateCertificateRequest $body = null): CreateCerti
 
 **201**: The `certificate` key contains the Certificate that was just created. For type `managed` Certificates the `action` key contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.
 
-[`CreateCertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CreateCertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-certificate-response.md).
 
 
 # Example Usage
@@ -44,17 +44,23 @@ $body = CreateCertificateRequestBuilder::init(
             'www.example.com'
         ]
     )
-    ->type(Type1Enum::MANAGED)
+    ->type(Type1::MANAGED)
     ->build();
 
-$certificatesController = $client->getCertificatesController();
+$certificatesApi = $client->getCertificatesApi();
+$apiResponse = $certificatesApi->createACertificate($body);
 
-try {
-    $result = $certificatesController->createACertificate($body);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'CreateCertificateResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -24,10 +24,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ```php
 <?php
 
-use M1ForgeFinanceAPIsLib\M1ForgeFinanceAPIsClientBuilder;
-use M1ForgeFinanceAPIsLib\Proxy\ProxyConfigurationBuilder;
+use M1ForgeFinanceApIsLib\M1ForgeFinanceApIsClientBuilder;
+use M1ForgeFinanceApIsLib\Proxy\ProxyConfigurationBuilder;
 // initialize the sdk client using a proxy configuration
-$client = M1ForgeFinanceAPIsClientBuilder::init()
+$client = M1ForgeFinanceApIsClientBuilder::init()
     ->proxyConfiguration(
         ProxyConfigurationBuilder::init('http://localhost')
             ->port(8080)

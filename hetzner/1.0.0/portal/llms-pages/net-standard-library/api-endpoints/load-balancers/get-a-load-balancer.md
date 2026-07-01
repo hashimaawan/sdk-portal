@@ -23,7 +23,7 @@ GetALoadBalancerAsync(
 
 **200**: The `load_balancer` key contains the Load Balancer
 
-[`Task<Models.LoadBalancersResponse2>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.LoadBalancersResponse2](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancers-response-2.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetALoadBalancerAsync(
 int id = 112;
 try
 {
-    LoadBalancersResponse2 result = await loadBalancersController.GetALoadBalancerAsync(id);
+    ApiResponse<LoadBalancersResponse2> result = await loadBalancersApi.GetALoadBalancerAsync(id);
 }
 catch (ApiException e)
 {

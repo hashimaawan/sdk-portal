@@ -10,7 +10,7 @@ Returns all Floating IP objects.
 async getAllFloatingIPs(
   name?: string,
   labelSelector?: string,
-  sort?: Sort2Enum,
+  sort?: Sort2,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<FloatingIpsResponse>>
 ```
@@ -22,7 +22,7 @@ async getAllFloatingIPs(
 |  --- | --- | --- | --- |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter Floating IPs by their name. The response will only contain the Floating IP matching the specified name. |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter Floating IPs by labels. The response will only contain Floating IPs matching the label selector. |
-| `sort` | [`Sort2Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`Sort2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -37,7 +37,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await floatingIPsController.getAllFloatingIPs();
+  const response = await floatingIPsApi.getAllFloatingIPs();
 
   // Extracting fully parsed response body.
   console.log(response.result);

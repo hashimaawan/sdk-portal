@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlZvbHVtZTE
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -22,13 +24,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `Server` | `int?` | Required | ID of the Server the Volume is attached to, null if it is not attached at all |
 | `Size` | `double` | Required | Size in GB of the Volume |
-| `Status` | [`Status113Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `Status` | [`Status113`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Volume1 volume1 = new Volume1
@@ -51,15 +55,18 @@ Volume1 volume1 = new Volume1
         Longitude = 12.370071,
         Name = "fsn1",
         NetworkZone = "eu-central",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Name = "my-resource",
     Protection = new Protection
     {
         Delete = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Server = 12,
     Size = 42,
-    Status = Status113Enum.Available,
+    Status = Status113.Available,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

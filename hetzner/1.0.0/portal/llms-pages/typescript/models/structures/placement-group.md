@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlBsYWNlbWVudEdyb3Vw
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -18,6 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `servers` | `number[]` | Required | Array of IDs of Servers that are part of this Placement Group |
 | `type` | `string` | Required, Constant | Type of the Placement Group<br><br>**Value**: `'spread'` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -38,6 +41,9 @@ const placementGroup: PlacementGroup = {
     42
   ],
   type: 'spread',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type66Enum`
+`Type66`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type66Enum;
+import cloud.hetzner.api.models.Type66;
 
-Type66Enum type66 = Type66Enum.NETWORK;
+Type66 type66 = Type66.NETWORK;
 ```
 
 

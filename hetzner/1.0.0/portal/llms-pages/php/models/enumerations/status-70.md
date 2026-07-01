@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status70Enum`
+`Status70`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Status70Enum;
+use HetznerCloudApiLib\Models\Status70;
 
-$status70 = Status70Enum::MIGRATING;
+$status70 = Status70::MIGRATING;
 ```
 
 

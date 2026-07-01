@@ -7,10 +7,10 @@ Changes the hostname that will appear when getting the hostname belonging to thi
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ChangeReverseDNSEntryForAPrimaryIP(
+ChangeReverseDnsEntryForAPrimaryIp(
     ctx context.Context,
     id int,
-    body *models.ChangeDNSPTRRequest) (
+    body *models.ChangeDnsptrRequest) (
     models.ApiResponse[models.ActionResponse],
     error)
 ```
@@ -21,7 +21,7 @@ ChangeReverseDNSEntryForAPrimaryIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Primary IP |
-| `body` | [`*models.ChangeDNSPTRRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.<br><br>The target hostname is set by passing `dns_ptr`. |
+| `body` | [`*models.ChangeDnsptrRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.<br><br>The target hostname is set by passing `dns_ptr`. |
 
 
 # Response Type
@@ -38,12 +38,12 @@ ctx := context.Background()
 
 id := 112
 
-body := models.ChangeDNSPTRRequest{
-    DnsPtr:               models.ToPointer("server02.example.com"),
-    Ip:                   "1.2.3.4",
+body := models.ChangeDnsptrRequest{
+    DnsPtr:                models.ToPointer("server02.example.com"),
+    Ip:                    "1.2.3.4",
 }
 
-apiResponse, err := primaryIPActionsController.ChangeReverseDNSEntryForAPrimaryIP(ctx, id, &body)
+apiResponse, err := primaryIpActionsApi.ChangeReverseDnsEntryForAPrimaryIp(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

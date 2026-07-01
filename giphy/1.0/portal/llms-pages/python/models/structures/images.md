@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -34,11 +36,14 @@ An object containing data for various available formats and sizes of this GIF.
 | `original_still` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/python/models/structures/image.md) | Optional | - |
 | `preview` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/python/models/structures/image.md) | Optional | - |
 | `preview_gif` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/python/models/structures/image.md) | Optional | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from giphyapi.models.image import Image
 from giphyapi.models.images import Images
 
@@ -48,36 +53,54 @@ images = Images(
         height='height8',
         mp_4='mp40',
         mp_4_size='mp4_size2',
-        size='size2'
+        size='size2',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     downsized_large=Image(
         frames='frames6',
         height='height4',
         mp_4='mp46',
         mp_4_size='mp4_size8',
-        size='size8'
+        size='size8',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     downsized_medium=Image(
         frames='frames2',
         height='height0',
         mp_4='mp42',
         mp_4_size='mp4_size4',
-        size='size4'
+        size='size4',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     downsized_small=Image(
         frames='frames0',
         height='height8',
         mp_4='mp40',
         mp_4_size='mp4_size2',
-        size='size2'
+        size='size2',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     downsized_still=Image(
         frames='frames4',
         height='height4',
         mp_4='mp46',
         mp_4_size='mp4_size8',
-        size='size2'
-    )
+        size='size2',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

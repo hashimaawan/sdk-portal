@@ -7,7 +7,7 @@ Gets a specific Firewall object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<FirewallResponse> getAFirewallAsync(
+CompletableFuture<ApiResponse<FirewallResponse>> getAFirewallAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<FirewallResponse> getAFirewallAsync(
 
 **200**: The `firewall` key contains a Firewall object
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<FirewallResponse> getAFirewallAsync(
 ```java
 int id = 112;
 
-firewallsController.getAFirewallAsync(id).thenAccept(result -> {
+firewallsApi.getAFirewallAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

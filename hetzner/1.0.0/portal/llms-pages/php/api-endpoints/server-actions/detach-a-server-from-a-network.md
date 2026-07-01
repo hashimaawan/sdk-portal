@@ -7,7 +7,7 @@ Detaches a Server from a network. The interface for this network will vanish.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function detachAServerFromANetwork(int $id, ?DetachFromNetworkRequest $body = null): ActionResponse
+function detachAServerFromANetwork(int $id, ?DetachFromNetworkRequest $body = null): ApiResponse
 ```
 
 
@@ -23,7 +23,7 @@ function detachAServerFromANetwork(int $id, ?DetachFromNetworkRequest $body = nu
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,17 +35,23 @@ $body = DetachFromNetworkRequestBuilder::init(
     4711
 )->build();
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->detachAServerFromANetwork(
+    $id,
+    $body
+);
 
-try {
-    $result = $serverActionsController->detachAServerFromANetwork(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

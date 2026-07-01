@@ -7,15 +7,15 @@ Type of rescue system to boot (default: `linux64`)
 
 # Class Name
 
-`Type65Enum`
+`Type65`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `LINUX64` |
-| `LINUX32` |
+| `Linux64` |
+| `Linux32` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of rescue system to boot (default: `linux64`)
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type65 := models.Type65Enum_LINUX64
+    type65 := models.Type65_Linux64
 
 }
 ```

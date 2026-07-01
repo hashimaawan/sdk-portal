@@ -26,22 +26,24 @@ def create_a_network(body: nil)
 
 **201**: The `network` key contains the network that was just created
 
-[`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/networks-response-1.md).
 
 
 # Example Usage
 
 ```ruby
 body = CreateNetworkRequest.new(
-  '10.0.0.0/16',
-  'mynet',
-  Labels.new,
-  [],
-  []
+  ip_range: '10.0.0.0/16',
+  name: 'mynet'
 )
 
-result = networks_controller.create_a_network(body: body)
-puts result
+result = networks_api.create_a_network(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

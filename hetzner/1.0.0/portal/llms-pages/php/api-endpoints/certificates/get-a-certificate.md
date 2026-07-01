@@ -7,7 +7,7 @@ Gets a specific Certificate object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getACertificate(int $id): CertificateResponse
+function getACertificate(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getACertificate(int $id): CertificateResponse
 
 **200**: The `certificate` key contains a Certificate object
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getACertificate(int $id): CertificateResponse
 ```php
 $id = 112;
 
-$certificatesController = $client->getCertificatesController();
+$certificatesApi = $client->getCertificatesApi();
+$apiResponse = $certificatesApi->getACertificate($id);
 
-try {
-    $result = $certificatesController->getACertificate($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'CertificateResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -5,13 +5,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function playerdashptshotlogGET(
-    ?string $leagueID = null,
+function playerdashptshotlogGet(
+    ?string $leagueId = null,
     ?string $season = null,
     ?string $seasonType = null,
-    ?string $playerID = null,
-    ?string $teamID = null
-): void
+    ?string $playerId = null,
+    ?string $teamId = null
+): ApiResponse
 ```
 
 
@@ -19,29 +19,37 @@ function playerdashptshotlogGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `?string` | Query, Optional | - |
+| `leagueId` | `?string` | Query, Optional | - |
 | `season` | `?string` | Query, Optional | - |
 | `seasonType` | `?string` | Query, Optional | - |
-| `playerID` | `?string` | Query, Optional | - |
-| `teamID` | `?string` | Query, Optional | - |
+| `playerId` | `?string` | Query, Optional | - |
+| `teamId` | `?string` | Query, Optional | - |
 
 
 # Response Type
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->playerdashptshotlogGet();
 
-try {
-    $aPIController->playerdashptshotlogGET();
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

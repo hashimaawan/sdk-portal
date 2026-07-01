@@ -15,10 +15,10 @@ Floating IPs are billed on a monthly basis.
 
 # Get singleton instance
 
-The singleton instance of the `FloatingIPsController` class can be accessed from the API Client.
+The singleton instance of the `FloatingIPsApi` class can be accessed from the API Client.
 
 ```
-$floatingIPsController = $client->getFloatingIPsController();
+$floatingIPsApi = $client->getFloatingIPsApi();
 ```
 
 

@@ -43,10 +43,10 @@ ctx := context.Background()
 id := 112
 
 body := models.UpdateNetworkRequest{
-    Name:                 models.ToPointer("new-name"),
+    Name:                  models.ToPointer("new-name"),
 }
 
-apiResponse, err := networksController.UpdateANetwork(ctx, id, &body)
+apiResponse, err := networksApi.UpdateANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

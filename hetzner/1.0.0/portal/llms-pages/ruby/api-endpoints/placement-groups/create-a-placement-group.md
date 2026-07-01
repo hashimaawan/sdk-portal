@@ -22,19 +22,24 @@ def create_a_placement_group(body: nil)
 
 **201**: The `PlacementGroup` key contains the PlacementGroup that was just created.
 
-[`CreatePlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`CreatePlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/create-placement-group-response.md).
 
 
 # Example Usage
 
 ```ruby
 body = CreatePlacementGroupRequest.new(
-  'my Placement Group',
-  'spread'
+  name: 'my Placement Group',
+  type: 'spread'
 )
 
-result = placement_groups_controller.create_a_placement_group(body: body)
-puts result
+result = placement_groups_api.create_a_placement_group(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

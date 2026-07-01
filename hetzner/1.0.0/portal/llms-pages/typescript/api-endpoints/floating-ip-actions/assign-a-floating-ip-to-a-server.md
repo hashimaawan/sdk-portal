@@ -7,9 +7,9 @@ Assigns a Floating IP to a Server.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async assignAFloatingIPToAServer(
+async assignAFloatingIpToAServer(
   id: number,
-  body?: AssignFloatingIPRequest,
+  body?: AssignFloatingIpRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
 ```
@@ -20,7 +20,7 @@ async assignAFloatingIPToAServer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Floating IP |
-| `body` | [`AssignFloatingIPRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`AssignFloatingIpRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -36,12 +36,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const body: AssignFloatingIPRequest = {
+const body: AssignFloatingIpRequest = {
   server: 42,
 };
 
 try {
-  const response = await floatingIPActionsController.assignAFloatingIPToAServer(
+  const response = await floatingIpActionsApi.assignAFloatingIpToAServer(
     id,
     body
   );

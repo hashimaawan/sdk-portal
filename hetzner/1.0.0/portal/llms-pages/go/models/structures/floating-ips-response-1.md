@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkZsb2F0aW5nJTI1MjBJcHMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Action` | [`*models.Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/action.md) | Optional | - |
 | `FloatingIp` | [`models.FloatingIp`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/floating-ip.md) | Required | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -22,70 +25,100 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     floatingIpsResponse1 := models.FloatingIpsResponse1{
-        Action:               models.ToPointer(models.Action{
-            Command:              "command6",
-            Error:                models.ToPointer(models.Error{
-                Code:                 "code2",
-                Message:              "message4",
+        Action:                models.ToPointer(models.Action{
+            Command:               "command6",
+            Error:                 models.ToPointer(models.Error{
+                Code:                  "code2",
+                Message:               "message4",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             }),
-            Finished:             models.ToPointer("finished0"),
-            Id:                   238,
-            Progress:             float64(143.26),
-            Resources:            []models.Resource{
+            Finished:              models.ToPointer("finished0"),
+            Id:                    238,
+            Progress:              float64(143.26),
+            Resources:             []models.Resource{
                 models.Resource{
-                    Id:                   198,
-                    Type:                 "type0",
+                    Id:                    198,
+                    Type:                  "type0",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
                 models.Resource{
-                    Id:                   198,
-                    Type:                 "type0",
+                    Id:                    198,
+                    Type:                  "type0",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
                 models.Resource{
-                    Id:                   198,
-                    Type:                 "type0",
+                    Id:                    198,
+                    Type:                  "type0",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
             },
-            Started:              "started8",
-            Status:               models.StatusEnum_RUNNING,
+            Started:               "started8",
+            Status:                models.Status_Running,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
-        FloatingIp:           models.FloatingIp{
-            Blocked:              false,
-            Created:              "2016-01-30T23:55:00+00:00",
-            Description:          models.ToPointer("this describes my resource"),
-            DnsPtr:               []models.DnsPtr{
+        FloatingIp:            models.FloatingIp{
+            Blocked:               false,
+            Created:               "2016-01-30T23:55:00+00:00",
+            Description:           models.ToPointer("this describes my resource"),
+            DnsPtr:                []models.DnsPtr{
                 models.DnsPtr{
-                    DnsPtr:               "server.example.com",
-                    Ip:                   "2001:db8::1",
+                    DnsPtr:                "server.example.com",
+                    Ip:                    "2001:db8::1",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
             },
-            HomeLocation:         models.HomeLocation{
-                City:                 "Falkenstein",
-                Country:              "DE",
-                Description:          "Falkenstein DC Park 1",
-                Id:                   float64(1),
-                Latitude:             float64(50.47612),
-                Longitude:            float64(12.370071),
-                Name:                 "fsn1",
-                NetworkZone:          "eu-central",
+            HomeLocation:          models.HomeLocation{
+                City:                  "Falkenstein",
+                Country:               "DE",
+                Description:           "Falkenstein DC Park 1",
+                Id:                    float64(1),
+                Latitude:              float64(50.47612),
+                Longitude:             float64(12.370071),
+                Name:                  "fsn1",
+                NetworkZone:           "eu-central",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
-            Id:                   42,
-            Ip:                   "131.232.99.1",
-            Labels:               map[string]string{
+            Id:                    42,
+            Ip:                    "131.232.99.1",
+            Labels:                map[string]string{
                 "key0": "labels4",
                 "key1": "labels3",
                 "key2": "labels2",
             },
-            Name:                 "my-resource",
-            Protection:           models.Protection{
-                Delete:               false,
+            Name:                  "my-resource",
+            Protection:            models.Protection{
+                Delete:                false,
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
-            Server:               models.ToPointer(42),
-            Type:                 models.Type16Enum_IPV4,
+            Server:                models.ToPointer(42),
+            Type:                  models.Type16_Ipv4,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

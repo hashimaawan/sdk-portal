@@ -47,12 +47,12 @@ ctx := context.Background()
 id := 112
 
 body := models.ServersActionsEnableRescueRequest{
-    SshKeys:              []int{
+    SshKeys:               []int{
         2323,
     },
 }
 
-apiResponse, err := serverActionsController.EnableRescueModeForAServer(ctx, id, &body)
+apiResponse, err := serverActionsApi.EnableRescueModeForAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

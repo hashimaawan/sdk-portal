@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRk5ldHdvcmtzJTI1MjBSZXNwb25zZQ
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,12 +16,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `meta` | [`Meta \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/meta.md) | Optional | - |
 | `networks` | [`Network[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/network.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { NetworksResponse, Type42Enum } from 'hetzner-cloud-apilib';
+import { NetworksResponse, Type42 } from 'hetzner-cloud-apilib';
 
 const networksResponse: NetworksResponse = {
   networks: [
@@ -31,11 +34,17 @@ const networksResponse: NetworksResponse = {
       name: 'mynet',
       protection: {
         mDelete: false,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       routes: [
         {
           destination: '10.100.1.0/24',
           gateway: '10.0.1.1',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
       servers: [
@@ -45,13 +54,19 @@ const networksResponse: NetworksResponse = {
         {
           gateway: '10.0.0.1',
           networkZone: 'eu-central',
-          type: Type42Enum.Cloud,
+          type: Type42.Cloud,
           ipRange: '10.0.1.0/24',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
       loadBalancers: [
         42
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   meta: {
@@ -62,7 +77,16 @@ const networksResponse: NetworksResponse = {
       perPage: 13.34,
       previousPage: 50.02,
       totalEntries: 206.64,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

@@ -29,9 +29,9 @@ We limit the number of samples returned to a maximum of 500 and will adjust the 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersMetricsResponse> getMetricsForAServerAsync(
+CompletableFuture<ApiResponse<ServersMetricsResponse>> getMetricsForAServerAsync(
     final int id,
-    final Type66Enum type,
+    final Type66 type,
     final String start,
     final String end,
     final String step)
@@ -43,7 +43,7 @@ CompletableFuture<ServersMetricsResponse> getMetricsForAServerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Server |
-| `type` | [`Type66Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type66`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `String` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `String` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `String` | Query, Optional | Resolution of results in seconds |
@@ -53,18 +53,18 @@ CompletableFuture<ServersMetricsResponse> getMetricsForAServerAsync(
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-metrics-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-Type66Enum type = Type66Enum.NETWORK;
+Type66 type = Type66.NETWORK;
 String start = "start4";
 String end = "end8";
 
-serversController.getMetricsForAServerAsync(id, type, start, end, null).thenAccept(result -> {
+serversApi.getMetricsForAServerAsync(id, type, start, end, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

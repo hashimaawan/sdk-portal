@@ -20,12 +20,12 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```csharp
-using NBAStatsAPI.Standard;
-using NBAStatsAPI.Standard.Http.Client.Proxy;
+using NbaStatsApi.Standard;
+using NbaStatsApi.Standard.Http.Client.Proxy;
 
 namespace ConsoleApp;
 
-var client = new NBAStatsAPIClient.Builder()
+var client = new NbaStatsApiClient.Builder()
 .HttpClientConfig(config => config
     .Proxy(new ProxyConfigurationBuilder("http://localhost")
             .Port(8080)

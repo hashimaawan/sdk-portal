@@ -7,9 +7,9 @@ Returns all SSH key objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetAllSSHKeys(
+GetAllSshKeys(
     ctx context.Context,
-    sort *models.Sort8Enum,
+    sort *models.Sort8,
     name *string,
     fingerprint *string,
     labelSelector *string) (
@@ -22,7 +22,7 @@ GetAllSSHKeys(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`*models.Sort8Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort-8.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`*models.Sort8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort-8.md) | Query, Optional | Can be used multiple times. |
 | `name` | `*string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `fingerprint` | `*string` | Query, Optional | Can be used to filter SSH keys by their fingerprint. The response will only contain the SSH key matching the specified fingerprint. |
 | `labelSelector` | `*string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
@@ -40,7 +40,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := sSHKeysController.GetAllSSHKeys(ctx, nil, nil, nil, nil)
+apiResponse, err := sshKeysApi.GetAllSshKeys(ctx, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNzaEtleQ
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -18,6 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `Record<string, string>` | Required | User-defined labels (key-value pairs) |
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `publicKey` | `string` | Required | Public key |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -36,6 +39,9 @@ const sshKey: SshKey = {
   },
   name: 'my-resource',
   publicKey: 'ssh-rsa AAAjjk76kgf...Xt',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

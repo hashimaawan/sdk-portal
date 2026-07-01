@@ -11,10 +11,10 @@ Please see [Hetzner Docs](https://docs.hetzner.com/cloud/#Volumes) for more deta
 
 # Get Instance
 
-The instance of the `VolumesController` class can be accessed from the API Client.
+The instance of the `VolumesApi` class can be accessed from the API Client.
 
 ```
-volumesController := client.VolumesController()
+volumesApi := client.VolumesApi()
 ```
 
 

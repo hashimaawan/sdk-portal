@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-LeaguedashteamstatsGET(
+LeaguedashteamstatsGet(
     ctx context.Context,
     measureType string,
     perMode string,
@@ -20,7 +20,7 @@ LeaguedashteamstatsGET(
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
@@ -48,7 +48,7 @@ LeaguedashteamstatsGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -94,7 +94,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -106,7 +106,7 @@ period := "Period2"
 
 lastNGames := "LastNGames4"
 
-resp, err := aPIController.LeaguedashteamstatsGET(ctx, measureType, perMode, plusMinus, paceAdjust, rank, season, seasonType, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames)
+resp, err := api.LeaguedashteamstatsGet(ctx, measureType, perMode, plusMinus, paceAdjust, rank, season, seasonType, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames)
 if err != nil {
     log.Fatalln(err)
 } else {

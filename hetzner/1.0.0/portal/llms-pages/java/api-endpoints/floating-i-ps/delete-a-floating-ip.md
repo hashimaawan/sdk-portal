@@ -7,7 +7,7 @@ Deletes a Floating IP. If it is currently assigned to a Server it will automatic
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAFloatingIPAsync(
+CompletableFuture<ApiResponse<Void>> deleteAFloatingIpAsync(
     final int id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteAFloatingIPAsync(
 ```java
 int id = 112;
 
-floatingIPsController.deleteAFloatingIPAsync(id).thenAccept(result -> {
+floatingIPsApi.deleteAFloatingIpAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

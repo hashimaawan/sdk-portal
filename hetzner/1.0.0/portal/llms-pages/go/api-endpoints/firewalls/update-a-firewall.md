@@ -43,11 +43,11 @@ ctx := context.Background()
 id := 112
 
 body := models.UpdateFirewallRequest{
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("new-name"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("new-name"),
 }
 
-apiResponse, err := firewallsController.UpdateAFirewall(ctx, id, &body)
+apiResponse, err := firewallsApi.UpdateAFirewall(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

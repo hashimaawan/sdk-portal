@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := actionsController.GetAnAction(ctx, id)
+apiResponse, err := actionsApi.GetAnAction(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

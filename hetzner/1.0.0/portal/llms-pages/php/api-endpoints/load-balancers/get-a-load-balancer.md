@@ -7,7 +7,7 @@ Gets a specific Load Balancer object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getALoadBalancer(int $id): LoadBalancersResponse2
+function getALoadBalancer(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getALoadBalancer(int $id): LoadBalancersResponse2
 
 **200**: The `load_balancer` key contains the Load Balancer
 
-[`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancers-response-2.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getALoadBalancer(int $id): LoadBalancersResponse2
 ```php
 $id = 112;
 
-$loadBalancersController = $client->getLoadBalancersController();
+$loadBalancersApi = $client->getLoadBalancersApi();
+$apiResponse = $loadBalancersApi->getALoadBalancer($id);
 
-try {
-    $result = $loadBalancersController->getALoadBalancer($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'LoadBalancersResponse2:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

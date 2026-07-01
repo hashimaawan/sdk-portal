@@ -9,7 +9,7 @@ Please note that when updating labels, the SSH key current set of labels will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-UpdateAnSSHKeyAsync(
+UpdateAnSshKeyAsync(
     string id,
     Models.SshKeysRequest1 body = null)
 ```
@@ -27,7 +27,7 @@ UpdateAnSSHKeyAsync(
 
 **200**: The `ssh_key` key in the reply contains the modified SSH key object with the new description
 
-[`Task<Models.SshKeysResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.SshKeysResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -42,7 +42,7 @@ SshKeysRequest1 body = new SshKeysRequest1
 
 try
 {
-    SshKeysResponse1 result = await sSHKeysController.UpdateAnSSHKeyAsync(
+    ApiResponse<SshKeysResponse1> result = await sshKeysApi.UpdateAnSshKeyAsync(
         id,
         body
     );

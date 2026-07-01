@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> commonplayerinfoGETAsync(
-    final String playerID)
+CompletableFuture<ApiResponse<Void>> commonplayerinfoGetAsync(
+    final String playerId)
 ```
 
 
@@ -14,7 +14,7 @@ CompletableFuture<Void> commonplayerinfoGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerID` | `String` | Query, Required | - |
+| `playerId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -27,10 +27,11 @@ CompletableFuture<Void> commonplayerinfoGETAsync(
 # Example Usage
 
 ```java
-String playerID = "PlayerID6";
+String playerId = "PlayerID6";
 
-aPIController.commonplayerinfoGETAsync(playerID).thenAccept(result -> {
+api.commonplayerinfoGetAsync(playerId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

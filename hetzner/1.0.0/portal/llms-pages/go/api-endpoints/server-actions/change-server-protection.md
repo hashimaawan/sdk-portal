@@ -39,11 +39,11 @@ ctx := context.Background()
 id := 112
 
 body := models.ServersActionsChangeProtectionRequest{
-    Delete:               models.ToPointer(true),
-    Rebuild:              models.ToPointer(true),
+    Delete:                models.ToPointer(true),
+    Rebuild:               models.ToPointer(true),
 }
 
-apiResponse, err := serverActionsController.ChangeServerProtection(ctx, id, &body)
+apiResponse, err := serverActionsApi.ChangeServerProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

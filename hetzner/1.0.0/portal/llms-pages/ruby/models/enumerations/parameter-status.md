@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterStatusEnum`
+`ParameterStatus`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-parameter_status = ParameterStatusEnum::ERROR
+parameter_status = ParameterStatus::ERROR
 ```
 
 

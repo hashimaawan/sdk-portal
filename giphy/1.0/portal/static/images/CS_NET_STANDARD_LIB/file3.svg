@@ -239,7 +239,7 @@
   <path d="M39.523,7.433 L39.523,26.567 L34.717,28.500 L24.266,18.431 L17.883,23.252 L16.510,22.549 L16.510,11.401 L17.883,10.723 L24.291,15.544 L34.692,5.500 L39.523,7.433 Z" class="cls-4"/>
   <path d="M33.929,12.556 L33.929,21.394 L28.029,17.000 L33.929,12.556 Z" class="cls-5"/>
   <path d="M18.544,14.389 L18.544,19.662 L21.519,17.025 L18.544,14.389 Z" class="cls-5"/>
-  <text transform="translate(52 20) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">GiphyAPI - Microsoft Visual Studio</tspan></text>
+  <text transform="translate(52 20) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">GiphyApi - Microsoft Visual Studio</tspan></text>
   <text transform="translate(678 21) scale(0.5 0.5)" class="cls-6"><tspan class="cls-8">Quick Launch (Ctrl + Q)</tspan></text>
   <rect x="26" y="103" width="561" height="380" class="cls-9"/>
   <rect x="42" y="125" width="527" height="341" class="cls-10"/>
@@ -269,7 +269,7 @@
   <text transform="translate(639 391) scale(0.2 0.2)" class="cls-18"><tspan x="0" class="cls-19">C#</tspan></text>
   <text transform="translate(639 431) scale(0.2 0.2)" class="cls-18"><tspan x="0" class="cls-19">C#</tspan></text>
   <text transform="translate(641 177) scale(0.33 0.33)" class="cls-20"><tspan class="cls-21 bold">TestConsoleProject</tspan></text>
-  <text transform="translate(626 158) scale(0.33 0.33)" class="cls-22"><tspan class="cls-21">Solution 'GiphyAPI' (2 projects) </tspan></text>
+  <text transform="translate(626 158) scale(0.33 0.33)" class="cls-22"><tspan class="cls-21">Solution 'GiphyApi' (2 projects) </tspan></text>
   <text transform="translate(660 95) scale(0.33 0.33)" class="cls-24"><tspan x="0" class="cls-25">Solution Explorer</tspan></text>
   <path d="M831.019,88.530 L828.048,91.500 L831.019,94.470 L831.019,94.470 C831.155,94.605 831.239,94.793 831.239,95.000 C831.239,95.414 830.903,95.750 830.488,95.750 C830.281,95.750 830.094,95.666 829.958,95.530 L829.958,95.530 L826.986,92.561 L824.015,95.530 L824.015,95.530 C823.879,95.666 823.692,95.750 823.484,95.750 C823.070,95.750 822.734,95.414 822.734,95.000 C822.734,94.793 822.818,94.605 822.954,94.470 L822.954,94.470 L825.925,91.500 L822.954,88.530 L822.954,88.530 C822.818,88.395 822.734,88.207 822.734,88.000 C822.734,87.586 823.070,87.250 823.484,87.250 C823.692,87.250 823.879,87.334 824.015,87.470 L824.015,87.470 L826.986,90.439 L829.958,87.470 L829.958,87.470 C830.094,87.334 830.281,87.250 830.488,87.250 C830.903,87.250 831.239,87.586 831.239,88.000 C831.239,88.207 831.155,88.395 831.019,88.530 L831.019,88.530 Z" class="cls-26"/>
   <text transform="translate(193 55) scale(0.5 0.5)" class="cls-27"><tspan class="cls-28">Build</tspan></text>
@@ -283,7 +283,7 @@
   <text transform="translate(654 371) scale(0.33 0.33)" class="cls-30"><tspan class="cls-31">APIHelper.cs</tspan></text>
   <text transform="translate(653 391) scale(0.33 0.33)" class="cls-30"><tspan class="cls-31">Configuration.cs</tspan></text>
   <text transform="translate(653 412) scale(0.33 0.33)" class="cls-30"><tspan class="cls-31">Packages.config</tspan></text>
-  <text transform="translate(654 431) scale(0.33 0.33)" class="cls-30"><tspan class="cls-31">GiphyAPIClient.cs</tspan></text>
+  <text transform="translate(654 431) scale(0.33 0.33)" class="cls-30"><tspan class="cls-31">GiphyApiClient.cs</tspan></text>
   <text transform="translate(602 476) scale(0.33 0.33)" class="cls-22"><tspan class="cls-23">Solution Explorer</tspan></text>
   <text transform="translate(688 476) scale(0.33 0.33)" class="cls-22"><tspan class="cls-32">Team Explorer</tspan></text>
   <path d="M34.366,107.000 L46.873,107.000 L46.873,119.500 L34.366,119.500 L34.366,107.000 Z" class="cls-33"/>
@@ -311,7 +311,7 @@
   <rect x="621" y="167" width="15" height="15" class="cls-10"/>
   <path d="M622.366,168.000 L634.873,168.000 L634.873,180.500 L622.366,180.500 L622.366,168.000 Z" class="cls-33"/>
   <text transform="translate(629 177) scale(0.2 0.2)" class="cls-18"><tspan x="0" class="cls-38">C#</tspan></text>
-  <text transform="translate(641 275) scale(0.33 0.33)" class="cls-20"><tspan class="cls-21">GiphyAPI.Standard (Portable)</tspan></text>
+  <text transform="translate(641 275) scale(0.33 0.33)" class="cls-20"><tspan class="cls-21">GiphyApi.Standard (Portable)</tspan></text>
   <path d="M614.361,268.500 L607.357,275.500 L614.361,275.500 L614.361,268.500 Z" class="cls-29"/>
   <path d="M622.366,266.000 L634.873,266.000 L634.873,278.500 L622.366,278.500 L622.366,266.000 Z" class="cls-33"/>
   <text transform="translate(629 275) scale(0.2 0.2)" class="cls-18"><tspan x="0" class="cls-38">C#</tspan></text>

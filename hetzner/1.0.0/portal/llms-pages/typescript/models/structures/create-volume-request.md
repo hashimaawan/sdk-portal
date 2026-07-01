@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -19,6 +21,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `string` | Required | Name of the volume |
 | `server` | `number \| undefined` | Optional | Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) |
 | `size` | `number` | Required | Size of the Volume in GB |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -34,6 +37,9 @@ const createVolumeRequest: CreateVolumeRequest = {
   labels: { 'labelkey': 'value' },
   location: 'nbg1',
   server: 182,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

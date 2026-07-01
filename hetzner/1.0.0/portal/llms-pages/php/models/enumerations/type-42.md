@@ -7,7 +7,7 @@ Type of Subnetwork
 
 # Enum Type Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of Subnetwork
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type42Enum;
+use HetznerCloudApiLib\Models\Type42;
 
-$type42 = Type42Enum::CLOUD;
+$type42 = Type42::CLOUD;
 ```
 
 

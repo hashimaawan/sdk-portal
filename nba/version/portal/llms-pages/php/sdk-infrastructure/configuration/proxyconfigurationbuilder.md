@@ -24,10 +24,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ```php
 <?php
 
-use NBAStatsAPILib\NBAStatsAPIClientBuilder;
-use NBAStatsAPILib\Proxy\ProxyConfigurationBuilder;
+use NbaStatsApiLib\NbaStatsApiClientBuilder;
+use NbaStatsApiLib\Proxy\ProxyConfigurationBuilder;
 // initialize the sdk client using a proxy configuration
-$client = NBAStatsAPIClientBuilder::init()
+$client = NbaStatsApiClientBuilder::init()
     ->proxyConfiguration(
         ProxyConfigurationBuilder::init('http://localhost')
             ->port(8080)

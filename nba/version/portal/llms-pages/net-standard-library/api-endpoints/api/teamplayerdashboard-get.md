@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-TeamplayerdashboardGETAsync(
+TeamplayerdashboardGetAsync(
     string seasonType,
-    string teamID,
+    string teamId,
     string measureType,
     string perMode,
     string plusMinus,
@@ -20,7 +20,7 @@ TeamplayerdashboardGETAsync(
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string gameSegment,
@@ -34,7 +34,7 @@ TeamplayerdashboardGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `plusMinus` | `string` | Query, Required | - |
@@ -47,7 +47,7 @@ TeamplayerdashboardGETAsync(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -66,7 +66,7 @@ TeamplayerdashboardGETAsync(
 
 ```csharp
 string seasonType = "SeasonType8";
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 string measureType = "MeasureType8";
 string perMode = "PerMode6";
 string plusMinus = "PlusMinus0";
@@ -79,7 +79,7 @@ string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string gameSegment = "GameSegment6";
@@ -87,9 +87,9 @@ string period = "Period2";
 string lastNGames = "LastNGames4";
 try
 {
-    await aPIController.TeamplayerdashboardGETAsync(
+    await api.TeamplayerdashboardGetAsync(
         seasonType,
-        teamID,
+        teamId,
         measureType,
         perMode,
         plusMinus,
@@ -102,7 +102,7 @@ try
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         gameSegment,

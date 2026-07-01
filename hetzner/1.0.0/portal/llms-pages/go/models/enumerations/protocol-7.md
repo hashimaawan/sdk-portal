@@ -7,16 +7,16 @@ Protocol of the Load Balancer
 
 # Class Name
 
-`Protocol7Enum`
+`Protocol7`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `TCP` |
-| `HTTP` |
-| `HTTPS` |
+| `Tcp` |
+| `Http` |
+| `Https` |
 
 
 # Example
@@ -25,11 +25,11 @@ Protocol of the Load Balancer
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    protocol7 := models.Protocol7Enum_HTTP
+    protocol7 := models.Protocol7_Http
 
 }
 ```

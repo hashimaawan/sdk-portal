@@ -7,7 +7,7 @@ Type of the Certificate
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the Certificate
 # Example
 
 ```java
-import cloud.hetzner.api.models.TypeEnum;
+import cloud.hetzner.api.models.Type;
 
-TypeEnum type = TypeEnum.UPLOADED;
+Type type = Type.UPLOADED;
 ```
 
 

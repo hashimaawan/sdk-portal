@@ -7,7 +7,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Enum Type Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 # Example
 
 ```ts
-import { StorageTypeEnum } from 'hetzner-cloud-apilib';
+import { StorageType } from 'hetzner-cloud-apilib';
 
-const storageType = StorageTypeEnum.Local;
+const storageType = StorageType.Local;
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRlBsYWNlbWVudEdyb3Vw
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -18,11 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `str` | Required | Name of the Resource. Must be unique per Project. |
 | `servers` | `List[int]` | Required | Array of IDs of Servers that are part of this Placement Group |
 | `mtype` | `str` | Required, Constant | Type of the Placement Group<br><br>**Value**: `"spread"` |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.placement_group import PlacementGroup
 
 placement_group = PlacementGroup(
@@ -34,7 +39,10 @@ placement_group = PlacementGroup(
     name='my-resource',
     servers=[
         42
-    ]
+    ],
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

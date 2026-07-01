@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterStatusEnum`
+`ParameterStatus`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\ParameterStatusEnum;
+use HetznerCloudApiLib\Models\ParameterStatus;
 
-$parameterStatus = ParameterStatusEnum::ERROR;
+$parameterStatus = ParameterStatus::ERROR;
 ```
 
 

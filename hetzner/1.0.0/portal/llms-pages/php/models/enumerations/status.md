@@ -7,7 +7,7 @@ Status of the Action
 
 # Enum Type Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the Action
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\StatusEnum;
+use HetznerCloudApiLib\Models\Status;
 
-$status = StatusEnum::ERROR;
+$status = Status::ERROR;
 ```
 
 

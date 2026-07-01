@@ -7,10 +7,10 @@ Returns prices for resources.
 
 # Get instance
 
-An instance of the `PricingController` class can be accessed from the API Client.
+An instance of the `PricingApi` class can be accessed from the API Client.
 
 ```
-pricing_controller = client.pricing
+pricing_api = client.pricing
 ```
 
 

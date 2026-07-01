@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-Boxscoreplayertrackv2GET(
+Boxscoreplayertrackv2Get(
     ctx context.Context,
-    gameID string) (
+    gameId string) (
     http.Response,
     error)
 ```
@@ -17,7 +17,7 @@ Boxscoreplayertrackv2GET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -32,9 +32,9 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-gameID := "GameID8"
+gameId := "GameID8"
 
-resp, err := aPIController.Boxscoreplayertrackv2GET(ctx, gameID)
+resp, err := api.Boxscoreplayertrackv2Get(ctx, gameId)
 if err != nil {
     log.Fatalln(err)
 } else {

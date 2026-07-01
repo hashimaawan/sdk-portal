@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 
 geographical coordinates of the stop
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,6 +18,7 @@ geographical coordinates of the stop
 |  --- | --- | --- | --- |
 | `lat` | `number \| undefined` | Optional | latitude |
 | `lon` | `number \| undefined` | Optional | longitude |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -26,6 +29,9 @@ import { Coordinates } from 'furkot-tripslib';
 const coordinates: Coordinates = {
   lat: 182.98,
   lon: 16.08,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

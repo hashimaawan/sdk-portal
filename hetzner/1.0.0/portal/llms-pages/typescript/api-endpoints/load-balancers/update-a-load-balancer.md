@@ -46,7 +46,7 @@ const body: LoadBalancersRequest = {
 };
 
 try {
-  const response = await loadBalancersController.updateALoadBalancer(
+  const response = await loadBalancersApi.updateALoadBalancer(
     id,
     body
   );

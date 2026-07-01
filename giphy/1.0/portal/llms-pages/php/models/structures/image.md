@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/php/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -21,12 +23,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `webp` | `?string` | Optional | The URL for this GIF in .webp format. | getWebp(): ?string | setWebp(?string webp): void |
 | `webpSize` | `?string` | Optional | The size in bytes of the .webp file corresponding to this GIF. | getWebpSize(): ?string | setWebpSize(?string webpSize): void |
 | `width` | `?string` | Optional | The width of this GIF in pixels. | getWidth(): ?string | setWidth(?string width): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use GiphyAPILib\Models\Builders\ImageBuilder;
+use GiphyApiLib\Models\Builders\ImageBuilder;
+use GiphyApiLib\ApiHelper;
 
 $image = ImageBuilder::init()
     ->frames('15')
@@ -38,6 +42,7 @@ $image = ImageBuilder::init()
     ->webp('https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp')
     ->webpSize('12321')
     ->width('320')
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

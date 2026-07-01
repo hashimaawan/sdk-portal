@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayoffpictureGET(
+PlayoffpictureGet(
     ctx context.Context,
-    leagueID string,
-    seasonID string) (
+    leagueId string,
+    seasonId string) (
     http.Response,
     error)
 ```
@@ -18,8 +18,8 @@ PlayoffpictureGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `seasonID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `seasonId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -34,11 +34,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
-seasonID := "SeasonID6"
+seasonId := "SeasonID6"
 
-resp, err := aPIController.PlayoffpictureGET(ctx, leagueID, seasonID)
+resp, err := api.PlayoffpictureGet(ctx, leagueId, seasonId)
 if err != nil {
     log.Fatalln(err)
 } else {

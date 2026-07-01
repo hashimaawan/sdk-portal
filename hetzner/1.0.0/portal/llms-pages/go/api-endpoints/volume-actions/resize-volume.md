@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.VolumesActionsResizeRequest{
-    Size:                 float64(50),
+    Size:                  float64(50),
 }
 
-apiResponse, err := volumeActionsController.ResizeVolume(ctx, id, &body)
+apiResponse, err := volumeActionsApi.ResizeVolume(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

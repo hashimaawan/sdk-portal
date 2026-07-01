@@ -38,7 +38,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := loadBalancerActionsController.ChangeAlgorithm(ctx, id, nil)
+apiResponse, err := loadBalancerActionsApi.ChangeAlgorithm(ctx, id, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -45,20 +45,20 @@ ctx := context.Background()
 id := 112
 
 body := models.LoadBalancerService{
-    DestinationPort:      80,
-    HealthCheck:          models.LoadBalancerServiceHealthCheck{
+    DestinationPort:       80,
+    HealthCheck:           models.LoadBalancerServiceHealthCheck{
         Interval: 15,
         Port:     4711,
-        Protocol: models.Protocol6Enum_HTTP,
+        Protocol: models.Protocol6_Http,
         Retries:  3,
         Timeout:  10,
     },
-    ListenPort:           443,
-    Protocol:             models.Protocol7Enum_HTTPS,
-    Proxyprotocol:        false,
+    ListenPort:            443,
+    Protocol:              models.Protocol7_Https,
+    Proxyprotocol:         false,
 }
 
-apiResponse, err := loadBalancerActionsController.AddService(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.AddService(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

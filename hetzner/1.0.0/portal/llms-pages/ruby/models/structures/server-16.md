@@ -21,7 +21,7 @@ Configuration for type Server, required if type is `server`
 
 ```ruby
 server16 = Server16.new(
-  80
+  id: 80
 )
 ```
 

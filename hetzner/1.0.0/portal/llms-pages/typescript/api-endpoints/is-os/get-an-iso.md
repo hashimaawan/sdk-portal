@@ -7,7 +7,7 @@ Returns a specific ISO object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async getAnISO(
+async getAnIso(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<IsosResponse1>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await iSOsController.getAnISO(id);
+  const response = await isOsApi.getAnIso(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

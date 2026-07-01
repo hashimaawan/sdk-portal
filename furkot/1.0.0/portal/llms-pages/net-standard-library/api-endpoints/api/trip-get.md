@@ -5,13 +5,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 list user's trips
 
 ```csharp
-TripGETAsync()
+TripGetAsync()
 ```
 
 
 # Authentication
 
-This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/getting-started/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/getting-started/authorization.md)
+This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md)
 
 
 # Requires scope
@@ -29,7 +29,7 @@ This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.c
 
 **200**: Successful response
 
-[`Task<List<Models.Trip>>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/models/structures/trip.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [List<Models.Trip>](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/models/structures/trip.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.c
 ```csharp
 try
 {
-    List<Trip> result = await aPIController.TripGETAsync();
+    ApiResponse<List<Trip>> result = await api.TripGetAsync();
 }
 catch (ApiException e)
 {

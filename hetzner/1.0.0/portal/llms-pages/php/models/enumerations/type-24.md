@@ -7,7 +7,7 @@ Destination Image type to convert to
 
 # Enum Type Name
 
-`Type24Enum`
+`Type24`
 
 
 # Fields
@@ -20,9 +20,9 @@ Destination Image type to convert to
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type24Enum;
+use HetznerCloudApiLib\Models\Type24;
 
-$type24 = Type24Enum::SNAPSHOT;
+$type24 = Type24::SNAPSHOT;
 ```
 
 

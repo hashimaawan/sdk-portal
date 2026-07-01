@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNoYW5nZUROU1BUUlJlcXVlc3Q
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
-`ChangeDNSPTRRequest`
+`ChangeDnsptrRequest`
 
 
 # Fields
@@ -14,17 +16,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `dnsPtr` | `?string` | Required | Hostname to set as a reverse DNS PTR entry, will reset to original default value if `null` | getDnsPtr(): ?string | setDnsPtr(?string dnsPtr): void |
 | `ip` | `string` | Required | IP address for which to set the reverse DNS entry | getIp(): string | setIp(string ip): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ChangeDNSPTRRequestBuilder;
+use HetznerCloudApiLib\Models\Builders\ChangeDnsptrRequestBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
-$changeDNSPTRRequest = ChangeDNSPTRRequestBuilder::init(
+$changeDnsptrRequest = ChangeDnsptrRequestBuilder::init(
     '1.2.3.4'
 )
     ->dnsPtr('server02.example.com')
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

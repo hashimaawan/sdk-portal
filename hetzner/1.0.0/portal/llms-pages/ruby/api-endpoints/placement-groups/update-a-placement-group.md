@@ -28,7 +28,7 @@ def update_a_placement_group(id,
 
 **200**: The `certificate` key contains the PlacementGroup that was just updated
 
-[`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -37,15 +37,20 @@ def update_a_placement_group(id,
 id = 112
 
 body = UpdatePlacementGroupRequest.new(
-  { 'labelkey' => 'value' },
-  'my Placement Group'
+  labels: { 'labelkey' => 'value' },
+  name: 'my Placement Group'
 )
 
-result = placement_groups_controller.update_a_placement_group(
+result = placement_groups_api.update_a_placement_group(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

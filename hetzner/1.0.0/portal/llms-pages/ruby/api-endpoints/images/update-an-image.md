@@ -26,7 +26,7 @@ def update_an_image(id,
 
 **200**: The image key in the reply contains the modified Image object
 
-[`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/images-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/images-response-1.md).
 
 
 # Example Usage
@@ -35,16 +35,20 @@ def update_an_image(id,
 id = 112
 
 body = UpdateImageRequest.new(
-  'My new Image description',
-  { 'labelkey' => 'value' },
-  envrr
+  description: 'My new Image description',
+  labels: { 'labelkey' => 'value' }
 )
 
-result = images_controller.update_an_image(
+result = images_api.update_an_image(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

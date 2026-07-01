@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlZvbHVtZXMlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,18 +16,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/meta.md) | Optional | - | getMeta(): ?Meta | setMeta(?Meta meta): void |
 | `volumes` | [`Volume1[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/volume-1.md) | Required | - | getVolumes(): array | setVolumes(array volumes): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\VolumesResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\Volume1Builder;
-use HetznerCloudAPILib\Models\Builders\Location16Builder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Status113Enum;
-use HetznerCloudAPILib\Models\Builders\MetaBuilder;
-use HetznerCloudAPILib\Models\Builders\PaginationBuilder;
+use HetznerCloudApiLib\Models\Builders\VolumesResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\Volume1Builder;
+use HetznerCloudApiLib\Models\Builders\Location16Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Status113;
+use HetznerCloudApiLib\Models\Builders\MetaBuilder;
+use HetznerCloudApiLib\Models\Builders\PaginationBuilder;
 
 $volumesResponse = VolumesResponseBuilder::init(
     [
@@ -45,16 +49,21 @@ $volumesResponse = VolumesResponseBuilder::init(
                 12.370071,
                 'fsn1',
                 'eu-central'
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             'my-resource',
             ProtectionBuilder::init(
                 false
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             42,
-            Status113Enum::AVAILABLE
+            Status113::AVAILABLE
         )
             ->format('xfs')
             ->server(12)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -68,9 +77,14 @@ $volumesResponse = VolumesResponseBuilder::init(
                 ->nextPage(209.18)
                 ->previousPage(50.02)
                 ->totalEntries(206.64)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build()
-    )->build();
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

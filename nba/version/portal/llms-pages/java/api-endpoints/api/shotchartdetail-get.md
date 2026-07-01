@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> shotchartdetailGETAsync(
+CompletableFuture<ApiResponse<Void>> shotchartdetailGetAsync(
     final String seasonType,
-    final String teamID,
-    final String playerID,
-    final String gameID,
+    final String teamId,
+    final String playerId,
+    final String gameId,
     final String outcome,
     final String location,
     final String month,
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String position,
@@ -33,16 +33,16 @@ CompletableFuture<Void> shotchartdetailGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `String` | Query, Required | - |
-| `teamID` | `String` | Query, Required | - |
-| `playerID` | `String` | Query, Required | - |
-| `gameID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
+| `playerId` | `String` | Query, Required | - |
+| `gameId` | `String` | Query, Required | - |
 | `outcome` | `String` | Query, Required | - |
 | `location` | `String` | Query, Required | - |
 | `month` | `String` | Query, Required | - |
 | `seasonSegment` | `String` | Query, Required | - |
 | `dateFrom` | `String` | Query, Required | - |
 | `dateTo` | `String` | Query, Required | - |
-| `opponentTeamID` | `String` | Query, Required | - |
+| `opponentTeamId` | `String` | Query, Required | - |
 | `vsConference` | `String` | Query, Required | - |
 | `vsDivision` | `String` | Query, Required | - |
 | `position` | `String` | Query, Required | - |
@@ -64,16 +64,16 @@ CompletableFuture<Void> shotchartdetailGETAsync(
 
 ```java
 String seasonType = "SeasonType8";
-String teamID = "TeamID8";
-String playerID = "PlayerID6";
-String gameID = "GameID8";
+String teamId = "TeamID8";
+String playerId = "PlayerID6";
+String gameId = "GameID8";
 String outcome = "Outcome4";
 String location = "Location4";
 String month = "Month0";
 String seasonSegment = "SeasonSegment8";
 String dateFrom = "DateFrom6";
 String dateTo = "DateTo0";
-String opponentTeamID = "OpponentTeamID6";
+String opponentTeamId = "OpponentTeamID6";
 String vsConference = "VsConference6";
 String vsDivision = "VsDivision6";
 String position = "Position8";
@@ -83,8 +83,9 @@ String period = "Period2";
 String lastNGames = "LastNGames4";
 String contextMeasure = "ContextMeasure2";
 
-aPIController.shotchartdetailGETAsync(seasonType, teamID, playerID, gameID, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, position, rookieYear, gameSegment, period, lastNGames, contextMeasure).thenAccept(result -> {
+api.shotchartdetailGetAsync(seasonType, teamId, playerId, gameId, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, position, rookieYear, gameSegment, period, lastNGames, contextMeasure).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

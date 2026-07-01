@@ -28,7 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Pricing, Type48Enum, Type49Enum } from 'hetzner-cloud-apilib';
+import { Pricing, Type48, Type49 } from 'hetzner-cloud-apilib';
 
 const pricing: Pricing = {
   currency: 'EUR',
@@ -36,6 +36,12 @@ const pricing: Pricing = {
     priceMonthly: {
       gross: '1.1900000000000000',
       net: '1.0000000000',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
+    },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
   floatingIps: [
@@ -46,16 +52,31 @@ const pricing: Pricing = {
           priceMonthly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
-      type: Type48Enum.Ipv4,
+      type: Type48.Ipv4,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   image: {
     pricePerGbMonth: {
       gross: '1.1900000000000000',
       net: '1.0000000000',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
+    },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
   loadBalancerTypes: [
@@ -68,13 +89,25 @@ const pricing: Pricing = {
           priceHourly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           priceMonthly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   primaryIps: [
@@ -85,18 +118,33 @@ const pricing: Pricing = {
           priceHourly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           priceMonthly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
-      type: Type49Enum.Ipv4,
+      type: Type49.Ipv4,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   serverBackup: {
     percentage: '20.0000000000',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   serverTypes: [
     {
@@ -108,19 +156,37 @@ const pricing: Pricing = {
           priceHourly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           priceMonthly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   traffic: {
     pricePerTb: {
       gross: '1.1900000000000000',
       net: '1.0000000000',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
+    },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
   vatRate: '19.000000',
@@ -128,6 +194,12 @@ const pricing: Pricing = {
     pricePerGbMonth: {
       gross: '1.1900000000000000',
       net: '1.0000000000',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
+    },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
 };

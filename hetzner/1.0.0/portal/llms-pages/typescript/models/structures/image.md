@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -23,23 +25,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `imageSize` | `number \| null` | Required | Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image. |
 | `labels` | `Record<string, string>` | Required | User-defined labels (key-value pairs) |
 | `name` | `string \| null` | Required | Unique identifier of the Image. This value is only set for system Images. |
-| `osFlavor` | [`OsFlavorEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
+| `osFlavor` | [`OsFlavor`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
 | `osVersion` | `string \| null` | Required | Operating system version |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `rapidDeploy` | `boolean \| undefined` | Optional | Indicates that rapid deploy of the Image is available |
-| `status` | [`Status24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
-| `type` | [`Type22Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-22.md) | Required | Type of the Image |
+| `status` | [`Status24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
+| `type` | [`Type22`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-22.md) | Required | Type of the Image |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import {
-  Image,
-  OsFlavorEnum,
-  Status24Enum,
-  Type22Enum,
-} from 'hetzner-cloud-apilib';
+import { Image, OsFlavor, Status24, Type22 } from 'hetzner-cloud-apilib';
 
 const image: Image = {
   boundTo: null,
@@ -47,6 +45,9 @@ const image: Image = {
   createdFrom: {
     id: 1,
     name: 'Server',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   deleted: null,
   deprecated: '2018-02-28T00:00:00+00:00',
@@ -58,14 +59,20 @@ const image: Image = {
     'key0': 'labels4'
   },
   name: 'ubuntu-20.04',
-  osFlavor: OsFlavorEnum.Ubuntu,
+  osFlavor: OsFlavor.Ubuntu,
   osVersion: '20.04',
   protection: {
     mDelete: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
-  status: Status24Enum.Unavailable,
-  type: Type22Enum.Snapshot,
+  status: Status24.Unavailable,
+  type: Type22.Snapshot,
   rapidDeploy: false,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

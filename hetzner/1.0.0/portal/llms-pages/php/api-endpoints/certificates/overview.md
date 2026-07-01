@@ -7,10 +7,10 @@ TLS/SSL Certificates prove the identity of a Server and are used to encrypt clie
 
 # Get singleton instance
 
-The singleton instance of the `CertificatesController` class can be accessed from the API Client.
+The singleton instance of the `CertificatesApi` class can be accessed from the API Client.
 
 ```
-$certificatesController = $client->getCertificatesController();
+$certificatesApi = $client->getCertificatesApi();
 ```
 
 

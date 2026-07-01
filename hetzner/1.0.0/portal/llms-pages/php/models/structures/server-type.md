@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlclR5cGU
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `cores` | `float` | Required | Number of cpu cores a Server of this type will have | getCores(): float | setCores(float cores): void |
-| `cpuType` | [`string(CpuTypeEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/cpu-type.md) | Required | Type of cpu | getCpuType(): string | setCpuType(string cpuType): void |
+| `cpuType` | [`string(CpuType)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/cpu-type.md) | Required | Type of cpu | getCpuType(): string | setCpuType(string cpuType): void |
 | `deprecated` | `bool` | Required | True if Server type is deprecated | getDeprecated(): bool | setDeprecated(bool deprecated): void |
 | `description` | `string` | Required | Description of the Server type | getDescription(): string | setDescription(string description): void |
 | `disk` | `float` | Required | Disk size a Server of this type will have in GB | getDisk(): float | setDisk(float disk): void |
@@ -21,22 +23,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `memory` | `float` | Required | Memory a Server of this type will have in GB | getMemory(): float | setMemory(float memory): void |
 | `name` | `string` | Required | Unique identifier of the Server type | getName(): string | setName(string name): void |
 | `prices` | [`Price9[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/price-9.md) | Required | Prices in different Locations | getPrices(): array | setPrices(array prices): void |
-| `storageType` | [`string(StorageTypeEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/storage-type.md) | Required | Type of Server boot drive. Local has higher speed. Network has better availability. | getStorageType(): string | setStorageType(string storageType): void |
+| `storageType` | [`string(StorageType)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/storage-type.md) | Required | Type of Server boot drive. Local has higher speed. Network has better availability. | getStorageType(): string | setStorageType(string storageType): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServerTypeBuilder;
-use HetznerCloudAPILib\Models\CpuTypeEnum;
-use HetznerCloudAPILib\Models\Builders\Price9Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly8Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly10Builder;
-use HetznerCloudAPILib\Models\StorageTypeEnum;
+use HetznerCloudApiLib\Models\Builders\ServerTypeBuilder;
+use HetznerCloudApiLib\Models\CpuType;
+use HetznerCloudApiLib\Models\Builders\Price9Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly8Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly10Builder;
+use HetznerCloudApiLib\Models\StorageType;
 
 $serverType = ServerTypeBuilder::init(
     1,
-    CpuTypeEnum::SHARED,
+    CpuType::SHARED,
     false,
     'CX11',
     24,
@@ -49,15 +53,23 @@ $serverType = ServerTypeBuilder::init(
             PriceHourly8Builder::init(
                 '1.1900000000000000',
                 '1.0000000000'
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             PriceMonthly10Builder::init(
                 '1.1900000000000000',
                 '1.0000000000'
-            )->build()
-        )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
-    StorageTypeEnum::LOCAL
-)->build();
+    StorageType::LOCAL
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

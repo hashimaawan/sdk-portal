@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := firewallActionsController.GetAnActionForAFirewall(ctx, id, actionId)
+apiResponse, err := firewallActionsApi.GetAnActionForAFirewall(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

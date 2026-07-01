@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRk1ldHJpY3M
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,6 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `start` | `string` | Required | Start of period of metrics reported (in ISO-8601 format) |
 | `step` | `number` | Required | Resolution of results in seconds. |
 | `timeSeries` | [`Record<string, TimeSeries>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/time-series.md) | Required | Hash with timeseries information, containing the name of timeseries as key |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -33,7 +36,13 @@ const metrics: Metrics = {
         null,
         null
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

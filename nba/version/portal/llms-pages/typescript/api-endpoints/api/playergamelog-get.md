@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playergamelogGET(
-  playerID: string,
+async playergamelogGet(
+  playerId: string,
   season: string,
   seasonType: string,
   requestOptions?: RequestOptions
@@ -18,7 +18,7 @@ async playergamelogGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -34,15 +34,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const playerID = 'PlayerID6';
+const playerId = 'PlayerID6';
 
 const season = 'Season0';
 
 const seasonType = 'SeasonType8';
 
 try {
-  const response = await apiController.playergamelogGET(
-    playerID,
+  const response = await api.playergamelogGet(
+    playerId,
     season,
     seasonType
   );

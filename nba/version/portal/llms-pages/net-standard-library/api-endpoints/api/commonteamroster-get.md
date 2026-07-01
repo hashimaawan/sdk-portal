@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-CommonteamrosterGETAsync(
+CommonteamrosterGetAsync(
     string season,
-    string teamID)
+    string teamId)
 ```
 
 
@@ -16,7 +16,7 @@ CommonteamrosterGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -30,12 +30,12 @@ CommonteamrosterGETAsync(
 
 ```csharp
 string season = "Season0";
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 try
 {
-    await aPIController.CommonteamrosterGETAsync(
+    await api.CommonteamrosterGetAsync(
         season,
-        teamID
+        teamId
     );
 }
 catch (ApiException e)

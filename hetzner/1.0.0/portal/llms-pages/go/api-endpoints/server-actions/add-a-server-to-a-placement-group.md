@@ -47,10 +47,10 @@ ctx := context.Background()
 id := 112
 
 body := models.AddToPlacementGroupRequest{
-    PlacementGroup:       1,
+    PlacementGroup:        1,
 }
 
-apiResponse, err := serverActionsController.AddAServerToAPlacementGroup(ctx, id, &body)
+apiResponse, err := serverActionsApi.AddAServerToAPlacementGroup(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

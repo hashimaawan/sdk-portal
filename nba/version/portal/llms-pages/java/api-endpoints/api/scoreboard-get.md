@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> scoreboardGETAsync(
+CompletableFuture<ApiResponse<Void>> scoreboardGetAsync(
     final String gameDate,
-    final String leagueID,
+    final String leagueId,
     final String dayOffset)
 ```
 
@@ -17,7 +17,7 @@ CompletableFuture<Void> scoreboardGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `gameDate` | `String` | Query, Required | - |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `dayOffset` | `String` | Query, Required | - |
 
 
@@ -32,11 +32,12 @@ CompletableFuture<Void> scoreboardGETAsync(
 
 ```java
 String gameDate = "GameDate8";
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String dayOffset = "DayOffset6";
 
-aPIController.scoreboardGETAsync(gameDate, leagueID, dayOffset).thenAccept(result -> {
+api.scoreboardGetAsync(gameDate, leagueId, dayOffset).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -5,13 +5,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 list user's trips
 
 ```ts
-async tripGET(requestOptions?: RequestOptions): Promise<ApiResponse<Trip[]>>
+async tripGet(requestOptions?: RequestOptions): Promise<ApiResponse<Trip[]>>
 ```
 
 
 # Authentication
 
-This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/authorization.md)
+This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -43,7 +43,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await apiController.tripGET();
+  const response = await api.tripGet();
 
   // Extracting fully parsed response body.
   console.log(response.result);

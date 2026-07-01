@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get instance
 
-An instance of the `LoadBalancerActionsController` class can be accessed from the API Client.
+An instance of the `LoadBalancerActionsApi` class can be accessed from the API Client.
 
 ```
-load_balancer_actions_controller = client.load_balancer_actions
+load_balancer_actions_api = client.load_balancer_actions
 ```
 
 

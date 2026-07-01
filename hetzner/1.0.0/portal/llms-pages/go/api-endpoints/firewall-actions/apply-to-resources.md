@@ -49,17 +49,17 @@ ctx := context.Background()
 id := 112
 
 body := models.ApplyToResourcesRequest{
-    ApplyTo:              []models.FirewallApplyToResources{
+    ApplyTo:               []models.FirewallApplyToResources{
         models.FirewallApplyToResources{
-            Server:               models.ToPointer(models.Server9{
-                Id:                   42,
+            Server:                models.ToPointer(models.Server9{
+                Id:                    42,
             }),
-            Type:                 models.ToPointer(models.Type7Enum_SERVER),
+            Type:                  models.ToPointer(models.Type7_Server),
         },
     },
 }
 
-apiResponse, err := firewallActionsController.ApplyToResources(ctx, id, &body)
+apiResponse, err := firewallActionsApi.ApplyToResources(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -23,30 +25,36 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `image_size` | `float` | Required | Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image. |
 | `labels` | `Dict[str, str]` | Required | User-defined labels (key-value pairs) |
 | `name` | `str` | Required | Unique identifier of the Image. This value is only set for system Images. |
-| `os_flavor` | [`OsFlavorEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
+| `os_flavor` | [`OsFlavor`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
 | `os_version` | `str` | Required | Operating system version |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `rapid_deploy` | `bool` | Optional | Indicates that rapid deploy of the Image is available |
-| `status` | [`Status24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
-| `mtype` | [`Type22Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-22.md) | Required | Type of the Image |
+| `status` | [`Status24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
+| `mtype` | [`Type22`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-22.md) | Required | Type of the Image |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.created_from import CreatedFrom
 from hetznercloudapi.models.image import Image
-from hetznercloudapi.models.os_flavor_enum import OsFlavorEnum
+from hetznercloudapi.models.os_flavor import OsFlavor
 from hetznercloudapi.models.protection import Protection
-from hetznercloudapi.models.status_24_enum import Status24Enum
-from hetznercloudapi.models.type_22_enum import Type22Enum
+from hetznercloudapi.models.status_24 import Status24
+from hetznercloudapi.models.type_22 import Type22
 
 image = Image(
     bound_to=None,
     created='2016-01-30T23:55:00+00:00',
     created_from=CreatedFrom(
         id=1,
-        name='Server'
+        name='Server',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     deleted=None,
     deprecated='2018-02-28T00:00:00+00:00',
@@ -58,14 +66,20 @@ image = Image(
         'key0': 'labels4'
     },
     name='ubuntu-20.04',
-    os_flavor=OsFlavorEnum.UBUNTU,
+    os_flavor=OsFlavor.UBUNTU,
     os_version='20.04',
     protection=Protection(
-        delete=False
+        delete=False,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
-    status=Status24Enum.UNAVAILABLE,
-    mtype=Type22Enum.SNAPSHOT,
-    rapid_deploy=False
+    status=Status24.UNAVAILABLE,
+    mtype=Type22.SNAPSHOT,
+    rapid_deploy=False,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

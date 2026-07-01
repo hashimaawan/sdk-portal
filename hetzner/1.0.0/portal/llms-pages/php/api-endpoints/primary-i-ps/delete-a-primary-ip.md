@@ -9,7 +9,7 @@ The Primary IP may be assigned to a Server. In this case it is unassigned automa
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function deleteAPrimaryIP(int $id): void
+function deleteAPrimaryIp(int $id): ApiResponse
 ```
 
 
@@ -24,7 +24,7 @@ function deleteAPrimaryIP(int $id): void
 
 **204**: Primary IP deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -32,12 +32,20 @@ function deleteAPrimaryIP(int $id): void
 ```php
 $id = 112;
 
-$primaryIPsController = $client->getPrimaryIPsController();
+$primaryIPsApi = $client->getPrimaryIPsApi();
+$apiResponse = $primaryIPsApi->deleteAPrimaryIp($id);
 
-try {
-    $primaryIPsController->deleteAPrimaryIP($id);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

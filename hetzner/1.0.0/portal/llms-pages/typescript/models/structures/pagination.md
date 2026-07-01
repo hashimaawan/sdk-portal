@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlBhZ2luYXRpb24
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -18,6 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `perPage` | `number` | Required | Maximum number of items shown per page in the response |
 | `previousPage` | `number \| null` | Required | ID of the previous page. Can be null if the current page is the first one. |
 | `totalEntries` | `number \| null` | Required | The total number of entries that exist in the database for this query. Nullable if unknown. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -32,6 +35,9 @@ const pagination: Pagination = {
   perPage: 25,
   previousPage: 2,
   totalEntries: 100,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

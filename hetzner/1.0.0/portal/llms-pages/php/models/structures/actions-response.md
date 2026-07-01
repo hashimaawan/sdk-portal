@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkFjdGlvbnNSZXNwb25zZQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,18 +16,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `actions` | [`Action[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Required | - | getActions(): array | setActions(array actions): void |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/meta.md) | Optional | - | getMeta(): ?Meta | setMeta(?Meta meta): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ActionsResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
-use HetznerCloudAPILib\Models\Builders\MetaBuilder;
-use HetznerCloudAPILib\Models\Builders\PaginationBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionsResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\MetaBuilder;
+use HetznerCloudApiLib\Models\Builders\PaginationBuilder;
 
 $actionsResponse = ActionsResponseBuilder::init(
     [
@@ -37,18 +41,23 @@ $actionsResponse = ActionsResponseBuilder::init(
                 Resource2Builder::init(
                     42,
                     'server'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             '2016-01-30T23:55:00+00:00',
-            StatusEnum::SUCCESS
+            Status::SUCCESS
         )
             ->error(
                 ErrorBuilder::init(
                     'action_failed',
                     'Action failed'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('2016-01-30T23:55:00+00:00')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -62,9 +71,14 @@ $actionsResponse = ActionsResponseBuilder::init(
                 ->nextPage(209.18)
                 ->previousPage(50.02)
                 ->totalEntries(206.64)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build()
-    )->build();
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

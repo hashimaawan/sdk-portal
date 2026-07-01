@@ -7,7 +7,7 @@ Returns a specific Action object for a Floating IP.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetAnActionForAFloatingIP(
+GetAnActionForAFloatingIp(
     ctx context.Context,
     id int,
     actionId int) (
@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := floatingIPActionsController.GetAnActionForAFloatingIP(ctx, id, actionId)
+apiResponse, err := floatingIpActionsApi.GetAnActionForAFloatingIp(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

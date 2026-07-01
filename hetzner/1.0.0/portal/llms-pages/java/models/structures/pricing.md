@@ -28,6 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.FloatingIp4;
 import cloud.hetzner.api.models.FloatingIp5;
 import cloud.hetzner.api.models.Image3;
@@ -51,9 +52,10 @@ import cloud.hetzner.api.models.PrimaryIp;
 import cloud.hetzner.api.models.ServerBackup;
 import cloud.hetzner.api.models.ServerTypes2;
 import cloud.hetzner.api.models.Traffic;
-import cloud.hetzner.api.models.Type48Enum;
-import cloud.hetzner.api.models.Type49Enum;
+import cloud.hetzner.api.models.Type48;
+import cloud.hetzner.api.models.Type49;
 import cloud.hetzner.api.models.Volume;
+import java.io.IOException;
 import java.util.Arrays;
 
 Pricing pricing = new Pricing.Builder(
@@ -63,8 +65,10 @@ Pricing pricing = new Pricing.Builder(
             "1.1900000000000000",
             "1.0000000000"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     Arrays.asList(
         new FloatingIp5.Builder(
@@ -75,12 +79,15 @@ Pricing pricing = new Pricing.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ),
-            Type48Enum.IPV4
+            Type48.IPV4
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     new Image3.Builder(
@@ -88,8 +95,10 @@ Pricing pricing = new Pricing.Builder(
             "1.1900000000000000",
             "1.0000000000"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     Arrays.asList(
         new LoadBalancerType6.Builder(
@@ -102,16 +111,20 @@ Pricing pricing = new Pricing.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build(),
                     new PriceMonthly8.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     Arrays.asList(
@@ -123,22 +136,27 @@ Pricing pricing = new Pricing.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build(),
                     new PriceMonthly9.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ),
-            Type49Enum.IPV4
+            Type49.IPV4
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     new ServerBackup.Builder(
         "20.0000000000"
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     Arrays.asList(
         new ServerTypes2.Builder(
@@ -151,16 +169,20 @@ Pricing pricing = new Pricing.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build(),
                     new PriceMonthly10.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     new Traffic.Builder(
@@ -168,8 +190,10 @@ Pricing pricing = new Pricing.Builder(
             "1.1900000000000000",
             "1.0000000000"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     "19.000000",
     new Volume.Builder(
@@ -177,8 +201,10 @@ Pricing pricing = new Pricing.Builder(
             "1.1900000000000000",
             "1.0000000000"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build()
 )
 .build();

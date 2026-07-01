@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRlBsYWNlbWVudEdyb3Vwc1Jlc3BvbnNl
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -14,11 +16,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/meta.md) | Optional | - |
 | `placement_groups` | [`List[PlacementGroup]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/placement-group.md) | Required | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.meta import Meta
 from hetznercloudapi.models.pagination import Pagination
 from hetznercloudapi.models.placement_group import PlacementGroup
@@ -36,7 +41,10 @@ placement_groups_response = PlacementGroupsResponse(
             name='my-resource',
             servers=[
                 42
-            ]
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     meta=Meta(
@@ -46,9 +54,18 @@ placement_groups_response = PlacementGroupsResponse(
             page=17.58,
             per_page=13.34,
             previous_page=50.02,
-            total_entries=206.64
-        )
-    )
+            total_entries=206.64,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

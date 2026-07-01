@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRklzb3MlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -14,16 +16,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `isos` | [`List[Iso]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/iso.md) | Required | - |
 | `meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/meta.md) | Optional | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.iso import Iso
 from hetznercloudapi.models.isos_response import IsosResponse
 from hetznercloudapi.models.meta import Meta
 from hetznercloudapi.models.pagination import Pagination
-from hetznercloudapi.models.type_26_enum import Type26Enum
+from hetznercloudapi.models.type_26 import Type26
 
 isos_response = IsosResponse(
     isos=[
@@ -32,7 +37,10 @@ isos_response = IsosResponse(
             description='FreeBSD 11.0 x64',
             id=42,
             name='FreeBSD-11.0-RELEASE-amd64-dvd1',
-            mtype=Type26Enum.PUBLIC
+            mtype=Type26.PUBLIC,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     meta=Meta(
@@ -42,9 +50,18 @@ isos_response = IsosResponse(
             page=17.58,
             per_page=13.34,
             previous_page=50.02,
-            total_entries=206.64
-        )
-    )
+            total_entries=206.64,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

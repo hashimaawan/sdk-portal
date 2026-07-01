@@ -7,7 +7,7 @@ Returns all Location objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllLocations(?string $name = null): LocationsResponse
+function getAllLocations(?string $name = null): ApiResponse
 ```
 
 
@@ -22,20 +22,26 @@ function getAllLocations(?string $name = null): LocationsResponse
 
 **200**: The `locations` key in the reply contains an array of Location objects with this structure
 
-[`LocationsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/locations-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`LocationsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/locations-response.md).
 
 
 # Example Usage
 
 ```php
-$locationsController = $client->getLocationsController();
+$locationsApi = $client->getLocationsApi();
+$apiResponse = $locationsApi->getAllLocations();
 
-try {
-    $result = $locationsController->getAllLocations();
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'LocationsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

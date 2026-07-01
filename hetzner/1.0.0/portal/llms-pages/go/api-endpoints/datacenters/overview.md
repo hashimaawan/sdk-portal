@@ -11,10 +11,10 @@ Right now there is only one Datacenter for each Location. The Datacenter numbers
 
 # Get Instance
 
-The instance of the `DatacentersController` class can be accessed from the API Client.
+The instance of the `DatacentersApi` class can be accessed from the API Client.
 
 ```
-datacentersController := client.DatacentersController()
+datacentersApi := client.DatacentersApi()
 ```
 
 

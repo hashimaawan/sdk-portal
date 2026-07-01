@@ -29,7 +29,7 @@ def update_a_certificate(self,
 
 **200**: The `certificate` key contains the Certificate that was just updated
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -42,11 +42,15 @@ body = UpdateCertificateRequest(
     name='my website cert'
 )
 
-result = certificates_controller.update_a_certificate(
+result = certificates_api.update_a_certificate(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

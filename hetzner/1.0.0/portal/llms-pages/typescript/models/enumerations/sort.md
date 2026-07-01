@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`SortEnum`
+`Sort`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { SortEnum } from 'hetzner-cloud-apilib';
+import { Sort } from 'hetzner-cloud-apilib';
 
-const sort = SortEnum.EnumIdasc;
+const sort = Sort.EnumIdasc;
 ```
 
 

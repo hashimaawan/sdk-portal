@@ -58,7 +58,7 @@ const body: AttachToNetworkRequest = {
 };
 
 try {
-  const response = await serverActionsController.attachAServerToANetwork(
+  const response = await serverActionsApi.attachAServerToANetwork(
     id,
     body
   );

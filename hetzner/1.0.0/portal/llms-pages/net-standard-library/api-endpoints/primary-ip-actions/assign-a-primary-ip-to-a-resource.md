@@ -20,9 +20,9 @@ The Server must be powered off (status `off`) in order for this operation to suc
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-AssignAPrimaryIPToAResourceAsync(
+AssignAPrimaryIpToAResourceAsync(
     int id,
-    Models.AssignPrimaryIPRequest body = null)
+    Models.AssignPrimaryIpRequest body = null)
 ```
 
 
@@ -31,21 +31,21 @@ AssignAPrimaryIPToAResourceAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Primary IP |
-| `body` | [`AssignPrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`AssignPrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-AssignPrimaryIPRequest body = new AssignPrimaryIPRequest
+AssignPrimaryIpRequest body = new AssignPrimaryIpRequest
 {
     AssigneeId = 4711,
     AssigneeType = "server",
@@ -53,7 +53,7 @@ AssignPrimaryIPRequest body = new AssignPrimaryIPRequest
 
 try
 {
-    ActionResponse result = await primaryIPActionsController.AssignAPrimaryIPToAResourceAsync(
+    ApiResponse<ActionResponse> result = await primaryIpActionsApi.AssignAPrimaryIpToAResourceAsync(
         id,
         body
     );

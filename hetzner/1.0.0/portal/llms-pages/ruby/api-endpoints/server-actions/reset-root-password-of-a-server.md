@@ -28,7 +28,7 @@ def reset_root_password_of_a_server(id)
 
 The `action` key in the reply contains an Action object with this structure:
 
-[`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-reset-password-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-reset-password-response.md).
 
 
 # Example Usage
@@ -36,8 +36,13 @@ The `action` key in the reply contains an Action object with this structure:
 ```ruby
 id = 112
 
-result = server_actions_controller.reset_root_password_of_a_server(id)
-puts result
+result = server_actions_api.reset_root_password_of_a_server(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

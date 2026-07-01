@@ -7,7 +7,7 @@ Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CreateAnSSHKey(
+CreateAnSshKey(
     ctx context.Context,
     body *models.SshKeysRequest) (
     models.ApiResponse[models.SshKeysResponse1],
@@ -35,11 +35,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.SshKeysRequest{
-    Name:                 "My ssh key",
-    PublicKey:            "ssh-rsa AAAjjk76kgf...Xt",
+    Name:                  "My ssh key",
+    PublicKey:             "ssh-rsa AAAjjk76kgf...Xt",
 }
 
-apiResponse, err := sSHKeysController.CreateAnSSHKey(ctx, &body)
+apiResponse, err := sshKeysApi.CreateAnSshKey(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

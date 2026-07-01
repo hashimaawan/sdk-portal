@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Server where the traffic should be routed through
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -15,16 +17,19 @@ Server where the traffic should be routed through
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Id` | `int` | Required | ID of the Server |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 LoadBalancerTargetServer loadBalancerTargetServer = new LoadBalancerTargetServer
 {
     Id = 80,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -15,10 +15,10 @@ Floating IPs are billed on a monthly basis.
 
 # Get instance
 
-An instance of the `FloatingIPsController` class can be accessed from the API Client.
+An instance of the `FloatingIPsApi` class can be accessed from the API Client.
 
 ```
-FloatingIPsController floatingIPsController = client.FloatingIPsController;
+FloatingIPsApi floatingIPsApi = client.FloatingIPsApi;
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlVwZGF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Labels` | [`*models.Labels2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/labels-2.md) | Optional | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | New Volume name |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -22,15 +25,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     updateVolumeRequest := models.UpdateVolumeRequest{
-        Labels:               models.ToPointer(models.Labels2{
-            Labelkey:             models.ToPointer("labelkey4"),
+        Labels:                models.ToPointer(models.Labels2{
+            Labelkey:              models.ToPointer("labelkey4"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
-        Name:                 "database-storage",
+        Name:                  "database-storage",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

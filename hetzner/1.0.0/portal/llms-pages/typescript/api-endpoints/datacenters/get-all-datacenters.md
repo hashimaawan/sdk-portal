@@ -33,7 +33,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await datacentersController.getAllDatacenters();
+  const response = await datacentersApi.getAllDatacenters();
 
   // Extracting fully parsed response body.
   console.log(response.result);

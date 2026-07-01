@@ -7,7 +7,7 @@ Type of the Floating IP
 
 # Enum Type Name
 
-`Type16Enum`
+`Type16`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of the Floating IP
 # Example
 
 ```ruby
-type16 = Type16Enum::IPV4
+type16 = Type16::IPV4
 ```
 
 

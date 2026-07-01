@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 
 # Get instance
 
-An instance of the `APIController` class can be accessed from the API Client.
+An instance of the `Api` class can be accessed from the API Client.
 
 ```
-client_controller = client.client
+client_api = client.client
 ```
 
 

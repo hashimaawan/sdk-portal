@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -34,6 +36,7 @@ An object containing data for various available formats and sizes of this GIF.
 | `OriginalStill` | [`*models.Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/models/structures/image.md) | Optional | - |
 | `Preview` | [`*models.Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/models/structures/image.md) | Optional | - |
 | `PreviewGif` | [`*models.Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/models/structures/image.md) | Optional | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -42,46 +45,64 @@ An object containing data for various available formats and sizes of this GIF.
 package main
 
 import (
-    "giphyapi/models"
+    "giphyApi/models"
 )
 
 func main() {
     images := models.Images{
         Downsized:              models.ToPointer(models.Image{
-            Frames:               models.ToPointer("frames0"),
-            Height:               models.ToPointer("height8"),
-            Mp4:                  models.ToPointer("mp40"),
-            Mp4Size:              models.ToPointer("mp4_size2"),
-            Size:                 models.ToPointer("size2"),
+            Frames:                models.ToPointer("frames0"),
+            Height:                models.ToPointer("height8"),
+            Mp4:                   models.ToPointer("mp40"),
+            Mp4Size:               models.ToPointer("mp4_size2"),
+            Size:                  models.ToPointer("size2"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
         DownsizedLarge:         models.ToPointer(models.Image{
-            Frames:               models.ToPointer("frames6"),
-            Height:               models.ToPointer("height4"),
-            Mp4:                  models.ToPointer("mp46"),
-            Mp4Size:              models.ToPointer("mp4_size8"),
-            Size:                 models.ToPointer("size8"),
+            Frames:                models.ToPointer("frames6"),
+            Height:                models.ToPointer("height4"),
+            Mp4:                   models.ToPointer("mp46"),
+            Mp4Size:               models.ToPointer("mp4_size8"),
+            Size:                  models.ToPointer("size8"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
         DownsizedMedium:        models.ToPointer(models.Image{
-            Frames:               models.ToPointer("frames2"),
-            Height:               models.ToPointer("height0"),
-            Mp4:                  models.ToPointer("mp42"),
-            Mp4Size:              models.ToPointer("mp4_size4"),
-            Size:                 models.ToPointer("size4"),
+            Frames:                models.ToPointer("frames2"),
+            Height:                models.ToPointer("height0"),
+            Mp4:                   models.ToPointer("mp42"),
+            Mp4Size:               models.ToPointer("mp4_size4"),
+            Size:                  models.ToPointer("size4"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
         DownsizedSmall:         models.ToPointer(models.Image{
-            Frames:               models.ToPointer("frames0"),
-            Height:               models.ToPointer("height8"),
-            Mp4:                  models.ToPointer("mp40"),
-            Mp4Size:              models.ToPointer("mp4_size2"),
-            Size:                 models.ToPointer("size2"),
+            Frames:                models.ToPointer("frames0"),
+            Height:                models.ToPointer("height8"),
+            Mp4:                   models.ToPointer("mp40"),
+            Mp4Size:               models.ToPointer("mp4_size2"),
+            Size:                  models.ToPointer("size2"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
         DownsizedStill:         models.ToPointer(models.Image{
-            Frames:               models.ToPointer("frames4"),
-            Height:               models.ToPointer("height4"),
-            Mp4:                  models.ToPointer("mp46"),
-            Mp4Size:              models.ToPointer("mp4_size8"),
-            Size:                 models.ToPointer("size2"),
+            Frames:                models.ToPointer("frames4"),
+            Height:                models.ToPointer("height4"),
+            Mp4:                   models.ToPointer("mp46"),
+            Mp4Size:               models.ToPointer("mp4_size8"),
+            Size:                  models.ToPointer("size2"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
+        AdditionalProperties:   map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

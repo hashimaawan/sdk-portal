@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async videoStatusGET(
-  leagueID: string,
+async videoStatusGet(
+  leagueId: string,
   gameDate: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
@@ -17,7 +17,7 @@ async videoStatusGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `gameDate` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
@@ -32,13 +32,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const gameDate = 'GameDate8';
 
 try {
-  const response = await apiController.videoStatusGET(
-    leagueID,
+  const response = await api.videoStatusGet(
+    leagueId,
     gameDate
   );
 

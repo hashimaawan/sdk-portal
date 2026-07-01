@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -20,6 +22,7 @@ The User Object contains information about the user associated with a GIF and UR
 | `profileUrl` | `string \| undefined` | Optional | The URL for this user's profile. |
 | `twitter` | `string \| undefined` | Optional | The Twitter username associated with this user, if applicable. |
 | `username` | `string \| undefined` | Optional | The username associated with this user. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -34,6 +37,9 @@ const user: User = {
   profileUrl: 'https://giphy.com/cheezburger/',
   twitter: '@joecool4000',
   username: 'joecool4000',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

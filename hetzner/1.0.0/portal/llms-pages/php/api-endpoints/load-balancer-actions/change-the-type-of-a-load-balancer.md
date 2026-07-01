@@ -13,7 +13,7 @@ Changes the type (Max Services, Max Targets and Max Connections) of a Load Balan
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function changeTheTypeOfALoadBalancer(int $id, ?ChangeTypeRequest $body = null): ActionResponse
+function changeTheTypeOfALoadBalancer(int $id, ?ChangeTypeRequest $body = null): ApiResponse
 ```
 
 
@@ -29,7 +29,7 @@ function changeTheTypeOfALoadBalancer(int $id, ?ChangeTypeRequest $body = null):
 
 **201**: The `action` key contains the `change_load_balancer_type` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -41,17 +41,23 @@ $body = ChangeTypeRequestBuilder::init(
     'lb21'
 )->build();
 
-$loadBalancerActionsController = $client->getLoadBalancerActionsController();
+$loadBalancerActionsApi = $client->getLoadBalancerActionsApi();
+$apiResponse = $loadBalancerActionsApi->changeTheTypeOfALoadBalancer(
+    $id,
+    $body
+);
 
-try {
-    $result = $loadBalancerActionsController->changeTheTypeOfALoadBalancer(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

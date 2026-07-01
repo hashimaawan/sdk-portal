@@ -18,14 +18,14 @@ def assign_a_floating_ip_to_a_server(self,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`AssignFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`AssignFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **201**: The `action` key contains the `assign` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -33,15 +33,19 @@ def assign_a_floating_ip_to_a_server(self,
 ```python
 id = 112
 
-body = AssignFloatingIPRequest(
+body = AssignFloatingIpRequest(
     server=42
 )
 
-result = floating_ip_actions_controller.assign_a_floating_ip_to_a_server(
+result = floating_ip_actions_api.assign_a_floating_ip_to_a_server(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

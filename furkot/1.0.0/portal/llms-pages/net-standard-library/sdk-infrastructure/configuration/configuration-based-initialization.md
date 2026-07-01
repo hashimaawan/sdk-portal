@@ -44,15 +44,53 @@ var client = FurkotTripsClient.Builder
   "FurkotTrips": {
     "Environment": "production",
     "FurkotAuthAccessCodeCredentials": {
-      "OAuthClientId": "oAuthClientId",
-      "OAuthClientSecret": "oAuthClientSecret",
-      "OAuthRedirectUri": "oAuthRedirectUri",
-      "OAuthScopes": [],
+      "OauthClientId": "oauthClientId",
+      "OauthClientSecret": "oauthClientSecret",
+      "OauthRedirectUri": "oauthRedirectUri",
+      "OauthScopes": [],
     },
     "FurkotAuthImplicitCredentials": {
-      "OAuthClientId": "oAuthClientId",
-      "OAuthRedirectUri": "oAuthRedirectUri",
-      "OAuthScopes": [],
+      "OauthClientId": "oauthClientId",
+      "OauthRedirectUri": "oauthRedirectUri",
+      "OauthScopes": [],
+    },
+    "LoggingConfig": {
+      "LogLevel": "Debug",
+      "MaskSensitiveHeaders": true,
+      "RequestLoggingConfiguration": {
+        "Body": true,
+        "Headers": true,
+        "IncludeQueryInPath": true,
+        "HeadersToInclude": [
+          "Content-Type",
+          "X-Request-ID"
+        ],
+        "HeadersToExclude": [
+          "Authorization"
+        ],
+        "HeadersToUnmask": [
+          "X-Request-ID"
+        ],
+      },
+      "ResponseLoggingConfiguration": {
+        "Body": true,
+        "Headers": true,
+        "IncludeQueryInPath": true,
+        "HeadersToInclude": [
+          "Content-Type",
+          "X-Correlation-ID",
+          "Date",
+          "Server"
+        ],
+        "HeadersToExclude": [
+          "Set-Cookie",
+          "Authorization",
+          "X-API-Key"
+        ],
+        "HeadersToUnmask": [
+          "X-Correlation-ID"
+        ],
+      }
     },
     "HttpClientConfig": {
       "Timeout": "00:01:00",

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlRyaXA
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -17,6 +19,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `end` | `string \| undefined` | Optional | end of the trip in its local timezone as YYYY-MM-DDThh:mm |
 | `id` | `string \| undefined` | Optional | Unique ID of the trip |
 | `name` | `string \| undefined` | Optional | name of the trip |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -30,6 +33,9 @@ const trip: Trip = {
   end: '2016-03-13T12:52:32.123Z',
   id: 'id8',
   name: 'name8',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

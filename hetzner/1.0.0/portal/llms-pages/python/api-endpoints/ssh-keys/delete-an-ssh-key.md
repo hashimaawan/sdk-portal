@@ -23,7 +23,7 @@ def delete_an_ssh_key(self,
 
 **204**: SSH key deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -31,7 +31,12 @@ def delete_an_ssh_key(self,
 ```python
 id = 'id0'
 
-ssh_keys_controller.delete_an_ssh_key(id)
+result = ssh_keys_api.delete_an_ssh_key(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

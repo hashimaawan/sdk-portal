@@ -7,7 +7,7 @@ Algorithm of the Load Balancer
 
 # Enum Type Name
 
-`Type39Enum`
+`Type39`
 
 
 # Fields
@@ -21,9 +21,9 @@ Algorithm of the Load Balancer
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type39Enum;
+import cloud.hetzner.api.models.Type39;
 
-Type39Enum type39 = Type39Enum.ROUND_ROBIN;
+Type39 type39 = Type39.ROUND_ROBIN;
 ```
 
 

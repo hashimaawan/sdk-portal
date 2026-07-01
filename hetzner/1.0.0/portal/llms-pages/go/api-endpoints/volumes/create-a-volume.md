@@ -49,15 +49,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreateVolumeRequest{
-    Automount:            models.ToPointer(false),
-    Format:               models.ToPointer("xfs"),
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Location:             models.ToPointer("nbg1"),
-    Name:                 "test-database",
-    Size:                 42,
+    Automount:             models.ToPointer(false),
+    Format:                models.ToPointer("xfs"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Location:              models.ToPointer("nbg1"),
+    Name:                  "test-database",
+    Size:                  42,
 }
 
-apiResponse, err := volumesController.CreateAVolume(ctx, &body)
+apiResponse, err := volumesApi.CreateAVolume(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

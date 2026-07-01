@@ -25,7 +25,7 @@ def delete_service(self,
 
 **201**: The `action` key contains the `delete_service` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -37,11 +37,15 @@ body = LoadBalancersActionsDeleteServiceRequest(
     listen_port=4711
 )
 
-result = load_balancer_actions_controller.delete_service(
+result = load_balancer_actions_api.delete_service(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

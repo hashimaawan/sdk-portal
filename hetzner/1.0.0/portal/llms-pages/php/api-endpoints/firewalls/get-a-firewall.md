@@ -7,7 +7,7 @@ Gets a specific Firewall object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAFirewall(int $id): FirewallResponse
+function getAFirewall(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAFirewall(int $id): FirewallResponse
 
 **200**: The `firewall` key contains a Firewall object
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAFirewall(int $id): FirewallResponse
 ```php
 $id = 112;
 
-$firewallsController = $client->getFirewallsController();
+$firewallsApi = $client->getFirewallsApi();
+$apiResponse = $firewallsApi->getAFirewall($id);
 
-try {
-    $result = $firewallsController->getAFirewall($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'FirewallResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

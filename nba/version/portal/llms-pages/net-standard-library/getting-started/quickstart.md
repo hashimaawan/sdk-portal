@@ -1,0 +1,115 @@
+# Quickstart
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/#/net-standard-library/x-redirect/JTI0aCUyRl9fZ2V0dGluZ19zdGFydGVk
+
+
+# Introduction
+
+The destination for current and historic NBA statistics.
+
+
+# Building
+
+The generated code uses the Newtonsoft Json.NET NuGet Package. If the automatic NuGet package restore is enabled, these dependencies will be installed automatically. Therefore, you will need internet access for build.
+
+* Open the solution (NbaStatsApi.sln) file.
+
+Invoke the build process using Ctrl + Shift + B shortcut key or using the Build menu as shown below.
+
+The build process generates a portable class library, which can be used like a normal class library. More information on how to use can be found at the MSDN Portable Class Libraries documentation.
+
+The supported version is **.NET Standard 2.0**. For checking compatibility of your .NET implementation with the generated library, [click here](https://dotnet.microsoft.com/en-us/platform/dotnet-standard#versions).
+
+
+# Installation
+
+The following section explains how to use the NbaStatsApi.Standard library in a new project.
+
+## 1. Starting a new project
+
+For starting a new project, right click on the current solution from the solution explorer and choose `Add -> New Project`.
+
+![Add a new project in Visual Studio](https://apidocs.io/illustration/cs?workspaceFolder=NBA%20Stats%20API-CSharp&workspaceName=NbaStatsApi&projectName=NbaStatsApi.Standard&rootNamespace=NbaStatsApi.Standard&step=addProject)
+
+Next, choose `Console Application`, provide `TestConsoleProject` as the project name and click OK.
+
+![Create a new Console Application in Visual Studio](https://apidocs.io/illustration/cs?workspaceFolder=NBA%20Stats%20API-CSharp&workspaceName=NbaStatsApi&projectName=NbaStatsApi.Standard&rootNamespace=NbaStatsApi.Standard&step=createProject)
+
+## 2. Set as startup project
+
+The new console project is the entry point for the eventual execution. This requires us to set the `TestConsoleProject` as the start-up project. To do this, right-click on the `TestConsoleProject` and choose `Set as StartUp Project` form the context menu.
+
+![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=NBA%20Stats%20API-CSharp&workspaceName=NbaStatsApi&projectName=NbaStatsApi.Standard&rootNamespace=NbaStatsApi.Standard&step=setStartup)
+
+## 3. Add reference of the library project
+
+In order to use the `NbaStatsApi.Standard` library in the new project, first we must add a project reference to the `TestConsoleProject`. First, right click on the `References` node in the solution explorer and click `Add Reference...`
+
+![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=NBA%20Stats%20API-CSharp&workspaceName=NbaStatsApi&projectName=NbaStatsApi.Standard&rootNamespace=NbaStatsApi.Standard&step=addReference)
+
+Next, a window will be displayed where we must set the `checkbox` on `NbaStatsApi.Standard` and click `OK`. By doing this, we have added a reference of the `NbaStatsApi.Standard` project into the new `TestConsoleProject`.
+
+![Creating a project reference](https://apidocs.io/illustration/cs?workspaceFolder=NBA%20Stats%20API-CSharp&workspaceName=NbaStatsApi&projectName=NbaStatsApi.Standard&rootNamespace=NbaStatsApi.Standard&step=createReference)
+
+## 4. Write sample code
+
+Once the `TestConsoleProject` is created, a file named `Program.cs` will be visible in the solution explorer with an empty `Main` method. This is the entry point for the execution of the entire solution. Here, you can add code to initialize the client library and acquire the instance of a Api class. Sample code to initialize the client library and using Api methods is given in the subsequent sections.
+
+![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=NBA%20Stats%20API-CSharp&workspaceName=NbaStatsApi&projectName=NbaStatsApi.Standard&rootNamespace=NbaStatsApi.Standard&step=addCode)
+
+
+
+# Initialize the API Client
+
+The following parameters are configurable for the API Client:
+
+| Parameter | Type | Description |
+|  --- | --- | --- |
+| Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(30)` |
+| HttpClientConfiguration | [`Action<HttpClientConfiguration.Builder>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/httpclientconfigurationbuilder.md) | Action delegate that configures the HTTP client by using the HttpClientConfiguration.Builder for customizing API call settings.<br>*Default*: `new HttpClient()` |
+| LogBuilder | [`LogBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/logbuilder.md) | Represents the logging configuration builder for API calls |
+
+The API client can be initialized as follows:
+
+## Code-Based Initialization
+
+```csharp
+using Microsoft.Extensions.Logging;
+using NbaStatsApi.Standard;
+
+namespace ConsoleApp;
+
+NbaStatsApiClient client = new NbaStatsApiClient.Builder()
+    .HttpClientConfig(httpClientConfig =>
+        httpClientConfig.Timeout(TimeSpan.FromSeconds(100)))
+    .LoggingConfig(config => config
+        .LogLevel(LogLevel.Information)
+        .RequestConfig(reqConfig => reqConfig.Body(true))
+        .ResponseConfig(respConfig => respConfig.Headers(true))
+    )
+    .Build();
+```
+
+## Configuration-Based Initialization
+
+```csharp
+using NbaStatsApi.Standard;
+using Microsoft.Extensions.Configuration;
+
+namespace ConsoleApp;
+
+// Build the IConfiguration using .NET conventions (JSON, environment, etc.)
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("config.json")
+    .AddEnvironmentVariables() // [optional] read environment variables
+    .Build();
+
+// Instantiate your SDK and configure it from IConfiguration
+var client = NbaStatsApiClient
+    .FromConfiguration(configuration.GetSection("NbaStatsApi"));
+```
+
+See the [Configuration-Based Initialization](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/configuration-based-initialization.md) section for details.
+
+
+

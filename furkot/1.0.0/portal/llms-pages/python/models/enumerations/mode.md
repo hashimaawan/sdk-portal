@@ -7,7 +7,7 @@ travel mode
 
 # Enum Type Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
@@ -24,9 +24,9 @@ travel mode
 # Example
 
 ```python
-from furkottrips.models.mode_enum import ModeEnum
+from furkottrips.models.mode import Mode
 
-mode = ModeEnum.BICYCLE
+mode = Mode.BICYCLE
 ```
 
 

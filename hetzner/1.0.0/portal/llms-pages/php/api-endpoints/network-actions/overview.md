@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get singleton instance
 
-The singleton instance of the `NetworkActionsController` class can be accessed from the API Client.
+The singleton instance of the `NetworkActionsApi` class can be accessed from the API Client.
 
 ```
-$networkActionsController = $client->getNetworkActionsController();
+$networkActionsApi = $client->getNetworkActionsApi();
 ```
 
 

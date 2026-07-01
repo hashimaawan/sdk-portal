@@ -13,7 +13,7 @@ Adds a service to a Load Balancer.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function addService(int $id, ?LoadBalancerService $body = null): ActionResponse
+function addService(int $id, ?LoadBalancerService $body = null): ApiResponse
 ```
 
 
@@ -29,7 +29,7 @@ function addService(int $id, ?LoadBalancerService $body = null): ActionResponse
 
 **201**: The `action` key contains the `add_service` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -42,26 +42,32 @@ $body = LoadBalancerServiceBuilder::init(
     LoadBalancerServiceHealthCheckBuilder::init(
         15,
         4711,
-        Protocol6Enum::HTTP,
+        Protocol6::HTTP,
         3,
         10
     )->build(),
     443,
-    Protocol7Enum::HTTPS,
+    Protocol7::HTTPS,
     false
 )->build();
 
-$loadBalancerActionsController = $client->getLoadBalancerActionsController();
+$loadBalancerActionsApi = $client->getLoadBalancerActionsApi();
+$apiResponse = $loadBalancerActionsApi->addService(
+    $id,
+    $body
+);
 
-try {
-    $result = $loadBalancerActionsController->addService(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

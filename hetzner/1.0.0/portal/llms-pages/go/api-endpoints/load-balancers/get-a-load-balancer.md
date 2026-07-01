@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := loadBalancersController.GetALoadBalancer(ctx, id)
+apiResponse, err := loadBalancersApi.GetALoadBalancer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

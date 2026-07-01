@@ -41,7 +41,7 @@ const body: LoadBalancersActionsDetachFromNetworkRequest = {
 };
 
 try {
-  const response = await loadBalancerActionsController.detachALoadBalancerFromANetwork(
+  const response = await loadBalancerActionsApi.detachALoadBalancerFromANetwork(
     id,
     body
   );

@@ -7,7 +7,7 @@ Type of the ISO
 
 # Enum Type Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of the ISO
 # Example
 
 ```ruby
-type26 = Type26Enum::PUBLIC
+type26 = Type26::PUBLIC
 ```
 
 

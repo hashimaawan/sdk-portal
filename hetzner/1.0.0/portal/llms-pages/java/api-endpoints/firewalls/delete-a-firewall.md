@@ -13,7 +13,7 @@ Deletes a Firewall.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAFirewallAsync(
+CompletableFuture<ApiResponse<Void>> deleteAFirewallAsync(
     final int id)
 ```
 
@@ -37,8 +37,9 @@ CompletableFuture<Void> deleteAFirewallAsync(
 ```java
 int id = 112;
 
-firewallsController.deleteAFirewallAsync(id).thenAccept(result -> {
+firewallsApi.deleteAFirewallAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

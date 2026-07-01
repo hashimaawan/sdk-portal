@@ -7,7 +7,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Enum Type Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\StorageTypeEnum;
+use HetznerCloudApiLib\Models\StorageType;
 
-$storageType = StorageTypeEnum::LOCAL;
+$storageType = StorageType::LOCAL;
 ```
 
 

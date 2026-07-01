@@ -22,14 +22,14 @@ def update_a_primary_ip(self,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the resource |
-| `body` | [`UpdatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -37,17 +37,21 @@ def update_a_primary_ip(self,
 ```python
 id = 112
 
-body = UpdatePrimaryIPRequest(
+body = UpdatePrimaryIpRequest(
     auto_delete=True,
     labels=jsonpickle.decode('{"labelkey":"value"}'),
     name='my-ip'
 )
 
-result = primary_i_ps_controller.update_a_primary_ip(
+result = primary_i_ps_api.update_a_primary_ip(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

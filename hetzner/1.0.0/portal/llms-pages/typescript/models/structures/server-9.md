@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration for type server, required if type is `server`
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -15,6 +17,7 @@ Configuration for type server, required if type is `server`
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Required | ID of the Server |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -24,6 +27,9 @@ import { Server9 } from 'hetzner-cloud-apilib';
 
 const server9: Server9 = {
   id: 216,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

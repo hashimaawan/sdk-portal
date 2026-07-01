@@ -23,7 +23,7 @@ GetADatacenterAsync(
 
 **200**: The `datacenter` key in the reply contains a Datacenter object with this structure
 
-[`Task<Models.DatacentersResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/datacenters-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.DatacentersResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/datacenters-response-1.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetADatacenterAsync(
 int id = 112;
 try
 {
-    DatacentersResponse1 result = await datacentersController.GetADatacenterAsync(id);
+    ApiResponse<DatacentersResponse1> result = await datacentersApi.GetADatacenterAsync(id);
 }
 catch (ApiException e)
 {

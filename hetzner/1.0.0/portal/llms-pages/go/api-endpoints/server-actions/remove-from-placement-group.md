@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.RemoveFromPlacementGroup(ctx, id)
+apiResponse, err := serverActionsApi.RemoveFromPlacementGroup(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

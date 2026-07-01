@@ -25,7 +25,7 @@ GetAnActionForAServerAsync(
 
 **200**: The `action` key in the reply has this structure
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,7 +35,7 @@ int id = 112;
 int actionId = 224;
 try
 {
-    ActionResponse result = await serverActionsController.GetAnActionForAServerAsync(
+    ApiResponse<ActionResponse> result = await serverActionsApi.GetAnActionForAServerAsync(
         id,
         actionId
     );

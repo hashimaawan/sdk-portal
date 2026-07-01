@@ -23,7 +23,7 @@ def create_a_server(self,
 
 **201**: The `server` key in the reply contains a Server object with this structure
 
-[`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-server-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-server-response.md).
 
 
 # Example Usage
@@ -55,10 +55,14 @@ body = CreateServerRequest(
     ]
 )
 
-result = servers_controller.create_a_server(
+result = servers_api.create_a_server(
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

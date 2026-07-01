@@ -7,7 +7,7 @@ Type of the Primary IP
 
 # Enum Type Name
 
-`Type50Enum`
+`Type50`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the Primary IP
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type50Enum;
+import cloud.hetzner.api.models.Type50;
 
-Type50Enum type50 = Type50Enum.IPV4;
+Type50 type50 = Type50.IPV4;
 ```
 
 

@@ -9,10 +9,10 @@ In `spread` placement groups, all virtual servers will run on different physical
 
 # Get Instance
 
-The instance of the `PlacementGroupsController` class can be accessed from the API Client.
+The instance of the `PlacementGroupsApi` class can be accessed from the API Client.
 
 ```
-placementGroupsController := client.PlacementGroupsController()
+placementGroupsApi := client.PlacementGroupsApi()
 ```
 
 

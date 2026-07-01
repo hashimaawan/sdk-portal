@@ -8,10 +8,10 @@ Returns all PlacementGroup objects.
 
 ```csharp
 GetAllPlacementGroupsAsync(
-    Models.SortEnum? sort = null,
+    Models.Sort? sort = null,
     string name = null,
     string labelSelector = null,
-    Models.ParameterType1Enum? type = null)
+    Models.ParameterType1? type = null)
 ```
 
 
@@ -19,17 +19,17 @@ GetAllPlacementGroupsAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`SortEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`Sort?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `type` | [`ParameterType1Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-type-1.md) | Query, Optional | Can be used multiple times. The response will only contain PlacementGroups matching the type. |
+| `type` | [`ParameterType1?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-type-1.md) | Query, Optional | Can be used multiple times. The response will only contain PlacementGroups matching the type. |
 
 
 # Response Type
 
 **200**: The `placement_groups` key contains an array of PlacementGroup objects
 
-[`Task<Models.PlacementGroupsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/placement-groups-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.PlacementGroupsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/placement-groups-response.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ GetAllPlacementGroupsAsync(
 ```csharp
 try
 {
-    PlacementGroupsResponse result = await placementGroupsController.GetAllPlacementGroupsAsync();
+    ApiResponse<PlacementGroupsResponse> result = await placementGroupsApi.GetAllPlacementGroupsAsync();
 }
 catch (ApiException e)
 {

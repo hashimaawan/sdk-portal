@@ -38,7 +38,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := loadBalancerActionsController.RemoveTarget(ctx, id, nil)
+apiResponse, err := loadBalancerActionsApi.RemoveTarget(ctx, id, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

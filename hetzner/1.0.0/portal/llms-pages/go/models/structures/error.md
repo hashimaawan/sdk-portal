@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Error message for the Action if error occurred, otherwise null
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -16,6 +18,7 @@ Error message for the Action if error occurred, otherwise null
 |  --- | --- | --- | --- |
 | `Code` | `string` | Required | Fixed machine readable code |
 | `Message` | `string` | Required | Humanized error message |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -24,13 +27,16 @@ Error message for the Action if error occurred, otherwise null
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     mError := models.Error{
-        Code:                 "action_failed",
-        Message:              "Action failed",
+        Code:                  "action_failed",
+        Message:               "Action failed",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

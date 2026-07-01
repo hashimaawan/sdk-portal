@@ -4,10 +4,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration option for protocols http and https
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
-`LoadBalancerServiceHTTP`
+`LoadBalancerServiceHttp`
 
 
 # Fields
@@ -19,19 +21,23 @@ Configuration option for protocols http and https
 | `cookie_name` | `String` | Optional | Name of the cookie used for sticky sessions |
 | `redirect_http` | `TrueClass \| FalseClass` | Optional | Redirect HTTP requests to HTTPS. Only available if protocol is "https". Default `false` |
 | `sticky_sessions` | `TrueClass \| FalseClass` | Optional | Use sticky sessions. Only available if protocol is "http" or "https". Default `false` |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
-load_balancer_service_http = LoadBalancerServiceHTTP.new(
-  [
+load_balancer_service_http = LoadBalancerServiceHttp.new(
+  certificates: [
     897
   ],
-  300,
-  'HCLBSTICKY',
-  true,
-  true
+  cookie_lifetime: 300,
+  cookie_name: 'HCLBSTICKY',
+  redirect_http: true,
+  sticky_sessions: true,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

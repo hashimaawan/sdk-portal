@@ -7,7 +7,7 @@ Type of Image to create (default: `snapshot`)
 
 # Enum Type Name
 
-`Type63Enum`
+`Type63`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of Image to create (default: `snapshot`)
 # Example
 
 ```ruby
-type63 = Type63Enum::SNAPSHOT
+type63 = Type63::SNAPSHOT
 ```
 
 

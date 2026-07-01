@@ -61,10 +61,10 @@ Networks also support the notion of routes which are automatically applied to pr
 
 # Get Instance
 
-The instance of the `NetworksController` class can be accessed from the API Client.
+The instance of the `NetworksApi` class can be accessed from the API Client.
 
 ```
-networksController := client.NetworksController()
+networksApi := client.NetworksApi()
 ```
 
 

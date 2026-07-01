@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZUZsb2F0aW5nSVBSZXF1ZXN0
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
-`CreateFloatingIPRequest`
+`CreateFloatingIpRequest`
 
 
 # Fields
@@ -17,25 +19,27 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Object` | Optional | User-defined labels (key-value pairs) | Object getLabels() | setLabels(Object labels) |
 | `Name` | `String` | Optional | - | String getName() | setName(String name) |
 | `Server` | `Integer` | Optional | Server to assign the Floating IP to | Integer getServer() | setServer(Integer server) |
-| `Type` | [`Type17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-17.md) | Required | Floating IP type | Type17Enum getType() | setType(Type17Enum type) |
+| `Type` | [`Type17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-17.md) | Required | Floating IP type | Type17 getType() | setType(Type17 type) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
 import cloud.hetzner.api.ApiHelper;
-import cloud.hetzner.api.models.CreateFloatingIPRequest;
-import cloud.hetzner.api.models.Type17Enum;
+import cloud.hetzner.api.models.CreateFloatingIpRequest;
+import cloud.hetzner.api.models.Type17;
 import java.io.IOException;
 
-CreateFloatingIPRequest createFloatingIPRequest = new CreateFloatingIPRequest.Builder(
-    Type17Enum.IPV4
+CreateFloatingIpRequest createFloatingIpRequest = new CreateFloatingIpRequest.Builder(
+    Type17.IPV4
 )
 .description("Web Frontend")
 .homeLocation("fsn1")
 .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
 .name("Web Frontend")
 .server(42)
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

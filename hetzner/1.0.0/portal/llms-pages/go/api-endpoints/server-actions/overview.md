@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get Instance
 
-The instance of the `ServerActionsController` class can be accessed from the API Client.
+The instance of the `ServerActionsApi` class can be accessed from the API Client.
 
 ```
-serverActionsController := client.ServerActionsController()
+serverActionsApi := client.ServerActionsApi()
 ```
 
 

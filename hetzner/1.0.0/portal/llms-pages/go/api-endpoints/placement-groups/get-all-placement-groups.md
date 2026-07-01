@@ -9,10 +9,10 @@ Returns all PlacementGroup objects.
 ```go
 GetAllPlacementGroups(
     ctx context.Context,
-    sort *models.SortEnum,
+    sort *models.Sort,
     name *string,
     labelSelector *string,
-    mType *models.ParameterType1Enum) (
+    mType *models.ParameterType1) (
     models.ApiResponse[models.PlacementGroupsResponse],
     error)
 ```
@@ -22,10 +22,10 @@ GetAllPlacementGroups(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`*models.SortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`*models.Sort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `*string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `*string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `mType` | [`*models.ParameterType1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-type-1.md) | Query, Optional | Can be used multiple times. The response will only contain PlacementGroups matching the type. |
+| `mType` | [`*models.ParameterType1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-type-1.md) | Query, Optional | Can be used multiple times. The response will only contain PlacementGroups matching the type. |
 
 
 # Response Type
@@ -40,7 +40,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := placementGroupsController.GetAllPlacementGroups(ctx, nil, nil, nil, nil)
+apiResponse, err := placementGroupsApi.GetAllPlacementGroups(ctx, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

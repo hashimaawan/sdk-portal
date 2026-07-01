@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMFJlcXVlc3QlMjUyMENvbnNvbGUlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -15,6 +17,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/action.md) | Required | - |
 | `password` | `string` | Required | VNC password to use for this connection (this password only works in combination with a wss_url with valid token) |
 | `wssUrl` | `string` | Required | URL of websocket proxy to use; this includes a token which is valid for a limited time only |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -22,7 +25,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 ```ts
 import {
   ServersActionsRequestConsoleResponse,
-  StatusEnum,
+  Status,
 } from 'hetzner-cloud-apilib';
 
 const serversActionsRequestConsoleResponse: ServersActionsRequestConsoleResponse = {
@@ -31,6 +34,9 @@ const serversActionsRequestConsoleResponse: ServersActionsRequestConsoleResponse
     error: {
       code: 'action_failed',
       message: 'Action failed',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: '2016-01-30T23:55:00+00:00',
     id: 42,
@@ -39,13 +45,22 @@ const serversActionsRequestConsoleResponse: ServersActionsRequestConsoleResponse
       {
         id: 42,
         type: 'server',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: '2016-01-30T23:55:00+00:00',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   password: '9MQaTg2VAGI0FIpc10k3UpRXcHj2wQ6x',
   wssUrl: 'wss://console.hetzner.cloud/?server_id=1&token=3db32d15-af2f-459c-8bf8-dee1fd05f49c',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

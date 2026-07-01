@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status70Enum`
+`Status70`
 
 
 # Fields
@@ -26,7 +26,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-status70 = Status70Enum::MIGRATING
+status70 = Status70::MIGRATING
 ```
 
 

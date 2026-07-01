@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function playoffpictureGET(string $leagueID, string $seasonID): void
+function playoffpictureGet(string $leagueId, string $seasonId): ApiResponse
 ```
 
 
@@ -13,33 +13,41 @@ function playoffpictureGET(string $leagueID, string $seasonID): void
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `seasonID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `seasonId` | `string` | Query, Required | - |
 
 
 # Response Type
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
-$seasonID = 'SeasonID6';
+$seasonId = 'SeasonID6';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->playoffpictureGet(
+    $leagueId,
+    $seasonId
+);
 
-try {
-    $aPIController->playoffpictureGET(
-        $leagueID,
-        $seasonID
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

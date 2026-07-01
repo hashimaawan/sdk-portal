@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-Homepagev2GET(
+Homepagev2Get(
     ctx context.Context,
     statType string,
-    leagueID string,
+    leagueId string,
     season string,
     seasonType string,
     playerOrTeam string,
@@ -26,7 +26,7 @@ Homepagev2GET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `statType` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `playerOrTeam` | `string` | Query, Required | - |
@@ -50,7 +50,7 @@ ctx := context.Background()
 
 statType := "StatType8"
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 season := "Season0"
 
@@ -62,7 +62,7 @@ playerScope := "PlayerScope2"
 
 gameScope := "GameScope0"
 
-resp, err := aPIController.Homepagev2GET(ctx, statType, leagueID, season, seasonType, playerOrTeam, playerScope, gameScope, nil, nil)
+resp, err := api.Homepagev2Get(ctx, statType, leagueId, season, seasonType, playerOrTeam, playerScope, gameScope, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

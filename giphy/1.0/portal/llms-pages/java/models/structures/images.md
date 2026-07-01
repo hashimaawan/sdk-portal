@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -34,13 +36,16 @@ An object containing data for various available formats and sizes of this GIF.
 | `OriginalStill` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/image.md) | Optional | - | Image getOriginalStill() | setOriginalStill(Image originalStill) |
 | `Preview` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/image.md) | Optional | - | Image getPreview() | setPreview(Image preview) |
 | `PreviewGif` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/image.md) | Optional | - | Image getPreviewGif() | setPreviewGif(Image previewGif) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import com.giphy.api.ApiHelper;
 import com.giphy.api.models.Image;
 import com.giphy.api.models.Images;
+import java.io.IOException;
 
 Images images = new Images.Builder()
     .downsized(new Image.Builder()
@@ -49,6 +54,7 @@ Images images = new Images.Builder()
         .mp4("mp40")
         .mp4Size("mp4_size2")
         .size("size2")
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .downsizedLarge(new Image.Builder()
         .frames("frames6")
@@ -56,6 +62,7 @@ Images images = new Images.Builder()
         .mp4("mp46")
         .mp4Size("mp4_size8")
         .size("size8")
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .downsizedMedium(new Image.Builder()
         .frames("frames2")
@@ -63,6 +70,7 @@ Images images = new Images.Builder()
         .mp4("mp42")
         .mp4Size("mp4_size4")
         .size("size4")
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .downsizedSmall(new Image.Builder()
         .frames("frames0")
@@ -70,6 +78,7 @@ Images images = new Images.Builder()
         .mp4("mp40")
         .mp4Size("mp4_size2")
         .size("size2")
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .downsizedStill(new Image.Builder()
         .frames("frames4")
@@ -77,7 +86,9 @@ Images images = new Images.Builder()
         .mp4("mp46")
         .mp4Size("mp4_size8")
         .size("size2")
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

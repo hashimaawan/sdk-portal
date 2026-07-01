@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlRyaXA
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -17,12 +19,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `End` | `DateTime?` | Optional | end of the trip in its local timezone as YYYY-MM-DDThh:mm |
 | `Id` | `string` | Optional | Unique ID of the trip |
 | `Name` | `string` | Optional | name of the trip |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using FurkotTrips.Standard.Models;
+using FurkotTrips.Standard.Utilities;
 using System.Globalization;
 
 Trip trip = new Trip
@@ -36,6 +40,7 @@ Trip trip = new Trip
         DateTimeStyles.RoundtripKind),
     Id = "id8",
     Name = "name8",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

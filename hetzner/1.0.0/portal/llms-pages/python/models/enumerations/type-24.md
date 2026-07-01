@@ -7,7 +7,7 @@ Destination Image type to convert to
 
 # Enum Type Name
 
-`Type24Enum`
+`Type24`
 
 
 # Fields
@@ -20,9 +20,9 @@ Destination Image type to convert to
 # Example
 
 ```python
-from hetznercloudapi.models.type_24_enum import Type24Enum
+from hetznercloudapi.models.type_24 import Type24
 
-type_24 = Type24Enum.SNAPSHOT
+type_24 = Type24.SNAPSHOT
 ```
 
 

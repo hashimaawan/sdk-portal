@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0
 
 # Get Instance
 
-The instance of the `ForexController` class can be accessed from the API Client.
+The instance of the `ForexApi` class can be accessed from the API Client.
 
 ```
-forexController := client.ForexController()
+forexApi := client.ForexApi()
 ```
 
 

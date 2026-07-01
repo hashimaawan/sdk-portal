@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkltYWdlcyUyNTIwUmVzcG9uc2U
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -14,12 +16,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Images` | [`List<Image>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/image.md) | Required | - |
 | `Meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/meta.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 ImagesResponse imagesResponse = new ImagesResponse
@@ -34,6 +38,7 @@ ImagesResponse imagesResponse = new ImagesResponse
             {
                 Id = 1,
                 Name = "Server",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Deleted = null,
             Deprecated = "2018-02-28T00:00:00+00:00",
@@ -47,15 +52,17 @@ ImagesResponse imagesResponse = new ImagesResponse
                 ["key1"] = "labels1",
             },
             Name = "ubuntu-20.04",
-            OsFlavor = OsFlavorEnum.Ubuntu,
+            OsFlavor = OsFlavor.Ubuntu,
             OsVersion = "20.04",
             Protection = new Protection
             {
                 Delete = false,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
-            Status = Status24Enum.Available,
-            Type = Type22Enum.Snapshot,
+            Status = Status24.Available,
+            Type = Type22.Snapshot,
             RapidDeploy = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Meta = new Meta
@@ -68,8 +75,11 @@ ImagesResponse imagesResponse = new ImagesResponse
             PerPage = 13.34,
             PreviousPage = 50.02,
             TotalEntries = 206.64,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

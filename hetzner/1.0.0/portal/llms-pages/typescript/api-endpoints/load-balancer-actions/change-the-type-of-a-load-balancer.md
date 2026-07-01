@@ -47,7 +47,7 @@ const body: ChangeTypeRequest = {
 };
 
 try {
-  const response = await loadBalancerActionsController.changeTheTypeOfALoadBalancer(
+  const response = await loadBalancerActionsApi.changeTheTypeOfALoadBalancer(
     id,
     body
   );

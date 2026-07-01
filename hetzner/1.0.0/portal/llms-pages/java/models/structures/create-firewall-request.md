@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZUZpcmV3YWxsUmVxdWVzdA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,6 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Object` | Optional | User-defined labels (key-value pairs) | Object getLabels() | setLabels(Object labels) |
 | `Name` | `String` | Required | Name of the Firewall | String getName() | setName(String name) |
 | `Rules` | [`List<Rule>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/rule.md) | Optional | Array of rules | List<Rule> getRules() | setRules(List<Rule> rules) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -24,12 +27,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.ApplyTo;
 import cloud.hetzner.api.models.CreateFirewallRequest;
-import cloud.hetzner.api.models.DirectionEnum;
+import cloud.hetzner.api.models.Direction;
 import cloud.hetzner.api.models.LabelSelector1;
-import cloud.hetzner.api.models.ProtocolEnum;
+import cloud.hetzner.api.models.Protocol;
 import cloud.hetzner.api.models.Rule;
 import cloud.hetzner.api.models.Server2;
-import cloud.hetzner.api.models.Type7Enum;
+import cloud.hetzner.api.models.Type7;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -38,47 +41,56 @@ CreateFirewallRequest createFirewallRequest = new CreateFirewallRequest.Builder(
 )
 .applyTo(Arrays.asList(
         new ApplyTo.Builder(
-            Type7Enum.SERVER
+            Type7.SERVER
         )
         .labelSelector(new LabelSelector1.Builder(
                 "selector8"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
         .server(new Server2.Builder(
                 14
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         new ApplyTo.Builder(
-            Type7Enum.SERVER
+            Type7.SERVER
         )
         .labelSelector(new LabelSelector1.Builder(
                 "selector8"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
         .server(new Server2.Builder(
                 14
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         new ApplyTo.Builder(
-            Type7Enum.SERVER
+            Type7.SERVER
         )
         .labelSelector(new LabelSelector1.Builder(
                 "selector8"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
         .server(new Server2.Builder(
                 14
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build())
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ))
 .labels(ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .rules(Arrays.asList(
         new Rule.Builder(
-            DirectionEnum.IN,
-            ProtocolEnum.TCP
+            Direction.IN,
+            Protocol.TCP
         )
         .description("description2")
         .destinationIps(Arrays.asList(
@@ -92,8 +104,10 @@ CreateFirewallRequest createFirewallRequest = new CreateFirewallRequest.Builder(
                 "28.239.14.0/24",
                 "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"
             ))
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ))
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

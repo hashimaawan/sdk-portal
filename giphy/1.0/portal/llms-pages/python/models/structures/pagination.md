@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -17,17 +19,23 @@ The Pagination Object contains information relating to the number of total resul
 | `count` | `int` | Optional | Total number of items returned. |
 | `offset` | `int` | Optional | Position in pagination. |
 | `total_count` | `int` | Optional | Total number of items available. |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from giphyapi.models.pagination import Pagination
 
 pagination = Pagination(
     count=25,
     offset=75,
-    total_count=250
+    total_count=250,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

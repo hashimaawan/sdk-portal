@@ -23,7 +23,7 @@ GetALoadBalancerTypeAsync(
 
 **200**: The `load_balancer_type` key in the reply contains a Load Balancer type object with this structure
 
-[`Task<Models.LoadBalancerTypesResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-types-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.LoadBalancerTypesResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-types-response-1.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetALoadBalancerTypeAsync(
 int id = 112;
 try
 {
-    LoadBalancerTypesResponse1 result = await loadBalancerTypesController.GetALoadBalancerTypeAsync(id);
+    ApiResponse<LoadBalancerTypesResponse1> result = await loadBalancerTypesApi.GetALoadBalancerTypeAsync(id);
 }
 catch (ApiException e)
 {

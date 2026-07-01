@@ -7,7 +7,7 @@ Deletes an SSH key. It cannot be used anymore.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async deleteAnSSHKey(
+async deleteAnSshKey(
   id: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 'id0';
 
 try {
-  const response = await sSHKeysController.deleteAnSSHKey(id);
+  const response = await sshKeysApi.deleteAnSshKey(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -7,7 +7,7 @@ Returns a specific SSH key object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetASSHKey(
+GetASshKey(
     ctx context.Context,
     id int) (
     models.ApiResponse[models.SshKeysResponse1],
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := sSHKeysController.GetASSHKey(ctx, id)
+apiResponse, err := sshKeysApi.GetASshKey(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

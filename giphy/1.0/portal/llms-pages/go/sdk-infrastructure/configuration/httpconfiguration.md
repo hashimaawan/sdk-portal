@@ -8,9 +8,9 @@ The following parameters are configurable for the HttpConfiguration:
 
 | Name | Type | Description | Setter | Getter |
 |  --- | --- | --- | --- | --- |
-| timeout | `float64` | Timeout in seconds.<br>*Default*: `0` | `WithTimeout` | `Timeout()` |
+| timeout | `float64` | Timeout in seconds.<br>*Default*: `30` | `WithTimeout` | `Timeout()` |
 | transport | `httpRoundTripper` | Establishes network connection and caches them for reuse.<br>*Default*: `http.DefaultTransport` | `WithTransport` | `Transport()` |
-| retryConfiguration | [`giphyapiRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `giphyapi.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
+| retryConfiguration | [`giphyApiRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `giphyApi.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
 
 The httpConfiguration can be initialized as follows:
 
@@ -18,15 +18,15 @@ The httpConfiguration can be initialized as follows:
 package main
 
 import (
-    "giphyapi"
+    "giphyApi"
     "net/http"
 )
 
 func main() {
-    httpConfiguration := giphyapi.CreateHttpConfiguration(
-        giphyapi.WithTimeout(0),
-        giphyapi.WithTransport(http.DefaultTransport),
-        giphyapi.WithRetryConfiguration(giphyapi.DefaultRetryConfiguration()),
+    httpConfiguration := giphyApi.CreateHttpConfiguration(
+        giphyApi.WithTimeout(30),
+        giphyApi.WithTransport(http.DefaultTransport),
+        giphyApi.WithRetryConfiguration(giphyApi.DefaultRetryConfiguration()),
     )
 }
 ```

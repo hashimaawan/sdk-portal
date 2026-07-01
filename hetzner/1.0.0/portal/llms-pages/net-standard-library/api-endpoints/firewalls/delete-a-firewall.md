@@ -38,7 +38,7 @@ DeleteAFirewallAsync(
 int id = 112;
 try
 {
-    await firewallsController.DeleteAFirewallAsync(id);
+    await firewallsApi.DeleteAFirewallAsync(id);
 }
 catch (ApiException e)
 {

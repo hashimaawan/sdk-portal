@@ -7,22 +7,22 @@ Status of the Server
 
 # Class Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `RUNNING` |
-| `INITIALIZING` |
-| `STARTING` |
-| `STOPPING` |
-| `OFF` |
-| `DELETING` |
-| `MIGRATING` |
-| `REBUILDING` |
-| `UNKNOWN` |
+| `Running` |
+| `Initializing` |
+| `Starting` |
+| `Stopping` |
+| `Off` |
+| `Deleting` |
+| `Migrating` |
+| `Rebuilding` |
+| `Unknown` |
 
 
 # Example
@@ -31,11 +31,11 @@ Status of the Server
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status73 := models.Status73Enum_STARTING
+    status73 := models.Status73_Starting
 
 }
 ```

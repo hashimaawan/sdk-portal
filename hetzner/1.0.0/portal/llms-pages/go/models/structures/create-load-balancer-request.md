@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkNyZWF0ZUxvYWRCYWxhbmNlclJlcXVlc3Q
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -22,6 +24,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `PublicInterface` | `*bool` | Optional | Enable or disable the public interface of the Load Balancer |
 | `Services` | [`[]models.LoadBalancerService`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/load-balancer-service.md) | Optional | Array of services |
 | `Targets` | [`[]models.LoadBalancerTarget`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/load-balancer-target.md) | Optional | Array of targets |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -30,23 +33,32 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     createLoadBalancerRequest := models.CreateLoadBalancerRequest{
-        Algorithm:            models.LoadBalancerAlgorithm{
-            Type:                 models.Type28Enum_ROUNDROBIN,
+        Algorithm:             models.LoadBalancerAlgorithm{
+            Type:                  models.Type28_RoundRobin,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         },
-        Labels:               models.ToPointer(models.Labels{
-            Labelkey:             models.ToPointer("labelkey4"),
+        Labels:                models.ToPointer(models.Labels{
+            Labelkey:              models.ToPointer("labelkey4"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
-        LoadBalancerType:     "lb11",
-        Location:             models.ToPointer("location2"),
-        Name:                 "Web Frontend",
-        Network:              models.ToPointer(123),
-        NetworkZone:          models.ToPointer("eu-central"),
-        PublicInterface:      models.ToPointer(true),
+        LoadBalancerType:      "lb11",
+        Location:              models.ToPointer("location2"),
+        Name:                  "Web Frontend",
+        Network:               models.ToPointer(123),
+        NetworkZone:           models.ToPointer("eu-central"),
+        PublicInterface:       models.ToPointer(true),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

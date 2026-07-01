@@ -38,7 +38,7 @@ const body: CreatePlacementGroupRequest = {
 };
 
 try {
-  const response = await placementGroupsController.createAPlacementGroup(body);
+  const response = await placementGroupsApi.createAPlacementGroup(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

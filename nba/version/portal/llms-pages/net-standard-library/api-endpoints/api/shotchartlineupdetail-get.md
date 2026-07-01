@@ -5,25 +5,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-ShotchartlineupdetailGETAsync(
-    string leagueID,
+ShotchartlineupdetailGetAsync(
+    string leagueId,
     string season,
     string seasonType,
-    string teamID,
+    string teamId,
     string outcome,
     string location,
     string month,
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string gameSegment,
     string period,
     string lastNGames,
-    string gameID,
-    string gROUPID,
+    string gameId,
+    string groupId,
     string contextMeasure,
     string contextFilter)
 ```
@@ -33,24 +33,24 @@ ShotchartlineupdetailGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
 | `period` | `string` | Query, Required | - |
 | `lastNGames` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
-| `gROUPID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
+| `groupId` | `string` | Query, Required | - |
 | `contextMeasure` | `string` | Query, Required | - |
 | `contextFilter` | `string` | Query, Required | - |
 
@@ -65,47 +65,47 @@ ShotchartlineupdetailGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string season = "Season0";
 string seasonType = "SeasonType8";
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 string outcome = "Outcome4";
 string location = "Location4";
 string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string gameSegment = "GameSegment6";
 string period = "Period2";
 string lastNGames = "LastNGames4";
-string gameID = "GameID8";
-string gROUPID = "GROUP_ID6";
+string gameId = "GameID8";
+string groupId = "GROUP_ID6";
 string contextMeasure = "ContextMeasure2";
 string contextFilter = "ContextFilter6";
 try
 {
-    await aPIController.ShotchartlineupdetailGETAsync(
-        leagueID,
+    await api.ShotchartlineupdetailGetAsync(
+        leagueId,
         season,
         seasonType,
-        teamID,
+        teamId,
         outcome,
         location,
         month,
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         gameSegment,
         period,
         lastNGames,
-        gameID,
-        gROUPID,
+        gameId,
+        groupId,
         contextMeasure,
         contextFilter
     );

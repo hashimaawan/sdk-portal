@@ -4,10 +4,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration option for protocols http and https
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
-`LoadBalancerServiceHTTP`
+`LoadBalancerServiceHttp`
 
 
 # Fields
@@ -19,14 +21,15 @@ Configuration option for protocols http and https
 | `cookieName` | `string \| undefined` | Optional | Name of the cookie used for sticky sessions |
 | `redirectHttp` | `boolean \| undefined` | Optional | Redirect HTTP requests to HTTPS. Only available if protocol is "https". Default `false` |
 | `stickySessions` | `boolean \| undefined` | Optional | Use sticky sessions. Only available if protocol is "http" or "https". Default `false` |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { LoadBalancerServiceHTTP } from 'hetzner-cloud-apilib';
+import { LoadBalancerServiceHttp } from 'hetzner-cloud-apilib';
 
-const loadBalancerServiceHTTP: LoadBalancerServiceHTTP = {
+const loadBalancerServiceHttp: LoadBalancerServiceHttp = {
   certificates: [
     897
   ],
@@ -34,6 +37,9 @@ const loadBalancerServiceHTTP: LoadBalancerServiceHTTP = {
   cookieName: 'HCLBSTICKY',
   redirectHttp: true,
   stickySessions: true,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

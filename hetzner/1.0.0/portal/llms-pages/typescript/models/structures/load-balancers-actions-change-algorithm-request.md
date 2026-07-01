@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VycyUyNTIwQWN0aW9ucyUyNTIwQ2hhbmdlJTI1MjBBbGdvcml0aG0lMjUyMFJlcXVlc3Q
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -12,7 +14,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `type` | [`Type39Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-39.md) | Required | Algorithm of the Load Balancer |
+| `type` | [`Type39`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-39.md) | Required | Algorithm of the Load Balancer |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -20,11 +23,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 ```ts
 import {
   LoadBalancersActionsChangeAlgorithmRequest,
-  Type39Enum,
+  Type39,
 } from 'hetzner-cloud-apilib';
 
 const loadBalancersActionsChangeAlgorithmRequest: LoadBalancersActionsChangeAlgorithmRequest = {
-  type: Type39Enum.RoundRobin,
+  type: Type39.RoundRobin,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

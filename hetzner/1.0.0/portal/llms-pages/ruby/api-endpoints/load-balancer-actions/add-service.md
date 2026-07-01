@@ -30,7 +30,7 @@ def add_service(id,
 
 **201**: The `action` key contains the `add_service` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -39,33 +39,29 @@ def add_service(id,
 id = 112
 
 body = LoadBalancerService.new(
-  80,
-  LoadBalancerServiceHealthCheck.new(
-    15,
-    4711,
-    Protocol6Enum::HTTP,
-    3,
-    10,
-    Http.new(
-      nil,
-      nil,
-      nil,
-      []
-    )
+  destination_port: 80,
+  health_check: LoadBalancerServiceHealthCheck.new(
+    interval: 15,
+    port: 4711,
+    protocol: Protocol6::HTTP,
+    retries: 3,
+    timeout: 10
   ),
-  443,
-  Protocol7Enum::HTTPS,
-  false,
-  LoadBalancerServiceHTTP.new(
-    []
-  )
+  listen_port: 443,
+  protocol: Protocol7::HTTPS,
+  proxyprotocol: false
 )
 
-result = load_balancer_actions_controller.add_service(
+result = load_balancer_actions_api.add_service(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

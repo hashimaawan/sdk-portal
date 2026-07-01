@@ -25,7 +25,7 @@ We limit the number of samples to a maximum of 500 and will adjust the step para
 ```csharp
 GetMetricsForALoadBalancerAsync(
     int id,
-    Models.Type41Enum type,
+    Models.Type41 type,
     string start,
     string end,
     string step = null)
@@ -37,7 +37,7 @@ GetMetricsForALoadBalancerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `type` | [`Type41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `string` | Query, Optional | Resolution of results in seconds |
@@ -47,19 +47,19 @@ GetMetricsForALoadBalancerAsync(
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`Task<Models.LoadBalancersMetricsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.LoadBalancersMetricsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancers-metrics-response.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-Type41Enum type = Type41Enum.RequestsPerSecond;
+Type41 type = Type41.RequestsPerSecond;
 string start = "start4";
 string end = "end8";
 try
 {
-    LoadBalancersMetricsResponse result = await loadBalancersController.GetMetricsForALoadBalancerAsync(
+    ApiResponse<LoadBalancersMetricsResponse> result = await loadBalancersApi.GetMetricsForALoadBalancerAsync(
         id,
         type,
         start,

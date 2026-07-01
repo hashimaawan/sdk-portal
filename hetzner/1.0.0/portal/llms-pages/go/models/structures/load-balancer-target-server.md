@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Server where the traffic should be routed through
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ Server where the traffic should be routed through
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Id` | `int` | Required | ID of the Server |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,12 +26,15 @@ Server where the traffic should be routed through
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     loadBalancerTargetServer := models.LoadBalancerTargetServer{
-        Id:                   80,
+        Id:                    80,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

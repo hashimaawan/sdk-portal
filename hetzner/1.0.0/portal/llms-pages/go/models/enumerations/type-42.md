@@ -7,16 +7,16 @@ Type of Subnetwork
 
 # Class Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `CLOUD` |
-| `SERVER` |
-| `VSWITCH` |
+| `Cloud` |
+| `Server` |
+| `Vswitch` |
 
 
 # Example
@@ -25,11 +25,11 @@ Type of Subnetwork
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type42 := models.Type42Enum_CLOUD
+    type42 := models.Type42_Cloud
 
 }
 ```

@@ -7,15 +7,15 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Class Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `LOCAL` |
-| `NETWORK` |
+| `Local` |
+| `Network` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    storageType := models.StorageTypeEnum_LOCAL
+    storageType := models.StorageType_Local
 
 }
 ```

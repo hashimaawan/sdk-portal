@@ -11,7 +11,7 @@ You may specify one or more routes in `routes`. You can also add more routes lat
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<NetworksResponse1> createANetworkAsync(
+CompletableFuture<ApiResponse<NetworksResponse1>> createANetworkAsync(
     final CreateNetworkRequest body)
 ```
 
@@ -27,7 +27,7 @@ CompletableFuture<NetworksResponse1> createANetworkAsync(
 
 **201**: The `network` key contains the network that was just created
 
-[`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ CreateNetworkRequest body = new CreateNetworkRequest.Builder(
 )
 .build();
 
-networksController.createANetworkAsync(body).thenAccept(result -> {
+networksApi.createANetworkAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

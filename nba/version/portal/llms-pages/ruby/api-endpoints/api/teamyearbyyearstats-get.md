@@ -26,7 +26,7 @@ def teamyearbyyearstats_get(league_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -40,12 +40,18 @@ per_mode = 'PerMode6'
 
 team_id = 'TeamID8'
 
-client_controller.teamyearbyyearstats_get(
+result = client_api.teamyearbyyearstats_get(
   league_id,
   season_type,
   per_mode,
   team_id
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

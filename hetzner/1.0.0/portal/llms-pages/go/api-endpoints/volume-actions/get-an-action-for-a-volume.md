@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := volumeActionsController.GetAnActionForAVolume(ctx, id, actionId)
+apiResponse, err := volumeActionsApi.GetAnActionForAVolume(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

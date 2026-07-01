@@ -7,7 +7,7 @@ Type of Image to create (default: `snapshot`)
 
 # Enum Type Name
 
-`Type63Enum`
+`Type63`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Image to create (default: `snapshot`)
 # Example
 
 ```ts
-import { Type63Enum } from 'hetzner-cloud-apilib';
+import { Type63 } from 'hetzner-cloud-apilib';
 
-const type63 = Type63Enum.Snapshot;
+const type63 = Type63.Snapshot;
 ```
 
 

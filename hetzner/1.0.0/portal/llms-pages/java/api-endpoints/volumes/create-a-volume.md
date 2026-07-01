@@ -19,7 +19,7 @@ A volume’s name can consist of alphanumeric characters, dashes, underscores, a
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<VolumesResponse1> createAVolumeAsync(
+CompletableFuture<ApiResponse<VolumesResponse1>> createAVolumeAsync(
     final CreateVolumeRequest body)
 ```
 
@@ -37,7 +37,7 @@ CompletableFuture<VolumesResponse1> createAVolumeAsync(
 
 The `action` key contains the Action tracking Volume creation
 
-[`VolumesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volumes-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`VolumesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volumes-response-1.md).
 
 
 # Example Usage
@@ -53,7 +53,7 @@ CreateVolumeRequest body = new CreateVolumeRequest.Builder(
 .location("nbg1")
 .build();
 
-volumesController.createAVolumeAsync(body).thenAccept(result -> {
+volumesApi.createAVolumeAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/ruby/x-redirect/JTI0bSUyRkdpZnMlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,68 +17,46 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `data` | [`Array[Gif]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/gif.md) | Optional | - |
 | `meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/meta.md) | Optional | The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances. |
 | `pagination` | [`Pagination`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/pagination.md) | Optional | The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions. |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 gifs_response = GifsResponse.new(
-  [
+  data: [
     Gif.new(
-      'bitly_url0',
-      'content_url4',
-      DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
-      'embded_url8',
-      [
+      bitly_url: 'bitly_url0',
+      content_url: 'content_url4',
+      create_datetime: DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
+      embded_url: 'embded_url8',
+      featured_tags: [
         'featured_tags0'
       ],
-      nil,
-      Images.new(
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new,
-        Image.new
-      ),
-      DateTimeHelper.from_rfc3339(nil),
-      nil,
-      nil,
-      nil,
-      nil,
-      nil,
-      [],
-      DateTimeHelper.from_rfc3339(nil),
-      envrr,
-      DateTimeHelper.from_rfc3339(nil),
-      nil,
-      User.new
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  Meta.new(
-    'msg8',
-    'response_id0',
-    98
+  meta: Meta.new(
+    msg: 'msg8',
+    response_id: 'response_id0',
+    status: 98,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Pagination.new(
-    192,
-    240,
-    100
-  )
+  pagination: Pagination.new(
+    count: 192,
+    offset: 240,
+    total_count: 100,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

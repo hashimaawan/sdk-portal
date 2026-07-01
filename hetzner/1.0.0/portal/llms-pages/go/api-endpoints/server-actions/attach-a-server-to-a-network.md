@@ -52,14 +52,14 @@ ctx := context.Background()
 id := 112
 
 body := models.AttachToNetworkRequest{
-    AliasIps:             []string{
+    AliasIps:              []string{
         "10.0.1.2",
     },
-    Ip:                   models.ToPointer("10.0.1.1"),
-    Network:              4711,
+    Ip:                    models.ToPointer("10.0.1.1"),
+    Network:               4711,
 }
 
-apiResponse, err := serverActionsController.AttachAServerToANetwork(ctx, id, &body)
+apiResponse, err := serverActionsApi.AttachAServerToANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

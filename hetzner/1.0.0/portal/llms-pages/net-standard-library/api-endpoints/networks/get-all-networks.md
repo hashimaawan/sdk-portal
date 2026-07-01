@@ -25,7 +25,7 @@ GetAllNetworksAsync(
 
 **200**: The `networks` key contains a list of networks
 
-[`Task<Models.NetworksResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/networks-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.NetworksResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/networks-response.md).
 
 
 # Example Usage
@@ -33,7 +33,7 @@ GetAllNetworksAsync(
 ```csharp
 try
 {
-    NetworksResponse result = await networksController.GetAllNetworksAsync();
+    ApiResponse<NetworksResponse> result = await networksApi.GetAllNetworksAsync();
 }
 catch (ApiException e)
 {

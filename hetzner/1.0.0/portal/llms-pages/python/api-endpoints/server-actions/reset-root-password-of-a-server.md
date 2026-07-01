@@ -29,7 +29,7 @@ def reset_root_password_of_a_server(self,
 
 The `action` key in the reply contains an Action object with this structure:
 
-[`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-reset-password-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-reset-password-response.md).
 
 
 # Example Usage
@@ -37,8 +37,12 @@ The `action` key in the reply contains an Action object with this structure:
 ```python
 id = 112
 
-result = server_actions_controller.reset_root_password_of_a_server(id)
-print(result)
+result = server_actions_api.reset_root_password_of_a_server(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

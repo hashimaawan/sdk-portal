@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playerprofileGETAsync(
-    final String leagueID,
-    final String playerID,
+CompletableFuture<ApiResponse<Void>> playerprofileGetAsync(
+    final String leagueId,
+    final String playerId,
     final String season,
     final String seasonType,
     final String graphStartSeason,
@@ -20,8 +20,8 @@ CompletableFuture<Void> playerprofileGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
-| `playerID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
+| `playerId` | `String` | Query, Required | - |
 | `season` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 | `graphStartSeason` | `String` | Query, Required | - |
@@ -39,16 +39,17 @@ CompletableFuture<Void> playerprofileGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
-String playerID = "PlayerID6";
+String leagueId = "LeagueID4";
+String playerId = "PlayerID6";
 String season = "Season0";
 String seasonType = "SeasonType8";
 String graphStartSeason = "GraphStartSeason2";
 String graphEndSeason = "GraphEndSeason6";
 String graphStat = "GraphStat0";
 
-aPIController.playerprofileGETAsync(leagueID, playerID, season, seasonType, graphStartSeason, graphEndSeason, graphStat).thenAccept(result -> {
+api.playerprofileGetAsync(leagueId, playerId, season, seasonType, graphStartSeason, graphEndSeason, graphStat).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

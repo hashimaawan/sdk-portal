@@ -23,7 +23,7 @@ RequestConsoleForAServerAsync(
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`Task<Models.ServersActionsRequestConsoleResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-actions-request-console-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServersActionsRequestConsoleResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-actions-request-console-response.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ RequestConsoleForAServerAsync(
 int id = 112;
 try
 {
-    ServersActionsRequestConsoleResponse result = await serverActionsController.RequestConsoleForAServerAsync(id);
+    ApiResponse<ServersActionsRequestConsoleResponse> result = await serverActionsApi.RequestConsoleForAServerAsync(id);
 }
 catch (ApiException e)
 {

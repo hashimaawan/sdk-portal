@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterType1Enum`
+`ParameterType1`
 
 
 # Fields
@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-parameter_type1 = ParameterType1Enum::SPREAD
+parameter_type1 = ParameterType1::SPREAD
 ```
 
 

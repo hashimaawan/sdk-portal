@@ -7,7 +7,7 @@ Current status of the Volume
 
 # Enum Type Name
 
-`Status113Enum`
+`Status113`
 
 
 # Fields
@@ -21,9 +21,9 @@ Current status of the Volume
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Status113Enum;
+use HetznerCloudApiLib\Models\Status113;
 
-$status113 = Status113Enum::CREATING;
+$status113 = Status113::CREATING;
 ```
 
 

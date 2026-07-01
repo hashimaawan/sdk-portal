@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlBsYWNlbWVudEdyb3VwTnVsbGFibGU
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,24 +20,28 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `String` | Required | Name of the Resource. Must be unique per Project. |
 | `servers` | `Array[Integer]` | Required | Array of IDs of Servers that are part of this Placement Group |
 | `type` | `String` | Required, Constant | Type of the Placement Group<br><br>**Value**: `'spread'` |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 placement_group_nullable = PlacementGroupNullable.new(
-  '2016-01-30T23:55:00+00:00',
-  42,
-  {
-    'key0': 'labels2',
-    'key1': 'labels3',
-    'key2': 'labels4'
+  created: '2016-01-30T23:55:00+00:00',
+  id: 42,
+  labels: {
+    'key0' => 'labels2',
+    'key1' => 'labels3',
+    'key2' => 'labels4'
   },
-  'my-resource',
-  [
+  name: 'my-resource',
+  servers: [
     42
   ],
-  'spread'
+  type: 'spread',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

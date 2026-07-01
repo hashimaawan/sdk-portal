@@ -41,16 +41,16 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreateCertificateRequest{
-    DomainNames:          []string{
+    DomainNames:           []string{
         "example.com",
         "webmail.example.com",
         "www.example.com",
     },
-    Name:                 "my website cert",
-    Type:                 models.ToPointer(models.Type1Enum_MANAGED),
+    Name:                  "my website cert",
+    Type:                  models.ToPointer(models.Type1_Managed),
 }
 
-apiResponse, err := certificatesController.CreateACertificate(ctx, &body)
+apiResponse, err := certificatesApi.CreateACertificate(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

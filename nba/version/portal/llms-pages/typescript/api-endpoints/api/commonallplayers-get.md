@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async commonallplayersGET(
-  leagueID: string,
+async commonallplayersGet(
+  leagueId: string,
   season: string,
   isOnlyCurrentSeason: string,
   requestOptions?: RequestOptions
@@ -18,7 +18,7 @@ async commonallplayersGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `isOnlyCurrentSeason` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -34,15 +34,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const season = 'Season0';
 
 const isOnlyCurrentSeason = 'IsOnlyCurrentSeason6';
 
 try {
-  const response = await apiController.commonallplayersGET(
-    leagueID,
+  const response = await api.commonallplayersGet(
+    leagueId,
     season,
     isOnlyCurrentSeason
   );

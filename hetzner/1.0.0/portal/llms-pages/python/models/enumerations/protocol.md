@@ -7,7 +7,7 @@ Type of traffic to allow
 
 # Enum Type Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of traffic to allow
 # Example
 
 ```python
-from hetznercloudapi.models.protocol_enum import ProtocolEnum
+from hetznercloudapi.models.protocol import Protocol
 
-protocol = ProtocolEnum.ESP
+protocol = Protocol.ESP
 ```
 
 

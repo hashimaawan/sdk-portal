@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := loadBalancersController.DeleteALoadBalancer(ctx, id)
+resp, err := loadBalancersApi.DeleteALoadBalancer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

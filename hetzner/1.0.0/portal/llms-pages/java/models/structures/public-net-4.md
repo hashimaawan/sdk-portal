@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip`
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,17 +20,20 @@ Public network information. The Server's IPv4 address can be found in `public_ne
 | `FloatingIps` | `List<Integer>` | Required | IDs of Floating IPs assigned to this Server | List<Integer> getFloatingIps() | setFloatingIps(List<Integer> floatingIps) |
 | `Ipv4` | [`Ipv44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ipv-44.md) | Required | IP address (v4) and its reverse DNS entry of this Server | Ipv44 getIpv4() | setIpv4(Ipv44 ipv4) |
 | `Ipv6` | [`Ipv64`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ipv-64.md) | Required | IPv6 network assigned to this Server and its reverse DNS entry | Ipv64 getIpv6() | setIpv6(Ipv64 ipv6) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.DnsPtr8;
 import cloud.hetzner.api.models.Ipv44;
 import cloud.hetzner.api.models.Ipv64;
 import cloud.hetzner.api.models.PublicNet4;
 import cloud.hetzner.api.models.ServerPublicNetFirewall;
-import cloud.hetzner.api.models.Status72Enum;
+import cloud.hetzner.api.models.Status72;
+import java.io.IOException;
 import java.util.Arrays;
 
 PublicNet4 publicNet4 = new PublicNet4.Builder(
@@ -41,6 +46,7 @@ PublicNet4 publicNet4 = new PublicNet4.Builder(
         "1.2.3.4"
     )
     .id(42)
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     new Ipv64.Builder(
         false,
@@ -49,19 +55,23 @@ PublicNet4 publicNet4 = new PublicNet4.Builder(
                 "server.example.com",
                 "2001:db8::1"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         ),
         "2001:db8::/64"
     )
     .id(42)
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build()
 )
 .firewalls(Arrays.asList(
         new ServerPublicNetFirewall.Builder()
             .id(250)
-            .status(Status72Enum.APPLIED)
+            .status(Status72.APPLIED)
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
     ))
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

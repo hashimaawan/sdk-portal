@@ -11,7 +11,7 @@ GetAllPrimaryIPsAsync(
     string name = null,
     string labelSelector = null,
     string ip = null,
-    Models.Sort2Enum? sort = null)
+    Models.Sort2? sort = null)
 ```
 
 
@@ -22,14 +22,14 @@ GetAllPrimaryIPsAsync(
 | `name` | `string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `ip` | `string` | Query, Optional | Can be used to filter resources by their ip. The response will only contain the resources matching the specified ip. |
-| `sort` | [`Sort2Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`Sort2?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 
 
 # Response Type
 
 **200**: The `primary_ips` key contains an array of Primary IP objects
 
-[`Task<Models.PrimaryIPsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-i-ps-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.PrimaryIPsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-i-ps-response.md).
 
 
 # Example Usage
@@ -38,7 +38,7 @@ GetAllPrimaryIPsAsync(
 string ip = "127.0.0.1";
 try
 {
-    PrimaryIPsResponse result = await primaryIPsController.GetAllPrimaryIPsAsync(
+    ApiResponse<PrimaryIPsResponse> result = await primaryIPsApi.GetAllPrimaryIPsAsync(
         null,
         null,
         ip

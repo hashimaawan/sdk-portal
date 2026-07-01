@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlByaWNlTW9udGhseTY
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Gross` | `string` | Required | Price with VAT added |
 | `Net` | `string` | Required | Price without VAT |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -22,13 +25,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     priceMonthly6 := models.PriceMonthly6{
-        Gross:                "1.1900000000000000",
-        Net:                  "1.0000000000",
+        Gross:                 "1.1900000000000000",
+        Net:                   "1.0000000000",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

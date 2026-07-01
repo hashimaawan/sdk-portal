@@ -19,10 +19,10 @@ Note that a Primary IP can only be assigned to a Server in the same Datacenter l
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async createAPrimaryIP(
-  body?: CreatePrimaryIPRequest,
+async createAPrimaryIp(
+  body?: CreatePrimaryIpRequest,
   requestOptions?: RequestOptions
-): Promise<ApiResponse<CreatePrimaryIPResponse>>
+): Promise<ApiResponse<CreatePrimaryIpResponse>>
 ```
 
 
@@ -30,7 +30,7 @@ async createAPrimaryIP(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreatePrimaryIPRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`CreatePrimaryIpRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -38,16 +38,16 @@ async createAPrimaryIP(
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/sdk-infrastructure/utilities/apiresponse.md) instance. The `result` property of this instance returns the response data which is of type [`CreatePrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/create-primary-ip-response.md).
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/sdk-infrastructure/utilities/apiresponse.md) instance. The `result` property of this instance returns the response data which is of type [`CreatePrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
 
 ```ts
-const body: CreatePrimaryIPRequest = {
+const body: CreatePrimaryIpRequest = {
   assigneeType: 'server',
   name: 'my-ip',
-  type: Type51Enum.Ipv4,
+  type: Type51.Ipv4,
   assigneeId: 17,
   autoDelete: false,
   datacenter: 'fsn1-dc8',
@@ -55,7 +55,7 @@ const body: CreatePrimaryIPRequest = {
 };
 
 try {
-  const response = await primaryIPsController.createAPrimaryIP(body);
+  const response = await primaryIPsApi.createAPrimaryIp(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

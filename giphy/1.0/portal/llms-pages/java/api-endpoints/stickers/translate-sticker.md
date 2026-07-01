@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
 
 ```java
-CompletableFuture<StickersTranslateResponse> translateStickerAsync(
+CompletableFuture<ApiResponse<StickersTranslateResponse>> translateStickerAsync(
     final String s)
 ```
 
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -26,7 +26,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`StickersTranslateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/stickers-translate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`StickersTranslateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/stickers-translate-response.md).
 
 
 # Example Usage
@@ -34,7 +34,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 ```java
 String s = "s8";
 
-stickersController.translateStickerAsync(s).thenAccept(result -> {
+stickersApi.translateStickerAsync(s).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

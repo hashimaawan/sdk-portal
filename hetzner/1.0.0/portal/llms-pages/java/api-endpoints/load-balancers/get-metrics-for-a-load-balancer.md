@@ -23,9 +23,9 @@ We limit the number of samples to a maximum of 500 and will adjust the step para
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LoadBalancersMetricsResponse> getMetricsForALoadBalancerAsync(
+CompletableFuture<ApiResponse<LoadBalancersMetricsResponse>> getMetricsForALoadBalancerAsync(
     final int id,
-    final Type41Enum type,
+    final Type41 type,
     final String start,
     final String end,
     final String step)
@@ -37,7 +37,7 @@ CompletableFuture<LoadBalancersMetricsResponse> getMetricsForALoadBalancerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `type` | [`Type41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `String` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `String` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `String` | Query, Optional | Resolution of results in seconds |
@@ -47,18 +47,18 @@ CompletableFuture<LoadBalancersMetricsResponse> getMetricsForALoadBalancerAsync(
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-metrics-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-Type41Enum type = Type41Enum.REQUESTS_PER_SECOND;
+Type41 type = Type41.REQUESTS_PER_SECOND;
 String start = "start4";
 String end = "end8";
 
-loadBalancersController.getMetricsForALoadBalancerAsync(id, type, start, end, null).thenAccept(result -> {
+loadBalancersApi.getMetricsForALoadBalancerAsync(id, type, start, end, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Action` | [`*models.Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/action.md) | Optional | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -21,37 +24,55 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     serversResponse1 := models.ServersResponse1{
-        Action:               models.ToPointer(models.Action{
-            Command:              "command6",
-            Error:                models.ToPointer(models.Error{
-                Code:                 "code2",
-                Message:              "message4",
+        Action:                models.ToPointer(models.Action{
+            Command:               "command6",
+            Error:                 models.ToPointer(models.Error{
+                Code:                  "code2",
+                Message:               "message4",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             }),
-            Finished:             models.ToPointer("finished0"),
-            Id:                   238,
-            Progress:             float64(143.26),
-            Resources:            []models.Resource{
+            Finished:              models.ToPointer("finished0"),
+            Id:                    238,
+            Progress:              float64(143.26),
+            Resources:             []models.Resource{
                 models.Resource{
-                    Id:                   198,
-                    Type:                 "type0",
+                    Id:                    198,
+                    Type:                  "type0",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
                 models.Resource{
-                    Id:                   198,
-                    Type:                 "type0",
+                    Id:                    198,
+                    Type:                  "type0",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
                 models.Resource{
-                    Id:                   198,
-                    Type:                 "type0",
+                    Id:                    198,
+                    Type:                  "type0",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
             },
-            Started:              "started8",
-            Status:               models.StatusEnum_RUNNING,
+            Started:               "started8",
+            Status:                models.Status_Running,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

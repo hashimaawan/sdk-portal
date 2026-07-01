@@ -66,7 +66,7 @@ def leaguedashplayershotlocations_get(measure_type,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -120,7 +120,7 @@ player_position = 'PlayerPosition8'
 
 starter_bench = 'StarterBench0'
 
-client_controller.leaguedashplayershotlocations_get(
+result = client_api.leaguedashplayershotlocations_get(
   measure_type,
   per_mode,
   plus_minus,
@@ -146,6 +146,12 @@ client_controller.leaguedashplayershotlocations_get(
   player_position,
   starter_bench
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Label selector and a list of selected targets
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,13 +17,17 @@ Label selector and a list of selected targets
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `selector` | `String` | Required | Label selector |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 label_selector7 = LabelSelector7.new(
-  'env=prod'
+  selector: 'env=prod',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

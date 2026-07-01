@@ -26,10 +26,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```java
-import com.nba.stats.NBAStatsAPIClient;
+import com.nba.stats.NbaStatsApiClient;
 import com.nba.stats.http.client.HttpProxyConfiguration;
 
-NBAStatsAPIClient client = new NBAStatsAPIClient.Builder()
+NbaStatsApiClient client = new NbaStatsApiClient.Builder()
   .httpClientConfig(configBuilder -> configBuilder
       .proxyConfig(new HttpProxyConfiguration.Builder("http://localhost",
           8080).auth("username", "password")))

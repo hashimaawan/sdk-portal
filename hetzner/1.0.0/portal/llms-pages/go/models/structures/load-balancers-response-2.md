@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VycyUyNTIwUmVzcG9uc2Uy
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `LoadBalancer` | [`models.LoadBalancer`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/load-balancer.md) | Required | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -21,24 +24,27 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     loadBalancersResponse2 := models.LoadBalancersResponse2{
-        LoadBalancer:         models.LoadBalancer{
-            Algorithm:            models.Algorithm{
-                Type:                 models.Type28Enum_ROUNDROBIN,
+        LoadBalancer:          models.LoadBalancer{
+            Algorithm:             models.Algorithm{
+                Type:                  models.Type28_RoundRobin,
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
-            Created:              "2016-01-30T23:55:00+00:00",
-            Id:                   42,
-            IncludedTraffic:      10000,
-            IngoingTraffic:       models.ToPointer(216),
-            Labels:               map[string]string{
+            Created:               "2016-01-30T23:55:00+00:00",
+            Id:                    42,
+            IncludedTraffic:       10000,
+            IngoingTraffic:        models.ToPointer(216),
+            Labels:                map[string]string{
                 "key0": "labels2",
                 "key1": "labels1",
             },
-            LoadBalancerType:     models.LoadBalancerType{
+            LoadBalancerType:      models.LoadBalancerType{
                 Deprecated:              models.ToPointer("2016-01-30T23:50:00+00:00"),
                 Description:             "LB11",
                 Id:                      float64(1),
@@ -49,54 +55,84 @@ func main() {
                 Name:                    "lb11",
                 Prices:                  []models.Price{
                     models.Price{
-                        Location:             "fsn1",
-                        PriceHourly:          models.PriceHourly{
-                            Gross:                "1.1900000000000000",
-                            Net:                  "1.0000000000",
+                        Location:              "fsn1",
+                        PriceHourly:           models.PriceHourly{
+                            Gross:                 "1.1900000000000000",
+                            Net:                   "1.0000000000",
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         },
-                        PriceMonthly:         models.PriceMonthly{
-                            Gross:                "1.1900000000000000",
-                            Net:                  "1.0000000000",
+                        PriceMonthly:          models.PriceMonthly{
+                            Gross:                 "1.1900000000000000",
+                            Net:                   "1.0000000000",
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
+                        },
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
                         },
                     },
                 },
+                AdditionalProperties:    map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
-            Location:             models.Location{
-                City:                 "Falkenstein",
-                Country:              "DE",
-                Description:          "Falkenstein DC Park 1",
-                Id:                   float64(1),
-                Latitude:             float64(50.47612),
-                Longitude:            float64(12.370071),
-                Name:                 "fsn1",
-                NetworkZone:          "eu-central",
+            Location:              models.Location{
+                City:                  "Falkenstein",
+                Country:               "DE",
+                Description:           "Falkenstein DC Park 1",
+                Id:                    float64(1),
+                Latitude:              float64(50.47612),
+                Longitude:             float64(12.370071),
+                Name:                  "fsn1",
+                NetworkZone:           "eu-central",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
-            Name:                 "my-resource",
-            OutgoingTraffic:      models.ToPointer(42),
-            PrivateNet:           []models.PrivateNet{
+            Name:                  "my-resource",
+            OutgoingTraffic:       models.ToPointer(42),
+            PrivateNet:            []models.PrivateNet{
                 models.PrivateNet{
-                    Ip:                   models.ToPointer("10.0.0.2"),
-                    Network:              models.ToPointer(4711),
+                    Ip:                    models.ToPointer("10.0.0.2"),
+                    Network:               models.ToPointer(4711),
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
             },
-            Protection:           models.Protection{
-                Delete:               false,
-            },
-            PublicNet:            models.PublicNet{
-                Enabled:              false,
-                Ipv4:                 models.Ipv4{
-                    DnsPtr:               models.NewOptional(models.ToPointer("lb1.example.com")),
-                    Ip:                   models.NewOptional(models.ToPointer("1.2.3.4")),
-                },
-                Ipv6:                 models.Ipv6{
-                    DnsPtr:               models.NewOptional(models.ToPointer("lb1.example.com")),
-                    Ip:                   models.NewOptional(models.ToPointer("2001:db8::1")),
+            Protection:            models.Protection{
+                Delete:                false,
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
                 },
             },
-            Services:             []models.LoadBalancerService{
+            PublicNet:             models.PublicNet{
+                Enabled:               false,
+                Ipv4:                  models.Ipv4{
+                    DnsPtr:                models.NewOptional(models.ToPointer("lb1.example.com")),
+                    Ip:                    models.NewOptional(models.ToPointer("1.2.3.4")),
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
+                },
+                Ipv6:                  models.Ipv6{
+                    DnsPtr:                models.NewOptional(models.ToPointer("lb1.example.com")),
+                    Ip:                    models.NewOptional(models.ToPointer("2001:db8::1")),
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
+                },
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            Services:              []models.LoadBalancerService{
                 models.LoadBalancerService{
-                    DestinationPort:      80,
-                    HealthCheck:          models.LoadBalancerServiceHealthCheck{
+                    DestinationPort:       80,
+                    HealthCheck:           models.LoadBalancerServiceHealthCheck{
                         Http:     models.ToPointer(models.Http{
                             Domain:      models.ToPointer("domain4"),
                             Path:        "path2",
@@ -110,101 +146,167 @@ func main() {
                         }),
                         Interval: 15,
                         Port:     4711,
-                        Protocol: models.Protocol6Enum_HTTP,
+                        Protocol: models.Protocol6_Http,
                         Retries:  3,
                         Timeout:  10,
                     },
-                    Http:                 models.ToPointer(models.LoadBalancerServiceHTTP{
-                        Certificates:         []int{
+                    Http:                  models.ToPointer(models.LoadBalancerServiceHttp{
+                        Certificates:          []int{
                             180,
                         },
-                        CookieLifetime:       models.ToPointer(160),
-                        CookieName:           models.ToPointer("cookie_name6"),
-                        RedirectHttp:         models.ToPointer(false),
-                        StickySessions:       models.ToPointer(false),
+                        CookieLifetime:        models.ToPointer(160),
+                        CookieName:            models.ToPointer("cookie_name6"),
+                        RedirectHttp:          models.ToPointer(false),
+                        StickySessions:        models.ToPointer(false),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
                     }),
-                    ListenPort:           443,
-                    Protocol:             models.Protocol7Enum_HTTPS,
-                    Proxyprotocol:        false,
+                    ListenPort:            443,
+                    Protocol:              models.Protocol7_Https,
+                    Proxyprotocol:         false,
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
             },
-            Targets:              []models.LoadBalancerTarget{
+            Targets:               []models.LoadBalancerTarget{
                 models.LoadBalancerTarget{
-                    HealthStatus:         []models.HealthStatus{
+                    HealthStatus:          []models.HealthStatus{
                         models.HealthStatus{
-                            ListenPort:           models.ToPointer(142),
-                            Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                            ListenPort:            models.ToPointer(142),
+                            Status:                models.ToPointer(models.Status30_Unknown),
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         },
                         models.HealthStatus{
-                            ListenPort:           models.ToPointer(142),
-                            Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                            ListenPort:            models.ToPointer(142),
+                            Status:                models.ToPointer(models.Status30_Unknown),
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         },
                     },
-                    Ip:                   models.ToPointer(models.Ip{
-                        Ip:                   "ip8",
+                    Ip:                    models.ToPointer(models.Ip{
+                        Ip:                    "ip8",
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
                     }),
-                    LabelSelector:        models.ToPointer(models.LabelSelector7{
-                        Selector:             "selector8",
+                    LabelSelector:         models.ToPointer(models.LabelSelector7{
+                        Selector:              "selector8",
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
                     }),
-                    Server:               models.ToPointer(models.LoadBalancerTargetServer{
-                        Id:                   14,
+                    Server:                models.ToPointer(models.LoadBalancerTargetServer{
+                        Id:                    14,
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
                     }),
-                    Targets:              []models.Target{
+                    Targets:               []models.Target{
                         models.Target{
-                            HealthStatus:         []models.HealthStatus{
+                            HealthStatus:          []models.HealthStatus{
                                 models.HealthStatus{
-                                    ListenPort:           models.ToPointer(142),
-                                    Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                                    ListenPort:            models.ToPointer(142),
+                                    Status:                models.ToPointer(models.Status30_Unknown),
+                                    AdditionalProperties:  map[string]interface{}{
+                                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                    },
                                 },
                                 models.HealthStatus{
-                                    ListenPort:           models.ToPointer(142),
-                                    Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                                    ListenPort:            models.ToPointer(142),
+                                    Status:                models.ToPointer(models.Status30_Unknown),
+                                    AdditionalProperties:  map[string]interface{}{
+                                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                    },
                                 },
                             },
-                            Server:               models.ToPointer(models.Server11{
-                                Id:                   14,
+                            Server:                models.ToPointer(models.Server11{
+                                Id:                    14,
+                                AdditionalProperties:  map[string]interface{}{
+                                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                },
                             }),
-                            Type:                 models.ToPointer("type2"),
-                            UsePrivateIp:         models.ToPointer(false),
+                            Type:                  models.ToPointer("type2"),
+                            UsePrivateIp:          models.ToPointer(false),
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         },
                         models.Target{
-                            HealthStatus:         []models.HealthStatus{
+                            HealthStatus:          []models.HealthStatus{
                                 models.HealthStatus{
-                                    ListenPort:           models.ToPointer(142),
-                                    Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                                    ListenPort:            models.ToPointer(142),
+                                    Status:                models.ToPointer(models.Status30_Unknown),
+                                    AdditionalProperties:  map[string]interface{}{
+                                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                    },
                                 },
                                 models.HealthStatus{
-                                    ListenPort:           models.ToPointer(142),
-                                    Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                                    ListenPort:            models.ToPointer(142),
+                                    Status:                models.ToPointer(models.Status30_Unknown),
+                                    AdditionalProperties:  map[string]interface{}{
+                                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                    },
                                 },
                             },
-                            Server:               models.ToPointer(models.Server11{
-                                Id:                   14,
+                            Server:                models.ToPointer(models.Server11{
+                                Id:                    14,
+                                AdditionalProperties:  map[string]interface{}{
+                                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                },
                             }),
-                            Type:                 models.ToPointer("type2"),
-                            UsePrivateIp:         models.ToPointer(false),
+                            Type:                  models.ToPointer("type2"),
+                            UsePrivateIp:          models.ToPointer(false),
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         },
                         models.Target{
-                            HealthStatus:         []models.HealthStatus{
+                            HealthStatus:          []models.HealthStatus{
                                 models.HealthStatus{
-                                    ListenPort:           models.ToPointer(142),
-                                    Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                                    ListenPort:            models.ToPointer(142),
+                                    Status:                models.ToPointer(models.Status30_Unknown),
+                                    AdditionalProperties:  map[string]interface{}{
+                                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                    },
                                 },
                                 models.HealthStatus{
-                                    ListenPort:           models.ToPointer(142),
-                                    Status:               models.ToPointer(models.Status30Enum_UNKNOWN),
+                                    ListenPort:            models.ToPointer(142),
+                                    Status:                models.ToPointer(models.Status30_Unknown),
+                                    AdditionalProperties:  map[string]interface{}{
+                                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                    },
                                 },
                             },
-                            Server:               models.ToPointer(models.Server11{
-                                Id:                   14,
+                            Server:                models.ToPointer(models.Server11{
+                                Id:                    14,
+                                AdditionalProperties:  map[string]interface{}{
+                                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                                },
                             }),
-                            Type:                 models.ToPointer("type2"),
-                            UsePrivateIp:         models.ToPointer(false),
+                            Type:                  models.ToPointer("type2"),
+                            UsePrivateIp:          models.ToPointer(false),
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         },
                     },
-                    Type:                 models.Type29Enum_IP,
+                    Type:                  models.Type29_Ip,
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
             },
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

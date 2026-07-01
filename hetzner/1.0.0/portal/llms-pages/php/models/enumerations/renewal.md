@@ -7,7 +7,7 @@ Status of the renewal process of the Certificate.
 
 # Enum Type Name
 
-`RenewalEnum`
+`Renewal`
 
 
 # Fields
@@ -23,9 +23,9 @@ Status of the renewal process of the Certificate.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\RenewalEnum;
+use HetznerCloudApiLib\Models\Renewal;
 
-$renewal = RenewalEnum::FAILED;
+$renewal = Renewal::FAILED;
 ```
 
 

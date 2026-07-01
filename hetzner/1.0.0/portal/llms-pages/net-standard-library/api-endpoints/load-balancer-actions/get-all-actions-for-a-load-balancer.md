@@ -9,8 +9,8 @@ Returns all Action objects for a Load Balancer. You can sort the results by usin
 ```csharp
 GetAllActionsForALoadBalancerAsync(
     int id,
-    Models.ParameterSortEnum? sort = null,
-    Models.ParameterStatusEnum? status = null)
+    Models.ParameterSort? sort = null,
+    Models.ParameterStatus? status = null)
 ```
 
 
@@ -19,15 +19,15 @@ GetAllActionsForALoadBalancerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `sort` | [`ParameterSortEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`ParameterStatusEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`ParameterSort?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`ParameterStatus?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
 
 **200**: The `actions` key contains a list of Actions
 
-[`Task<Models.ActionsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -36,7 +36,7 @@ GetAllActionsForALoadBalancerAsync(
 int id = 112;
 try
 {
-    ActionsResponse result = await loadBalancerActionsController.GetAllActionsForALoadBalancerAsync(id);
+    ApiResponse<ActionsResponse> result = await loadBalancerActionsApi.GetAllActionsForALoadBalancerAsync(id);
 }
 catch (ApiException e)
 {

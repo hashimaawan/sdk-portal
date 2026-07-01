@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlc3BvbnNl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,226 +18,311 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `next_actions` | [`Array[Action]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action.md) | Required | - |
 | `root_password` | `String` | Required | Root password when no SSH keys have been specified |
 | `server` | [`Server18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/server-18.md) | Required | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 create_server_response = CreateServerResponse.new(
-  Action.new(
-    'start_server',
-    Error.new(
-      'action_failed',
-      'Action failed'
+  action: Action.new(
+    command: 'start_server',
+    error: Error.new(
+      code: 'action_failed',
+      message: 'Action failed',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    '2016-01-30T23:55:00+00:00',
-    42,
-    100,
-    [
+    finished: '2016-01-30T23:55:00+00:00',
+    id: 42,
+    progress: 100,
+    resources: [
       Resource.new(
-        42,
-        'server'
+        id: 42,
+        type: 'server',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    '2016-01-30T23:55:00+00:00',
-    StatusEnum::RUNNING
+    started: '2016-01-30T23:55:00+00:00',
+    status: Status::RUNNING,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  [
+  next_actions: [
     Action.new(
-      'start_server',
-      Error.new(
-        'action_failed',
-        'Action failed'
+      command: 'start_server',
+      error: Error.new(
+        code: 'action_failed',
+        message: 'Action failed',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      '2016-01-30T23:55:00+00:00',
-      42,
-      100,
-      [
+      finished: '2016-01-30T23:55:00+00:00',
+      id: 42,
+      progress: 100,
+      resources: [
         Resource.new(
-          42,
-          'server'
+          id: 42,
+          type: 'server',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      '2016-01-30T23:55:00+00:00',
-      StatusEnum::SUCCESS
+      started: '2016-01-30T23:55:00+00:00',
+      status: Status::SUCCESS,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  'YItygq1v3GYjjMomLaKc',
-  Server18.new(
-    '22-02',
-    '2016-01-30T23:55:00+00:00',
-    Datacenter6.new(
-      'Falkenstein DC Park 8',
-      42,
-      Location.new(
-        'Falkenstein',
-        'DE',
-        'Falkenstein DC Park 1',
-        1,
-        50.47612,
-        12.370071,
-        'fsn1',
-        'eu-central'
+  root_password: 'YItygq1v3GYjjMomLaKc',
+  server: Server18.new(
+    backup_window: '22-02',
+    created: '2016-01-30T23:55:00+00:00',
+    datacenter: Datacenter6.new(
+      description: 'Falkenstein DC Park 8',
+      id: 42,
+      location: Location.new(
+        city: 'Falkenstein',
+        country: 'DE',
+        description: 'Falkenstein DC Park 1',
+        id: 1,
+        latitude: 50.47612,
+        longitude: 12.370071,
+        name: 'fsn1',
+        network_zone: 'eu-central',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      'fsn1-dc8',
-      ServerTypes.new(
-        [
+      name: 'fsn1-dc8',
+      server_types: ServerTypes.new(
+        available: [
           1,
           2,
           3
         ],
-        [
+        available_for_migration: [
           1,
           2,
           3
         ],
-        [
+        supported: [
           1,
           2,
           3
-        ]
-      )
+        ],
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
+      ),
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    42,
-    Image.new(
-      nil,
-      '2016-01-30T23:55:00+00:00',
-      CreatedFrom.new(
-        1,
-        'Server'
+    id: 42,
+    image: Image.new(
+      bound_to: nil,
+      created: '2016-01-30T23:55:00+00:00',
+      created_from: CreatedFrom.new(
+        id: 1,
+        name: 'Server',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      nil,
-      '2018-02-28T00:00:00+00:00',
-      'Ubuntu 20.04 Standard 64 bit',
-      10,
-      42,
-      2.3,
-      {
-        'key0': 'labels4'
+      deleted: nil,
+      deprecated: '2018-02-28T00:00:00+00:00',
+      description: 'Ubuntu 20.04 Standard 64 bit',
+      disk_size: 10,
+      id: 42,
+      image_size: 2.3,
+      labels: {
+        'key0' => 'labels4'
       },
-      'ubuntu-20.04',
-      OsFlavorEnum::UBUNTU,
-      '20.04',
-      Protection.new(
-        false
+      name: 'ubuntu-20.04',
+      os_flavor: OsFlavor::UBUNTU,
+      os_version: '20.04',
+      protection: Protection.new(
+        delete: false,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      Status24Enum::UNAVAILABLE,
-      Type22Enum::SNAPSHOT,
-      false
+      status: Status24::UNAVAILABLE,
+      type: Type22::SNAPSHOT,
+      rapid_deploy: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    654321,
-    123456,
-    Iso2.new(
-      '2018-02-28T00:00:00+00:00',
-      'FreeBSD 11.0 x64',
-      42,
-      'FreeBSD-11.0-RELEASE-amd64-dvd1',
-      Type26Enum::PUBLIC
+    included_traffic: 654321,
+    ingoing_traffic: 123456,
+    iso: Iso2.new(
+      deprecated: '2018-02-28T00:00:00+00:00',
+      description: 'FreeBSD 11.0 x64',
+      id: 42,
+      name: 'FreeBSD-11.0-RELEASE-amd64-dvd1',
+      type: Type26::PUBLIC,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    {
-      'key0': 'labels0',
-      'key1': 'labels9'
+    labels: {
+      'key0' => 'labels0',
+      'key1' => 'labels9'
     },
-    false,
-    'my-resource',
-    123456,
-    50,
-    [
+    locked: false,
+    name: 'my-resource',
+    outgoing_traffic: 123456,
+    primary_disk_size: 50,
+    private_net: [
       PrivateNet4.new(
-        [
+        alias_ips: [
           'alias_ips4'
         ],
-        '10.0.0.2',
-        '86:00:ff:2a:7d:e1',
-        4711
+        ip: '10.0.0.2',
+        mac_address: '86:00:ff:2a:7d:e1',
+        network: 4711,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    Protection20.new(
-      false,
-      false
+    protection: Protection20.new(
+      delete: false,
+      rebuild: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    PublicNet4.new(
-      [
+    public_net: PublicNet4.new(
+      floating_ips: [
         478
       ],
-      Ipv44.new(
-        false,
-        'server01.example.com',
-        '1.2.3.4',
-        42
+      ipv4: Ipv44.new(
+        blocked: false,
+        dns_ptr: 'server01.example.com',
+        ip: '1.2.3.4',
+        id: 42,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      Ipv64.new(
-        false,
-        [
+      ipv6: Ipv64.new(
+        blocked: false,
+        dns_ptr: [
           DnsPtr8.new(
-            'server.example.com',
-            '2001:db8::1'
+            dns_ptr: 'server.example.com',
+            ip: '2001:db8::1',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
         ],
-        '2001:db8::/64',
-        42
+        ip: '2001:db8::/64',
+        id: 42,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      [
+      firewalls: [
         ServerPublicNetFirewall.new(
-          250,
-          Status72Enum::APPLIED
+          id: 250,
+          status: Status72::APPLIED,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
         ServerPublicNetFirewall.new(
-          250,
-          Status72Enum::APPLIED
-        )
-      ]
-    ),
-    false,
-    ServerType1.new(
-      1,
-      CpuTypeEnum::SHARED,
-      false,
-      'CX11',
-      25,
-      1,
-      1,
-      'cx11',
-      [
-        Price9.new(
-          'fsn1',
-          PriceHourly8.new(
-            '1.1900000000000000',
-            '1.0000000000'
-          ),
-          PriceMonthly10.new(
-            '1.1900000000000000',
-            '1.0000000000'
-          )
+          id: 250,
+          status: Status72::APPLIED,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      StorageTypeEnum::LOCAL
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    Status73Enum::STARTING,
-    [
+    rescue_enabled: false,
+    server_type: ServerType1.new(
+      cores: 1,
+      cpu_type: CpuType::SHARED,
+      deprecated: false,
+      description: 'CX11',
+      disk: 25,
+      id: 1,
+      memory: 1,
+      name: 'cx11',
+      prices: [
+        Price9.new(
+          location: 'fsn1',
+          price_hourly: PriceHourly8.new(
+            gross: '1.1900000000000000',
+            net: '1.0000000000',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
+          ),
+          price_monthly: PriceMonthly10.new(
+            gross: '1.1900000000000000',
+            net: '1.0000000000',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
+          ),
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
+        )
+      ],
+      storage_type: StorageType::LOCAL,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
+    ),
+    status: Status73::STARTING,
+    load_balancers: [
       144,
       143,
       142
     ],
-    PlacementGroupNullable.new(
-      'created8',
-      236,
-      {
-        'key0': 'labels4'
+    placement_group: PlacementGroupNullable.new(
+      created: 'created8',
+      id: 236,
+      labels: {
+        'key0' => 'labels4'
       },
-      'name8',
-      [
+      name: 'name8',
+      servers: [
         251,
         252,
         253
       ],
-      'type2'
+      type: 'type2',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    [
+    volumes: [
       91,
       92
-    ]
-  )
+    ],
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

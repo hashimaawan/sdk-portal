@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-TeaminfocommonGETAsync(
+TeaminfocommonGetAsync(
     string season,
-    string teamID,
-    string leagueID,
+    string teamId,
+    string leagueId,
     string seasonType)
 ```
 
@@ -18,8 +18,8 @@ TeaminfocommonGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
 
@@ -34,15 +34,15 @@ TeaminfocommonGETAsync(
 
 ```csharp
 string season = "Season0";
-string teamID = "TeamID8";
-string leagueID = "LeagueID4";
+string teamId = "TeamID8";
+string leagueId = "LeagueID4";
 string seasonType = "SeasonType8";
 try
 {
-    await aPIController.TeaminfocommonGETAsync(
+    await api.TeaminfocommonGetAsync(
         season,
-        teamID,
-        leagueID,
+        teamId,
+        leagueId,
         seasonType
     );
 }

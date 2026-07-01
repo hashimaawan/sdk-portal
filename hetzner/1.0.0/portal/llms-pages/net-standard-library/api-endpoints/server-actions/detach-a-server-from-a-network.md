@@ -25,7 +25,7 @@ DetachAServerFromANetworkAsync(
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ DetachFromNetworkRequest body = new DetachFromNetworkRequest
 
 try
 {
-    ActionResponse result = await serverActionsController.DetachAServerFromANetworkAsync(
+    ApiResponse<ActionResponse> result = await serverActionsApi.DetachAServerFromANetworkAsync(
         id,
         body
     );

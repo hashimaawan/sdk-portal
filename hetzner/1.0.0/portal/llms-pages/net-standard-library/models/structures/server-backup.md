@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Will increase base Server costs by specific percentage
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -15,16 +17,19 @@ Will increase base Server costs by specific percentage
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Percentage` | `string` | Required | Percentage by how much the base price will increase |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 ServerBackup serverBackup = new ServerBackup
 {
     Percentage = "20.0000000000",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

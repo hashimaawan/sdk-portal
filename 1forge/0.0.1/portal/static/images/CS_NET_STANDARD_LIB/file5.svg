@@ -215,7 +215,7 @@
   <path d="M39.523,7.433 L39.523,26.567 L34.717,28.500 L24.266,18.431 L17.883,23.252 L16.510,22.549 L16.510,11.401 L17.883,10.723 L24.291,15.544 L34.692,5.500 L39.523,7.433 Z" class="cls-4"/>
   <path d="M33.929,12.556 L33.929,21.394 L28.029,17.000 L33.929,12.556 Z" class="cls-5"/>
   <path d="M18.544,14.389 L18.544,19.662 L21.519,17.025 L18.544,14.389 Z" class="cls-5"/>
-  <text transform="translate(52 20) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">M1ForgeFinanceAPIs - Microsoft Visual Studio</tspan></text>
+  <text transform="translate(52 20) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">M1ForgeFinanceApIs - Microsoft Visual Studio</tspan></text>
   <text transform="translate(678 21) scale(0.5 0.5)" class="cls-6"><tspan class="cls-8">Quick Launch (Ctrl + Q)</tspan></text>
   <rect x="26" y="103" width="561" height="380" class="cls-9"/>
   <rect x="42" y="125" width="527" height="341" class="cls-10"/>
@@ -236,7 +236,7 @@
   <path d="M625.153,415.591 L618.654,419.341 L618.654,411.841 L625.153,415.591 Z" class="cls-16"/>
   <text transform="translate(639 418) scale(0.2 0.2)" class="cls-17"><tspan x="0" class="cls-18">C#</tspan></text>
   <text transform="translate(641 177) scale(0.33 0.33)" class="cls-19"><tspan class="cls-20 bold">TestConsoleProject</tspan></text>
-  <text transform="translate(626 158) scale(0.33 0.33)" class="cls-21"><tspan class="cls-22">Solution 'M1ForgeFinanceAPIs' (2 projects) </tspan></text>
+  <text transform="translate(626 158) scale(0.33 0.33)" class="cls-21"><tspan class="cls-22">Solution 'M1ForgeFinanceApIs' (2 projects) </tspan></text>
   <text transform="translate(660 95) scale(0.33 0.33)" class="cls-23"><tspan x="0" class="cls-24">Solution Explorer</tspan></text>
   <path d="M831.019,88.530 L828.048,91.500 L831.019,94.470 L831.019,94.470 C831.155,94.605 831.239,94.793 831.239,95.000 C831.239,95.414 830.903,95.750 830.488,95.750 C830.281,95.750 830.094,95.666 829.958,95.530 L829.958,95.530 L826.986,92.561 L824.015,95.530 L824.015,95.530 C823.879,95.666 823.692,95.750 823.484,95.750 C823.070,95.750 822.734,95.414 822.734,95.000 C822.734,94.793 822.818,94.605 822.954,94.470 L822.954,94.470 L825.925,91.500 L822.954,88.530 L822.954,88.530 C822.818,88.395 822.734,88.207 822.734,88.000 C822.734,87.586 823.070,87.250 823.484,87.250 C823.692,87.250 823.879,87.334 824.015,87.470 L824.015,87.470 L826.986,90.439 L829.958,87.470 L829.958,87.470 C830.094,87.334 830.281,87.250 830.488,87.250 C830.903,87.250 831.239,87.586 831.239,88.000 C831.239,88.207 831.155,88.395 831.019,88.530 L831.019,88.530 Z" class="cls-25"/>
   <text transform="translate(193 55) scale(0.5 0.5)" class="cls-26"><tspan class="cls-27">Build</tspan></text>
@@ -288,7 +288,7 @@
   <path d="M653.642,384.512 L655.115,384.512 L655.115,385.263 L653.642,385.263 L653.642,384.512 Z" class="cls-35"/>
   <text transform="translate(665 354) scale(0.3 0.3)" class="cls-29"><tspan class="cls-30">System.Xml</tspan></text>
   <text transform="translate(665 371) scale(0.3 0.3)" class="cls-29"><tspan class="cls-30">System.Xml.Linq</tspan></text>
-  <text transform="translate(665 388) scale(0.3 0.3)" class="cls-29"><tspan class="cls-20">M1ForgeFinanceAPIs.S...</tspan></text>
+  <text transform="translate(665 388) scale(0.3 0.3)" class="cls-29"><tspan class="cls-20">M1ForgeFinanceApIs.S...</tspan></text>
   <text transform="translate(653 403) scale(0.3 0.3)" class="cls-29"><tspan class="cls-30">App.config</tspan></text>
   <text transform="translate(653 419) scale(0.3 0.3)" class="cls-29"><tspan class="cls-30">Program.cs</tspan></text>
   <path d="M643.798,193.054 C643.749,192.861 643.507,192.793 643.366,192.934 L642.216,194.079 C641.961,194.333 641.547,194.333 641.292,194.079 L640.765,193.554 C640.509,193.300 640.509,192.888 640.765,192.633 L641.900,191.503 C642.043,191.361 641.973,191.117 641.777,191.072 C641.508,191.009 641.224,190.986 640.931,191.009 C639.673,191.109 638.514,192.285 638.436,193.540 C638.406,194.016 638.502,194.466 638.691,194.864 L634.672,198.303 C634.492,198.457 634.384,198.680 634.373,198.917 C634.363,199.154 634.452,199.384 634.619,199.553 L635.300,200.244 C635.469,200.415 635.702,200.508 635.942,200.500 C636.183,200.492 636.409,200.385 636.566,200.204 L640.047,196.188 C640.435,196.361 640.870,196.449 641.329,196.420 C642.598,196.342 643.779,195.179 643.871,193.916 C643.893,193.617 643.866,193.327 643.798,193.054 Z" class="cls-16"/>
@@ -298,7 +298,7 @@
   <rect x="621" y="167" width="15" height="15" class="cls-10"/>
   <path d="M622.366,168.000 L634.873,168.000 L634.873,180.500 L622.366,180.500 L622.366,168.000 Z" class="cls-33"/>
   <text transform="translate(629 177) scale(0.2 0.2)" class="cls-17"><tspan x="0" class="cls-36">C#</tspan></text>
-  <text transform="translate(641 434) scale(0.33 0.33)" class="cls-19"><tspan class="cls-20">M1ForgeFinanceAPIs.S... (Portable)</tspan></text>
+  <text transform="translate(641 434) scale(0.33 0.33)" class="cls-19"><tspan class="cls-20">M1ForgeFinanceApIs.S... (Portable)</tspan></text>
   <path d="M614.361,427.500 L607.357,434.500 L614.361,434.500 L614.361,427.500 Z" class="cls-28"/>
   <path d="M622.366,425.000 L634.873,425.000 L634.873,437.500 L622.366,437.500 L622.366,425.000 Z" class="cls-33"/>
   <text transform="translate(629 434) scale(0.2 0.2)" class="cls-17"><tspan x="0" class="cls-36">C#</tspan></text>

@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get instance
 
-An instance of the `ImageActionsController` class can be accessed from the API Client.
+An instance of the `ImageActionsApi` class can be accessed from the API Client.
 
 ```
-image_actions_controller = client.image_actions
+image_actions_api = client.image_actions
 ```
 
 

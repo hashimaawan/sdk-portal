@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> allstarballotpredictorGETAsync(
+CompletableFuture<ApiResponse<Void>> allstarballotpredictorGetAsync(
     final String westPlayer1,
     final String westPlayer2,
     final String westPlayer3,
@@ -58,8 +58,9 @@ String eastPlayer3 = "EastPlayer32";
 String eastPlayer4 = "EastPlayer44";
 String eastPlayer5 = "EastPlayer54";
 
-aPIController.allstarballotpredictorGETAsync(westPlayer1, westPlayer2, westPlayer3, westPlayer4, westPlayer5, eastPlayer1, eastPlayer2, eastPlayer3, eastPlayer4, eastPlayer5, null).thenAccept(result -> {
+api.allstarballotpredictorGetAsync(westPlayer1, westPlayer2, westPlayer3, westPlayer4, westPlayer5, eastPlayer1, eastPlayer2, eastPlayer3, eastPlayer4, eastPlayer5, null).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -20,12 +22,14 @@ The User Object contains information about the user associated with a GIF and UR
 | `ProfileUrl` | `string` | Optional | The URL for this user's profile. |
 | `Twitter` | `string` | Optional | The Twitter username associated with this user, if applicable. |
 | `Username` | `string` | Optional | The username associated with this user. |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using GiphyAPI.Standard.Models;
+using GiphyApi.Standard.Models;
+using GiphyApi.Standard.Utilities;
 
 User user = new User
 {
@@ -35,6 +39,7 @@ User user = new User
     ProfileUrl = "https://giphy.com/cheezburger/",
     Twitter = "@joecool4000",
     Username = "joecool4000",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

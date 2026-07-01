@@ -11,9 +11,9 @@ If the Primary IP object changes during the request, the response will be a “c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-UpdateAPrimaryIPAsync(
+UpdateAPrimaryIpAsync(
     int id,
-    Models.UpdatePrimaryIPRequest body = null)
+    Models.UpdatePrimaryIpRequest body = null)
 ```
 
 
@@ -22,21 +22,21 @@ UpdateAPrimaryIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the resource |
-| `body` | [`UpdatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-[`Task<Models.PrimaryIPResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.PrimaryIpResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-ip-response.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-UpdatePrimaryIPRequest body = new UpdatePrimaryIPRequest
+UpdatePrimaryIpRequest body = new UpdatePrimaryIpRequest
 {
     AutoDelete = true,
     Labels = ApiHelper.JsonDeserialize<object>("{\"labelkey\":\"value\"}"),
@@ -45,7 +45,7 @@ UpdatePrimaryIPRequest body = new UpdatePrimaryIPRequest
 
 try
 {
-    PrimaryIPResponse result = await primaryIPsController.UpdateAPrimaryIPAsync(
+    ApiResponse<PrimaryIpResponse> result = await primaryIPsApi.UpdateAPrimaryIpAsync(
         id,
         body
     );

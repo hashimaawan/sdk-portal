@@ -43,23 +43,23 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreateFirewallRequest{
-    ApplyTo:              []models.ApplyTo{
+    ApplyTo:               []models.ApplyTo{
         models.ApplyTo{
-            Server:               models.ToPointer(models.Server2{
-                Id:                   42,
+            Server:                models.ToPointer(models.Server2{
+                Id:                    42,
             }),
-            Type:                 models.Type7Enum_SERVER,
+            Type:                  models.Type7_Server,
         },
     },
-    Labels:               models.ToPointer(interface{}("[env, dev]")),
-    Name:                 "Corporate Intranet Protection",
-    Rules:                []models.Rule{
+    Labels:                models.ToPointer(interface{}("[env, dev]")),
+    Name:                  "Corporate Intranet Protection",
+    Rules:                 []models.Rule{
         models.Rule{
-            Description:          models.NewOptional(models.ToPointer("Allow port 80")),
-            Direction:            models.DirectionEnum_IN,
-            Port:                 models.ToPointer("80"),
-            Protocol:             models.ProtocolEnum_TCP,
-            SourceIps:            []string{
+            Description:           models.NewOptional(models.ToPointer("Allow port 80")),
+            Direction:             models.Direction_In,
+            Port:                  models.ToPointer("80"),
+            Protocol:              models.Protocol_Tcp,
+            SourceIps:             []string{
                 "28.239.13.1/32",
                 "28.239.14.0/24",
                 "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128",
@@ -68,7 +68,7 @@ body := models.CreateFirewallRequest{
     },
 }
 
-apiResponse, err := firewallsController.CreateAFirewall(ctx, &body)
+apiResponse, err := firewallsApi.CreateAFirewall(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

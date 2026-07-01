@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZUZsb2F0aW5nSVBSZXF1ZXN0
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
-`CreateFloatingIPRequest`
+`CreateFloatingIpRequest`
 
 
 # Fields
@@ -17,21 +19,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `unknown \| undefined` | Optional | User-defined labels (key-value pairs) |
 | `name` | `string \| undefined` | Optional | - |
 | `server` | `number \| undefined` | Optional | Server to assign the Floating IP to |
-| `type` | [`Type17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-17.md) | Required | Floating IP type |
+| `type` | [`Type17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-17.md) | Required | Floating IP type |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { CreateFloatingIPRequest, Type17Enum } from 'hetzner-cloud-apilib';
+import { CreateFloatingIpRequest, Type17 } from 'hetzner-cloud-apilib';
 
-const createFloatingIPRequest: CreateFloatingIPRequest = {
-  type: Type17Enum.Ipv4,
+const createFloatingIpRequest: CreateFloatingIpRequest = {
+  type: Type17.Ipv4,
   description: 'Web Frontend',
   homeLocation: 'fsn1',
   labels: { 'labelkey': 'value' },
   name: 'Web Frontend',
   server: 42,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

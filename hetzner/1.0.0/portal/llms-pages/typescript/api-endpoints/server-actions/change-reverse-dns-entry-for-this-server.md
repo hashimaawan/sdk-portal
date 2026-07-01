@@ -9,7 +9,7 @@ Floating IPs assigned to the Server are not affected by this.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async changeReverseDNSEntryForThisServer(
+async changeReverseDnsEntryForThisServer(
   id: number,
   body?: ServersActionsChangeDnsPtrRequest,
   requestOptions?: RequestOptions
@@ -44,7 +44,7 @@ const body: ServersActionsChangeDnsPtrRequest = {
 };
 
 try {
-  const response = await serverActionsController.changeReverseDNSEntryForThisServer(
+  const response = await serverActionsApi.changeReverseDnsEntryForThisServer(
     id,
     body
   );

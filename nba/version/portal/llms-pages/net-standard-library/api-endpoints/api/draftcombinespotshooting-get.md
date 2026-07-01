@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-DraftcombinespotshootingGETAsync(
-    string leagueID,
+DraftcombinespotshootingGetAsync(
+    string leagueId,
     string seasonYear)
 ```
 
@@ -15,7 +15,7 @@ DraftcombinespotshootingGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonYear` | `string` | Query, Required | - |
 
 
@@ -29,12 +29,12 @@ DraftcombinespotshootingGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string seasonYear = "SeasonYear6";
 try
 {
-    await aPIController.DraftcombinespotshootingGETAsync(
-        leagueID,
+    await api.DraftcombinespotshootingGetAsync(
+        leagueId,
         seasonYear
     );
 }

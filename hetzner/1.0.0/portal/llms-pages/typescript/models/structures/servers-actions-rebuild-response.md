@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMFJlYnVpbGQlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,15 +16,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`Action \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/action.md) | Optional | - |
 | `rootPassword` | `string \| null \| undefined` | Optional | New root password when not using SSH keys |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import {
-  ServersActionsRebuildResponse,
-  StatusEnum,
-} from 'hetzner-cloud-apilib';
+import { ServersActionsRebuildResponse, Status } from 'hetzner-cloud-apilib';
 
 const serversActionsRebuildResponse: ServersActionsRebuildResponse = {
   action: {
@@ -30,6 +30,9 @@ const serversActionsRebuildResponse: ServersActionsRebuildResponse = {
     error: {
       code: 'code2',
       message: 'message4',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: 'finished0',
     id: 238,
@@ -38,20 +41,35 @@ const serversActionsRebuildResponse: ServersActionsRebuildResponse = {
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: 'started8',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   rootPassword: 'root_password6',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

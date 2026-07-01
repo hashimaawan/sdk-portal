@@ -7,7 +7,7 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 
 # Enum Type Name
 
-`Type1Enum`
+`Type1`
 
 
 # Fields
@@ -21,9 +21,9 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type1Enum type1 = Type1Enum.Uploaded;
+Type1 type1 = Type1.Uploaded;
 ```
 
 

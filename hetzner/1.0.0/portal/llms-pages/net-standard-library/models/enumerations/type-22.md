@@ -7,7 +7,7 @@ Type of the Image
 
 # Enum Type Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of the Image
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type22Enum type22 = Type22Enum.Temporary;
+Type22 type22 = Type22.Temporary;
 ```
 
 

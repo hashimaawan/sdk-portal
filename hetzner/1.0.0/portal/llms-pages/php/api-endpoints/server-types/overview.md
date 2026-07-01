@@ -9,10 +9,10 @@ Currency for all amounts is €. All prices exclude VAT.
 
 # Get singleton instance
 
-The singleton instance of the `ServerTypesController` class can be accessed from the API Client.
+The singleton instance of the `ServerTypesApi` class can be accessed from the API Client.
 
 ```
-$serverTypesController = $client->getServerTypesController();
+$serverTypesApi = $client->getServerTypesApi();
 ```
 
 

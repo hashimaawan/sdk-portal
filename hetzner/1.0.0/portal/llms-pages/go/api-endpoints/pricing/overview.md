@@ -7,10 +7,10 @@ Returns prices for resources.
 
 # Get Instance
 
-The instance of the `PricingController` class can be accessed from the API Client.
+The instance of the `PricingApi` class can be accessed from the API Client.
 
 ```
-pricingController := client.PricingController()
+pricingApi := client.PricingApi()
 ```
 
 

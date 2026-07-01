@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-Playerprofilev2GETAsync(
+Playerprofilev2GetAsync(
     string perMode,
-    string playerID)
+    string playerId)
 ```
 
 
@@ -16,7 +16,7 @@ Playerprofilev2GETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -30,12 +30,12 @@ Playerprofilev2GETAsync(
 
 ```csharp
 string perMode = "PerMode6";
-string playerID = "PlayerID6";
+string playerId = "PlayerID6";
 try
 {
-    await aPIController.Playerprofilev2GETAsync(
+    await api.Playerprofilev2GetAsync(
         perMode,
-        playerID
+        playerId
     );
 }
 catch (ApiException e)

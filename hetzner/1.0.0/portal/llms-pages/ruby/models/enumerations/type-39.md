@@ -7,7 +7,7 @@ Algorithm of the Load Balancer
 
 # Enum Type Name
 
-`Type39Enum`
+`Type39`
 
 
 # Fields
@@ -21,7 +21,7 @@ Algorithm of the Load Balancer
 # Example
 
 ```ruby
-type39 = Type39Enum::ROUND_ROBIN
+type39 = Type39::ROUND_ROBIN
 ```
 
 

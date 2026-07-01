@@ -316,7 +316,7 @@
   <text transform="translate(421 63) scale(0.94 0.94)" class="cls-4"><tspan class="cls-5">Window</tspan></text>
   <text transform="translate(503 63) scale(0.94 0.94)" class="cls-4"><tspan class="cls-5">Help</tspan></text>
   <text transform="translate(52 158) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">Project1</tspan></text>
-  <text transform="translate(52 184) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">NBAStatsAPILib</tspan></text>
+  <text transform="translate(52 184) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">NbaStatsApiLib</tspan></text>
   <text transform="translate(81 210) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">src</tspan></text>
   <text transform="translate(80 236) scale(1.13 1.13)" class="cls-4"><tspan class="cls-4"><tspan class="cls-8">JRE System Library <tspan class="cls-9">[JavaSE-1.7]</tspan></tspan></tspan></text>
   <text transform="translate(80 262) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">Maven Dependencies</tspan></text>
@@ -521,7 +521,7 @@
   <circle cx="143" cy="96" r="1" class="cls-75"/>
   <path d="M73.488,389.740 L62.619,389.740 L57.788,394.557 L68.657,394.557 L73.488,389.740 Z" class="cls-55"/>
   <text transform="translate(478 169) scale(0.5 0.49)" class="cls-23"><tspan class="cls-24">*SimpleConsoleApp/pom.xml</tspan></text>
-  <text transform="translate(720 169) scale(0.5 0.49)" class="cls-23"><tspan class="cls-76">NBAStatsAPILib/pom.xml</tspan></text>
+  <text transform="translate(720 169) scale(0.5 0.49)" class="cls-23"><tspan class="cls-76">NbaStatsApiLib/pom.xml</tspan></text>
   <text transform="translate(390 169) scale(0.5 0.49)" class="cls-23"><tspan class="cls-76">*App.java</tspan></text>
   <path d="M711.000,148.000 L712.000,148.000 L712.000,178.000 L711.000,178.000 L711.000,148.000 Z" class="cls-36"/>
   <path d="M472.000,148.000 L473.000,148.000 L473.000,178.000 L472.000,178.000 L472.000,148.000 Z" class="cls-36"/>

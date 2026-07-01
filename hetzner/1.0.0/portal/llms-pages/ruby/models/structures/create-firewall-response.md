@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkNyZWF0ZUZpcmV3YWxsUmVzcG9uc2U
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,117 +16,178 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `actions` | [`Array[Action]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action.md) | Optional | - |
 | `firewall` | [`Firewall`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/firewall.md) | Optional | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 create_firewall_response = CreateFirewallResponse.new(
-  [
+  actions: [
     Action.new(
-      'set_firewall_rules',
-      Error.new(
-        'action_failed',
-        'Action failed'
+      command: 'set_firewall_rules',
+      error: Error.new(
+        code: 'action_failed',
+        message: 'Action failed',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      '2016-01-30T23:56:00+00:00',
-      13,
-      100,
-      [
+      finished: '2016-01-30T23:56:00+00:00',
+      id: 13,
+      progress: 100,
+      resources: [
         Resource.new(
-          38,
-          'firewall'
+          id: 38,
+          type: 'firewall',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      '2016-01-30T23:55:00+00:00',
-      StatusEnum::SUCCESS
+      started: '2016-01-30T23:55:00+00:00',
+      status: Status::SUCCESS,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
     Action.new(
-      'apply_firewall',
-      Error.new(
-        'action_failed',
-        'Action failed'
+      command: 'apply_firewall',
+      error: Error.new(
+        code: 'action_failed',
+        message: 'Action failed',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      '2016-01-30T23:56:00+00:00',
-      14,
-      100,
-      [
+      finished: '2016-01-30T23:56:00+00:00',
+      id: 14,
+      progress: 100,
+      resources: [
         Resource.new(
-          42,
-          'server'
+          id: 42,
+          type: 'server',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
         Resource.new(
-          38,
-          'firewall'
+          id: 38,
+          type: 'firewall',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      '2016-01-30T23:55:00+00:00',
-      StatusEnum::SUCCESS
+      started: '2016-01-30T23:55:00+00:00',
+      status: Status::SUCCESS,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  Firewall.new(
-    [
+  firewall: Firewall.new(
+    applied_to: [
       AppliedTo.new(
-        Type6Enum::SERVER,
-        [
+        type: Type6::SERVER,
+        applied_to_resources: [
           AppliedToResource.new(
-            Server.new(
-              14
+            server: Server.new(
+              id: 14,
+              additional_properties: {
+                'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+              }
             ),
-            Type5Enum::SERVER
+            type: Type5::SERVER,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
         ],
-        LabelSelector.new(
-          'selector8'
+        label_selector: LabelSelector.new(
+          selector: 'selector8',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
-        Server.new(
-          14
-        )
+        server: Server.new(
+          id: 14,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
+        ),
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
       AppliedTo.new(
-        Type6Enum::SERVER,
-        [
+        type: Type6::SERVER,
+        applied_to_resources: [
           AppliedToResource.new(
-            Server.new(
-              14
+            server: Server.new(
+              id: 14,
+              additional_properties: {
+                'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+              }
             ),
-            Type5Enum::SERVER
+            type: Type5::SERVER,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
         ],
-        LabelSelector.new(
-          'selector8'
+        label_selector: LabelSelector.new(
+          selector: 'selector8',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
-        Server.new(
-          14
-        )
+        server: Server.new(
+          id: 14,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
+        ),
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    'created6',
-    4,
-    'name6',
-    [
+    created: 'created6',
+    id: 4,
+    name: 'name6',
+    rules: [
       Rule.new(
-        DirectionEnum::ENUM_IN,
-        ProtocolEnum::UDP,
-        'description2',
-        [
+        direction: Direction::ENUM_IN,
+        protocol: Protocol::UDP,
+        description: 'description2',
+        destination_ips: [
           'destination_ips1',
           'destination_ips2',
           'destination_ips3'
         ],
-        'port8',
-        [
+        port: 'port8',
+        source_ips: [
           'source_ips1',
           'source_ips2',
           'source_ips3'
-        ]
+        ],
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    {
-      'key0': 'labels2',
-      'key1': 'labels1'
+    labels: {
+      'key0' => 'labels2',
+      'key1' => 'labels1'
+    },
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
     }
-  )
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

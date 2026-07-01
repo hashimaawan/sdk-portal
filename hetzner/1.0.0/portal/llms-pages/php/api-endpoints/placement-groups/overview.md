@@ -9,10 +9,10 @@ In `spread` placement groups, all virtual servers will run on different physical
 
 # Get singleton instance
 
-The singleton instance of the `PlacementGroupsController` class can be accessed from the API Client.
+The singleton instance of the `PlacementGroupsApi` class can be accessed from the API Client.
 
 ```
-$placementGroupsController = $client->getPlacementGroupsController();
+$placementGroupsApi = $client->getPlacementGroupsApi();
 ```
 
 

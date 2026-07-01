@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration for type LabelSelector, required if type is `label_selector`
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ Configuration for type LabelSelector, required if type is `label_selector`
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Selector` | `string` | Required | Label selector |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,12 +26,15 @@ Configuration for type LabelSelector, required if type is `label_selector`
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     labelSelector1 := models.LabelSelector1{
-        Selector:             "selector2",
+        Selector:              "selector2",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-DrafthistoryGETAsync(
-    string leagueID)
+DrafthistoryGetAsync(
+    string leagueId)
 ```
 
 
@@ -14,7 +14,7 @@ DrafthistoryGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -27,10 +27,10 @@ DrafthistoryGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 try
 {
-    await aPIController.DrafthistoryGETAsync(leagueID);
+    await api.DrafthistoryGetAsync(leagueId);
 }
 catch (ApiException e)
 {

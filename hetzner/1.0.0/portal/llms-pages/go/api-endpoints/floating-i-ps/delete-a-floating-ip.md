@@ -7,7 +7,7 @@ Deletes a Floating IP. If it is currently assigned to a Server it will automatic
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-DeleteAFloatingIP(
+DeleteAFloatingIp(
     ctx context.Context,
     id int) (
     http.Response,
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := floatingIPsController.DeleteAFloatingIP(ctx, id)
+resp, err := floatingIPsApi.DeleteAFloatingIp(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

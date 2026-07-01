@@ -27,7 +27,7 @@ Additional configuration for protocol http
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {

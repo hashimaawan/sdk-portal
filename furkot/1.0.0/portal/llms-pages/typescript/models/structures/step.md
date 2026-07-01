@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlN0ZXA
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -21,6 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `passthru` | `boolean \| undefined` | Optional | true for pass-through points anchoring route |
 | `route` | [`Route \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/models/structures/route.md) | Optional | route leading to the stop |
 | `url` | `string \| undefined` | Optional | url of the page with more information about the stop |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -34,9 +37,15 @@ const step: Step = {
   coordinates: {
     lat: 182.98,
     lon: 16.08,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   departure: '2016-03-13T12:52:32.123Z',
   name: 'name8',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

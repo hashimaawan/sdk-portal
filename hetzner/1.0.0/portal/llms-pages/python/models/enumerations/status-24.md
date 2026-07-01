@@ -7,7 +7,7 @@ Whether the Image can be used or if it's still being created or unavailable
 
 # Enum Type Name
 
-`Status24Enum`
+`Status24`
 
 
 # Fields
@@ -22,9 +22,9 @@ Whether the Image can be used or if it's still being created or unavailable
 # Example
 
 ```python
-from hetznercloudapi.models.status_24_enum import Status24Enum
+from hetznercloudapi.models.status_24 import Status24
 
-status_24 = Status24Enum.UNAVAILABLE
+status_24 = Status24.UNAVAILABLE
 ```
 
 

@@ -7,7 +7,7 @@ Type of the Primary IP
 
 # Enum Type Name
 
-`Type50Enum`
+`Type50`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the Primary IP
 # Example
 
 ```python
-from hetznercloudapi.models.type_50_enum import Type50Enum
+from hetznercloudapi.models.type_50 import Type50
 
-type_50 = Type50Enum.IPV4
+type_50 = Type50.IPV4
 ```
 
 

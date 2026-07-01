@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Algorithm of the Load Balancer
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,16 +16,20 @@ Algorithm of the Load Balancer
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `type` | [`Type28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-28.md) | Required | Type of the algorithm |
+| `type` | [`Type28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-28.md) | Required | Type of the algorithm |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { Algorithm, Type28Enum } from 'hetzner-cloud-apilib';
+import { Algorithm, Type28 } from 'hetzner-cloud-apilib';
 
 const algorithm: Algorithm = {
-  type: Type28Enum.RoundRobin,
+  type: Type28.RoundRobin,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

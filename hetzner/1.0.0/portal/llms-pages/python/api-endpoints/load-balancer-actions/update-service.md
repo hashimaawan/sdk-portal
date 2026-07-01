@@ -31,7 +31,7 @@ def update_service(self,
 
 **201**: The `action` key contains the `update_service` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -44,20 +44,24 @@ body = LoadBalancerService(
     health_check=LoadBalancerServiceHealthCheck(
         interval=15,
         port=4711,
-        protocol=Protocol6Enum.HTTP,
+        protocol=Protocol6.HTTP,
         retries=3,
         timeout=10
     ),
     listen_port=443,
-    protocol=Protocol7Enum.HTTPS,
+    protocol=Protocol7.HTTPS,
     proxyprotocol=False
 )
 
-result = load_balancer_actions_controller.update_service(
+result = load_balancer_actions_api.update_service(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

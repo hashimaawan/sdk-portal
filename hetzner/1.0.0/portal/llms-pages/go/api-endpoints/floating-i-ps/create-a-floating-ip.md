@@ -7,9 +7,9 @@ Creates a new Floating IP assigned to a Server. If you want to create a Floating
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CreateAFloatingIP(
+CreateAFloatingIp(
     ctx context.Context,
-    body *models.CreateFloatingIPRequest) (
+    body *models.CreateFloatingIpRequest) (
     models.ApiResponse[models.FloatingIpsResponse1],
     error)
 ```
@@ -19,7 +19,7 @@ CreateAFloatingIP(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`*models.CreateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
+| `body` | [`*models.CreateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
 
 
 # Response Type
@@ -34,16 +34,16 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-body := models.CreateFloatingIPRequest{
-    Description:          models.ToPointer("Web Frontend"),
-    HomeLocation:         models.ToPointer("fsn1"),
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("Web Frontend"),
-    Server:               models.ToPointer(42),
-    Type:                 models.Type17Enum_IPV4,
+body := models.CreateFloatingIpRequest{
+    Description:           models.ToPointer("Web Frontend"),
+    HomeLocation:          models.ToPointer("fsn1"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("Web Frontend"),
+    Server:                models.ToPointer(42),
+    Type:                  models.Type17_Ipv4,
 }
 
-apiResponse, err := floatingIPsController.CreateAFloatingIP(ctx, &body)
+apiResponse, err := floatingIPsApi.CreateAFloatingIp(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

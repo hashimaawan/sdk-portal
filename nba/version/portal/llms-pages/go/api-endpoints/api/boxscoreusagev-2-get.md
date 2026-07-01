@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-Boxscoreusagev2GET(
+Boxscoreusagev2Get(
     ctx context.Context,
-    gameID string,
+    gameId string,
     startPeriod string,
     endPeriod string,
     startRange string,
@@ -22,7 +22,7 @@ Boxscoreusagev2GET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `startPeriod` | `string` | Query, Required | - |
 | `endPeriod` | `string` | Query, Required | - |
 | `startRange` | `string` | Query, Required | - |
@@ -42,7 +42,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-gameID := "GameID8"
+gameId := "GameID8"
 
 startPeriod := "StartPeriod4"
 
@@ -54,7 +54,7 @@ endRange := "EndRange2"
 
 rangeType := "RangeType0"
 
-resp, err := aPIController.Boxscoreusagev2GET(ctx, gameID, startPeriod, endPeriod, startRange, endRange, rangeType)
+resp, err := api.Boxscoreusagev2Get(ctx, gameId, startPeriod, endPeriod, startRange, endRange, rangeType)
 if err != nil {
     log.Fatalln(err)
 } else {

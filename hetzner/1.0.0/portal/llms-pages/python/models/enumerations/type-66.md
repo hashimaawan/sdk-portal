@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type66Enum`
+`Type66`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.type_66_enum import Type66Enum
+from hetznercloudapi.models.type_66 import Type66
 
-type_66 = Type66Enum.DISK
+type_66 = Type66.DISK
 ```
 
 

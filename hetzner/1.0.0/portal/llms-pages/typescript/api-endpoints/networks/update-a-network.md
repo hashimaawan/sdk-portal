@@ -45,7 +45,7 @@ const body: UpdateNetworkRequest = {
 };
 
 try {
-  const response = await networksController.updateANetwork(
+  const response = await networksApi.updateANetwork(
     id,
     body
   );

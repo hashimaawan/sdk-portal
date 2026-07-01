@@ -42,7 +42,7 @@ const body: ServersActionsChangeProtectionRequest = {
 };
 
 try {
-  const response = await serverActionsController.changeServerProtection(
+  const response = await serverActionsApi.changeServerProtection(
     id,
     body
   );

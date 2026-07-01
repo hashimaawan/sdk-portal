@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkRhdGFjZW50ZXI
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -17,14 +19,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Location` | [`Location`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/location.md) | Required | - | Location getLocation() | setLocation(Location location) |
 | `Name` | `String` | Required | Unique identifier of the Datacenter | String getName() | setName(String name) |
 | `ServerTypes` | [`ServerTypes`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/server-types.md) | Required | The Server types the Datacenter can handle | ServerTypes getServerTypes() | setServerTypes(ServerTypes serverTypes) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Datacenter;
 import cloud.hetzner.api.models.Location;
 import cloud.hetzner.api.models.ServerTypes;
+import java.io.IOException;
 import java.util.Arrays;
 
 Datacenter datacenter = new Datacenter.Builder(
@@ -40,6 +45,7 @@ Datacenter datacenter = new Datacenter.Builder(
         "fsn1",
         "eu-central"
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     "fsn1-dc8",
     new ServerTypes.Builder(
@@ -59,8 +65,10 @@ Datacenter datacenter = new Datacenter.Builder(
             3D
         )
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build()
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

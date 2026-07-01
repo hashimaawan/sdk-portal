@@ -7,7 +7,7 @@ Changes the protection configuration of the Floating IP.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async changeFloatingIPProtection(
+async changeFloatingIpProtection(
   id: number,
   body?: ChangeProtectionRequest,
   requestOptions?: RequestOptions
@@ -41,7 +41,7 @@ const body: ChangeProtectionRequest = {
 };
 
 try {
-  const response = await floatingIPActionsController.changeFloatingIPProtection(
+  const response = await floatingIpActionsApi.changeFloatingIpProtection(
     id,
     body
   );

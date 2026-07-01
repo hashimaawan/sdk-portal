@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VycyUyNTIwTWV0cmljcyUyNTIwUmVzcG9uc2U
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,14 +15,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `metrics` | [`Metrics`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/metrics.md) | Required | - | getMetrics(): Metrics | setMetrics(Metrics metrics): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\LoadBalancersMetricsResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\MetricsBuilder;
-use HetznerCloudAPILib\Models\Builders\TimeSeriesBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancersMetricsResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\MetricsBuilder;
+use HetznerCloudApiLib\Models\Builders\TimeSeriesBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $loadBalancersMetricsResponse = LoadBalancersMetricsResponseBuilder::init(
     MetricsBuilder::init(
@@ -39,10 +43,16 @@ $loadBalancersMetricsResponse = LoadBalancersMetricsResponseBuilder::init(
                         '43'
                     ]
                 ]
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ]
-    )->build()
-)->build();
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build()
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

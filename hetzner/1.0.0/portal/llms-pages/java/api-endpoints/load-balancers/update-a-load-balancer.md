@@ -11,7 +11,7 @@ Note: if the Load Balancer object changes during the request, the response will 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LoadBalancersResponse2> updateALoadBalancerAsync(
+CompletableFuture<ApiResponse<LoadBalancersResponse2>> updateALoadBalancerAsync(
     final int id,
     final LoadBalancersRequest body)
 ```
@@ -29,7 +29,7 @@ CompletableFuture<LoadBalancersResponse2> updateALoadBalancerAsync(
 
 **200**: The `load_balancer` key contains the updated Load Balancer
 
-[`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-response-2.md).
 
 
 # Example Usage
@@ -41,7 +41,7 @@ LoadBalancersRequest body = new LoadBalancersRequest.Builder()
     .name("new-name")
     .build();
 
-loadBalancersController.updateALoadBalancerAsync(id, body).thenAccept(result -> {
+loadBalancersApi.updateALoadBalancerAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

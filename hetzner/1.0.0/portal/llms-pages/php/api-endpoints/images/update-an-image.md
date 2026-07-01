@@ -9,7 +9,7 @@ Note that when updating labels, the current set of labels will be replaced with 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAnImage(int $id, ?UpdateImageRequest $body = null): ImagesResponse1
+function updateAnImage(int $id, ?UpdateImageRequest $body = null): ApiResponse
 ```
 
 
@@ -25,7 +25,7 @@ function updateAnImage(int $id, ?UpdateImageRequest $body = null): ImagesRespons
 
 **200**: The image key in the reply contains the modified Image object
 
-[`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/images-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/images-response-1.md).
 
 
 # Example Usage
@@ -38,17 +38,23 @@ $body = UpdateImageRequestBuilder::init()
     ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
     ->build();
 
-$imagesController = $client->getImagesController();
+$imagesApi = $client->getImagesApi();
+$apiResponse = $imagesApi->updateAnImage(
+    $id,
+    $body
+);
 
-try {
-    $result = $imagesController->updateAnImage(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ImagesResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNlcnRpZmljYXRl
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -22,18 +24,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `not_valid_after` | `str` | Required | Point in time when the Certificate stops being valid (in ISO-8601 format) |
 | `not_valid_before` | `str` | Required | Point in time when the Certificate becomes valid (in ISO-8601 format) |
 | `status` | [`Status2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/status-2.md) | Optional | Current status of a type `managed` Certificate, always *null* for type `uploaded` Certificates |
-| `mtype` | [`TypeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type.md) | Optional | Type of the Certificate |
+| `mtype` | [`Type`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type.md) | Optional | Type of the Certificate |
 | `used_by` | [`List[UsedBy]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/used-by.md) | Required | Resources currently using the Certificate |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.certificate import Certificate
-from hetznercloudapi.models.issuance_enum import IssuanceEnum
-from hetznercloudapi.models.renewal_enum import RenewalEnum
+from hetznercloudapi.models.issuance import Issuance
+from hetznercloudapi.models.mtype import Type
+from hetznercloudapi.models.renewal import Renewal
 from hetznercloudapi.models.status_2 import Status2
-from hetznercloudapi.models.type_enum import TypeEnum
 from hetznercloudapi.models.used_by import UsedBy
 
 certificate = Certificate(
@@ -57,15 +62,24 @@ certificate = Certificate(
     used_by=[
         UsedBy(
             id=4711,
-            mtype='load_balancer'
+            mtype='load_balancer',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     status=Status2(
         error=None,
-        issuance=IssuanceEnum.COMPLETED,
-        renewal=RenewalEnum.FAILED
+        issuance=Issuance.COMPLETED,
+        renewal=Renewal.FAILED,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
-    mtype=TypeEnum.UPLOADED
+    mtype=Type.UPLOADED,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

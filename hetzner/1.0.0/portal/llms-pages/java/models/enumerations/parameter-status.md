@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterStatusEnum`
+`ParameterStatus`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.ParameterStatusEnum;
+import cloud.hetzner.api.models.ParameterStatus;
 
-ParameterStatusEnum parameterStatus = ParameterStatusEnum.ERROR;
+ParameterStatus parameterStatus = ParameterStatus.ERROR;
 ```
 
 

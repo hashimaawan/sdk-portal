@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async leaguedashplayerptshotGET(
-  leagueID: string,
+async leaguedashplayerptshotGet(
+  leagueId: string,
   perMode: string,
   season: string,
   seasonType: string,
@@ -19,7 +19,7 @@ async leaguedashplayerptshotGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
@@ -36,7 +36,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const perMode = 'PerMode6';
 
@@ -45,8 +45,8 @@ const season = 'Season0';
 const seasonType = 'SeasonType8';
 
 try {
-  const response = await apiController.leaguedashplayerptshotGET(
-    leagueID,
+  const response = await api.leaguedashplayerptshotGet(
+    leagueId,
     perMode,
     season,
     seasonType

@@ -23,7 +23,7 @@ def get_an_iso(self,
 
 **200**: The `iso` key in the reply contains an array of ISO objects with this structure
 
-[`IsosResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/isos-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`IsosResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/isos-response-1.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_an_iso(self,
 ```python
 id = 112
 
-result = is_os_controller.get_an_iso(id)
-print(result)
+result = is_os_api.get_an_iso(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CommonplayerinfoGET(
+CommonplayerinfoGet(
     ctx context.Context,
-    playerID string) (
+    playerId string) (
     http.Response,
     error)
 ```
@@ -17,7 +17,7 @@ CommonplayerinfoGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -32,9 +32,9 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-playerID := "PlayerID6"
+playerId := "PlayerID6"
 
-resp, err := aPIController.CommonplayerinfoGET(ctx, playerID)
+resp, err := api.CommonplayerinfoGet(ctx, playerId)
 if err != nil {
     log.Fatalln(err)
 } else {

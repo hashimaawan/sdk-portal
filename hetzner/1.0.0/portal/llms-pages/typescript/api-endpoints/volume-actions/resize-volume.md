@@ -41,7 +41,7 @@ const body: VolumesActionsResizeRequest = {
 };
 
 try {
-  const response = await volumeActionsController.resizeVolume(
+  const response = await volumeActionsApi.resizeVolume(
     id,
     body
   );

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type21Enum`
+`Type21`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type21Enum;
+import cloud.hetzner.api.models.Type21;
 
-Type21Enum type21 = Type21Enum.BACKUP;
+Type21 type21 = Type21.BACKUP;
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlNzaEtleQ
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Dictionary<string, string>` | Required | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `PublicKey` | `string` | Required | Public key |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 SshKey sshKey = new SshKey
@@ -39,6 +43,7 @@ SshKey sshKey = new SshKey
     },
     Name = "my-resource",
     PublicKey = "ssh-rsa AAAjjk76kgf...Xt",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

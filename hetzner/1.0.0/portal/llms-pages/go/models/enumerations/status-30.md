@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`Status30Enum`
+`Status30`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `HEALTHY` |
-| `UNHEALTHY` |
-| `UNKNOWN` |
+| `Healthy` |
+| `Unhealthy` |
+| `Unknown` |
 
 
 # Example
@@ -23,11 +23,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status30 := models.Status30Enum_HEALTHY
+    status30 := models.Status30_Healthy
 
 }
 ```

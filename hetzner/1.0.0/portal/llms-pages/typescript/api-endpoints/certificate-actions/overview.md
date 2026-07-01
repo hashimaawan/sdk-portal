@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `CertificateActionsController` class can be created using the API Client.
+The instance of the `CertificateActionsApi` class can be created using the API Client.
 
 ```
-const certificateActionsController = new CertificateActionsController(client);
+const certificateActionsApi = new CertificateActionsApi(client);
 ```
 
 

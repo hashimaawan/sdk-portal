@@ -22,7 +22,7 @@ If the disk gets upgraded, the Server type can not be downgraded any more. If yo
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function changeTheTypeOfAServer(int $id, ?ServersActionsChangeTypeRequest $body = null): ActionResponse
+function changeTheTypeOfAServer(int $id, ?ServersActionsChangeTypeRequest $body = null): ApiResponse
 ```
 
 
@@ -38,7 +38,7 @@ function changeTheTypeOfAServer(int $id, ?ServersActionsChangeTypeRequest $body 
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -51,17 +51,23 @@ $body = ServersActionsChangeTypeRequestBuilder::init(
     true
 )->build();
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->changeTheTypeOfAServer(
+    $id,
+    $body
+);
 
-try {
-    $result = $serverActionsController->changeTheTypeOfAServer(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

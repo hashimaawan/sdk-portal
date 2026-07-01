@@ -7,7 +7,7 @@ Returns a specific Server object. The Server must exist inside the Project
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersResponse2> getAServerAsync(
+CompletableFuture<ApiResponse<ServersResponse2>> getAServerAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<ServersResponse2> getAServerAsync(
 
 **200**: The `server` key in the reply contains a Server object with this structure
 
-[`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-response-2.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<ServersResponse2> getAServerAsync(
 ```java
 int id = 112;
 
-serversController.getAServerAsync(id).thenAccept(result -> {
+serversApi.getAServerAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

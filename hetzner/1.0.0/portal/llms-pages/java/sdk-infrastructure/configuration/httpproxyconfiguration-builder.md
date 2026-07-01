@@ -26,10 +26,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```java
-import cloud.hetzner.api.HetznerCloudAPIClient;
+import cloud.hetzner.api.HetznerCloudApiClient;
 import cloud.hetzner.api.http.client.HttpProxyConfiguration;
 
-HetznerCloudAPIClient client = new HetznerCloudAPIClient.Builder()
+HetznerCloudApiClient client = new HetznerCloudApiClient.Builder()
   .httpClientConfig(configBuilder -> configBuilder
       .proxyConfig(new HttpProxyConfiguration.Builder("http://localhost",
           8080).auth("username", "password")))

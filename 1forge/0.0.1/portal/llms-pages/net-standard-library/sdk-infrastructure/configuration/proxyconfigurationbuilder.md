@@ -20,12 +20,12 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```csharp
-using M1ForgeFinanceAPIs.Standard;
-using M1ForgeFinanceAPIs.Standard.Http.Client.Proxy;
+using M1ForgeFinanceApIs.Standard;
+using M1ForgeFinanceApIs.Standard.Http.Client.Proxy;
 
 namespace ConsoleApp;
 
-var client = new M1ForgeFinanceAPIsClient.Builder()
+var client = new M1ForgeFinanceApIsClient.Builder()
 .HttpClientConfig(config => config
     .Proxy(new ProxyConfigurationBuilder("http://localhost")
             .Port(8080)

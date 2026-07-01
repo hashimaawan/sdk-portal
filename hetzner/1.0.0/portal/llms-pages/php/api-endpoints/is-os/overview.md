@@ -11,10 +11,10 @@ To attach an ISO to your Server use `POST /servers/{id}/actions/attach_iso`.
 
 # Get singleton instance
 
-The singleton instance of the `ISOsController` class can be accessed from the API Client.
+The singleton instance of the `IsOsApi` class can be accessed from the API Client.
 
 ```
-$iSOsController = $client->getISOsController();
+$isOsApi = $client->getIsOsApi();
 ```
 
 

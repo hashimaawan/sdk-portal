@@ -7,7 +7,7 @@ The type of the Floating IP
 
 # Enum Type Name
 
-`Type48Enum`
+`Type48`
 
 
 # Fields
@@ -21,7 +21,7 @@ The type of the Floating IP
 # Example
 
 ```ruby
-type48 = Type48Enum::IPV4
+type48 = Type48::IPV4
 ```
 
 

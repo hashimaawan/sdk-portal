@@ -39,7 +39,7 @@ const id = 112;
 const actionId = 224;
 
 try {
-  const response = await firewallActionsController.getAnActionForAFirewall(
+  const response = await firewallActionsApi.getAnActionForAFirewall(
     id,
     actionId
   );

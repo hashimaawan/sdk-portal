@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration for type server, required if type is `server`
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -15,16 +17,19 @@ Configuration for type server, required if type is `server`
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Id` | `int` | Required | ID of the Server |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 Server9 server9 = new Server9
 {
     Id = 216,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -61,10 +61,10 @@ Networks also support the notion of routes which are automatically applied to pr
 
 # Create Instance
 
-The instance of the `NetworksController` class can be created using the API Client.
+The instance of the `NetworksApi` class can be created using the API Client.
 
 ```
-const networksController = new NetworksController(client);
+const networksApi = new NetworksApi(client);
 ```
 
 

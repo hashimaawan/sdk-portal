@@ -7,7 +7,7 @@ Type of the gif. By default, this is almost always gif
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -20,7 +20,7 @@ Type of the gif. By default, this is almost always gif
 # Example
 
 ```ruby
-type = TypeEnum::GIF
+type = Type::GIF
 ```
 
 

@@ -7,7 +7,7 @@ Type of cpu
 
 # Enum Type Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of cpu
 # Example
 
 ```ts
-import { CpuTypeEnum } from 'hetzner-cloud-apilib';
+import { CpuType } from 'hetzner-cloud-apilib';
 
-const cpuType = CpuTypeEnum.Shared;
+const cpuType = CpuType.Shared;
 ```
 
 

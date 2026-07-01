@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await datacentersController.getADatacenter(id);
+  const response = await datacentersApi.getADatacenter(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

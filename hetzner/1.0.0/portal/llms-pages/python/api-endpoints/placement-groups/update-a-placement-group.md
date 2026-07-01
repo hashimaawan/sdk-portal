@@ -29,7 +29,7 @@ def update_a_placement_group(self,
 
 **200**: The `certificate` key contains the PlacementGroup that was just updated
 
-[`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -42,11 +42,15 @@ body = UpdatePlacementGroupRequest(
     name='my Placement Group'
 )
 
-result = placement_groups_controller.update_a_placement_group(
+result = placement_groups_api.update_a_placement_group(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

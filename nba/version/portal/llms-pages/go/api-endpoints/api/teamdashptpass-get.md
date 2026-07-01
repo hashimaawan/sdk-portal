@@ -5,19 +5,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-TeamdashptpassGET(
+TeamdashptpassGet(
     ctx context.Context,
     perMode string,
     season string,
     seasonType string,
-    teamID string,
+    teamId string,
     outcome string,
     location string,
     month string,
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     lastNGames string) (
@@ -33,14 +33,14 @@ TeamdashptpassGET(
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `lastNGames` | `string` | Query, Required | - |
@@ -64,7 +64,7 @@ season := "Season0"
 
 seasonType := "SeasonType8"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
 outcome := "Outcome4"
 
@@ -78,7 +78,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -86,7 +86,7 @@ vsDivision := "VsDivision6"
 
 lastNGames := "LastNGames4"
 
-resp, err := aPIController.TeamdashptpassGET(ctx, perMode, season, seasonType, teamID, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, lastNGames)
+resp, err := api.TeamdashptpassGet(ctx, perMode, season, seasonType, teamId, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, lastNGames)
 if err != nil {
     log.Fatalln(err)
 } else {

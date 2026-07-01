@@ -20,7 +20,7 @@ def commonplayerinfo_get(player_id)
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -28,7 +28,13 @@ def commonplayerinfo_get(player_id)
 ```ruby
 player_id = 'PlayerID6'
 
-client_controller.commonplayerinfo_get(player_id)
+result = client_api.commonplayerinfo_get(player_id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

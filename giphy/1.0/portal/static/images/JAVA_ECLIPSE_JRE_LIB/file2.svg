@@ -169,7 +169,7 @@
   <text transform="translate(35 124) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">Select root directory:</tspan></text>
   <text transform="translate(35 159) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">Select archive file:</tspan></text>
   <rect x="45" y="202" width="545" height="25" class="cls-20"/>
-  <text transform="translate(48 221) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">GiphyAPILib (X:\...\Giphy API-Java)</tspan></text>
+  <text transform="translate(48 221) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">GiphyApiLib (X:\...\Giphy API-Java)</tspan></text>
   <text transform="translate(48 341) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">Search for nested projects</tspan></text>
   <text transform="translate(25 313) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">Options</tspan></text>
   <text transform="translate(48 370) scale(0.53 0.53)" class="cls-2"><tspan class="cls-3">Copy projects into workspace</tspan></text>

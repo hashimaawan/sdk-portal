@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlByaW1hcnlJUDE
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
-`PrimaryIP1`
+`PrimaryIp1`
 
 
 # Fields
@@ -24,15 +26,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `Record<string, string>` | Required | User-defined labels (key-value pairs) |
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/protection.md) | Required | Protection configuration for the Resource |
-| `type` | [`Type50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `type` | [`Type50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { PrimaryIP1, Type50Enum } from 'hetzner-cloud-apilib';
+import { PrimaryIp1, Type50 } from 'hetzner-cloud-apilib';
 
-const primaryIP1: PrimaryIP1 = {
+const primaryIp1: PrimaryIp1 = {
   assigneeId: 17,
   assigneeType: 'server',
   autoDelete: true,
@@ -50,6 +53,9 @@ const primaryIP1: PrimaryIP1 = {
       longitude: 12.370071,
       name: 'fsn1',
       networkZone: 'eu-central',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     name: 'fsn1-dc8',
     serverTypes: {
@@ -68,25 +74,39 @@ const primaryIP1: PrimaryIP1 = {
         2,
         3
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
+    },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
   dnsPtr: [
     {
       dnsPtr: 'server.example.com',
       ip: '2001:db8::1',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   id: 42,
   ip: '131.232.99.1',
   labels: {
-    'key0': 'labels4',
-    'key1': 'labels3'
+    'key0': 'labels0'
   },
   name: 'my-resource',
   protection: {
     mDelete: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
-  type: Type50Enum.Ipv4,
+  type: Type50.Ipv4,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

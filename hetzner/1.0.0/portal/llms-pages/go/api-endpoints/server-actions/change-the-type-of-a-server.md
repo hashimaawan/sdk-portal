@@ -54,11 +54,11 @@ ctx := context.Background()
 id := 112
 
 body := models.ServersActionsChangeTypeRequest{
-    ServerType:           "cx11",
-    UpgradeDisk:          true,
+    ServerType:            "cx11",
+    UpgradeDisk:           true,
 }
 
-apiResponse, err := serverActionsController.ChangeTheTypeOfAServer(ctx, id, &body)
+apiResponse, err := serverActionsApi.ChangeTheTypeOfAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

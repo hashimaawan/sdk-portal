@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := loadBalancerActionsController.GetAnActionForALoadBalancer(ctx, id, actionId)
+apiResponse, err := loadBalancerActionsApi.GetAnActionForALoadBalancer(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -7,7 +7,7 @@ Type of the gif. By default, this is almost always gif
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of the gif. By default, this is almost always gif
 # Example
 
 ```java
-import com.giphy.api.models.TypeEnum;
+import com.giphy.api.models.Type;
 
-TypeEnum type = TypeEnum.GIF;
+Type type = Type.GIF;
 ```
 
 

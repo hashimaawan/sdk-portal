@@ -26,7 +26,7 @@ def add_a_route_to_a_network(id,
 
 **201**: The `action` key contains the `add_route` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,15 +35,20 @@ def add_a_route_to_a_network(id,
 id = 112
 
 body = AddDeleteRouteRequest.new(
-  '10.100.1.0/24',
-  '10.0.1.1'
+  destination: '10.100.1.0/24',
+  gateway: '10.0.1.1'
 )
 
-result = network_actions_controller.add_a_route_to_a_network(
+result = network_actions_api.add_a_route_to_a_network(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -7,7 +7,7 @@ Gets a specific network object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getANetwork(int $id): NetworksResponse1
+function getANetwork(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getANetwork(int $id): NetworksResponse1
 
 **200**: The `network` key contains the network
 
-[`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getANetwork(int $id): NetworksResponse1
 ```php
 $id = 112;
 
-$networksController = $client->getNetworksController();
+$networksApi = $client->getNetworksApi();
+$apiResponse = $networksApi->getANetwork($id);
 
-try {
-    $result = $networksController->getANetwork($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'NetworksResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

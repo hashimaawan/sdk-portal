@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort8Enum`
+`Sort8`
 
 
 # Fields
@@ -23,7 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-sort8 = Sort8Enum::ENUM_NAMEASC
+sort8 = Sort8::ENUM_NAMEASC
 ```
 
 

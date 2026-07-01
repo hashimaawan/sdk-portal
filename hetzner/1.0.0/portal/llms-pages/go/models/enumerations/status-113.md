@@ -7,15 +7,15 @@ Current status of the Volume
 
 # Class Name
 
-`Status113Enum`
+`Status113`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `CREATING` |
-| `AVAILABLE` |
+| `Creating` |
+| `Available` |
 
 
 # Example
@@ -24,11 +24,11 @@ Current status of the Volume
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status113 := models.Status113Enum_CREATING
+    status113 := models.Status113_Creating
 
 }
 ```

@@ -50,7 +50,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await certificateActionsController.retryIssuanceOrRenewal(id);
+  const response = await certificateActionsApi.retryIssuanceOrRenewal(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

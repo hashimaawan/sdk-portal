@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkZsb2F0aW5nJTI1MjBJcHMlMjUyMFJlc3BvbnNlMg
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -13,12 +15,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `FloatingIp` | [`FloatingIp`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ip.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 FloatingIpsResponse2 floatingIpsResponse2 = new FloatingIpsResponse2
@@ -34,6 +38,7 @@ FloatingIpsResponse2 floatingIpsResponse2 = new FloatingIpsResponse2
             {
                 DnsPtrProp = "server.example.com",
                 Ip = "2001:db8::1",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         HomeLocation = new HomeLocation
@@ -46,6 +51,7 @@ FloatingIpsResponse2 floatingIpsResponse2 = new FloatingIpsResponse2
             Longitude = 12.370071,
             Name = "fsn1",
             NetworkZone = "eu-central",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Id = 42,
         Ip = "131.232.99.1",
@@ -59,10 +65,13 @@ FloatingIpsResponse2 floatingIpsResponse2 = new FloatingIpsResponse2
         Protection = new Protection
         {
             Delete = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Server = 42,
-        Type = Type16Enum.Ipv4,
+        Type = Type16.Ipv4,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

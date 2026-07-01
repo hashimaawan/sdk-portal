@@ -11,10 +11,10 @@ Please see [Hetzner Docs](https://docs.hetzner.com/cloud/#Volumes) for more deta
 
 # Get instance
 
-An instance of the `VolumesController` class can be accessed from the API Client.
+An instance of the `VolumesApi` class can be accessed from the API Client.
 
 ```
-VolumesController volumesController = client.getVolumesController();
+VolumesApi volumesApi = client.getVolumesApi();
 ```
 
 

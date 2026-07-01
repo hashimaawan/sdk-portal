@@ -7,10 +7,10 @@ TLS/SSL Certificates prove the identity of a Server and are used to encrypt clie
 
 # Get instance
 
-An instance of the `CertificatesController` class can be accessed from the API Client.
+An instance of the `CertificatesApi` class can be accessed from the API Client.
 
 ```
-certificates_controller = client.certificates
+certificates_api = client.certificates
 ```
 
 

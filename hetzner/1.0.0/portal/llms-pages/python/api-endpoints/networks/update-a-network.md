@@ -29,7 +29,7 @@ def update_a_network(self,
 
 **200**: The `network` key contains the updated network
 
-[`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -41,11 +41,15 @@ body = UpdateNetworkRequest(
     name='new-name'
 )
 
-result = networks_controller.update_a_network(
+result = networks_api.update_a_network(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

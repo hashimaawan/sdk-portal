@@ -32,7 +32,7 @@ DeleteALoadBalancerAsync(
 int id = 112;
 try
 {
-    await loadBalancersController.DeleteALoadBalancerAsync(id);
+    await loadBalancersApi.DeleteALoadBalancerAsync(id);
 }
 catch (ApiException e)
 {

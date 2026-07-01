@@ -5,12 +5,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-TeamdashlineupsGET(
+TeamdashlineupsGet(
     ctx context.Context,
     groupQuantity string,
-    gameID string,
+    gameId string,
     seasonType string,
-    teamID string,
+    teamId string,
     measureType string,
     perMode string,
     plusMinus string,
@@ -23,7 +23,7 @@ TeamdashlineupsGET(
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
@@ -39,9 +39,9 @@ TeamdashlineupsGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `groupQuantity` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `plusMinus` | `string` | Query, Required | - |
@@ -54,7 +54,7 @@ TeamdashlineupsGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -76,11 +76,11 @@ ctx := context.Background()
 
 groupQuantity := "GroupQuantity0"
 
-gameID := "GameID8"
+gameId := "GameID8"
 
 seasonType := "SeasonType8"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
 measureType := "MeasureType8"
 
@@ -106,7 +106,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -118,7 +118,7 @@ period := "Period2"
 
 lastNGames := "LastNGames4"
 
-resp, err := aPIController.TeamdashlineupsGET(ctx, groupQuantity, gameID, seasonType, teamID, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames)
+resp, err := api.TeamdashlineupsGet(ctx, groupQuantity, gameId, seasonType, teamId, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames)
 if err != nil {
     log.Fatalln(err)
 } else {

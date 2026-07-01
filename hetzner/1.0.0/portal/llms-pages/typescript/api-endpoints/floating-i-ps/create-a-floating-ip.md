@@ -7,8 +7,8 @@ Creates a new Floating IP assigned to a Server. If you want to create a Floating
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async createAFloatingIP(
-  body?: CreateFloatingIPRequest,
+async createAFloatingIp(
+  body?: CreateFloatingIpRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<FloatingIpsResponse1>>
 ```
@@ -18,7 +18,7 @@ async createAFloatingIP(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreateFloatingIPRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
+| `body` | [`CreateFloatingIpRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -32,8 +32,8 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const body: CreateFloatingIPRequest = {
-  type: Type17Enum.Ipv4,
+const body: CreateFloatingIpRequest = {
+  type: Type17.Ipv4,
   description: 'Web Frontend',
   homeLocation: 'fsn1',
   labels: { 'labelkey': 'value' },
@@ -42,7 +42,7 @@ const body: CreateFloatingIPRequest = {
 };
 
 try {
-  const response = await floatingIPsController.createAFloatingIP(body);
+  const response = await floatingIPsApi.createAFloatingIp(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

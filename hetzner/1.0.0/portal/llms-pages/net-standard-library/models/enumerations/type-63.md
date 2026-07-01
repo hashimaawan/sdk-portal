@@ -7,7 +7,7 @@ Type of Image to create (default: `snapshot`)
 
 # Enum Type Name
 
-`Type63Enum`
+`Type63`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Image to create (default: `snapshot`)
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type63Enum type63 = Type63Enum.Snapshot;
+Type63 type63 = Type63.Snapshot;
 ```
 
 

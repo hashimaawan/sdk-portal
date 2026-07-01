@@ -24,10 +24,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ```php
 <?php
 
-use HetznerCloudAPILib\HetznerCloudAPIClientBuilder;
-use HetznerCloudAPILib\Proxy\ProxyConfigurationBuilder;
+use HetznerCloudApiLib\HetznerCloudApiClientBuilder;
+use HetznerCloudApiLib\Proxy\ProxyConfigurationBuilder;
 // initialize the sdk client using a proxy configuration
-$client = HetznerCloudAPIClientBuilder::init()
+$client = HetznerCloudApiClientBuilder::init()
     ->proxyConfiguration(
         ProxyConfigurationBuilder::init('http://localhost')
             ->port(8080)

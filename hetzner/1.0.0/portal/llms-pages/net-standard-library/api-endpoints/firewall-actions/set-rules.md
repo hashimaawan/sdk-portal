@@ -34,7 +34,7 @@ SetRulesAsync(
 
 **201**: The `action` key contains one `set_firewall_rules` Action plus one `apply_firewall` Action per resource where the Firewall is active
 
-[`Task<Models.ActionsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -47,8 +47,8 @@ SetRulesRequest body = new SetRulesRequest
     {
         new Rule
         {
-            Direction = DirectionEnum.In,
-            Protocol = ProtocolEnum.Tcp,
+            Direction = Direction.In,
+            Protocol = Protocol.Tcp,
             Description = "Allow port 80",
             Port = "80",
             SourceIps = new List<string>
@@ -63,7 +63,7 @@ SetRulesRequest body = new SetRulesRequest
 
 try
 {
-    ActionsResponse result = await firewallActionsController.SetRulesAsync(
+    ApiResponse<ActionsResponse> result = await firewallActionsApi.SetRulesAsync(
         id,
         body
     );

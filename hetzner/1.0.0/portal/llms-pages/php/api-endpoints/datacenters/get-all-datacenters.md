@@ -7,7 +7,7 @@ Returns all Datacenter objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllDatacenters(?string $name = null): DatacentersResponse
+function getAllDatacenters(?string $name = null): ApiResponse
 ```
 
 
@@ -22,20 +22,26 @@ function getAllDatacenters(?string $name = null): DatacentersResponse
 
 **200**: The reply contains the `datacenters` and `recommendation` keys
 
-[`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/datacenters-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/datacenters-response.md).
 
 
 # Example Usage
 
 ```php
-$datacentersController = $client->getDatacentersController();
+$datacentersApi = $client->getDatacentersApi();
+$apiResponse = $datacentersApi->getAllDatacenters();
 
-try {
-    $result = $datacentersController->getAllDatacenters();
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'DatacentersResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

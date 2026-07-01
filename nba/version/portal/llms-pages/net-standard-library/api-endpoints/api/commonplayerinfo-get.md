@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-CommonplayerinfoGETAsync(
-    string playerID)
+CommonplayerinfoGetAsync(
+    string playerId)
 ```
 
 
@@ -14,7 +14,7 @@ CommonplayerinfoGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -27,10 +27,10 @@ CommonplayerinfoGETAsync(
 # Example Usage
 
 ```csharp
-string playerID = "PlayerID6";
+string playerId = "PlayerID6";
 try
 {
-    await aPIController.CommonplayerinfoGETAsync(playerID);
+    await api.CommonplayerinfoGetAsync(playerId);
 }
 catch (ApiException e)
 {

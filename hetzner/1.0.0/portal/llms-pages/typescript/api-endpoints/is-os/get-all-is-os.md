@@ -7,7 +7,7 @@ Returns all available ISO objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async getAllISOs(
+async getAllIsOs(
   name?: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<IsosResponse>>
@@ -33,7 +33,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await iSOsController.getAllISOs();
+  const response = await isOsApi.getAllIsOs();
 
   // Extracting fully parsed response body.
   console.log(response.result);

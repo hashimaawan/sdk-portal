@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZVBsYWNlbWVudEdyb3VwUmVzcG9uc2U
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,17 +16,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`?NullableAction`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/nullable-action.md) | Optional | - | getAction(): ?NullableAction | setAction(?NullableAction action): void |
 | `placementGroup` | [`PlacementGroup`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/placement-group.md) | Required | - | getPlacementGroup(): PlacementGroup | setPlacementGroup(PlacementGroup placementGroup): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreatePlacementGroupResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\PlacementGroupBuilder;
-use HetznerCloudAPILib\Models\Builders\NullableActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\CreatePlacementGroupResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\PlacementGroupBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\NullableActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
 
 $createPlacementGroupResponse = CreatePlacementGroupResponseBuilder::init(
     PlacementGroupBuilder::init(
@@ -37,7 +41,9 @@ $createPlacementGroupResponse = CreatePlacementGroupResponseBuilder::init(
         [
             42
         ]
-    )->build()
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build()
 )
     ->action(
         NullableActionBuilder::init(
@@ -48,28 +54,38 @@ $createPlacementGroupResponse = CreatePlacementGroupResponseBuilder::init(
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             'started8',
-            StatusEnum::RUNNING
+            Status::RUNNING
         )
             ->error(
                 ErrorBuilder::init(
                     'code2',
                     'message4'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('finished0')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

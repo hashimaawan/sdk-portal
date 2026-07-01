@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-TeamgamelogGETAsync(
-    string teamID,
+TeamgamelogGetAsync(
+    string teamId,
     string season,
     string seasonType)
 ```
@@ -16,7 +16,7 @@ TeamgamelogGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
@@ -31,13 +31,13 @@ TeamgamelogGETAsync(
 # Example Usage
 
 ```csharp
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 string season = "Season0";
 string seasonType = "SeasonType8";
 try
 {
-    await aPIController.TeamgamelogGETAsync(
-        teamID,
+    await api.TeamgamelogGetAsync(
+        teamId,
         season,
         seasonType
     );

@@ -28,7 +28,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-resp, err := forexController.GetQuotesForAllSymbols(ctx)
+resp, err := forexApi.GetQuotesForAllSymbols(ctx)
 if err != nil {
     log.Fatalln(err)
 } else {

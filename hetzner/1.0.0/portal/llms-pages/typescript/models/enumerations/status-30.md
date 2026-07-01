@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status30Enum`
+`Status30`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Status30Enum } from 'hetzner-cloud-apilib';
+import { Status30 } from 'hetzner-cloud-apilib';
 
-const status30 = Status30Enum.Healthy;
+const status30 = Status30.Healthy;
 ```
 
 

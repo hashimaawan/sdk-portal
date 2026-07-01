@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-LeagueleadersGETAsync(
-    string leagueID,
+LeagueleadersGetAsync(
+    string leagueId,
     string perMode,
     string season,
     string seasonType,
@@ -19,7 +19,7 @@ LeagueleadersGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
@@ -37,15 +37,15 @@ LeagueleadersGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string perMode = "PerMode6";
 string season = "Season0";
 string seasonType = "SeasonType8";
 string scope = "Scope0";
 try
 {
-    await aPIController.LeagueleadersGETAsync(
-        leagueID,
+    await api.LeagueleadersGetAsync(
+        leagueId,
         perMode,
         season,
         seasonType,

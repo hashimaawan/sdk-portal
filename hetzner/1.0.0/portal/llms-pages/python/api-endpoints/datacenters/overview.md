@@ -11,10 +11,10 @@ Right now there is only one Datacenter for each Location. The Datacenter numbers
 
 # Get instance
 
-An instance of the `DatacentersController` class can be accessed from the API Client.
+An instance of the `DatacentersApi` class can be accessed from the API Client.
 
 ```
-datacenters_controller = client.datacenters
+datacenters_api = client.datacenters
 ```
 
 

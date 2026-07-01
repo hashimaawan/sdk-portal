@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.LoadBalancersActionsDeleteServiceRequest{
-    ListenPort:           float64(4711),
+    ListenPort:            float64(4711),
 }
 
-apiResponse, err := loadBalancerActionsController.DeleteService(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.DeleteService(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

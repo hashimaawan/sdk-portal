@@ -45,11 +45,11 @@ ctx := context.Background()
 id := 112
 
 body := models.CreateImageRequest{
-    Description:          models.ToPointer("my image"),
-    Type:                 models.ToPointer(models.Type63Enum_SNAPSHOT),
+    Description:           models.ToPointer("my image"),
+    Type:                  models.ToPointer(models.Type63_Snapshot),
 }
 
-apiResponse, err := serverActionsController.CreateImageFromAServer(ctx, id, &body)
+apiResponse, err := serverActionsApi.CreateImageFromAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

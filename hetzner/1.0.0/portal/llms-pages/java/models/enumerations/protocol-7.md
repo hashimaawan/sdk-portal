@@ -7,7 +7,7 @@ Protocol of the Load Balancer
 
 # Enum Type Name
 
-`Protocol7Enum`
+`Protocol7`
 
 
 # Fields
@@ -22,9 +22,9 @@ Protocol of the Load Balancer
 # Example
 
 ```java
-import cloud.hetzner.api.models.Protocol7Enum;
+import cloud.hetzner.api.models.Protocol7;
 
-Protocol7Enum protocol7 = Protocol7Enum.HTTP;
+Protocol7 protocol7 = Protocol7.HTTP;
 ```
 
 

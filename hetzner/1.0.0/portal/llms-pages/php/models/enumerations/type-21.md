@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type21Enum`
+`Type21`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type21Enum;
+use HetznerCloudApiLib\Models\Type21;
 
-$type21 = Type21Enum::BACKUP;
+$type21 = Type21::BACKUP;
 ```
 
 

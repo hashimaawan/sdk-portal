@@ -23,7 +23,7 @@ def unassign_a_floating_ip(self,
 
 **201**: The `action` key contains the `unassign` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def unassign_a_floating_ip(self,
 ```python
 id = 112
 
-result = floating_ip_actions_controller.unassign_a_floating_ip(id)
-print(result)
+result = floating_ip_actions_api.unassign_a_floating_ip(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

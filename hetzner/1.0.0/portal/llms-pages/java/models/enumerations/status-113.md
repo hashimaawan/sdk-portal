@@ -7,7 +7,7 @@ Current status of the Volume
 
 # Enum Type Name
 
-`Status113Enum`
+`Status113`
 
 
 # Fields
@@ -21,9 +21,9 @@ Current status of the Volume
 # Example
 
 ```java
-import cloud.hetzner.api.models.Status113Enum;
+import cloud.hetzner.api.models.Status113;
 
-Status113Enum status113 = Status113Enum.CREATING;
+Status113 status113 = Status113.CREATING;
 ```
 
 

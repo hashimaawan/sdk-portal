@@ -46,7 +46,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const body: CreateLoadBalancerRequest = {
   algorithm: {
-    type: Type28Enum.RoundRobin,
+    type: Type28.RoundRobin,
   },
   loadBalancerType: 'lb11',
   name: 'Web Frontend',
@@ -56,7 +56,7 @@ const body: CreateLoadBalancerRequest = {
 };
 
 try {
-  const response = await loadBalancersController.createALoadBalancer(body);
+  const response = await loadBalancersApi.createALoadBalancer(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -17,7 +17,7 @@ Service health check
 | `http` | [`Http`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/http.md) | Optional | Additional configuration for protocol http |
 | `interval` | `int` | Required | Time interval in seconds health checks are performed |
 | `port` | `int` | Required | Port the health check will be performed on |
-| `protocol` | [`Protocol6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/protocol-6.md) | Required | Type of the health check |
+| `protocol` | [`Protocol6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/protocol-6.md) | Required | Type of the health check |
 | `retries` | `int` | Required | Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again |
 | `timeout` | `int` | Required | Time in seconds after an attempt is considered a timeout |
 
@@ -27,12 +27,12 @@ Service health check
 ```python
 from hetznercloudapi.models.http import Http
 from hetznercloudapi.models.load_balancer_service_health_check import LoadBalancerServiceHealthCheck
-from hetznercloudapi.models.protocol_6_enum import Protocol6Enum
+from hetznercloudapi.models.protocol_6 import Protocol6
 
 load_balancer_service_health_check = LoadBalancerServiceHealthCheck(
     interval=15,
     port=4711,
-    protocol=Protocol6Enum.HTTP,
+    protocol=Protocol6.HTTP,
     retries=3,
     timeout=10,
     http=Http(

@@ -7,7 +7,7 @@ Returns all available ISO objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-GetAllISOs(
+GetAllIsOs(
     ctx context.Context,
     name *string) (
     models.ApiResponse[models.IsosResponse],
@@ -34,7 +34,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := iSOsController.GetAllISOs(ctx, nil)
+apiResponse, err := isOsApi.GetAllIsOs(ctx, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

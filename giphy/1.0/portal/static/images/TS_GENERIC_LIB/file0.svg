@@ -130,8 +130,8 @@
                 <path id="Path_2761" data-name="Path 2761" d="M809.668,503.988h-1.54l-6.364-15.1h1.54Z" fill="#fff" />
             </g>
         </g>
-        <text id="Line3" transform="translate(813.139 501.994)" fill="#fff" font-size="19" font-family="Consolas" style="mix-blend-mode: normal;isolation: isolate"><tspan x="0" y="0">GiphyAPI&gt;</tspan></text>
-        <text id="Line2" transform="translate(813.139 438.994)" fill="#fff" font-size="19" font-family="Consolas" style="mix-blend-mode: normal;isolation: isolate"><tspan x="0" y="0">GiphyAPI&gt;node --version</tspan></text>
-        <text id="Line1" transform="translate(813.142 371.668)" fill="#fff" font-size="19" font-family="Consolas"><tspan x="0" y="0">GiphyAPI&gt;npm --version</tspan></text>
+        <text id="Line3" transform="translate(813.139 501.994)" fill="#fff" font-size="19" font-family="Consolas" style="mix-blend-mode: normal;isolation: isolate"><tspan x="0" y="0">GiphyApi&gt;</tspan></text>
+        <text id="Line2" transform="translate(813.139 438.994)" fill="#fff" font-size="19" font-family="Consolas" style="mix-blend-mode: normal;isolation: isolate"><tspan x="0" y="0">GiphyApi&gt;node --version</tspan></text>
+        <text id="Line1" transform="translate(813.142 371.668)" fill="#fff" font-size="19" font-family="Consolas"><tspan x="0" y="0">GiphyApi&gt;npm --version</tspan></text>
     </g>
 </svg>

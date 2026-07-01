@@ -7,15 +7,15 @@ Type of the ISO
 
 # Class Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `PUBLIC` |
-| `PRIVATE` |
+| `Public` |
+| `Private` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of the ISO
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type26 := models.Type26Enum_PUBLIC
+    type26 := models.Type26_Public
 
 }
 ```

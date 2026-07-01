@@ -25,7 +25,7 @@ def get_an_action_for_a_volume(self,
 
 **200**: The `action` key contains the Volume Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,11 +35,15 @@ id = 112
 
 action_id = 224
 
-result = volume_actions_controller.get_an_action_for_a_volume(
+result = volume_actions_api.get_an_action_for_a_volume(
     id,
     action_id
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

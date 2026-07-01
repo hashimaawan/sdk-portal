@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-LeaguedashteamshotlocationsGET(
+LeaguedashteamshotlocationsGet(
     ctx context.Context,
     measureType string,
     perMode string,
@@ -20,7 +20,7 @@ LeaguedashteamshotlocationsGET(
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
@@ -53,7 +53,7 @@ LeaguedashteamshotlocationsGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -104,7 +104,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -126,7 +126,7 @@ playerPosition := "PlayerPosition8"
 
 starterBench := "StarterBench0"
 
-resp, err := aPIController.LeaguedashteamshotlocationsGET(ctx, measureType, perMode, plusMinus, paceAdjust, rank, season, seasonType, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames, distanceRange, gameScope, playerExperience, playerPosition, starterBench)
+resp, err := api.LeaguedashteamshotlocationsGet(ctx, measureType, perMode, plusMinus, paceAdjust, rank, season, seasonType, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames, distanceRange, gameScope, playerExperience, playerPosition, starterBench)
 if err != nil {
     log.Fatalln(err)
 } else {

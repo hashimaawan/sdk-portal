@@ -7,7 +7,7 @@ Status of the renewal process of the Certificate.
 
 # Enum Type Name
 
-`RenewalEnum`
+`Renewal`
 
 
 # Fields
@@ -23,7 +23,7 @@ Status of the renewal process of the Certificate.
 # Example
 
 ```ruby
-renewal = RenewalEnum::FAILED
+renewal = Renewal::FAILED
 ```
 
 

@@ -7,7 +7,7 @@ travel mode
 
 # Enum Type Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
@@ -24,9 +24,9 @@ travel mode
 # Example
 
 ```java
-import com.furkot.trips.models.ModeEnum;
+import com.furkot.trips.models.Mode;
 
-ModeEnum mode = ModeEnum.BICYCLE;
+Mode mode = Mode.BICYCLE;
 ```
 
 

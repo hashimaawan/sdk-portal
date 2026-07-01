@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkZpcmV3YWxs
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -18,26 +20,28 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `?array<string,string>` | Optional | User-defined labels (key-value pairs) | getLabels(): ?array | setLabels(?array labels): void |
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. | getName(): string | setName(string name): void |
 | `rules` | [`Rule[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/rule.md) | Required | - | getRules(): array | setRules(array rules): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\FirewallBuilder;
-use HetznerCloudAPILib\Models\Builders\AppliedToBuilder;
-use HetznerCloudAPILib\Models\Type6Enum;
-use HetznerCloudAPILib\Models\Builders\AppliedToResourceBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerBuilder;
-use HetznerCloudAPILib\Models\Type5Enum;
-use HetznerCloudAPILib\Models\Builders\LabelSelectorBuilder;
-use HetznerCloudAPILib\Models\Builders\RuleBuilder;
-use HetznerCloudAPILib\Models\DirectionEnum;
-use HetznerCloudAPILib\Models\ProtocolEnum;
+use HetznerCloudApiLib\Models\Builders\FirewallBuilder;
+use HetznerCloudApiLib\Models\Builders\AppliedToBuilder;
+use HetznerCloudApiLib\Models\Type6;
+use HetznerCloudApiLib\Models\Builders\AppliedToResourceBuilder;
+use HetznerCloudApiLib\Models\Builders\ServerBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Type5;
+use HetznerCloudApiLib\Models\Builders\LabelSelectorBuilder;
+use HetznerCloudApiLib\Models\Builders\RuleBuilder;
+use HetznerCloudApiLib\Models\Direction;
+use HetznerCloudApiLib\Models\Protocol;
 
 $firewall = FirewallBuilder::init(
     [
         AppliedToBuilder::init(
-            Type6Enum::SERVER
+            Type6::SERVER
         )
             ->appliedToResources(
                 [
@@ -45,30 +49,39 @@ $firewall = FirewallBuilder::init(
                         ->server(
                             ServerBuilder::init(
                                 14
-                            )->build()
+                            )
+                                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                ->build()
                         )
-                        ->type(Type5Enum::SERVER)
+                        ->type(Type5::SERVER)
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build()
                 ]
             )
             ->labelSelector(
                 LabelSelectorBuilder::init(
                     'selector8'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->server(
                 ServerBuilder::init(
                     14
-                )->build()
-            )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
+            )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     '2016-01-30T23:55:00+00:00',
     42,
     'my-resource',
     [
         RuleBuilder::init(
-            DirectionEnum::IN,
-            ProtocolEnum::UDP
+            Direction::IN,
+            Protocol::UDP
         )
             ->description('description2')
             ->destinationIps(
@@ -86,6 +99,7 @@ $firewall = FirewallBuilder::init(
                     'ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128'
                 ]
             )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -95,6 +109,7 @@ $firewall = FirewallBuilder::init(
             'key1' => 'labels1'
         ]
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

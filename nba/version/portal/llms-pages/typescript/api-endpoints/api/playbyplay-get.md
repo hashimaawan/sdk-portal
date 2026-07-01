@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playbyplayGET(
-  gameID: string,
+async playbyplayGet(
+  gameId: string,
   startPeriod: string,
   endPeriod: string,
   requestOptions?: RequestOptions
@@ -18,7 +18,7 @@ async playbyplayGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `startPeriod` | `string` | Query, Required | - |
 | `endPeriod` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -34,15 +34,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const gameID = 'GameID8';
+const gameId = 'GameID8';
 
 const startPeriod = 'StartPeriod4';
 
 const endPeriod = 'EndPeriod0';
 
 try {
-  const response = await apiController.playbyplayGET(
-    gameID,
+  const response = await api.playbyplayGet(
+    gameId,
     startPeriod,
     endPeriod
   );

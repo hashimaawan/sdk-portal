@@ -17,7 +17,7 @@ GetAllPricesAsync()
 
 **200**: The `pricing` key in the reply contains an pricing object with this structure
 
-[`Task<Models.PricingResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/pricing-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.PricingResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/pricing-response.md).
 
 
 # Example Usage
@@ -25,7 +25,7 @@ GetAllPricesAsync()
 ```csharp
 try
 {
-    PricingResponse result = await pricingController.GetAllPricesAsync();
+    ApiResponse<PricingResponse> result = await pricingApi.GetAllPricesAsync();
 }
 catch (ApiException e)
 {

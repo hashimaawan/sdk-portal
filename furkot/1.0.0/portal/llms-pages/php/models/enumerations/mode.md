@@ -7,7 +7,7 @@ travel mode
 
 # Enum Type Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
@@ -24,9 +24,9 @@ travel mode
 # Example
 
 ```php
-use FurkotTripsLib\Models\ModeEnum;
+use FurkotTripsLib\Models\Mode;
 
-$mode = ModeEnum::BICYCLE;
+$mode = Mode::BICYCLE;
 ```
 
 

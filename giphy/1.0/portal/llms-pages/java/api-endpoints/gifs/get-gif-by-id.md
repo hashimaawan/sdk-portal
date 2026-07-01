@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 Returns a GIF given that GIF's unique ID
 
 ```java
-CompletableFuture<GifsResponse1> getGifByIdAsync(
+CompletableFuture<ApiResponse<GifsResponse1>> getGifByIdAsync(
     final int gifId)
 ```
 
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -26,7 +26,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`GifsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/gifs-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GifsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/gifs-response-1.md).
 
 
 # Example Usage
@@ -34,7 +34,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 ```java
 int gifId = 250;
 
-gifsController.getGifByIdAsync(gifId).thenAccept(result -> {
+gifsApi.getGifByIdAsync(gifId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

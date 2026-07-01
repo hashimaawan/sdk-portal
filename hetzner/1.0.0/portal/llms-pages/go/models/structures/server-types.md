@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 The Server types the Datacenter can handle
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -17,6 +19,7 @@ The Server types the Datacenter can handle
 | `Available` | `[]float64` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `AvailableForMigration` | `[]float64` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `Supported` | `[]float64` | Required | IDs of Server types that are supported in the Datacenter |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -25,7 +28,7 @@ The Server types the Datacenter can handle
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
@@ -44,6 +47,9 @@ func main() {
             float64(1),
             float64(2),
             float64(3),
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

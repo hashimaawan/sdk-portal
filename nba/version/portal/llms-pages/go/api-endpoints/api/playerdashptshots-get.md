@@ -5,20 +5,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayerdashptshotsGET(
+PlayerdashptshotsGet(
     ctx context.Context,
     perMode string,
     season string,
     seasonType string,
-    playerID string,
-    teamID string,
+    playerId string,
+    teamId string,
     outcome string,
     location string,
     month string,
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
@@ -36,15 +36,15 @@ PlayerdashptshotsGET(
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -70,9 +70,9 @@ season := "Season0"
 
 seasonType := "SeasonType8"
 
-playerID := "PlayerID6"
+playerId := "PlayerID6"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
 outcome := "Outcome4"
 
@@ -86,7 +86,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -98,7 +98,7 @@ period := "Period2"
 
 lastNGames := "LastNGames4"
 
-resp, err := aPIController.PlayerdashptshotsGET(ctx, perMode, season, seasonType, playerID, teamID, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames)
+resp, err := api.PlayerdashptshotsGet(ctx, perMode, season, seasonType, playerId, teamId, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames)
 if err != nil {
     log.Fatalln(err)
 } else {

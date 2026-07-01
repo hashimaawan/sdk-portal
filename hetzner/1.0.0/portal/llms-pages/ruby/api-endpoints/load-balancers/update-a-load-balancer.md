@@ -28,7 +28,7 @@ def update_a_load_balancer(id,
 
 **200**: The `load_balancer` key contains the updated Load Balancer
 
-[`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancers-response-2.md).
 
 
 # Example Usage
@@ -37,15 +37,20 @@ def update_a_load_balancer(id,
 id = 112
 
 body = LoadBalancersRequest.new(
-  { 'labelkey' => 'value' },
-  'new-name'
+  labels: { 'labelkey' => 'value' },
+  name: 'new-name'
 )
 
-result = load_balancers_controller.update_a_load_balancer(
+result = load_balancers_api.update_a_load_balancer(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

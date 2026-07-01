@@ -31,7 +31,7 @@ We limit the number of samples returned to a maximum of 500 and will adjust the 
 ```csharp
 GetMetricsForAServerAsync(
     int id,
-    Models.Type66Enum type,
+    Models.Type66 type,
     string start,
     string end,
     string step = null)
@@ -43,7 +43,7 @@ GetMetricsForAServerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Server |
-| `type` | [`Type66Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type66`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `string` | Query, Optional | Resolution of results in seconds |
@@ -53,19 +53,19 @@ GetMetricsForAServerAsync(
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`Task<Models.ServersMetricsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServersMetricsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-metrics-response.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-Type66Enum type = Type66Enum.Network;
+Type66 type = Type66.Network;
 string start = "start4";
 string end = "end8";
 try
 {
-    ServersMetricsResponse result = await serversController.GetMetricsForAServerAsync(
+    ApiResponse<ServersMetricsResponse> result = await serversApi.GetMetricsForAServerAsync(
         id,
         type,
         start,

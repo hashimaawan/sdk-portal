@@ -8,10 +8,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |------------------------------ |-------------------------------------------------------------- |
 | `floating_ip_assigned`        | The floating IP is already assigned                           |
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
-`AssignFloatingIPRequest`
+`AssignFloatingIpRequest`
 
 
 # Fields
@@ -19,16 +21,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Server` | `int` | Required | ID of the Server the Floating IP shall be assigned to |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
-AssignFloatingIPRequest assignFloatingIPRequest = new AssignFloatingIPRequest
+AssignFloatingIpRequest assignFloatingIpRequest = new AssignFloatingIpRequest
 {
     Server = 42,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -45,11 +45,11 @@ const body: CreateCertificateRequest = {
     'webmail.example.com',
     'www.example.com'
   ],
-  type: Type1Enum.Managed,
+  type: Type1.Managed,
 };
 
 try {
-  const response = await certificatesController.createACertificate(body);
+  const response = await certificatesApi.createACertificate(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status70Enum`
+`Status70`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Status70Enum status70 = Status70Enum.Migrating;
+Status70 status70 = Status70.Migrating;
 ```
 
 

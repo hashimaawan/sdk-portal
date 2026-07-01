@@ -5,11 +5,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async teamyearbyyearstatsGET(
-  leagueID: string,
+async teamyearbyyearstatsGet(
+  leagueId: string,
   seasonType: string,
   perMode: string,
-  teamID: string,
+  teamId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -19,10 +19,10 @@ async teamyearbyyearstatsGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -36,20 +36,20 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const seasonType = 'SeasonType8';
 
 const perMode = 'PerMode6';
 
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
 try {
-  const response = await apiController.teamyearbyyearstatsGET(
-    leagueID,
+  const response = await api.teamyearbyyearstatsGet(
+    leagueId,
     seasonType,
     perMode,
-    teamID
+    teamId
   );
 
   // Extracting fully parsed response body.

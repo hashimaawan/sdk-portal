@@ -7,7 +7,7 @@ Status of the Firewall on the Server
 
 # Enum Type Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
@@ -21,9 +21,9 @@ Status of the Firewall on the Server
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Status72Enum;
+use HetznerCloudApiLib\Models\Status72;
 
-$status72 = Status72Enum::APPLIED;
+$status72 = Status72::APPLIED;
 ```
 
 

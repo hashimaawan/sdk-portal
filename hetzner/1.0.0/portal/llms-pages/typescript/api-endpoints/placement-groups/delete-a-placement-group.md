@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await placementGroupsController.deleteAPlacementGroup(id);
+  const response = await placementGroupsApi.deleteAPlacementGroup(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-VideoStatusGET(
+VideoStatusGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     gameDate string) (
     http.Response,
     error)
@@ -18,7 +18,7 @@ VideoStatusGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `gameDate` | `string` | Query, Required | - |
 
 
@@ -34,11 +34,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 gameDate := "GameDate8"
 
-resp, err := aPIController.VideoStatusGET(ctx, leagueID, gameDate)
+resp, err := api.VideoStatusGet(ctx, leagueId, gameDate)
 if err != nil {
     log.Fatalln(err)
 } else {

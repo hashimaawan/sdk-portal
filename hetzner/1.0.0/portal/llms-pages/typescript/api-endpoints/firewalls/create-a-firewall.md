@@ -44,7 +44,7 @@ const body: CreateFirewallRequest = {
   name: 'Corporate Intranet Protection',
   applyTo: [
     {
-      type: Type7Enum.Server,
+      type: Type7.Server,
       server: {
         id: 42,
       },
@@ -53,8 +53,8 @@ const body: CreateFirewallRequest = {
   labels: { 'env': 'dev' },
   rules: [
     {
-      direction: DirectionEnum.In,
-      protocol: ProtocolEnum.Tcp,
+      direction: Direction.In,
+      protocol: Protocol.Tcp,
       description: 'Allow port 80',
       port: '80',
       sourceIps: [
@@ -67,7 +67,7 @@ const body: CreateFirewallRequest = {
 };
 
 try {
-  const response = await firewallsController.createAFirewall(body);
+  const response = await firewallsApi.createAFirewall(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

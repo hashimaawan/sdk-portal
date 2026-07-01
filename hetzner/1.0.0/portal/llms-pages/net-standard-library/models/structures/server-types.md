@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 The Server types the Datacenter can handle
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -17,12 +19,14 @@ The Server types the Datacenter can handle
 | `Available` | `List<double>` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `AvailableForMigration` | `List<double>` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `Supported` | `List<double>` | Required | IDs of Server types that are supported in the Datacenter |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 ServerTypes serverTypes = new ServerTypes
@@ -45,6 +49,7 @@ ServerTypes serverTypes = new ServerTypes
         2,
         3,
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

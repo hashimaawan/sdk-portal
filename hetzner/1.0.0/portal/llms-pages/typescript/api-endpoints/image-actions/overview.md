@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `ImageActionsController` class can be created using the API Client.
+The instance of the `ImageActionsApi` class can be created using the API Client.
 
 ```
-const imageActionsController = new ImageActionsController(client);
+const imageActionsApi = new ImageActionsApi(client);
 ```
 
 

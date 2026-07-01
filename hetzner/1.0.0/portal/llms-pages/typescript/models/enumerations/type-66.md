@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type66Enum`
+`Type66`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Type66Enum } from 'hetzner-cloud-apilib';
+import { Type66 } from 'hetzner-cloud-apilib';
 
-const type66 = Type66Enum.Network;
+const type66 = Type66.Network;
 ```
 
 

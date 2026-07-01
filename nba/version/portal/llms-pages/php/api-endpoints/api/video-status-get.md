@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function videoStatusGET(string $leagueID, string $gameDate): void
+function videoStatusGet(string $leagueId, string $gameDate): ApiResponse
 ```
 
 
@@ -13,7 +13,7 @@ function videoStatusGET(string $leagueID, string $gameDate): void
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `gameDate` | `string` | Query, Required | - |
 
 
@@ -21,25 +21,33 @@ function videoStatusGET(string $leagueID, string $gameDate): void
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $gameDate = 'GameDate8';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->videoStatusGet(
+    $leagueId,
+    $gameDate
+);
 
-try {
-    $aPIController->videoStatusGET(
-        $leagueID,
-        $gameDate
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

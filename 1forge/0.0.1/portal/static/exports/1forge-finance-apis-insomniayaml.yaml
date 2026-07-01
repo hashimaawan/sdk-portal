@@ -4,33 +4,33 @@ __export_source: apimatic.transformer
 resources:
 - name: 1Forge Finance APIs
   _type: workspace
-  _id: wrk_1d3a9872adda4b85b7b4b5db77722324
+  _id: wrk_6b96d620bcf745298d3822ac2719e248
   description: Stock and Forex Data and Realtime Quotes
 - name: production
   data:
     server1: https://1forge.com/forex-quotes
     server2: http://1forge.com/forex-quotes
   _type: environment
-  _id: env_ba1c97eba80a4a4a80ba2670070d72fd
-  parentId: wrk_1d3a9872adda4b85b7b4b5db77722324
+  _id: env_161b5f71e2ca4e72ace6d92fb9530c05
+  parentId: wrk_6b96d620bcf745298d3822ac2719e248
 - name: forex
   _type: request_group
-  _id: fld_9bf00ee6982e407aa15887845ddf7cf3
-  parentId: wrk_1d3a9872adda4b85b7b4b5db77722324
+  _id: fld_56174ff7204f4d478de0ed82549df8ca
+  parentId: wrk_6b96d620bcf745298d3822ac2719e248
   description: ''
 - name: Get quotes for all symbols
   method: GET
   url: '{{server1}}/quotes'
   authentication: {}
   _type: request
-  _id: req_294ae73d93fe4849810c9d633296bcbe
-  parentId: fld_9bf00ee6982e407aa15887845ddf7cf3
+  _id: req_8d1ecc5086ba49c38aeafb673a29dfbb
+  parentId: fld_56174ff7204f4d478de0ed82549df8ca
   description: Get quotes
 - name: Get a list of symbols for which we provide real-time quotes
   method: GET
   url: '{{server1}}/symbols'
   authentication: {}
   _type: request
-  _id: req_9d094235699c482f99d28af62562639e
-  parentId: fld_9bf00ee6982e407aa15887845ddf7cf3
+  _id: req_52a5ce8366e34e2bb433fa8201b99327
+  parentId: fld_56174ff7204f4d478de0ed82549df8ca
   description: Symbol List

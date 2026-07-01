@@ -7,7 +7,7 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 
 # Enum Type Name
 
-`DirectionEnum`
+`Direction`
 
 
 # Fields
@@ -21,7 +21,7 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 # Example
 
 ```ruby
-direction = DirectionEnum::ENUM_IN
+direction = Direction::ENUM_IN
 ```
 
 

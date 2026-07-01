@@ -7,7 +7,7 @@ Gets all Load Balancer type objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LoadBalancerTypesResponse> getAllLoadBalancerTypesAsync(
+CompletableFuture<ApiResponse<LoadBalancerTypesResponse>> getAllLoadBalancerTypesAsync(
     final String name)
 ```
 
@@ -23,13 +23,13 @@ CompletableFuture<LoadBalancerTypesResponse> getAllLoadBalancerTypesAsync(
 
 **200**: The `load_balancer_types` key in the reply contains an array of Load Balancer type objects with this structure
 
-[`LoadBalancerTypesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancer-types-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LoadBalancerTypesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancer-types-response.md).
 
 
 # Example Usage
 
 ```java
-loadBalancerTypesController.getAllLoadBalancerTypesAsync(null).thenAccept(result -> {
+loadBalancerTypesApi.getAllLoadBalancerTypesAsync(null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRk5ldHdvcms
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -22,6 +24,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Routes` | [`List<Route>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/route.md) | Required | Array of routes set in this Network | List<Route> getRoutes() | setRoutes(List<Route> routes) |
 | `Servers` | `List<Integer>` | Required | Array of IDs of Servers attached to this Network | List<Integer> getServers() | setServers(List<Integer> servers) |
 | `Subnets` | [`List<Subnet>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/subnet.md) | Required | Array subnets allocated in this Network | List<Subnet> getSubnets() | setSubnets(List<Subnet> subnets) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -32,7 +35,7 @@ import cloud.hetzner.api.models.Network;
 import cloud.hetzner.api.models.Protection11;
 import cloud.hetzner.api.models.Route;
 import cloud.hetzner.api.models.Subnet;
-import cloud.hetzner.api.models.Type42Enum;
+import cloud.hetzner.api.models.Type42;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -45,12 +48,14 @@ Network network = new Network.Builder(
     new Protection11.Builder(
         false
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     Arrays.asList(
         new Route.Builder(
             "10.100.1.0/24",
             "10.0.1.1"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     Arrays.asList(
@@ -60,15 +65,17 @@ Network network = new Network.Builder(
         new Subnet.Builder(
             "10.0.0.1",
             "eu-central",
-            Type42Enum.CLOUD
+            Type42.CLOUD
         )
         .ipRange("10.0.1.0/24")
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
 )
 .loadBalancers(Arrays.asList(
         42
     ))
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

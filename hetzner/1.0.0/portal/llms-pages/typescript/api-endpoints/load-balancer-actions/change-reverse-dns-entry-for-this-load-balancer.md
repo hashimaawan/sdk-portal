@@ -9,7 +9,7 @@ Floating IPs assigned to the Server are not affected by this.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async changeReverseDNSEntryForThisLoadBalancer(
+async changeReverseDnsEntryForThisLoadBalancer(
   id: number,
   body?: ChangeLoadbalancerDnsPtrRequest,
   requestOptions?: RequestOptions
@@ -44,7 +44,7 @@ const body: ChangeLoadbalancerDnsPtrRequest = {
 };
 
 try {
-  const response = await loadBalancerActionsController.changeReverseDNSEntryForThisLoadBalancer(
+  const response = await loadBalancerActionsApi.changeReverseDnsEntryForThisLoadBalancer(
     id,
     body
   );

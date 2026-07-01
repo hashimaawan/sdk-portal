@@ -7,7 +7,7 @@ Type of cpu
 
 # Enum Type Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of cpu
 # Example
 
 ```java
-import cloud.hetzner.api.models.CpuTypeEnum;
+import cloud.hetzner.api.models.CpuType;
 
-CpuTypeEnum cpuType = CpuTypeEnum.SHARED;
+CpuType cpuType = CpuType.SHARED;
 ```
 
 

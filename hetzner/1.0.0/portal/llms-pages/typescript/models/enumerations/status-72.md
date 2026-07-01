@@ -7,7 +7,7 @@ Status of the Firewall on the Server
 
 # Enum Type Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
@@ -21,9 +21,9 @@ Status of the Firewall on the Server
 # Example
 
 ```ts
-import { Status72Enum } from 'hetzner-cloud-apilib';
+import { Status72 } from 'hetzner-cloud-apilib';
 
-const status72 = Status72Enum.Applied;
+const status72 = Status72.Applied;
 ```
 
 

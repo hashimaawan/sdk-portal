@@ -28,6 +28,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.floating_ip_4 import FloatingIp4
 from hetznercloudapi.models.floating_ip_5 import FloatingIp5
 from hetznercloudapi.models.image_3 import Image3
@@ -51,8 +53,8 @@ from hetznercloudapi.models.primary_ip import PrimaryIp
 from hetznercloudapi.models.server_backup import ServerBackup
 from hetznercloudapi.models.server_types_2 import ServerTypes2
 from hetznercloudapi.models.traffic import Traffic
-from hetznercloudapi.models.type_48_enum import Type48Enum
-from hetznercloudapi.models.type_49_enum import Type49Enum
+from hetznercloudapi.models.type_48 import Type48
+from hetznercloudapi.models.type_49 import Type49
 from hetznercloudapi.models.volume import Volume
 
 pricing = Pricing(
@@ -60,8 +62,14 @@ pricing = Pricing(
     floating_ip=FloatingIp4(
         price_monthly=PriceMonthly6(
             gross='1.1900000000000000',
-            net='1.0000000000'
-        )
+            net='1.0000000000',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     floating_ips=[
         FloatingIp5(
@@ -70,18 +78,33 @@ pricing = Pricing(
                     location='fsn1',
                     price_monthly=PriceMonthly7(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
-                    )
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
+                    ),
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
             ],
-            mtype=Type48Enum.IPV4
+            mtype=Type48.IPV4,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     image=Image3(
         price_per_gb_month=PricePerGbMonth(
             gross='1.1900000000000000',
-            net='1.0000000000'
-        )
+            net='1.0000000000',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     load_balancer_types=[
         LoadBalancerType6(
@@ -92,14 +115,26 @@ pricing = Pricing(
                     location='fsn1',
                     price_hourly=PriceHourly6(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     price_monthly=PriceMonthly8(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
-                    )
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
+                    ),
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
-            ]
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     primary_ips=[
@@ -109,19 +144,34 @@ pricing = Pricing(
                     location='fsn1',
                     price_hourly=PriceHourly7(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     price_monthly=PriceMonthly9(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
-                    )
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
+                    ),
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
             ],
-            mtype=Type49Enum.IPV4
+            mtype=Type49.IPV4,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     server_backup=ServerBackup(
-        percentage='20.0000000000'
+        percentage='20.0000000000',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     server_types=[
         ServerTypes2(
@@ -132,28 +182,52 @@ pricing = Pricing(
                     location='fsn1',
                     price_hourly=PriceHourly8(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     price_monthly=PriceMonthly10(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
-                    )
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
+                    ),
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
-            ]
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     traffic=Traffic(
         price_per_tb=PricePerTb(
             gross='1.1900000000000000',
-            net='1.0000000000'
-        )
+            net='1.0000000000',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     vat_rate='19.000000',
     volume=Volume(
         price_per_gb_month=PricePerGbMonth(
             gross='1.1900000000000000',
-            net='1.0000000000'
-        )
+            net='1.0000000000',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     )
 )
 ```

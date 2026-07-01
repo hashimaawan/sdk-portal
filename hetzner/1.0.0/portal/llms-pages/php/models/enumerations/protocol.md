@@ -7,7 +7,7 @@ Type of traffic to allow
 
 # Enum Type Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of traffic to allow
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\ProtocolEnum;
+use HetznerCloudApiLib\Models\Protocol;
 
-$protocol = ProtocolEnum::ESP;
+$protocol = Protocol::ESP;
 ```
 
 

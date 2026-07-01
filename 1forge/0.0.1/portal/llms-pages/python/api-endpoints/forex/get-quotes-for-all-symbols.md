@@ -17,13 +17,18 @@ def get_quotes_for_all_symbols(self)
 
 **200**: A list of quotes
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```python
-forex_controller.get_quotes_for_all_symbols()
+result = forex_api.get_quotes_for_all_symbols()
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

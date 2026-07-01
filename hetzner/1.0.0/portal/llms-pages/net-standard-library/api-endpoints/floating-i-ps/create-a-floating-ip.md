@@ -7,8 +7,8 @@ Creates a new Floating IP assigned to a Server. If you want to create a Floating
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-CreateAFloatingIPAsync(
-    Models.CreateFloatingIPRequest body = null)
+CreateAFloatingIpAsync(
+    Models.CreateFloatingIpRequest body = null)
 ```
 
 
@@ -16,22 +16,22 @@ CreateAFloatingIPAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
+| `body` | [`CreateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `floating_ip` key in the reply contains the object that was just created
 
-[`Task<Models.FloatingIpsResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.FloatingIpsResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-response-1.md).
 
 
 # Example Usage
 
 ```csharp
-CreateFloatingIPRequest body = new CreateFloatingIPRequest
+CreateFloatingIpRequest body = new CreateFloatingIpRequest
 {
-    Type = Type17Enum.Ipv4,
+    Type = Type17.Ipv4,
     Description = "Web Frontend",
     HomeLocation = "fsn1",
     Labels = ApiHelper.JsonDeserialize<object>("{\"labelkey\":\"value\"}"),
@@ -41,7 +41,7 @@ CreateFloatingIPRequest body = new CreateFloatingIPRequest
 
 try
 {
-    FloatingIpsResponse1 result = await floatingIPsController.CreateAFloatingIPAsync(body);
+    ApiResponse<FloatingIpsResponse1> result = await floatingIPsApi.CreateAFloatingIpAsync(body);
 }
 catch (ApiException e)
 {

@@ -131,7 +131,7 @@
     <rect x="1" y="94" width="401" height="445" class="cls-6" />
     <rect x="1" y="65" width="401" height="28" class="cls-7" />
     <rect x="1" y="94" width="401" height="26" class="cls-8" />
-    <text transform="translate(31 53) scale(0.5 0.5)" class="cls-3"><tspan class="cls-9">M1forgefinan...</tspan></text>
+    <text transform="translate(31 53) scale(0.5 0.5)" class="cls-3"><tspan class="cls-9">M1Forgefinan...</tspan></text>
     <text transform="translate(39 83) scale(0.5 0.5)" class="cls-3"><tspan class="cls-9">project</tspan></text>
     <path d="M97.694,83.000 L94.771,77.937 L100.617,77.937 L97.694,83.000 Z" class="cls-10" />
     <path d="M10.694,111.000 L7.771,105.937 L13.617,105.937 L10.694,111.000 Z" class="cls-10" />
@@ -150,7 +150,7 @@
     <text transform="translate(241 22) scale(0.5 0.5)" class="cls-11"><tspan class="cls-12">Refactor</tspan></text>
     <path d="M26.000,54.000 L12.000,54.000 L12.000,42.000 L18.000,42.000 L20.000,44.000 L26.000,44.000 L26.000,54.000 Z" class="cls-13" />
     <rect x="14" y="46" width="10" height="6" class="cls-8" />
-    <text transform="translate(39 113) scale(0.5 0.5)" class="cls-3"><tspan class="cls-9">M1forgefinan...</tspan></text>
+    <text transform="translate(39 113) scale(0.5 0.5)" class="cls-3"><tspan class="cls-9">M1Forgefinan...</tspan></text>
     <path d="M34.000,114.000 L20.000,114.000 L20.000,102.000 L26.000,102.000 L28.000,104.000 L34.000,104.000 L34.000,114.000 Z" class="cls-13" />
     <rect x="22" y="106" width="10" height="6" class="cls-8" />
     <text transform="translate(64 133) scale(0.5 0.5)" class="cls-3"><tspan class="cls-9">m1forgefinanceapis</tspan></text>
@@ -189,10 +189,10 @@
     <text transform="translate(167 324) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Refractor</tspan></text>
     <text transform="translate(167 344) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Add to Favorites</tspan></text>
     <text transform="translate(167 362) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Show Image Thumbnails</tspan></text>
-    <text transform="translate(167 381) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Run 'M1forgefinan...'</tspan></text>
-    <text transform="translate(167 401) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Debug 'M1forgefinan...'</tspan></text>
-    <text transform="translate(167 419) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Run 'M1forgefinan...'</tspan></text>
-    <text transform="translate(167 439) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Create 'M1forgefinan...'...</tspan></text>
+    <text transform="translate(167 381) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Run 'M1Forgefinan...'</tspan></text>
+    <text transform="translate(167 401) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Debug 'M1Forgefinan...'</tspan></text>
+    <text transform="translate(167 419) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Run 'M1Forgefinan...'</tspan></text>
+    <text transform="translate(167 439) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Create 'M1Forgefinan...'...</tspan></text>
     <text transform="translate(167 458) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Compare with...</tspan></text>
     <text transform="translate(167 476) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Mark Directry as</tspan></text>
     <text transform="translate(167 496) scale(0.32 0.32)" class="cls-19"><tspan class="cls-20">Composer</tspan></text>

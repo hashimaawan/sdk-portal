@@ -44,15 +44,15 @@ const client = Client.fromJsonConfig(JSON.stringify(configModule.default));
   "timeout": 30000,
   "environment": "production",
   "furkotAuthAccessCodeCredentials": {
-    "oAuthClientId": "oauthclientid",
-    "oAuthClientSecret": "oauthclientsecret",
-    "oAuthRedirectUri": "oauthredirecturi",
-    "oAuthClockSkew": 0
+    "oauthClientId": "oauthclientid",
+    "oauthClientSecret": "oauthclientsecret",
+    "oauthRedirectUri": "oauthredirecturi",
+    "oauthClockSkew": 0
   },
   "furkotAuthImplicitCredentials": {
-    "oAuthClientId": "oauthclientid",
-    "oAuthRedirectUri": "oauthredirecturi",
-    "oAuthClockSkew": 0
+    "oauthClientId": "oauthclientid",
+    "oauthRedirectUri": "oauthredirecturi",
+    "oauthClockSkew": 0
   },
   "httpClientOptions": {
     "timeout": 30000,
@@ -72,6 +72,43 @@ const client = Client.fromJsonConfig(JSON.stringify(configModule.default));
         "username": "username",
         "password": "password"
       }
+    }
+  },
+  "logging": {
+    "logLevel": "info",
+    "maskSensitiveHeaders": true,
+    "logRequest": {
+      "logBody": true,
+      "logHeaders": true,
+      "includeQueryInPath": true,
+      "headersToInclude": [
+        "Content-Type",
+        "X-Request-ID"
+      ],
+      "headersToExclude": [
+        "Authorization"
+      ],
+      "headersToWhitelist": [
+        "X-Request-ID"
+      ]
+    },
+    "logResponse": {
+      "logBody": true,
+      "logHeaders": true,
+      "headersToInclude": [
+        "Content-Type",
+        "X-Correlation-ID",
+        "Date",
+        "Server"
+      ],
+      "headersToExclude": [
+        "Set-Cookie",
+        "Authorization",
+        "X-API-Key"
+      ],
+      "headersToWhitelist": [
+        "X-Correlation-ID"
+      ]
     }
   }
 }

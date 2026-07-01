@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMFJlc3BvbnNlMg
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -13,198 +15,271 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `server` | [`Server18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/server-18.md) | Optional | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 servers_response2 = ServersResponse2.new(
-  Server18.new(
-    'backup_window2',
-    'created4',
-    Datacenter6.new(
-      'description0',
-      200,
-      Location.new(
-        'city6',
-        'country8',
-        'description6',
-        187.14,
-        194.62,
-        59.18,
-        'name4',
-        'network_zone2'
+  server: Server18.new(
+    backup_window: 'backup_window2',
+    created: 'created4',
+    datacenter: Datacenter6.new(
+      description: 'description0',
+      id: 200,
+      location: Location.new(
+        city: 'city6',
+        country: 'country8',
+        description: 'description6',
+        id: 187.14,
+        latitude: 194.62,
+        longitude: 59.18,
+        name: 'name4',
+        network_zone: 'network_zone2',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      'name0',
-      ServerTypes.new(
-        [
+      name: 'name0',
+      server_types: ServerTypes.new(
+        available: [
           23.74
         ],
-        [
+        available_for_migration: [
           201.65,
           201.66
         ],
-        [
+        supported: [
           69.52,
           69.53,
           69.54
-        ]
-      )
-    ),
-    14,
-    Image.new(
-      186,
-      'created6',
-      CreatedFrom.new(
-        60,
-        'name6'
+        ],
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      'deleted4',
-      'deprecated8',
-      'description6',
-      244.18,
-      128,
-      141.34,
-      {
-        'key0': 'labels4'
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
+    ),
+    id: 14,
+    image: Image.new(
+      bound_to: 186,
+      created: 'created6',
+      created_from: CreatedFrom.new(
+        id: 60,
+        name: 'name6',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
+      ),
+      deleted: 'deleted4',
+      deprecated: 'deprecated8',
+      description: 'description6',
+      disk_size: 244.18,
+      id: 128,
+      image_size: 141.34,
+      labels: {
+        'key0' => 'labels4'
       },
-      'name6',
-      OsFlavorEnum::DEBIAN,
-      'os_version4',
-      Protection.new(
-        false
+      name: 'name6',
+      os_flavor: OsFlavor::DEBIAN,
+      os_version: 'os_version4',
+      protection: Protection.new(
+        delete: false,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      Status24Enum::UNAVAILABLE,
-      Type22Enum::APP,
-      false
+      status: Status24::UNAVAILABLE,
+      type: Type22::APP,
+      rapid_deploy: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    123.68,
-    151.82,
-    Iso2.new(
-      'deprecated0',
-      'description2',
-      66,
-      'name8',
-      Type26Enum::PUBLIC
+    included_traffic: 123.68,
+    ingoing_traffic: 151.82,
+    iso: Iso2.new(
+      deprecated: 'deprecated0',
+      description: 'description2',
+      id: 66,
+      name: 'name8',
+      type: Type26::PUBLIC,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    {
-      'key0': 'labels0',
-      'key1': 'labels9'
+    labels: {
+      'key0' => 'labels0',
+      'key1' => 'labels9'
     },
-    false,
-    'name4',
-    129.6,
-    19.88,
-    [
+    locked: false,
+    name: 'name4',
+    outgoing_traffic: 129.6,
+    primary_disk_size: 19.88,
+    private_net: [
       PrivateNet4.new(
-        [
+        alias_ips: [
           'alias_ips4'
         ],
-        'ip6',
-        'mac_address0',
-        154
+        ip: 'ip6',
+        mac_address: 'mac_address0',
+        network: 154,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
       PrivateNet4.new(
-        [
+        alias_ips: [
           'alias_ips4'
         ],
-        'ip6',
-        'mac_address0',
-        154
+        ip: 'ip6',
+        mac_address: 'mac_address0',
+        network: 154,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    Protection20.new(
-      false,
-      false
+    protection: Protection20.new(
+      delete: false,
+      rebuild: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    PublicNet4.new(
-      [
+    public_net: PublicNet4.new(
+      floating_ips: [
         54,
         55,
         56
       ],
-      Ipv44.new(
-        false,
-        'dns_ptr4',
-        'ip2',
-        104
+      ipv4: Ipv44.new(
+        blocked: false,
+        dns_ptr: 'dns_ptr4',
+        ip: 'ip2',
+        id: 104,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      Ipv64.new(
-        false,
-        [
+      ipv6: Ipv64.new(
+        blocked: false,
+        dns_ptr: [
           DnsPtr8.new(
-            'dns_ptr0',
-            'ip6'
+            dns_ptr: 'dns_ptr0',
+            ip: 'ip6',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           ),
           DnsPtr8.new(
-            'dns_ptr0',
-            'ip6'
+            dns_ptr: 'dns_ptr0',
+            ip: 'ip6',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
         ],
-        'ip0',
-        8
+        ip: 'ip0',
+        id: 8,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      [
+      firewalls: [
         ServerPublicNetFirewall.new(
-          250,
-          Status72Enum::APPLIED
+          id: 250,
+          status: Status72::APPLIED,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
         ServerPublicNetFirewall.new(
-          250,
-          Status72Enum::APPLIED
-        )
-      ]
-    ),
-    false,
-    ServerType1.new(
-      12.84,
-      CpuTypeEnum::SHARED,
-      false,
-      'description0',
-      14.32,
-      30,
-      21.2,
-      'name0',
-      [
-        Price9.new(
-          'location8',
-          PriceHourly8.new(
-            'gross4',
-            'net2'
-          ),
-          PriceMonthly10.new(
-            'gross2',
-            'net0'
-          )
+          id: 250,
+          status: Status72::APPLIED,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      StorageTypeEnum::LOCAL
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    Status73Enum::STARTING,
-    [
+    rescue_enabled: false,
+    server_type: ServerType1.new(
+      cores: 12.84,
+      cpu_type: CpuType::SHARED,
+      deprecated: false,
+      description: 'description0',
+      disk: 14.32,
+      id: 30,
+      memory: 21.2,
+      name: 'name0',
+      prices: [
+        Price9.new(
+          location: 'location8',
+          price_hourly: PriceHourly8.new(
+            gross: 'gross4',
+            net: 'net2',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
+          ),
+          price_monthly: PriceMonthly10.new(
+            gross: 'gross2',
+            net: 'net0',
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
+          ),
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
+        )
+      ],
+      storage_type: StorageType::LOCAL,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
+    ),
+    status: Status73::STARTING,
+    load_balancers: [
       144,
       143,
       142
     ],
-    PlacementGroupNullable.new(
-      'created8',
-      236,
-      {
-        'key0': 'labels4'
+    placement_group: PlacementGroupNullable.new(
+      created: 'created8',
+      id: 236,
+      labels: {
+        'key0' => 'labels4'
       },
-      'name8',
-      [
+      name: 'name8',
+      servers: [
         251,
         252,
         253
       ],
-      'type2'
+      type: 'type2',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    [
+    volumes: [
       91,
       92
-    ]
-  )
+    ],
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

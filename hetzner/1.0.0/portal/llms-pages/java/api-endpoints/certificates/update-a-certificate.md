@@ -11,7 +11,7 @@ Note: if the Certificate object changes during the request, the response will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CertificateResponse> updateACertificateAsync(
+CompletableFuture<ApiResponse<CertificateResponse>> updateACertificateAsync(
     final int id,
     final UpdateCertificateRequest body)
 ```
@@ -29,7 +29,7 @@ CompletableFuture<CertificateResponse> updateACertificateAsync(
 
 **200**: The `certificate` key contains the Certificate that was just updated
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -41,7 +41,7 @@ UpdateCertificateRequest body = new UpdateCertificateRequest.Builder()
     .name("my website cert")
     .build();
 
-certificatesController.updateACertificateAsync(id, body).thenAccept(result -> {
+certificatesApi.updateACertificateAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

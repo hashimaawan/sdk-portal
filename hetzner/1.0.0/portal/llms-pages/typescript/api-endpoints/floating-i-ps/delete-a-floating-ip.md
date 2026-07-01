@@ -7,7 +7,7 @@ Deletes a Floating IP. If it is currently assigned to a Server it will automatic
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async deleteAFloatingIP(
+async deleteAFloatingIp(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await floatingIPsController.deleteAFloatingIP(id);
+  const response = await floatingIPsApi.deleteAFloatingIp(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

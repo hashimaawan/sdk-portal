@@ -10,10 +10,10 @@ Firewalls can limit the network access to or from your resources.
 
 # Get singleton instance
 
-The singleton instance of the `FirewallsController` class can be accessed from the API Client.
+The singleton instance of the `FirewallsApi` class can be accessed from the API Client.
 
 ```
-$firewallsController = $client->getFirewallsController();
+$firewallsApi = $client->getFirewallsApi();
 ```
 
 

@@ -26,7 +26,7 @@ def change_primary_ip_protection(id,
 
 **201**: The `action` key contains the `change_protection` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,14 +35,19 @@ def change_primary_ip_protection(id,
 id = 112
 
 body = ChangeProtectionRequest2.new(
-  true
+  delete: true
 )
 
-result = primary_ip_actions_controller.change_primary_ip_protection(
+result = primary_ip_actions_api.change_primary_ip_protection(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-LeaderstilesGET(
+LeaderstilesGet(
     ctx context.Context,
     stat string,
-    leagueID string,
+    leagueId string,
     season string,
     seasonType string,
     playerOrTeam string,
@@ -26,7 +26,7 @@ LeaderstilesGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `stat` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `playerOrTeam` | `string` | Query, Required | - |
@@ -50,7 +50,7 @@ ctx := context.Background()
 
 stat := "Stat2"
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 season := "Season0"
 
@@ -62,7 +62,7 @@ playerScope := "PlayerScope2"
 
 gameScope := "GameScope0"
 
-resp, err := aPIController.LeaderstilesGET(ctx, stat, leagueID, season, seasonType, playerOrTeam, playerScope, gameScope, nil, nil)
+resp, err := api.LeaderstilesGet(ctx, stat, leagueId, season, seasonType, playerOrTeam, playerScope, gameScope, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

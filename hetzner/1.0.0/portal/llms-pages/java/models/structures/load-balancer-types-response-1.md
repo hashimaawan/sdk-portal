@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VyJTI1MjBUeXBlcyUyNTIwUmVzcG9uc2Ux
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -13,16 +15,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `LoadBalancerType` | [`LoadBalancerType`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancer-type.md) | Optional | - | LoadBalancerType getLoadBalancerType() | setLoadBalancerType(LoadBalancerType loadBalancerType) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.LoadBalancerType;
 import cloud.hetzner.api.models.LoadBalancerTypesResponse1;
 import cloud.hetzner.api.models.Price;
 import cloud.hetzner.api.models.PriceHourly;
 import cloud.hetzner.api.models.PriceMonthly;
+import java.io.IOException;
 import java.util.Arrays;
 
 LoadBalancerTypesResponse1 loadBalancerTypesResponse1 = new LoadBalancerTypesResponse1.Builder()
@@ -42,13 +47,16 @@ LoadBalancerTypesResponse1 loadBalancerTypesResponse1 = new LoadBalancerTypesRes
                     "gross4",
                     "net2"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new PriceMonthly.Builder(
                     "gross2",
                     "net0"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Price.Builder(
                 "location8",
@@ -56,13 +64,16 @@ LoadBalancerTypesResponse1 loadBalancerTypesResponse1 = new LoadBalancerTypesRes
                     "gross4",
                     "net2"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new PriceMonthly.Builder(
                     "gross2",
                     "net0"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Price.Builder(
                 "location8",
@@ -70,17 +81,22 @@ LoadBalancerTypesResponse1 loadBalancerTypesResponse1 = new LoadBalancerTypesRes
                     "gross4",
                     "net2"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new PriceMonthly.Builder(
                     "gross2",
                     "net0"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         )
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

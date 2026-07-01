@@ -7,7 +7,7 @@ Type of Subnetwork
 
 # Enum Type Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of Subnetwork
 # Example
 
 ```ts
-import { Type42Enum } from 'hetzner-cloud-apilib';
+import { Type42 } from 'hetzner-cloud-apilib';
 
-const type42 = Type42Enum.Cloud;
+const type42 = Type42.Cloud;
 ```
 
 

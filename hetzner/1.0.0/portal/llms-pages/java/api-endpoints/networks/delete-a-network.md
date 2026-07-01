@@ -9,7 +9,7 @@ Note: if the network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteANetworkAsync(
+CompletableFuture<ApiResponse<Void>> deleteANetworkAsync(
     final int id)
 ```
 
@@ -33,8 +33,9 @@ CompletableFuture<Void> deleteANetworkAsync(
 ```java
 int id = 112;
 
-networksController.deleteANetworkAsync(id).thenAccept(result -> {
+networksApi.deleteANetworkAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

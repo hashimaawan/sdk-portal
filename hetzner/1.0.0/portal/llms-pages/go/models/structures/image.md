@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -23,12 +25,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `ImageSize` | `*float64` | Required | Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image. |
 | `Labels` | `map[string]string` | Required | User-defined labels (key-value pairs) |
 | `Name` | `*string` | Required | Unique identifier of the Image. This value is only set for system Images. |
-| `OsFlavor` | [`models.OsFlavorEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
+| `OsFlavor` | [`models.OsFlavor`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
 | `OsVersion` | `*string` | Required | Operating system version |
 | `Protection` | [`models.Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `RapidDeploy` | `*bool` | Optional | Indicates that rapid deploy of the Image is available |
-| `Status` | [`models.Status24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
-| `Type` | [`models.Type22Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-22.md) | Required | Type of the Image |
+| `Status` | [`models.Status24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
+| `Type` | [`models.Type22`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-22.md) | Required | Type of the Image |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -37,35 +40,44 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     image := models.Image{
-        BoundTo:              nil,
-        Created:              "2016-01-30T23:55:00+00:00",
-        CreatedFrom:          models.ToPointer(models.CreatedFrom{
-            Id:                   1,
-            Name:                 "Server",
+        BoundTo:               nil,
+        Created:               "2016-01-30T23:55:00+00:00",
+        CreatedFrom:           models.ToPointer(models.CreatedFrom{
+            Id:                    1,
+            Name:                  "Server",
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
-        Deleted:              nil,
-        Deprecated:           models.ToPointer("2018-02-28T00:00:00+00:00"),
-        Description:          "Ubuntu 20.04 Standard 64 bit",
-        DiskSize:             float64(10),
-        Id:                   42,
-        ImageSize:            models.ToPointer(float64(2.3)),
-        Labels:               map[string]string{
+        Deleted:               nil,
+        Deprecated:            models.ToPointer("2018-02-28T00:00:00+00:00"),
+        Description:           "Ubuntu 20.04 Standard 64 bit",
+        DiskSize:              float64(10),
+        Id:                    42,
+        ImageSize:             models.ToPointer(float64(2.3)),
+        Labels:                map[string]string{
             "key0": "labels4",
         },
-        Name:                 models.ToPointer("ubuntu-20.04"),
-        OsFlavor:             models.OsFlavorEnum_UBUNTU,
-        OsVersion:            models.ToPointer("20.04"),
-        Protection:           models.Protection{
-            Delete:               false,
+        Name:                  models.ToPointer("ubuntu-20.04"),
+        OsFlavor:              models.OsFlavor_Ubuntu,
+        OsVersion:             models.ToPointer("20.04"),
+        Protection:            models.Protection{
+            Delete:                false,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         },
-        RapidDeploy:          models.ToPointer(false),
-        Status:               models.Status24Enum_UNAVAILABLE,
-        Type:                 models.Type22Enum_SNAPSHOT,
+        RapidDeploy:           models.ToPointer(false),
+        Status:                models.Status24_Unavailable,
+        Type:                  models.Type22_Snapshot,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

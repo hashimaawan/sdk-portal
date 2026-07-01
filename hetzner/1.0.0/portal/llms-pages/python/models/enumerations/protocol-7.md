@@ -7,7 +7,7 @@ Protocol of the Load Balancer
 
 # Enum Type Name
 
-`Protocol7Enum`
+`Protocol7`
 
 
 # Fields
@@ -22,9 +22,9 @@ Protocol of the Load Balancer
 # Example
 
 ```python
-from hetznercloudapi.models.protocol_7_enum import Protocol7Enum
+from hetznercloudapi.models.protocol_7 import Protocol7
 
-protocol_7 = Protocol7Enum.HTTPS
+protocol_7 = Protocol7.HTTPS
 ```
 
 

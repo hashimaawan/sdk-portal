@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -27,37 +29,43 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `start_after_create` | `TrueClass \| FalseClass` | Optional | Start Server right after creation. Defaults to true. |
 | `user_data` | `String` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. |
 | `volumes` | `Array[Integer]` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 create_server_request = CreateServerRequest.new(
-  'ubuntu-20.04',
-  'my-server',
-  'cx11',
-  false,
-  'nbg1-dc3',
-  [
+  image: 'ubuntu-20.04',
+  name: 'my-server',
+  server_type: 'cx11',
+  automount: false,
+  datacenter: 'nbg1-dc3',
+  firewalls: [
     Firewall4.new(
-      38
+      firewall: 38,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  { 'key1' => 'val1', 'key2' => 'val2' },
-  'nbg1',
-  [
+  labels: { 'key1' => 'val1', 'key2' => 'val2' },
+  location: 'nbg1',
+  networks: [
     456
   ],
-  1,
-  PublicNet5.new,
-  [
+  placement_group: 1,
+  ssh_keys: [
     'my-ssh-key'
   ],
-  true,
-  '#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n',
-  [
+  start_after_create: true,
+  user_data: '#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n',
+  volumes: [
     123
-  ]
+  ],
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

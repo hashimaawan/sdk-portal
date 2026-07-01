@@ -33,7 +33,7 @@ def playerprofile_get(self,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -53,7 +53,7 @@ graph_end_season = 'GraphEndSeason6'
 
 graph_stat = 'GraphStat0'
 
-client_controller.playerprofile_get(
+result = client_api.playerprofile_get(
     league_id,
     player_id,
     season,
@@ -62,6 +62,11 @@ client_controller.playerprofile_get(
     graph_end_season,
     graph_stat
 )
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 
@@ -69,8 +74,8 @@ client_controller.playerprofile_get(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad request - bad parameters | `APIException` |
-| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `APIException` |
+| 400 | Bad request - bad parameters | `ApiException` |
+| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `ApiException` |
 
 
 

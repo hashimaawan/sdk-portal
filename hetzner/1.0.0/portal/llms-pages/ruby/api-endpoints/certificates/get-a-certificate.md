@@ -22,7 +22,7 @@ def get_a_certificate(id)
 
 **200**: The `certificate` key contains a Certificate object
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -30,8 +30,13 @@ def get_a_certificate(id)
 ```ruby
 id = 112
 
-result = certificates_controller.get_a_certificate(id)
-puts result
+result = certificates_api.get_a_certificate(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

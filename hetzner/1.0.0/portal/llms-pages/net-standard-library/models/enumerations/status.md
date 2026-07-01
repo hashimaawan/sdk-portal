@@ -7,7 +7,7 @@ Status of the Action
 
 # Enum Type Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the Action
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-StatusEnum status = StatusEnum.Error;
+Status status = Status.Error;
 ```
 
 

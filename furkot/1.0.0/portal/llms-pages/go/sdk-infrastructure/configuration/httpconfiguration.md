@@ -8,9 +8,9 @@ The following parameters are configurable for the HttpConfiguration:
 
 | Name | Type | Description | Setter | Getter |
 |  --- | --- | --- | --- | --- |
-| timeout | `float64` | Timeout in seconds.<br>*Default*: `0` | `WithTimeout` | `Timeout()` |
+| timeout | `float64` | Timeout in seconds.<br>*Default*: `30` | `WithTimeout` | `Timeout()` |
 | transport | `httpRoundTripper` | Establishes network connection and caches them for reuse.<br>*Default*: `http.DefaultTransport` | `WithTransport` | `Transport()` |
-| retryConfiguration | [`furkottripsRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `furkottrips.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
+| retryConfiguration | [`furkotTripsRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `furkotTrips.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
 
 The httpConfiguration can be initialized as follows:
 
@@ -18,15 +18,15 @@ The httpConfiguration can be initialized as follows:
 package main
 
 import (
-    "furkottrips"
+    "furkotTrips"
     "net/http"
 )
 
 func main() {
-    httpConfiguration := furkottrips.CreateHttpConfiguration(
-        furkottrips.WithTimeout(0),
-        furkottrips.WithTransport(http.DefaultTransport),
-        furkottrips.WithRetryConfiguration(furkottrips.DefaultRetryConfiguration()),
+    httpConfiguration := furkotTrips.CreateHttpConfiguration(
+        furkotTrips.WithTimeout(30),
+        furkotTrips.WithTransport(http.DefaultTransport),
+        furkotTrips.WithRetryConfiguration(furkotTrips.DefaultRetryConfiguration()),
     )
 }
 ```

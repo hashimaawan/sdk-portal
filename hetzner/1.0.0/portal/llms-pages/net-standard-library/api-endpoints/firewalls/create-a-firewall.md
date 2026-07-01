@@ -31,7 +31,7 @@ CreateAFirewallAsync(
 
 **201**: The `firewall` key contains the Firewall that was just created
 
-[`Task<Models.CreateFirewallResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.CreateFirewallResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/create-firewall-response.md).
 
 
 # Example Usage
@@ -44,7 +44,7 @@ CreateFirewallRequest body = new CreateFirewallRequest
     {
         new ApplyTo
         {
-            Type = Type7Enum.Server,
+            Type = Type7.Server,
             Server = new Server2
             {
                 Id = 42,
@@ -56,8 +56,8 @@ CreateFirewallRequest body = new CreateFirewallRequest
     {
         new Rule
         {
-            Direction = DirectionEnum.In,
-            Protocol = ProtocolEnum.Tcp,
+            Direction = Direction.In,
+            Protocol = Protocol.Tcp,
             Description = "Allow port 80",
             Port = "80",
             SourceIps = new List<string>
@@ -72,7 +72,7 @@ CreateFirewallRequest body = new CreateFirewallRequest
 
 try
 {
-    CreateFirewallResponse result = await firewallsController.CreateAFirewallAsync(body);
+    ApiResponse<CreateFirewallResponse> result = await firewallsApi.CreateAFirewallAsync(body);
 }
 catch (ApiException e)
 {

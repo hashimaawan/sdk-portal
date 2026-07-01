@@ -43,10 +43,10 @@ ctx := context.Background()
 id := 112
 
 body := models.RebuildServerRequest{
-    Image:                "ubuntu-20.04",
+    Image:                 "ubuntu-20.04",
 }
 
-apiResponse, err := serverActionsController.RebuildAServerFromAnImage(ctx, id, &body)
+apiResponse, err := serverActionsApi.RebuildAServerFromAnImage(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

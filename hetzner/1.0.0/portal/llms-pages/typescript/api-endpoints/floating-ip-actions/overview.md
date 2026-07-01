@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `FloatingIPActionsController` class can be created using the API Client.
+The instance of the `FloatingIpActionsApi` class can be created using the API Client.
 
 ```
-const floatingIPActionsController = new FloatingIPActionsController(client);
+const floatingIpActionsApi = new FloatingIpActionsApi(client);
 ```
 
 

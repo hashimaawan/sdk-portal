@@ -9,7 +9,7 @@ Only type `managed` Certificates can have Actions. For type `uploaded` Certifica
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllActionsForACertificate(int $id, ?string $sort = null, ?string $status = null): ActionsResponse
+function getAllActionsForACertificate(int $id, ?string $sort = null, ?string $status = null): ApiResponse
 ```
 
 
@@ -18,15 +18,15 @@ function getAllActionsForACertificate(int $id, ?string $sort = null, ?string $st
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Resource |
-| `sort` | [`?string(ParameterSortEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`?string(ParameterStatusEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`?string(ParameterSort)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`?string(ParameterStatus)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
 
 **200**: The `actions` key contains a list of Actions
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -34,14 +34,20 @@ function getAllActionsForACertificate(int $id, ?string $sort = null, ?string $st
 ```php
 $id = 112;
 
-$certificateActionsController = $client->getCertificateActionsController();
+$certificateActionsApi = $client->getCertificateActionsApi();
+$apiResponse = $certificateActionsApi->getAllActionsForACertificate($id);
 
-try {
-    $result = $certificateActionsController->getAllActionsForACertificate($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

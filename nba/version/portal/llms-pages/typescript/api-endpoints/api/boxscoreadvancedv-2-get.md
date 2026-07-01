@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async boxscoreadvancedv2GET(
-  gameID: string,
+async boxscoreadvancedv2Get(
+  gameId: string,
   startPeriod: string,
   endPeriod: string,
   startRange: string,
@@ -21,7 +21,7 @@ async boxscoreadvancedv2GET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `startPeriod` | `string` | Query, Required | - |
 | `endPeriod` | `string` | Query, Required | - |
 | `startRange` | `string` | Query, Required | - |
@@ -40,7 +40,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const gameID = 'GameID8';
+const gameId = 'GameID8';
 
 const startPeriod = 'StartPeriod4';
 
@@ -53,8 +53,8 @@ const endRange = 'EndRange2';
 const rangeType = 'RangeType0';
 
 try {
-  const response = await apiController.boxscoreadvancedv2GET(
-    gameID,
+  const response = await api.boxscoreadvancedv2Get(
+    gameId,
     startPeriod,
     endPeriod,
     startRange,

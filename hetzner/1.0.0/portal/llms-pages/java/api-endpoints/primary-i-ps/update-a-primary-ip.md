@@ -11,9 +11,9 @@ If the Primary IP object changes during the request, the response will be a “c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<PrimaryIPResponse> updateAPrimaryIPAsync(
+CompletableFuture<ApiResponse<PrimaryIpResponse>> updateAPrimaryIpAsync(
     final int id,
-    final UpdatePrimaryIPRequest body)
+    final UpdatePrimaryIpRequest body)
 ```
 
 
@@ -22,27 +22,27 @@ CompletableFuture<PrimaryIPResponse> updateAPrimaryIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the resource |
-| `body` | [`UpdatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/primary-ip-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-UpdatePrimaryIPRequest body = new UpdatePrimaryIPRequest.Builder()
+UpdatePrimaryIpRequest body = new UpdatePrimaryIpRequest.Builder()
     .autoDelete(true)
     .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
     .name("my-ip")
     .build();
 
-primaryIPsController.updateAPrimaryIPAsync(id, body).thenAccept(result -> {
+primaryIPsApi.updateAPrimaryIpAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

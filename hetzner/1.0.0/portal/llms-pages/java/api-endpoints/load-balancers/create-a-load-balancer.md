@@ -19,7 +19,7 @@ Creates a Load Balancer.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LoadBalancersResponse1> createALoadBalancerAsync(
+CompletableFuture<ApiResponse<LoadBalancersResponse1>> createALoadBalancerAsync(
     final CreateLoadBalancerRequest body)
 ```
 
@@ -35,7 +35,7 @@ CompletableFuture<LoadBalancersResponse1> createALoadBalancerAsync(
 
 **201**: The `load_balancer` key contains the Load Balancer that was just created
 
-[`LoadBalancersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LoadBalancersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-response-1.md).
 
 
 # Example Usage
@@ -43,7 +43,7 @@ CompletableFuture<LoadBalancersResponse1> createALoadBalancerAsync(
 ```java
 CreateLoadBalancerRequest body = new CreateLoadBalancerRequest.Builder(
     new LoadBalancerAlgorithm.Builder(
-        Type28Enum.ROUND_ROBIN
+        Type28.ROUND_ROBIN
     )
     .build(),
     "lb11",
@@ -54,7 +54,7 @@ CreateLoadBalancerRequest body = new CreateLoadBalancerRequest.Builder(
 .publicInterface(true)
 .build();
 
-loadBalancersController.createALoadBalancerAsync(body).thenAccept(result -> {
+loadBalancersApi.createALoadBalancerAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

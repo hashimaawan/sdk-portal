@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location of the Volume. Volume can only be attached to Servers in the same Location.
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -22,6 +24,7 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 | `Longitude` | `float64` | Required | Longitude of the city closest to the Location |
 | `Name` | `string` | Required | Unique identifier of the Location |
 | `NetworkZone` | `string` | Required | Name of network zone this Location resides in |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -30,19 +33,22 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     location16 := models.Location16{
-        City:                 "Falkenstein",
-        Country:              "DE",
-        Description:          "Falkenstein DC Park 1",
-        Id:                   float64(1),
-        Latitude:             float64(50.47612),
-        Longitude:            float64(12.370071),
-        Name:                 "fsn1",
-        NetworkZone:          "eu-central",
+        City:                  "Falkenstein",
+        Country:               "DE",
+        Description:           "Falkenstein DC Park 1",
+        Id:                    float64(1),
+        Latitude:              float64(50.47612),
+        Longitude:             float64(12.370071),
+        Name:                  "fsn1",
+        NetworkZone:           "eu-central",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

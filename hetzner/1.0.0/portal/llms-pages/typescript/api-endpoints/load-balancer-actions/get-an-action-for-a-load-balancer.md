@@ -39,7 +39,7 @@ const id = 112;
 const actionId = 224;
 
 try {
-  const response = await loadBalancerActionsController.getAnActionForALoadBalancer(
+  const response = await loadBalancerActionsApi.getAnActionForALoadBalancer(
     id,
     actionId
   );

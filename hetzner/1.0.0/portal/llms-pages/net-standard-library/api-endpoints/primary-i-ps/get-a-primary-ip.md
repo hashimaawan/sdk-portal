@@ -7,7 +7,7 @@ Returns a specific Primary IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-GetAPrimaryIPAsync(
+GetAPrimaryIpAsync(
     int id)
 ```
 
@@ -23,7 +23,7 @@ GetAPrimaryIPAsync(
 
 **200**: The `primary_ip` key contains a Primary IP object
 
-[`Task<Models.PrimaryIPResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.PrimaryIpResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetAPrimaryIPAsync(
 int id = 112;
 try
 {
-    PrimaryIPResponse result = await primaryIPsController.GetAPrimaryIPAsync(id);
+    ApiResponse<PrimaryIpResponse> result = await primaryIPsApi.GetAPrimaryIpAsync(id);
 }
 catch (ApiException e)
 {

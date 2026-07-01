@@ -5,13 +5,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function leaguedashptdefendGET(
-    string $leagueID,
+function leaguedashptdefendGet(
+    string $leagueId,
     string $perMode,
     string $season,
     string $seasonType,
     string $defenseCategory
-): void
+): ApiResponse
 ```
 
 
@@ -19,7 +19,7 @@ function leaguedashptdefendGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
@@ -30,13 +30,13 @@ function leaguedashptdefendGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $perMode = 'PerMode6';
 
@@ -46,18 +46,26 @@ $seasonType = 'SeasonType8';
 
 $defenseCategory = 'DefenseCategory0';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->leaguedashptdefendGet(
+    $leagueId,
+    $perMode,
+    $season,
+    $seasonType,
+    $defenseCategory
+);
 
-try {
-    $aPIController->leaguedashptdefendGET(
-        $leagueID,
-        $perMode,
-        $season,
-        $seasonType,
-        $defenseCategory
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

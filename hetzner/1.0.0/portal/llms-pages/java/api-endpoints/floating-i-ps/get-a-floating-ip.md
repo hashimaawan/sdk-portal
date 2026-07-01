@@ -7,7 +7,7 @@ Returns a specific Floating IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<FloatingIpsResponse2> getAFloatingIPAsync(
+CompletableFuture<ApiResponse<FloatingIpsResponse2>> getAFloatingIpAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<FloatingIpsResponse2> getAFloatingIPAsync(
 
 **200**: The `floating_ip` key in the reply contains a Floating IP object with this structure
 
-[`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-response-2.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<FloatingIpsResponse2> getAFloatingIPAsync(
 ```java
 int id = 112;
 
-floatingIPsController.getAFloatingIPAsync(id).thenAccept(result -> {
+floatingIPsApi.getAFloatingIpAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

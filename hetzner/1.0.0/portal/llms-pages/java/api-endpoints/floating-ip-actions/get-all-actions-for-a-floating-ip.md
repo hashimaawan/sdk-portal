@@ -7,10 +7,10 @@ Returns all Action objects for a Floating IP. You can sort the results by using 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<FloatingIpsActionsResponse> getAllActionsForAFloatingIPAsync(
+CompletableFuture<ApiResponse<FloatingIpsActionsResponse>> getAllActionsForAFloatingIpAsync(
     final int id,
-    final ParameterSortEnum sort,
-    final ParameterStatusEnum status)
+    final ParameterSort sort,
+    final ParameterStatus status)
 ```
 
 
@@ -19,15 +19,15 @@ CompletableFuture<FloatingIpsActionsResponse> getAllActionsForAFloatingIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `sort` | [`ParameterSortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`ParameterStatusEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`ParameterSort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`ParameterStatus`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
 
 **200**: The `actions` key contains a list of Actions
 
-[`FloatingIpsActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`FloatingIpsActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/floating-ips-actions-response.md).
 
 
 # Example Usage
@@ -35,7 +35,7 @@ CompletableFuture<FloatingIpsActionsResponse> getAllActionsForAFloatingIPAsync(
 ```java
 int id = 112;
 
-floatingIPActionsController.getAllActionsForAFloatingIPAsync(id, null, null).thenAccept(result -> {
+floatingIpActionsApi.getAllActionsForAFloatingIpAsync(id, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

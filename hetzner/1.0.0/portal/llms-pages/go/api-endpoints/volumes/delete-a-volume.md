@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := "id0"
 
-resp, err := volumesController.DeleteAVolume(ctx, id)
+resp, err := volumesApi.DeleteAVolume(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

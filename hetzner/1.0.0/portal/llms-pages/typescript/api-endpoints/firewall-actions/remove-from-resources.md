@@ -52,13 +52,13 @@ const body: RemoveFromResourcesRequest = {
       server: {
         id: 42,
       },
-      type: Type7Enum.Server,
+      type: Type7.Server,
     }
   ],
 };
 
 try {
-  const response = await firewallActionsController.removeFromResources(
+  const response = await firewallActionsApi.removeFromResources(
     id,
     body
   );

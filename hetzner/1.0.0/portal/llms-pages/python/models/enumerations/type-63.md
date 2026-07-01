@@ -7,7 +7,7 @@ Type of Image to create (default: `snapshot`)
 
 # Enum Type Name
 
-`Type63Enum`
+`Type63`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Image to create (default: `snapshot`)
 # Example
 
 ```python
-from hetznercloudapi.models.type_63_enum import Type63Enum
+from hetznercloudapi.models.type_63 import Type63
 
-type_63 = Type63Enum.SNAPSHOT
+type_63 = Type63.SNAPSHOT
 ```
 
 

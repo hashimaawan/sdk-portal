@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkZsb2F0aW5nSXA
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -23,17 +25,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `str` | Required | Name of the Resource. Must be unique per Project. |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `server` | `int` | Required | ID of the Server the Floating IP is assigned to, null if it is not assigned at all |
-| `mtype` | [`Type16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `mtype` | [`Type16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.dns_ptr import DnsPtr
 from hetznercloudapi.models.floating_ip import FloatingIp
 from hetznercloudapi.models.home_location import HomeLocation
 from hetznercloudapi.models.protection import Protection
-from hetznercloudapi.models.type_16_enum import Type16Enum
+from hetznercloudapi.models.type_16 import Type16
 
 floating_ip = FloatingIp(
     blocked=False,
@@ -42,7 +47,10 @@ floating_ip = FloatingIp(
     dns_ptr=[
         DnsPtr(
             dns_ptr='server.example.com',
-            ip='2001:db8::1'
+            ip='2001:db8::1',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     home_location=HomeLocation(
@@ -53,7 +61,10 @@ floating_ip = FloatingIp(
         latitude=50.47612,
         longitude=12.370071,
         name='fsn1',
-        network_zone='eu-central'
+        network_zone='eu-central',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     id=42,
     ip='131.232.99.1',
@@ -64,10 +75,16 @@ floating_ip = FloatingIp(
     },
     name='my-resource',
     protection=Protection(
-        delete=False
+        delete=False,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     server=42,
-    mtype=Type16Enum.IPV4
+    mtype=Type16.IPV4,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

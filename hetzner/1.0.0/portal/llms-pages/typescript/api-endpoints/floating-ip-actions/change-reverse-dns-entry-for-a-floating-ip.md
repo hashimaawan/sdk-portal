@@ -7,9 +7,9 @@ Changes the hostname that will appear when getting the hostname belonging to thi
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async changeReverseDNSEntryForAFloatingIP(
+async changeReverseDnsEntryForAFloatingIp(
   id: number,
-  body?: ChangeDNSPTRRequest,
+  body?: ChangeDnsptrRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
 ```
@@ -20,7 +20,7 @@ async changeReverseDNSEntryForAFloatingIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Floating IP |
-| `body` | [`ChangeDNSPTRRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Floating IP of type `ipv4` this must exactly match the IP address of the Floating IP. For a Floating IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Floating IP.<br><br>The target hostname is set by passing `dns_ptr`. |
+| `body` | [`ChangeDnsptrRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Floating IP of type `ipv4` this must exactly match the IP address of the Floating IP. For a Floating IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Floating IP.<br><br>The target hostname is set by passing `dns_ptr`. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -36,13 +36,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const body: ChangeDNSPTRRequest = {
+const body: ChangeDnsptrRequest = {
   dnsPtr: 'server02.example.com',
   ip: '1.2.3.4',
 };
 
 try {
-  const response = await floatingIPActionsController.changeReverseDNSEntryForAFloatingIP(
+  const response = await floatingIpActionsApi.changeReverseDnsEntryForAFloatingIp(
     id,
     body
   );

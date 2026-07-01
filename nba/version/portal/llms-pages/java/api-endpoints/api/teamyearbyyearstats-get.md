@@ -5,11 +5,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> teamyearbyyearstatsGETAsync(
-    final String leagueID,
+CompletableFuture<ApiResponse<Void>> teamyearbyyearstatsGetAsync(
+    final String leagueId,
     final String seasonType,
     final String perMode,
-    final String teamID)
+    final String teamId)
 ```
 
 
@@ -17,10 +17,10 @@ CompletableFuture<Void> teamyearbyyearstatsGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 | `perMode` | `String` | Query, Required | - |
-| `teamID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -33,13 +33,14 @@ CompletableFuture<Void> teamyearbyyearstatsGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String seasonType = "SeasonType8";
 String perMode = "PerMode6";
-String teamID = "TeamID8";
+String teamId = "TeamID8";
 
-aPIController.teamyearbyyearstatsGETAsync(leagueID, seasonType, perMode, teamID).thenAccept(result -> {
+api.teamyearbyyearstatsGetAsync(leagueId, seasonType, perMode, teamId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

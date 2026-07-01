@@ -7,7 +7,7 @@ Unassigns a Floating IP, resulting in it being unreachable. You may assign it to
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-UnassignAFloatingIPAsync(
+UnassignAFloatingIpAsync(
     int id)
 ```
 
@@ -23,7 +23,7 @@ UnassignAFloatingIPAsync(
 
 **201**: The `action` key contains the `unassign` Action
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ UnassignAFloatingIPAsync(
 int id = 112;
 try
 {
-    ActionResponse result = await floatingIPActionsController.UnassignAFloatingIPAsync(id);
+    ApiResponse<ActionResponse> result = await floatingIpActionsApi.UnassignAFloatingIpAsync(id);
 }
 catch (ApiException e)
 {

@@ -8,10 +8,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |------------------------------ |-------------------------------------------------------------- |
 | `floating_ip_assigned`        | The floating IP is already assigned                           |
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
-`AssignFloatingIPRequest`
+`AssignFloatingIpRequest`
 
 
 # Fields
@@ -19,16 +21,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `Server` | `int` | Required | ID of the Server the Floating IP shall be assigned to | int getServer() | setServer(int server) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import cloud.hetzner.api.models.AssignFloatingIPRequest;
+import cloud.hetzner.api.ApiHelper;
+import cloud.hetzner.api.models.AssignFloatingIpRequest;
+import java.io.IOException;
 
-AssignFloatingIPRequest assignFloatingIPRequest = new AssignFloatingIPRequest.Builder(
+AssignFloatingIpRequest assignFloatingIpRequest = new AssignFloatingIpRequest.Builder(
     42
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

@@ -11,10 +11,10 @@ Please see [Hetzner Docs](https://docs.hetzner.com/cloud/#Volumes) for more deta
 
 # Create Instance
 
-The instance of the `VolumesController` class can be created using the API Client.
+The instance of the `VolumesApi` class can be created using the API Client.
 
 ```
-const volumesController = new VolumesController(client);
+const volumesApi = new VolumesApi(client);
 ```
 
 

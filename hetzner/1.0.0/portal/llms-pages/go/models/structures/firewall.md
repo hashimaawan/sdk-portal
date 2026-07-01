@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkZpcmV3YWxs
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -18,6 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `map[string]string` | Optional | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `Rules` | [`[]models.Rule`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/rule.md) | Required | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,54 +29,75 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     firewall := models.Firewall{
-        AppliedTo:            []models.AppliedTo{
+        AppliedTo:             []models.AppliedTo{
             models.AppliedTo{
-                AppliedToResources:   []models.AppliedToResource{
+                AppliedToResources:    []models.AppliedToResource{
                     models.AppliedToResource{
-                        Server:               models.ToPointer(models.Server{
-                            Id:                   14,
+                        Server:                models.ToPointer(models.Server{
+                            Id:                    14,
+                            AdditionalProperties:  map[string]interface{}{
+                                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                            },
                         }),
-                        Type:                 models.ToPointer(models.Type5Enum_SERVER),
+                        Type:                  models.ToPointer(models.Type5_Server),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
                     },
                 },
-                LabelSelector:        models.ToPointer(models.LabelSelector{
-                    Selector:             "selector8",
+                LabelSelector:         models.ToPointer(models.LabelSelector{
+                    Selector:              "selector8",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 }),
-                Server:               models.ToPointer(models.Server{
-                    Id:                   14,
+                Server:                models.ToPointer(models.Server{
+                    Id:                    14,
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 }),
-                Type:                 models.Type6Enum_SERVER,
+                Type:                  models.Type6_Server,
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
         },
-        Created:              "2016-01-30T23:55:00+00:00",
-        Id:                   42,
-        Labels:               map[string]string{
+        Created:               "2016-01-30T23:55:00+00:00",
+        Id:                    42,
+        Labels:                map[string]string{
             "key0": "labels2",
             "key1": "labels1",
         },
-        Name:                 "my-resource",
-        Rules:                []models.Rule{
+        Name:                  "my-resource",
+        Rules:                 []models.Rule{
             models.Rule{
-                Description:          models.NewOptional(models.ToPointer("description2")),
-                DestinationIps:       []string{
+                Description:           models.NewOptional(models.ToPointer("description2")),
+                DestinationIps:        []string{
                     "28.239.13.1/32",
                     "28.239.14.0/24",
                     "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128",
                 },
-                Direction:            models.DirectionEnum_IN,
-                Port:                 models.ToPointer("80"),
-                Protocol:             models.ProtocolEnum_UDP,
-                SourceIps:            []string{
+                Direction:             models.Direction_In,
+                Port:                  models.ToPointer("80"),
+                Protocol:              models.Protocol_Udp,
+                SourceIps:             []string{
                     "28.239.13.1/32",
                     "28.239.14.0/24",
                     "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128",
+                },
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
                 },
             },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

@@ -5,28 +5,28 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function shotchartlineupdetailGET(
-    string $leagueID,
+function shotchartlineupdetailGet(
+    string $leagueId,
     string $season,
     string $seasonType,
-    string $teamID,
+    string $teamId,
     string $outcome,
     string $location,
     string $month,
     string $seasonSegment,
     string $dateFrom,
     string $dateTo,
-    string $opponentTeamID,
+    string $opponentTeamId,
     string $vsConference,
     string $vsDivision,
     string $gameSegment,
     string $period,
     string $lastNGames,
-    string $gameID,
-    string $gROUPID,
+    string $gameId,
+    string $groupId,
     string $contextMeasure,
     string $contextFilter
-): void
+): ApiResponse
 ```
 
 
@@ -34,24 +34,24 @@ function shotchartlineupdetailGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
 | `period` | `string` | Query, Required | - |
 | `lastNGames` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
-| `gROUPID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
+| `groupId` | `string` | Query, Required | - |
 | `contextMeasure` | `string` | Query, Required | - |
 | `contextFilter` | `string` | Query, Required | - |
 
@@ -60,19 +60,19 @@ function shotchartlineupdetailGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $season = 'Season0';
 
 $seasonType = 'SeasonType8';
 
-$teamID = 'TeamID8';
+$teamId = 'TeamID8';
 
 $outcome = 'Outcome4';
 
@@ -86,7 +86,7 @@ $dateFrom = 'DateFrom6';
 
 $dateTo = 'DateTo0';
 
-$opponentTeamID = 'OpponentTeamID6';
+$opponentTeamId = 'OpponentTeamID6';
 
 $vsConference = 'VsConference6';
 
@@ -98,41 +98,49 @@ $period = 'Period2';
 
 $lastNGames = 'LastNGames4';
 
-$gameID = 'GameID8';
+$gameId = 'GameID8';
 
-$gROUPID = 'GROUP_ID6';
+$groupId = 'GROUP_ID6';
 
 $contextMeasure = 'ContextMeasure2';
 
 $contextFilter = 'ContextFilter6';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->shotchartlineupdetailGet(
+    $leagueId,
+    $season,
+    $seasonType,
+    $teamId,
+    $outcome,
+    $location,
+    $month,
+    $seasonSegment,
+    $dateFrom,
+    $dateTo,
+    $opponentTeamId,
+    $vsConference,
+    $vsDivision,
+    $gameSegment,
+    $period,
+    $lastNGames,
+    $gameId,
+    $groupId,
+    $contextMeasure,
+    $contextFilter
+);
 
-try {
-    $aPIController->shotchartlineupdetailGET(
-        $leagueID,
-        $season,
-        $seasonType,
-        $teamID,
-        $outcome,
-        $location,
-        $month,
-        $seasonSegment,
-        $dateFrom,
-        $dateTo,
-        $opponentTeamID,
-        $vsConference,
-        $vsDivision,
-        $gameSegment,
-        $period,
-        $lastNGames,
-        $gameID,
-        $gROUPID,
-        $contextMeasure,
-        $contextFilter
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

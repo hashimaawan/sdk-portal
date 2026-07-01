@@ -7,7 +7,7 @@ Flavor of operating system contained in the Image
 
 # Enum Type Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
@@ -24,9 +24,9 @@ Flavor of operating system contained in the Image
 # Example
 
 ```java
-import cloud.hetzner.api.models.OsFlavorEnum;
+import cloud.hetzner.api.models.OsFlavor;
 
-OsFlavorEnum osFlavor = OsFlavorEnum.DEBIAN;
+OsFlavor osFlavor = OsFlavor.DEBIAN;
 ```
 
 

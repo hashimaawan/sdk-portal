@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort2Enum`
+`Sort2`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.sort_2_enum import Sort2Enum
+from hetznercloudapi.models.sort_2 import Sort2
 
-sort_2 = Sort2Enum.ID
+sort_2 = Sort2.ID
 ```
 
 

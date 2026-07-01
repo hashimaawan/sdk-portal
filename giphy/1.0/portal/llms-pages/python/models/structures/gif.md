@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/python/x-redirect/JTI0bSUyRkdpZg
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -27,20 +29,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `source_tld` | `str` | Optional | The top level domain of the source URL. |
 | `tags` | `List[str]` | Optional | An array of tags for this GIF (Note: Not available when using the Public Beta Key) |
 | `trending_datetime` | `datetime` | Optional | The date on which this gif was marked trending, if applicable. |
-| `mtype` | [`TypeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/python/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `"gif"` |
+| `mtype` | [`Type`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/python/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `"gif"` |
 | `update_datetime` | `datetime` | Optional | The date on which this GIF was last updated. |
 | `url` | `str` | Optional | The unique URL for this GIF |
 | `user` | [`User`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/python/models/structures/user.md) | Optional | The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more. |
 | `username` | `str` | Optional | The username this GIF is attached to, if applicable |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
 import dateutil.parser
+import jsonpickle
 
 from giphyapi.models.gif import Gif
-from giphyapi.models.type_enum import TypeEnum
+from giphyapi.models.mtype import Type
 
 gif = Gif(
     bitly_url='http://gph.is/1gsWDcL',
@@ -58,10 +62,13 @@ gif = Gif(
     source_post_url='http://cheezburger.com/5282328320',
     source_tld='cheezburger.com',
     trending_datetime=dateutil.parser.parse('2013-08-01 12:41:48'),
-    mtype=TypeEnum.GIF,
+    mtype=Type.GIF,
     update_datetime=dateutil.parser.parse('2013-08-01 12:41:48'),
     url='http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq',
-    username='JoeCool4000'
+    username='JoeCool4000',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

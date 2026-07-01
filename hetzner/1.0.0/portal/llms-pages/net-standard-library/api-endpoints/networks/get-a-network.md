@@ -23,7 +23,7 @@ GetANetworkAsync(
 
 **200**: The `network` key contains the network
 
-[`Task<Models.NetworksResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.NetworksResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetANetworkAsync(
 int id = 112;
 try
 {
-    NetworksResponse1 result = await networksController.GetANetworkAsync(id);
+    ApiResponse<NetworksResponse1> result = await networksApi.GetANetworkAsync(id);
 }
 catch (ApiException e)
 {

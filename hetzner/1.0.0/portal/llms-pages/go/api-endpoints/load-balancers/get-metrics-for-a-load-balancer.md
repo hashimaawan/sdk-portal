@@ -26,7 +26,7 @@ We limit the number of samples to a maximum of 500 and will adjust the step para
 GetMetricsForALoadBalancer(
     ctx context.Context,
     id int,
-    mType models.Type41Enum,
+    mType models.Type41,
     start string,
     end string,
     step *string) (
@@ -40,7 +40,7 @@ GetMetricsForALoadBalancer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `mType` | [`models.Type41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `mType` | [`models.Type41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `*string` | Query, Optional | Resolution of results in seconds |
@@ -60,13 +60,13 @@ ctx := context.Background()
 
 id := 112
 
-mType := models.Type41Enum_REQUESTSPERSECOND
+mType := models.Type41_RequestsPerSecond
 
 start := "start4"
 
 end := "end8"
 
-apiResponse, err := loadBalancersController.GetMetricsForALoadBalancer(ctx, id, mType, start, end, nil)
+apiResponse, err := loadBalancersApi.GetMetricsForALoadBalancer(ctx, id, mType, start, end, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

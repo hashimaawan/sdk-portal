@@ -9,7 +9,7 @@ Also note that when updating labels, the Server’s current set of labels will b
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAServer(int $id, ?UpdateServerRequest $body = null): ServersResponse2
+function updateAServer(int $id, ?UpdateServerRequest $body = null): ApiResponse
 ```
 
 
@@ -25,7 +25,7 @@ function updateAServer(int $id, ?UpdateServerRequest $body = null): ServersRespo
 
 **200**: The `server` key in the reply contains the updated Server
 
-[`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-response-2.md).
 
 
 # Example Usage
@@ -38,17 +38,23 @@ $body = UpdateServerRequestBuilder::init()
     ->name('my-server')
     ->build();
 
-$serversController = $client->getServersController();
+$serversApi = $client->getServersApi();
+$apiResponse = $serversApi->updateAServer(
+    $id,
+    $body
+);
 
-try {
-    $result = $serversController->updateAServer(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersResponse2:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -14,7 +14,7 @@ TrendingStickersAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -30,7 +30,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`Task<Models.StickersTrendingResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/stickers-trending-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StickersTrendingResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/stickers-trending-response.md).
 
 
 # Example Usage
@@ -40,7 +40,7 @@ int? limit = 25;
 int? offset = 0;
 try
 {
-    StickersTrendingResponse result = await stickersController.TrendingStickersAsync(
+    ApiResponse<StickersTrendingResponse> result = await stickersApi.TrendingStickersAsync(
         limit,
         offset
     );

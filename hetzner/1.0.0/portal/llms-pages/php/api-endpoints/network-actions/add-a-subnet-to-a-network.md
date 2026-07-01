@@ -9,7 +9,7 @@ Note: if the parent Network object changes during the request, the response will
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function addASubnetToANetwork(int $id, ?AddSubnetRequest $body = null): ActionResponse
+function addASubnetToANetwork(int $id, ?AddSubnetRequest $body = null): ApiResponse
 ```
 
 
@@ -25,7 +25,7 @@ function addASubnetToANetwork(int $id, ?AddSubnetRequest $body = null): ActionRe
 
 **201**: The `action` key contains the `add_subnet` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -35,23 +35,29 @@ $id = 112;
 
 $body = AddSubnetRequestBuilder::init(
     'eu-central',
-    Type42Enum::SERVER
+    Type42::SERVER
 )
     ->ipRange('10.0.1.0/24')
     ->vswitchId(1000)
     ->build();
 
-$networkActionsController = $client->getNetworkActionsController();
+$networkActionsApi = $client->getNetworkActionsApi();
+$apiResponse = $networkActionsApi->addASubnetToANetwork(
+    $id,
+    $body
+);
 
-try {
-    $result = $networkActionsController->addASubnetToANetwork(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

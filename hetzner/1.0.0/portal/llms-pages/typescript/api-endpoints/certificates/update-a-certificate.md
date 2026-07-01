@@ -46,7 +46,7 @@ const body: UpdateCertificateRequest = {
 };
 
 try {
-  const response = await certificatesController.updateACertificate(
+  const response = await certificatesApi.updateACertificate(
     id,
     body
   );

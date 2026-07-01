@@ -7,7 +7,7 @@ Changes the protection configuration of the Floating IP.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ChangeFloatingIPProtection(
+ChangeFloatingIpProtection(
     ctx context.Context,
     id int,
     body *models.ChangeProtectionRequest) (
@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.ChangeProtectionRequest{
-    Delete:               models.ToPointer(true),
+    Delete:                models.ToPointer(true),
 }
 
-apiResponse, err := floatingIPActionsController.ChangeFloatingIPProtection(ctx, id, &body)
+apiResponse, err := floatingIpActionsApi.ChangeFloatingIpProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

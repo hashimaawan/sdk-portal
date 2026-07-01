@@ -32,7 +32,7 @@ DeleteACertificateAsync(
 int id = 112;
 try
 {
-    await certificatesController.DeleteACertificateAsync(id);
+    await certificatesApi.DeleteACertificateAsync(id);
 }
 catch (ApiException e)
 {

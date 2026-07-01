@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CommonplayoffseriesGET(
+CommonplayoffseriesGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     season string) (
     http.Response,
     error)
@@ -18,7 +18,7 @@ CommonplayoffseriesGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 
 
@@ -34,11 +34,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 season := "Season0"
 
-resp, err := aPIController.CommonplayoffseriesGET(ctx, leagueID, season)
+resp, err := api.CommonplayoffseriesGet(ctx, leagueId, season)
 if err != nil {
     log.Fatalln(err)
 } else {

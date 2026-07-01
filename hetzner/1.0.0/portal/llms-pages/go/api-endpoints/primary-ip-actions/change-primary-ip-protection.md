@@ -9,7 +9,7 @@ A Primary IP can only be delete protected if its `auto_delete` property is set t
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ChangePrimaryIPProtection(
+ChangePrimaryIpProtection(
     ctx context.Context,
     id int,
     body *models.ChangeProtectionRequest2) (
@@ -41,10 +41,10 @@ ctx := context.Background()
 id := 112
 
 body := models.ChangeProtectionRequest2{
-    Delete:               models.ToPointer(true),
+    Delete:                models.ToPointer(true),
 }
 
-apiResponse, err := primaryIPActionsController.ChangePrimaryIPProtection(ctx, id, &body)
+apiResponse, err := primaryIpActionsApi.ChangePrimaryIpProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

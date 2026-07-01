@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkZpcmV3YWxsUmVzcG9uc2U
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -13,58 +15,83 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `firewall` | [`Firewall`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/firewall.md) | Required | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 firewall_response = FirewallResponse.new(
-  Firewall.new(
-    [
+  firewall: Firewall.new(
+    applied_to: [
       AppliedTo.new(
-        Type6Enum::SERVER,
-        [
+        type: Type6::SERVER,
+        applied_to_resources: [
           AppliedToResource.new(
-            Server.new(
-              14
+            server: Server.new(
+              id: 14,
+              additional_properties: {
+                'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+              }
             ),
-            Type5Enum::SERVER
+            type: Type5::SERVER,
+            additional_properties: {
+              'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+            }
           )
         ],
-        LabelSelector.new(
-          'selector8'
+        label_selector: LabelSelector.new(
+          selector: 'selector8',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
-        Server.new(
-          14
-        )
+        server: Server.new(
+          id: 14,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
+        ),
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    '2016-01-30T23:55:00+00:00',
-    42,
-    'my-resource',
-    [
+    created: '2016-01-30T23:55:00+00:00',
+    id: 42,
+    name: 'my-resource',
+    rules: [
       Rule.new(
-        DirectionEnum::ENUM_IN,
-        ProtocolEnum::UDP,
-        'description2',
-        [
+        direction: Direction::ENUM_IN,
+        protocol: Protocol::UDP,
+        description: 'description2',
+        destination_ips: [
           '28.239.13.1/32',
           '28.239.14.0/24',
           'ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128'
         ],
-        '80',
-        [
+        port: '80',
+        source_ips: [
           '28.239.13.1/32',
           '28.239.14.0/24',
           'ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128'
-        ]
+        ],
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    {
-      'key0': 'labels2',
-      'key1': 'labels1'
+    labels: {
+      'key0' => 'labels2',
+      'key1' => 'labels1'
+    },
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
     }
-  )
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

@@ -7,7 +7,7 @@ Status of the Action
 
 # Enum Type Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the Action
 # Example
 
 ```python
-from hetznercloudapi.models.status_enum import StatusEnum
+from hetznercloudapi.models.status import Status
 
-status = StatusEnum.ERROR
+status = Status.ERROR
 ```
 
 

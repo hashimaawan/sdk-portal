@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterStatusEnum`
+`ParameterStatus`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { ParameterStatusEnum } from 'hetzner-cloud-apilib';
+import { ParameterStatus } from 'hetzner-cloud-apilib';
 
-const parameterStatus = ParameterStatusEnum.Error;
+const parameterStatus = ParameterStatus.Error;
 ```
 
 

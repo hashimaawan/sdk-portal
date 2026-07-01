@@ -7,7 +7,7 @@ Status of the Server
 
 # Enum Type Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
@@ -28,9 +28,9 @@ Status of the Server
 # Example
 
 ```java
-import cloud.hetzner.api.models.Status73Enum;
+import cloud.hetzner.api.models.Status73;
 
-Status73Enum status73 = Status73Enum.STARTING;
+Status73 status73 = Status73.STARTING;
 ```
 
 

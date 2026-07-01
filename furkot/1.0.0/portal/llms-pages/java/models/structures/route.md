@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 
 route leading to the stop
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,21 +18,25 @@ route leading to the stop
 |  --- | --- | --- | --- | --- | --- |
 | `Distance` | `Long` | Optional | route distance in meters | Long getDistance() | setDistance(Long distance) |
 | `Duration` | `Long` | Optional | route duration in seconds | Long getDuration() | setDuration(Long duration) |
-| `Mode` | [`ModeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/models/enumerations/mode.md) | Optional | travel mode | ModeEnum getMode() | setMode(ModeEnum mode) |
+| `Mode` | [`Mode`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/models/enumerations/mode.md) | Optional | travel mode | Mode getMode() | setMode(Mode mode) |
 | `Polyline` | `String` | Optional | route path compatible with Google polyline encoding algorithm | String getPolyline() | setPolyline(String polyline) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.furkot.trips.models.ModeEnum;
+import com.furkot.trips.ApiHelper;
+import com.furkot.trips.models.Mode;
 import com.furkot.trips.models.Route;
+import java.io.IOException;
 
 Route route = new Route.Builder()
     .distance(134L)
     .duration(168L)
-    .mode(ModeEnum.CAR)
+    .mode(Mode.CAR)
     .polyline("polyline0")
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

@@ -7,7 +7,7 @@ Flavor of operating system contained in the Image
 
 # Enum Type Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
@@ -24,9 +24,9 @@ Flavor of operating system contained in the Image
 # Example
 
 ```ts
-import { OsFlavorEnum } from 'hetzner-cloud-apilib';
+import { OsFlavor } from 'hetzner-cloud-apilib';
 
-const osFlavor = OsFlavorEnum.Debian;
+const osFlavor = OsFlavor.Debian;
 ```
 
 

@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async boxscoreusageGET(
-  gameID?: string,
+async boxscoreusageGet(
+  gameId?: string,
   startPeriod?: string,
   endPeriod?: string,
   startRange?: string,
@@ -21,7 +21,7 @@ async boxscoreusageGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string \| undefined` | Query, Optional | - |
+| `gameId` | `string \| undefined` | Query, Optional | - |
 | `startPeriod` | `string \| undefined` | Query, Optional | - |
 | `endPeriod` | `string \| undefined` | Query, Optional | - |
 | `startRange` | `string \| undefined` | Query, Optional | - |
@@ -41,7 +41,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await apiController.boxscoreusageGET();
+  const response = await api.boxscoreusageGet();
 
   // Extracting fully parsed response body.
   console.log(response.result);

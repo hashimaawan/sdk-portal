@@ -5,19 +5,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playersvsplayersGETAsync(
-    final String playerTeamID,
-    final String playerID1,
-    final String playerID2,
-    final String playerID3,
-    final String playerID4,
-    final String playerID5,
-    final String vsTeamID,
-    final String vsPlayerID1,
-    final String vsPlayerID2,
-    final String vsPlayerID3,
-    final String vsPlayerID4,
-    final String vsPlayerID5,
+CompletableFuture<ApiResponse<Void>> playersvsplayersGetAsync(
+    final String playerTeamId,
+    final String playerId1,
+    final String playerId2,
+    final String playerId3,
+    final String playerId4,
+    final String playerId5,
+    final String vsTeamId,
+    final String vsPlayerId1,
+    final String vsPlayerId2,
+    final String vsPlayerId3,
+    final String vsPlayerId4,
+    final String vsPlayerId5,
     final String seasonType,
     final String measureType,
     final String perMode,
@@ -31,7 +31,7 @@ CompletableFuture<Void> playersvsplayersGETAsync(
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String gameSegment,
@@ -44,18 +44,18 @@ CompletableFuture<Void> playersvsplayersGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerTeamID` | `String` | Query, Required | - |
-| `playerID1` | `String` | Query, Required | - |
-| `playerID2` | `String` | Query, Required | - |
-| `playerID3` | `String` | Query, Required | - |
-| `playerID4` | `String` | Query, Required | - |
-| `playerID5` | `String` | Query, Required | - |
-| `vsTeamID` | `String` | Query, Required | - |
-| `vsPlayerID1` | `String` | Query, Required | - |
-| `vsPlayerID2` | `String` | Query, Required | - |
-| `vsPlayerID3` | `String` | Query, Required | - |
-| `vsPlayerID4` | `String` | Query, Required | - |
-| `vsPlayerID5` | `String` | Query, Required | - |
+| `playerTeamId` | `String` | Query, Required | - |
+| `playerId1` | `String` | Query, Required | - |
+| `playerId2` | `String` | Query, Required | - |
+| `playerId3` | `String` | Query, Required | - |
+| `playerId4` | `String` | Query, Required | - |
+| `playerId5` | `String` | Query, Required | - |
+| `vsTeamId` | `String` | Query, Required | - |
+| `vsPlayerId1` | `String` | Query, Required | - |
+| `vsPlayerId2` | `String` | Query, Required | - |
+| `vsPlayerId3` | `String` | Query, Required | - |
+| `vsPlayerId4` | `String` | Query, Required | - |
+| `vsPlayerId5` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 | `measureType` | `String` | Query, Required | - |
 | `perMode` | `String` | Query, Required | - |
@@ -69,7 +69,7 @@ CompletableFuture<Void> playersvsplayersGETAsync(
 | `seasonSegment` | `String` | Query, Required | - |
 | `dateFrom` | `String` | Query, Required | - |
 | `dateTo` | `String` | Query, Required | - |
-| `opponentTeamID` | `String` | Query, Required | - |
+| `opponentTeamId` | `String` | Query, Required | - |
 | `vsConference` | `String` | Query, Required | - |
 | `vsDivision` | `String` | Query, Required | - |
 | `gameSegment` | `String` | Query, Required | - |
@@ -87,18 +87,18 @@ CompletableFuture<Void> playersvsplayersGETAsync(
 # Example Usage
 
 ```java
-String playerTeamID = "PlayerTeamID4";
-String playerID1 = "PlayerID18";
-String playerID2 = "PlayerID24";
-String playerID3 = "PlayerID32";
-String playerID4 = "PlayerID44";
-String playerID5 = "PlayerID54";
-String vsTeamID = "VsTeamID8";
-String vsPlayerID1 = "VsPlayerID12";
-String vsPlayerID2 = "VsPlayerID28";
-String vsPlayerID3 = "VsPlayerID38";
-String vsPlayerID4 = "VsPlayerID46";
-String vsPlayerID5 = "VsPlayerID56";
+String playerTeamId = "PlayerTeamID4";
+String playerId1 = "PlayerID18";
+String playerId2 = "PlayerID24";
+String playerId3 = "PlayerID32";
+String playerId4 = "PlayerID44";
+String playerId5 = "PlayerID54";
+String vsTeamId = "VsTeamID8";
+String vsPlayerId1 = "VsPlayerID12";
+String vsPlayerId2 = "VsPlayerID28";
+String vsPlayerId3 = "VsPlayerID38";
+String vsPlayerId4 = "VsPlayerID46";
+String vsPlayerId5 = "VsPlayerID56";
 String seasonType = "SeasonType8";
 String measureType = "MeasureType8";
 String perMode = "PerMode6";
@@ -112,15 +112,16 @@ String month = "Month0";
 String seasonSegment = "SeasonSegment8";
 String dateFrom = "DateFrom6";
 String dateTo = "DateTo0";
-String opponentTeamID = "OpponentTeamID6";
+String opponentTeamId = "OpponentTeamID6";
 String vsConference = "VsConference6";
 String vsDivision = "VsDivision6";
 String gameSegment = "GameSegment6";
 String period = "Period2";
 String lastNGames = "LastNGames4";
 
-aPIController.playersvsplayersGETAsync(playerTeamID, playerID1, playerID2, playerID3, playerID4, playerID5, vsTeamID, vsPlayerID1, vsPlayerID2, vsPlayerID3, vsPlayerID4, vsPlayerID5, seasonType, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
+api.playersvsplayersGetAsync(playerTeamId, playerId1, playerId2, playerId3, playerId4, playerId5, vsTeamId, vsPlayerId1, vsPlayerId2, vsPlayerId3, vsPlayerId4, vsPlayerId5, seasonType, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -40,13 +40,13 @@ const id = 112;
 
 const body: AddSubnetRequest = {
   networkZone: 'eu-central',
-  type: Type42Enum.Server,
+  type: Type42.Server,
   ipRange: '10.0.1.0/24',
   vswitchId: 1000,
 };
 
 try {
-  const response = await networkActionsController.addASubnetToANetwork(
+  const response = await networkActionsApi.addASubnetToANetwork(
     id,
     body
   );

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Server where the traffic should be routed through
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,13 +17,17 @@ Server where the traffic should be routed through
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `Integer` | Required | ID of the Server |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 load_balancer_target_server = LoadBalancerTargetServer.new(
-  80
+  id: 80,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

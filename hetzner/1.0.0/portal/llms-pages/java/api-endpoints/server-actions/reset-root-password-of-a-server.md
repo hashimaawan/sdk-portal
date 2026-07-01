@@ -11,7 +11,7 @@ If this does not succeed you can use the rescue system to netboot the Server and
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersActionsResetPasswordResponse> resetRootPasswordOfAServerAsync(
+CompletableFuture<ApiResponse<ServersActionsResetPasswordResponse>> resetRootPasswordOfAServerAsync(
     final int id)
 ```
 
@@ -29,7 +29,7 @@ CompletableFuture<ServersActionsResetPasswordResponse> resetRootPasswordOfAServe
 
 The `action` key in the reply contains an Action object with this structure:
 
-[`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-reset-password-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersActionsResetPasswordResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-reset-password-response.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ The `action` key in the reply contains an Action object with this structure:
 ```java
 int id = 112;
 
-serverActionsController.resetRootPasswordOfAServerAsync(id).thenAccept(result -> {
+serverActionsApi.resetRootPasswordOfAServerAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

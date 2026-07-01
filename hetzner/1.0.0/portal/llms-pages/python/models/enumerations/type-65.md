@@ -7,7 +7,7 @@ Type of rescue system to boot (default: `linux64`)
 
 # Enum Type Name
 
-`Type65Enum`
+`Type65`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of rescue system to boot (default: `linux64`)
 # Example
 
 ```python
-from hetznercloudapi.models.type_65_enum import Type65Enum
+from hetznercloudapi.models.type_65 import Type65
 
-type_65 = Type65Enum.LINUX64
+type_65 = Type65.LINUX64
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRk1ldHJpY3M
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,14 +18,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Start` | `String` | Required | Start of period of metrics reported (in ISO-8601 format) | String getStart() | setStart(String start) |
 | `Step` | `double` | Required | Resolution of results in seconds. | double getStep() | setStep(double step) |
 | `TimeSeries` | [`Map<String, TimeSeries>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/time-series.md) | Required | Hash with timeseries information, containing the name of timeseries as key | Map<String, TimeSeries> getTimeSeries() | setTimeSeries(Map<String, TimeSeries> timeSeries) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Metrics;
 import cloud.hetzner.api.models.TimeSeries;
 import cloud.hetzner.api.models.containers.TimeSeriesValues;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -52,9 +57,11 @@ Metrics metrics = new Metrics.Builder(
                 )
             )
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build());
     }}
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

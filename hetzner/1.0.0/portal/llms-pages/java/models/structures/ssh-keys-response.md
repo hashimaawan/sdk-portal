@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlNzaCUyNTIwS2V5cyUyNTIwUmVzcG9uc2U
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,15 +16,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `Meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/meta.md) | Optional | - | Meta getMeta() | setMeta(Meta meta) |
 | `SshKeys` | [`List<SshKey>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ssh-key.md) | Required | - | List<SshKey> getSshKeys() | setSshKeys(List<SshKey> sshKeys) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Meta;
 import cloud.hetzner.api.models.Pagination;
 import cloud.hetzner.api.models.SshKey;
 import cloud.hetzner.api.models.SshKeysResponse;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -40,6 +45,7 @@ SshKeysResponse sshKeysResponse = new SshKeysResponse.Builder(
             "my-resource",
             "ssh-rsa AAAjjk76kgf...Xt"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
 )
@@ -52,9 +58,12 @@ SshKeysResponse sshKeysResponse = new SshKeysResponse.Builder(
             50.02D,
             206.64D
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

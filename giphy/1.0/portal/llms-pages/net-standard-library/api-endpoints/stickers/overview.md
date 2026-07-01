@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 # Get instance
 
-An instance of the `StickersController` class can be accessed from the API Client.
+An instance of the `StickersApi` class can be accessed from the API Client.
 
 ```
-StickersController stickersController = client.StickersController;
+StickersApi stickersApi = client.StickersApi;
 ```
 
 

@@ -28,32 +28,33 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\PricingBuilder;
-use HetznerCloudAPILib\Models\Builders\FloatingIp4Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly6Builder;
-use HetznerCloudAPILib\Models\Builders\FloatingIp5Builder;
-use HetznerCloudAPILib\Models\Builders\Price6Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly7Builder;
-use HetznerCloudAPILib\Models\Type48Enum;
-use HetznerCloudAPILib\Models\Builders\Image3Builder;
-use HetznerCloudAPILib\Models\Builders\PricePerGbMonthBuilder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerType6Builder;
-use HetznerCloudAPILib\Models\Builders\Price7Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly6Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly8Builder;
-use HetznerCloudAPILib\Models\Builders\PrimaryIpBuilder;
-use HetznerCloudAPILib\Models\Builders\Price8Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly7Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly9Builder;
-use HetznerCloudAPILib\Models\Type49Enum;
-use HetznerCloudAPILib\Models\Builders\ServerBackupBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerTypes2Builder;
-use HetznerCloudAPILib\Models\Builders\Price9Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly8Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly10Builder;
-use HetznerCloudAPILib\Models\Builders\TrafficBuilder;
-use HetznerCloudAPILib\Models\Builders\PricePerTbBuilder;
-use HetznerCloudAPILib\Models\Builders\VolumeBuilder;
+use HetznerCloudApiLib\Models\Builders\PricingBuilder;
+use HetznerCloudApiLib\Models\Builders\FloatingIp4Builder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly6Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\FloatingIp5Builder;
+use HetznerCloudApiLib\Models\Builders\Price6Builder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly7Builder;
+use HetznerCloudApiLib\Models\Type48;
+use HetznerCloudApiLib\Models\Builders\Image3Builder;
+use HetznerCloudApiLib\Models\Builders\PricePerGbMonthBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerType6Builder;
+use HetznerCloudApiLib\Models\Builders\Price7Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly6Builder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly8Builder;
+use HetznerCloudApiLib\Models\Builders\PrimaryIpBuilder;
+use HetznerCloudApiLib\Models\Builders\Price8Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly7Builder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly9Builder;
+use HetznerCloudApiLib\Models\Type49;
+use HetznerCloudApiLib\Models\Builders\ServerBackupBuilder;
+use HetznerCloudApiLib\Models\Builders\ServerTypes2Builder;
+use HetznerCloudApiLib\Models\Builders\Price9Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly8Builder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly10Builder;
+use HetznerCloudApiLib\Models\Builders\TrafficBuilder;
+use HetznerCloudApiLib\Models\Builders\PricePerTbBuilder;
+use HetznerCloudApiLib\Models\Builders\VolumeBuilder;
 
 $pricing = PricingBuilder::init(
     'EUR',
@@ -61,8 +62,12 @@ $pricing = PricingBuilder::init(
         PriceMonthly6Builder::init(
             '1.1900000000000000',
             '1.0000000000'
-        )->build()
-    )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     [
         FloatingIp5Builder::init(
             [
@@ -71,18 +76,28 @@ $pricing = PricingBuilder::init(
                     PriceMonthly7Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build()
-                )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
-            Type48Enum::IPV4
-        )->build()
+            Type48::IPV4
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     Image3Builder::init(
         PricePerGbMonthBuilder::init(
             '1.1900000000000000',
             '1.0000000000'
-        )->build()
-    )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     [
         LoadBalancerType6Builder::init(
             1,
@@ -93,14 +108,22 @@ $pricing = PricingBuilder::init(
                     PriceHourly6Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build(),
                     PriceMonthly8Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build()
-                )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ]
-        )->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     [
         PrimaryIpBuilder::init(
@@ -110,19 +133,29 @@ $pricing = PricingBuilder::init(
                     PriceHourly7Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build(),
                     PriceMonthly9Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build()
-                )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
-            Type49Enum::IPV4
-        )->build()
+            Type49::IPV4
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     ServerBackupBuilder::init(
         '20.0000000000'
-    )->build(),
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     [
         ServerTypes2Builder::init(
             4,
@@ -133,28 +166,44 @@ $pricing = PricingBuilder::init(
                     PriceHourly8Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build(),
                     PriceMonthly10Builder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build()
-                )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ]
-        )->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ],
     TrafficBuilder::init(
         PricePerTbBuilder::init(
             '1.1900000000000000',
             '1.0000000000'
-        )->build()
-    )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     '19.000000',
     VolumeBuilder::init(
         PricePerGbMonthBuilder::init(
             '1.1900000000000000',
             '1.0000000000'
-        )->build()
-    )->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build()
 )->build();
 ```
 

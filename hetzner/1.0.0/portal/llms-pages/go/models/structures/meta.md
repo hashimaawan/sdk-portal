@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRk1ldGE
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Pagination` | [`models.Pagination`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/pagination.md) | Required | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -21,18 +24,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     meta := models.Meta{
-        Pagination:           models.Pagination{
-            LastPage:             models.ToPointer(float64(4)),
-            NextPage:             models.ToPointer(float64(4)),
-            Page:                 float64(3),
-            PerPage:              float64(25),
-            PreviousPage:         models.ToPointer(float64(2)),
-            TotalEntries:         models.ToPointer(float64(100)),
+        Pagination:            models.Pagination{
+            LastPage:              models.ToPointer(float64(4)),
+            NextPage:              models.ToPointer(float64(4)),
+            Page:                  float64(3),
+            PerPage:               float64(25),
+            PreviousPage:          models.ToPointer(float64(2)),
+            TotalEntries:          models.ToPointer(float64(100)),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

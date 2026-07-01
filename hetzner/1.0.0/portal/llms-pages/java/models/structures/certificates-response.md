@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNlcnRpZmljYXRlc1Jlc3BvbnNl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,20 +16,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `Certificates` | [`List<Certificate>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificate.md) | Required | - | List<Certificate> getCertificates() | setCertificates(List<Certificate> certificates) |
 | `Meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/meta.md) | Optional | - | Meta getMeta() | setMeta(Meta meta) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Certificate;
 import cloud.hetzner.api.models.CertificatesResponse;
-import cloud.hetzner.api.models.IssuanceEnum;
+import cloud.hetzner.api.models.Issuance;
 import cloud.hetzner.api.models.Meta;
 import cloud.hetzner.api.models.Pagination;
-import cloud.hetzner.api.models.RenewalEnum;
+import cloud.hetzner.api.models.Renewal;
 import cloud.hetzner.api.models.Status2;
-import cloud.hetzner.api.models.TypeEnum;
+import cloud.hetzner.api.models.Type;
 import cloud.hetzner.api.models.UsedBy;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -56,15 +61,18 @@ CertificatesResponse certificatesResponse = new CertificatesResponse.Builder(
                     4711,
                     "load_balancer"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
         )
         .status(new Status2.Builder()
                 .error(null)
-                .issuance(IssuanceEnum.COMPLETED)
-                .renewal(RenewalEnum.FAILED)
+                .issuance(Issuance.COMPLETED)
+                .renewal(Renewal.FAILED)
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build())
-        .type(TypeEnum.UPLOADED)
+        .type(Type.UPLOADED)
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
 )
@@ -77,9 +85,12 @@ CertificatesResponse certificatesResponse = new CertificatesResponse.Builder(
             50.02D,
             206.64D
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

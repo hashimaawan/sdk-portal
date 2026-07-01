@@ -7,7 +7,7 @@ Current status of the Volume
 
 # Enum Type Name
 
-`Status113Enum`
+`Status113`
 
 
 # Fields
@@ -21,9 +21,9 @@ Current status of the Volume
 # Example
 
 ```python
-from hetznercloudapi.models.status_113_enum import Status113Enum
+from hetznercloudapi.models.status_113 import Status113
 
-status_113 = Status113Enum.CREATING
+status_113 = Status113.CREATING
 ```
 
 

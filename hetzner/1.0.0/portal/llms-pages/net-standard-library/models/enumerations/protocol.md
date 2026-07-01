@@ -7,7 +7,7 @@ Type of traffic to allow
 
 # Enum Type Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of traffic to allow
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-ProtocolEnum protocol = ProtocolEnum.Esp;
+Protocol protocol = Protocol.Esp;
 ```
 
 

@@ -11,10 +11,10 @@ Please see [Hetzner Docs](https://docs.hetzner.com/cloud/#Volumes) for more deta
 
 # Get singleton instance
 
-The singleton instance of the `VolumesController` class can be accessed from the API Client.
+The singleton instance of the `VolumesApi` class can be accessed from the API Client.
 
 ```
-$volumesController = $client->getVolumesController();
+$volumesApi = $client->getVolumesApi();
 ```
 
 

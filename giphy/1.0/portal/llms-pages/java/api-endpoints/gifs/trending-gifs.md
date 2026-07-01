@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
 
 ```java
-CompletableFuture<GifsTrendingResponse> trendingGifsAsync(
+CompletableFuture<ApiResponse<GifsTrendingResponse>> trendingGifsAsync(
     final Integer limit,
     final Integer offset,
     final String rating)
@@ -14,7 +14,7 @@ CompletableFuture<GifsTrendingResponse> trendingGifsAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -30,7 +30,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`GifsTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/gifs-trending-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GifsTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/gifs-trending-response.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 Integer limit = 25;
 Integer offset = 0;
 
-gifsController.trendingGifsAsync(limit, offset, null).thenAccept(result -> {
+gifsApi.trendingGifsAsync(limit, offset, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

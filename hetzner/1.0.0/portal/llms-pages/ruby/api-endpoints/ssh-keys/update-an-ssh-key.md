@@ -26,7 +26,7 @@ def update_an_ssh_key(id,
 
 **200**: The `ssh_key` key in the reply contains the modified SSH key object with the new description
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -35,15 +35,20 @@ def update_an_ssh_key(id,
 id = 'id0'
 
 body = SshKeysRequest1.new(
-  { 'labelkey' => 'value' },
-  'My ssh key'
+  labels: { 'labelkey' => 'value' },
+  name: 'My ssh key'
 )
 
-result = ssh_keys_controller.update_an_ssh_key(
+result = ssh_keys_api.update_an_ssh_key(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

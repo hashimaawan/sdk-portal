@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async boxscoresummaryv2GET(
-  gameID: string,
+async boxscoresummaryv2Get(
+  gameId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -16,7 +16,7 @@ async boxscoresummaryv2GET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -30,10 +30,10 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const gameID = 'GameID8';
+const gameId = 'GameID8';
 
 try {
-  const response = await apiController.boxscoresummaryv2GET(gameID);
+  const response = await api.boxscoresummaryv2Get(gameId);
 
   // Extracting fully parsed response body.
   console.log(response.result);

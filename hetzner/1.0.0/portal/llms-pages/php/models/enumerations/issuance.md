@@ -7,7 +7,7 @@ Status of the issuance process of the Certificate
 
 # Enum Type Name
 
-`IssuanceEnum`
+`Issuance`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the issuance process of the Certificate
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\IssuanceEnum;
+use HetznerCloudApiLib\Models\Issuance;
 
-$issuance = IssuanceEnum::FAILED;
+$issuance = Issuance::FAILED;
 ```
 
 

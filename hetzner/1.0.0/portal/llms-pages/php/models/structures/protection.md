@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Protection configuration for the Resource
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -15,16 +17,20 @@ Protection configuration for the Resource
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `delete` | `bool` | Required | If true, prevents the Resource from being deleted | getDelete(): bool | setDelete(bool delete): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $protection = ProtectionBuilder::init(
     false
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

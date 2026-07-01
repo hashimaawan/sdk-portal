@@ -28,7 +28,7 @@ def update_a_firewall(id,
 
 **200**: The `firewall` key contains the Firewall that was just updated
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -37,15 +37,20 @@ def update_a_firewall(id,
 id = 112
 
 body = UpdateFirewallRequest.new(
-  { 'labelkey' => 'value' },
-  'new-name'
+  labels: { 'labelkey' => 'value' },
+  name: 'new-name'
 )
 
-result = firewalls_controller.update_a_firewall(
+result = firewalls_api.update_a_firewall(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

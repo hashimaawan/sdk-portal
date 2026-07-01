@@ -7,7 +7,7 @@ Type of traffic to allow
 
 # Enum Type Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of traffic to allow
 # Example
 
 ```java
-import cloud.hetzner.api.models.ProtocolEnum;
+import cloud.hetzner.api.models.Protocol;
 
-ProtocolEnum protocol = ProtocolEnum.ESP;
+Protocol protocol = Protocol.ESP;
 ```
 
 

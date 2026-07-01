@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get instance
 
-An instance of the `CertificateActionsController` class can be accessed from the API Client.
+An instance of the `CertificateActionsApi` class can be accessed from the API Client.
 
 ```
-certificate_actions_controller = client.certificate_actions
+certificate_actions_api = client.certificate_actions
 ```
 
 

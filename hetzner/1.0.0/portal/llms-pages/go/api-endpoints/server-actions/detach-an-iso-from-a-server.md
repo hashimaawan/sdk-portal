@@ -7,7 +7,7 @@ Detaches an ISO from a Server. In case no ISO Image is attached to the Server, t
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-DetachAnISOFromAServer(
+DetachAnIsoFromAServer(
     ctx context.Context,
     id int) (
     models.ApiResponse[models.ActionResponse],
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.DetachAnISOFromAServer(ctx, id)
+apiResponse, err := serverActionsApi.DetachAnIsoFromAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

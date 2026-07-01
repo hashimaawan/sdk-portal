@@ -7,7 +7,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Enum Type Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-StorageTypeEnum storageType = StorageTypeEnum.Local;
+StorageType storageType = StorageType.Local;
 ```
 
 

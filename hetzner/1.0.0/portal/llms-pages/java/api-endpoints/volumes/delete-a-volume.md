@@ -7,7 +7,7 @@ Deletes a volume. All Volume data is irreversibly destroyed. The Volume must not
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAVolumeAsync(
+CompletableFuture<ApiResponse<Void>> deleteAVolumeAsync(
     final String id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteAVolumeAsync(
 ```java
 String id = "id0";
 
-volumesController.deleteAVolumeAsync(id).thenAccept(result -> {
+volumesApi.deleteAVolumeAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

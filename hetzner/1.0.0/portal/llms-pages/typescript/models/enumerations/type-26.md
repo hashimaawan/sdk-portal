@@ -7,7 +7,7 @@ Type of the ISO
 
 # Enum Type Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the ISO
 # Example
 
 ```ts
-import { Type26Enum } from 'hetzner-cloud-apilib';
+import { Type26 } from 'hetzner-cloud-apilib';
 
-const type26 = Type26Enum.Public;
+const type26 = Type26.Public;
 ```
 
 

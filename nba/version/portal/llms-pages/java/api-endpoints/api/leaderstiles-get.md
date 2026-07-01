@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> leaderstilesGETAsync(
+CompletableFuture<ApiResponse<Void>> leaderstilesGetAsync(
     final String stat,
-    final String leagueID,
+    final String leagueId,
     final String season,
     final String seasonType,
     final String playerOrTeam,
@@ -23,7 +23,7 @@ CompletableFuture<Void> leaderstilesGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `stat` | `String` | Query, Required | - |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `season` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 | `playerOrTeam` | `String` | Query, Required | - |
@@ -44,15 +44,16 @@ CompletableFuture<Void> leaderstilesGETAsync(
 
 ```java
 String stat = "Stat2";
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String season = "Season0";
 String seasonType = "SeasonType8";
 String playerOrTeam = "PlayerOrTeam8";
 String playerScope = "PlayerScope2";
 String gameScope = "GameScope0";
 
-aPIController.leaderstilesGETAsync(stat, leagueID, season, seasonType, playerOrTeam, playerScope, gameScope, null, null).thenAccept(result -> {
+api.leaderstilesGetAsync(stat, leagueId, season, seasonType, playerOrTeam, playerScope, gameScope, null, null).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

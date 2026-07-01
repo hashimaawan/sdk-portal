@@ -7,7 +7,7 @@ Type of traffic to allow
 
 # Enum Type Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
@@ -24,7 +24,7 @@ Type of traffic to allow
 # Example
 
 ```ruby
-protocol = ProtocolEnum::ESP
+protocol = Protocol::ESP
 ```
 
 

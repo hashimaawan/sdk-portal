@@ -32,7 +32,7 @@ def enable_rescue_mode_for_a_server(id,
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-enable-rescue-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-enable-rescue-response.md).
 
 
 # Example Usage
@@ -41,17 +41,21 @@ The `action` key in the reply contains an Action object with this structure
 id = 112
 
 body = ServersActionsEnableRescueRequest.new(
-  [
+  ssh_keys: [
     2323
-  ],
-  envrr
+  ]
 )
 
-result = server_actions_controller.enable_rescue_mode_for_a_server(
+result = server_actions_api.enable_rescue_mode_for_a_server(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

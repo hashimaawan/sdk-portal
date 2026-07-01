@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`Type66Enum`
+`Type66`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `CPU` |
-| `DISK` |
-| `NETWORK` |
+| `Cpu` |
+| `Disk` |
+| `Network` |
 
 
 # Example
@@ -23,11 +23,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type66 := models.Type66Enum_NETWORK
+    type66 := models.Type66_Network
 
 }
 ```

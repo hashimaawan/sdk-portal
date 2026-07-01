@@ -27,7 +27,7 @@ def add_a_subnet_to_a_network(self,
 
 **201**: The `action` key contains the `add_subnet` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -37,16 +37,20 @@ id = 112
 
 body = AddSubnetRequest(
     network_zone='eu-central',
-    mtype=Type42Enum.SERVER,
+    mtype=Type42.SERVER,
     ip_range='10.0.1.0/24',
     vswitch_id=1000
 )
 
-result = network_actions_controller.add_a_subnet_to_a_network(
+result = network_actions_api.add_a_subnet_to_a_network(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

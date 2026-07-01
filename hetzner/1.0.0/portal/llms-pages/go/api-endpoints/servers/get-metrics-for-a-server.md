@@ -32,7 +32,7 @@ We limit the number of samples returned to a maximum of 500 and will adjust the 
 GetMetricsForAServer(
     ctx context.Context,
     id int,
-    mType models.Type66Enum,
+    mType models.Type66,
     start string,
     end string,
     step *string) (
@@ -46,7 +46,7 @@ GetMetricsForAServer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Server |
-| `mType` | [`models.Type66Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `mType` | [`models.Type66`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `*string` | Query, Optional | Resolution of results in seconds |
@@ -66,13 +66,13 @@ ctx := context.Background()
 
 id := 112
 
-mType := models.Type66Enum_NETWORK
+mType := models.Type66_Network
 
 start := "start4"
 
 end := "end8"
 
-apiResponse, err := serversController.GetMetricsForAServer(ctx, id, mType, start, end, nil)
+apiResponse, err := serversApi.GetMetricsForAServer(ctx, id, mType, start, end, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

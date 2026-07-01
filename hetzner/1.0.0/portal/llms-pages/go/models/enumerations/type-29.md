@@ -7,16 +7,16 @@ Type of the resource
 
 # Class Name
 
-`Type29Enum`
+`Type29`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SERVER` |
-| `LABELSELECTOR` |
-| `IP` |
+| `Server` |
+| `LabelSelector` |
+| `Ip` |
 
 
 # Example
@@ -25,11 +25,11 @@ Type of the resource
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type29 := models.Type29Enum_SERVER
+    type29 := models.Type29_Server
 
 }
 ```

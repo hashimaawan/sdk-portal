@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type41Enum`
+`Type41`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type41Enum;
+use HetznerCloudApiLib\Models\Type41;
 
-$type41 = Type41Enum::REQUESTS_PER_SECOND;
+$type41 = Type41::REQUESTS_PER_SECOND;
 ```
 
 

@@ -41,7 +41,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await firewallsController.deleteAFirewall(id);
+  const response = await firewallsApi.deleteAFirewall(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

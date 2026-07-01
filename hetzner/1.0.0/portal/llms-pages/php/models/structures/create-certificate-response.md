@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVzcG9uc2U
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,22 +16,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`?NullableAction`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/nullable-action.md) | Optional | - | getAction(): ?NullableAction | setAction(?NullableAction action): void |
 | `certificate` | [`Certificate`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/certificate.md) | Required | - | getCertificate(): Certificate | setCertificate(Certificate certificate): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreateCertificateResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\CertificateBuilder;
-use HetznerCloudAPILib\Models\Builders\UsedByBuilder;
-use HetznerCloudAPILib\Models\Builders\Status2Builder;
-use HetznerCloudAPILib\Models\IssuanceEnum;
-use HetznerCloudAPILib\Models\RenewalEnum;
-use HetznerCloudAPILib\Models\TypeEnum;
-use HetznerCloudAPILib\Models\Builders\NullableActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\CreateCertificateResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\CertificateBuilder;
+use HetznerCloudApiLib\Models\Builders\UsedByBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\Status2Builder;
+use HetznerCloudApiLib\Models\Issuance;
+use HetznerCloudApiLib\Models\Renewal;
+use HetznerCloudApiLib\Models\Type;
+use HetznerCloudApiLib\Models\Builders\NullableActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
 
 $createCertificateResponse = CreateCertificateResponseBuilder::init(
     CertificateBuilder::init(
@@ -50,7 +54,9 @@ $createCertificateResponse = CreateCertificateResponseBuilder::init(
             UsedByBuilder::init(
                 4711,
                 'load_balancer'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ]
     )
         ->certificate('-----BEGIN CERTIFICATE-----
@@ -63,11 +69,13 @@ $createCertificateResponse = CreateCertificateResponseBuilder::init(
                 ->error(
                     null
                 )
-                ->issuance(IssuanceEnum::COMPLETED)
-                ->renewal(RenewalEnum::FAILED)
+                ->issuance(Issuance::COMPLETED)
+                ->renewal(Renewal::FAILED)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         )
-        ->type(TypeEnum::UPLOADED)
+        ->type(Type::UPLOADED)
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
 )
     ->action(
@@ -79,28 +87,38 @@ $createCertificateResponse = CreateCertificateResponseBuilder::init(
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 Resource2Builder::init(
                     198,
                     'type0'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             'started8',
-            StatusEnum::RUNNING
+            Status::RUNNING
         )
             ->error(
                 ErrorBuilder::init(
                     'code2',
                     'message4'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('finished0')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

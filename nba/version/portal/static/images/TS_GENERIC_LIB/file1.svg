@@ -685,7 +685,7 @@
                 </g>
             </g>
         </g>
-        <text id="_dynamic_project_name_npm_install" data-name="{dynamic project name}&gt;npm install" transform="translate(768.534 1248.53)" fill="#fff" font-size="15" font-family="Consolas"><tspan x="0" y="0">NBAStatsAPI&gt;npm install</tspan></text>
-        <text id="_dynamic_project_name_npm_install-2" data-name="{dynamic project name}&gt;npm install" transform="translate(769.94 1533.723)" fill="#fff" font-size="15" font-family="Consolas"><tspan x="0" y="0">NBAStatsAPI&gt;npm install</tspan></text>
+        <text id="_dynamic_project_name_npm_install" data-name="{dynamic project name}&gt;npm install" transform="translate(768.534 1248.53)" fill="#fff" font-size="15" font-family="Consolas"><tspan x="0" y="0">NbaStatsApi&gt;npm install</tspan></text>
+        <text id="_dynamic_project_name_npm_install-2" data-name="{dynamic project name}&gt;npm install" transform="translate(769.94 1533.723)" fill="#fff" font-size="15" font-family="Consolas"><tspan x="0" y="0">NbaStatsApi&gt;npm install</tspan></text>
     </g>
 </svg>

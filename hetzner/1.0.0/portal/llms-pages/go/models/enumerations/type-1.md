@@ -7,15 +7,15 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 
 # Class Name
 
-`Type1Enum`
+`Type1`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `UPLOADED` |
-| `MANAGED` |
+| `Uploaded` |
+| `Managed` |
 
 
 # Example
@@ -24,11 +24,11 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type1 := models.Type1Enum_UPLOADED
+    type1 := models.Type1_Uploaded
 
 }
 ```

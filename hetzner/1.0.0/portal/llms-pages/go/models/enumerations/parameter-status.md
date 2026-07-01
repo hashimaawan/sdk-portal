@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`ParameterStatusEnum`
+`ParameterStatus`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `RUNNING` |
-| `SUCCESS` |
-| `ENUMERROR` |
+| `Running` |
+| `Success` |
+| `EnumError` |
 
 
 # Example
@@ -23,11 +23,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    parameterStatus := models.ParameterStatusEnum_ENUMERROR
+    parameterStatus := models.ParameterStatus_EnumError
 
 }
 ```

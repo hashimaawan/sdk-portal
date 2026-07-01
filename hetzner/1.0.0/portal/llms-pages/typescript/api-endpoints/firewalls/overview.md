@@ -10,10 +10,10 @@ Firewalls can limit the network access to or from your resources.
 
 # Create Instance
 
-The instance of the `FirewallsController` class can be created using the API Client.
+The instance of the `FirewallsApi` class can be created using the API Client.
 
 ```
-const firewallsController = new FirewallsController(client);
+const firewallsApi = new FirewallsApi(client);
 ```
 
 

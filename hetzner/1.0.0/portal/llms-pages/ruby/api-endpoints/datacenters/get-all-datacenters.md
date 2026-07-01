@@ -22,14 +22,19 @@ def get_all_datacenters(name: nil)
 
 **200**: The reply contains the `datacenters` and `recommendation` keys
 
-[`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/datacenters-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/datacenters-response.md).
 
 
 # Example Usage
 
 ```ruby
-result = datacenters_controller.get_all_datacenters
-puts result
+result = datacenters_api.get_all_datacenters
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

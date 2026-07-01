@@ -22,14 +22,19 @@ def get_all_locations(name: nil)
 
 **200**: The `locations` key in the reply contains an array of Location objects with this structure
 
-[`LocationsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/locations-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`LocationsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/locations-response.md).
 
 
 # Example Usage
 
 ```ruby
-result = locations_controller.get_all_locations
-puts result
+result = locations_api.get_all_locations
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

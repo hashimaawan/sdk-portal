@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Public Network options
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -18,6 +20,7 @@ Public Network options
 | `EnableIpv6` | `*bool` | Optional | Attach an IPv6 on the public NIC. If false, no IPv6 address will be attached. Defaults to true. |
 | `Ipv4` | `models.Optional[int]` | Optional | ID of the ipv4 Primary IP to use. If omitted and enable_ipv4 is true, a new ipv4 Primary IP will automatically be created. |
 | `Ipv6` | `models.Optional[int]` | Optional | ID of the ipv6 Primary IP to use. If omitted and enable_ipv6 is true, a new ipv6 Primary IP will automatically be created. |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +29,18 @@ Public Network options
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     publicNet5 := models.PublicNet5{
-        EnableIpv4:           models.ToPointer(false),
-        EnableIpv6:           models.ToPointer(false),
-        Ipv4:                 models.NewOptional(models.ToPointer(42)),
-        Ipv6:                 models.NewOptional(models.ToPointer(102)),
+        EnableIpv4:            models.ToPointer(false),
+        EnableIpv6:            models.ToPointer(false),
+        Ipv4:                  models.NewOptional(models.ToPointer(42)),
+        Ipv6:                  models.NewOptional(models.ToPointer(102)),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

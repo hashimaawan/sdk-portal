@@ -7,7 +7,7 @@ Type of traffic to allow
 
 # Enum Type Name
 
-`ProtocolEnum`
+`Protocol`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of traffic to allow
 # Example
 
 ```ts
-import { ProtocolEnum } from 'hetzner-cloud-apilib';
+import { Protocol } from 'hetzner-cloud-apilib';
 
-const protocol = ProtocolEnum.Esp;
+const protocol = Protocol.Esp;
 ```
 
 

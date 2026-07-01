@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.
 
 ```java
-CompletableFuture<StickersTrendingResponse> trendingStickersAsync(
+CompletableFuture<ApiResponse<StickersTrendingResponse>> trendingStickersAsync(
     final Integer limit,
     final Integer offset,
     final String rating)
@@ -14,7 +14,7 @@ CompletableFuture<StickersTrendingResponse> trendingStickersAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -30,7 +30,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`StickersTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/stickers-trending-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`StickersTrendingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/java/models/structures/stickers-trending-response.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 Integer limit = 25;
 Integer offset = 0;
 
-stickersController.trendingStickersAsync(limit, offset, null).thenAccept(result -> {
+stickersApi.trendingStickersAsync(limit, offset, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

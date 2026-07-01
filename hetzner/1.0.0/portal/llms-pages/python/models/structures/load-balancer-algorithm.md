@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Algorithm of the Load Balancer
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -14,17 +16,23 @@ Algorithm of the Load Balancer
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `mtype` | [`Type28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-28.md) | Required | Type of the algorithm |
+| `mtype` | [`Type28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-28.md) | Required | Type of the algorithm |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.load_balancer_algorithm import LoadBalancerAlgorithm
-from hetznercloudapi.models.type_28_enum import Type28Enum
+from hetznercloudapi.models.type_28 import Type28
 
 load_balancer_algorithm = LoadBalancerAlgorithm(
-    mtype=Type28Enum.ROUND_ROBIN
+    mtype=Type28.ROUND_ROBIN,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

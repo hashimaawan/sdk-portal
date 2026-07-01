@@ -7,7 +7,7 @@ Type of the health check
 
 # Enum Type Name
 
-`Protocol6Enum`
+`Protocol6`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the health check
 # Example
 
 ```java
-import cloud.hetzner.api.models.Protocol6Enum;
+import cloud.hetzner.api.models.Protocol6;
 
-Protocol6Enum protocol6 = Protocol6Enum.TCP;
+Protocol6 protocol6 = Protocol6.TCP;
 ```
 
 

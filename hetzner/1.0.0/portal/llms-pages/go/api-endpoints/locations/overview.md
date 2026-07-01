@@ -7,10 +7,10 @@ Datacenters are organized by Locations. Datacenters in the same Location are con
 
 # Get Instance
 
-The instance of the `LocationsController` class can be accessed from the API Client.
+The instance of the `LocationsApi` class can be accessed from the API Client.
 
 ```
-locationsController := client.LocationsController()
+locationsApi := client.LocationsApi()
 ```
 
 

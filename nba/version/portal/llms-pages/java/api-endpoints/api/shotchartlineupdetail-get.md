@@ -5,25 +5,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> shotchartlineupdetailGETAsync(
-    final String leagueID,
+CompletableFuture<ApiResponse<Void>> shotchartlineupdetailGetAsync(
+    final String leagueId,
     final String season,
     final String seasonType,
-    final String teamID,
+    final String teamId,
     final String outcome,
     final String location,
     final String month,
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String gameSegment,
     final String period,
     final String lastNGames,
-    final String gameID,
-    final String gROUPID,
+    final String gameId,
+    final String groupId,
     final String contextMeasure,
     final String contextFilter)
 ```
@@ -33,24 +33,24 @@ CompletableFuture<Void> shotchartlineupdetailGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `season` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
-| `teamID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
 | `outcome` | `String` | Query, Required | - |
 | `location` | `String` | Query, Required | - |
 | `month` | `String` | Query, Required | - |
 | `seasonSegment` | `String` | Query, Required | - |
 | `dateFrom` | `String` | Query, Required | - |
 | `dateTo` | `String` | Query, Required | - |
-| `opponentTeamID` | `String` | Query, Required | - |
+| `opponentTeamId` | `String` | Query, Required | - |
 | `vsConference` | `String` | Query, Required | - |
 | `vsDivision` | `String` | Query, Required | - |
 | `gameSegment` | `String` | Query, Required | - |
 | `period` | `String` | Query, Required | - |
 | `lastNGames` | `String` | Query, Required | - |
-| `gameID` | `String` | Query, Required | - |
-| `gROUPID` | `String` | Query, Required | - |
+| `gameId` | `String` | Query, Required | - |
+| `groupId` | `String` | Query, Required | - |
 | `contextMeasure` | `String` | Query, Required | - |
 | `contextFilter` | `String` | Query, Required | - |
 
@@ -65,29 +65,30 @@ CompletableFuture<Void> shotchartlineupdetailGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String season = "Season0";
 String seasonType = "SeasonType8";
-String teamID = "TeamID8";
+String teamId = "TeamID8";
 String outcome = "Outcome4";
 String location = "Location4";
 String month = "Month0";
 String seasonSegment = "SeasonSegment8";
 String dateFrom = "DateFrom6";
 String dateTo = "DateTo0";
-String opponentTeamID = "OpponentTeamID6";
+String opponentTeamId = "OpponentTeamID6";
 String vsConference = "VsConference6";
 String vsDivision = "VsDivision6";
 String gameSegment = "GameSegment6";
 String period = "Period2";
 String lastNGames = "LastNGames4";
-String gameID = "GameID8";
-String gROUPID = "GROUP_ID6";
+String gameId = "GameID8";
+String groupId = "GROUP_ID6";
 String contextMeasure = "ContextMeasure2";
 String contextFilter = "ContextFilter6";
 
-aPIController.shotchartlineupdetailGETAsync(leagueID, season, seasonType, teamID, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames, gameID, gROUPID, contextMeasure, contextFilter).thenAccept(result -> {
+api.shotchartlineupdetailGetAsync(leagueId, season, seasonType, teamId, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames, gameId, groupId, contextMeasure, contextFilter).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := firewallsController.GetAFirewall(ctx, id)
+apiResponse, err := firewallsApi.GetAFirewall(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

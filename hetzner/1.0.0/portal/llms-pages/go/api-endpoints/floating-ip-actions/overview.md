@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get Instance
 
-The instance of the `FloatingIPActionsController` class can be accessed from the API Client.
+The instance of the `FloatingIpActionsApi` class can be accessed from the API Client.
 
 ```
-floatingIPActionsController := client.FloatingIPActionsController()
+floatingIpActionsApi := client.FloatingIpActionsApi()
 ```
 
 

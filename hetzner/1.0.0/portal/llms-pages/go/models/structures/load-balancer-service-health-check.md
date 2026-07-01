@@ -17,7 +17,7 @@ Service health check
 | `Http` | [`*models.Http`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/http.md) | Optional | Additional configuration for protocol http |
 | `Interval` | `int` | Required | Time interval in seconds health checks are performed |
 | `Port` | `int` | Required | Port the health check will be performed on |
-| `Protocol` | [`models.Protocol6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/protocol-6.md) | Required | Type of the health check |
+| `Protocol` | [`models.Protocol6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/protocol-6.md) | Required | Type of the health check |
 | `Retries` | `int` | Required | Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again |
 | `Timeout` | `int` | Required | Time in seconds after an attempt is considered a timeout |
 
@@ -28,7 +28,7 @@ Service health check
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
@@ -46,7 +46,7 @@ func main() {
         }),
         Interval: 15,
         Port:     4711,
-        Protocol: models.Protocol6Enum_HTTP,
+        Protocol: models.Protocol6_Http,
         Retries:  3,
         Timeout:  10,
     }

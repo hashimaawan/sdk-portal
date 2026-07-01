@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async homepagev2GET(
+async homepagev2Get(
   statType: string,
-  leagueID: string,
+  leagueId: string,
   season: string,
   seasonType: string,
   playerOrTeam: string,
@@ -25,7 +25,7 @@ async homepagev2GET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `statType` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `playerOrTeam` | `string` | Query, Required | - |
@@ -48,7 +48,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const statType = 'StatType8';
 
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const season = 'Season0';
 
@@ -61,9 +61,9 @@ const playerScope = 'PlayerScope2';
 const gameScope = 'GameScope0';
 
 try {
-  const response = await apiController.homepagev2GET(
+  const response = await api.homepagev2Get(
     statType,
-    leagueID,
+    leagueId,
     season,
     seasonType,
     playerOrTeam,

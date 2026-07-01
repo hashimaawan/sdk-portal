@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.LoadBalancersActionsDetachFromNetworkRequest{
-    Network:              float64(4711),
+    Network:               float64(4711),
 }
 
-apiResponse, err := loadBalancerActionsController.DetachALoadBalancerFromANetwork(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.DetachALoadBalancerFromANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

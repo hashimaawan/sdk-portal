@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async allstarballotpredictorGET(
+async allstarballotpredictorGet(
   westPlayer1: string,
   westPlayer2: string,
   westPlayer3: string,
@@ -71,7 +71,7 @@ const eastPlayer4 = 'EastPlayer44';
 const eastPlayer5 = 'EastPlayer54';
 
 try {
-  const response = await apiController.allstarballotpredictorGET(
+  const response = await api.allstarballotpredictorGet(
     westPlayer1,
     westPlayer2,
     westPlayer3,

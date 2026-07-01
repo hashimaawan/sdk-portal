@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get singleton instance
 
-The singleton instance of the `CertificateActionsController` class can be accessed from the API Client.
+The singleton instance of the `CertificateActionsApi` class can be accessed from the API Client.
 
 ```
-$certificateActionsController = $client->getCertificateActionsController();
+$certificateActionsApi = $client->getCertificateActionsApi();
 ```
 
 

@@ -7,7 +7,7 @@ Type of the ISO
 
 # Enum Type Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the ISO
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type26Enum type26 = Type26Enum.Public;
+Type26 type26 = Type26.Public;
 ```
 
 

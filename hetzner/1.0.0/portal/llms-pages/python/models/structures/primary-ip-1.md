@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRlByaW1hcnlJUDE
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
-`PrimaryIP1`
+`PrimaryIp1`
 
 
 # Fields
@@ -24,21 +26,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `Dict[str, str]` | Required | User-defined labels (key-value pairs) |
 | `name` | `str` | Required | Name of the Resource. Must be unique per Project. |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/protection.md) | Required | Protection configuration for the Resource |
-| `mtype` | [`Type50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `mtype` | [`Type50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.datacenter_2 import Datacenter2
 from hetznercloudapi.models.dns_ptr import DnsPtr
 from hetznercloudapi.models.location import Location
-from hetznercloudapi.models.primary_ip_1 import PrimaryIP1
+from hetznercloudapi.models.primary_ip_1 import PrimaryIp1
 from hetznercloudapi.models.protection import Protection
 from hetznercloudapi.models.server_types import ServerTypes
-from hetznercloudapi.models.type_50_enum import Type50Enum
+from hetznercloudapi.models.type_50 import Type50
 
-primary_ip_1 = PrimaryIP1(
+primary_ip_1 = PrimaryIp1(
     assignee_id=17,
     auto_delete=True,
     blocked=False,
@@ -54,7 +59,10 @@ primary_ip_1 = PrimaryIP1(
             latitude=50.47612,
             longitude=12.370071,
             name='fsn1',
-            network_zone='eu-central'
+            network_zone='eu-central',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         name='fsn1-dc8',
         server_types=ServerTypes(
@@ -72,13 +80,22 @@ primary_ip_1 = PrimaryIP1(
                 1,
                 2,
                 3
-            ]
-        )
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        ),
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     dns_ptr=[
         DnsPtr(
             dns_ptr='server.example.com',
-            ip='2001:db8::1'
+            ip='2001:db8::1',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     id=42,
@@ -88,9 +105,15 @@ primary_ip_1 = PrimaryIP1(
     },
     name='my-resource',
     protection=Protection(
-        delete=False
+        delete=False,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
-    mtype=Type50Enum.IPV4
+    mtype=Type50.IPV4,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.LoadBalancersActionsChangeProtectionRequest{
-    Delete:               models.ToPointer(true),
+    Delete:                models.ToPointer(true),
 }
 
-apiResponse, err := loadBalancerActionsController.ChangeLoadBalancerProtection(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.ChangeLoadBalancerProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`SortEnum`
+`Sort`
 
 
 # Fields
@@ -26,7 +26,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-sort = SortEnum::ENUM_IDASC
+sort = Sort::ENUM_IDASC
 ```
 
 

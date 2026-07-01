@@ -7,7 +7,7 @@ Deletes an SSH key. It cannot be used anymore.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-DeleteAnSSHKeyAsync(
+DeleteAnSshKeyAsync(
     string id)
 ```
 
@@ -32,7 +32,7 @@ DeleteAnSSHKeyAsync(
 string id = "id0";
 try
 {
-    await sSHKeysController.DeleteAnSSHKeyAsync(id);
+    await sshKeysApi.DeleteAnSshKeyAsync(id);
 }
 catch (ApiException e)
 {

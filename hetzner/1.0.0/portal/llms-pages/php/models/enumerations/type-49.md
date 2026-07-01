@@ -7,7 +7,7 @@ The type of the Primary IP
 
 # Enum Type Name
 
-`Type49Enum`
+`Type49`
 
 
 # Fields
@@ -21,9 +21,9 @@ The type of the Primary IP
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type49Enum;
+use HetznerCloudApiLib\Models\Type49;
 
-$type49 = Type49Enum::IPV4;
+$type49 = Type49::IPV4;
 ```
 
 

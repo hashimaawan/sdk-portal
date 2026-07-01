@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await loadBalancerActionsController.enableThePublicInterfaceOfALoadBalancer(id);
+  const response = await loadBalancerActionsApi.enableThePublicInterfaceOfALoadBalancer(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlc3BvbnNl
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -16,13 +18,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `next_actions` | [`List[Action]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action.md) | Required | - |
 | `root_password` | `str` | Required | Root password when no SSH keys have been specified |
 | `server` | [`Server18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/server-18.md) | Required | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.action import Action
-from hetznercloudapi.models.cpu_type_enum import CpuTypeEnum
+from hetznercloudapi.models.cpu_type import CpuType
 from hetznercloudapi.models.create_server_response import CreateServerResponse
 from hetznercloudapi.models.created_from import CreatedFrom
 from hetznercloudapi.models.datacenter_6 import Datacenter6
@@ -33,7 +38,7 @@ from hetznercloudapi.models.ipv_44 import Ipv44
 from hetznercloudapi.models.ipv_64 import Ipv64
 from hetznercloudapi.models.iso_2 import Iso2
 from hetznercloudapi.models.location import Location
-from hetznercloudapi.models.os_flavor_enum import OsFlavorEnum
+from hetznercloudapi.models.os_flavor import OsFlavor
 from hetznercloudapi.models.placement_group_nullable import PlacementGroupNullable
 from hetznercloudapi.models.price_9 import Price9
 from hetznercloudapi.models.price_hourly_8 import PriceHourly8
@@ -47,20 +52,23 @@ from hetznercloudapi.models.server_18 import Server18
 from hetznercloudapi.models.server_public_net_firewall import ServerPublicNetFirewall
 from hetznercloudapi.models.server_type_1 import ServerType1
 from hetznercloudapi.models.server_types import ServerTypes
-from hetznercloudapi.models.status_24_enum import Status24Enum
-from hetznercloudapi.models.status_72_enum import Status72Enum
-from hetznercloudapi.models.status_73_enum import Status73Enum
-from hetznercloudapi.models.status_enum import StatusEnum
-from hetznercloudapi.models.storage_type_enum import StorageTypeEnum
-from hetznercloudapi.models.type_22_enum import Type22Enum
-from hetznercloudapi.models.type_26_enum import Type26Enum
+from hetznercloudapi.models.status import Status
+from hetznercloudapi.models.status_24 import Status24
+from hetznercloudapi.models.status_72 import Status72
+from hetznercloudapi.models.status_73 import Status73
+from hetznercloudapi.models.storage_type import StorageType
+from hetznercloudapi.models.type_22 import Type22
+from hetznercloudapi.models.type_26 import Type26
 
 create_server_response = CreateServerResponse(
     action=Action(
         command='start_server',
         error=Error(
             code='action_failed',
-            message='Action failed'
+            message='Action failed',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         finished='2016-01-30T23:55:00+00:00',
         id=42,
@@ -68,18 +76,27 @@ create_server_response = CreateServerResponse(
         resources=[
             Resource(
                 id=42,
-                mtype='server'
+                mtype='server',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             )
         ],
         started='2016-01-30T23:55:00+00:00',
-        status=StatusEnum.RUNNING
+        status=Status.RUNNING,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     next_actions=[
         Action(
             command='start_server',
             error=Error(
                 code='action_failed',
-                message='Action failed'
+                message='Action failed',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             finished='2016-01-30T23:55:00+00:00',
             id=42,
@@ -87,11 +104,17 @@ create_server_response = CreateServerResponse(
             resources=[
                 Resource(
                     id=42,
-                    mtype='server'
+                    mtype='server',
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
             ],
             started='2016-01-30T23:55:00+00:00',
-            status=StatusEnum.SUCCESS
+            status=Status.SUCCESS,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     root_password='YItygq1v3GYjjMomLaKc',
@@ -109,7 +132,10 @@ create_server_response = CreateServerResponse(
                 latitude=50.47612,
                 longitude=12.370071,
                 name='fsn1',
-                network_zone='eu-central'
+                network_zone='eu-central',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             name='fsn1-dc8',
             server_types=ServerTypes(
@@ -127,8 +153,14 @@ create_server_response = CreateServerResponse(
                     1,
                     2,
                     3
-                ]
-            )
+                ],
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
+            ),
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         id=42,
         image=Image(
@@ -136,7 +168,10 @@ create_server_response = CreateServerResponse(
             created='2016-01-30T23:55:00+00:00',
             created_from=CreatedFrom(
                 id=1,
-                name='Server'
+                name='Server',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             deleted=None,
             deprecated='2018-02-28T00:00:00+00:00',
@@ -148,14 +183,20 @@ create_server_response = CreateServerResponse(
                 'key0': 'labels4'
             },
             name='ubuntu-20.04',
-            os_flavor=OsFlavorEnum.UBUNTU,
+            os_flavor=OsFlavor.UBUNTU,
             os_version='20.04',
             protection=Protection(
-                delete=False
+                delete=False,
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
-            status=Status24Enum.UNAVAILABLE,
-            mtype=Type22Enum.SNAPSHOT,
-            rapid_deploy=False
+            status=Status24.UNAVAILABLE,
+            mtype=Type22.SNAPSHOT,
+            rapid_deploy=False,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         included_traffic=654321,
         ingoing_traffic=123456,
@@ -164,7 +205,10 @@ create_server_response = CreateServerResponse(
             description='FreeBSD 11.0 x64',
             id=42,
             name='FreeBSD-11.0-RELEASE-amd64-dvd1',
-            mtype=Type26Enum.PUBLIC
+            mtype=Type26.PUBLIC,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         labels={
             'key0': 'labels0',
@@ -181,12 +225,18 @@ create_server_response = CreateServerResponse(
                 ],
                 ip='10.0.0.2',
                 mac_address='86:00:ff:2a:7d:e1',
-                network=4711
+                network=4711,
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             )
         ],
         protection=Protection20(
             delete=False,
-            rebuild=False
+            rebuild=False,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         public_net=PublicNet4(
             floating_ips=[
@@ -196,34 +246,52 @@ create_server_response = CreateServerResponse(
                 blocked=False,
                 dns_ptr='server01.example.com',
                 ip='1.2.3.4',
-                id=42
+                id=42,
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             ipv_6=Ipv64(
                 blocked=False,
                 dns_ptr=[
                     DnsPtr8(
                         dns_ptr='server.example.com',
-                        ip='2001:db8::1'
+                        ip='2001:db8::1',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     )
                 ],
                 ip='2001:db8::/64',
-                id=42
+                id=42,
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             firewalls=[
                 ServerPublicNetFirewall(
                     id=250,
-                    status=Status72Enum.APPLIED
+                    status=Status72.APPLIED,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 ),
                 ServerPublicNetFirewall(
                     id=250,
-                    status=Status72Enum.APPLIED
+                    status=Status72.APPLIED,
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
-            ]
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         rescue_enabled=False,
         server_type=ServerType1(
             cores=1,
-            cpu_type=CpuTypeEnum.SHARED,
+            cpu_type=CpuType.SHARED,
             deprecated=False,
             description='CX11',
             disk=25,
@@ -235,17 +303,29 @@ create_server_response = CreateServerResponse(
                     location='fsn1',
                     price_hourly=PriceHourly8(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
                     ),
                     price_monthly=PriceMonthly10(
                         gross='1.1900000000000000',
-                        net='1.0000000000'
-                    )
+                        net='1.0000000000',
+                        additional_properties={
+                            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                        }
+                    ),
+                    additional_properties={
+                        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                    }
                 )
             ],
-            storage_type=StorageTypeEnum.LOCAL
+            storage_type=StorageType.LOCAL,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
-        status=Status73Enum.STARTING,
+        status=Status73.STARTING,
         load_balancers=[
             144,
             143,
@@ -262,13 +342,22 @@ create_server_response = CreateServerResponse(
                 251,
                 252,
                 253
-            ]
+            ],
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         volumes=[
             91,
             92
-        ]
-    )
+        ],
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

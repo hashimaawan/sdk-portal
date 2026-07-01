@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZVByaW1hcnlJUFJlcXVlc3Q
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
-`CreatePrimaryIPRequest`
+`CreatePrimaryIpRequest`
 
 
 # Fields
@@ -18,22 +20,26 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `datacenter` | `string \| undefined` | Optional | ID or name of Datacenter the Primary IP will be bound to. Needs to be omitted if `assignee_id` is passed. |
 | `labels` | `unknown \| undefined` | Optional | User-defined labels (key-value pairs) |
 | `name` | `string` | Required | - |
-| `type` | [`Type51Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-51.md) | Required | Primary IP type |
+| `type` | [`Type51`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-51.md) | Required | Primary IP type |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { CreatePrimaryIPRequest, Type51Enum } from 'hetzner-cloud-apilib';
+import { CreatePrimaryIpRequest, Type51 } from 'hetzner-cloud-apilib';
 
-const createPrimaryIPRequest: CreatePrimaryIPRequest = {
+const createPrimaryIpRequest: CreatePrimaryIpRequest = {
   assigneeType: 'server',
   name: 'my-ip',
-  type: Type51Enum.Ipv4,
+  type: Type51.Ipv4,
   assigneeId: 17,
   autoDelete: false,
   datacenter: 'fsn1-dc8',
   labels: { 'labelkey': 'value' },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

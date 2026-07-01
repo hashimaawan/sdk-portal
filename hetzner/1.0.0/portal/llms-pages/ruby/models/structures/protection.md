@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Protection configuration for the Resource
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,13 +17,17 @@ Protection configuration for the Resource
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `delete` | `TrueClass \| FalseClass` | Required | If true, prevents the Resource from being deleted |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 protection = Protection.new(
-  false
+  delete: false,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

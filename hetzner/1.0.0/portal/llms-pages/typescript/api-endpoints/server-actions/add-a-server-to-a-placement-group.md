@@ -49,7 +49,7 @@ const body: AddToPlacementGroupRequest = {
 };
 
 try {
-  const response = await serverActionsController.addAServerToAPlacementGroup(
+  const response = await serverActionsApi.addAServerToAPlacementGroup(
     id,
     body
   );

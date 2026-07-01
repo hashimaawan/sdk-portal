@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Protection configuration for the Server
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,14 +18,18 @@ Protection configuration for the Server
 |  --- | --- | --- | --- |
 | `delete` | `TrueClass \| FalseClass` | Required | If true, prevents the Server from being deleted |
 | `rebuild` | `TrueClass \| FalseClass` | Required | If true, prevents the Server from being rebuilt |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 protection20 = Protection20.new(
-  false,
-  false
+  delete: false,
+  rebuild: false,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

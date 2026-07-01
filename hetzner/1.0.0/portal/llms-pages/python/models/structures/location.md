@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkxvY2F0aW9u
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -20,11 +22,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `longitude` | `float` | Required | Longitude of the city closest to the Location |
 | `name` | `str` | Required | Unique identifier of the Location |
 | `network_zone` | `str` | Required | Name of network zone this Location resides in |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.location import Location
 
 location = Location(
@@ -35,7 +40,10 @@ location = Location(
     latitude=50.47612,
     longitude=12.370071,
     name='fsn1',
-    network_zone='eu-central'
+    network_zone='eu-central',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

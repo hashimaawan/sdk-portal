@@ -122,7 +122,7 @@
     <rect y="94" width="401" height="445" class="cls-5" />
     <rect y="65" width="401" height="28" class="cls-6" />
     <rect y="157" width="401" height="26" class="cls-7" />
-    <text transform="translate(30 53) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">M1forgefinan...</tspan></text>
+    <text transform="translate(30 53) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">M1Forgefinan...</tspan></text>
     <text transform="translate(38 83) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">project</tspan></text>
     <path d="M96.694,83.000 L93.771,77.937 L99.617,77.937 L96.694,83.000 Z" class="cls-9" />
     <path d="M9.694,111.000 L6.771,105.937 L12.617,105.937 L9.694,111.000 Z" class="cls-9" />
@@ -142,8 +142,8 @@
     <path d="M25.000,54.000 L11.000,54.000 L11.000,42.000 L17.000,42.000 L19.000,44.000 L25.000,44.000 L25.000,54.000 Z" class="cls-12" />
     <rect x="13" y="46" width="10" height="6" class="cls-7" />
     <text transform="translate(212 53) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">testsdk.py</tspan></text>
-    <text transform="translate(38 113) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">M1forgefinan...</tspan></text>
-    <text transform="translate(133 113) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">C:\Users\Username\Desktop\M1forgefinan...</tspan></text>
+    <text transform="translate(38 113) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">M1Forgefinan...</tspan></text>
+    <text transform="translate(133 113) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">C:\Users\Username\Desktop\M1Forgefinan...</tspan></text>
     <path d="M33.000,114.000 L19.000,114.000 L19.000,102.000 L25.000,102.000 L27.000,104.000 L33.000,104.000 L33.000,114.000 Z" class="cls-12" />
     <rect x="21" y="106" width="10" height="6" class="cls-7" />
     <text transform="translate(63 133) scale(0.5 0.5)" class="cls-2"><tspan class="cls-8">m1forgefinanceapis</tspan></text>
@@ -211,7 +211,7 @@
     <text transform="translate(470 88) scale(0.5 0.5)" class="cls-2"><tspan class="cls-22">from</tspan></text>
     <text transform="translate(675 88) scale(0.5 0.5)" class="cls-2"><tspan class="cls-22">import</tspan></text>
     <text transform="translate(505 88) scale(0.5 0.5)" class="cls-2"><tspan class="cls-23">m1forgefinanceapis.m...</tspan></text>
-    <text transform="translate(725 88) scale(0.5 0.5)" class="cls-2"><tspan class="cls-23">M1forgefinance...</tspan></text>
+    <text transform="translate(725 88) scale(0.5 0.5)" class="cls-2"><tspan class="cls-23">M1Forgefinance...</tspan></text>
     <text transform="translate(418 87) scale(0.5 0.5)" class="cls-2"><tspan class="cls-24">1</tspan></text>
     <text transform="translate(418 111) scale(0.5 0.5)" class="cls-2"><tspan class="cls-24">2</tspan></text>
     <text transform="translate(418 136) scale(0.5 0.5)" class="cls-2"><tspan class="cls-24">3</tspan></text>

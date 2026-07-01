@@ -17,14 +17,19 @@ def get_a_list_of_symbols_for_which_we_provide_real_time_quotes
 
 **200**: A list of symbols
 
-`Array[String]`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type `Array[String]`.
 
 
 # Example Usage
 
 ```ruby
-result = forex_controller.get_a_list_of_symbols_for_which_we_provide_real_time_quotes
-puts result
+result = forex_api.get_a_list_of_symbols_for_which_we_provide_real_time_quotes
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

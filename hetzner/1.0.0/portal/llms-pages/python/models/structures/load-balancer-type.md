@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclR5cGU
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -21,11 +23,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `max_targets` | `float` | Required | Number of targets a single Load Balancer can have |
 | `name` | `str` | Required | Unique identifier of the Load Balancer type |
 | `prices` | [`List[Price]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/price.md) | Required | Prices in different network zones |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.load_balancer_type import LoadBalancerType
 from hetznercloudapi.models.price import Price
 from hetznercloudapi.models.price_hourly import PriceHourly
@@ -45,14 +50,26 @@ load_balancer_type = LoadBalancerType(
             location='fsn1',
             price_hourly=PriceHourly(
                 gross='1.1900000000000000',
-                net='1.0000000000'
+                net='1.0000000000',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             price_monthly=PriceMonthly(
                 gross='1.1900000000000000',
-                net='1.0000000000'
-            )
+                net='1.0000000000',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
+            ),
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
-    ]
+    ],
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlByaXZhdGVOZXQ0
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,12 +18,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Ip` | `String` | Optional | - | String getIp() | setIp(String ip) |
 | `MacAddress` | `String` | Optional | - | String getMacAddress() | setMacAddress(String macAddress) |
 | `Network` | `Integer` | Optional | - | Integer getNetwork() | setNetwork(Integer network) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.PrivateNet4;
+import java.io.IOException;
 import java.util.Arrays;
 
 PrivateNet4 privateNet4 = new PrivateNet4.Builder()
@@ -32,6 +37,7 @@ PrivateNet4 privateNet4 = new PrivateNet4.Builder()
     .ip("10.0.0.2")
     .macAddress("86:00:ff:2a:7d:e1")
     .network(4711)
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

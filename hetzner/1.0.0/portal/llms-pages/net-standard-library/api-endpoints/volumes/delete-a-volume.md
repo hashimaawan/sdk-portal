@@ -32,7 +32,7 @@ DeleteAVolumeAsync(
 string id = "id0";
 try
 {
-    await volumesController.DeleteAVolumeAsync(id);
+    await volumesApi.DeleteAVolumeAsync(id);
 }
 catch (ApiException e)
 {

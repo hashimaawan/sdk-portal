@@ -25,14 +25,14 @@ Additional configuration for protocol http
 
 ```ruby
 http = Http.new(
-  'example.com',
-  '/',
-  '{"status": "ok"}',
-  [
+  domain: 'example.com',
+  path: '/',
+  response: '{"status": "ok"}',
+  status_codes: [
     '2??',
     '3??'
   ],
-  false
+  tls: false
 )
 ```
 

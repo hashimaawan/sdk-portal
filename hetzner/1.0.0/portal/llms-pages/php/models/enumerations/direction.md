@@ -7,7 +7,7 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 
 # Enum Type Name
 
-`DirectionEnum`
+`Direction`
 
 
 # Fields
@@ -21,9 +21,9 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\DirectionEnum;
+use HetznerCloudApiLib\Models\Direction;
 
-$direction = DirectionEnum::IN;
+$direction = Direction::IN;
 ```
 
 

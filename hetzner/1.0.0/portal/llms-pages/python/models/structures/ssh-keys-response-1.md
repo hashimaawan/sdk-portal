@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRlNzaCUyNTIwS2V5cyUyNTIwUmVzcG9uc2Ux
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -13,11 +15,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ssh_key` | [`SshKey`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/ssh-key.md) | Required | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.ssh_key import SshKey
 from hetznercloudapi.models.ssh_keys_response_1 import SshKeysResponse1
 
@@ -30,8 +35,14 @@ ssh_keys_response_1 = SshKeysResponse1(
             'key0': 'labels0'
         },
         name='my-resource',
-        public_key='ssh-rsa AAAjjk76kgf...Xt'
-    )
+        public_key='ssh-rsa AAAjjk76kgf...Xt',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

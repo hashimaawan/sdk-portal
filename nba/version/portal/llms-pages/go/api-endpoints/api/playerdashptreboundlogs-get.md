@@ -5,19 +5,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayerdashptreboundlogsGET(
+PlayerdashptreboundlogsGet(
     ctx context.Context,
     season *string,
     seasonType *string,
-    playerID *string,
-    teamID *string,
+    playerId *string,
+    teamId *string,
     outcome *string,
     location *string,
     month *string,
     seasonSegment *string,
     dateFrom *string,
     dateTo *string,
-    opponentTeamID *string,
+    opponentTeamId *string,
     vsConference *string,
     vsDivision *string,
     gameSegment *string,
@@ -34,15 +34,15 @@ PlayerdashptreboundlogsGET(
 |  --- | --- | --- | --- |
 | `season` | `*string` | Query, Optional | - |
 | `seasonType` | `*string` | Query, Optional | - |
-| `playerID` | `*string` | Query, Optional | - |
-| `teamID` | `*string` | Query, Optional | - |
+| `playerId` | `*string` | Query, Optional | - |
+| `teamId` | `*string` | Query, Optional | - |
 | `outcome` | `*string` | Query, Optional | - |
 | `location` | `*string` | Query, Optional | - |
 | `month` | `*string` | Query, Optional | - |
 | `seasonSegment` | `*string` | Query, Optional | - |
 | `dateFrom` | `*string` | Query, Optional | - |
 | `dateTo` | `*string` | Query, Optional | - |
-| `opponentTeamID` | `*string` | Query, Optional | - |
+| `opponentTeamId` | `*string` | Query, Optional | - |
 | `vsConference` | `*string` | Query, Optional | - |
 | `vsDivision` | `*string` | Query, Optional | - |
 | `gameSegment` | `*string` | Query, Optional | - |
@@ -62,7 +62,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-resp, err := aPIController.PlayerdashptreboundlogsGET(ctx, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+resp, err := api.PlayerdashptreboundlogsGet(ctx, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

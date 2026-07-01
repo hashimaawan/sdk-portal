@@ -9,7 +9,7 @@ Floating IPs assigned to the Server are not affected by this.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ChangeReverseDNSEntryForThisLoadBalancer(
+ChangeReverseDnsEntryForThisLoadBalancer(
     ctx context.Context,
     id int,
     body *models.ChangeLoadbalancerDnsPtrRequest) (
@@ -41,11 +41,11 @@ ctx := context.Background()
 id := 112
 
 body := models.ChangeLoadbalancerDnsPtrRequest{
-    DnsPtr:               models.ToPointer("lb1.example.com"),
-    Ip:                   "1.2.3.4",
+    DnsPtr:                models.ToPointer("lb1.example.com"),
+    Ip:                    "1.2.3.4",
 }
 
-apiResponse, err := loadBalancerActionsController.ChangeReverseDNSEntryForThisLoadBalancer(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.ChangeReverseDnsEntryForThisLoadBalancer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -9,7 +9,7 @@ Caution: This immediately removes all existing backups for the Server!
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function disableBackupsForAServer(int $id): ActionResponse
+function disableBackupsForAServer(int $id): ApiResponse
 ```
 
 
@@ -24,7 +24,7 @@ function disableBackupsForAServer(int $id): ActionResponse
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -32,14 +32,20 @@ function disableBackupsForAServer(int $id): ActionResponse
 ```php
 $id = 112;
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->disableBackupsForAServer($id);
 
-try {
-    $result = $serverActionsController->disableBackupsForAServer($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

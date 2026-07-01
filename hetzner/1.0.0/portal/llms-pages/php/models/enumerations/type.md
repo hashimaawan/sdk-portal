@@ -7,7 +7,7 @@ Type of the Certificate
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the Certificate
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\TypeEnum;
+use HetznerCloudApiLib\Models\Type;
 
-$type = TypeEnum::UPLOADED;
+$type = Type::UPLOADED;
 ```
 
 

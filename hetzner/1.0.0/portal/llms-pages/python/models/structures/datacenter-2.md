@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Datacenter this Primary IP is located at
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -19,11 +21,14 @@ Datacenter this Primary IP is located at
 | `location` | [`Location`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/location.md) | Required | - |
 | `name` | `str` | Required | Unique identifier of the Datacenter |
 | `server_types` | [`ServerTypes`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/server-types.md) | Required | The Server types the Datacenter can handle |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.datacenter_2 import Datacenter2
 from hetznercloudapi.models.location import Location
 from hetznercloudapi.models.server_types import ServerTypes
@@ -39,7 +44,10 @@ datacenter_2 = Datacenter2(
         latitude=50.47612,
         longitude=12.370071,
         name='fsn1',
-        network_zone='eu-central'
+        network_zone='eu-central',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     name='fsn1-dc8',
     server_types=ServerTypes(
@@ -57,8 +65,14 @@ datacenter_2 = Datacenter2(
             1,
             2,
             3
-        ]
-    )
+        ],
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

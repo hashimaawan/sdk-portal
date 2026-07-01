@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location of the Volume. Volume can only be attached to Servers in the same Location.
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -22,12 +24,15 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 | `Longitude` | `double` | Required | Longitude of the city closest to the Location | double getLongitude() | setLongitude(double longitude) |
 | `Name` | `String` | Required | Unique identifier of the Location | String getName() | setName(String name) |
 | `NetworkZone` | `String` | Required | Name of network zone this Location resides in | String getNetworkZone() | setNetworkZone(String networkZone) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Location16;
+import java.io.IOException;
 
 Location16 location16 = new Location16.Builder(
     "Falkenstein",
@@ -39,6 +44,7 @@ Location16 location16 = new Location16.Builder(
     "fsn1",
     "eu-central"
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

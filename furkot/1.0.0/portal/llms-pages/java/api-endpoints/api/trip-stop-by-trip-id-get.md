@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 list stops for a trip identified by {trip_id}
 
 ```java
-CompletableFuture<List<Step>> tripStopByTripIdGETAsync(
+CompletableFuture<ApiResponse<List<Step>>> tripStopByTripIdGetAsync(
     final String tripId)
 ```
 
 
 # Authentication
 
-This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/getting-started/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/getting-started/authorization.md)
+This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/getting-started/quickstart/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -37,7 +37,7 @@ This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.c
 
 **200**: Successful response
 
-[`List<Step>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/models/structures/step.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`List<Step>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/java/models/structures/step.md).
 
 
 # Example Usage
@@ -45,7 +45,7 @@ This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.c
 ```java
 String tripId = "trip_id2";
 
-aPIController.tripStopByTripIdGETAsync(tripId).thenAccept(result -> {
+api.tripStopByTripIdGetAsync(tripId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

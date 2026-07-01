@@ -7,7 +7,7 @@ travel mode
 
 # Enum Type Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
@@ -24,7 +24,7 @@ travel mode
 # Example
 
 ```ruby
-mode = ModeEnum::BICYCLE
+mode = Mode::BICYCLE
 ```
 
 

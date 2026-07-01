@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMEFjdGlvbnMlMjUyMEVuYWJsZSUyNTIwUmVzY3VlJTI1MjBSZXNwb25zZQ
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`Action \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/action.md) | Optional | - |
 | `rootPassword` | `string \| undefined` | Optional | Password that will be set for this Server once the Action succeeds |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -21,7 +24,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 ```ts
 import {
   ServersActionsEnableRescueResponse,
-  StatusEnum,
+  Status,
 } from 'hetzner-cloud-apilib';
 
 const serversActionsEnableRescueResponse: ServersActionsEnableRescueResponse = {
@@ -30,6 +33,9 @@ const serversActionsEnableRescueResponse: ServersActionsEnableRescueResponse = {
     error: {
       code: 'code2',
       message: 'message4',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: 'finished0',
     id: 238,
@@ -38,20 +44,35 @@ const serversActionsEnableRescueResponse: ServersActionsEnableRescueResponse = {
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 198,
         type: 'type0',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: 'started8',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   rootPassword: 'zCWbFhnu950dUTko5f40',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

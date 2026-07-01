@@ -7,7 +7,7 @@ Returns a specific Action for a Certificate. Only type `managed` Certificates ha
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAnActionForACertificate(int $id, int $actionId): ActionResponse
+function getAnActionForACertificate(int $id, int $actionId): ApiResponse
 ```
 
 
@@ -23,7 +23,7 @@ function getAnActionForACertificate(int $id, int $actionId): ActionResponse
 
 **200**: The `action` key contains the Certificate Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -33,17 +33,23 @@ $id = 112;
 
 $actionId = 224;
 
-$certificateActionsController = $client->getCertificateActionsController();
+$certificateActionsApi = $client->getCertificateActionsApi();
+$apiResponse = $certificateActionsApi->getAnActionForACertificate(
+    $id,
+    $actionId
+);
 
-try {
-    $result = $certificateActionsController->getAnActionForACertificate(
-        $id,
-        $actionId
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

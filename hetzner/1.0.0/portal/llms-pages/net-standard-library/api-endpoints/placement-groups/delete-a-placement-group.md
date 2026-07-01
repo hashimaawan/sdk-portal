@@ -32,7 +32,7 @@ DeleteAPlacementGroupAsync(
 int id = 112;
 try
 {
-    await placementGroupsController.DeleteAPlacementGroupAsync(id);
+    await placementGroupsApi.DeleteAPlacementGroupAsync(id);
 }
 catch (ApiException e)
 {

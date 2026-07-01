@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function teaminfocommonGET(string $season, string $teamID, string $leagueID, string $seasonType): void
+function teaminfocommonGet(string $season, string $teamId, string $leagueId, string $seasonType): ApiResponse
 ```
 
 
@@ -14,8 +14,8 @@ function teaminfocommonGET(string $season, string $teamID, string $leagueID, str
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
 
@@ -23,7 +23,7 @@ function teaminfocommonGET(string $season, string $teamID, string $leagueID, str
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -31,23 +31,31 @@ function teaminfocommonGET(string $season, string $teamID, string $leagueID, str
 ```php
 $season = 'Season0';
 
-$teamID = 'TeamID8';
+$teamId = 'TeamID8';
 
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $seasonType = 'SeasonType8';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->teaminfocommonGet(
+    $season,
+    $teamId,
+    $leagueId,
+    $seasonType
+);
 
-try {
-    $aPIController->teaminfocommonGET(
-        $season,
-        $teamID,
-        $leagueID,
-        $seasonType
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -7,7 +7,7 @@ Status of the Server
 
 # Enum Type Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
@@ -28,9 +28,9 @@ Status of the Server
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Status73Enum;
+use HetznerCloudApiLib\Models\Status73;
 
-$status73 = Status73Enum::STARTING;
+$status73 = Status73::STARTING;
 ```
 
 

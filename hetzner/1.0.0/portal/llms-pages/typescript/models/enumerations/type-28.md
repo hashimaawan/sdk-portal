@@ -7,7 +7,7 @@ Type of the algorithm
 
 # Enum Type Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the algorithm
 # Example
 
 ```ts
-import { Type28Enum } from 'hetzner-cloud-apilib';
+import { Type28 } from 'hetzner-cloud-apilib';
 
-const type28 = Type28Enum.RoundRobin;
+const type28 = Type28.RoundRobin;
 ```
 
 

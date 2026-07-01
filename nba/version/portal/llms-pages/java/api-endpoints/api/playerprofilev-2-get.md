@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playerprofilev2GETAsync(
+CompletableFuture<ApiResponse<Void>> playerprofilev2GetAsync(
     final String perMode,
-    final String playerID)
+    final String playerId)
 ```
 
 
@@ -16,7 +16,7 @@ CompletableFuture<Void> playerprofilev2GETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `String` | Query, Required | - |
-| `playerID` | `String` | Query, Required | - |
+| `playerId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -30,10 +30,11 @@ CompletableFuture<Void> playerprofilev2GETAsync(
 
 ```java
 String perMode = "PerMode6";
-String playerID = "PlayerID6";
+String playerId = "PlayerID6";
 
-aPIController.playerprofilev2GETAsync(perMode, playerID).thenAccept(result -> {
+api.playerprofilev2GetAsync(perMode, playerId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

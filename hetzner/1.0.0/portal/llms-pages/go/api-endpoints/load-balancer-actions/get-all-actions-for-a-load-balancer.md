@@ -10,8 +10,8 @@ Returns all Action objects for a Load Balancer. You can sort the results by usin
 GetAllActionsForALoadBalancer(
     ctx context.Context,
     id int,
-    sort *models.ParameterSortEnum,
-    status *models.ParameterStatusEnum) (
+    sort *models.ParameterSort,
+    status *models.ParameterStatus) (
     models.ApiResponse[models.ActionsResponse],
     error)
 ```
@@ -22,8 +22,8 @@ GetAllActionsForALoadBalancer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `sort` | [`*models.ParameterSortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`*models.ParameterStatusEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`*models.ParameterSort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`*models.ParameterStatus`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
@@ -40,7 +40,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := loadBalancerActionsController.GetAllActionsForALoadBalancer(ctx, id, nil, nil)
+apiResponse, err := loadBalancerActionsApi.GetAllActionsForALoadBalancer(ctx, id, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type21Enum`
+`Type21`
 
 
 # Fields
@@ -21,7 +21,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ruby
-type21 = Type21Enum::BACKUP
+type21 = Type21::BACKUP
 ```
 
 

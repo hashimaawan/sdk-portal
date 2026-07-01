@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclR5cGU
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -21,6 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `MaxTargets` | `float64` | Required | Number of targets a single Load Balancer can have |
 | `Name` | `string` | Required | Unique identifier of the Load Balancer type |
 | `Prices` | [`[]models.Price`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/price.md) | Required | Prices in different network zones |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -29,7 +32,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
@@ -44,16 +47,28 @@ func main() {
         Name:                    "lb11",
         Prices:                  []models.Price{
             models.Price{
-                Location:             "fsn1",
-                PriceHourly:          models.PriceHourly{
-                    Gross:                "1.1900000000000000",
-                    Net:                  "1.0000000000",
+                Location:              "fsn1",
+                PriceHourly:           models.PriceHourly{
+                    Gross:                 "1.1900000000000000",
+                    Net:                   "1.0000000000",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
-                PriceMonthly:         models.PriceMonthly{
-                    Gross:                "1.1900000000000000",
-                    Net:                  "1.0000000000",
+                PriceMonthly:          models.PriceMonthly{
+                    Gross:                 "1.1900000000000000",
+                    Net:                   "1.0000000000",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
+                },
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
                 },
             },
+        },
+        AdditionalProperties:    map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

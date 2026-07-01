@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRk51bGxhYmxlQWN0aW9u
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -19,13 +21,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Progress` | `double` | Required | Progress of Action in percent |
 | `Resources` | [`List<Resource>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/resource.md) | Required | Resources the Action relates to |
 | `Started` | `string` | Required | Point in time when the Action was started (in ISO-8601 format) |
-| `Status` | [`StatusEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status.md) | Required | Status of the Action |
+| `Status` | [`Status`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status.md) | Required | Status of the Action |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 NullableAction nullableAction = new NullableAction
@@ -35,6 +39,7 @@ NullableAction nullableAction = new NullableAction
     {
         Code = "action_failed",
         Message = "Action failed",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Finished = "2016-01-30T23:55:00+00:00",
     Id = 42,
@@ -45,10 +50,12 @@ NullableAction nullableAction = new NullableAction
         {
             Id = 42,
             Type = "server",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Started = "2016-01-30T23:55:00+00:00",
-    Status = StatusEnum.Running,
+    Status = Status.Running,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

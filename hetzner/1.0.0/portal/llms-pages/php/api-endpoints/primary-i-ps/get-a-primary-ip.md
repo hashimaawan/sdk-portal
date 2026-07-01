@@ -7,7 +7,7 @@ Returns a specific Primary IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAPrimaryIP(int $id): PrimaryIPResponse
+function getAPrimaryIp(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAPrimaryIP(int $id): PrimaryIPResponse
 
 **200**: The `primary_ip` key contains a Primary IP object
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAPrimaryIP(int $id): PrimaryIPResponse
 ```php
 $id = 112;
 
-$primaryIPsController = $client->getPrimaryIPsController();
+$primaryIPsApi = $client->getPrimaryIPsApi();
+$apiResponse = $primaryIPsApi->getAPrimaryIp($id);
 
-try {
-    $result = $primaryIPsController->getAPrimaryIP($id);
-    echo 'PrimaryIPResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'PrimaryIpResponse:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

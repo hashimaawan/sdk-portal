@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions.
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -17,6 +19,7 @@ The Pagination Object contains information relating to the number of total resul
 | `Count` | `*int` | Optional | Total number of items returned. |
 | `Offset` | `*int` | Optional | Position in pagination. |
 | `TotalCount` | `*int` | Optional | Total number of items available. |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -25,14 +28,17 @@ The Pagination Object contains information relating to the number of total resul
 package main
 
 import (
-    "giphyapi/models"
+    "giphyApi/models"
 )
 
 func main() {
     pagination := models.Pagination{
-        Count:                models.ToPointer(25),
-        Offset:               models.ToPointer(75),
-        TotalCount:           models.ToPointer(250),
+        Count:                 models.ToPointer(25),
+        Offset:                models.ToPointer(75),
+        TotalCount:            models.ToPointer(250),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkZsb2F0aW5nJTI1MjBJcHMlMjUyMFJlc3BvbnNlMg
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,17 +15,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `floatingIp` | [`FloatingIp`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ip.md) | Required | - | getFloatingIp(): FloatingIp | setFloatingIp(FloatingIp floatingIp): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\FloatingIpsResponse2Builder;
-use HetznerCloudAPILib\Models\Builders\FloatingIpBuilder;
-use HetznerCloudAPILib\Models\Builders\DnsPtrBuilder;
-use HetznerCloudAPILib\Models\Builders\HomeLocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Type16Enum;
+use HetznerCloudApiLib\Models\Builders\FloatingIpsResponse2Builder;
+use HetznerCloudApiLib\Models\Builders\FloatingIpBuilder;
+use HetznerCloudApiLib\Models\Builders\DnsPtrBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\HomeLocationBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Type16;
 
 $floatingIpsResponse2 = FloatingIpsResponse2Builder::init(
     FloatingIpBuilder::init(
@@ -33,7 +37,9 @@ $floatingIpsResponse2 = FloatingIpsResponse2Builder::init(
             DnsPtrBuilder::init(
                 'server.example.com',
                 '2001:db8::1'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
         HomeLocationBuilder::init(
             'Falkenstein',
@@ -44,7 +50,9 @@ $floatingIpsResponse2 = FloatingIpsResponse2Builder::init(
             12.370071,
             'fsn1',
             'eu-central'
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         42,
         '131.232.99.1',
         [
@@ -55,13 +63,18 @@ $floatingIpsResponse2 = FloatingIpsResponse2Builder::init(
         'my-resource',
         ProtectionBuilder::init(
             false
-        )->build(),
-        Type16Enum::IPV4
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
+        Type16::IPV4
     )
         ->description('this describes my resource')
         ->server(42)
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

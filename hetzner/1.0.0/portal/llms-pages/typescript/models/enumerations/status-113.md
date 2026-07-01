@@ -7,7 +7,7 @@ Current status of the Volume
 
 # Enum Type Name
 
-`Status113Enum`
+`Status113`
 
 
 # Fields
@@ -21,9 +21,9 @@ Current status of the Volume
 # Example
 
 ```ts
-import { Status113Enum } from 'hetzner-cloud-apilib';
+import { Status113 } from 'hetzner-cloud-apilib';
 
-const status113 = Status113Enum.Creating;
+const status113 = Status113.Creating;
 ```
 
 

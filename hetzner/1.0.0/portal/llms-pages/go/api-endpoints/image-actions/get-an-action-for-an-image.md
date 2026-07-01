@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := imageActionsController.GetAnActionForAnImage(ctx, id, actionId)
+apiResponse, err := imageActionsApi.GetAnActionForAnImage(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

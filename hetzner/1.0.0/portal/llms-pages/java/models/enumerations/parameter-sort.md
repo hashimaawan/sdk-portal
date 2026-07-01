@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterSortEnum`
+`ParameterSort`
 
 
 # Fields
@@ -35,9 +35,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.ParameterSortEnum;
+import cloud.hetzner.api.models.ParameterSort;
 
-ParameterSortEnum parameterSort = ParameterSortEnum.ENUM_STATUSDESC;
+ParameterSort parameterSort = ParameterSort.ENUM_STATUSDESC;
 ```
 
 

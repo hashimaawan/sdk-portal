@@ -13,7 +13,7 @@ For type `managed` Certificates the `action` key of the response contains the Ac
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CreateCertificateResponse> createACertificateAsync(
+CompletableFuture<ApiResponse<CreateCertificateResponse>> createACertificateAsync(
     final CreateCertificateRequest body)
 ```
 
@@ -29,7 +29,7 @@ CompletableFuture<CreateCertificateResponse> createACertificateAsync(
 
 **201**: The `certificate` key contains the Certificate that was just created. For type `managed` Certificates the `action` key contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.
 
-[`CreateCertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreateCertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-certificate-response.md).
 
 
 # Example Usage
@@ -43,10 +43,10 @@ CreateCertificateRequest body = new CreateCertificateRequest.Builder(
         "webmail.example.com",
         "www.example.com"
     ))
-.type(Type1Enum.MANAGED)
+.type(Type1.MANAGED)
 .build();
 
-certificatesController.createACertificateAsync(body).thenAccept(result -> {
+certificatesApi.createACertificateAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := imagesController.GetAnImage(ctx, id)
+apiResponse, err := imagesApi.GetAnImage(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

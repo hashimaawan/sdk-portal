@@ -7,7 +7,7 @@ Status of the issuance process of the Certificate
 
 # Enum Type Name
 
-`IssuanceEnum`
+`Issuance`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the issuance process of the Certificate
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-IssuanceEnum issuance = IssuanceEnum.Failed;
+Issuance issuance = Issuance.Failed;
 ```
 
 

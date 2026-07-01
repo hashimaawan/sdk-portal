@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async teamdashptshotsGET(
+async teamdashptshotsGet(
   perMode: string,
   season: string,
   seasonType: string,
-  teamID: string,
+  teamId: string,
   outcome: string,
   location: string,
   month: string,
   seasonSegment: string,
   dateFrom: string,
   dateTo: string,
-  opponentTeamID: string,
+  opponentTeamId: string,
   vsConference: string,
   vsDivision: string,
   gameSegment: string,
@@ -34,14 +34,14 @@ async teamdashptshotsGET(
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -66,7 +66,7 @@ const season = 'Season0';
 
 const seasonType = 'SeasonType8';
 
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
 const outcome = 'Outcome4';
 
@@ -80,7 +80,7 @@ const dateFrom = 'DateFrom6';
 
 const dateTo = 'DateTo0';
 
-const opponentTeamID = 'OpponentTeamID6';
+const opponentTeamId = 'OpponentTeamID6';
 
 const vsConference = 'VsConference6';
 
@@ -93,18 +93,18 @@ const period = 'Period2';
 const lastNGames = 'LastNGames4';
 
 try {
-  const response = await apiController.teamdashptshotsGET(
+  const response = await api.teamdashptshotsGet(
     perMode,
     season,
     seasonType,
-    teamID,
+    teamId,
     outcome,
     location,
     month,
     seasonSegment,
     dateFrom,
     dateTo,
-    opponentTeamID,
+    opponentTeamId,
     vsConference,
     vsDivision,
     gameSegment,

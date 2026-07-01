@@ -17,7 +17,7 @@ Service health check
 | `http` | [`?Http`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/http.md) | Optional | Additional configuration for protocol http | getHttp(): ?Http | setHttp(?Http http): void |
 | `interval` | `int` | Required | Time interval in seconds health checks are performed | getInterval(): int | setInterval(int interval): void |
 | `port` | `int` | Required | Port the health check will be performed on | getPort(): int | setPort(int port): void |
-| `protocol` | [`string(Protocol6Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/protocol-6.md) | Required | Type of the health check | getProtocol(): string | setProtocol(string protocol): void |
+| `protocol` | [`string(Protocol6)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/protocol-6.md) | Required | Type of the health check | getProtocol(): string | setProtocol(string protocol): void |
 | `retries` | `int` | Required | Unsuccessful retries needed until a target is considered unhealthy; an unhealthy target needs the same number of successful retries to become healthy again | getRetries(): int | setRetries(int retries): void |
 | `timeout` | `int` | Required | Time in seconds after an attempt is considered a timeout | getTimeout(): int | setTimeout(int timeout): void |
 
@@ -25,14 +25,14 @@ Service health check
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\LoadBalancerServiceHealthCheckBuilder;
-use HetznerCloudAPILib\Models\Protocol6Enum;
-use HetznerCloudAPILib\Models\Builders\HttpBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerServiceHealthCheckBuilder;
+use HetznerCloudApiLib\Models\Protocol6;
+use HetznerCloudApiLib\Models\Builders\HttpBuilder;
 
 $loadBalancerServiceHealthCheck = LoadBalancerServiceHealthCheckBuilder::init(
     15,
     4711,
-    Protocol6Enum::HTTP,
+    Protocol6::HTTP,
     3,
     10
 )

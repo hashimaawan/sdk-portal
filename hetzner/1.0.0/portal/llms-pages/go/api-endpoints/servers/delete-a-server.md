@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serversController.DeleteAServer(ctx, id)
+apiResponse, err := serversApi.DeleteAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

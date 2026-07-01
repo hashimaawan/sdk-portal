@@ -34,7 +34,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := loadBalancerTypesController.GetAllLoadBalancerTypes(ctx, nil)
+apiResponse, err := loadBalancerTypesApi.GetAllLoadBalancerTypes(ctx, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := networksController.GetANetwork(ctx, id)
+apiResponse, err := networksApi.GetANetwork(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

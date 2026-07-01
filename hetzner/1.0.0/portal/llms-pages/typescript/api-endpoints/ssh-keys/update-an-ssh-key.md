@@ -9,7 +9,7 @@ Please note that when updating labels, the SSH key current set of labels will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async updateAnSSHKey(
+async updateAnSshKey(
   id: string,
   body?: SshKeysRequest1,
   requestOptions?: RequestOptions
@@ -44,7 +44,7 @@ const body: SshKeysRequest1 = {
 };
 
 try {
-  const response = await sSHKeysController.updateAnSSHKey(
+  const response = await sshKeysApi.updateAnSshKey(
     id,
     body
   );

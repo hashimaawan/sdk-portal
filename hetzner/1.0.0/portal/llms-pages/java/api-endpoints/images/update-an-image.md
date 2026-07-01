@@ -9,7 +9,7 @@ Note that when updating labels, the current set of labels will be replaced with 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ImagesResponse1> updateAnImageAsync(
+CompletableFuture<ApiResponse<ImagesResponse1>> updateAnImageAsync(
     final int id,
     final UpdateImageRequest body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<ImagesResponse1> updateAnImageAsync(
 
 **200**: The image key in the reply contains the modified Image object
 
-[`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/images-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/images-response-1.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ UpdateImageRequest body = new UpdateImageRequest.Builder()
     .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
     .build();
 
-imagesController.updateAnImageAsync(id, body).thenAccept(result -> {
+imagesApi.updateAnImageAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

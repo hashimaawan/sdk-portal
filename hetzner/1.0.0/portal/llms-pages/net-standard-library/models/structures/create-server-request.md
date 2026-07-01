@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -27,13 +29,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `StartAfterCreate` | `bool?` | Optional | Start Server right after creation. Defaults to true. |
 | `UserData` | `string` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. |
 | `Volumes` | `List<int>` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
-using HetznerCloudAPI.Standard.Utilities;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 CreateServerRequest createServerRequest = new CreateServerRequest
@@ -48,6 +51,7 @@ CreateServerRequest createServerRequest = new CreateServerRequest
         new Firewall4
         {
             Firewall = 38,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Labels = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
@@ -67,6 +71,7 @@ CreateServerRequest createServerRequest = new CreateServerRequest
     {
         123,
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

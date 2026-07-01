@@ -25,7 +25,7 @@ We limit the number of samples to a maximum of 500 and will adjust the step para
 ```ts
 async getMetricsForALoadBalancer(
   id: number,
-  type: Type41Enum,
+  type: Type41,
   start: string,
   end: string,
   step?: string,
@@ -39,7 +39,7 @@ async getMetricsForALoadBalancer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Load Balancer |
-| `type` | [`Type41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `string \| undefined` | Query, Optional | Resolution of results in seconds |
@@ -58,14 +58,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const type = Type41Enum.RequestsPerSecond;
+const type = Type41.RequestsPerSecond;
 
 const start = 'start4';
 
 const end = 'end8';
 
 try {
-  const response = await loadBalancersController.getMetricsForALoadBalancer(
+  const response = await loadBalancersApi.getMetricsForALoadBalancer(
     id,
     type,
     start,

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlBhZ2luYXRpb24
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `PerPage` | `double` | Required | Maximum number of items shown per page in the response |
 | `PreviousPage` | `double?` | Required | ID of the previous page. Can be null if the current page is the first one. |
 | `TotalEntries` | `double?` | Required | The total number of entries that exist in the database for this query. Nullable if unknown. |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 Pagination pagination = new Pagination
 {
@@ -33,6 +37,7 @@ Pagination pagination = new Pagination
     PerPage = 25,
     PreviousPage = 2,
     TotalEntries = 100,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

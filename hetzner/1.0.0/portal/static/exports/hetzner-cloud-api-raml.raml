@@ -27937,7 +27937,6 @@ schemas:
       For type `managed` Certificates the `action` key of the response contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -30965,7 +30964,6 @@ schemas:
       | `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -33343,7 +33341,6 @@ schemas:
     description: Creates a new Floating IP assigned to a Server. If you want to create a Floating IP that is not bound to a Server, you need to provide the `home_location` key instead of `server`. This can be either the ID or the name of the Location this IP shall be created in. Note that a Floating IP can be assigned to a Server in any Location later on. For optimal routing it is advised to use the Floating IP in the same Location it was created in.
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -41191,7 +41188,6 @@ schemas:
       | `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -44835,7 +44831,6 @@ schemas:
       | `server_has_ipv6`             | The server already has an ipv6 address                        |
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -47558,7 +47553,6 @@ schemas:
       You may specify one or more routes in `routes`. You can also add more routes later by using the [add route action](https://docs.hetzner.cloud/#network-actions-add-a-route-to-a-network).
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -48254,7 +48248,6 @@ schemas:
       Creates a new PlacementGroup.
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -56830,7 +56823,6 @@ schemas:
     description: Creates a new Server. Returns preliminary information about the Server as well as an Action that covers progress of creation.
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -58922,7 +58914,6 @@ schemas:
     description: Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is created, it can be used in other calls such as creating Servers.
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:
@@ -60843,7 +60834,6 @@ schemas:
       | `no_space_left_in_location`         | There is no volume space left in the given location |
     headers:
       Content-Type:
-        example: application/json
         required: true
         displayName: Content-Type
         enum:

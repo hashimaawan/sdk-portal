@@ -20,7 +20,7 @@ Using the `alias_ips` attribute you can also define one or more additional IPs t
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function attachAServerToANetwork(int $id, ?AttachToNetworkRequest $body = null): ActionResponse
+function attachAServerToANetwork(int $id, ?AttachToNetworkRequest $body = null): ApiResponse
 ```
 
 
@@ -36,7 +36,7 @@ function attachAServerToANetwork(int $id, ?AttachToNetworkRequest $body = null):
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -55,17 +55,23 @@ $body = AttachToNetworkRequestBuilder::init(
     ->ip('10.0.1.1')
     ->build();
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->attachAServerToANetwork(
+    $id,
+    $body
+);
 
-try {
-    $result = $serverActionsController->attachAServerToANetwork(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -52,7 +52,7 @@ def playerdashptreb_get(per_mode,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -92,7 +92,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.playerdashptreb_get(
+result = client_api.playerdashptreb_get(
   per_mode,
   season,
   season_type,
@@ -111,6 +111,12 @@ client_controller.playerdashptreb_get(
   period,
   last_n_games
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

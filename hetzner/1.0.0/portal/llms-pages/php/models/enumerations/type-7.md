@@ -7,7 +7,7 @@ Type of the resource
 
 # Enum Type Name
 
-`Type7Enum`
+`Type7`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the resource
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type7Enum;
+use HetznerCloudApiLib\Models\Type7;
 
-$type7 = Type7Enum::SERVER;
+$type7 = Type7::SERVER;
 ```
 
 

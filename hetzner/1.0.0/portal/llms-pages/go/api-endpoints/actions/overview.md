@@ -7,10 +7,10 @@ Actions show the results and progress of asynchronous requests to the API.
 
 # Get Instance
 
-The instance of the `ActionsController` class can be accessed from the API Client.
+The instance of the `ActionsApi` class can be accessed from the API Client.
 
 ```
-actionsController := client.ActionsController()
+actionsApi := client.ActionsApi()
 ```
 
 

@@ -7,10 +7,10 @@ Servers are virtual machines that can be provisioned.
 
 # Get singleton instance
 
-The singleton instance of the `ServersController` class can be accessed from the API Client.
+The singleton instance of the `ServersApi` class can be accessed from the API Client.
 
 ```
-$serversController = $client->getServersController();
+$serversApi = $client->getServersApi();
 ```
 
 

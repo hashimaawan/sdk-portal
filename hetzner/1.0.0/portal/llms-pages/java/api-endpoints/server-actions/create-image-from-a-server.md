@@ -11,7 +11,7 @@ You can either create a `backup` Image that is bound to the Server and therefore
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersActionsCreateImageResponse> createImageFromAServerAsync(
+CompletableFuture<ApiResponse<ServersActionsCreateImageResponse>> createImageFromAServerAsync(
     final int id,
     final CreateImageRequest body)
 ```
@@ -31,7 +31,7 @@ CompletableFuture<ServersActionsCreateImageResponse> createImageFromAServerAsync
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-create-image-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-create-image-response.md).
 
 
 # Example Usage
@@ -40,10 +40,10 @@ The `action` key in the reply contains an Action object with this structure
 int id = 112;
 CreateImageRequest body = new CreateImageRequest.Builder()
     .description("my image")
-    .type(Type63Enum.SNAPSHOT)
+    .type(Type63.SNAPSHOT)
     .build();
 
-serverActionsController.createImageFromAServerAsync(id, body).thenAccept(result -> {
+serverActionsApi.createImageFromAServerAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

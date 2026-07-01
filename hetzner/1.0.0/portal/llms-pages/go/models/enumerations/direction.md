@@ -7,15 +7,15 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 
 # Class Name
 
-`DirectionEnum`
+`Direction`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `IN` |
-| `OUT` |
+| `In` |
+| `Out` |
 
 
 # Example
@@ -24,11 +24,11 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    direction := models.DirectionEnum_IN
+    direction := models.Direction_In
 
 }
 ```

@@ -7,7 +7,7 @@ The type of the Floating IP
 
 # Enum Type Name
 
-`Type48Enum`
+`Type48`
 
 
 # Fields
@@ -21,9 +21,9 @@ The type of the Floating IP
 # Example
 
 ```ts
-import { Type48Enum } from 'hetzner-cloud-apilib';
+import { Type48 } from 'hetzner-cloud-apilib';
 
-const type48 = Type48Enum.Ipv4;
+const type48 = Type48.Ipv4;
 ```
 
 

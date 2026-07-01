@@ -33,7 +33,7 @@ EnableRescueModeForAServerAsync(
 
 The `action` key in the reply contains an Action object with this structure
 
-[`Task<Models.ServersActionsEnableRescueResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-actions-enable-rescue-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServersActionsEnableRescueResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-actions-enable-rescue-response.md).
 
 
 # Example Usage
@@ -50,7 +50,7 @@ ServersActionsEnableRescueRequest body = new ServersActionsEnableRescueRequest
 
 try
 {
-    ServersActionsEnableRescueResponse result = await serverActionsController.EnableRescueModeForAServerAsync(
+    ApiResponse<ServersActionsEnableRescueResponse> result = await serverActionsApi.EnableRescueModeForAServerAsync(
         id,
         body
     );

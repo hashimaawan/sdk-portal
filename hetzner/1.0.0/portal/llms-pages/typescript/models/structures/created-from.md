@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Information about the Server the Image was created from
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,6 +18,7 @@ Information about the Server the Image was created from
 |  --- | --- | --- | --- |
 | `id` | `number` | Required | ID of the Server the Image was created from |
 | `name` | `string` | Required | Server name at the time the Image was created |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -26,6 +29,9 @@ import { CreatedFrom } from 'hetzner-cloud-apilib';
 const createdFrom: CreatedFrom = {
   id: 1,
   name: 'Server',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

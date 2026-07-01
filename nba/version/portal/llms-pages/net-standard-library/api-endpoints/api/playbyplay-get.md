@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-PlaybyplayGETAsync(
-    string gameID,
+PlaybyplayGetAsync(
+    string gameId,
     string startPeriod,
     string endPeriod)
 ```
@@ -16,7 +16,7 @@ PlaybyplayGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `startPeriod` | `string` | Query, Required | - |
 | `endPeriod` | `string` | Query, Required | - |
 
@@ -31,13 +31,13 @@ PlaybyplayGETAsync(
 # Example Usage
 
 ```csharp
-string gameID = "GameID8";
+string gameId = "GameID8";
 string startPeriod = "StartPeriod4";
 string endPeriod = "EndPeriod0";
 try
 {
-    await aPIController.PlaybyplayGETAsync(
-        gameID,
+    await api.PlaybyplayGetAsync(
+        gameId,
         startPeriod,
         endPeriod
     );

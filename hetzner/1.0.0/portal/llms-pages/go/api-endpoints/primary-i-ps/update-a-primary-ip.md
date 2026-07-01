@@ -11,11 +11,11 @@ If the Primary IP object changes during the request, the response will be a “c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-UpdateAPrimaryIP(
+UpdateAPrimaryIp(
     ctx context.Context,
     id int,
-    body *models.UpdatePrimaryIPRequest) (
-    models.ApiResponse[models.PrimaryIPResponse],
+    body *models.UpdatePrimaryIpRequest) (
+    models.ApiResponse[models.PrimaryIpResponse],
     error)
 ```
 
@@ -25,14 +25,14 @@ UpdateAPrimaryIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the resource |
-| `body` | [`*models.UpdatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`*models.UpdatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.PrimaryIPResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/primary-ip-response.md).
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.PrimaryIpResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -42,13 +42,13 @@ ctx := context.Background()
 
 id := 112
 
-body := models.UpdatePrimaryIPRequest{
-    AutoDelete:           models.ToPointer(true),
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("my-ip"),
+body := models.UpdatePrimaryIpRequest{
+    AutoDelete:            models.ToPointer(true),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("my-ip"),
 }
 
-apiResponse, err := primaryIPsController.UpdateAPrimaryIP(ctx, id, &body)
+apiResponse, err := primaryIPsApi.UpdateAPrimaryIp(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -40,7 +40,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.DisableRescueModeForAServer(ctx, id)
+apiResponse, err := serverActionsApi.DisableRescueModeForAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

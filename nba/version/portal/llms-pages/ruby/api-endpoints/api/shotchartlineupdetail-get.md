@@ -58,7 +58,7 @@ def shotchartlineupdetail_get(league_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -104,7 +104,7 @@ context_measure = 'ContextMeasure2'
 
 context_filter = 'ContextFilter6'
 
-client_controller.shotchartlineupdetail_get(
+result = client_api.shotchartlineupdetail_get(
   league_id,
   season,
   season_type,
@@ -126,6 +126,12 @@ client_controller.shotchartlineupdetail_get(
   context_measure,
   context_filter
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

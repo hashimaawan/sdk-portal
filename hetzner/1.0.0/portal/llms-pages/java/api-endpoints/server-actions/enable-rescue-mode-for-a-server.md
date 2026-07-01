@@ -13,7 +13,7 @@ Enabling rescue mode will not [reboot](https://docs.hetzner.cloud/#server-action
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersActionsEnableRescueResponse> enableRescueModeForAServerAsync(
+CompletableFuture<ApiResponse<ServersActionsEnableRescueResponse>> enableRescueModeForAServerAsync(
     final int id,
     final ServersActionsEnableRescueRequest body)
 ```
@@ -33,7 +33,7 @@ CompletableFuture<ServersActionsEnableRescueResponse> enableRescueModeForAServer
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-enable-rescue-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-enable-rescue-response.md).
 
 
 # Example Usage
@@ -46,7 +46,7 @@ ServersActionsEnableRescueRequest body = new ServersActionsEnableRescueRequest.B
     ))
     .build();
 
-serverActionsController.enableRescueModeForAServerAsync(id, body).thenAccept(result -> {
+serverActionsApi.enableRescueModeForAServerAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

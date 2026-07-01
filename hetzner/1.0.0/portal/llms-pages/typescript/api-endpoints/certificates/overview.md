@@ -7,10 +7,10 @@ TLS/SSL Certificates prove the identity of a Server and are used to encrypt clie
 
 # Create Instance
 
-The instance of the `CertificatesController` class can be created using the API Client.
+The instance of the `CertificatesApi` class can be created using the API Client.
 
 ```
-const certificatesController = new CertificatesController(client);
+const certificatesApi = new CertificatesApi(client);
 ```
 
 

@@ -19,8 +19,8 @@ Note that a Primary IP can only be assigned to a Server in the same Datacenter l
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CreatePrimaryIPResponse> createAPrimaryIPAsync(
-    final CreatePrimaryIPRequest body)
+CompletableFuture<ApiResponse<CreatePrimaryIpResponse>> createAPrimaryIpAsync(
+    final CreatePrimaryIpRequest body)
 ```
 
 
@@ -28,23 +28,23 @@ CompletableFuture<CreatePrimaryIPResponse> createAPrimaryIPAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`CreatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-[`CreatePrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreatePrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
 
 ```java
-CreatePrimaryIPRequest body = new CreatePrimaryIPRequest.Builder(
+CreatePrimaryIpRequest body = new CreatePrimaryIpRequest.Builder(
     "server",
     "my-ip",
-    Type51Enum.IPV4
+    Type51.IPV4
 )
 .assigneeId(17)
 .autoDelete(false)
@@ -52,7 +52,7 @@ CreatePrimaryIPRequest body = new CreatePrimaryIPRequest.Builder(
 .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
 .build();
 
-primaryIPsController.createAPrimaryIPAsync(body).thenAccept(result -> {
+primaryIPsApi.createAPrimaryIpAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

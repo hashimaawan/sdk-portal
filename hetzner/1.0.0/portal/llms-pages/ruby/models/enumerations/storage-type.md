@@ -7,7 +7,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Enum Type Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 # Example
 
 ```ruby
-storage_type = StorageTypeEnum::LOCAL
+storage_type = StorageType::LOCAL
 ```
 
 

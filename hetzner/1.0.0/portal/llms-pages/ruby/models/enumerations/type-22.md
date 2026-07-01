@@ -7,7 +7,7 @@ Type of the Image
 
 # Enum Type Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
@@ -24,7 +24,7 @@ Type of the Image
 # Example
 
 ```ruby
-type22 = Type22Enum::TEMPORARY
+type22 = Type22::TEMPORARY
 ```
 
 

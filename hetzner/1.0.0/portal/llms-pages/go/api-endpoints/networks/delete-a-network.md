@@ -38,7 +38,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := networksController.DeleteANetwork(ctx, id)
+resp, err := networksApi.DeleteANetwork(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async leaguedashteamclutchGET(
+async leaguedashteamclutchGet(
   clutchTime: string,
   aheadBehind: string,
   pointDiff: string,
@@ -26,7 +26,7 @@ async leaguedashteamclutchGET(
   seasonSegment: string,
   dateFrom: string,
   dateTo: string,
-  opponentTeamID: string,
+  opponentTeamId: string,
   vsConference: string,
   vsDivision: string,
   gameSegment: string,
@@ -61,7 +61,7 @@ async leaguedashteamclutchGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -120,7 +120,7 @@ const dateFrom = 'DateFrom6';
 
 const dateTo = 'DateTo0';
 
-const opponentTeamID = 'OpponentTeamID6';
+const opponentTeamId = 'OpponentTeamID6';
 
 const vsConference = 'VsConference6';
 
@@ -133,7 +133,7 @@ const period = 'Period2';
 const lastNGames = 'LastNGames4';
 
 try {
-  const response = await apiController.leaguedashteamclutchGET(
+  const response = await api.leaguedashteamclutchGet(
     clutchTime,
     aheadBehind,
     pointDiff,
@@ -154,7 +154,7 @@ try {
     seasonSegment,
     dateFrom,
     dateTo,
-    opponentTeamID,
+    opponentTeamId,
     vsConference,
     vsDivision,
     gameSegment,

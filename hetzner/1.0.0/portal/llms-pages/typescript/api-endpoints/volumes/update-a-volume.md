@@ -43,7 +43,7 @@ const body: UpdateVolumeRequest = {
 };
 
 try {
-  const response = await volumesController.updateAVolume(
+  const response = await volumesApi.updateAVolume(
     id,
     body
   );

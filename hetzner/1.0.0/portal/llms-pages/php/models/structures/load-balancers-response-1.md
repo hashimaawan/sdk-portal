@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VycyUyNTIwUmVzcG9uc2Ux
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,44 +16,46 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Required | - | getAction(): Action | setAction(Action action): void |
 | `loadBalancer` | [`LoadBalancer`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancer.md) | Required | - | getLoadBalancer(): LoadBalancer | setLoadBalancer(LoadBalancer loadBalancer): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\LoadBalancersResponse1Builder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerBuilder;
-use HetznerCloudAPILib\Models\Builders\AlgorithmBuilder;
-use HetznerCloudAPILib\Models\Type28Enum;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerTypeBuilder;
-use HetznerCloudAPILib\Models\Builders\PriceBuilder;
-use HetznerCloudAPILib\Models\Builders\PriceHourlyBuilder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthlyBuilder;
-use HetznerCloudAPILib\Models\Builders\LocationBuilder;
-use HetznerCloudAPILib\Models\Builders\PrivateNetBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Builders\PublicNetBuilder;
-use HetznerCloudAPILib\Models\Builders\Ipv4Builder;
-use HetznerCloudAPILib\Models\Builders\Ipv6Builder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerServiceBuilder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerServiceHealthCheckBuilder;
-use HetznerCloudAPILib\Models\Protocol6Enum;
-use HetznerCloudAPILib\Models\Builders\HttpBuilder;
-use HetznerCloudAPILib\Models\Protocol7Enum;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerServiceHTTPBuilder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerTargetBuilder;
-use HetznerCloudAPILib\Models\Type29Enum;
-use HetznerCloudAPILib\Models\Builders\HealthStatusBuilder;
-use HetznerCloudAPILib\Models\Status30Enum;
-use HetznerCloudAPILib\Models\Builders\IpBuilder;
-use HetznerCloudAPILib\Models\Builders\LabelSelector7Builder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerTargetServerBuilder;
-use HetznerCloudAPILib\Models\Builders\TargetBuilder;
-use HetznerCloudAPILib\Models\Builders\Server11Builder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancersResponse1Builder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerBuilder;
+use HetznerCloudApiLib\Models\Builders\AlgorithmBuilder;
+use HetznerCloudApiLib\Models\Type28;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerTypeBuilder;
+use HetznerCloudApiLib\Models\Builders\PriceBuilder;
+use HetznerCloudApiLib\Models\Builders\PriceHourlyBuilder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthlyBuilder;
+use HetznerCloudApiLib\Models\Builders\LocationBuilder;
+use HetznerCloudApiLib\Models\Builders\PrivateNetBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Builders\PublicNetBuilder;
+use HetznerCloudApiLib\Models\Builders\Ipv4Builder;
+use HetznerCloudApiLib\Models\Builders\Ipv6Builder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerServiceBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerServiceHealthCheckBuilder;
+use HetznerCloudApiLib\Models\Protocol6;
+use HetznerCloudApiLib\Models\Builders\HttpBuilder;
+use HetznerCloudApiLib\Models\Protocol7;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerServiceHttpBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerTargetBuilder;
+use HetznerCloudApiLib\Models\Type29;
+use HetznerCloudApiLib\Models\Builders\HealthStatusBuilder;
+use HetznerCloudApiLib\Models\Status30;
+use HetznerCloudApiLib\Models\Builders\IpBuilder;
+use HetznerCloudApiLib\Models\Builders\LabelSelector7Builder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerTargetServerBuilder;
+use HetznerCloudApiLib\Models\Builders\TargetBuilder;
+use HetznerCloudApiLib\Models\Builders\Server11Builder;
 
 $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
     ActionBuilder::init(
@@ -62,23 +66,30 @@ $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
             Resource2Builder::init(
                 42,
                 'server'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
         '2016-01-30T23:55:00+00:00',
-        StatusEnum::RUNNING
+        Status::RUNNING
     )
         ->error(
             ErrorBuilder::init(
                 'action_failed',
                 'Action failed'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         )
         ->finished('2016-01-30T23:55:00+00:00')
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build(),
     LoadBalancerBuilder::init(
         AlgorithmBuilder::init(
-            Type28Enum::ROUND_ROBIN
-        )->build(),
+            Type28::ROUND_ROBIN
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         '2016-01-30T23:55:00+00:00',
         42,
         10000,
@@ -100,15 +111,22 @@ $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
                     PriceHourlyBuilder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build(),
                     PriceMonthlyBuilder::init(
                         '1.1900000000000000',
                         '1.0000000000'
-                    )->build()
-                )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ]
         )
             ->deprecated('2016-01-30T23:50:00+00:00')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build(),
         LocationBuilder::init(
             'Falkenstein',
@@ -119,35 +137,44 @@ $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
             12.370071,
             'fsn1',
             'eu-central'
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         'my-resource',
         [
             PrivateNetBuilder::init()
                 ->ip('10.0.0.2')
                 ->network(4711)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ],
         ProtectionBuilder::init(
             false
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         PublicNetBuilder::init(
             false,
             Ipv4Builder::init()
                 ->dnsPtr('lb1.example.com')
                 ->ip('1.2.3.4')
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             Ipv6Builder::init()
                 ->dnsPtr('lb1.example.com')
                 ->ip('2001:db8::1')
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         [
             LoadBalancerServiceBuilder::init(
                 80,
                 LoadBalancerServiceHealthCheckBuilder::init(
                     15,
                     4711,
-                    Protocol6Enum::HTTP,
+                    Protocol6::HTTP,
                     3,
                     10
                 )
@@ -169,11 +196,11 @@ $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
                     )
                     ->build(),
                 443,
-                Protocol7Enum::HTTPS,
+                Protocol7::HTTPS,
                 false
             )
                 ->http(
-                    LoadBalancerServiceHTTPBuilder::init()
+                    LoadBalancerServiceHttpBuilder::init()
                         ->certificates(
                             [
                                 180
@@ -183,40 +210,50 @@ $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
                         ->cookieName('cookie_name6')
                         ->redirectHttp(false)
                         ->stickySessions(false)
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build()
                 )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ],
         [
             LoadBalancerTargetBuilder::init(
-                Type29Enum::IP
+                Type29::IP
             )
                 ->healthStatus(
                     [
                         HealthStatusBuilder::init()
                             ->listenPort(142)
-                            ->status(Status30Enum::UNKNOWN)
+                            ->status(Status30::UNKNOWN)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build(),
                         HealthStatusBuilder::init()
                             ->listenPort(142)
-                            ->status(Status30Enum::UNKNOWN)
+                            ->status(Status30::UNKNOWN)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build()
                     ]
                 )
                 ->ip(
                     IpBuilder::init(
                         'ip8'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->labelSelector(
                     LabelSelector7Builder::init(
                         'selector8'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->server(
                     LoadBalancerTargetServerBuilder::init(
                         14
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->targets(
                     [
@@ -225,73 +262,92 @@ $loadBalancersResponse1 = LoadBalancersResponse1Builder::init(
                                 [
                                     HealthStatusBuilder::init()
                                         ->listenPort(142)
-                                        ->status(Status30Enum::UNKNOWN)
+                                        ->status(Status30::UNKNOWN)
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                         ->build(),
                                     HealthStatusBuilder::init()
                                         ->listenPort(142)
-                                        ->status(Status30Enum::UNKNOWN)
+                                        ->status(Status30::UNKNOWN)
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                         ->build()
                                 ]
                             )
                             ->server(
                                 Server11Builder::init(
                                     14
-                                )->build()
+                                )
+                                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                    ->build()
                             )
                             ->type('type2')
                             ->usePrivateIp(false)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build(),
                         TargetBuilder::init()
                             ->healthStatus(
                                 [
                                     HealthStatusBuilder::init()
                                         ->listenPort(142)
-                                        ->status(Status30Enum::UNKNOWN)
+                                        ->status(Status30::UNKNOWN)
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                         ->build(),
                                     HealthStatusBuilder::init()
                                         ->listenPort(142)
-                                        ->status(Status30Enum::UNKNOWN)
+                                        ->status(Status30::UNKNOWN)
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                         ->build()
                                 ]
                             )
                             ->server(
                                 Server11Builder::init(
                                     14
-                                )->build()
+                                )
+                                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                    ->build()
                             )
                             ->type('type2')
                             ->usePrivateIp(false)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build(),
                         TargetBuilder::init()
                             ->healthStatus(
                                 [
                                     HealthStatusBuilder::init()
                                         ->listenPort(142)
-                                        ->status(Status30Enum::UNKNOWN)
+                                        ->status(Status30::UNKNOWN)
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                         ->build(),
                                     HealthStatusBuilder::init()
                                         ->listenPort(142)
-                                        ->status(Status30Enum::UNKNOWN)
+                                        ->status(Status30::UNKNOWN)
+                                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                                         ->build()
                                 ]
                             )
                             ->server(
                                 Server11Builder::init(
                                     14
-                                )->build()
+                                )
+                                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                    ->build()
                             )
                             ->type('type2')
                             ->usePrivateIp(false)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build()
                     ]
                 )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
         ->ingoingTraffic(216)
         ->outgoingTraffic(42)
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -19,13 +21,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `string` | Required | Name of the volume | getName(): string | setName(string name): void |
 | `server` | `?int` | Optional | Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) | getServer(): ?int | setServer(?int server): void |
 | `size` | `int` | Required | Size of the Volume in GB | getSize(): int | setSize(int size): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreateVolumeRequestBuilder;
-use HetznerCloudAPILib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\CreateVolumeRequestBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $createVolumeRequest = CreateVolumeRequestBuilder::init(
     'databases-storage',
@@ -36,6 +39,7 @@ $createVolumeRequest = CreateVolumeRequestBuilder::init(
     ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
     ->location('nbg1')
     ->server(182)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

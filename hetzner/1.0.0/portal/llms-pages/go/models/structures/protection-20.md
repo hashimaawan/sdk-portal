@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Protection configuration for the Server
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -16,6 +18,7 @@ Protection configuration for the Server
 |  --- | --- | --- | --- |
 | `Delete` | `bool` | Required | If true, prevents the Server from being deleted |
 | `Rebuild` | `bool` | Required | If true, prevents the Server from being rebuilt |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -24,13 +27,16 @@ Protection configuration for the Server
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     protection20 := models.Protection20{
-        Delete:               false,
-        Rebuild:              false,
+        Delete:                false,
+        Rebuild:               false,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

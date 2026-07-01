@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playercompareGETAsync(
-    final String playerIDList,
-    final String vsPlayerIDList,
+CompletableFuture<ApiResponse<Void>> playercompareGetAsync(
+    final String playerIdList,
+    final String vsPlayerIdList,
     final String seasonType,
     final String measureType,
     final String perMode,
@@ -21,7 +21,7 @@ CompletableFuture<Void> playercompareGETAsync(
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String gameSegment,
@@ -34,8 +34,8 @@ CompletableFuture<Void> playercompareGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerIDList` | `String` | Query, Required | - |
-| `vsPlayerIDList` | `String` | Query, Required | - |
+| `playerIdList` | `String` | Query, Required | - |
+| `vsPlayerIdList` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 | `measureType` | `String` | Query, Required | - |
 | `perMode` | `String` | Query, Required | - |
@@ -49,7 +49,7 @@ CompletableFuture<Void> playercompareGETAsync(
 | `seasonSegment` | `String` | Query, Required | - |
 | `dateFrom` | `String` | Query, Required | - |
 | `dateTo` | `String` | Query, Required | - |
-| `opponentTeamID` | `String` | Query, Required | - |
+| `opponentTeamId` | `String` | Query, Required | - |
 | `vsConference` | `String` | Query, Required | - |
 | `vsDivision` | `String` | Query, Required | - |
 | `gameSegment` | `String` | Query, Required | - |
@@ -67,8 +67,8 @@ CompletableFuture<Void> playercompareGETAsync(
 # Example Usage
 
 ```java
-String playerIDList = "PlayerIDList4";
-String vsPlayerIDList = "VsPlayerIDList2";
+String playerIdList = "PlayerIDList4";
+String vsPlayerIdList = "VsPlayerIDList2";
 String seasonType = "SeasonType8";
 String measureType = "MeasureType8";
 String perMode = "PerMode6";
@@ -82,15 +82,16 @@ String month = "Month0";
 String seasonSegment = "SeasonSegment8";
 String dateFrom = "DateFrom6";
 String dateTo = "DateTo0";
-String opponentTeamID = "OpponentTeamID6";
+String opponentTeamId = "OpponentTeamID6";
 String vsConference = "VsConference6";
 String vsDivision = "VsDivision6";
 String gameSegment = "GameSegment6";
 String period = "Period2";
 String lastNGames = "LastNGames4";
 
-aPIController.playercompareGETAsync(playerIDList, vsPlayerIDList, seasonType, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
+api.playercompareGetAsync(playerIdList, vsPlayerIdList, seasonType, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -41,11 +41,11 @@ ctx := context.Background()
 id := 112
 
 body := models.AddDeleteRouteRequest{
-    Destination:          "10.100.1.0/24",
-    Gateway:              "10.0.1.1",
+    Destination:           "10.100.1.0/24",
+    Gateway:               "10.0.1.1",
 }
 
-apiResponse, err := networkActionsController.AddARouteToANetwork(ctx, id, &body)
+apiResponse, err := networkActionsApi.AddARouteToANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

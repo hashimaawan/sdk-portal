@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 # Get instance
 
-An instance of the `GifsController` class can be accessed from the API Client.
+An instance of the `GifsApi` class can be accessed from the API Client.
 
 ```
-GifsController gifsController = client.getGifsController();
+GifsApi gifsApi = client.getGifsApi();
 ```
 
 

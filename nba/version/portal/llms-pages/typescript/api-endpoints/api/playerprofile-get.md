@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playerprofileGET(
-  leagueID: string,
-  playerID: string,
+async playerprofileGet(
+  leagueId: string,
+  playerId: string,
   season: string,
   seasonType: string,
   graphStartSeason: string,
@@ -22,8 +22,8 @@ async playerprofileGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `graphStartSeason` | `string` | Query, Required | - |
@@ -42,9 +42,9 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
-const playerID = 'PlayerID6';
+const playerId = 'PlayerID6';
 
 const season = 'Season0';
 
@@ -57,9 +57,9 @@ const graphEndSeason = 'GraphEndSeason6';
 const graphStat = 'GraphStat0';
 
 try {
-  const response = await apiController.playerprofileGET(
-    leagueID,
-    playerID,
+  const response = await api.playerprofileGet(
+    leagueId,
+    playerId,
     season,
     seasonType,
     graphStartSeason,

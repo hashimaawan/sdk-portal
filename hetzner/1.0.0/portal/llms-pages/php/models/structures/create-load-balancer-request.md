@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZUxvYWRCYWxhbmNlclJlcXVlc3Q
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -22,32 +24,38 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `publicInterface` | `?bool` | Optional | Enable or disable the public interface of the Load Balancer | getPublicInterface(): ?bool | setPublicInterface(?bool publicInterface): void |
 | `services` | [`?(LoadBalancerService[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancer-service.md) | Optional | Array of services | getServices(): ?array | setServices(?array services): void |
 | `targets` | [`?(LoadBalancerTarget[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/load-balancer-target.md) | Optional | Array of targets | getTargets(): ?array | setTargets(?array targets): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreateLoadBalancerRequestBuilder;
-use HetznerCloudAPILib\Models\Builders\LoadBalancerAlgorithmBuilder;
-use HetznerCloudAPILib\Models\Type28Enum;
-use HetznerCloudAPILib\Models\Builders\LabelsBuilder;
+use HetznerCloudApiLib\Models\Builders\CreateLoadBalancerRequestBuilder;
+use HetznerCloudApiLib\Models\Builders\LoadBalancerAlgorithmBuilder;
+use HetznerCloudApiLib\Models\Type28;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\LabelsBuilder;
 
 $createLoadBalancerRequest = CreateLoadBalancerRequestBuilder::init(
     LoadBalancerAlgorithmBuilder::init(
-        Type28Enum::ROUND_ROBIN
-    )->build(),
+        Type28::ROUND_ROBIN
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build(),
     'lb11',
     'Web Frontend'
 )
     ->labels(
         LabelsBuilder::init()
             ->labelkey('labelkey4')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->location('location2')
     ->network(123)
     ->networkZone('eu-central')
     ->publicInterface(true)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

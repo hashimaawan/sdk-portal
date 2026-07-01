@@ -61,10 +61,10 @@ Networks also support the notion of routes which are automatically applied to pr
 
 # Get instance
 
-An instance of the `NetworksController` class can be accessed from the API Client.
+An instance of the `NetworksApi` class can be accessed from the API Client.
 
 ```
-NetworksController networksController = client.getNetworksController();
+NetworksApi networksApi = client.getNetworksApi();
 ```
 
 

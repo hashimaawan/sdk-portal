@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZVByaW1hcnlJUFJlcXVlc3Q
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
-`CreatePrimaryIPRequest`
+`CreatePrimaryIpRequest`
 
 
 # Fields
@@ -18,24 +20,26 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `datacenter` | `?string` | Optional | ID or name of Datacenter the Primary IP will be bound to. Needs to be omitted if `assignee_id` is passed. | getDatacenter(): ?string | setDatacenter(?string datacenter): void |
 | `labels` | `?array` | Optional | User-defined labels (key-value pairs) | getLabels(): ?array | setLabels(?array labels): void |
 | `name` | `string` | Required | - | getName(): string | setName(string name): void |
-| `type` | [`string(Type51Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-51.md) | Required | Primary IP type | getType(): string | setType(string type): void |
+| `type` | [`string(Type51)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-51.md) | Required | Primary IP type | getType(): string | setType(string type): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreatePrimaryIPRequestBuilder;
-use HetznerCloudAPILib\Models\Type51Enum;
-use HetznerCloudAPILib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\CreatePrimaryIpRequestBuilder;
+use HetznerCloudApiLib\Models\Type51;
+use HetznerCloudApiLib\ApiHelper;
 
-$createPrimaryIPRequest = CreatePrimaryIPRequestBuilder::init(
+$createPrimaryIpRequest = CreatePrimaryIpRequestBuilder::init(
     'my-ip',
-    Type51Enum::IPV4
+    Type51::IPV4
 )
     ->assigneeId(17)
     ->autoDelete(false)
     ->datacenter('fsn1-dc8')
     ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

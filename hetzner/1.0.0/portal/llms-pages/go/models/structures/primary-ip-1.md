@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlByaW1hcnlJUDE
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
-`PrimaryIP1`
+`PrimaryIp1`
 
 
 # Fields
@@ -24,7 +26,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `map[string]string` | Required | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `Protection` | [`models.Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/protection.md) | Required | Protection configuration for the Resource |
-| `Type` | [`models.Type50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `Type` | [`models.Type50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -33,31 +36,34 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    primaryIP1 := models.PrimaryIP1{
-        AssigneeId:           models.ToPointer(17),
-        AssigneeType:         "server",
-        AutoDelete:           true,
-        Blocked:              false,
-        Created:              "2016-01-30T23:55:00+00:00",
-        Datacenter:           models.Datacenter2{
-            Description:          "Falkenstein DC Park 8",
-            Id:                   42,
-            Location:             models.Location{
-                City:                 "Falkenstein",
-                Country:              "DE",
-                Description:          "Falkenstein DC Park 1",
-                Id:                   float64(1),
-                Latitude:             float64(50.47612),
-                Longitude:            float64(12.370071),
-                Name:                 "fsn1",
-                NetworkZone:          "eu-central",
+    primaryIp1 := models.PrimaryIp1{
+        AssigneeId:            models.ToPointer(17),
+        AssigneeType:          "server",
+        AutoDelete:            true,
+        Blocked:               false,
+        Created:               "2016-01-30T23:55:00+00:00",
+        Datacenter:            models.Datacenter2{
+            Description:           "Falkenstein DC Park 8",
+            Id:                    42,
+            Location:              models.Location{
+                City:                  "Falkenstein",
+                Country:               "DE",
+                Description:           "Falkenstein DC Park 1",
+                Id:                    float64(1),
+                Latitude:              float64(50.47612),
+                Longitude:             float64(12.370071),
+                Name:                  "fsn1",
+                NetworkZone:           "eu-central",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
-            Name:                 "fsn1-dc8",
-            ServerTypes:          models.ServerTypes{
+            Name:                  "fsn1-dc8",
+            ServerTypes:           models.ServerTypes{
                 Available:             []float64{
                     float64(1),
                     float64(2),
@@ -73,25 +79,39 @@ func main() {
                     float64(2),
                     float64(3),
                 },
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
             },
         },
-        DnsPtr:               []models.DnsPtr{
+        DnsPtr:                []models.DnsPtr{
             models.DnsPtr{
-                DnsPtr:               "server.example.com",
-                Ip:                   "2001:db8::1",
+                DnsPtr:                "server.example.com",
+                Ip:                    "2001:db8::1",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
         },
-        Id:                   42,
-        Ip:                   "131.232.99.1",
-        Labels:               map[string]string{
-            "key0": "labels4",
-            "key1": "labels3",
+        Id:                    42,
+        Ip:                    "131.232.99.1",
+        Labels:                map[string]string{
+            "key0": "labels0",
         },
-        Name:                 "my-resource",
-        Protection:           models.Protection{
-            Delete:               false,
+        Name:                  "my-resource",
+        Protection:            models.Protection{
+            Delete:                false,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         },
-        Type:                 models.Type50Enum_IPV4,
+        Type:                  models.Type50_Ipv4,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

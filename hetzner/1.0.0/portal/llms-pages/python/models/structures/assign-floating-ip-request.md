@@ -8,10 +8,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |------------------------------ |-------------------------------------------------------------- |
 | `floating_ip_assigned`        | The floating IP is already assigned                           |
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
-`AssignFloatingIPRequest`
+`AssignFloatingIpRequest`
 
 
 # Fields
@@ -19,15 +21,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `server` | `int` | Required | ID of the Server the Floating IP shall be assigned to |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-from hetznercloudapi.models.assign_floating_ip_request import AssignFloatingIPRequest
+import jsonpickle
 
-assign_floating_ip_request = AssignFloatingIPRequest(
-    server=42
+from hetznercloudapi.models.assign_floating_ip_request import AssignFloatingIpRequest
+
+assign_floating_ip_request = AssignFloatingIpRequest(
+    server=42,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

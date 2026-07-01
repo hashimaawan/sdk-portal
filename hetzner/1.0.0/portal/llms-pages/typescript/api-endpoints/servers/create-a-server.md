@@ -59,7 +59,7 @@ const body: CreateServerRequest = {
 };
 
 try {
-  const response = await serversController.createAServer(body);
+  const response = await serversApi.createAServer(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

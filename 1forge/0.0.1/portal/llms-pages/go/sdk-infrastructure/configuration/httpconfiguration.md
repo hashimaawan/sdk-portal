@@ -8,9 +8,9 @@ The following parameters are configurable for the HttpConfiguration:
 
 | Name | Type | Description | Setter | Getter |
 |  --- | --- | --- | --- | --- |
-| timeout | `float64` | Timeout in seconds.<br>*Default*: `0` | `WithTimeout` | `Timeout()` |
+| timeout | `float64` | Timeout in seconds.<br>*Default*: `30` | `WithTimeout` | `Timeout()` |
 | transport | `httpRoundTripper` | Establishes network connection and caches them for reuse.<br>*Default*: `http.DefaultTransport` | `WithTransport` | `Transport()` |
-| retryConfiguration | [`m1forgefinanceapisRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `m1forgefinanceapis.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
+| retryConfiguration | [`m1ForgeFinanceApIsRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `m1ForgeFinanceApIs.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
 
 The httpConfiguration can be initialized as follows:
 
@@ -18,15 +18,15 @@ The httpConfiguration can be initialized as follows:
 package main
 
 import (
-    "m1forgefinanceapis"
+    "m1ForgeFinanceApIs"
     "net/http"
 )
 
 func main() {
-    httpConfiguration := m1forgefinanceapis.CreateHttpConfiguration(
-        m1forgefinanceapis.WithTimeout(0),
-        m1forgefinanceapis.WithTransport(http.DefaultTransport),
-        m1forgefinanceapis.WithRetryConfiguration(m1forgefinanceapis.DefaultRetryConfiguration()),
+    httpConfiguration := m1ForgeFinanceApIs.CreateHttpConfiguration(
+        m1ForgeFinanceApIs.WithTimeout(30),
+        m1ForgeFinanceApIs.WithTransport(http.DefaultTransport),
+        m1ForgeFinanceApIs.WithRetryConfiguration(m1ForgeFinanceApIs.DefaultRetryConfiguration()),
     )
 }
 ```

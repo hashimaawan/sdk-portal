@@ -28,7 +28,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Pricing pricing = new Pricing
@@ -40,7 +41,9 @@ Pricing pricing = new Pricing
         {
             Gross = "1.1900000000000000",
             Net = "1.0000000000",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     FloatingIps = new List<FloatingIp5>
     {
@@ -55,10 +58,13 @@ Pricing pricing = new Pricing
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
-            Type = Type48Enum.Ipv4,
+            Type = Type48.Ipv4,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Image = new Image3
@@ -67,7 +73,9 @@ Pricing pricing = new Pricing
         {
             Gross = "1.1900000000000000",
             Net = "1.0000000000",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     LoadBalancerTypes = new List<LoadBalancerType6>
     {
@@ -84,14 +92,18 @@ Pricing pricing = new Pricing
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     PriceMonthly = new PriceMonthly8
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     PrimaryIps = new List<PrimaryIp>
@@ -107,20 +119,25 @@ Pricing pricing = new Pricing
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     PriceMonthly = new PriceMonthly9
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
-            Type = Type49Enum.Ipv4,
+            Type = Type49.Ipv4,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     ServerBackup = new ServerBackup
     {
         Percentage = "20.0000000000",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     ServerTypes = new List<ServerTypes2>
     {
@@ -137,14 +154,18 @@ Pricing pricing = new Pricing
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     PriceMonthly = new PriceMonthly10
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Traffic = new Traffic
@@ -153,7 +174,9 @@ Pricing pricing = new Pricing
         {
             Gross = "1.1900000000000000",
             Net = "1.0000000000",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     VatRate = "19.000000",
     Volume = new Volume
@@ -162,7 +185,9 @@ Pricing pricing = new Pricing
         {
             Gross = "1.1900000000000000",
             Net = "1.0000000000",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
 };
 ```

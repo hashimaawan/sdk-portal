@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkNlcnRpZmljYXRlc1Jlc3BvbnNl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,55 +16,74 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `certificates` | [`Array[Certificate]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/certificate.md) | Required | - |
 | `meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/meta.md) | Optional | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 certificates_response = CertificatesResponse.new(
-  [
+  certificates: [
     Certificate.new(
-      '-----BEGIN CERTIFICATE-----\n...',
-      '2016-01-30T23:55:00+00:00',
-      [
+      certificate: '-----BEGIN CERTIFICATE-----\n...',
+      created: '2016-01-30T23:55:00+00:00',
+      domain_names: [
         'example.com',
         'webmail.example.com',
         'www.example.com'
       ],
-      '03:c7:55:9b:2a:d1:04:17:09:f6:d0:7f:18:34:63:d4:3e:5f',
-      42,
-      {
-        'key0': 'labels2',
-        'key1': 'labels1',
-        'key2': 'labels0'
+      fingerprint: '03:c7:55:9b:2a:d1:04:17:09:f6:d0:7f:18:34:63:d4:3e:5f',
+      id: 42,
+      labels: {
+        'key0' => 'labels2',
+        'key1' => 'labels1',
+        'key2' => 'labels0'
       },
-      'my-resource',
-      '2019-07-08T09:59:59+00:00',
-      '2019-01-08T10:00:00+00:00',
-      [
+      name: 'my-resource',
+      not_valid_after: '2019-07-08T09:59:59+00:00',
+      not_valid_before: '2019-01-08T10:00:00+00:00',
+      used_by: [
         UsedBy.new(
-          4711,
-          'load_balancer'
+          id: 4711,
+          type: 'load_balancer',
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      Status2.new(
-        nil,
-        IssuanceEnum::COMPLETED,
-        RenewalEnum::FAILED
+      status: Status2.new(
+        error: nil,
+        issuance: Issuance::COMPLETED,
+        renewal: Renewal::FAILED,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      TypeEnum::UPLOADED
+      type: Type::UPLOADED,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  Meta.new(
-    Pagination.new(
-      77.7,
-      209.18,
-      17.58,
-      13.34,
-      50.02,
-      206.64
-    )
-  )
+  meta: Meta.new(
+    pagination: Pagination.new(
+      last_page: 77.7,
+      next_page: 209.18,
+      page: 17.58,
+      per_page: 13.34,
+      previous_page: 50.02,
+      total_entries: 206.64,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
+    ),
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

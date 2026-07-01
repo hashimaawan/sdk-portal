@@ -7,7 +7,7 @@ Flavor of operating system contained in the Image
 
 # Enum Type Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
@@ -24,9 +24,9 @@ Flavor of operating system contained in the Image
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-OsFlavorEnum osFlavor = OsFlavorEnum.Debian;
+OsFlavor osFlavor = OsFlavor.Debian;
 ```
 
 

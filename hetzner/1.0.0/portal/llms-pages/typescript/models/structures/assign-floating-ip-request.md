@@ -8,10 +8,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |------------------------------ |-------------------------------------------------------------- |
 | `floating_ip_assigned`        | The floating IP is already assigned                           |
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
-`AssignFloatingIPRequest`
+`AssignFloatingIpRequest`
 
 
 # Fields
@@ -19,15 +21,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `server` | `number` | Required | ID of the Server the Floating IP shall be assigned to |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { AssignFloatingIPRequest } from 'hetzner-cloud-apilib';
+import { AssignFloatingIpRequest } from 'hetzner-cloud-apilib';
 
-const assignFloatingIPRequest: AssignFloatingIPRequest = {
+const assignFloatingIpRequest: AssignFloatingIpRequest = {
   server: 42,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

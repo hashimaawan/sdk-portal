@@ -7,7 +7,7 @@ Type of the algorithm
 
 # Enum Type Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the algorithm
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type28Enum type28 = Type28Enum.RoundRobin;
+Type28 type28 = Type28.RoundRobin;
 ```
 
 

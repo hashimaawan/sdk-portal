@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CommonteamrosterGET(
+CommonteamrosterGet(
     ctx context.Context,
     season string,
-    teamID string) (
+    teamId string) (
     http.Response,
     error)
 ```
@@ -19,7 +19,7 @@ CommonteamrosterGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -36,9 +36,9 @@ ctx := context.Background()
 
 season := "Season0"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
-resp, err := aPIController.CommonteamrosterGET(ctx, season, teamID)
+resp, err := api.CommonteamrosterGet(ctx, season, teamId)
 if err != nil {
     log.Fatalln(err)
 } else {

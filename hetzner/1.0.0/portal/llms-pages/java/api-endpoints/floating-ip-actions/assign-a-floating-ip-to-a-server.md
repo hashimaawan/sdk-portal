@@ -7,9 +7,9 @@ Assigns a Floating IP to a Server.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> assignAFloatingIPToAServerAsync(
+CompletableFuture<ApiResponse<ActionResponse>> assignAFloatingIpToAServerAsync(
     final int id,
-    final AssignFloatingIPRequest body)
+    final AssignFloatingIpRequest body)
 ```
 
 
@@ -18,26 +18,26 @@ CompletableFuture<ActionResponse> assignAFloatingIPToAServerAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`AssignFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`AssignFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **201**: The `action` key contains the `assign` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-AssignFloatingIPRequest body = new AssignFloatingIPRequest.Builder(
+AssignFloatingIpRequest body = new AssignFloatingIpRequest.Builder(
     42
 )
 .build();
 
-floatingIPActionsController.assignAFloatingIPToAServerAsync(id, body).thenAccept(result -> {
+floatingIpActionsApi.assignAFloatingIpToAServerAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Will increase base Server costs by specific percentage
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ Will increase base Server costs by specific percentage
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Percentage` | `string` | Required | Percentage by how much the base price will increase |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,12 +26,15 @@ Will increase base Server costs by specific percentage
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     serverBackup := models.ServerBackup{
-        Percentage:           "20.0000000000",
+        Percentage:            "20.0000000000",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

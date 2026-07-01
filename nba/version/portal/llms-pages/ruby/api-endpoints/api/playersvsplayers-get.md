@@ -80,7 +80,7 @@ def playersvsplayers_get(player_team_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -148,7 +148,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.playersvsplayers_get(
+result = client_api.playersvsplayers_get(
   player_team_id,
   player_id1,
   player_id2,
@@ -181,6 +181,12 @@ client_controller.playersvsplayers_get(
   period,
   last_n_games
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

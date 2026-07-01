@@ -7,7 +7,7 @@ Returns a specific SSH key object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-GetASSHKeyAsync(
+GetASshKeyAsync(
     int id)
 ```
 
@@ -23,7 +23,7 @@ GetASSHKeyAsync(
 
 **200**: The `ssh_key` key in the reply contains an SSH key object with this structure
 
-[`Task<Models.SshKeysResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.SshKeysResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetASSHKeyAsync(
 int id = 112;
 try
 {
-    SshKeysResponse1 result = await sSHKeysController.GetASSHKeyAsync(id);
+    ApiResponse<SshKeysResponse1> result = await sshKeysApi.GetASshKeyAsync(id);
 }
 catch (ApiException e)
 {

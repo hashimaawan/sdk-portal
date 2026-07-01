@@ -7,7 +7,7 @@ Type of the Primary IP
 
 # Enum Type Name
 
-`Type50Enum`
+`Type50`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of the Primary IP
 # Example
 
 ```ruby
-type50 = Type50Enum::IPV4
+type50 = Type50::IPV4
 ```
 
 

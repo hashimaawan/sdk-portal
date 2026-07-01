@@ -51,7 +51,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := certificateActionsController.RetryIssuanceOrRenewal(ctx, id)
+apiResponse, err := certificateActionsApi.RetryIssuanceOrRenewal(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

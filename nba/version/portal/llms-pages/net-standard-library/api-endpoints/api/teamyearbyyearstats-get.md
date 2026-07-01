@@ -5,11 +5,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-TeamyearbyyearstatsGETAsync(
-    string leagueID,
+TeamyearbyyearstatsGetAsync(
+    string leagueId,
     string seasonType,
     string perMode,
-    string teamID)
+    string teamId)
 ```
 
 
@@ -17,10 +17,10 @@ TeamyearbyyearstatsGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -33,17 +33,17 @@ TeamyearbyyearstatsGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string seasonType = "SeasonType8";
 string perMode = "PerMode6";
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 try
 {
-    await aPIController.TeamyearbyyearstatsGETAsync(
-        leagueID,
+    await api.TeamyearbyyearstatsGetAsync(
+        leagueId,
         seasonType,
         perMode,
-        teamID
+        teamId
     );
 }
 catch (ApiException e)

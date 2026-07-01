@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -34,62 +36,66 @@ An object containing data for various available formats and sizes of this GIF.
 | `original_still` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/image.md) | Optional | - |
 | `preview` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/image.md) | Optional | - |
 | `preview_gif` | [`Image`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/ruby/models/structures/image.md) | Optional | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 images = Images.new(
-  Image.new(
-    'frames0',
-    'height8',
-    'mp40',
-    'mp4_size2',
-    'size2'
+  downsized: Image.new(
+    frames: 'frames0',
+    height: 'height8',
+    mp4: 'mp40',
+    mp4_size: 'mp4_size2',
+    size: 'size2',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Image.new(
-    'frames6',
-    'height4',
-    'mp46',
-    'mp4_size8',
-    'size8'
+  downsized_large: Image.new(
+    frames: 'frames6',
+    height: 'height4',
+    mp4: 'mp46',
+    mp4_size: 'mp4_size8',
+    size: 'size8',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Image.new(
-    'frames2',
-    'height0',
-    'mp42',
-    'mp4_size4',
-    'size4'
+  downsized_medium: Image.new(
+    frames: 'frames2',
+    height: 'height0',
+    mp4: 'mp42',
+    mp4_size: 'mp4_size4',
+    size: 'size4',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Image.new(
-    'frames0',
-    'height8',
-    'mp40',
-    'mp4_size2',
-    'size2'
+  downsized_small: Image.new(
+    frames: 'frames0',
+    height: 'height8',
+    mp4: 'mp40',
+    mp4_size: 'mp4_size2',
+    size: 'size2',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Image.new(
-    'frames4',
-    'height4',
-    'mp46',
-    'mp4_size8',
-    'size2'
+  downsized_still: Image.new(
+    frames: 'frames4',
+    height: 'height4',
+    mp4: 'mp46',
+    mp4_size: 'mp4_size8',
+    size: 'size2',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new,
-  Image.new
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

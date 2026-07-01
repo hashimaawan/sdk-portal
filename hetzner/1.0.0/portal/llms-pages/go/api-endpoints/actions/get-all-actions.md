@@ -10,8 +10,8 @@ Returns all Action objects. You can `sort` the results by using the sort URI par
 GetAllActions(
     ctx context.Context,
     id *int,
-    sort *models.ParameterSortEnum,
-    status *models.ParameterStatusEnum) (
+    sort *models.ParameterSort,
+    status *models.ParameterStatus) (
     models.ApiResponse[models.ActionsResponse],
     error)
 ```
@@ -22,8 +22,8 @@ GetAllActions(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `*int` | Query, Optional | Can be used multiple times, the response will contain only Actions with specified IDs |
-| `sort` | [`*models.ParameterSortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`*models.ParameterStatusEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`*models.ParameterSort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`*models.ParameterStatus`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
@@ -38,7 +38,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := actionsController.GetAllActions(ctx, nil, nil, nil)
+apiResponse, err := actionsApi.GetAllActions(ctx, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

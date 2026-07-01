@@ -8,9 +8,9 @@ Also note that when updating labels, the Floating IP’s current set of labels w
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async updateAFloatingIP(
+async updateAFloatingIp(
   id: number,
-  body?: UpdateFloatingIPRequest,
+  body?: UpdateFloatingIpRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<FloatingIpsResponse2>>
 ```
@@ -21,7 +21,7 @@ async updateAFloatingIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Floating IP |
-| `body` | [`UpdateFloatingIPRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/update-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`UpdateFloatingIpRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/update-floating-ip-request.md) | Body, Optional | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -37,14 +37,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const body: UpdateFloatingIPRequest = {
+const body: UpdateFloatingIpRequest = {
   description: 'Web Frontend',
   labels: { 'labelkey': 'value' },
   name: 'Web Frontend',
 };
 
 try {
-  const response = await floatingIPsController.updateAFloatingIP(
+  const response = await floatingIPsApi.updateAFloatingIp(
     id,
     body
   );

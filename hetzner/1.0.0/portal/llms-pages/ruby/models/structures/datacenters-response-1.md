@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkRhdGFjZW50ZXJzJTI1MjBSZXNwb25zZTE
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -13,44 +15,57 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `datacenter` | [`Datacenter`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/datacenter.md) | Required | - |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 datacenters_response1 = DatacentersResponse1.new(
-  Datacenter.new(
-    'Falkenstein DC Park 8',
-    42,
-    Location.new(
-      'Falkenstein',
-      'DE',
-      'Falkenstein DC Park 1',
-      1,
-      50.47612,
-      12.370071,
-      'fsn1',
-      'eu-central'
+  datacenter: Datacenter.new(
+    description: 'Falkenstein DC Park 8',
+    id: 42,
+    location: Location.new(
+      city: 'Falkenstein',
+      country: 'DE',
+      description: 'Falkenstein DC Park 1',
+      id: 1,
+      latitude: 50.47612,
+      longitude: 12.370071,
+      name: 'fsn1',
+      network_zone: 'eu-central',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
-    'fsn1-dc8',
-    ServerTypes.new(
-      [
+    name: 'fsn1-dc8',
+    server_types: ServerTypes.new(
+      available: [
         1,
         2,
         3
       ],
-      [
+      available_for_migration: [
         1,
         2,
         3
       ],
-      [
+      supported: [
         1,
         2,
         3
-      ]
-    )
-  )
+      ],
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
+    ),
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

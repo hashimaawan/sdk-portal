@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IP address (v4) and its reverse DNS entry of this Server
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ IP address (v4) and its reverse DNS entry of this Server
 | `dnsPtr` | `string` | Required | Reverse DNS PTR entry for the IPv4 addresses of this Server | getDnsPtr(): string | setDnsPtr(string dnsPtr): void |
 | `id` | `?int` | Optional | ID of the Resource | getId(): ?int | setId(?int id): void |
 | `ip` | `string` | Required | IP address (v4) of this Server | getIp(): string | setIp(string ip): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\Ipv44Builder;
+use HetznerCloudApiLib\Models\Builders\Ipv44Builder;
+use HetznerCloudApiLib\ApiHelper;
 
 $ipv44 = Ipv44Builder::init(
     false,
@@ -31,6 +35,7 @@ $ipv44 = Ipv44Builder::init(
     '1.2.3.4'
 )
     ->id(42)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

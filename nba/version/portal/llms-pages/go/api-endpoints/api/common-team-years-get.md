@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CommonTeamYearsGET(
+CommonTeamYearsGet(
     ctx context.Context,
-    leagueID string) (
+    leagueId string) (
     http.Response,
     error)
 ```
@@ -17,7 +17,7 @@ CommonTeamYearsGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -32,9 +32,9 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
-resp, err := aPIController.CommonTeamYearsGET(ctx, leagueID)
+resp, err := api.CommonTeamYearsGet(ctx, leagueId)
 if err != nil {
     log.Fatalln(err)
 } else {

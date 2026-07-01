@@ -29,7 +29,7 @@ def delete_a_firewall(self,
 
 **204**: Firewall deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -37,7 +37,12 @@ def delete_a_firewall(self,
 ```python
 id = 112
 
-firewalls_controller.delete_a_firewall(id)
+result = firewalls_api.delete_a_firewall(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

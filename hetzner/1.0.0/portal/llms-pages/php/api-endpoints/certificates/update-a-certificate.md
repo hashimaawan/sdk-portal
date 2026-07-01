@@ -11,7 +11,7 @@ Note: if the Certificate object changes during the request, the response will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateACertificate(int $id, ?UpdateCertificateRequest $body = null): CertificateResponse
+function updateACertificate(int $id, ?UpdateCertificateRequest $body = null): ApiResponse
 ```
 
 
@@ -27,7 +27,7 @@ function updateACertificate(int $id, ?UpdateCertificateRequest $body = null): Ce
 
 **200**: The `certificate` key contains the Certificate that was just updated
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -40,17 +40,23 @@ $body = UpdateCertificateRequestBuilder::init()
     ->name('my website cert')
     ->build();
 
-$certificatesController = $client->getCertificatesController();
+$certificatesApi = $client->getCertificatesApi();
+$apiResponse = $certificatesApi->updateACertificate(
+    $id,
+    $body
+);
 
-try {
-    $result = $certificatesController->updateACertificate(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'CertificateResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

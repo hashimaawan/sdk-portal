@@ -7,7 +7,7 @@ Returns a specific Action object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAnAction(int $id): ActionResponse
+function getAnAction(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAnAction(int $id): ActionResponse
 
 **200**: The `action` key in the reply has this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAnAction(int $id): ActionResponse
 ```php
 $id = 112;
 
-$actionsController = $client->getActionsController();
+$actionsApi = $client->getActionsApi();
+$apiResponse = $actionsApi->getAnAction($id);
 
-try {
-    $result = $actionsController->getAnAction($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

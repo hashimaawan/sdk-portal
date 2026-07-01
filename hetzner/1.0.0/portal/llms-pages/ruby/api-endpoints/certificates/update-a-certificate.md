@@ -28,7 +28,7 @@ def update_a_certificate(id,
 
 **200**: The `certificate` key contains the Certificate that was just updated
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -37,15 +37,20 @@ def update_a_certificate(id,
 id = 112
 
 body = UpdateCertificateRequest.new(
-  { 'labelkey' => 'value' },
-  'my website cert'
+  labels: { 'labelkey' => 'value' },
+  name: 'my website cert'
 )
 
-result = certificates_controller.update_a_certificate(
+result = certificates_api.update_a_certificate(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

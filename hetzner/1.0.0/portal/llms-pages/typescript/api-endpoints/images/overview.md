@@ -27,10 +27,10 @@ Prebuild images with specific software configurations, e.g. “Wordpress”. All
 
 # Create Instance
 
-The instance of the `ImagesController` class can be created using the API Client.
+The instance of the `ImagesApi` class can be created using the API Client.
 
 ```
-const imagesController = new ImagesController(client);
+const imagesApi = new ImagesApi(client);
 ```
 
 

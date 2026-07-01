@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Configuration for type LabelSelector, required if type is `label_selector`
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -15,6 +17,7 @@ Configuration for type LabelSelector, required if type is `label_selector`
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `selector` | `string` | Required | Label selector |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -24,6 +27,9 @@ import { LabelSelector1 } from 'hetzner-cloud-apilib';
 
 const labelSelector1: LabelSelector1 = {
   selector: 'selector2',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

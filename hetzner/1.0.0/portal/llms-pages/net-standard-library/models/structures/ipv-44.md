@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IP address (v4) and its reverse DNS entry of this Server
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ IP address (v4) and its reverse DNS entry of this Server
 | `DnsPtr` | `string` | Required | Reverse DNS PTR entry for the IPv4 addresses of this Server |
 | `Id` | `int?` | Optional | ID of the Resource |
 | `Ip` | `string` | Required | IP address (v4) of this Server |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 
 Ipv44 ipv44 = new Ipv44
 {
@@ -31,6 +35,7 @@ Ipv44 ipv44 = new Ipv44
     DnsPtr = "server01.example.com",
     Ip = "1.2.3.4",
     Id = 42,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

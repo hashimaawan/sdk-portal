@@ -7,10 +7,10 @@ Returns prices for resources.
 
 # Get singleton instance
 
-The singleton instance of the `PricingController` class can be accessed from the API Client.
+The singleton instance of the `PricingApi` class can be accessed from the API Client.
 
 ```
-$pricingController = $client->getPricingController();
+$pricingApi = $client->getPricingApi();
 ```
 
 

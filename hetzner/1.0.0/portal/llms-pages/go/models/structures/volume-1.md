@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlZvbHVtZTE
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -22,7 +24,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Protection` | [`models.Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `Server` | `*int` | Required | ID of the Server the Volume is attached to, null if it is not attached at all |
 | `Size` | `float64` | Required | Size in GB of the Volume |
-| `Status` | [`models.Status113Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `Status` | [`models.Status113`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -31,35 +34,44 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     volume1 := models.Volume1{
-        Created:              "2016-01-30T23:55:00+00:00",
-        Format:               models.ToPointer("xfs"),
-        Id:                   42,
-        Labels:               map[string]string{
+        Created:               "2016-01-30T23:55:00+00:00",
+        Format:                models.ToPointer("xfs"),
+        Id:                    42,
+        Labels:                map[string]string{
             "key0": "labels8",
         },
-        LinuxDevice:          "/dev/disk/by-id/scsi-0HC_Volume_4711",
-        Location:             models.Location16{
-            City:                 "Falkenstein",
-            Country:              "DE",
-            Description:          "Falkenstein DC Park 1",
-            Id:                   float64(1),
-            Latitude:             float64(50.47612),
-            Longitude:            float64(12.370071),
-            Name:                 "fsn1",
-            NetworkZone:          "eu-central",
+        LinuxDevice:           "/dev/disk/by-id/scsi-0HC_Volume_4711",
+        Location:              models.Location16{
+            City:                  "Falkenstein",
+            Country:               "DE",
+            Description:           "Falkenstein DC Park 1",
+            Id:                    float64(1),
+            Latitude:              float64(50.47612),
+            Longitude:             float64(12.370071),
+            Name:                  "fsn1",
+            NetworkZone:           "eu-central",
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         },
-        Name:                 "my-resource",
-        Protection:           models.Protection{
-            Delete:               false,
+        Name:                  "my-resource",
+        Protection:            models.Protection{
+            Delete:                false,
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         },
-        Server:               models.ToPointer(12),
-        Size:                 float64(42),
-        Status:               models.Status113Enum_AVAILABLE,
+        Server:                models.ToPointer(12),
+        Size:                  float64(42),
+        Status:                models.Status113_Available,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

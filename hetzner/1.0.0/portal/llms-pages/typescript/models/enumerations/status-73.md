@@ -7,7 +7,7 @@ Status of the Server
 
 # Enum Type Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
@@ -28,9 +28,9 @@ Status of the Server
 # Example
 
 ```ts
-import { Status73Enum } from 'hetzner-cloud-apilib';
+import { Status73 } from 'hetzner-cloud-apilib';
 
-const status73 = Status73Enum.Starting;
+const status73 = Status73.Starting;
 ```
 
 

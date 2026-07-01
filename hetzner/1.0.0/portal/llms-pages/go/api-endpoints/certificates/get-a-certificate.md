@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := certificatesController.GetACertificate(ctx, id)
+apiResponse, err := certificatesApi.GetACertificate(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

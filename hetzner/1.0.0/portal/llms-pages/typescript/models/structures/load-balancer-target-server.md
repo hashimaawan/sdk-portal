@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Server where the traffic should be routed through
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -15,6 +17,7 @@ Server where the traffic should be routed through
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Required | ID of the Server |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -24,6 +27,9 @@ import { LoadBalancerTargetServer } from 'hetzner-cloud-apilib';
 
 const loadBalancerTargetServer: LoadBalancerTargetServer = {
   id: 80,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

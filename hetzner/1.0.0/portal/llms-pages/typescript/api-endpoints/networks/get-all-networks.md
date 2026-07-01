@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await networksController.getAllNetworks();
+  const response = await networksApi.getAllNetworks();
 
   // Extracting fully parsed response body.
   console.log(response.result);

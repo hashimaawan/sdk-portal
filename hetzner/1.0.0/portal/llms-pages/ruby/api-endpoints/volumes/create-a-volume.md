@@ -36,23 +36,28 @@ def create_a_volume(body: nil)
 
 The `action` key contains the Action tracking Volume creation
 
-[`VolumesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/volumes-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`VolumesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/volumes-response-1.md).
 
 
 # Example Usage
 
 ```ruby
 body = CreateVolumeRequest.new(
-  'test-database',
-  42,
-  false,
-  'xfs',
-  { 'labelkey' => 'value' },
-  'nbg1'
+  name: 'test-database',
+  size: 42,
+  automount: false,
+  format: 'xfs',
+  labels: { 'labelkey' => 'value' },
+  location: 'nbg1'
 )
 
-result = volumes_controller.create_a_volume(body: body)
-puts result
+result = volumes_api.create_a_volume(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

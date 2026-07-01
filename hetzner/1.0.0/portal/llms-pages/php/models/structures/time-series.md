@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlRpbWVTZXJpZXM
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,12 +15,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `values` | array<array<float\|string>> | Required | This is 2d Array of a container for one-of cases. | getValues(): array | setValues(array values): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\TimeSeriesBuilder;
+use HetznerCloudApiLib\Models\Builders\TimeSeriesBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $timeSeries = TimeSeriesBuilder::init(
     [
@@ -31,7 +35,9 @@ $timeSeries = TimeSeriesBuilder::init(
             138.95
         ]
     ]
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

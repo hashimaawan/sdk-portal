@@ -20,7 +20,7 @@ def boxscoresummaryv2_get(game_id)
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -28,7 +28,13 @@ def boxscoresummaryv2_get(game_id)
 ```ruby
 game_id = 'GameID8'
 
-client_controller.boxscoresummaryv2_get(game_id)
+result = client_api.boxscoresummaryv2_get(game_id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -5,22 +5,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`Status70Enum`
+`Status70`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `INITIALIZING` |
-| `STARTING` |
-| `RUNNING` |
-| `STOPPING` |
-| `OFF` |
-| `DELETING` |
-| `REBUILDING` |
-| `MIGRATING` |
-| `UNKNOWN` |
+| `Initializing` |
+| `Starting` |
+| `Running` |
+| `Stopping` |
+| `Off` |
+| `Deleting` |
+| `Rebuilding` |
+| `Migrating` |
+| `Unknown` |
 
 
 # Example
@@ -29,11 +29,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status70 := models.Status70Enum_MIGRATING
+    status70 := models.Status70_Migrating
 
 }
 ```

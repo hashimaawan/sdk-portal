@@ -22,7 +22,7 @@ def unassign_a_floating_ip(id)
 
 **201**: The `action` key contains the `unassign` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -30,8 +30,13 @@ def unassign_a_floating_ip(id)
 ```ruby
 id = 112
 
-result = floating_ip_actions_controller.unassign_a_floating_ip(id)
-puts result
+result = floating_ip_actions_api.unassign_a_floating_ip(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

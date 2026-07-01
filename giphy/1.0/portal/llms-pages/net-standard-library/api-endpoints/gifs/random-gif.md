@@ -13,7 +13,7 @@ RandomGifAsync(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -28,7 +28,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**
 
-[`Task<Models.GifsRandomResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/gifs-random-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GifsRandomResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/gifs-random-response.md).
 
 
 # Example Usage
@@ -36,7 +36,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 ```csharp
 try
 {
-    GifsRandomResponse result = await gifsController.RandomGifAsync();
+    ApiResponse<GifsRandomResponse> result = await gifsApi.RandomGifAsync();
 }
 catch (ApiException e)
 {

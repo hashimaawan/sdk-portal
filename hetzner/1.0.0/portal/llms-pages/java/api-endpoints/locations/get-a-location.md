@@ -7,7 +7,7 @@ Returns a specific Location object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LocationsResponse1> getALocationAsync(
+CompletableFuture<ApiResponse<LocationsResponse1>> getALocationAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<LocationsResponse1> getALocationAsync(
 
 **200**: The `location` key in the reply contains a Location object with this structure
 
-[`LocationsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/locations-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LocationsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/locations-response-1.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<LocationsResponse1> getALocationAsync(
 ```java
 int id = 112;
 
-locationsController.getALocationAsync(id).thenAccept(result -> {
+locationsApi.getALocationAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

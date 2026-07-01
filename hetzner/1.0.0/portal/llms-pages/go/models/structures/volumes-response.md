@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlZvbHVtZXMlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `Meta` | [`*models.Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/meta.md) | Optional | - |
 | `Volumes` | [`[]models.Volume1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/volume-1.md) | Required | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -22,48 +25,66 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     volumesResponse := models.VolumesResponse{
-        Meta:                 models.ToPointer(models.Meta{
-            Pagination:           models.Pagination{
-                LastPage:             models.ToPointer(float64(77.7)),
-                NextPage:             models.ToPointer(float64(209.18)),
-                Page:                 float64(17.58),
-                PerPage:              float64(13.34),
-                PreviousPage:         models.ToPointer(float64(50.02)),
-                TotalEntries:         models.ToPointer(float64(206.64)),
+        Meta:                  models.ToPointer(models.Meta{
+            Pagination:            models.Pagination{
+                LastPage:              models.ToPointer(float64(77.7)),
+                NextPage:              models.ToPointer(float64(209.18)),
+                Page:                  float64(17.58),
+                PerPage:               float64(13.34),
+                PreviousPage:          models.ToPointer(float64(50.02)),
+                TotalEntries:          models.ToPointer(float64(206.64)),
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
             },
         }),
-        Volumes:              []models.Volume1{
+        Volumes:               []models.Volume1{
             models.Volume1{
-                Created:              "2016-01-30T23:55:00+00:00",
-                Format:               models.ToPointer("xfs"),
-                Id:                   42,
-                Labels:               map[string]string{
+                Created:               "2016-01-30T23:55:00+00:00",
+                Format:                models.ToPointer("xfs"),
+                Id:                    42,
+                Labels:                map[string]string{
                     "key0": "labels4",
                 },
-                LinuxDevice:          "/dev/disk/by-id/scsi-0HC_Volume_4711",
-                Location:             models.Location16{
-                    City:                 "Falkenstein",
-                    Country:              "DE",
-                    Description:          "Falkenstein DC Park 1",
-                    Id:                   float64(1),
-                    Latitude:             float64(50.47612),
-                    Longitude:            float64(12.370071),
-                    Name:                 "fsn1",
-                    NetworkZone:          "eu-central",
+                LinuxDevice:           "/dev/disk/by-id/scsi-0HC_Volume_4711",
+                Location:              models.Location16{
+                    City:                  "Falkenstein",
+                    Country:               "DE",
+                    Description:           "Falkenstein DC Park 1",
+                    Id:                    float64(1),
+                    Latitude:              float64(50.47612),
+                    Longitude:             float64(12.370071),
+                    Name:                  "fsn1",
+                    NetworkZone:           "eu-central",
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
-                Name:                 "my-resource",
-                Protection:           models.Protection{
-                    Delete:               false,
+                Name:                  "my-resource",
+                Protection:            models.Protection{
+                    Delete:                false,
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
                 },
-                Server:               models.ToPointer(12),
-                Size:                 float64(42),
-                Status:               models.Status113Enum_AVAILABLE,
+                Server:                models.ToPointer(12),
+                Size:                  float64(42),
+                Status:                models.Status113_Available,
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

@@ -7,7 +7,7 @@ Type of the gif. By default, this is almost always gif
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of the gif. By default, this is almost always gif
 # Example
 
 ```php
-use GiphyAPILib\Models\TypeEnum;
+use GiphyApiLib\Models\Type;
 
-$type = TypeEnum::GIF;
+$type = Type::GIF;
 ```
 
 

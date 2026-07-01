@@ -7,7 +7,7 @@ Type of the health check
 
 # Enum Type Name
 
-`Protocol6Enum`
+`Protocol6`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of the health check
 # Example
 
 ```ruby
-protocol6 = Protocol6Enum::TCP
+protocol6 = Protocol6::TCP
 ```
 
 

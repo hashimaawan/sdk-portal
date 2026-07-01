@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNlcnZlclR5cGU
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -13,7 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `cores` | `number` | Required | Number of cpu cores a Server of this type will have |
-| `cpuType` | [`CpuTypeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/cpu-type.md) | Required | Type of cpu |
+| `cpuType` | [`CpuType`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/cpu-type.md) | Required | Type of cpu |
 | `deprecated` | `boolean` | Required | True if Server type is deprecated |
 | `description` | `string` | Required | Description of the Server type |
 | `disk` | `number` | Required | Disk size a Server of this type will have in GB |
@@ -21,21 +23,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `memory` | `number` | Required | Memory a Server of this type will have in GB |
 | `name` | `string` | Required | Unique identifier of the Server type |
 | `prices` | [`Price9[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/price-9.md) | Required | Prices in different Locations |
-| `storageType` | [`StorageTypeEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/storage-type.md) | Required | Type of Server boot drive. Local has higher speed. Network has better availability. |
+| `storageType` | [`StorageType`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/storage-type.md) | Required | Type of Server boot drive. Local has higher speed. Network has better availability. |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import {
-  CpuTypeEnum,
-  ServerType,
-  StorageTypeEnum,
-} from 'hetzner-cloud-apilib';
+import { CpuType, ServerType, StorageType } from 'hetzner-cloud-apilib';
 
 const serverType: ServerType = {
   cores: 1,
-  cpuType: CpuTypeEnum.Shared,
+  cpuType: CpuType.Shared,
   deprecated: false,
   description: 'CX11',
   disk: 24,
@@ -48,14 +47,26 @@ const serverType: ServerType = {
       priceHourly: {
         gross: '1.1900000000000000',
         net: '1.0000000000',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       priceMonthly: {
         gross: '1.1900000000000000',
         net: '1.0000000000',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     }
   ],
-  storageType: StorageTypeEnum.Local,
+  storageType: StorageType.Local,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

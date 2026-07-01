@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get Instance
 
-The instance of the `FirewallActionsController` class can be accessed from the API Client.
+The instance of the `FirewallActionsApi` class can be accessed from the API Client.
 
 ```
-firewallActionsController := client.FirewallActionsController()
+firewallActionsApi := client.FirewallActionsApi()
 ```
 
 

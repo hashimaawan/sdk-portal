@@ -18,7 +18,7 @@ Adds a target to a Load Balancer.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> addTargetAsync(
+CompletableFuture<ApiResponse<ActionResponse>> addTargetAsync(
     final int id,
     final AddTargetRequest body)
 ```
@@ -36,7 +36,7 @@ CompletableFuture<ActionResponse> addTargetAsync(
 
 **201**: The `action` key contains the `add_target` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -44,12 +44,12 @@ CompletableFuture<ActionResponse> addTargetAsync(
 ```java
 int id = 112;
 AddTargetRequest body = new AddTargetRequest.Builder(
-    Type29Enum.LABEL_SELECTOR
+    Type29.LABEL_SELECTOR
 )
 .usePrivateIp(true)
 .build();
 
-loadBalancerActionsController.addTargetAsync(id, body).thenAccept(result -> {
+loadBalancerActionsApi.addTargetAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

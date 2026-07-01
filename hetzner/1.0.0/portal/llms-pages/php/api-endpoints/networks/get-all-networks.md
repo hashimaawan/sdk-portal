@@ -7,7 +7,7 @@ Gets all existing networks that you have available.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAllNetworks(?string $name = null, ?string $labelSelector = null): NetworksResponse
+function getAllNetworks(?string $name = null, ?string $labelSelector = null): ApiResponse
 ```
 
 
@@ -23,20 +23,26 @@ function getAllNetworks(?string $name = null, ?string $labelSelector = null): Ne
 
 **200**: The `networks` key contains a list of networks
 
-[`NetworksResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/networks-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`NetworksResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/networks-response.md).
 
 
 # Example Usage
 
 ```php
-$networksController = $client->getNetworksController();
+$networksApi = $client->getNetworksApi();
+$apiResponse = $networksApi->getAllNetworks();
 
-try {
-    $result = $networksController->getAllNetworks();
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'NetworksResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -41,7 +41,7 @@ def allstarballotpredictor_get(self,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -67,7 +67,7 @@ east_player_4 = 'EastPlayer44'
 
 east_player_5 = 'EastPlayer54'
 
-client_controller.allstarballotpredictor_get(
+result = client_api.allstarballotpredictor_get(
     west_player_1,
     west_player_2,
     west_player_3,
@@ -79,6 +79,11 @@ client_controller.allstarballotpredictor_get(
     east_player_4,
     east_player_5
 )
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 
@@ -86,8 +91,8 @@ client_controller.allstarballotpredictor_get(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad request - bad parameters | `APIException` |
-| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `APIException` |
+| 400 | Bad request - bad parameters | `ApiException` |
+| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `ApiException` |
 
 
 

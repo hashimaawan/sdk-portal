@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayercareerstatsGET(
+PlayercareerstatsGet(
     ctx context.Context,
     perMode string,
-    playerID string) (
+    playerId string) (
     http.Response,
     error)
 ```
@@ -19,7 +19,7 @@ PlayercareerstatsGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -36,9 +36,9 @@ ctx := context.Background()
 
 perMode := "PerMode6"
 
-playerID := "PlayerID6"
+playerId := "PlayerID6"
 
-resp, err := aPIController.PlayercareerstatsGET(ctx, perMode, playerID)
+resp, err := api.PlayercareerstatsGet(ctx, perMode, playerId)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -15,7 +15,7 @@ TranslateGif(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -39,7 +39,7 @@ ctx := context.Background()
 
 s := "s8"
 
-apiResponse, err := gifsController.TranslateGif(ctx, s)
+apiResponse, err := gifsApi.TranslateGif(ctx, s)
 if err != nil {
     log.Fatalln(err)
 } else {

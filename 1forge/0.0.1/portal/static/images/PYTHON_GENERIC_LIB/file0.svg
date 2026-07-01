@@ -42,7 +42,7 @@
     <rect x="1" y="1" width="871" height="29" class="cls-2" />
     <path d="M857.242,15.293 L853.359,15.293 L851.988,15.293 L848.104,15.293 C847.726,15.293 847.419,15.028 847.419,14.701 C847.419,14.374 847.726,14.109 848.104,14.109 L851.988,14.109 L853.359,14.109 L857.242,14.109 C857.621,14.109 857.927,14.374 857.927,14.701 C857.927,15.028 857.621,15.293 857.242,15.293 Z" class="cls-3" />
     <text x="10" y="20" class="cls-4"><tspan class="cls-5">C:\WINDOWS\system32\cmd.exe</tspan></text>
-    <text x="11" y="57" class="cls-6"><tspan class="cls-7">C:\Users\Username\Desktop\M1forgefinanceapis-P...&gt;pip install -r requirements.txt</tspan></text>
+    <text x="11" y="57" class="cls-6"><tspan class="cls-7">C:\Users\Username\Desktop\M1Forgefinanceapis-P...&gt;pip install -r requirements.txt</tspan></text>
     <text x="11" y="76" class="cls-6"><tspan class="cls-7">Collecting requests==2.9.1 (from -r requirements.txt (line 1))</tspan></text>
     <text x="11" y="133" class="cls-6"><tspan class="cls-7">Collecting jsonpickle==0.7.1 (from -r requirements.txt (line 2))</tspan></text>
     <text x="11" y="171" class="cls-6"><tspan class="cls-7">Collecting python-dateutil-2.5.3 (from -r requirements.txt (line 3))</tspan></text>

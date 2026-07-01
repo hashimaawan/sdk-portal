@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> commonteamrosterGETAsync(
+CompletableFuture<ApiResponse<Void>> commonteamrosterGetAsync(
     final String season,
-    final String teamID)
+    final String teamId)
 ```
 
 
@@ -16,7 +16,7 @@ CompletableFuture<Void> commonteamrosterGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `String` | Query, Required | - |
-| `teamID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -30,10 +30,11 @@ CompletableFuture<Void> commonteamrosterGETAsync(
 
 ```java
 String season = "Season0";
-String teamID = "TeamID8";
+String teamId = "TeamID8";
 
-aPIController.commonteamrosterGETAsync(season, teamID).thenAccept(result -> {
+api.commonteamrosterGetAsync(season, teamId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

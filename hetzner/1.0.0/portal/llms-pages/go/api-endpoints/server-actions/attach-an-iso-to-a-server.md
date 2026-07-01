@@ -9,7 +9,7 @@ Servers with attached ISOs have a modified boot order: They will try to boot fro
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-AttachAnISOToAServer(
+AttachAnIsoToAServer(
     ctx context.Context,
     id int,
     body *models.ServersActionsAttachIsoRequest) (
@@ -41,10 +41,10 @@ ctx := context.Background()
 id := 112
 
 body := models.ServersActionsAttachIsoRequest{
-    Iso:                  "FreeBSD-11.0-RELEASE-amd64-dvd1",
+    Iso:                   "FreeBSD-11.0-RELEASE-amd64-dvd1",
 }
 
-apiResponse, err := serverActionsController.AttachAnISOToAServer(ctx, id, &body)
+apiResponse, err := serverActionsApi.AttachAnIsoToAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

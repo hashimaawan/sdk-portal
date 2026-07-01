@@ -7,10 +7,10 @@ TLS/SSL Certificates prove the identity of a Server and are used to encrypt clie
 
 # Get Instance
 
-The instance of the `CertificatesController` class can be accessed from the API Client.
+The instance of the `CertificatesApi` class can be accessed from the API Client.
 
 ```
-certificatesController := client.CertificatesController()
+certificatesApi := client.CertificatesApi()
 ```
 
 

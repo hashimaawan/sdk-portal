@@ -7,7 +7,7 @@ Type of the algorithm
 
 # Enum Type Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the algorithm
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type28Enum;
+import cloud.hetzner.api.models.Type28;
 
-Type28Enum type28 = Type28Enum.ROUND_ROBIN;
+Type28 type28 = Type28.ROUND_ROBIN;
 ```
 
 

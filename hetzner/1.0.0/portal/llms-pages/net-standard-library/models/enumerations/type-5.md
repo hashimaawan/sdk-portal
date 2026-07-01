@@ -7,7 +7,7 @@ Type of resource referenced
 
 # Enum Type Name
 
-`Type5Enum`
+`Type5`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of resource referenced
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type5Enum type5 = Type5Enum.Server;
+Type5 type5 = Type5.Server;
 ```
 
 

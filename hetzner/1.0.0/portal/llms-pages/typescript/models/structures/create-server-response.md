@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlc3BvbnNl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,22 +18,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `nextActions` | [`Action[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/action.md) | Required | - |
 | `rootPassword` | `string \| null` | Required | Root password when no SSH keys have been specified |
 | `server` | [`Server18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/server-18.md) | Required | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  CpuTypeEnum,
+  CpuType,
   CreateServerResponse,
-  OsFlavorEnum,
-  Status24Enum,
-  Status72Enum,
-  Status73Enum,
-  StatusEnum,
-  StorageTypeEnum,
-  Type22Enum,
-  Type26Enum,
+  OsFlavor,
+  Status,
+  Status24,
+  Status72,
+  Status73,
+  StorageType,
+  Type22,
+  Type26,
 } from 'hetzner-cloud-apilib';
 
 const createServerResponse: CreateServerResponse = {
@@ -40,6 +43,9 @@ const createServerResponse: CreateServerResponse = {
     error: {
       code: 'action_failed',
       message: 'Action failed',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     finished: '2016-01-30T23:55:00+00:00',
     id: 42,
@@ -48,10 +54,16 @@ const createServerResponse: CreateServerResponse = {
       {
         id: 42,
         type: 'server',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     started: '2016-01-30T23:55:00+00:00',
-    status: StatusEnum.Running,
+    status: Status.Running,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   nextActions: [
     {
@@ -59,6 +71,9 @@ const createServerResponse: CreateServerResponse = {
       error: {
         code: 'action_failed',
         message: 'Action failed',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       finished: '2016-01-30T23:55:00+00:00',
       id: 42,
@@ -67,10 +82,16 @@ const createServerResponse: CreateServerResponse = {
         {
           id: 42,
           type: 'server',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
       started: '2016-01-30T23:55:00+00:00',
-      status: StatusEnum.Success,
+      status: Status.Success,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   rootPassword: 'YItygq1v3GYjjMomLaKc',
@@ -89,6 +110,9 @@ const createServerResponse: CreateServerResponse = {
         longitude: 12.370071,
         name: 'fsn1',
         networkZone: 'eu-central',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       name: 'fsn1-dc8',
       serverTypes: {
@@ -107,6 +131,12 @@ const createServerResponse: CreateServerResponse = {
           2,
           3
         ],
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     },
     id: 42,
@@ -116,6 +146,9 @@ const createServerResponse: CreateServerResponse = {
       createdFrom: {
         id: 1,
         name: 'Server',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       deleted: null,
       deprecated: '2018-02-28T00:00:00+00:00',
@@ -127,14 +160,20 @@ const createServerResponse: CreateServerResponse = {
         'key0': 'labels4'
       },
       name: 'ubuntu-20.04',
-      osFlavor: OsFlavorEnum.Ubuntu,
+      osFlavor: OsFlavor.Ubuntu,
       osVersion: '20.04',
       protection: {
         mDelete: false,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
-      status: Status24Enum.Unavailable,
-      type: Type22Enum.Snapshot,
+      status: Status24.Unavailable,
+      type: Type22.Snapshot,
       rapidDeploy: false,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     includedTraffic: 654321,
     ingoingTraffic: 123456,
@@ -143,7 +182,10 @@ const createServerResponse: CreateServerResponse = {
       description: 'FreeBSD 11.0 x64',
       id: 42,
       name: 'FreeBSD-11.0-RELEASE-amd64-dvd1',
-      type: Type26Enum.Public,
+      type: Type26.Public,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     labels: {
       'key0': 'labels0',
@@ -161,11 +203,17 @@ const createServerResponse: CreateServerResponse = {
         ip: '10.0.0.2',
         macAddress: '86:00:ff:2a:7d:e1',
         network: 4711,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     protection: {
       mDelete: false,
       rebuild: false,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     publicNet: {
       floatingIps: [
@@ -176,6 +224,9 @@ const createServerResponse: CreateServerResponse = {
         dnsPtr: 'server01.example.com',
         ip: '1.2.3.4',
         id: 42,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       ipv6: {
         blocked: false,
@@ -183,26 +234,41 @@ const createServerResponse: CreateServerResponse = {
           {
             dnsPtr: 'server.example.com',
             ip: '2001:db8::1',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           }
         ],
         ip: '2001:db8::/64',
         id: 42,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       firewalls: [
         {
           id: 250,
-          status: Status72Enum.Applied,
+          status: Status72.Applied,
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         {
           id: 250,
-          status: Status72Enum.Applied,
+          status: Status72.Applied,
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     rescueEnabled: false,
     serverType: {
       cores: 1,
-      cpuType: CpuTypeEnum.Shared,
+      cpuType: CpuType.Shared,
       deprecated: false,
       description: 'CX11',
       disk: 25,
@@ -215,16 +281,28 @@ const createServerResponse: CreateServerResponse = {
           priceHourly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           priceMonthly: {
             gross: '1.1900000000000000',
             net: '1.0000000000',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
-      storageType: StorageTypeEnum.Local,
+      storageType: StorageType.Local,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
-    status: Status73Enum.Starting,
+    status: Status73.Starting,
     loadBalancers: [
       144,
       143,
@@ -243,11 +321,20 @@ const createServerResponse: CreateServerResponse = {
         253
       ],
       type: 'type2',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     volumes: [
       91,
       92
     ],
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

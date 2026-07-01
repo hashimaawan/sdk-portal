@@ -20,12 +20,12 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```csharp
-using GiphyAPI.Standard;
-using GiphyAPI.Standard.Http.Client.Proxy;
+using GiphyApi.Standard;
+using GiphyApi.Standard.Http.Client.Proxy;
 
 namespace ConsoleApp;
 
-var client = new GiphyAPIClient.Builder()
+var client = new GiphyApiClient.Builder()
 .HttpClientConfig(config => config
     .Proxy(new ProxyConfigurationBuilder("http://localhost")
             .Port(8080)

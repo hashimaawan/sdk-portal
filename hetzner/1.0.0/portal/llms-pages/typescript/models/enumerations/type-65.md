@@ -7,7 +7,7 @@ Type of rescue system to boot (default: `linux64`)
 
 # Enum Type Name
 
-`Type65Enum`
+`Type65`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of rescue system to boot (default: `linux64`)
 # Example
 
 ```ts
-import { Type65Enum } from 'hetzner-cloud-apilib';
+import { Type65 } from 'hetzner-cloud-apilib';
 
-const type65 = Type65Enum.Linux64;
+const type65 = Type65.Linux64;
 ```
 
 

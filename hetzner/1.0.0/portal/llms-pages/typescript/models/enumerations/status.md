@@ -7,7 +7,7 @@ Status of the Action
 
 # Enum Type Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the Action
 # Example
 
 ```ts
-import { StatusEnum } from 'hetzner-cloud-apilib';
+import { Status } from 'hetzner-cloud-apilib';
 
-const status = StatusEnum.Error;
+const status = Status.Error;
 ```
 
 

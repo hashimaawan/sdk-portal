@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlVzZWRCeQ
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,14 +16,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `id` | `Integer` | Required | ID of resource referenced |
 | `type` | `String` | Required | Type of resource referenced |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 used_by = UsedBy.new(
-  4711,
-  'load_balancer'
+  id: 4711,
+  type: 'load_balancer',
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

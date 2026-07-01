@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclNlcnZpY2U
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,10 +16,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `destinationPort` | `number` | Required | Port the Load Balancer will balance to |
 | `healthCheck` | [`LoadBalancerServiceHealthCheck`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer-service-health-check.md) | Required | Service health check |
-| `http` | [`LoadBalancerServiceHTTP \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer-service-http.md) | Optional | Configuration option for protocols http and https |
+| `http` | [`LoadBalancerServiceHttp \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer-service-http.md) | Optional | Configuration option for protocols http and https |
 | `listenPort` | `number` | Required | Port the Load Balancer listens on |
-| `protocol` | [`Protocol7Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/protocol-7.md) | Required | Protocol of the Load Balancer |
+| `protocol` | [`Protocol7`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/protocol-7.md) | Required | Protocol of the Load Balancer |
 | `proxyprotocol` | `boolean` | Required | Is Proxyprotocol enabled or not |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -25,8 +28,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 ```ts
 import {
   LoadBalancerService,
-  Protocol6Enum,
-  Protocol7Enum,
+  Protocol6,
+  Protocol7,
 } from 'hetzner-cloud-apilib';
 
 const loadBalancerService: LoadBalancerService = {
@@ -34,7 +37,7 @@ const loadBalancerService: LoadBalancerService = {
   healthCheck: {
     interval: 15,
     port: 4711,
-    protocol: Protocol6Enum.Http,
+    protocol: Protocol6.Http,
     retries: 3,
     timeout: 10,
     http: {
@@ -50,7 +53,7 @@ const loadBalancerService: LoadBalancerService = {
     },
   },
   listenPort: 443,
-  protocol: Protocol7Enum.Https,
+  protocol: Protocol7.Https,
   proxyprotocol: false,
   http: {
     certificates: [
@@ -60,6 +63,12 @@ const loadBalancerService: LoadBalancerService = {
     cookieName: 'cookie_name6',
     redirectHttp: false,
     stickySessions: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

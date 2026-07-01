@@ -7,7 +7,7 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 
 # Enum Type Name
 
-`Type1Enum`
+`Type1`
 
 
 # Fields
@@ -21,9 +21,9 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 # Example
 
 ```python
-from hetznercloudapi.models.type_1_enum import Type1Enum
+from hetznercloudapi.models.type_1 import Type1
 
-type_1 = Type1Enum.UPLOADED
+type_1 = Type1.UPLOADED
 ```
 
 

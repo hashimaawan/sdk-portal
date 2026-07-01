@@ -7,7 +7,7 @@ Status of the renewal process of the Certificate.
 
 # Enum Type Name
 
-`RenewalEnum`
+`Renewal`
 
 
 # Fields
@@ -23,9 +23,9 @@ Status of the renewal process of the Certificate.
 # Example
 
 ```java
-import cloud.hetzner.api.models.RenewalEnum;
+import cloud.hetzner.api.models.Renewal;
 
-RenewalEnum renewal = RenewalEnum.FAILED;
+Renewal renewal = Renewal.FAILED;
 ```
 
 

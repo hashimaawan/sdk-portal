@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNyZWF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -19,6 +21,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `str` | Required | Name of the volume |
 | `server` | `int` | Optional | Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) |
 | `size` | `int` | Required | Size of the Volume in GB |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
@@ -35,7 +38,10 @@ create_volume_request = CreateVolumeRequest(
     format='xfs',
     labels=jsonpickle.decode('{"labelkey":"value"}'),
     location='nbg1',
-    server=110
+    server=110,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

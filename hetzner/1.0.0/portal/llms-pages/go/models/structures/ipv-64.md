@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IPv6 network assigned to this Server and its reverse DNS entry
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -18,6 +20,7 @@ IPv6 network assigned to this Server and its reverse DNS entry
 | `DnsPtr` | [`[]models.DnsPtr8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/dns-ptr-8.md) | Required | Reverse DNS PTR entries for the IPv6 addresses of this Server, `null` by default |
 | `Id` | `*int` | Optional | ID of the Resource |
 | `Ip` | `string` | Required | IP address (v6) of this Server |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,20 +29,26 @@ IPv6 network assigned to this Server and its reverse DNS entry
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     ipv64 := models.Ipv64{
-        Blocked:              false,
-        DnsPtr:               []models.DnsPtr8{
+        Blocked:               false,
+        DnsPtr:                []models.DnsPtr8{
             models.DnsPtr8{
-                DnsPtr:               "server.example.com",
-                Ip:                   "2001:db8::1",
+                DnsPtr:                "server.example.com",
+                Ip:                    "2001:db8::1",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
         },
-        Id:                   models.ToPointer(42),
-        Ip:                   "2001:db8::/64",
+        Id:                    models.ToPointer(42),
+        Ip:                    "2001:db8::/64",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

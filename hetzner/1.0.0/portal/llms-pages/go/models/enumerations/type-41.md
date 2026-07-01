@@ -5,17 +5,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`Type41Enum`
+`Type41`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `OPENCONNECTIONS` |
-| `CONNECTIONSPERSECOND` |
-| `REQUESTSPERSECOND` |
-| `BANDWIDTH` |
+| `OpenConnections` |
+| `ConnectionsPerSecond` |
+| `RequestsPerSecond` |
+| `Bandwidth` |
 
 
 # Example
@@ -24,11 +24,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type41 := models.Type41Enum_REQUESTSPERSECOND
+    type41 := models.Type41_RequestsPerSecond
 
 }
 ```

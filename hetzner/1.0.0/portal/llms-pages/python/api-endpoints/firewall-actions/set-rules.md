@@ -34,7 +34,7 @@ def set_rules(self,
 
 **201**: The `action` key contains one `set_firewall_rules` Action plus one `apply_firewall` Action per resource where the Firewall is active
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -45,8 +45,8 @@ id = 112
 body = SetRulesRequest(
     rules=[
         Rule(
-            direction=DirectionEnum.ENUM_IN,
-            protocol=ProtocolEnum.TCP,
+            direction=Direction.ENUM_IN,
+            protocol=Protocol.TCP,
             description='Allow port 80',
             port='80',
             source_ips=[
@@ -58,11 +58,15 @@ body = SetRulesRequest(
     ]
 )
 
-result = firewall_actions_controller.set_rules(
+result = firewall_actions_api.set_rules(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

@@ -7,7 +7,7 @@ Returns all Location objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LocationsResponse> getAllLocationsAsync(
+CompletableFuture<ApiResponse<LocationsResponse>> getAllLocationsAsync(
     final String name)
 ```
 
@@ -23,13 +23,13 @@ CompletableFuture<LocationsResponse> getAllLocationsAsync(
 
 **200**: The `locations` key in the reply contains an array of Location objects with this structure
 
-[`LocationsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/locations-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LocationsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/locations-response.md).
 
 
 # Example Usage
 
 ```java
-locationsController.getAllLocationsAsync(null).thenAccept(result -> {
+locationsApi.getAllLocationsAsync(null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

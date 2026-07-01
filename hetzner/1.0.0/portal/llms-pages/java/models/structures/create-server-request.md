@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -27,6 +29,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `StartAfterCreate` | `Boolean` | Optional | Start Server right after creation. Defaults to true. | Boolean getStartAfterCreate() | setStartAfterCreate(Boolean startAfterCreate) |
 | `UserData` | `String` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. | String getUserData() | setUserData(String userData) |
 | `Volumes` | `List<Integer>` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. | List<Integer> getVolumes() | setVolumes(List<Integer> volumes) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -48,6 +51,7 @@ CreateServerRequest createServerRequest = new CreateServerRequest.Builder(
 .firewalls(Arrays.asList(
         new Firewall4.Builder()
             .firewall(38)
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
     ))
 .labels(ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
@@ -64,6 +68,7 @@ CreateServerRequest createServerRequest = new CreateServerRequest.Builder(
 .volumes(Arrays.asList(
         123
     ))
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

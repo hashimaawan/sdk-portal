@@ -7,7 +7,7 @@ Floating IP type
 
 # Enum Type Name
 
-`Type17Enum`
+`Type17`
 
 
 # Fields
@@ -21,9 +21,9 @@ Floating IP type
 # Example
 
 ```ts
-import { Type17Enum } from 'hetzner-cloud-apilib';
+import { Type17 } from 'hetzner-cloud-apilib';
 
-const type17 = Type17Enum.Ipv4;
+const type17 = Type17.Ipv4;
 ```
 
 

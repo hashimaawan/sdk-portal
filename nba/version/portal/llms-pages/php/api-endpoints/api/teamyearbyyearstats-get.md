@@ -5,7 +5,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function teamyearbyyearstatsGET(string $leagueID, string $seasonType, string $perMode, string $teamID): void
+function teamyearbyyearstatsGet(
+    string $leagueId,
+    string $seasonType,
+    string $perMode,
+    string $teamId
+): ApiResponse
 ```
 
 
@@ -13,41 +18,49 @@ function teamyearbyyearstatsGET(string $leagueID, string $seasonType, string $pe
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 
 
 # Response Type
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $seasonType = 'SeasonType8';
 
 $perMode = 'PerMode6';
 
-$teamID = 'TeamID8';
+$teamId = 'TeamID8';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->teamyearbyyearstatsGet(
+    $leagueId,
+    $seasonType,
+    $perMode,
+    $teamId
+);
 
-try {
-    $aPIController->teamyearbyyearstatsGET(
-        $leagueID,
-        $seasonType,
-        $perMode,
-        $teamID
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -17,10 +17,10 @@ Primary IPs are billed on an hourly basis.
 
 # Get Instance
 
-The instance of the `PrimaryIPsController` class can be accessed from the API Client.
+The instance of the `PrimaryIPsApi` class can be accessed from the API Client.
 
 ```
-primaryIPsController := client.PrimaryIPsController()
+primaryIPsApi := client.PrimaryIPsApi()
 ```
 
 

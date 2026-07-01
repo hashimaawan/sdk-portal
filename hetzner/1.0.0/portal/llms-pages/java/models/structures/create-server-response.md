@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlc3BvbnNl
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -16,13 +18,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `NextActions` | [`List<Action>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action.md) | Required | - | List<Action> getNextActions() | setNextActions(List<Action> nextActions) |
 | `RootPassword` | `String` | Required | Root password when no SSH keys have been specified | String getRootPassword() | setRootPassword(String rootPassword) |
 | `Server` | [`Server18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/server-18.md) | Required | - | Server18 getServer() | setServer(Server18 server) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Action;
-import cloud.hetzner.api.models.CpuTypeEnum;
+import cloud.hetzner.api.models.CpuType;
 import cloud.hetzner.api.models.CreateServerResponse;
 import cloud.hetzner.api.models.CreatedFrom;
 import cloud.hetzner.api.models.Datacenter6;
@@ -33,7 +37,7 @@ import cloud.hetzner.api.models.Ipv44;
 import cloud.hetzner.api.models.Ipv64;
 import cloud.hetzner.api.models.Iso2;
 import cloud.hetzner.api.models.Location;
-import cloud.hetzner.api.models.OsFlavorEnum;
+import cloud.hetzner.api.models.OsFlavor;
 import cloud.hetzner.api.models.PlacementGroupNullable;
 import cloud.hetzner.api.models.Price9;
 import cloud.hetzner.api.models.PriceHourly8;
@@ -47,13 +51,14 @@ import cloud.hetzner.api.models.Server18;
 import cloud.hetzner.api.models.ServerPublicNetFirewall;
 import cloud.hetzner.api.models.ServerType1;
 import cloud.hetzner.api.models.ServerTypes;
-import cloud.hetzner.api.models.Status24Enum;
-import cloud.hetzner.api.models.Status72Enum;
-import cloud.hetzner.api.models.Status73Enum;
-import cloud.hetzner.api.models.StatusEnum;
-import cloud.hetzner.api.models.StorageTypeEnum;
-import cloud.hetzner.api.models.Type22Enum;
-import cloud.hetzner.api.models.Type26Enum;
+import cloud.hetzner.api.models.Status;
+import cloud.hetzner.api.models.Status24;
+import cloud.hetzner.api.models.Status72;
+import cloud.hetzner.api.models.Status73;
+import cloud.hetzner.api.models.StorageType;
+import cloud.hetzner.api.models.Type22;
+import cloud.hetzner.api.models.Type26;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 
@@ -64,6 +69,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
             "action_failed",
             "Action failed"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         "2016-01-30T23:55:00+00:00",
         42,
@@ -73,11 +79,13 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 42,
                 "server"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         ),
         "2016-01-30T23:55:00+00:00",
-        StatusEnum.RUNNING
+        Status.RUNNING
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     Arrays.asList(
         new Action.Builder(
@@ -86,6 +94,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 "action_failed",
                 "Action failed"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             "2016-01-30T23:55:00+00:00",
             42,
@@ -95,11 +104,13 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                     42,
                     "server"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ),
             "2016-01-30T23:55:00+00:00",
-            StatusEnum.SUCCESS
+            Status.SUCCESS
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     "YItygq1v3GYjjMomLaKc",
@@ -119,6 +130,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 "fsn1",
                 "eu-central"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             "fsn1-dc8",
             new ServerTypes.Builder(
@@ -138,8 +150,10 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                     3D
                 )
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         42,
         new Image.Builder(
@@ -149,6 +163,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 1,
                 "Server"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             null,
             "2018-02-28T00:00:00+00:00",
@@ -160,16 +175,18 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 put("key0", "labels4");
             }},
             "ubuntu-20.04",
-            OsFlavorEnum.UBUNTU,
+            OsFlavor.UBUNTU,
             "20.04",
             new Protection.Builder(
                 false
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
-            Status24Enum.UNAVAILABLE,
-            Type22Enum.SNAPSHOT
+            Status24.UNAVAILABLE,
+            Type22.SNAPSHOT
         )
         .rapidDeploy(false)
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         654321D,
         123456D,
@@ -178,8 +195,9 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
             "FreeBSD 11.0 x64",
             42,
             "FreeBSD-11.0-RELEASE-amd64-dvd1",
-            Type26Enum.ENUM_PUBLIC
+            Type26.ENUM_PUBLIC
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         new LinkedHashMap<String, String>() {{
             put("key0", "labels0");
@@ -197,12 +215,14 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 .ip("10.0.0.2")
                 .macAddress("86:00:ff:2a:7d:e1")
                 .network(4711)
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
         ),
         new Protection20.Builder(
             false,
             false
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         new PublicNet4.Builder(
             Arrays.asList(
@@ -214,6 +234,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                 "1.2.3.4"
             )
             .id(42)
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Ipv64.Builder(
                 false,
@@ -222,28 +243,33 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                         "server.example.com",
                         "2001:db8::1"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
                 ),
                 "2001:db8::/64"
             )
             .id(42)
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         )
         .firewalls(Arrays.asList(
                 new ServerPublicNetFirewall.Builder()
                     .id(250)
-                    .status(Status72Enum.APPLIED)
+                    .status(Status72.APPLIED)
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build(),
                 new ServerPublicNetFirewall.Builder()
                     .id(250)
-                    .status(Status72Enum.APPLIED)
+                    .status(Status72.APPLIED)
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
             ))
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         false,
         new ServerType1.Builder(
             1D,
-            CpuTypeEnum.SHARED,
+            CpuType.SHARED,
             false,
             "CX11",
             25D,
@@ -257,19 +283,23 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build(),
                     new PriceMonthly10.Builder(
                         "1.1900000000000000",
                         "1.0000000000"
                     )
+                    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                     .build()
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ),
-            StorageTypeEnum.LOCAL
+            StorageType.LOCAL
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
-        Status73Enum.STARTING
+        Status73.STARTING
     )
     .loadBalancers(Arrays.asList(
             144,
@@ -290,13 +320,16 @@ CreateServerResponse createServerResponse = new CreateServerResponse.Builder(
             ),
             "type2"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .volumes(Arrays.asList(
             91,
             92
         ))
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build()
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

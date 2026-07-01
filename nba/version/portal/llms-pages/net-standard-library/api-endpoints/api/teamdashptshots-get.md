@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-TeamdashptshotsGETAsync(
+TeamdashptshotsGetAsync(
     string perMode,
     string season,
     string seasonType,
-    string teamID,
+    string teamId,
     string outcome,
     string location,
     string month,
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string gameSegment,
@@ -32,14 +32,14 @@ TeamdashptshotsGETAsync(
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -60,14 +60,14 @@ TeamdashptshotsGETAsync(
 string perMode = "PerMode6";
 string season = "Season0";
 string seasonType = "SeasonType8";
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 string outcome = "Outcome4";
 string location = "Location4";
 string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string gameSegment = "GameSegment6";
@@ -75,18 +75,18 @@ string period = "Period2";
 string lastNGames = "LastNGames4";
 try
 {
-    await aPIController.TeamdashptshotsGETAsync(
+    await api.TeamdashptshotsGetAsync(
         perMode,
         season,
         seasonType,
-        teamID,
+        teamId,
         outcome,
         location,
         month,
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         gameSegment,

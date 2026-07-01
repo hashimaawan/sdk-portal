@@ -7,17 +7,17 @@ Status of the renewal process of the Certificate.
 
 # Class Name
 
-`RenewalEnum`
+`Renewal`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SCHEDULED` |
-| `PENDING` |
-| `FAILED` |
-| `UNAVAILABLE` |
+| `Scheduled` |
+| `Pending` |
+| `Failed` |
+| `Unavailable` |
 
 
 # Example
@@ -26,11 +26,11 @@ Status of the renewal process of the Certificate.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    renewal := models.RenewalEnum_FAILED
+    renewal := models.Renewal_Failed
 
 }
 ```

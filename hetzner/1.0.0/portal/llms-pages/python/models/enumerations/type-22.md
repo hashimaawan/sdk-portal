@@ -7,7 +7,7 @@ Type of the Image
 
 # Enum Type Name
 
-`Type22Enum`
+`Type22`
 
 
 # Fields
@@ -24,9 +24,9 @@ Type of the Image
 # Example
 
 ```python
-from hetznercloudapi.models.type_22_enum import Type22Enum
+from hetznercloudapi.models.type_22 import Type22
 
-type_22 = Type22Enum.APP
+type_22 = Type22.APP
 ```
 
 

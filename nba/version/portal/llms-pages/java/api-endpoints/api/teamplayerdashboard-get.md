@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> teamplayerdashboardGETAsync(
+CompletableFuture<ApiResponse<Void>> teamplayerdashboardGetAsync(
     final String seasonType,
-    final String teamID,
+    final String teamId,
     final String measureType,
     final String perMode,
     final String plusMinus,
@@ -20,7 +20,7 @@ CompletableFuture<Void> teamplayerdashboardGETAsync(
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String gameSegment,
@@ -34,7 +34,7 @@ CompletableFuture<Void> teamplayerdashboardGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `String` | Query, Required | - |
-| `teamID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
 | `measureType` | `String` | Query, Required | - |
 | `perMode` | `String` | Query, Required | - |
 | `plusMinus` | `String` | Query, Required | - |
@@ -47,7 +47,7 @@ CompletableFuture<Void> teamplayerdashboardGETAsync(
 | `seasonSegment` | `String` | Query, Required | - |
 | `dateFrom` | `String` | Query, Required | - |
 | `dateTo` | `String` | Query, Required | - |
-| `opponentTeamID` | `String` | Query, Required | - |
+| `opponentTeamId` | `String` | Query, Required | - |
 | `vsConference` | `String` | Query, Required | - |
 | `vsDivision` | `String` | Query, Required | - |
 | `gameSegment` | `String` | Query, Required | - |
@@ -66,7 +66,7 @@ CompletableFuture<Void> teamplayerdashboardGETAsync(
 
 ```java
 String seasonType = "SeasonType8";
-String teamID = "TeamID8";
+String teamId = "TeamID8";
 String measureType = "MeasureType8";
 String perMode = "PerMode6";
 String plusMinus = "PlusMinus0";
@@ -79,15 +79,16 @@ String month = "Month0";
 String seasonSegment = "SeasonSegment8";
 String dateFrom = "DateFrom6";
 String dateTo = "DateTo0";
-String opponentTeamID = "OpponentTeamID6";
+String opponentTeamId = "OpponentTeamID6";
 String vsConference = "VsConference6";
 String vsDivision = "VsDivision6";
 String gameSegment = "GameSegment6";
 String period = "Period2";
 String lastNGames = "LastNGames4";
 
-aPIController.teamplayerdashboardGETAsync(seasonType, teamID, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
+api.teamplayerdashboardGetAsync(seasonType, teamId, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

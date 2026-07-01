@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlciUyNTIwVHlwZXMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,23 +15,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `serverType` | [`ServerType`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/server-type.md) | Required | - | getServerType(): ServerType | setServerType(ServerType serverType): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServerTypesResponse1Builder;
-use HetznerCloudAPILib\Models\Builders\ServerTypeBuilder;
-use HetznerCloudAPILib\Models\CpuTypeEnum;
-use HetznerCloudAPILib\Models\Builders\Price9Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly8Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly10Builder;
-use HetznerCloudAPILib\Models\StorageTypeEnum;
+use HetznerCloudApiLib\Models\Builders\ServerTypesResponse1Builder;
+use HetznerCloudApiLib\Models\Builders\ServerTypeBuilder;
+use HetznerCloudApiLib\Models\CpuType;
+use HetznerCloudApiLib\Models\Builders\Price9Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly8Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly10Builder;
+use HetznerCloudApiLib\Models\StorageType;
 
 $serverTypesResponse1 = ServerTypesResponse1Builder::init(
     ServerTypeBuilder::init(
         1,
-        CpuTypeEnum::SHARED,
+        CpuType::SHARED,
         false,
         'CX11',
         24,
@@ -42,16 +46,26 @@ $serverTypesResponse1 = ServerTypesResponse1Builder::init(
                 PriceHourly8Builder::init(
                     '1.1900000000000000',
                     '1.0000000000'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 PriceMonthly10Builder::init(
                     '1.1900000000000000',
                     '1.0000000000'
-                )->build()
-            )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
-        StorageTypeEnum::LOCAL
-    )->build()
-)->build();
+        StorageType::LOCAL
+    )
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+        ->build()
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

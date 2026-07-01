@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRk5ldHdvcmtzJTI1MjBSZXNwb25zZTE
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,18 +15,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `network` | [`?Network`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/network.md) | Optional | - | getNetwork(): ?Network | setNetwork(?Network network): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\NetworksResponse1Builder;
-use HetznerCloudAPILib\Models\Builders\NetworkBuilder;
-use HetznerCloudAPILib\ApiHelper;
-use HetznerCloudAPILib\Models\Builders\Protection11Builder;
-use HetznerCloudAPILib\Models\Builders\RouteBuilder;
-use HetznerCloudAPILib\Models\Builders\SubnetBuilder;
-use HetznerCloudAPILib\Models\Type42Enum;
+use HetznerCloudApiLib\Models\Builders\NetworksResponse1Builder;
+use HetznerCloudApiLib\Models\Builders\NetworkBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\Protection11Builder;
+use HetznerCloudApiLib\Models\Builders\RouteBuilder;
+use HetznerCloudApiLib\Models\Builders\SubnetBuilder;
+use HetznerCloudApiLib\Models\Type42;
 
 $networksResponse1 = NetworksResponse1Builder::init()
     ->network(
@@ -36,20 +39,28 @@ $networksResponse1 = NetworksResponse1Builder::init()
             'name4',
             Protection11Builder::init(
                 false
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             [
                 RouteBuilder::init(
                     'destination8',
                     'gateway6'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 RouteBuilder::init(
                     'destination8',
                     'gateway6'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 RouteBuilder::init(
                     'destination8',
                     'gateway6'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             [
                 93
@@ -58,9 +69,10 @@ $networksResponse1 = NetworksResponse1Builder::init()
                 SubnetBuilder::init(
                     'gateway4',
                     'network_zone2',
-                    Type42Enum::CLOUD
+                    Type42::CLOUD
                 )
                     ->ipRange('ip_range6')
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             ]
         )
@@ -69,8 +81,10 @@ $networksResponse1 = NetworksResponse1Builder::init()
                     208
                 ]
             )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

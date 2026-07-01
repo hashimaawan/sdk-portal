@@ -39,11 +39,11 @@ ctx := context.Background()
 id := 112
 
 body := models.AttachVolumeRequest{
-    Automount:            models.ToPointer(false),
-    Server:               43,
+    Automount:             models.ToPointer(false),
+    Server:                43,
 }
 
-apiResponse, err := volumeActionsController.AttachVolumeToAServer(ctx, id, &body)
+apiResponse, err := volumeActionsApi.AttachVolumeToAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

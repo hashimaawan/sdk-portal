@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type21Enum`
+`Type21`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Type21Enum } from 'hetzner-cloud-apilib';
+import { Type21 } from 'hetzner-cloud-apilib';
 
-const type21 = Type21Enum.Backup;
+const type21 = Type21.Backup;
 ```
 
 

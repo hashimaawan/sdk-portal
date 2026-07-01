@@ -23,7 +23,7 @@ def get_a_datacenter(self,
 
 **200**: The `datacenter` key in the reply contains a Datacenter object with this structure
 
-[`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/datacenters-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/datacenters-response-1.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_a_datacenter(self,
 ```python
 id = 112
 
-result = datacenters_controller.get_a_datacenter(id)
-print(result)
+result = datacenters_api.get_a_datacenter(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

@@ -9,7 +9,7 @@ The Primary IP may be assigned to a Server. In this case it is unassigned automa
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-DeleteAPrimaryIPAsync(
+DeleteAPrimaryIpAsync(
     int id)
 ```
 
@@ -34,7 +34,7 @@ DeleteAPrimaryIPAsync(
 int id = 112;
 try
 {
-    await primaryIPsController.DeleteAPrimaryIPAsync(id);
+    await primaryIPsApi.DeleteAPrimaryIpAsync(id);
 }
 catch (ApiException e)
 {

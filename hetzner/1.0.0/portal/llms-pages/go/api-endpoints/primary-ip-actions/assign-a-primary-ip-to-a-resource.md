@@ -20,10 +20,10 @@ The Server must be powered off (status `off`) in order for this operation to suc
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-AssignAPrimaryIPToAResource(
+AssignAPrimaryIpToAResource(
     ctx context.Context,
     id int,
-    body *models.AssignPrimaryIPRequest) (
+    body *models.AssignPrimaryIpRequest) (
     models.ApiResponse[models.ActionResponse],
     error)
 ```
@@ -34,7 +34,7 @@ AssignAPrimaryIPToAResource(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Primary IP |
-| `body` | [`*models.AssignPrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`*models.AssignPrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
@@ -51,12 +51,12 @@ ctx := context.Background()
 
 id := 112
 
-body := models.AssignPrimaryIPRequest{
-    AssigneeId:           4711,
-    AssigneeType:         "server",
+body := models.AssignPrimaryIpRequest{
+    AssigneeId:            4711,
+    AssigneeType:          "server",
 }
 
-apiResponse, err := primaryIPActionsController.AssignAPrimaryIPToAResource(ctx, id, &body)
+apiResponse, err := primaryIpActionsApi.AssignAPrimaryIpToAResource(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -34,29 +34,30 @@ def create_a_load_balancer(body: nil)
 
 **201**: The `load_balancer` key contains the Load Balancer that was just created
 
-[`LoadBalancersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancers-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`LoadBalancersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancers-response-1.md).
 
 
 # Example Usage
 
 ```ruby
 body = CreateLoadBalancerRequest.new(
-  LoadBalancerAlgorithm.new(
-    Type28Enum::ROUND_ROBIN
+  algorithm: LoadBalancerAlgorithm.new(
+    type: Type28::ROUND_ROBIN
   ),
-  'lb11',
-  'Web Frontend',
-  Labels.new,
-  nil,
-  123,
-  'eu-central',
-  true,
-  [],
-  []
+  load_balancer_type: 'lb11',
+  name: 'Web Frontend',
+  network: 123,
+  network_zone: 'eu-central',
+  public_interface: true
 )
 
-result = load_balancers_controller.create_a_load_balancer(body: body)
-puts result
+result = load_balancers_api.create_a_load_balancer(body: body)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -28,32 +28,36 @@ def create_a_primary_ip(self,
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`CreatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-[`CreatePrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`CreatePrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
 
 ```python
-body = CreatePrimaryIPRequest(
+body = CreatePrimaryIpRequest(
     name='my-ip',
-    mtype=Type51Enum.IPV4,
+    mtype=Type51.IPV4,
     assignee_id=17,
     auto_delete=False,
     datacenter='fsn1-dc8',
     labels=jsonpickle.decode('{"labelkey":"value"}')
 )
 
-result = primary_i_ps_controller.create_a_primary_ip(
+result = primary_i_ps_api.create_a_primary_ip(
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

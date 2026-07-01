@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlc3BvbnNl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -16,12 +18,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `NextActions` | [`List<Action>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action.md) | Required | - |
 | `RootPassword` | `string` | Required | Root password when no SSH keys have been specified |
 | `Server` | [`Server18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/server-18.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 CreateServerResponse createServerResponse = new CreateServerResponse
@@ -33,6 +37,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse
         {
             Code = "action_failed",
             Message = "Action failed",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Finished = "2016-01-30T23:55:00+00:00",
         Id = 42,
@@ -43,10 +48,12 @@ CreateServerResponse createServerResponse = new CreateServerResponse
             {
                 Id = 42,
                 Type = "server",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Started = "2016-01-30T23:55:00+00:00",
-        Status = StatusEnum.Running,
+        Status = Status.Running,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     NextActions = new List<Action>
     {
@@ -57,6 +64,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse
             {
                 Code = "action_failed",
                 Message = "Action failed",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Finished = "2016-01-30T23:55:00+00:00",
             Id = 42,
@@ -67,10 +75,12 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                 {
                     Id = 42,
                     Type = "server",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             Started = "2016-01-30T23:55:00+00:00",
-            Status = StatusEnum.Success,
+            Status = Status.Success,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     RootPassword = "YItygq1v3GYjjMomLaKc",
@@ -92,6 +102,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                 Longitude = 12.370071,
                 Name = "fsn1",
                 NetworkZone = "eu-central",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Name = "fsn1-dc8",
             ServerTypes = new ServerTypes
@@ -114,7 +125,9 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                     2,
                     3,
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Id = 42,
         Image = new Image
@@ -125,6 +138,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse
             {
                 Id = 1,
                 Name = "Server",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Deleted = null,
             Deprecated = "2018-02-28T00:00:00+00:00",
@@ -137,15 +151,17 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                 ["key0"] = "labels4",
             },
             Name = "ubuntu-20.04",
-            OsFlavor = OsFlavorEnum.Ubuntu,
+            OsFlavor = OsFlavor.Ubuntu,
             OsVersion = "20.04",
             Protection = new Protection
             {
                 Delete = false,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
-            Status = Status24Enum.Unavailable,
-            Type = Type22Enum.Snapshot,
+            Status = Status24.Unavailable,
+            Type = Type22.Snapshot,
             RapidDeploy = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         IncludedTraffic = 654321,
         IngoingTraffic = 123456,
@@ -155,7 +171,8 @@ CreateServerResponse createServerResponse = new CreateServerResponse
             Description = "FreeBSD 11.0 x64",
             Id = 42,
             Name = "FreeBSD-11.0-RELEASE-amd64-dvd1",
-            Type = Type26Enum.Public,
+            Type = Type26.Public,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Labels = new Dictionary<string, string>
         {
@@ -177,12 +194,14 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                 Ip = "10.0.0.2",
                 MacAddress = "86:00:ff:2a:7d:e1",
                 Network = 4711,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Protection = new Protection20
         {
             Delete = false,
             Rebuild = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         PublicNet = new PublicNet4
         {
@@ -196,6 +215,7 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                 DnsPtr = "server01.example.com",
                 Ip = "1.2.3.4",
                 Id = 42,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Ipv6 = new Ipv64
             {
@@ -206,30 +226,35 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                     {
                         DnsPtr = "server.example.com",
                         Ip = "2001:db8::1",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                 },
                 Ip = "2001:db8::/64",
                 Id = 42,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Firewalls = new List<ServerPublicNetFirewall>
             {
                 new ServerPublicNetFirewall
                 {
                     Id = 250,
-                    Status = Status72Enum.Applied,
+                    Status = Status72.Applied,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new ServerPublicNetFirewall
                 {
                     Id = 250,
-                    Status = Status72Enum.Applied,
+                    Status = Status72.Applied,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         RescueEnabled = false,
         ServerType = new ServerType1
         {
             Cores = 1,
-            CpuType = CpuTypeEnum.Shared,
+            CpuType = CpuType.Shared,
             Deprecated = false,
             Description = "CX11",
             Disk = 25,
@@ -245,17 +270,21 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     PriceMonthly = new PriceMonthly10
                     {
                         Gross = "1.1900000000000000",
                         Net = "1.0000000000",
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
-            StorageType = StorageTypeEnum.Local,
+            StorageType = StorageType.Local,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
-        Status = Status73Enum.Starting,
+        Status = Status73.Starting,
         LoadBalancers = new List<int>
         {
             144,
@@ -278,13 +307,16 @@ CreateServerResponse createServerResponse = new CreateServerResponse
                 253,
             },
             Type = "type2",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Volumes = new List<int>
         {
             91,
             92,
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

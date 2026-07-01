@@ -22,18 +22,18 @@ The retryConfiguration can be initialized as follows:
 package main
 
 import (
-    "nbastatsapi"
+    "nbaStatsApi"
 )
 
 func main() {
-    retryConfiguration := nbastatsapi.CreateRetryConfiguration(
-        nbastatsapi.WithMaxRetryAttempts(0),
-        nbastatsapi.WithRetryOnTimeout(true),
-        nbastatsapi.WithRetryInterval(1),
-        nbastatsapi.WithMaximumRetryWaitTime(0),
-        nbastatsapi.WithBackoffFactor(2),
-        nbastatsapi.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
-        nbastatsapi.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
+    retryConfiguration := nbaStatsApi.CreateRetryConfiguration(
+        nbaStatsApi.WithMaxRetryAttempts(0),
+        nbaStatsApi.WithRetryOnTimeout(true),
+        nbaStatsApi.WithRetryInterval(1),
+        nbaStatsApi.WithMaximumRetryWaitTime(0),
+        nbaStatsApi.WithBackoffFactor(2),
+        nbaStatsApi.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
+        nbaStatsApi.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
     )
 }
 ```

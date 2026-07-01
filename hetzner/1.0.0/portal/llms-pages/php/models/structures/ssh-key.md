@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNzaEtleQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `array<string,string>` | Required | User-defined labels (key-value pairs) | getLabels(): array | setLabels(array labels): void |
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. | getName(): string | setName(string name): void |
 | `publicKey` | `string` | Required | Public key | getPublicKey(): string | setPublicKey(string publicKey): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\SshKeyBuilder;
+use HetznerCloudApiLib\Models\Builders\SshKeyBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $sshKey = SshKeyBuilder::init(
     '2016-01-30T23:55:00+00:00',
@@ -36,7 +40,9 @@ $sshKey = SshKeyBuilder::init(
     ],
     'my-resource',
     'ssh-rsa AAAjjk76kgf...Xt'
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

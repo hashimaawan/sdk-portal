@@ -43,7 +43,7 @@ def get_metrics_for_a_server(self,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Server |
-| `mtype` | [`Type66Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `mtype` | [`Type66`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `str` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `str` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `str` | Query, Optional | Resolution of results in seconds |
@@ -53,7 +53,7 @@ def get_metrics_for_a_server(self,
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ServersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-metrics-response.md).
 
 
 # Example Usage
@@ -61,19 +61,23 @@ def get_metrics_for_a_server(self,
 ```python
 id = 112
 
-mtype = Type66Enum.NETWORK
+mtype = Type66.NETWORK
 
 start = 'start4'
 
 end = 'end8'
 
-result = servers_controller.get_metrics_for_a_server(
+result = servers_api.get_metrics_for_a_server(
     id,
     mtype,
     start,
     end
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

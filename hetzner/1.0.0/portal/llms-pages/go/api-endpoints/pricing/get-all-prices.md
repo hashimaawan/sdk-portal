@@ -28,7 +28,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := pricingController.GetAllPrices(ctx)
+apiResponse, err := pricingApi.GetAllPrices(ctx)
 if err != nil {
     log.Fatalln(err)
 } else {

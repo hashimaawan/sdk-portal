@@ -23,7 +23,7 @@ def commonteamroster_get(self,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -33,10 +33,15 @@ season = 'Season0'
 
 team_id = 'TeamID8'
 
-client_controller.commonteamroster_get(
+result = client_api.commonteamroster_get(
     season,
     team_id
 )
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 
@@ -44,8 +49,8 @@ client_controller.commonteamroster_get(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad request - bad parameters | `APIException` |
-| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `APIException` |
+| 400 | Bad request - bad parameters | `ApiException` |
+| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `ApiException` |
 
 
 

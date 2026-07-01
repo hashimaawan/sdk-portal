@@ -11,13 +11,13 @@ function searchGifs(
     ?int $offset = 0,
     ?string $rating = null,
     ?string $lang = null
-): GifsSearchResponse
+): ApiResponse
 ```
 
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -35,7 +35,7 @@ This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/s
 
 **200**: Search results
 
-[`GifsSearchResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/gifs-search-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`GifsSearchResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/gifs-search-response.md).
 
 
 # Example Usage
@@ -47,18 +47,24 @@ $limit = 25;
 
 $offset = 0;
 
-$gifsController = $client->getGifsController();
+$gifsApi = $client->getGifsApi();
+$apiResponse = $gifsApi->searchGifs(
+    $q,
+    $limit,
+    $offset
+);
 
-try {
-    $result = $gifsController->searchGifs(
-        $q,
-        $limit,
-        $offset
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'GifsSearchResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

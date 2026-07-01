@@ -7,7 +7,7 @@ Destination Image type to convert to
 
 # Enum Type Name
 
-`Type24Enum`
+`Type24`
 
 
 # Fields
@@ -20,9 +20,9 @@ Destination Image type to convert to
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type24Enum type24 = Type24Enum.Snapshot;
+Type24 type24 = Type24.Snapshot;
 ```
 
 

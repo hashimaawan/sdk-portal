@@ -7,7 +7,7 @@ Deletes a Load Balancer.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function deleteALoadBalancer(int $id): void
+function deleteALoadBalancer(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function deleteALoadBalancer(int $id): void
 
 **204**: Load Balancer deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -30,12 +30,20 @@ function deleteALoadBalancer(int $id): void
 ```php
 $id = 112;
 
-$loadBalancersController = $client->getLoadBalancersController();
+$loadBalancersApi = $client->getLoadBalancersApi();
+$apiResponse = $loadBalancersApi->deleteALoadBalancer($id);
 
-try {
-    $loadBalancersController->deleteALoadBalancer($id);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

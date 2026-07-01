@@ -7,7 +7,7 @@ Deletes a Floating IP. If it is currently assigned to a Server it will automatic
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function deleteAFloatingIP(int $id): void
+function deleteAFloatingIp(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function deleteAFloatingIP(int $id): void
 
 **204**: Floating IP deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -30,12 +30,20 @@ function deleteAFloatingIP(int $id): void
 ```php
 $id = 112;
 
-$floatingIPsController = $client->getFloatingIPsController();
+$floatingIPsApi = $client->getFloatingIPsApi();
+$apiResponse = $floatingIPsApi->deleteAFloatingIp($id);
 
-try {
-    $floatingIPsController->deleteAFloatingIP($id);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

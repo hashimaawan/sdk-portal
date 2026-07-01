@@ -7,7 +7,7 @@ Type of Subnetwork
 
 # Enum Type Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of Subnetwork
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type42Enum type42 = Type42Enum.Cloud;
+Type42 type42 = Type42.Cloud;
 ```
 
 

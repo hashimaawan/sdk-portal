@@ -11,7 +11,7 @@ Note: if the network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<NetworksResponse1> updateANetworkAsync(
+CompletableFuture<ApiResponse<NetworksResponse1>> updateANetworkAsync(
     final int id,
     final UpdateNetworkRequest body)
 ```
@@ -29,7 +29,7 @@ CompletableFuture<NetworksResponse1> updateANetworkAsync(
 
 **200**: The `network` key contains the updated network
 
-[`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -40,7 +40,7 @@ UpdateNetworkRequest body = new UpdateNetworkRequest.Builder()
     .name("new-name")
     .build();
 
-networksController.updateANetworkAsync(id, body).thenAccept(result -> {
+networksApi.updateANetworkAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

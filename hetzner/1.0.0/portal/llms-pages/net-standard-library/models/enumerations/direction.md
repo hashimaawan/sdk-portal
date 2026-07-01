@@ -7,7 +7,7 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 
 # Enum Type Name
 
-`DirectionEnum`
+`Direction`
 
 
 # Fields
@@ -21,9 +21,9 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-DirectionEnum direction = DirectionEnum.In;
+Direction direction = Direction.In;
 ```
 
 

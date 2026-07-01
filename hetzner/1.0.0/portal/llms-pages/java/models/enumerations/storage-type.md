@@ -7,7 +7,7 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 
 # Enum Type Name
 
-`StorageTypeEnum`
+`StorageType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of Server boot drive. Local has higher speed. Network has better availabili
 # Example
 
 ```java
-import cloud.hetzner.api.models.StorageTypeEnum;
+import cloud.hetzner.api.models.StorageType;
 
-StorageTypeEnum storageType = StorageTypeEnum.LOCAL;
+StorageType storageType = StorageType.LOCAL;
 ```
 
 

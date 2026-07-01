@@ -8,7 +8,7 @@ Returns all Firewall objects.
 
 ```ts
 async getAllFirewalls(
-  sort?: SortEnum,
+  sort?: Sort,
   name?: string,
   labelSelector?: string,
   requestOptions?: RequestOptions
@@ -20,7 +20,7 @@ async getAllFirewalls(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`SortEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`Sort \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -37,7 +37,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await firewallsController.getAllFirewalls();
+  const response = await firewallsApi.getAllFirewalls();
 
   // Extracting fully parsed response body.
   console.log(response.result);

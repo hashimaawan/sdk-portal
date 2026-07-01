@@ -37,7 +37,7 @@ def get_metrics_for_a_load_balancer(self,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Load Balancer |
-| `mtype` | [`Type41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `mtype` | [`Type41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `str` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `str` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `str` | Query, Optional | Resolution of results in seconds |
@@ -47,7 +47,7 @@ def get_metrics_for_a_load_balancer(self,
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancers-metrics-response.md).
 
 
 # Example Usage
@@ -55,19 +55,23 @@ def get_metrics_for_a_load_balancer(self,
 ```python
 id = 112
 
-mtype = Type41Enum.REQUESTS_PER_SECOND
+mtype = Type41.REQUESTS_PER_SECOND
 
 start = 'start4'
 
 end = 'end8'
 
-result = load_balancers_controller.get_metrics_for_a_load_balancer(
+result = load_balancers_api.get_metrics_for_a_load_balancer(
     id,
     mtype,
     start,
     end
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

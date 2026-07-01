@@ -40,7 +40,7 @@ def allstarballotpredictor_get(west_player1,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -66,7 +66,7 @@ east_player4 = 'EastPlayer44'
 
 east_player5 = 'EastPlayer54'
 
-client_controller.allstarballotpredictor_get(
+result = client_api.allstarballotpredictor_get(
   west_player1,
   west_player2,
   west_player3,
@@ -78,6 +78,12 @@ client_controller.allstarballotpredictor_get(
   east_player4,
   east_player5
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

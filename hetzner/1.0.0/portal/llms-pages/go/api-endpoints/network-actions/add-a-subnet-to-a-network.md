@@ -41,13 +41,13 @@ ctx := context.Background()
 id := 112
 
 body := models.AddSubnetRequest{
-    IpRange:              models.ToPointer("10.0.1.0/24"),
-    NetworkZone:          "eu-central",
-    Type:                 models.Type42Enum_SERVER,
-    VswitchId:            models.ToPointer(1000),
+    IpRange:               models.ToPointer("10.0.1.0/24"),
+    NetworkZone:           "eu-central",
+    Type:                  models.Type42_Server,
+    VswitchId:             models.ToPointer(1000),
 }
 
-apiResponse, err := networkActionsController.AddASubnetToANetwork(ctx, id, &body)
+apiResponse, err := networkActionsApi.AddASubnetToANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

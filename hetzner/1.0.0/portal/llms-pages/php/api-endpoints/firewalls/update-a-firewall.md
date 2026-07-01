@@ -11,7 +11,7 @@ Note: if the Firewall object changes during the request, the response will be a 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAFirewall(int $id, ?UpdateFirewallRequest $body = null): FirewallResponse
+function updateAFirewall(int $id, ?UpdateFirewallRequest $body = null): ApiResponse
 ```
 
 
@@ -27,7 +27,7 @@ function updateAFirewall(int $id, ?UpdateFirewallRequest $body = null): Firewall
 
 **200**: The `firewall` key contains the Firewall that was just updated
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -40,17 +40,23 @@ $body = UpdateFirewallRequestBuilder::init()
     ->name('new-name')
     ->build();
 
-$firewallsController = $client->getFirewallsController();
+$firewallsApi = $client->getFirewallsApi();
+$apiResponse = $firewallsApi->updateAFirewall(
+    $id,
+    $body
+);
 
-try {
-    $result = $firewallsController->updateAFirewall(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'FirewallResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

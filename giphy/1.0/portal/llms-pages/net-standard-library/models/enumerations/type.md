@@ -7,7 +7,7 @@ Type of the gif. By default, this is almost always gif
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of the gif. By default, this is almost always gif
 # Example
 
 ```csharp
-using GiphyAPI.Standard.Models;
+using GiphyApi.Standard.Models;
 
-TypeEnum type = TypeEnum.Gif;
+GiphyApi.Standard.Models.Type type = GiphyApi.Standard.Models.Type.Gif;
 ```
 
 

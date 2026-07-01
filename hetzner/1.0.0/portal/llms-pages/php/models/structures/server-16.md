@@ -20,7 +20,7 @@ Configuration for type Server, required if type is `server`
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\Server16Builder;
+use HetznerCloudApiLib\Models\Builders\Server16Builder;
 
 $server16 = Server16Builder::init(
     80

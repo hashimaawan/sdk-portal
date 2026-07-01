@@ -7,7 +7,7 @@ Type of cpu
 
 # Enum Type Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of cpu
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\CpuTypeEnum;
+use HetznerCloudApiLib\Models\CpuType;
 
-$cpuType = CpuTypeEnum::SHARED;
+$cpuType = CpuType::SHARED;
 ```
 
 

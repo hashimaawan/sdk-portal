@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterTypeEnum`
+`ParameterType`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.ParameterTypeEnum;
+import cloud.hetzner.api.models.ParameterType;
 
-ParameterTypeEnum parameterType = ParameterTypeEnum.UPLOADED;
+ParameterType parameterType = ParameterType.UPLOADED;
 ```
 
 

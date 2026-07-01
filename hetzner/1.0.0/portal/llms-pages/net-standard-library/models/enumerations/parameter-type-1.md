@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterType1Enum`
+`ParameterType1`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-ParameterType1Enum parameterType1 = ParameterType1Enum.Spread;
+ParameterType1 parameterType1 = ParameterType1.Spread;
 ```
 
 

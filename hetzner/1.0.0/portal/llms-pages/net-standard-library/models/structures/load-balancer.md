@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlcg
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -27,19 +29,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `PublicNet` | [`PublicNet`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/public-net.md) | Required | Public network information |
 | `Services` | [`List<LoadBalancerService>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-service.md) | Required | List of services that belong to this Load Balancer |
 | `Targets` | [`List<LoadBalancerTarget>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-target.md) | Required | List of targets that belong to this Load Balancer |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 LoadBalancer loadBalancer = new LoadBalancer
 {
     Algorithm = new Algorithm
     {
-        Type = Type28Enum.RoundRobin,
+        Type = Type28.RoundRobin,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Created = "2016-01-30T23:55:00+00:00",
     Id = 42,
@@ -69,14 +74,18 @@ LoadBalancer loadBalancer = new LoadBalancer
                 {
                     Gross = "1.1900000000000000",
                     Net = "1.0000000000",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 PriceMonthly = new PriceMonthly
                 {
                     Gross = "1.1900000000000000",
                     Net = "1.0000000000",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Location = new Location
     {
@@ -88,6 +97,7 @@ LoadBalancer loadBalancer = new LoadBalancer
         Longitude = 12.370071,
         Name = "fsn1",
         NetworkZone = "eu-central",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Name = "my-resource",
     OutgoingTraffic = 36,
@@ -97,11 +107,13 @@ LoadBalancer loadBalancer = new LoadBalancer
         {
             Ip = "10.0.0.2",
             Network = 4711,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Protection = new Protection
     {
         Delete = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     PublicNet = new PublicNet
     {
@@ -110,12 +122,15 @@ LoadBalancer loadBalancer = new LoadBalancer
         {
             DnsPtr = "lb1.example.com",
             Ip = "1.2.3.4",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Ipv6 = new Ipv6
         {
             DnsPtr = "lb1.example.com",
             Ip = "2001:db8::1",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Services = new List<LoadBalancerService>
     {
@@ -126,7 +141,7 @@ LoadBalancer loadBalancer = new LoadBalancer
             {
                 Interval = 15,
                 Port = 4711,
-                Protocol = Protocol6Enum.Http,
+                Protocol = Protocol6.Http,
                 Retries = 3,
                 Timeout = 10,
                 Http = new Http
@@ -144,9 +159,9 @@ LoadBalancer loadBalancer = new LoadBalancer
                 },
             },
             ListenPort = 443,
-            Protocol = Protocol7Enum.Https,
+            Protocol = Protocol7.Https,
             Proxyprotocol = false,
-            Http = new LoadBalancerServiceHTTP
+            Http = new LoadBalancerServiceHttp
             {
                 Certificates = new List<int>
                 {
@@ -156,38 +171,45 @@ LoadBalancer loadBalancer = new LoadBalancer
                 CookieName = "cookie_name6",
                 RedirectHttp = false,
                 StickySessions = false,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Targets = new List<LoadBalancerTarget>
     {
         new LoadBalancerTarget
         {
-            Type = Type29Enum.Ip,
+            Type = Type29.Ip,
             HealthStatus = new List<HealthStatus>
             {
                 new HealthStatus
                 {
                     ListenPort = 142,
-                    Status = Status30Enum.Unknown,
+                    Status = Status30.Unknown,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new HealthStatus
                 {
                     ListenPort = 142,
-                    Status = Status30Enum.Unknown,
+                    Status = Status30.Unknown,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             Ip = new Ip
             {
                 Ip = "ip8",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             LabelSelector = new LabelSelector7
             {
                 Selector = "selector8",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Server = new LoadBalancerTargetServer
             {
                 Id = 14,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Targets = new List<Target>
             {
@@ -198,20 +220,24 @@ LoadBalancer loadBalancer = new LoadBalancer
                         new HealthStatus
                         {
                             ListenPort = 142,
-                            Status = Status30Enum.Unknown,
+                            Status = Status30.Unknown,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
                         new HealthStatus
                         {
                             ListenPort = 142,
-                            Status = Status30Enum.Unknown,
+                            Status = Status30.Unknown,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
                     },
                     Server = new Server11
                     {
                         Id = 14,
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     Type = "type2",
                     UsePrivateIp = false,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new Target
                 {
@@ -220,20 +246,24 @@ LoadBalancer loadBalancer = new LoadBalancer
                         new HealthStatus
                         {
                             ListenPort = 142,
-                            Status = Status30Enum.Unknown,
+                            Status = Status30.Unknown,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
                         new HealthStatus
                         {
                             ListenPort = 142,
-                            Status = Status30Enum.Unknown,
+                            Status = Status30.Unknown,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
                     },
                     Server = new Server11
                     {
                         Id = 14,
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     Type = "type2",
                     UsePrivateIp = false,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new Target
                 {
@@ -242,24 +272,30 @@ LoadBalancer loadBalancer = new LoadBalancer
                         new HealthStatus
                         {
                             ListenPort = 142,
-                            Status = Status30Enum.Unknown,
+                            Status = Status30.Unknown,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
                         new HealthStatus
                         {
                             ListenPort = 142,
-                            Status = Status30Enum.Unknown,
+                            Status = Status30.Unknown,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
                     },
                     Server = new Server11
                     {
                         Id = 14,
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     Type = "type2",
                     UsePrivateIp = false,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkxvYWQlMjUyMEJhbGFuY2VyJTI1MjBUeXBlcyUyNTIwUmVzcG9uc2Ux
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `loadBalancerType` | [`LoadBalancerType \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/load-balancer-type.md) | Optional | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -36,10 +39,19 @@ const loadBalancerTypesResponse1: LoadBalancerTypesResponse1 = {
         priceHourly: {
           gross: 'gross4',
           net: 'net2',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         priceMonthly: {
           gross: 'gross2',
           net: 'net0',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
+        },
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
         },
       },
       {
@@ -47,10 +59,19 @@ const loadBalancerTypesResponse1: LoadBalancerTypesResponse1 = {
         priceHourly: {
           gross: 'gross4',
           net: 'net2',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         priceMonthly: {
           gross: 'gross2',
           net: 'net0',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
+        },
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
         },
       },
       {
@@ -58,13 +79,28 @@ const loadBalancerTypesResponse1: LoadBalancerTypesResponse1 = {
         priceHourly: {
           gross: 'gross4',
           net: 'net2',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         priceMonthly: {
           gross: 'gross2',
           net: 'net0',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
+        },
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
         },
       }
     ],
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

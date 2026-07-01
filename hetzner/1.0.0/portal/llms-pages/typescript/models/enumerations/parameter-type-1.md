@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`ParameterType1Enum`
+`ParameterType1`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { ParameterType1Enum } from 'hetzner-cloud-apilib';
+import { ParameterType1 } from 'hetzner-cloud-apilib';
 
-const parameterType1 = ParameterType1Enum.Spread;
+const parameterType1 = ParameterType1.Spread;
 ```
 
 

@@ -44,7 +44,7 @@ const body: UpdateImageRequest = {
 };
 
 try {
-  const response = await imagesController.updateAnImage(
+  const response = await imagesApi.updateAnImage(
     id,
     body
   );

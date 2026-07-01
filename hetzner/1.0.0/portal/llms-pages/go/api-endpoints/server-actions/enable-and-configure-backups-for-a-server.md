@@ -38,7 +38,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.EnableAndConfigureBackupsForAServer(ctx, id)
+apiResponse, err := serverActionsApi.EnableAndConfigureBackupsForAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

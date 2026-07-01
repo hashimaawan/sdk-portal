@@ -7,7 +7,7 @@ Flavor of operating system contained in the Image
 
 # Enum Type Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
@@ -24,9 +24,9 @@ Flavor of operating system contained in the Image
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\OsFlavorEnum;
+use HetznerCloudApiLib\Models\OsFlavor;
 
-$osFlavor = OsFlavorEnum::DEBIAN;
+$osFlavor = OsFlavor::DEBIAN;
 ```
 
 

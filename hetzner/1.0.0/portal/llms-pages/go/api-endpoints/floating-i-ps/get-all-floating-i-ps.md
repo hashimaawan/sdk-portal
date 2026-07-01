@@ -11,7 +11,7 @@ GetAllFloatingIPs(
     ctx context.Context,
     name *string,
     labelSelector *string,
-    sort *models.Sort2Enum) (
+    sort *models.Sort2) (
     models.ApiResponse[models.FloatingIpsResponse],
     error)
 ```
@@ -23,7 +23,7 @@ GetAllFloatingIPs(
 |  --- | --- | --- | --- |
 | `name` | `*string` | Query, Optional | Can be used to filter Floating IPs by their name. The response will only contain the Floating IP matching the specified name. |
 | `labelSelector` | `*string` | Query, Optional | Can be used to filter Floating IPs by labels. The response will only contain Floating IPs matching the label selector. |
-| `sort` | [`*models.Sort2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`*models.Sort2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 
 
 # Response Type
@@ -38,7 +38,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := floatingIPsController.GetAllFloatingIPs(ctx, nil, nil, nil)
+apiResponse, err := floatingIPsApi.GetAllFloatingIPs(ctx, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

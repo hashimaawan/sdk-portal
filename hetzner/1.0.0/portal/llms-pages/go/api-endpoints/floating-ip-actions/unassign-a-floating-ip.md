@@ -7,7 +7,7 @@ Unassigns a Floating IP, resulting in it being unreachable. You may assign it to
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-UnassignAFloatingIP(
+UnassignAFloatingIp(
     ctx context.Context,
     id int) (
     models.ApiResponse[models.ActionResponse],
@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := floatingIPActionsController.UnassignAFloatingIP(ctx, id)
+apiResponse, err := floatingIpActionsApi.UnassignAFloatingIp(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

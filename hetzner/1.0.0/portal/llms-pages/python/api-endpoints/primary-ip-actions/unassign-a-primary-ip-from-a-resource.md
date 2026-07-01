@@ -34,7 +34,7 @@ def unassign_a_primary_ip_from_a_resource(self,
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -42,8 +42,12 @@ def unassign_a_primary_ip_from_a_resource(self,
 ```python
 id = 112
 
-result = primary_ip_actions_controller.unassign_a_primary_ip_from_a_resource(id)
-print(result)
+result = primary_ip_actions_api.unassign_a_primary_ip_from_a_resource(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

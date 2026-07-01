@@ -47,17 +47,17 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ctx := context.Background()
 
 body := models.CreateLoadBalancerRequest{
-    Algorithm:            models.LoadBalancerAlgorithm{
-        Type:                 models.Type28Enum_ROUNDROBIN,
+    Algorithm:             models.LoadBalancerAlgorithm{
+        Type:                  models.Type28_RoundRobin,
     },
-    LoadBalancerType:     "lb11",
-    Name:                 "Web Frontend",
-    Network:              models.ToPointer(123),
-    NetworkZone:          models.ToPointer("eu-central"),
-    PublicInterface:      models.ToPointer(true),
+    LoadBalancerType:      "lb11",
+    Name:                  "Web Frontend",
+    Network:               models.ToPointer(123),
+    NetworkZone:           models.ToPointer("eu-central"),
+    PublicInterface:       models.ToPointer(true),
 }
 
-apiResponse, err := loadBalancersController.CreateALoadBalancer(ctx, &body)
+apiResponse, err := loadBalancersApi.CreateALoadBalancer(ctx, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

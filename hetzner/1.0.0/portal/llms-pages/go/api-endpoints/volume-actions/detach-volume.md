@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := volumeActionsController.DetachVolume(ctx, id)
+apiResponse, err := volumeActionsApi.DetachVolume(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -18,7 +18,7 @@ Note that only Servers that have at least one network interface (public or priva
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async unassignAPrimaryIPFromAResource(
+async unassignAPrimaryIpFromAResource(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
@@ -46,7 +46,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await primaryIPActionsController.unassignAPrimaryIPFromAResource(id);
+  const response = await primaryIpActionsApi.unassignAPrimaryIpFromAResource(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

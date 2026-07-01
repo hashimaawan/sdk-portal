@@ -7,7 +7,7 @@ Deletes a Floating IP. If it is currently assigned to a Server it will automatic
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-DeleteAFloatingIPAsync(
+DeleteAFloatingIpAsync(
     int id)
 ```
 
@@ -32,7 +32,7 @@ DeleteAFloatingIPAsync(
 int id = 112;
 try
 {
-    await floatingIPsController.DeleteAFloatingIPAsync(id);
+    await floatingIPsApi.DeleteAFloatingIpAsync(id);
 }
 catch (ApiException e)
 {

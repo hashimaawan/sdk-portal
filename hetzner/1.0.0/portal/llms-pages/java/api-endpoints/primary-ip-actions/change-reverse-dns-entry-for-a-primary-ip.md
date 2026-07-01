@@ -7,9 +7,9 @@ Changes the hostname that will appear when getting the hostname belonging to thi
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> changeReverseDNSEntryForAPrimaryIPAsync(
+CompletableFuture<ApiResponse<ActionResponse>> changeReverseDnsEntryForAPrimaryIpAsync(
     final int id,
-    final ChangeDNSPTRRequest body)
+    final ChangeDnsptrRequest body)
 ```
 
 
@@ -18,27 +18,27 @@ CompletableFuture<ActionResponse> changeReverseDNSEntryForAPrimaryIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Primary IP |
-| `body` | [`ChangeDNSPTRRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.<br><br>The target hostname is set by passing `dns_ptr`. |
+| `body` | [`ChangeDnsptrRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.<br><br>The target hostname is set by passing `dns_ptr`. |
 
 
 # Response Type
 
 **201**: The `action` key contains the `change_dns_ptr` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-ChangeDNSPTRRequest body = new ChangeDNSPTRRequest.Builder(
+ChangeDnsptrRequest body = new ChangeDnsptrRequest.Builder(
     "server02.example.com",
     "1.2.3.4"
 )
 .build();
 
-primaryIPActionsController.changeReverseDNSEntryForAPrimaryIPAsync(id, body).thenAccept(result -> {
+primaryIpActionsApi.changeReverseDnsEntryForAPrimaryIpAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

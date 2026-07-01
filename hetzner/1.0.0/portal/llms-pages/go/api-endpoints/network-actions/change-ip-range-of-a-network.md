@@ -13,10 +13,10 @@ Note: if the Network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ChangeIPRangeOfANetwork(
+ChangeIpRangeOfANetwork(
     ctx context.Context,
     id int,
-    body *models.ChangeIPRangeRequest) (
+    body *models.ChangeIpRangeRequest) (
     models.ApiResponse[models.ActionResponse],
     error)
 ```
@@ -27,7 +27,7 @@ ChangeIPRangeOfANetwork(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Network |
-| `body` | [`*models.ChangeIPRangeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/change-ip-range-request.md) | Body, Optional | - |
+| `body` | [`*models.ChangeIpRangeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/change-ip-range-request.md) | Body, Optional | - |
 
 
 # Response Type
@@ -44,11 +44,11 @@ ctx := context.Background()
 
 id := 112
 
-body := models.ChangeIPRangeRequest{
-    IpRange:              "10.0.0.0/12",
+body := models.ChangeIpRangeRequest{
+    IpRange:               "10.0.0.0/12",
 }
 
-apiResponse, err := networkActionsController.ChangeIPRangeOfANetwork(ctx, id, &body)
+apiResponse, err := networkActionsApi.ChangeIpRangeOfANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

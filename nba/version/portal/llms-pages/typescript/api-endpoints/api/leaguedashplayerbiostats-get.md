@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async leaguedashplayerbiostatsGET(
+async leaguedashplayerbiostatsGet(
   perMode: string,
-  leagueID: string,
+  leagueId: string,
   season: string,
   seasonType: string,
   requestOptions?: RequestOptions
@@ -20,7 +20,7 @@ async leaguedashplayerbiostatsGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `perMode` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -38,16 +38,16 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const perMode = 'PerMode6';
 
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const season = 'Season0';
 
 const seasonType = 'SeasonType8';
 
 try {
-  const response = await apiController.leaguedashplayerbiostatsGET(
+  const response = await api.leaguedashplayerbiostatsGet(
     perMode,
-    leagueID,
+    leagueId,
     season,
     seasonType
   );

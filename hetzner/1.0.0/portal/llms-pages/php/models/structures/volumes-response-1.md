@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlZvbHVtZXMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -15,20 +17,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Required | - | getAction(): Action | setAction(Action action): void |
 | `nextActions` | [`Action[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action.md) | Required | - | getNextActions(): array | setNextActions(array nextActions): void |
 | `volume` | [`Volume1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/volume-1.md) | Required | - | getVolume(): Volume1 | setVolume(Volume1 volume): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\VolumesResponse1Builder;
-use HetznerCloudAPILib\Models\Builders\ActionBuilder;
-use HetznerCloudAPILib\Models\Builders\Resource2Builder;
-use HetznerCloudAPILib\Models\StatusEnum;
-use HetznerCloudAPILib\Models\Builders\ErrorBuilder;
-use HetznerCloudAPILib\Models\Builders\Volume1Builder;
-use HetznerCloudAPILib\Models\Builders\Location16Builder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Status113Enum;
+use HetznerCloudApiLib\Models\Builders\VolumesResponse1Builder;
+use HetznerCloudApiLib\Models\Builders\ActionBuilder;
+use HetznerCloudApiLib\Models\Builders\Resource2Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Status;
+use HetznerCloudApiLib\Models\Builders\ErrorBuilder;
+use HetznerCloudApiLib\Models\Builders\Volume1Builder;
+use HetznerCloudApiLib\Models\Builders\Location16Builder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Status113;
 
 $volumesResponse1 = VolumesResponse1Builder::init(
     ActionBuilder::init(
@@ -39,18 +43,23 @@ $volumesResponse1 = VolumesResponse1Builder::init(
             Resource2Builder::init(
                 42,
                 'server'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ],
         '2016-01-30T23:55:00+00:00',
-        StatusEnum::RUNNING
+        Status::RUNNING
     )
         ->error(
             ErrorBuilder::init(
                 'action_failed',
                 'Action failed'
-            )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         )
         ->finished('2016-01-30T23:55:00+00:00')
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build(),
     [
         ActionBuilder::init(
@@ -61,18 +70,23 @@ $volumesResponse1 = VolumesResponse1Builder::init(
                 Resource2Builder::init(
                     42,
                     'server'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             '2016-01-30T23:55:00+00:00',
-            StatusEnum::SUCCESS
+            Status::SUCCESS
         )
             ->error(
                 ErrorBuilder::init(
                     'action_failed',
                     'Action failed'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->finished('2016-01-30T23:55:00+00:00')
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ],
     Volume1Builder::init(
@@ -93,18 +107,25 @@ $volumesResponse1 = VolumesResponse1Builder::init(
             12.370071,
             'fsn1',
             'eu-central'
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         'my-resource',
         ProtectionBuilder::init(
             false
-        )->build(),
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build(),
         42,
-        Status113Enum::AVAILABLE
+        Status113::AVAILABLE
     )
         ->format('xfs')
         ->server(12)
+        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
         ->build()
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

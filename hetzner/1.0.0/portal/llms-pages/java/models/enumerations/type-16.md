@@ -7,7 +7,7 @@ Type of the Floating IP
 
 # Enum Type Name
 
-`Type16Enum`
+`Type16`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the Floating IP
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type16Enum;
+import cloud.hetzner.api.models.Type16;
 
-Type16Enum type16 = Type16Enum.IPV4;
+Type16 type16 = Type16.IPV4;
 ```
 
 

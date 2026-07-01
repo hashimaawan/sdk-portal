@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlByaW1hcnlJUHNSZXNwb25zZQ
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -13,26 +15,28 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/meta.md) | Optional | - | getMeta(): ?Meta | setMeta(?Meta meta): void |
-| `primaryIps` | [`PrimaryIP1[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-ip-1.md) | Required | - | getPrimaryIps(): array | setPrimaryIps(array primaryIps): void |
+| `primaryIps` | [`PrimaryIp1[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-ip-1.md) | Required | - | getPrimaryIps(): array | setPrimaryIps(array primaryIps): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\PrimaryIPsResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\PrimaryIP1Builder;
-use HetznerCloudAPILib\Models\Builders\Datacenter2Builder;
-use HetznerCloudAPILib\Models\Builders\LocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerTypesBuilder;
-use HetznerCloudAPILib\Models\Builders\DnsPtrBuilder;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Type50Enum;
-use HetznerCloudAPILib\Models\Builders\MetaBuilder;
-use HetznerCloudAPILib\Models\Builders\PaginationBuilder;
+use HetznerCloudApiLib\Models\Builders\PrimaryIPsResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\PrimaryIp1Builder;
+use HetznerCloudApiLib\Models\Builders\Datacenter2Builder;
+use HetznerCloudApiLib\Models\Builders\LocationBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\ServerTypesBuilder;
+use HetznerCloudApiLib\Models\Builders\DnsPtrBuilder;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Type50;
+use HetznerCloudApiLib\Models\Builders\MetaBuilder;
+use HetznerCloudApiLib\Models\Builders\PaginationBuilder;
 
 $primaryIPsResponse = PrimaryIPsResponseBuilder::init(
     [
-        PrimaryIP1Builder::init(
+        PrimaryIp1Builder::init(
             true,
             false,
             '2016-01-30T23:55:00+00:00',
@@ -48,7 +52,9 @@ $primaryIPsResponse = PrimaryIPsResponseBuilder::init(
                     12.370071,
                     'fsn1',
                     'eu-central'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 'fsn1-dc8',
                 ServerTypesBuilder::init(
                     [
@@ -66,13 +72,19 @@ $primaryIPsResponse = PrimaryIPsResponseBuilder::init(
                         2,
                         3
                     ]
-                )->build()
-            )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             [
                 DnsPtrBuilder::init(
                     'server.example.com',
                     '2001:db8::1'
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             ],
             42,
             '131.232.99.1',
@@ -84,10 +96,13 @@ $primaryIPsResponse = PrimaryIPsResponseBuilder::init(
             'my-resource',
             ProtectionBuilder::init(
                 false
-            )->build(),
-            Type50Enum::IPV4
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
+            Type50::IPV4
         )
             ->assigneeId(17)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -101,9 +116,14 @@ $primaryIPsResponse = PrimaryIPsResponseBuilder::init(
                 ->nextPage(209.18)
                 ->previousPage(50.02)
                 ->totalEntries(206.64)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build()
-    )->build();
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

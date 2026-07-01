@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkZsb2F0aW5nSXA
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -23,13 +25,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `server` | `number \| null` | Required | ID of the Server the Floating IP is assigned to, null if it is not assigned at all |
-| `type` | [`Type16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `type` | [`Type16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { FloatingIp, Type16Enum } from 'hetzner-cloud-apilib';
+import { FloatingIp, Type16 } from 'hetzner-cloud-apilib';
 
 const floatingIp: FloatingIp = {
   blocked: false,
@@ -39,6 +42,9 @@ const floatingIp: FloatingIp = {
     {
       dnsPtr: 'server.example.com',
       ip: '2001:db8::1',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   homeLocation: {
@@ -50,6 +56,9 @@ const floatingIp: FloatingIp = {
     longitude: 12.370071,
     name: 'fsn1',
     networkZone: 'eu-central',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   id: 42,
   ip: '131.232.99.1',
@@ -59,9 +68,15 @@ const floatingIp: FloatingIp = {
   name: 'my-resource',
   protection: {
     mDelete: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   server: 42,
-  type: Type16Enum.Ipv4,
+  type: Type16.Ipv4,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

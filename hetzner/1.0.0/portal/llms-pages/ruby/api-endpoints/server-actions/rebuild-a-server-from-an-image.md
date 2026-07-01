@@ -28,7 +28,7 @@ def rebuild_a_server_from_an_image(id,
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-rebuild-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-rebuild-response.md).
 
 
 # Example Usage
@@ -37,14 +37,19 @@ def rebuild_a_server_from_an_image(id,
 id = 112
 
 body = RebuildServerRequest.new(
-  'ubuntu-20.04'
+  image: 'ubuntu-20.04'
 )
 
-result = server_actions_controller.rebuild_a_server_from_an_image(
+result = server_actions_api.rebuild_a_server_from_an_image(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

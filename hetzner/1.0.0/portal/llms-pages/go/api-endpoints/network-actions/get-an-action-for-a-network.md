@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := networkActionsController.GetAnActionForANetwork(ctx, id, actionId)
+apiResponse, err := networkActionsApi.GetAnActionForANetwork(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

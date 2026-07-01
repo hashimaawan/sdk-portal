@@ -11,7 +11,7 @@ You can either create a `backup` Image that is bound to the Server and therefore
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createImageFromAServer(int $id, ?CreateImageRequest $body = null): ServersActionsCreateImageResponse
+function createImageFromAServer(int $id, ?CreateImageRequest $body = null): ApiResponse
 ```
 
 
@@ -29,7 +29,7 @@ function createImageFromAServer(int $id, ?CreateImageRequest $body = null): Serv
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-create-image-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-create-image-response.md).
 
 
 # Example Usage
@@ -39,20 +39,26 @@ $id = 112;
 
 $body = CreateImageRequestBuilder::init()
     ->description('my image')
-    ->type(Type63Enum::SNAPSHOT)
+    ->type(Type63::SNAPSHOT)
     ->build();
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->createImageFromAServer(
+    $id,
+    $body
+);
 
-try {
-    $result = $serverActionsController->createImageFromAServer(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersActionsCreateImageResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

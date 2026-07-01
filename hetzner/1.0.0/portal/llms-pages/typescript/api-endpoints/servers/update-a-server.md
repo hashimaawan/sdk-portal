@@ -44,7 +44,7 @@ const body: UpdateServerRequest = {
 };
 
 try {
-  const response = await serversController.updateAServer(
+  const response = await serversApi.updateAServer(
     id,
     body
   );

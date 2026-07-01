@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/typescript/x-redirect/JTI0bSUyRkdpZg
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -27,17 +29,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `sourceTld` | `string \| undefined` | Optional | The top level domain of the source URL. |
 | `tags` | `string[] \| undefined` | Optional | An array of tags for this GIF (Note: Not available when using the Public Beta Key) |
 | `trendingDatetime` | `string \| undefined` | Optional | The date on which this gif was marked trending, if applicable. |
-| `type` | [`TypeEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `TypeEnum.Gif` |
+| `type` | [`Type \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `Type.Gif` |
 | `updateDatetime` | `string \| undefined` | Optional | The date on which this GIF was last updated. |
 | `url` | `string \| undefined` | Optional | The unique URL for this GIF |
 | `user` | [`User \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/models/structures/user.md) | Optional | The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more. |
 | `username` | `string \| undefined` | Optional | The username this GIF is attached to, if applicable |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { Gif, TypeEnum } from 'giphy-apilib';
+import { Gif, Type } from 'giphy-apilib';
 
 const gif: Gif = {
   bitlyUrl: 'http://gph.is/1gsWDcL',
@@ -55,10 +58,13 @@ const gif: Gif = {
   sourcePostUrl: 'http://cheezburger.com/5282328320',
   sourceTld: 'cheezburger.com',
   trendingDatetime: '2013-08-01 12:41:48',
-  type: TypeEnum.Gif,
+  type: Type.Gif,
   updateDatetime: '2013-08-01 12:41:48',
   url: 'http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq',
   username: 'JoeCool4000',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/php/x-redirect/JTI0bSUyRlN0aWNrZXJzJTI1MjBTZWFyY2glMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -15,16 +17,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `data` | [`?(Gif[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/gif.md) | Optional | - | getData(): ?array | setData(?array data): void |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/meta.md) | Optional | The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances. | getMeta(): ?Meta | setMeta(?Meta meta): void |
 | `pagination` | [`?Pagination`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/php/models/structures/pagination.md) | Optional | The Pagination Object contains information relating to the number of total results available as well as the number of results fetched and their relative positions. | getPagination(): ?Pagination | setPagination(?Pagination pagination): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use GiphyAPILib\Models\Builders\StickersSearchResponseBuilder;
-use GiphyAPILib\Models\Builders\GifBuilder;
-use GiphyAPILib\Utils\DateTimeHelper;
-use GiphyAPILib\Models\Builders\MetaBuilder;
-use GiphyAPILib\Models\Builders\PaginationBuilder;
+use GiphyApiLib\Models\Builders\StickersSearchResponseBuilder;
+use GiphyApiLib\Models\Builders\GifBuilder;
+use GiphyApiLib\Utils\DateTimeHelper;
+use GiphyApiLib\ApiHelper;
+use GiphyApiLib\Models\Builders\MetaBuilder;
+use GiphyApiLib\Models\Builders\PaginationBuilder;
 
 $stickersSearchResponse = StickersSearchResponseBuilder::init()
     ->data(
@@ -39,6 +43,7 @@ $stickersSearchResponse = StickersSearchResponseBuilder::init()
                         'featured_tags0'
                     ]
                 )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -47,6 +52,7 @@ $stickersSearchResponse = StickersSearchResponseBuilder::init()
             ->msg('msg8')
             ->responseId('response_id0')
             ->status(98)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->pagination(
@@ -54,8 +60,10 @@ $stickersSearchResponse = StickersSearchResponseBuilder::init()
             ->count(192)
             ->offset(240)
             ->totalCount(100)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

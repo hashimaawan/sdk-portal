@@ -9,8 +9,8 @@ Gets all existing Volumes that you have available.
 ```go
 GetAllVolumes(
     ctx context.Context,
-    status *models.Status23Enum,
-    sort *models.SortEnum,
+    status *models.Status23,
+    sort *models.Sort,
     name *string,
     labelSelector *string) (
     models.ApiResponse[models.VolumesResponse],
@@ -22,8 +22,8 @@ GetAllVolumes(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `status` | [`*models.Status23Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Volumes matching the status. |
-| `sort` | [`*models.SortEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`*models.Status23`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Volumes matching the status. |
+| `sort` | [`*models.Sort`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `*string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `*string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 
@@ -40,7 +40,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-apiResponse, err := volumesController.GetAllVolumes(ctx, nil, nil, nil, nil)
+apiResponse, err := volumesApi.GetAllVolumes(ctx, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

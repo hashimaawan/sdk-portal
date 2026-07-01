@@ -7,7 +7,7 @@ Returns a specific Action object for a Floating IP.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async getAnActionForAFloatingIP(
+async getAnActionForAFloatingIp(
   id: number,
   actionId: number,
   requestOptions?: RequestOptions
@@ -39,7 +39,7 @@ const id = 112;
 const actionId = 224;
 
 try {
-  const response = await floatingIPActionsController.getAnActionForAFloatingIP(
+  const response = await floatingIpActionsApi.getAnActionForAFloatingIp(
     id,
     actionId
   );

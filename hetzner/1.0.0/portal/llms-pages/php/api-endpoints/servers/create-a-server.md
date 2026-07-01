@@ -7,7 +7,7 @@ Creates a new Server. Returns preliminary information about the Server as well a
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createAServer(?CreateServerRequest $body = null): CreateServerResponse
+function createAServer(?CreateServerRequest $body = null): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function createAServer(?CreateServerRequest $body = null): CreateServerResponse
 
 **201**: The `server` key in the reply contains a Server object with this structure
 
-[`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-server-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-server-response.md).
 
 
 # Example Usage
@@ -66,14 +66,20 @@ runcmd:
     )
     ->build();
 
-$serversController = $client->getServersController();
+$serversApi = $client->getServersApi();
+$apiResponse = $serversApi->createAServer($body);
 
-try {
-    $result = $serversController->createAServer($body);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'CreateServerResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status70Enum`
+`Status70`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.status_70_enum import Status70Enum
+from hetznercloudapi.models.status_70 import Status70
 
-status_70 = Status70Enum.DELETING
+status_70 = Status70.DELETING
 ```
 
 

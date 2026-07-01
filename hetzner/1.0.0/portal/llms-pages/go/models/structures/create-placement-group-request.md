@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkNyZWF0ZVBsYWNlbWVudEdyb3VwUmVxdWVzdA
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `*interface{}` | Optional | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | Name of the PlacementGroup |
 | `Type` | `string` | Required, Constant | Define the Placement Group Type.<br><br>**Value**: `"spread"` |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,14 +26,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     createPlacementGroupRequest := models.CreatePlacementGroupRequest{
-        Labels:               models.ToPointer(interface{}("[key1, val1][key2, val2]")),
-        Name:                 "my Placement Group",
-        Type:                 "spread",
+        Labels:                models.ToPointer(interface{}("[key1, val1][key2, val2]")),
+        Name:                  "my Placement Group",
+        Type:                  "spread",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> teamgamelogGETAsync(
-    final String teamID,
+CompletableFuture<ApiResponse<Void>> teamgamelogGetAsync(
+    final String teamId,
     final String season,
     final String seasonType)
 ```
@@ -16,7 +16,7 @@ CompletableFuture<Void> teamgamelogGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `teamID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
 | `season` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 
@@ -31,12 +31,13 @@ CompletableFuture<Void> teamgamelogGETAsync(
 # Example Usage
 
 ```java
-String teamID = "TeamID8";
+String teamId = "TeamID8";
 String season = "Season0";
 String seasonType = "SeasonType8";
 
-aPIController.teamgamelogGETAsync(teamID, season, seasonType).thenAccept(result -> {
+api.teamgamelogGetAsync(teamId, season, seasonType).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

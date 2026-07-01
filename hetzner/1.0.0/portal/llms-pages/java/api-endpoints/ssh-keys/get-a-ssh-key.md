@@ -7,7 +7,7 @@ Returns a specific SSH key object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<SshKeysResponse1> getASSHKeyAsync(
+CompletableFuture<ApiResponse<SshKeysResponse1>> getASshKeyAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<SshKeysResponse1> getASSHKeyAsync(
 
 **200**: The `ssh_key` key in the reply contains an SSH key object with this structure
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<SshKeysResponse1> getASSHKeyAsync(
 ```java
 int id = 112;
 
-sSHKeysController.getASSHKeyAsync(id).thenAccept(result -> {
+sshKeysApi.getASshKeyAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

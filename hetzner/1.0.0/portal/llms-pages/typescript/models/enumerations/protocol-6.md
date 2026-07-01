@@ -7,7 +7,7 @@ Type of the health check
 
 # Enum Type Name
 
-`Protocol6Enum`
+`Protocol6`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the health check
 # Example
 
 ```ts
-import { Protocol6Enum } from 'hetzner-cloud-apilib';
+import { Protocol6 } from 'hetzner-cloud-apilib';
 
-const protocol6 = Protocol6Enum.Tcp;
+const protocol6 = Protocol6.Tcp;
 ```
 
 

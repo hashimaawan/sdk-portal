@@ -7,10 +7,10 @@ Servers are virtual machines that can be provisioned.
 
 # Get Instance
 
-The instance of the `ServersController` class can be accessed from the API Client.
+The instance of the `ServersApi` class can be accessed from the API Client.
 
 ```
-serversController := client.ServersController()
+serversApi := client.ServersApi()
 ```
 
 

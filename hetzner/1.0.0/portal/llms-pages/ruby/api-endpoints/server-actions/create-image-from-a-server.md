@@ -30,7 +30,7 @@ def create_image_from_a_server(id,
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-create-image-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ServersActionsCreateImageResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/servers-actions-create-image-response.md).
 
 
 # Example Usage
@@ -39,16 +39,20 @@ The `action` key in the reply contains an Action object with this structure
 id = 112
 
 body = CreateImageRequest.new(
-  'my image',
-  Labels.new,
-  Type63Enum::SNAPSHOT
+  description: 'my image',
+  type: Type63::SNAPSHOT
 )
 
-result = server_actions_controller.create_image_from_a_server(
+result = server_actions_api.create_image_from_a_server(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

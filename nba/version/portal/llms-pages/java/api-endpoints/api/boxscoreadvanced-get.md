@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> boxscoreadvancedGETAsync(
-    final String gameID,
+CompletableFuture<ApiResponse<Void>> boxscoreadvancedGetAsync(
+    final String gameId,
     final String startPeriod,
     final String endPeriod,
     final String startRange,
@@ -19,7 +19,7 @@ CompletableFuture<Void> boxscoreadvancedGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `String` | Query, Optional | - |
+| `gameId` | `String` | Query, Optional | - |
 | `startPeriod` | `String` | Query, Optional | - |
 | `endPeriod` | `String` | Query, Optional | - |
 | `startRange` | `String` | Query, Optional | - |
@@ -37,8 +37,9 @@ CompletableFuture<Void> boxscoreadvancedGETAsync(
 # Example Usage
 
 ```java
-aPIController.boxscoreadvancedGETAsync(null, null, null, null, null, null).thenAccept(result -> {
+api.boxscoreadvancedGetAsync(null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

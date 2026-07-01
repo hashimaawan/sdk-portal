@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The Meta Object contains basic information regarding the request, whether it was successful, and the response given by the API.  Check `responses` to see a description of types of response codes the API might give you under different cirumstances.
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -17,17 +19,23 @@ The Meta Object contains basic information regarding the request, whether it was
 | `msg` | `str` | Optional | HTTP Response Message |
 | `response_id` | `str` | Optional | A unique ID paired with this response from the API. |
 | `status` | `int` | Optional | HTTP Response Code |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from giphyapi.models.meta import Meta
 
 meta = Meta(
     msg='OK',
     response_id='57eea03c72381f86e05c35d2',
-    status=200
+    status=200,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

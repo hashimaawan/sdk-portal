@@ -7,7 +7,7 @@ Status of the renewal process of the Certificate.
 
 # Enum Type Name
 
-`RenewalEnum`
+`Renewal`
 
 
 # Fields
@@ -23,9 +23,9 @@ Status of the renewal process of the Certificate.
 # Example
 
 ```ts
-import { RenewalEnum } from 'hetzner-cloud-apilib';
+import { Renewal } from 'hetzner-cloud-apilib';
 
-const renewal = RenewalEnum.Failed;
+const renewal = Renewal.Failed;
 ```
 
 

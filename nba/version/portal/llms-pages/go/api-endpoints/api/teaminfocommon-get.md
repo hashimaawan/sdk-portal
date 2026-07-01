@@ -5,11 +5,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-TeaminfocommonGET(
+TeaminfocommonGet(
     ctx context.Context,
     season string,
-    teamID string,
-    leagueID string,
+    teamId string,
+    leagueId string,
     seasonType string) (
     http.Response,
     error)
@@ -21,8 +21,8 @@ TeaminfocommonGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 
 
@@ -40,13 +40,13 @@ ctx := context.Background()
 
 season := "Season0"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 seasonType := "SeasonType8"
 
-resp, err := aPIController.TeaminfocommonGET(ctx, season, teamID, leagueID, seasonType)
+resp, err := api.TeaminfocommonGet(ctx, season, teamId, leagueId, seasonType)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -27,7 +27,7 @@ def update_an_ssh_key(self,
 
 **200**: The `ssh_key` key in the reply contains the modified SSH key object with the new description
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -40,11 +40,15 @@ body = SshKeysRequest1(
     name='My ssh key'
 )
 
-result = ssh_keys_controller.update_an_ssh_key(
+result = ssh_keys_api.update_an_ssh_key(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

@@ -15,7 +15,7 @@ Creates a new Firewall.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CreateFirewallResponse> createAFirewallAsync(
+CompletableFuture<ApiResponse<CreateFirewallResponse>> createAFirewallAsync(
     final CreateFirewallRequest body)
 ```
 
@@ -31,7 +31,7 @@ CompletableFuture<CreateFirewallResponse> createAFirewallAsync(
 
 **201**: The `firewall` key contains the Firewall that was just created
 
-[`CreateFirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreateFirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-firewall-response.md).
 
 
 # Example Usage
@@ -42,7 +42,7 @@ CreateFirewallRequest body = new CreateFirewallRequest.Builder(
 )
 .applyTo(Arrays.asList(
         new ApplyTo.Builder(
-            Type7Enum.SERVER
+            Type7.SERVER
         )
         .server(new Server2.Builder(
                 42
@@ -53,8 +53,8 @@ CreateFirewallRequest body = new CreateFirewallRequest.Builder(
 .labels(ApiHelper.deserialize("{\"env\":\"dev\"}"))
 .rules(Arrays.asList(
         new Rule.Builder(
-            DirectionEnum.IN,
-            ProtocolEnum.TCP
+            Direction.IN,
+            Protocol.TCP
         )
         .description("Allow port 80")
         .port("80")
@@ -67,7 +67,7 @@ CreateFirewallRequest body = new CreateFirewallRequest.Builder(
     ))
 .build();
 
-firewallsController.createAFirewallAsync(body).thenAccept(result -> {
+firewallsApi.createAFirewallAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

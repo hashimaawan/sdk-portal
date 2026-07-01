@@ -22,18 +22,18 @@ The retryConfiguration can be initialized as follows:
 package main
 
 import (
-    "giphyapi"
+    "giphyApi"
 )
 
 func main() {
-    retryConfiguration := giphyapi.CreateRetryConfiguration(
-        giphyapi.WithMaxRetryAttempts(0),
-        giphyapi.WithRetryOnTimeout(true),
-        giphyapi.WithRetryInterval(1),
-        giphyapi.WithMaximumRetryWaitTime(0),
-        giphyapi.WithBackoffFactor(2),
-        giphyapi.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
-        giphyapi.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
+    retryConfiguration := giphyApi.CreateRetryConfiguration(
+        giphyApi.WithMaxRetryAttempts(0),
+        giphyApi.WithRetryOnTimeout(true),
+        giphyApi.WithRetryInterval(1),
+        giphyApi.WithMaximumRetryWaitTime(0),
+        giphyApi.WithBackoffFactor(2),
+        giphyApi.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
+        giphyApi.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
     )
 }
 ```

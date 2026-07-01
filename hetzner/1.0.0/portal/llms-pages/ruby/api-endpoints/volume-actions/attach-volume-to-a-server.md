@@ -24,7 +24,7 @@ def attach_volume_to_a_server(id,
 
 **201**: The `action` key contains the `attach_volume` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -33,15 +33,20 @@ def attach_volume_to_a_server(id,
 id = 112
 
 body = AttachVolumeRequest.new(
-  43,
-  false
+  server: 43,
+  automount: false
 )
 
-result = volume_actions_controller.attach_volume_to_a_server(
+result = volume_actions_api.attach_volume_to_a_server(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -7,7 +7,7 @@ Type of the algorithm
 
 # Enum Type Name
 
-`Type28Enum`
+`Type28`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of the algorithm
 # Example
 
 ```ruby
-type28 = Type28Enum::ROUND_ROBIN
+type28 = Type28::ROUND_ROBIN
 ```
 
 

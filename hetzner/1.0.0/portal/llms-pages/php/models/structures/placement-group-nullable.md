@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlBsYWNlbWVudEdyb3VwTnVsbGFibGU
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -18,12 +20,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `name` | `string` | Required | Name of the Resource. Must be unique per Project. | getName(): string | setName(string name): void |
 | `servers` | `int[]` | Required | Array of IDs of Servers that are part of this Placement Group | getServers(): array | setServers(array servers): void |
 | `type` | `string` | Required, Constant | Type of the Placement Group<br><br>**Value**: `'spread'` | getType(): string | setType(string type): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\PlacementGroupNullableBuilder;
+use HetznerCloudApiLib\Models\Builders\PlacementGroupNullableBuilder;
+use HetznerCloudApiLib\ApiHelper;
 
 $placementGroupNullable = PlacementGroupNullableBuilder::init(
     '2016-01-30T23:55:00+00:00',
@@ -35,7 +39,9 @@ $placementGroupNullable = PlacementGroupNullableBuilder::init(
     [
         42
     ]
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

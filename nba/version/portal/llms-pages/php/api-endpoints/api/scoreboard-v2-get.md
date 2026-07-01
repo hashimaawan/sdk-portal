@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function scoreboardV2GET(string $gameDate, string $leagueID, string $dayOffset): void
+function scoreboardV2Get(string $gameDate, string $leagueId, string $dayOffset): ApiResponse
 ```
 
 
@@ -14,7 +14,7 @@ function scoreboardV2GET(string $gameDate, string $leagueID, string $dayOffset):
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `gameDate` | `string` | Query, Required | - |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `dayOffset` | `string` | Query, Required | - |
 
 
@@ -22,7 +22,7 @@ function scoreboardV2GET(string $gameDate, string $leagueID, string $dayOffset):
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -30,20 +30,28 @@ function scoreboardV2GET(string $gameDate, string $leagueID, string $dayOffset):
 ```php
 $gameDate = 'GameDate8';
 
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $dayOffset = 'DayOffset6';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->scoreboardV2Get(
+    $gameDate,
+    $leagueId,
+    $dayOffset
+);
 
-try {
-    $aPIController->scoreboardV2GET(
-        $gameDate,
-        $leagueID,
-        $dayOffset
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

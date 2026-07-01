@@ -7,7 +7,7 @@ Primary IP type
 
 # Enum Type Name
 
-`Type51Enum`
+`Type51`
 
 
 # Fields
@@ -21,9 +21,9 @@ Primary IP type
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type51Enum type51 = Type51Enum.Ipv4;
+Type51 type51 = Type51.Ipv4;
 ```
 
 

@@ -5,26 +5,26 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ShotchartlineupdetailGET(
+ShotchartlineupdetailGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     season string,
     seasonType string,
-    teamID string,
+    teamId string,
     outcome string,
     location string,
     month string,
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
     period string,
     lastNGames string,
-    gameID string,
-    groupID string,
+    gameId string,
+    groupId string,
     contextMeasure string,
     contextFilter string) (
     http.Response,
@@ -36,24 +36,24 @@ ShotchartlineupdetailGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
 | `period` | `string` | Query, Required | - |
 | `lastNGames` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
-| `groupID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
+| `groupId` | `string` | Query, Required | - |
 | `contextMeasure` | `string` | Query, Required | - |
 | `contextFilter` | `string` | Query, Required | - |
 
@@ -70,13 +70,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 season := "Season0"
 
 seasonType := "SeasonType8"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
 outcome := "Outcome4"
 
@@ -90,7 +90,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -102,15 +102,15 @@ period := "Period2"
 
 lastNGames := "LastNGames4"
 
-gameID := "GameID8"
+gameId := "GameID8"
 
-groupID := "GROUP_ID6"
+groupId := "GROUP_ID6"
 
 contextMeasure := "ContextMeasure2"
 
 contextFilter := "ContextFilter6"
 
-resp, err := aPIController.ShotchartlineupdetailGET(ctx, leagueID, season, seasonType, teamID, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames, gameID, groupID, contextMeasure, contextFilter)
+resp, err := api.ShotchartlineupdetailGet(ctx, leagueId, season, seasonType, teamId, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames, gameId, groupId, contextMeasure, contextFilter)
 if err != nil {
     log.Fatalln(err)
 } else {

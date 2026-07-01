@@ -7,7 +7,7 @@ Status of the Firewall on the Server
 
 # Enum Type Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
@@ -21,9 +21,9 @@ Status of the Firewall on the Server
 # Example
 
 ```java
-import cloud.hetzner.api.models.Status72Enum;
+import cloud.hetzner.api.models.Status72;
 
-Status72Enum status72 = Status72Enum.APPLIED;
+Status72 status72 = Status72.APPLIED;
 ```
 
 

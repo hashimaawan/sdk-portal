@@ -44,7 +44,7 @@ const body: ServersActionsChangeAliasIpsRequest = {
 };
 
 try {
-  const response = await serverActionsController.changeAliasIPsOfANetwork(
+  const response = await serverActionsApi.changeAliasIPsOfANetwork(
     id,
     body
   );

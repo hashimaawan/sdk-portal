@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlByaW1hcnlJUDE
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
-`PrimaryIP1`
+`PrimaryIp1`
 
 
 # Fields
@@ -24,16 +26,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Dictionary<string, string>` | Required | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `Protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/protection.md) | Required | Protection configuration for the Resource |
-| `Type` | [`Type50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `Type` | [`Type50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-50.md) | Required | Type of the Primary IP |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
-PrimaryIP1 primaryIP1 = new PrimaryIP1
+PrimaryIp1 primaryIp1 = new PrimaryIp1
 {
     AssigneeId = 17,
     AssigneeType = "server",
@@ -54,6 +58,7 @@ PrimaryIP1 primaryIP1 = new PrimaryIP1
             Longitude = 12.370071,
             Name = "fsn1",
             NetworkZone = "eu-central",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Name = "fsn1-dc8",
         ServerTypes = new ServerTypes
@@ -76,7 +81,9 @@ PrimaryIP1 primaryIP1 = new PrimaryIP1
                 2,
                 3,
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     DnsPtr = new List<DnsPtr>
     {
@@ -84,21 +91,23 @@ PrimaryIP1 primaryIP1 = new PrimaryIP1
         {
             DnsPtrProp = "server.example.com",
             Ip = "2001:db8::1",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Id = 42,
     Ip = "131.232.99.1",
     Labels = new Dictionary<string, string>
     {
-        ["key0"] = "labels4",
-        ["key1"] = "labels3",
+        ["key0"] = "labels0",
     },
     Name = "my-resource",
     Protection = new Protection
     {
         Delete = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
-    Type = Type50Enum.Ipv4,
+    Type = Type50.Ipv4,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

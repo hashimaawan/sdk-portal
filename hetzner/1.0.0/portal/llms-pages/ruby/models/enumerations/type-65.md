@@ -7,7 +7,7 @@ Type of rescue system to boot (default: `linux64`)
 
 # Enum Type Name
 
-`Type65Enum`
+`Type65`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of rescue system to boot (default: `linux64`)
 # Example
 
 ```ruby
-type65 = Type65Enum::LINUX64
+type65 = Type65::LINUX64
 ```
 
 

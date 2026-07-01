@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.ImagesActionsChangeProtectionRequest{
-    Delete:               models.ToPointer(true),
+    Delete:                models.ToPointer(true),
 }
 
-apiResponse, err := imageActionsController.ChangeImageProtection(ctx, id, &body)
+apiResponse, err := imageActionsApi.ChangeImageProtection(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

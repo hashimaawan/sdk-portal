@@ -7,7 +7,7 @@ Type of Subnetwork
 
 # Enum Type Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
@@ -22,7 +22,7 @@ Type of Subnetwork
 # Example
 
 ```ruby
-type42 = Type42Enum::CLOUD
+type42 = Type42::CLOUD
 ```
 
 

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type41Enum`
+`Type41`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type41Enum;
+import cloud.hetzner.api.models.Type41;
 
-Type41Enum type41 = Type41Enum.REQUESTS_PER_SECOND;
+Type41 type41 = Type41.REQUESTS_PER_SECOND;
 ```
 
 

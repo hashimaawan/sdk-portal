@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-CommonallplayersGETAsync(
-    string leagueID,
+CommonallplayersGetAsync(
+    string leagueId,
     string season,
     string isOnlyCurrentSeason)
 ```
@@ -16,7 +16,7 @@ CommonallplayersGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `isOnlyCurrentSeason` | `string` | Query, Required | - |
 
@@ -31,13 +31,13 @@ CommonallplayersGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
+string leagueId = "LeagueID4";
 string season = "Season0";
 string isOnlyCurrentSeason = "IsOnlyCurrentSeason6";
 try
 {
-    await aPIController.CommonallplayersGETAsync(
-        leagueID,
+    await api.CommonallplayersGetAsync(
+        leagueId,
         season,
         isOnlyCurrentSeason
     );

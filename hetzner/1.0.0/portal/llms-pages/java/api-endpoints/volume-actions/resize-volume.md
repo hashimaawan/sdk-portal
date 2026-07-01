@@ -7,7 +7,7 @@ Changes the size of a Volume. Note that downsizing a Volume is not possible.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> resizeVolumeAsync(
+CompletableFuture<ApiResponse<ActionResponse>> resizeVolumeAsync(
     final int id,
     final VolumesActionsResizeRequest body)
 ```
@@ -25,7 +25,7 @@ CompletableFuture<ActionResponse> resizeVolumeAsync(
 
 **201**: The `action` key contains the `resize_volume` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ VolumesActionsResizeRequest body = new VolumesActionsResizeRequest.Builder(
 )
 .build();
 
-volumeActionsController.resizeVolumeAsync(id, body).thenAccept(result -> {
+volumeActionsApi.resizeVolumeAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

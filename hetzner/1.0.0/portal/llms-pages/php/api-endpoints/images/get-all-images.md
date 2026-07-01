@@ -15,7 +15,7 @@ function getAllImages(
     ?bool $includeDeprecated = null,
     ?string $name = null,
     ?string $labelSelector = null
-): ImagesResponse
+): ApiResponse
 ```
 
 
@@ -23,9 +23,9 @@ function getAllImages(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`?string(SortEnum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
-| `type` | [`?string(Type21Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-21.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`?string(Status23Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Images matching the status. |
+| `sort` | [`?string(Sort)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `type` | [`?string(Type21)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/type-21.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`?string(Status23)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Images matching the status. |
 | `boundTo` | `?string` | Query, Optional | Can be used multiple times. Server ID linked to the Image. Only available for Images of type `backup` |
 | `includeDeprecated` | `?bool` | Query, Optional | Can be used multiple times. |
 | `name` | `?string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
@@ -36,20 +36,26 @@ function getAllImages(
 
 **200**: The `images` key in the reply contains an array of Image objects with this structure
 
-[`ImagesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/images-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ImagesResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/images-response.md).
 
 
 # Example Usage
 
 ```php
-$imagesController = $client->getImagesController();
+$imagesApi = $client->getImagesApi();
+$apiResponse = $imagesApi->getAllImages();
 
-try {
-    $result = $imagesController->getAllImages();
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ImagesResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

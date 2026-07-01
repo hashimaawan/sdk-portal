@@ -5,12 +5,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-PlayerdashptshotlogGETAsync(
-    string leagueID = null,
+PlayerdashptshotlogGetAsync(
+    string leagueId = null,
     string season = null,
     string seasonType = null,
-    string playerID = null,
-    string teamID = null)
+    string playerId = null,
+    string teamId = null)
 ```
 
 
@@ -18,11 +18,11 @@ PlayerdashptshotlogGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Optional | - |
+| `leagueId` | `string` | Query, Optional | - |
 | `season` | `string` | Query, Optional | - |
 | `seasonType` | `string` | Query, Optional | - |
-| `playerID` | `string` | Query, Optional | - |
-| `teamID` | `string` | Query, Optional | - |
+| `playerId` | `string` | Query, Optional | - |
+| `teamId` | `string` | Query, Optional | - |
 
 
 # Response Type
@@ -37,7 +37,7 @@ PlayerdashptshotlogGETAsync(
 ```csharp
 try
 {
-    await aPIController.PlayerdashptshotlogGETAsync();
+    await api.PlayerdashptshotlogGetAsync();
 }
 catch (ApiException e)
 {

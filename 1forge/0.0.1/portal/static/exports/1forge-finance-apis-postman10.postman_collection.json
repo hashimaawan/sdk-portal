@@ -1,24 +1,24 @@
 {
-  "id": "ae2e4717-5fe2-41f1-b341-51947312c112",
+  "id": "ea7e35de-afca-4f71-853b-ffbfc642677c",
   "name": "1Forge Finance APIs",
   "description": "Stock and Forex Data and Realtime Quotes",
   "order": [],
   "folders": [
     {
-      "id": "911525d3-f583-4b3f-84db-4e0a132f912c",
+      "id": "95db4dfa-6ed1-4905-8188-d9d819cef2e7",
       "name": "forex",
       "description": "",
       "order": [
-        "cd146fb9-cd6d-45c7-ab29-057c2adba626",
-        "72dd7e23-33a4-4eb6-981c-dfc0241a1813"
+        "d9480dd8-bb55-4ec1-920b-b900c8753cd8",
+        "45b836d7-f38d-4739-8a09-11c84c2c7492"
       ],
-      "collection_id": "ae2e4717-5fe2-41f1-b341-51947312c112"
+      "collection_id": "ea7e35de-afca-4f71-853b-ffbfc642677c"
     }
   ],
   "requests": [
     {
-      "folder": "911525d3-f583-4b3f-84db-4e0a132f912c",
-      "id": "cd146fb9-cd6d-45c7-ab29-057c2adba626",
+      "folder": "95db4dfa-6ed1-4905-8188-d9d819cef2e7",
+      "id": "d9480dd8-bb55-4ec1-920b-b900c8753cd8",
       "name": "Get quotes for all symbols",
       "dataDisabled": false,
       "descriptionFormat": "markdown",
@@ -30,8 +30,8 @@
       "url": "{{server1}}/quotes",
       "responses": [
         {
-          "request": "cd146fb9-cd6d-45c7-ab29-057c2adba626",
-          "id": "36180dfd-5654-4c50-9b26-826a06f7517e",
+          "request": "d9480dd8-bb55-4ec1-920b-b900c8753cd8",
+          "id": "e3dd6fa2-7fb8-48c2-8133-9e96d1e18a8d",
           "name": "Response_200",
           "status": "A list of quotes",
           "responseCode": {
@@ -43,7 +43,7 @@
           "language": "Text"
         }
       ],
-      "collectionId": "ae2e4717-5fe2-41f1-b341-51947312c112",
+      "collectionId": "ea7e35de-afca-4f71-853b-ffbfc642677c",
       "queryParams": [],
       "headerData": [
         {
@@ -54,8 +54,8 @@
       "pathVariableData": []
     },
     {
-      "folder": "911525d3-f583-4b3f-84db-4e0a132f912c",
-      "id": "72dd7e23-33a4-4eb6-981c-dfc0241a1813",
+      "folder": "95db4dfa-6ed1-4905-8188-d9d819cef2e7",
+      "id": "45b836d7-f38d-4739-8a09-11c84c2c7492",
       "name": "Get a list of symbols for which we provide real-time quotes",
       "dataDisabled": false,
       "descriptionFormat": "markdown",
@@ -67,8 +67,8 @@
       "url": "{{server1}}/symbols",
       "responses": [
         {
-          "request": "72dd7e23-33a4-4eb6-981c-dfc0241a1813",
-          "id": "34dd74e5-0eef-414f-9e96-98440abe7ce3",
+          "request": "45b836d7-f38d-4739-8a09-11c84c2c7492",
+          "id": "c68de051-cfa2-4ab6-8bbd-da78441fb253",
           "name": "Response_200",
           "status": "A list of symbols",
           "responseCode": {
@@ -83,12 +83,12 @@
             }
           ],
           "mime": "application/json",
-          "text": "[\n  \"response55\"\n]",
+          "text": "[\n  \"response41\"\n]",
           "language": "Text",
           "rawDataType": "text"
         }
       ],
-      "collectionId": "ae2e4717-5fe2-41f1-b341-51947312c112",
+      "collectionId": "ea7e35de-afca-4f71-853b-ffbfc642677c",
       "queryParams": [],
       "headerData": [
         {

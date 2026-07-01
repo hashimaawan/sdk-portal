@@ -15,7 +15,7 @@ GetGifById(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/go/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -39,7 +39,7 @@ ctx := context.Background()
 
 gifId := 250
 
-apiResponse, err := gifsController.GetGifById(ctx, gifId)
+apiResponse, err := gifsApi.GetGifById(ctx, gifId)
 if err != nil {
     log.Fatalln(err)
 } else {

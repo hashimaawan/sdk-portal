@@ -7,7 +7,7 @@ Type of resource referenced
 
 # Enum Type Name
 
-`Type5Enum`
+`Type5`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of resource referenced
 # Example
 
 ```ts
-import { Type5Enum } from 'hetzner-cloud-apilib';
+import { Type5 } from 'hetzner-cloud-apilib';
 
-const type5 = Type5Enum.Server;
+const type5 = Type5.Server;
 ```
 
 

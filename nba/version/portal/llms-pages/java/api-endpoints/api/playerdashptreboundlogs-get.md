@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playerdashptreboundlogsGETAsync(
+CompletableFuture<ApiResponse<Void>> playerdashptreboundlogsGetAsync(
     final String season,
     final String seasonType,
-    final String playerID,
-    final String teamID,
+    final String playerId,
+    final String teamId,
     final String outcome,
     final String location,
     final String month,
     final String seasonSegment,
     final String dateFrom,
     final String dateTo,
-    final String opponentTeamID,
+    final String opponentTeamId,
     final String vsConference,
     final String vsDivision,
     final String gameSegment,
@@ -31,15 +31,15 @@ CompletableFuture<Void> playerdashptreboundlogsGETAsync(
 |  --- | --- | --- | --- |
 | `season` | `String` | Query, Optional | - |
 | `seasonType` | `String` | Query, Optional | - |
-| `playerID` | `String` | Query, Optional | - |
-| `teamID` | `String` | Query, Optional | - |
+| `playerId` | `String` | Query, Optional | - |
+| `teamId` | `String` | Query, Optional | - |
 | `outcome` | `String` | Query, Optional | - |
 | `location` | `String` | Query, Optional | - |
 | `month` | `String` | Query, Optional | - |
 | `seasonSegment` | `String` | Query, Optional | - |
 | `dateFrom` | `String` | Query, Optional | - |
 | `dateTo` | `String` | Query, Optional | - |
-| `opponentTeamID` | `String` | Query, Optional | - |
+| `opponentTeamId` | `String` | Query, Optional | - |
 | `vsConference` | `String` | Query, Optional | - |
 | `vsDivision` | `String` | Query, Optional | - |
 | `gameSegment` | `String` | Query, Optional | - |
@@ -57,8 +57,9 @@ CompletableFuture<Void> playerdashptreboundlogsGETAsync(
 # Example Usage
 
 ```java
-aPIController.playerdashptreboundlogsGETAsync(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+api.playerdashptreboundlogsGetAsync(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

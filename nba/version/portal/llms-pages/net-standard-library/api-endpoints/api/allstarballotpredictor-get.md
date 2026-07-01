@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-AllstarballotpredictorGETAsync(
+AllstarballotpredictorGetAsync(
     string westPlayer1,
     string westPlayer2,
     string westPlayer3,
@@ -59,7 +59,7 @@ string eastPlayer4 = "EastPlayer44";
 string eastPlayer5 = "EastPlayer54";
 try
 {
-    await aPIController.AllstarballotpredictorGETAsync(
+    await api.AllstarballotpredictorGetAsync(
         westPlayer1,
         westPlayer2,
         westPlayer3,

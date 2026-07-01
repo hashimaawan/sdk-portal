@@ -7,7 +7,7 @@ Deletes a Load Balancer.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteALoadBalancerAsync(
+CompletableFuture<ApiResponse<Void>> deleteALoadBalancerAsync(
     final int id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteALoadBalancerAsync(
 ```java
 int id = 112;
 
-loadBalancersController.deleteALoadBalancerAsync(id).thenAccept(result -> {
+loadBalancersApi.deleteALoadBalancerAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

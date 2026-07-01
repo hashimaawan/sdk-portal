@@ -47,11 +47,11 @@ ctx := context.Background()
 id := 112
 
 body := models.LoadBalancersActionsAttachToNetworkRequest{
-    Ip:                   models.ToPointer("10.0.1.1"),
-    Network:              float64(4711),
+    Ip:                    models.ToPointer("10.0.1.1"),
+    Network:               float64(4711),
 }
 
-apiResponse, err := loadBalancerActionsController.AttachALoadBalancerToANetwork(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.AttachALoadBalancerToANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

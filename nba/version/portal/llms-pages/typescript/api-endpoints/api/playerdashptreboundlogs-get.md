@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playerdashptreboundlogsGET(
+async playerdashptreboundlogsGet(
   season?: string,
   seasonType?: string,
-  playerID?: string,
-  teamID?: string,
+  playerId?: string,
+  teamId?: string,
   outcome?: string,
   location?: string,
   month?: string,
   seasonSegment?: string,
   dateFrom?: string,
   dateTo?: string,
-  opponentTeamID?: string,
+  opponentTeamId?: string,
   vsConference?: string,
   vsDivision?: string,
   gameSegment?: string,
@@ -33,15 +33,15 @@ async playerdashptreboundlogsGET(
 |  --- | --- | --- | --- |
 | `season` | `string \| undefined` | Query, Optional | - |
 | `seasonType` | `string \| undefined` | Query, Optional | - |
-| `playerID` | `string \| undefined` | Query, Optional | - |
-| `teamID` | `string \| undefined` | Query, Optional | - |
+| `playerId` | `string \| undefined` | Query, Optional | - |
+| `teamId` | `string \| undefined` | Query, Optional | - |
 | `outcome` | `string \| undefined` | Query, Optional | - |
 | `location` | `string \| undefined` | Query, Optional | - |
 | `month` | `string \| undefined` | Query, Optional | - |
 | `seasonSegment` | `string \| undefined` | Query, Optional | - |
 | `dateFrom` | `string \| undefined` | Query, Optional | - |
 | `dateTo` | `string \| undefined` | Query, Optional | - |
-| `opponentTeamID` | `string \| undefined` | Query, Optional | - |
+| `opponentTeamId` | `string \| undefined` | Query, Optional | - |
 | `vsConference` | `string \| undefined` | Query, Optional | - |
 | `vsDivision` | `string \| undefined` | Query, Optional | - |
 | `gameSegment` | `string \| undefined` | Query, Optional | - |
@@ -61,7 +61,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await apiController.playerdashptreboundlogsGET();
+  const response = await api.playerdashptreboundlogsGet();
 
   // Extracting fully parsed response body.
   console.log(response.result);

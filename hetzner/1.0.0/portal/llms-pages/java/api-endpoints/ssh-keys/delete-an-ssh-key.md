@@ -7,7 +7,7 @@ Deletes an SSH key. It cannot be used anymore.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAnSSHKeyAsync(
+CompletableFuture<ApiResponse<Void>> deleteAnSshKeyAsync(
     final String id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteAnSSHKeyAsync(
 ```java
 String id = "id0";
 
-sSHKeysController.deleteAnSSHKeyAsync(id).thenAccept(result -> {
+sshKeysApi.deleteAnSshKeyAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

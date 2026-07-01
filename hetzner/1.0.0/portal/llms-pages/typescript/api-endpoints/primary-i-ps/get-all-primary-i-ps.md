@@ -11,7 +11,7 @@ async getAllPrimaryIPs(
   name?: string,
   labelSelector?: string,
   ip?: string,
-  sort?: Sort2Enum,
+  sort?: Sort2,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<PrimaryIPsResponse>>
 ```
@@ -24,7 +24,7 @@ async getAllPrimaryIPs(
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `ip` | `string \| undefined` | Query, Optional | Can be used to filter resources by their ip. The response will only contain the resources matching the specified ip. |
-| `sort` | [`Sort2Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`Sort2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -41,7 +41,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const ip = '127.0.0.1';
 
 try {
-  const response = await primaryIPsController.getAllPrimaryIPs(
+  const response = await primaryIPsApi.getAllPrimaryIPs(
     undefined,
     undefined,
     ip

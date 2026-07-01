@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRk51bGxhYmxlQWN0aW9u
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -19,16 +21,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Progress` | `double` | Required | Progress of Action in percent | double getProgress() | setProgress(double progress) |
 | `Resources` | [`List<Resource>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/resource.md) | Required | Resources the Action relates to | List<Resource> getResources() | setResources(List<Resource> resources) |
 | `Started` | `String` | Required | Point in time when the Action was started (in ISO-8601 format) | String getStarted() | setStarted(String started) |
-| `Status` | [`StatusEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/status.md) | Required | Status of the Action | StatusEnum getStatus() | setStatus(StatusEnum status) |
+| `Status` | [`Status`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/status.md) | Required | Status of the Action | Status getStatus() | setStatus(Status status) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
+import cloud.hetzner.api.ApiHelper;
 import cloud.hetzner.api.models.Error;
 import cloud.hetzner.api.models.NullableAction;
 import cloud.hetzner.api.models.Resource;
-import cloud.hetzner.api.models.StatusEnum;
+import cloud.hetzner.api.models.Status;
+import java.io.IOException;
 import java.util.Arrays;
 
 NullableAction nullableAction = new NullableAction.Builder(
@@ -37,6 +42,7 @@ NullableAction nullableAction = new NullableAction.Builder(
         "action_failed",
         "Action failed"
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build(),
     "2016-01-30T23:55:00+00:00",
     42,
@@ -46,11 +52,13 @@ NullableAction nullableAction = new NullableAction.Builder(
             42,
             "server"
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ),
     "2016-01-30T23:55:00+00:00",
-    StatusEnum.RUNNING
+    Status.RUNNING
 )
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

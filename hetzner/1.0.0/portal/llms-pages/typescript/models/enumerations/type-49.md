@@ -7,7 +7,7 @@ The type of the Primary IP
 
 # Enum Type Name
 
-`Type49Enum`
+`Type49`
 
 
 # Fields
@@ -21,9 +21,9 @@ The type of the Primary IP
 # Example
 
 ```ts
-import { Type49Enum } from 'hetzner-cloud-apilib';
+import { Type49 } from 'hetzner-cloud-apilib';
 
-const type49 = Type49Enum.Ipv4;
+const type49 = Type49.Ipv4;
 ```
 
 

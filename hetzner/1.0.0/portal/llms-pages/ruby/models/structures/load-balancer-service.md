@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclNlcnZpY2U
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,47 +16,54 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `destination_port` | `Integer` | Required | Port the Load Balancer will balance to |
 | `health_check` | [`LoadBalancerServiceHealthCheck`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer-service-health-check.md) | Required | Service health check |
-| `http` | [`LoadBalancerServiceHTTP`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer-service-http.md) | Optional | Configuration option for protocols http and https |
+| `http` | [`LoadBalancerServiceHttp`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer-service-http.md) | Optional | Configuration option for protocols http and https |
 | `listen_port` | `Integer` | Required | Port the Load Balancer listens on |
-| `protocol` | [`Protocol7Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/protocol-7.md) | Required | Protocol of the Load Balancer |
+| `protocol` | [`Protocol7`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/protocol-7.md) | Required | Protocol of the Load Balancer |
 | `proxyprotocol` | `TrueClass \| FalseClass` | Required | Is Proxyprotocol enabled or not |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 load_balancer_service = LoadBalancerService.new(
-  80,
-  LoadBalancerServiceHealthCheck.new(
-    15,
-    4711,
-    Protocol6Enum::HTTP,
-    3,
-    10,
-    Http.new(
-      'domain4',
-      'path2',
-      'response8',
-      [
+  destination_port: 80,
+  health_check: LoadBalancerServiceHealthCheck.new(
+    interval: 15,
+    port: 4711,
+    protocol: Protocol6::HTTP,
+    retries: 3,
+    timeout: 10,
+    http: Http.new(
+      domain: 'domain4',
+      path: 'path2',
+      response: 'response8',
+      status_codes: [
         'status_codes0',
         'status_codes1',
         'status_codes2'
       ],
-      false
+      tls: false
     )
   ),
-  443,
-  Protocol7Enum::HTTPS,
-  false,
-  LoadBalancerServiceHTTP.new(
-    [
+  listen_port: 443,
+  protocol: Protocol7::HTTPS,
+  proxyprotocol: false,
+  http: LoadBalancerServiceHttp.new(
+    certificates: [
       180
     ],
-    160,
-    'cookie_name6',
-    false,
-    false
-  )
+    cookie_lifetime: 160,
+    cookie_name: 'cookie_name6',
+    redirect_http: false,
+    sticky_sessions: false,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

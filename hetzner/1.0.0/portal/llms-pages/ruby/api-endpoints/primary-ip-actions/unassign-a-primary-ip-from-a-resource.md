@@ -33,7 +33,7 @@ def unassign_a_primary_ip_from_a_resource(id)
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -41,8 +41,13 @@ def unassign_a_primary_ip_from_a_resource(id)
 ```ruby
 id = 112
 
-result = primary_ip_actions_controller.unassign_a_primary_ip_from_a_resource(id)
-puts result
+result = primary_ip_actions_api.unassign_a_primary_ip_from_a_resource(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

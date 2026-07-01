@@ -33,7 +33,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await locationsController.getAllLocations();
+  const response = await locationsApi.getAllLocations();
 
   // Extracting fully parsed response body.
   console.log(response.result);

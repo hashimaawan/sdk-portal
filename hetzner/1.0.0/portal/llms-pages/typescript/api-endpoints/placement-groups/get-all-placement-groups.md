@@ -8,10 +8,10 @@ Returns all PlacementGroup objects.
 
 ```ts
 async getAllPlacementGroups(
-  sort?: SortEnum,
+  sort?: Sort,
   name?: string,
   labelSelector?: string,
-  type?: ParameterType1Enum,
+  type?: ParameterType1,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<PlacementGroupsResponse>>
 ```
@@ -21,10 +21,10 @@ async getAllPlacementGroups(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`SortEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `sort` | [`Sort \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string \| undefined` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `type` | [`ParameterType1Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/parameter-type-1.md) | Query, Optional | Can be used multiple times. The response will only contain PlacementGroups matching the type. |
+| `type` | [`ParameterType1 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/parameter-type-1.md) | Query, Optional | Can be used multiple times. The response will only contain PlacementGroups matching the type. |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -39,7 +39,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await placementGroupsController.getAllPlacementGroups();
+  const response = await placementGroupsApi.getAllPlacementGroups();
 
   // Extracting fully parsed response body.
   console.log(response.result);

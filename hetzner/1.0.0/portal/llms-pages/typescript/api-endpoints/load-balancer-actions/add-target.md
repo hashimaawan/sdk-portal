@@ -48,12 +48,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 const body: AddTargetRequest = {
-  type: Type29Enum.LabelSelector,
+  type: Type29.LabelSelector,
   usePrivateIp: true,
 };
 
 try {
-  const response = await loadBalancerActionsController.addTarget(
+  const response = await loadBalancerActionsApi.addTarget(
     id,
     body
   );

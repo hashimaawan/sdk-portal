@@ -7,7 +7,7 @@ Returns a specific ISO object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-GetAnISOAsync(
+GetAnIsoAsync(
     int id)
 ```
 
@@ -23,7 +23,7 @@ GetAnISOAsync(
 
 **200**: The `iso` key in the reply contains an array of ISO objects with this structure
 
-[`Task<Models.IsosResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/isos-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.IsosResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/isos-response-1.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetAnISOAsync(
 int id = 112;
 try
 {
-    IsosResponse1 result = await iSOsController.GetAnISOAsync(id);
+    ApiResponse<IsosResponse1> result = await isOsApi.GetAnIsoAsync(id);
 }
 catch (ApiException e)
 {

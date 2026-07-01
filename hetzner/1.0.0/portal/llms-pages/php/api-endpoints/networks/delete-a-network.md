@@ -9,7 +9,7 @@ Note: if the network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function deleteANetwork(int $id): void
+function deleteANetwork(int $id): ApiResponse
 ```
 
 
@@ -24,7 +24,7 @@ function deleteANetwork(int $id): void
 
 **204**: Network deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -32,12 +32,20 @@ function deleteANetwork(int $id): void
 ```php
 $id = 112;
 
-$networksController = $client->getNetworksController();
+$networksApi = $client->getNetworksApi();
+$apiResponse = $networksApi->deleteANetwork($id);
 
-try {
-    $networksController->deleteANetwork($id);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

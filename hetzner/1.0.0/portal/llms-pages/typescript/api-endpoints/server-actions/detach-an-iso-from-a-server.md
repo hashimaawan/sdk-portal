@@ -7,7 +7,7 @@ Detaches an ISO from a Server. In case no ISO Image is attached to the Server, t
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async detachAnISOFromAServer(
+async detachAnIsoFromAServer(
   id: number,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await serverActionsController.detachAnISOFromAServer(id);
+  const response = await serverActionsApi.detachAnIsoFromAServer(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

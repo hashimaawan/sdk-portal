@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlZvbHVtZXMlMjUyMFJlc3BvbnNlMQ
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -15,12 +17,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Action` | [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action.md) | Required | - |
 | `NextActions` | [`List<Action>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action.md) | Required | - |
 | `Volume` | [`Volume1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/volume-1.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 VolumesResponse1 volumesResponse1 = new VolumesResponse1
@@ -32,6 +36,7 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1
         {
             Code = "action_failed",
             Message = "Action failed",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Finished = "2016-01-30T23:55:00+00:00",
         Id = 42,
@@ -42,10 +47,12 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1
             {
                 Id = 42,
                 Type = "server",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Started = "2016-01-30T23:55:00+00:00",
-        Status = StatusEnum.Running,
+        Status = Status.Running,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     NextActions = new List<Action>
     {
@@ -56,6 +63,7 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1
             {
                 Code = "action_failed",
                 Message = "Action failed",
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             Finished = "2016-01-30T23:55:00+00:00",
             Id = 42,
@@ -66,10 +74,12 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1
                 {
                     Id = 42,
                     Type = "server",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             Started = "2016-01-30T23:55:00+00:00",
-            Status = StatusEnum.Success,
+            Status = Status.Success,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Volume = new Volume1
@@ -94,16 +104,20 @@ VolumesResponse1 volumesResponse1 = new VolumesResponse1
             Longitude = 12.370071,
             Name = "fsn1",
             NetworkZone = "eu-central",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Name = "my-resource",
         Protection = new Protection
         {
             Delete = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Server = 12,
         Size = 42,
-        Status = Status113Enum.Available,
+        Status = Status113.Available,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlclR5cGVzMg
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -15,15 +17,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `id` | `float` | Required | ID of the Server type the price is for | getId(): float | setId(float id): void |
 | `name` | `string` | Required | Name of the Server type the price is for | getName(): string | setName(string name): void |
 | `prices` | [`Price9[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/price-9.md) | Required | Server type costs per Location | getPrices(): array | setPrices(array prices): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServerTypes2Builder;
-use HetznerCloudAPILib\Models\Builders\Price9Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly8Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly10Builder;
+use HetznerCloudApiLib\Models\Builders\ServerTypes2Builder;
+use HetznerCloudApiLib\Models\Builders\Price9Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly8Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly10Builder;
 
 $serverTypes2 = ServerTypes2Builder::init(
     4,
@@ -34,14 +38,22 @@ $serverTypes2 = ServerTypes2Builder::init(
             PriceHourly8Builder::init(
                 '1.1900000000000000',
                 '1.0000000000'
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             PriceMonthly10Builder::init(
                 '1.1900000000000000',
                 '1.0000000000'
-            )->build()
-        )->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
     ]
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRlZvbHVtZTE
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -22,15 +24,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `server` | `int` | Required | ID of the Server the Volume is attached to, null if it is not attached at all |
 | `size` | `float` | Required | Size in GB of the Volume |
-| `status` | [`Status113Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `status` | [`Status113`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.location_16 import Location16
 from hetznercloudapi.models.protection import Protection
-from hetznercloudapi.models.status_113_enum import Status113Enum
+from hetznercloudapi.models.status_113 import Status113
 from hetznercloudapi.models.volume_1 import Volume1
 
 volume_1 = Volume1(
@@ -50,15 +55,24 @@ volume_1 = Volume1(
         latitude=50.47612,
         longitude=12.370071,
         name='fsn1',
-        network_zone='eu-central'
+        network_zone='eu-central',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     name='my-resource',
     protection=Protection(
-        delete=False
+        delete=False,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     server=12,
     size=42,
-    status=Status113Enum.AVAILABLE
+    status=Status113.AVAILABLE,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

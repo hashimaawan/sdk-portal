@@ -31,7 +31,7 @@ def leagueleaders_get(self,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -47,13 +47,18 @@ season_type = 'SeasonType8'
 
 scope = 'Scope0'
 
-client_controller.leagueleaders_get(
+result = client_api.leagueleaders_get(
     league_id,
     per_mode,
     season,
     season_type,
     scope
 )
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 
@@ -61,8 +66,8 @@ client_controller.leagueleaders_get(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad request - bad parameters | `APIException` |
-| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `APIException` |
+| 400 | Bad request - bad parameters | `ApiException` |
+| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `ApiException` |
 
 
 

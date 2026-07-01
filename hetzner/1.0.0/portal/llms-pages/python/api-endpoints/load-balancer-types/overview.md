@@ -9,10 +9,10 @@ Currency for all amounts is €. All prices exclude VAT.
 
 # Get instance
 
-An instance of the `LoadBalancerTypesController` class can be accessed from the API Client.
+An instance of the `LoadBalancerTypesApi` class can be accessed from the API Client.
 
 ```
-load_balancer_types_controller = client.load_balancer_types
+load_balancer_types_api = client.load_balancer_types
 ```
 
 

@@ -7,18 +7,18 @@ Flavor of operating system contained in the Image
 
 # Class Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `UBUNTU` |
-| `CENTOS` |
-| `DEBIAN` |
-| `FEDORA` |
-| `UNKNOWN` |
+| `Ubuntu` |
+| `Centos` |
+| `Debian` |
+| `Fedora` |
+| `Unknown` |
 
 
 # Example
@@ -27,11 +27,11 @@ Flavor of operating system contained in the Image
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    osFlavor := models.OsFlavorEnum_DEBIAN
+    osFlavor := models.OsFlavor_Debian
 
 }
 ```

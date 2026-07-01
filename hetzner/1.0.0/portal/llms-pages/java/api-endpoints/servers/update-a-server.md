@@ -9,7 +9,7 @@ Also note that when updating labels, the Server’s current set of labels will b
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersResponse2> updateAServerAsync(
+CompletableFuture<ApiResponse<ServersResponse2>> updateAServerAsync(
     final int id,
     final UpdateServerRequest body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<ServersResponse2> updateAServerAsync(
 
 **200**: The `server` key in the reply contains the updated Server
 
-[`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-response-2.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ UpdateServerRequest body = new UpdateServerRequest.Builder()
     .name("my-server")
     .build();
 
-serversController.updateAServerAsync(id, body).thenAccept(result -> {
+serversApi.updateAServerAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -9,8 +9,8 @@ Returns all Action objects for an Image. You can sort the results by using the `
 ```ts
 async getAllActionsForAnImage(
   id: number,
-  sort?: ParameterSortEnum,
-  status?: ParameterStatusEnum,
+  sort?: ParameterSort,
+  status?: ParameterStatus,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionsResponse>>
 ```
@@ -21,8 +21,8 @@ async getAllActionsForAnImage(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Image |
-| `sort` | [`ParameterSortEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`ParameterStatusEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`ParameterSort \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`ParameterStatus \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -39,7 +39,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await imageActionsController.getAllActionsForAnImage(id);
+  const response = await imageActionsApi.getAllActionsForAnImage(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

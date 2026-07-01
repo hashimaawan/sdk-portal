@@ -7,7 +7,7 @@ Type of the gif. By default, this is almost always gif
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of the gif. By default, this is almost always gif
 # Example
 
 ```python
-from giphyapi.models.type_enum import TypeEnum
+from giphyapi.models.mtype import Type
 
-mtype = TypeEnum.GIF
+mtype = Type.GIF
 ```
 
 

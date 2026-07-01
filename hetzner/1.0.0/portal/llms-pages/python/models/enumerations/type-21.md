@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type21Enum`
+`Type21`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.type_21_enum import Type21Enum
+from hetznercloudapi.models.type_21 import Type21
 
-type_21 = Type21Enum.BACKUP
+type_21 = Type21.BACKUP
 ```
 
 

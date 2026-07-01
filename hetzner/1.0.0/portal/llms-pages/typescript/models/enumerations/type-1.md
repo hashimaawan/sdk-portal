@@ -7,7 +7,7 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 
 # Enum Type Name
 
-`Type1Enum`
+`Type1`
 
 
 # Fields
@@ -21,9 +21,9 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 # Example
 
 ```ts
-import { Type1Enum } from 'hetzner-cloud-apilib';
+import { Type1 } from 'hetzner-cloud-apilib';
 
-const type1 = Type1Enum.Uploaded;
+const type1 = Type1.Uploaded;
 ```
 
 

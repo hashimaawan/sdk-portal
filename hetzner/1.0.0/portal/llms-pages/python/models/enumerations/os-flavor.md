@@ -7,7 +7,7 @@ Flavor of operating system contained in the Image
 
 # Enum Type Name
 
-`OsFlavorEnum`
+`OsFlavor`
 
 
 # Fields
@@ -24,9 +24,9 @@ Flavor of operating system contained in the Image
 # Example
 
 ```python
-from hetznercloudapi.models.os_flavor_enum import OsFlavorEnum
+from hetznercloudapi.models.os_flavor import OsFlavor
 
-os_flavor = OsFlavorEnum.UNKNOWN
+os_flavor = OsFlavor.UNKNOWN
 ```
 
 

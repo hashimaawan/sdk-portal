@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type41Enum`
+`Type41`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.type_41_enum import Type41Enum
+from hetznercloudapi.models.type_41 import Type41
 
-type_41 = Type41Enum.OPEN_CONNECTIONS
+type_41 = Type41.OPEN_CONNECTIONS
 ```
 
 

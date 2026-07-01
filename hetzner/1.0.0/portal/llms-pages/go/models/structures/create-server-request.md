@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -27,6 +29,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `StartAfterCreate` | `*bool` | Optional | Start Server right after creation. Defaults to true. |
 | `UserData` | `*string` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. |
 | `Volumes` | `[]int` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -35,34 +38,40 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     createServerRequest := models.CreateServerRequest{
-        Automount:            models.ToPointer(false),
-        Datacenter:           models.ToPointer("nbg1-dc3"),
-        Firewalls:            []models.Firewall4{
+        Automount:             models.ToPointer(false),
+        Datacenter:            models.ToPointer("nbg1-dc3"),
+        Firewalls:             []models.Firewall4{
             models.Firewall4{
-                Firewall:             models.ToPointer(38),
+                Firewall:              models.ToPointer(38),
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
             },
         },
-        Image:                "ubuntu-20.04",
-        Labels:               models.ToPointer(interface{}("[key1, val1][key2, val2]")),
-        Location:             models.ToPointer("nbg1"),
-        Name:                 "my-server",
-        Networks:             []int{
+        Image:                 "ubuntu-20.04",
+        Labels:                models.ToPointer(interface{}("[key1, val1][key2, val2]")),
+        Location:              models.ToPointer("nbg1"),
+        Name:                  "my-server",
+        Networks:              []int{
             456,
         },
-        PlacementGroup:       models.ToPointer(1),
-        ServerType:           "cx11",
-        SshKeys:              []string{
+        PlacementGroup:        models.ToPointer(1),
+        ServerType:            "cx11",
+        SshKeys:               []string{
             "my-ssh-key",
         },
-        StartAfterCreate:     models.ToPointer(true),
-        UserData:             models.ToPointer("#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n"),
-        Volumes:              []int{
+        StartAfterCreate:      models.ToPointer(true),
+        UserData:              models.ToPointer("#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n"),
+        Volumes:               []int{
             123,
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

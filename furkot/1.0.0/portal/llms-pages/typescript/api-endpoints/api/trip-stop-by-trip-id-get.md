@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 list stops for a trip identified by {trip_id}
 
 ```ts
-async tripStopByTripIdGET(
+async tripStopByTripIdGet(
   tripId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<Step[]>>
@@ -14,7 +14,7 @@ async tripStopByTripIdGET(
 
 # Authentication
 
-This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/authorization.md)
+This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -49,7 +49,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const tripId = 'trip_id2';
 
 try {
-  const response = await apiController.tripStopByTripIdGET(tripId);
+  const response = await api.tripStopByTripIdGet(tripId);
 
   // Extracting fully parsed response body.
   console.log(response.result);

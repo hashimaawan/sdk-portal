@@ -15,10 +15,10 @@ Floating IPs are billed on a monthly basis.
 
 # Create Instance
 
-The instance of the `FloatingIPsController` class can be created using the API Client.
+The instance of the `FloatingIPsApi` class can be created using the API Client.
 
 ```
-const floatingIPsController = new FloatingIPsController(client);
+const floatingIPsApi = new FloatingIPsApi(client);
 ```
 
 

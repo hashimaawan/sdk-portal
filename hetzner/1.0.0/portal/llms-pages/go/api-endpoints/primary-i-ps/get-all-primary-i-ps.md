@@ -12,7 +12,7 @@ GetAllPrimaryIPs(
     name *string,
     labelSelector *string,
     ip *string,
-    sort *models.Sort2Enum) (
+    sort *models.Sort2) (
     models.ApiResponse[models.PrimaryIPsResponse],
     error)
 ```
@@ -25,7 +25,7 @@ GetAllPrimaryIPs(
 | `name` | `*string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `*string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 | `ip` | `*string` | Query, Optional | Can be used to filter resources by their ip. The response will only contain the resources matching the specified ip. |
-| `sort` | [`*models.Sort2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
+| `sort` | [`*models.Sort2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/sort-2.md) | Query, Optional | Can be used multiple times. Choices id id:asc id:desc created created:asc created:desc |
 
 
 # Response Type
@@ -42,7 +42,7 @@ ctx := context.Background()
 
 ip := "127.0.0.1"
 
-apiResponse, err := primaryIPsController.GetAllPrimaryIPs(ctx, nil, nil, &ip, nil)
+apiResponse, err := primaryIPsApi.GetAllPrimaryIPs(ctx, nil, nil, &ip, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

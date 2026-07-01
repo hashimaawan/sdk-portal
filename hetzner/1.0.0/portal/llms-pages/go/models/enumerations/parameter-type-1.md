@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`ParameterType1Enum`
+`ParameterType1`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SPREAD` |
+| `Spread` |
 
 
 # Example
@@ -21,11 +21,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    parameterType1 := models.ParameterType1Enum_SPREAD
+    parameterType1 := models.ParameterType1_Spread
 
 }
 ```

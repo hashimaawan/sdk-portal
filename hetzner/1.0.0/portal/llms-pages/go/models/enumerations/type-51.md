@@ -7,15 +7,15 @@ Primary IP type
 
 # Class Name
 
-`Type51Enum`
+`Type51`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `IPV4` |
-| `IPV6` |
+| `Ipv4` |
+| `Ipv6` |
 
 
 # Example
@@ -24,11 +24,11 @@ Primary IP type
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type51 := models.Type51Enum_IPV4
+    type51 := models.Type51_Ipv4
 
 }
 ```

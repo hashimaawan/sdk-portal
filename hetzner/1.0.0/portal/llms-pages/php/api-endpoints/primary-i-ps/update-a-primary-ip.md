@@ -11,7 +11,7 @@ If the Primary IP object changes during the request, the response will be a “c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAPrimaryIP(int $id, ?UpdatePrimaryIPRequest $body = null): PrimaryIPResponse
+function updateAPrimaryIp(int $id, ?UpdatePrimaryIpRequest $body = null): ApiResponse
 ```
 
 
@@ -20,14 +20,14 @@ function updateAPrimaryIP(int $id, ?UpdatePrimaryIPRequest $body = null): Primar
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the resource |
-| `body` | [`?UpdatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/update-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`?UpdatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/update-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `primary_ip` key contains the Primary IP that was just updated
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -35,23 +35,29 @@ function updateAPrimaryIP(int $id, ?UpdatePrimaryIPRequest $body = null): Primar
 ```php
 $id = 112;
 
-$body = UpdatePrimaryIPRequestBuilder::init()
+$body = UpdatePrimaryIpRequestBuilder::init()
     ->autoDelete(true)
     ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
     ->name('my-ip')
     ->build();
 
-$primaryIPsController = $client->getPrimaryIPsController();
+$primaryIPsApi = $client->getPrimaryIPsApi();
+$apiResponse = $primaryIPsApi->updateAPrimaryIp(
+    $id,
+    $body
+);
 
-try {
-    $result = $primaryIPsController->updateAPrimaryIP(
-        $id,
-        $body
-    );
-    echo 'PrimaryIPResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'PrimaryIpResponse:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

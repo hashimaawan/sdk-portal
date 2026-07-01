@@ -27,7 +27,7 @@ def update_an_image(self,
 
 **200**: The image key in the reply contains the modified Image object
 
-[`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/images-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/images-response-1.md).
 
 
 # Example Usage
@@ -40,11 +40,15 @@ body = UpdateImageRequest(
     labels=jsonpickle.decode('{"labelkey":"value"}')
 )
 
-result = images_controller.update_an_image(
+result = images_api.update_an_image(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

@@ -7,7 +7,7 @@ Returns a specific Datacenter object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getADatacenter(int $id): DatacentersResponse1
+function getADatacenter(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getADatacenter(int $id): DatacentersResponse1
 
 **200**: The `datacenter` key in the reply contains a Datacenter object with this structure
 
-[`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/datacenters-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/datacenters-response-1.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getADatacenter(int $id): DatacentersResponse1
 ```php
 $id = 112;
 
-$datacentersController = $client->getDatacentersController();
+$datacentersApi = $client->getDatacentersApi();
+$apiResponse = $datacentersApi->getADatacenter($id);
 
-try {
-    $result = $datacentersController->getADatacenter($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'DatacentersResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

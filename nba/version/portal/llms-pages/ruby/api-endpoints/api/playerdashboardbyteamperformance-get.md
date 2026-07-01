@@ -58,7 +58,7 @@ def playerdashboardbyteamperformance_get(measure_type,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -104,7 +104,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.playerdashboardbyteamperformance_get(
+result = client_api.playerdashboardbyteamperformance_get(
   measure_type,
   per_mode,
   plus_minus,
@@ -126,6 +126,12 @@ client_controller.playerdashboardbyteamperformance_get(
   period,
   last_n_games
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

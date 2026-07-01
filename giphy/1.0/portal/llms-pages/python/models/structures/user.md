@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more.
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -20,11 +22,14 @@ The User Object contains information about the user associated with a GIF and UR
 | `profile_url` | `str` | Optional | The URL for this user's profile. |
 | `twitter` | `str` | Optional | The Twitter username associated with this user, if applicable. |
 | `username` | `str` | Optional | The username associated with this user. |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from giphyapi.models.user import User
 
 user = User(
@@ -33,7 +38,10 @@ user = User(
     display_name='JoeCool4000',
     profile_url='https://giphy.com/cheezburger/',
     twitter='@joecool4000',
-    username='joecool4000'
+    username='joecool4000',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

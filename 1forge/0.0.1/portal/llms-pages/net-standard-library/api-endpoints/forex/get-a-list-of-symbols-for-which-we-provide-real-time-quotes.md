@@ -17,7 +17,7 @@ GetAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync()
 
 **200**: A list of symbols
 
-`Task<List<string>>`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type List<string>.
 
 
 # Example Usage
@@ -25,7 +25,7 @@ GetAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync()
 ```csharp
 try
 {
-    List<string> result = await forexController.GetAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync();
+    ApiResponse<List<string>> result = await forexApi.GetAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync();
 }
 catch (ApiException e)
 {

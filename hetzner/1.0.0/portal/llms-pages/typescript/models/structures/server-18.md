@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNlcnZlcjE4
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -32,23 +34,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `publicNet` | [`PublicNet4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/public-net-4.md) | Required | Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip` |
 | `rescueEnabled` | `boolean` | Required | True if rescue mode is enabled. Server will then boot into rescue system on next reboot |
 | `serverType` | [`ServerType1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/server-type-1.md) | Required | Type of Server - determines how much ram, disk and cpu a Server has |
-| `status` | [`Status73Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-73.md) | Required | Status of the Server |
+| `status` | [`Status73`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-73.md) | Required | Status of the Server |
 | `volumes` | `number[] \| undefined` | Optional | IDs of Volumes assigned to this Server |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  CpuTypeEnum,
-  OsFlavorEnum,
+  CpuType,
+  OsFlavor,
   Server18,
-  Status24Enum,
-  Status72Enum,
-  Status73Enum,
-  StorageTypeEnum,
-  Type22Enum,
-  Type26Enum,
+  Status24,
+  Status72,
+  Status73,
+  StorageType,
+  Type22,
+  Type26,
 } from 'hetzner-cloud-apilib';
 
 const server18: Server18 = {
@@ -66,6 +69,9 @@ const server18: Server18 = {
       longitude: 12.370071,
       name: 'fsn1',
       networkZone: 'eu-central',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     name: 'fsn1-dc8',
     serverTypes: {
@@ -84,6 +90,12 @@ const server18: Server18 = {
         2,
         3
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
+    },
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
     },
   },
   id: 42,
@@ -93,6 +105,9 @@ const server18: Server18 = {
     createdFrom: {
       id: 1,
       name: 'Server',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     deleted: null,
     deprecated: '2018-02-28T00:00:00+00:00',
@@ -104,14 +119,20 @@ const server18: Server18 = {
       'key0': 'labels4'
     },
     name: 'ubuntu-20.04',
-    osFlavor: OsFlavorEnum.Ubuntu,
+    osFlavor: OsFlavor.Ubuntu,
     osVersion: '20.04',
     protection: {
       mDelete: false,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
-    status: Status24Enum.Unavailable,
-    type: Type22Enum.Snapshot,
+    status: Status24.Unavailable,
+    type: Type22.Snapshot,
     rapidDeploy: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   includedTraffic: 654321,
   ingoingTraffic: 123456,
@@ -120,7 +141,10 @@ const server18: Server18 = {
     description: 'FreeBSD 11.0 x64',
     id: 42,
     name: 'FreeBSD-11.0-RELEASE-amd64-dvd1',
-    type: Type26Enum.Public,
+    type: Type26.Public,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   labels: {
     'key0': 'labels4',
@@ -139,11 +163,17 @@ const server18: Server18 = {
       ip: '10.0.0.2',
       macAddress: '86:00:ff:2a:7d:e1',
       network: 4711,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   protection: {
     mDelete: false,
     rebuild: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   publicNet: {
     floatingIps: [
@@ -154,6 +184,9 @@ const server18: Server18 = {
       dnsPtr: 'server01.example.com',
       ip: '1.2.3.4',
       id: 42,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     ipv6: {
       blocked: false,
@@ -161,26 +194,41 @@ const server18: Server18 = {
         {
           dnsPtr: 'server.example.com',
           ip: '2001:db8::1',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
       ip: '2001:db8::/64',
       id: 42,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     firewalls: [
       {
         id: 250,
-        status: Status72Enum.Applied,
+        status: Status72.Applied,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         id: 250,
-        status: Status72Enum.Applied,
+        status: Status72.Applied,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   rescueEnabled: false,
   serverType: {
     cores: 1,
-    cpuType: CpuTypeEnum.Shared,
+    cpuType: CpuType.Shared,
     deprecated: false,
     description: 'CX11',
     disk: 25,
@@ -193,16 +241,28 @@ const server18: Server18 = {
         priceHourly: {
           gross: '1.1900000000000000',
           net: '1.0000000000',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         priceMonthly: {
           gross: '1.1900000000000000',
           net: '1.0000000000',
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
+        },
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
         },
       }
     ],
-    storageType: StorageTypeEnum.Local,
+    storageType: StorageType.Local,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
-  status: Status73Enum.Running,
+  status: Status73.Running,
   loadBalancers: [
     248
   ],
@@ -219,12 +279,18 @@ const server18: Server18 = {
       253
     ],
     type: 'type2',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   volumes: [
     199,
     200,
     201
   ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

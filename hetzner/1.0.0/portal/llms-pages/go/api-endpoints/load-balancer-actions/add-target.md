@@ -50,11 +50,11 @@ ctx := context.Background()
 id := 112
 
 body := models.AddTargetRequest{
-    Type:                 models.Type29Enum_LABELSELECTOR,
-    UsePrivateIp:         models.ToPointer(true),
+    Type:                  models.Type29_LabelSelector,
+    UsePrivateIp:          models.ToPointer(true),
 }
 
-apiResponse, err := loadBalancerActionsController.AddTarget(ctx, id, &body)
+apiResponse, err := loadBalancerActionsApi.AddTarget(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

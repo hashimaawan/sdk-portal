@@ -7,7 +7,7 @@ Creates a new Server. Returns preliminary information about the Server as well a
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CreateServerResponse> createAServerAsync(
+CompletableFuture<ApiResponse<CreateServerResponse>> createAServerAsync(
     final CreateServerRequest body)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<CreateServerResponse> createAServerAsync(
 
 **201**: The `server` key in the reply contains a Server object with this structure
 
-[`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-server-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreateServerResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/create-server-response.md).
 
 
 # Example Usage
@@ -56,7 +56,7 @@ CreateServerRequest body = new CreateServerRequest.Builder(
     ))
 .build();
 
-serversController.createAServerAsync(body).thenAccept(result -> {
+serversApi.createAServerAsync(body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

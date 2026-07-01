@@ -7,7 +7,7 @@ Deletes a Server. This immediately removes the Server from your account, and it 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersResponse1> deleteAServerAsync(
+CompletableFuture<ApiResponse<ServersResponse1>> deleteAServerAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<ServersResponse1> deleteAServerAsync(
 
 **200**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-response-1.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<ServersResponse1> deleteAServerAsync(
 ```java
 int id = 112;
 
-serversController.deleteAServerAsync(id).thenAccept(result -> {
+serversApi.deleteAServerAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

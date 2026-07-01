@@ -7,7 +7,7 @@ Type of the Floating IP
 
 # Enum Type Name
 
-`Type16Enum`
+`Type16`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the Floating IP
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type16Enum type16 = Type16Enum.Ipv4;
+Type16 type16 = Type16.Ipv4;
 ```
 
 

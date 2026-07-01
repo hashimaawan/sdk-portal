@@ -31,7 +31,7 @@ CreateImageFromAServerAsync(
 
 The `action` key in the reply contains an Action object with this structure
 
-[`Task<Models.ServersActionsCreateImageResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-actions-create-image-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServersActionsCreateImageResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-actions-create-image-response.md).
 
 
 # Example Usage
@@ -41,12 +41,12 @@ int id = 112;
 CreateImageRequest body = new CreateImageRequest
 {
     Description = "my image",
-    Type = Type63Enum.Snapshot,
+    Type = Type63.Snapshot,
 };
 
 try
 {
-    ServersActionsCreateImageResponse result = await serverActionsController.CreateImageFromAServerAsync(
+    ApiResponse<ServersActionsCreateImageResponse> result = await serverActionsApi.CreateImageFromAServerAsync(
         id,
         body
     );

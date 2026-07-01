@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRk5ldHdvcmtzJTI1MjBSZXNwb25zZTE
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -13,6 +15,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `Network` | [`Network`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/network.md) | Optional | - | Network getNetwork() | setNetwork(Network network) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -24,7 +27,7 @@ import cloud.hetzner.api.models.NetworksResponse1;
 import cloud.hetzner.api.models.Protection11;
 import cloud.hetzner.api.models.Route;
 import cloud.hetzner.api.models.Subnet;
-import cloud.hetzner.api.models.Type42Enum;
+import cloud.hetzner.api.models.Type42;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -38,22 +41,26 @@ NetworksResponse1 networksResponse1 = new NetworksResponse1.Builder()
         new Protection11.Builder(
             false
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         Arrays.asList(
             new Route.Builder(
                 "destination8",
                 "gateway6"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Route.Builder(
                 "destination8",
                 "gateway6"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             new Route.Builder(
                 "destination8",
                 "gateway6"
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         ),
         Arrays.asList(
@@ -63,16 +70,19 @@ NetworksResponse1 networksResponse1 = new NetworksResponse1.Builder()
             new Subnet.Builder(
                 "gateway4",
                 "network_zone2",
-                Type42Enum.CLOUD
+                Type42.CLOUD
             )
             .ipRange("ip_range6")
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
         )
     )
     .loadBalancers(Arrays.asList(
             208
         ))
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

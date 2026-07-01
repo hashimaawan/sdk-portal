@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-Playbyplayv2GET(
+Playbyplayv2Get(
     ctx context.Context,
-    gameID string,
+    gameId string,
     startPeriod string,
     endPeriod string) (
     http.Response,
@@ -19,7 +19,7 @@ Playbyplayv2GET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `startPeriod` | `string` | Query, Required | - |
 | `endPeriod` | `string` | Query, Required | - |
 
@@ -36,13 +36,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-gameID := "GameID8"
+gameId := "GameID8"
 
 startPeriod := "StartPeriod4"
 
 endPeriod := "EndPeriod0"
 
-resp, err := aPIController.Playbyplayv2GET(ctx, gameID, startPeriod, endPeriod)
+resp, err := api.Playbyplayv2Get(ctx, gameId, startPeriod, endPeriod)
 if err != nil {
     log.Fatalln(err)
 } else {

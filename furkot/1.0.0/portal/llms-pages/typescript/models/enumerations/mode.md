@@ -7,7 +7,7 @@ travel mode
 
 # Enum Type Name
 
-`ModeEnum`
+`Mode`
 
 
 # Fields
@@ -24,9 +24,9 @@ travel mode
 # Example
 
 ```ts
-import { ModeEnum } from 'furkot-tripslib';
+import { Mode } from 'furkot-tripslib';
 
-const mode = ModeEnum.Bicycle;
+const mode = Mode.Bicycle;
 ```
 
 

@@ -5,15 +5,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`Status23Enum`
+`Status23`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `AVAILABLE` |
-| `CREATING` |
+| `Available` |
+| `Creating` |
 
 
 # Example
@@ -22,11 +22,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status23 := models.Status23Enum_AVAILABLE
+    status23 := models.Status23_Available
 
 }
 ```

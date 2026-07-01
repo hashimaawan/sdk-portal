@@ -7,10 +7,10 @@ Actions show the results and progress of asynchronous requests to the API.
 
 # Get instance
 
-An instance of the `ActionsController` class can be accessed from the API Client.
+An instance of the `ActionsApi` class can be accessed from the API Client.
 
 ```
-ActionsController actionsController = client.getActionsController();
+ActionsApi actionsApi = client.getActionsApi();
 ```
 
 

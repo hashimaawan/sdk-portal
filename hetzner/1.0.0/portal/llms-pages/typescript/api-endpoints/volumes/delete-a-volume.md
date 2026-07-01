@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 'id0';
 
 try {
-  const response = await volumesController.deleteAVolume(id);
+  const response = await volumesApi.deleteAVolume(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

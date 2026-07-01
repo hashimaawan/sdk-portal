@@ -9,7 +9,7 @@ A Primary IP can only be delete protected if its `auto_delete` property is set t
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function changePrimaryIPProtection(int $id, ?ChangeProtectionRequest2 $body = null): ActionResponse
+function changePrimaryIpProtection(int $id, ?ChangeProtectionRequest2 $body = null): ApiResponse
 ```
 
 
@@ -25,7 +25,7 @@ function changePrimaryIPProtection(int $id, ?ChangeProtectionRequest2 $body = nu
 
 **201**: The `action` key contains the `change_protection` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -37,17 +37,23 @@ $body = ChangeProtectionRequest2Builder::init()
     ->delete(true)
     ->build();
 
-$primaryIPActionsController = $client->getPrimaryIPActionsController();
+$primaryIpActionsApi = $client->getPrimaryIpActionsApi();
+$apiResponse = $primaryIpActionsApi->changePrimaryIpProtection(
+    $id,
+    $body
+);
 
-try {
-    $result = $primaryIPActionsController->changePrimaryIPProtection(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -7,7 +7,7 @@ Returns a specific Datacenter object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<DatacentersResponse1> getADatacenterAsync(
+CompletableFuture<ApiResponse<DatacentersResponse1>> getADatacenterAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<DatacentersResponse1> getADatacenterAsync(
 
 **200**: The `datacenter` key in the reply contains a Datacenter object with this structure
 
-[`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/datacenters-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/datacenters-response-1.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<DatacentersResponse1> getADatacenterAsync(
 ```java
 int id = 112;
 
-datacentersController.getADatacenterAsync(id).thenAccept(result -> {
+datacentersApi.getADatacenterAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

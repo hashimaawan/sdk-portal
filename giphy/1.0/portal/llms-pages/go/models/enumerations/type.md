@@ -7,14 +7,14 @@ Type of the gif. By default, this is almost always gif
 
 # Class Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `GIF` |
+| `Gif` |
 
 
 # Example
@@ -23,11 +23,11 @@ Type of the gif. By default, this is almost always gif
 package main
 
 import (
-    "giphyapi/models"
+    "giphyApi/models"
 )
 
 func main() {
-    mType := models.TypeEnum_GIF
+    mType := models.Type_Gif
 
 }
 ```

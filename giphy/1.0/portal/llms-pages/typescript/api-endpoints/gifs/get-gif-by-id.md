@@ -14,7 +14,7 @@ async getGifById(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -38,7 +38,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const gifId = 250;
 
 try {
-  const response = await gifsController.getGifById(gifId);
+  const response = await gifsApi.getGifById(gifId);
 
   // Extracting fully parsed response body.
   console.log(response.result);

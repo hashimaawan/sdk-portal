@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip`
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,38 +20,54 @@ Public network information. The Server's IPv4 address can be found in `public_ne
 | `floating_ips` | `Array[Integer]` | Required | IDs of Floating IPs assigned to this Server |
 | `ipv_4` | [`Ipv44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/ipv-44.md) | Required | IP address (v4) and its reverse DNS entry of this Server |
 | `ipv_6` | [`Ipv64`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/ipv-64.md) | Required | IPv6 network assigned to this Server and its reverse DNS entry |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 public_net4 = PublicNet4.new(
-  [
+  floating_ips: [
     478
   ],
-  Ipv44.new(
-    false,
-    'server01.example.com',
-    '1.2.3.4',
-    42
+  ipv4: Ipv44.new(
+    blocked: false,
+    dns_ptr: 'server01.example.com',
+    ip: '1.2.3.4',
+    id: 42,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  Ipv64.new(
-    false,
-    [
+  ipv6: Ipv64.new(
+    blocked: false,
+    dns_ptr: [
       DnsPtr8.new(
-        'server.example.com',
-        '2001:db8::1'
+        dns_ptr: 'server.example.com',
+        ip: '2001:db8::1',
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       )
     ],
-    '2001:db8::/64',
-    42
+    ip: '2001:db8::/64',
+    id: 42,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  [
+  firewalls: [
     ServerPublicNetFirewall.new(
-      250,
-      Status72Enum::APPLIED
+      id: 250,
+      status: Status72::APPLIED,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
-  ]
+  ],
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

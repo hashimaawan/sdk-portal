@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := serverActionsController.SoftRebootAServer(ctx, id)
+apiResponse, err := serverActionsApi.SoftRebootAServer(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

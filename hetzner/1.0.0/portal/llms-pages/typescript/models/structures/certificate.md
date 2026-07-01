@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkNlcnRpZmljYXRl
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -22,19 +24,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `notValidAfter` | `string \| null` | Required | Point in time when the Certificate stops being valid (in ISO-8601 format) |
 | `notValidBefore` | `string \| null` | Required | Point in time when the Certificate becomes valid (in ISO-8601 format) |
 | `status` | [`Status2 \| null \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/status-2.md) | Optional | Current status of a type `managed` Certificate, always *null* for type `uploaded` Certificates |
-| `type` | [`TypeEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type.md) | Optional | Type of the Certificate |
+| `type` | [`Type \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type.md) | Optional | Type of the Certificate |
 | `usedBy` | [`UsedBy[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/used-by.md) | Required | Resources currently using the Certificate |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import {
-  Certificate,
-  IssuanceEnum,
-  RenewalEnum,
-  TypeEnum,
-} from 'hetzner-cloud-apilib';
+import { Certificate, Issuance, Renewal, Type } from 'hetzner-cloud-apilib';
 
 const certificate: Certificate = {
   certificate: '-----BEGIN CERTIFICATE-----\n...',
@@ -58,14 +56,23 @@ const certificate: Certificate = {
     {
       id: 4711,
       type: 'load_balancer',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   status: {
     error: null,
-    issuance: IssuanceEnum.Completed,
-    renewal: RenewalEnum.Failed,
+    issuance: Issuance.Completed,
+    renewal: Renewal.Failed,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
-  type: TypeEnum.Uploaded,
+  type: Type.Uploaded,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

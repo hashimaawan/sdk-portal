@@ -16,7 +16,7 @@ The maximum amount of rules that can be defined is 50.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function setRules(int $id, ?SetRulesRequest $body = null): ActionsResponse
+function setRules(int $id, ?SetRulesRequest $body = null): ApiResponse
 ```
 
 
@@ -32,7 +32,7 @@ function setRules(int $id, ?SetRulesRequest $body = null): ActionsResponse
 
 **201**: The `action` key contains one `set_firewall_rules` Action plus one `apply_firewall` Action per resource where the Firewall is active
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -43,8 +43,8 @@ $id = 112;
 $body = SetRulesRequestBuilder::init(
     [
         RuleBuilder::init(
-            DirectionEnum::IN,
-            ProtocolEnum::TCP
+            Direction::IN,
+            Protocol::TCP
         )
             ->description('Allow port 80')
             ->port('80')
@@ -59,17 +59,23 @@ $body = SetRulesRequestBuilder::init(
     ]
 )->build();
 
-$firewallActionsController = $client->getFirewallActionsController();
+$firewallActionsApi = $client->getFirewallActionsApi();
+$apiResponse = $firewallActionsApi->setRules(
+    $id,
+    $body
+);
 
-try {
-    $result = $firewallActionsController->setRules(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionsResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

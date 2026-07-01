@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function draftcombinenonstationaryshootingGET(string $leagueID, string $seasonYear): void
+function draftcombinenonstationaryshootingGet(string $leagueId, string $seasonYear): ApiResponse
 ```
 
 
@@ -13,7 +13,7 @@ function draftcombinenonstationaryshootingGET(string $leagueID, string $seasonYe
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonYear` | `string` | Query, Required | - |
 
 
@@ -21,25 +21,33 @@ function draftcombinenonstationaryshootingGET(string $leagueID, string $seasonYe
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```php
-$leagueID = 'LeagueID4';
+$leagueId = 'LeagueID4';
 
 $seasonYear = 'SeasonYear6';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->draftcombinenonstationaryshootingGet(
+    $leagueId,
+    $seasonYear
+);
 
-try {
-    $aPIController->draftcombinenonstationaryshootingGET(
-        $leagueID,
-        $seasonYear
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

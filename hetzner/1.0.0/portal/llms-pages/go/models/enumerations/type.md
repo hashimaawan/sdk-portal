@@ -7,15 +7,15 @@ Type of the Certificate
 
 # Class Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `UPLOADED` |
-| `MANAGED` |
+| `Uploaded` |
+| `Managed` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of the Certificate
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    mType := models.TypeEnum_UPLOADED
+    mType := models.Type_Uploaded
 
 }
 ```

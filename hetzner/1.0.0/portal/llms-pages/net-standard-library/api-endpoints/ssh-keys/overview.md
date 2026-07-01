@@ -7,10 +7,10 @@ SSH keys are public keys you provide to the cloud system. They can be injected i
 
 # Get instance
 
-An instance of the `SSHKeysController` class can be accessed from the API Client.
+An instance of the `SshKeysApi` class can be accessed from the API Client.
 
 ```
-SSHKeysController sSHKeysController = client.SSHKeysController;
+SshKeysApi sshKeysApi = client.SshKeysApi;
 ```
 
 

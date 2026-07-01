@@ -9,10 +9,10 @@ Currency for all amounts is €. All prices exclude VAT.
 
 # Get singleton instance
 
-The singleton instance of the `LoadBalancerTypesController` class can be accessed from the API Client.
+The singleton instance of the `LoadBalancerTypesApi` class can be accessed from the API Client.
 
 ```
-$loadBalancerTypesController = $client->getLoadBalancerTypesController();
+$loadBalancerTypesApi = $client->getLoadBalancerTypesApi();
 ```
 
 

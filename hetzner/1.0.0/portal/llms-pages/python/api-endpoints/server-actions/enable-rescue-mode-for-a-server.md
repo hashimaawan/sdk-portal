@@ -33,7 +33,7 @@ def enable_rescue_mode_for_a_server(self,
 
 The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-enable-rescue-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ServersActionsEnableRescueResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-enable-rescue-response.md).
 
 
 # Example Usage
@@ -47,11 +47,15 @@ body = ServersActionsEnableRescueRequest(
     ]
 )
 
-result = server_actions_controller.enable_rescue_mode_for_a_server(
+result = server_actions_api.enable_rescue_mode_for_a_server(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

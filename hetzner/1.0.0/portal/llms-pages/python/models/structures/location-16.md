@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location of the Volume. Volume can only be attached to Servers in the same Location.
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -22,11 +24,14 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 | `longitude` | `float` | Required | Longitude of the city closest to the Location |
 | `name` | `str` | Required | Unique identifier of the Location |
 | `network_zone` | `str` | Required | Name of network zone this Location resides in |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.location_16 import Location16
 
 location_16 = Location16(
@@ -37,7 +42,10 @@ location_16 = Location16(
     latitude=50.47612,
     longitude=12.370071,
     name='fsn1',
-    network_zone='eu-central'
+    network_zone='eu-central',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

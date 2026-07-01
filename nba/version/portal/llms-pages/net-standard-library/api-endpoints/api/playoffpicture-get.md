@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-PlayoffpictureGETAsync(
-    string leagueID,
-    string seasonID)
+PlayoffpictureGetAsync(
+    string leagueId,
+    string seasonId)
 ```
 
 
@@ -15,8 +15,8 @@ PlayoffpictureGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `seasonID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `seasonId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -29,13 +29,13 @@ PlayoffpictureGETAsync(
 # Example Usage
 
 ```csharp
-string leagueID = "LeagueID4";
-string seasonID = "SeasonID6";
+string leagueId = "LeagueID4";
+string seasonId = "SeasonID6";
 try
 {
-    await aPIController.PlayoffpictureGETAsync(
-        leagueID,
-        seasonID
+    await api.PlayoffpictureGetAsync(
+        leagueId,
+        seasonId
     );
 }
 catch (ApiException e)

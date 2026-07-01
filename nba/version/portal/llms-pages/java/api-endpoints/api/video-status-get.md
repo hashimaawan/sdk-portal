@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> videoStatusGETAsync(
-    final String leagueID,
+CompletableFuture<ApiResponse<Void>> videoStatusGetAsync(
+    final String leagueId,
     final String gameDate)
 ```
 
@@ -15,7 +15,7 @@ CompletableFuture<Void> videoStatusGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `gameDate` | `String` | Query, Required | - |
 
 
@@ -29,11 +29,12 @@ CompletableFuture<Void> videoStatusGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 String gameDate = "GameDate8";
 
-aPIController.videoStatusGETAsync(leagueID, gameDate).thenAccept(result -> {
+api.videoStatusGetAsync(leagueId, gameDate).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

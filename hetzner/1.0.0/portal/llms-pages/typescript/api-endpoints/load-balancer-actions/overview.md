@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `LoadBalancerActionsController` class can be created using the API Client.
+The instance of the `LoadBalancerActionsApi` class can be created using the API Client.
 
 ```
-const loadBalancerActionsController = new LoadBalancerActionsController(client);
+const loadBalancerActionsApi = new LoadBalancerActionsApi(client);
 ```
 
 

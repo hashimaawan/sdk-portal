@@ -22,18 +22,18 @@ The retryConfiguration can be initialized as follows:
 package main
 
 import (
-    "m1forgefinanceapis"
+    "m1ForgeFinanceApIs"
 )
 
 func main() {
-    retryConfiguration := m1forgefinanceapis.CreateRetryConfiguration(
-        m1forgefinanceapis.WithMaxRetryAttempts(0),
-        m1forgefinanceapis.WithRetryOnTimeout(true),
-        m1forgefinanceapis.WithRetryInterval(1),
-        m1forgefinanceapis.WithMaximumRetryWaitTime(0),
-        m1forgefinanceapis.WithBackoffFactor(2),
-        m1forgefinanceapis.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
-        m1forgefinanceapis.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
+    retryConfiguration := m1ForgeFinanceApIs.CreateRetryConfiguration(
+        m1ForgeFinanceApIs.WithMaxRetryAttempts(0),
+        m1ForgeFinanceApIs.WithRetryOnTimeout(true),
+        m1ForgeFinanceApIs.WithRetryInterval(1),
+        m1ForgeFinanceApIs.WithMaximumRetryWaitTime(0),
+        m1ForgeFinanceApIs.WithBackoffFactor(2),
+        m1ForgeFinanceApIs.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
+        m1ForgeFinanceApIs.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
     )
 }
 ```

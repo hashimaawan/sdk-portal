@@ -22,7 +22,7 @@ def delete_an_image(id)
 
 **204**: Image deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -30,7 +30,13 @@ def delete_an_image(id)
 ```ruby
 id = 112
 
-images_controller.delete_an_image(id)
+result = images_api.delete_an_image(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

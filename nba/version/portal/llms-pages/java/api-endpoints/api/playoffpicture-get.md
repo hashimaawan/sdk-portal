@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> playoffpictureGETAsync(
-    final String leagueID,
-    final String seasonID)
+CompletableFuture<ApiResponse<Void>> playoffpictureGetAsync(
+    final String leagueId,
+    final String seasonId)
 ```
 
 
@@ -15,8 +15,8 @@ CompletableFuture<Void> playoffpictureGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
-| `seasonID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
+| `seasonId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -29,11 +29,12 @@ CompletableFuture<Void> playoffpictureGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
-String seasonID = "SeasonID6";
+String leagueId = "LeagueID4";
+String seasonId = "SeasonID6";
 
-aPIController.playoffpictureGETAsync(leagueID, seasonID).thenAccept(result -> {
+api.playoffpictureGetAsync(leagueId, seasonId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

@@ -7,7 +7,7 @@ Type of rescue system to boot (default: `linux64`)
 
 # Enum Type Name
 
-`Type65Enum`
+`Type65`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of rescue system to boot (default: `linux64`)
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type65Enum;
+import cloud.hetzner.api.models.Type65;
 
-Type65Enum type65 = Type65Enum.LINUX64;
+Type65 type65 = Type65.LINUX64;
 ```
 
 

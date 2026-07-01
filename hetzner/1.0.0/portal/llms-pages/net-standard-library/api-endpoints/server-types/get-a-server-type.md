@@ -23,7 +23,7 @@ GetAServerTypeAsync(
 
 **200**: The `server_type` key in the reply contains a Server type object with this structure
 
-[`Task<Models.ServerTypesResponse1>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/server-types-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServerTypesResponse1](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/server-types-response-1.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetAServerTypeAsync(
 int id = 112;
 try
 {
-    ServerTypesResponse1 result = await serverTypesController.GetAServerTypeAsync(id);
+    ApiResponse<ServerTypesResponse1> result = await serverTypesApi.GetAServerTypeAsync(id);
 }
 catch (ApiException e)
 {

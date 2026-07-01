@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRk5ldHdvcms
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -22,13 +24,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Routes` | [`List<Route>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/route.md) | Required | Array of routes set in this Network |
 | `Servers` | `List<int>` | Required | Array of IDs of Servers attached to this Network |
 | `Subnets` | [`List<Subnet>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/subnet.md) | Required | Array subnets allocated in this Network |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
-using HetznerCloudAPI.Standard.Utilities;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Network network = new Network
@@ -41,6 +44,7 @@ Network network = new Network
     Protection = new Protection11
     {
         Delete = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Routes = new List<Route>
     {
@@ -48,6 +52,7 @@ Network network = new Network
         {
             Destination = "10.100.1.0/24",
             Gateway = "10.0.1.1",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Servers = new List<int>
@@ -60,14 +65,16 @@ Network network = new Network
         {
             Gateway = "10.0.0.1",
             NetworkZone = "eu-central",
-            Type = Type42Enum.Cloud,
+            Type = Type42.Cloud,
             IpRange = "10.0.1.0/24",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     LoadBalancers = new List<int>
     {
         42,
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

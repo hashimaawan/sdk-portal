@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNyZWF0ZUxvYWRCYWxhbmNlclJlcXVlc3Q
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -22,29 +24,41 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `public_interface` | `bool` | Optional | Enable or disable the public interface of the Load Balancer |
 | `services` | [`List[LoadBalancerService]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancer-service.md) | Optional | Array of services |
 | `targets` | [`List[LoadBalancerTarget]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancer-target.md) | Optional | Array of targets |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.create_load_balancer_request import CreateLoadBalancerRequest
 from hetznercloudapi.models.labels import Labels
 from hetznercloudapi.models.load_balancer_algorithm import LoadBalancerAlgorithm
-from hetznercloudapi.models.type_28_enum import Type28Enum
+from hetznercloudapi.models.type_28 import Type28
 
 create_load_balancer_request = CreateLoadBalancerRequest(
     algorithm=LoadBalancerAlgorithm(
-        mtype=Type28Enum.ROUND_ROBIN
+        mtype=Type28.ROUND_ROBIN,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     load_balancer_type='lb11',
     name='Web Frontend',
     labels=Labels(
-        labelkey='labelkey4'
+        labelkey='labelkey4',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     location='location8',
     network=123,
     network_zone='eu-central',
-    public_interface=True
+    public_interface=True,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

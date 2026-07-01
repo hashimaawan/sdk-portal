@@ -51,7 +51,7 @@ const body: ServersActionsEnableRescueRequest = {
 };
 
 try {
-  const response = await serverActionsController.enableRescueModeForAServer(
+  const response = await serverActionsApi.enableRescueModeForAServer(
     id,
     body
   );

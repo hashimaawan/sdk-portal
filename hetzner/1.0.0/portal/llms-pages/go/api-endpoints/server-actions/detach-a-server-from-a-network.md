@@ -39,10 +39,10 @@ ctx := context.Background()
 id := 112
 
 body := models.DetachFromNetworkRequest{
-    Network:              4711,
+    Network:               4711,
 }
 
-apiResponse, err := serverActionsController.DetachAServerFromANetwork(ctx, id, &body)
+apiResponse, err := serverActionsApi.DetachAServerFromANetwork(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

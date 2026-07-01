@@ -7,7 +7,7 @@ Returns a specific Primary IP object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<PrimaryIPResponse> getAPrimaryIPAsync(
+CompletableFuture<ApiResponse<PrimaryIpResponse>> getAPrimaryIpAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<PrimaryIPResponse> getAPrimaryIPAsync(
 
 **200**: The `primary_ip` key contains a Primary IP object
 
-[`PrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`PrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/primary-ip-response.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<PrimaryIPResponse> getAPrimaryIPAsync(
 ```java
 int id = 112;
 
-primaryIPsController.getAPrimaryIPAsync(id).thenAccept(result -> {
+primaryIPsApi.getAPrimaryIpAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

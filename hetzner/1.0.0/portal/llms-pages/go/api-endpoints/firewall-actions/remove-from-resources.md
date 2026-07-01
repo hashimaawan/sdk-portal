@@ -49,17 +49,17 @@ ctx := context.Background()
 id := 112
 
 body := models.RemoveFromResourcesRequest{
-    RemoveFrom:           []models.FirewallRemoveFromResources{
+    RemoveFrom:            []models.FirewallRemoveFromResources{
         models.FirewallRemoveFromResources{
-            Server:               models.ToPointer(models.Server9{
-                Id:                   42,
+            Server:                models.ToPointer(models.Server9{
+                Id:                    42,
             }),
-            Type:                 models.ToPointer(models.Type7Enum_SERVER),
+            Type:                  models.ToPointer(models.Type7_Server),
         },
     },
 }
 
-apiResponse, err := firewallActionsController.RemoveFromResources(ctx, id, &body)
+apiResponse, err := firewallActionsApi.RemoveFromResources(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

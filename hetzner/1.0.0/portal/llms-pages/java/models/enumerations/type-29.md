@@ -7,7 +7,7 @@ Type of the resource
 
 # Enum Type Name
 
-`Type29Enum`
+`Type29`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of the resource
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type29Enum;
+import cloud.hetzner.api.models.Type29;
 
-Type29Enum type29 = Type29Enum.SERVER;
+Type29 type29 = Type29.SERVER;
 ```
 
 

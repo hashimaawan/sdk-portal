@@ -10,8 +10,8 @@ Returns all existing Server objects
 GetAllServersAsync(
     string name = null,
     string labelSelector = null,
-    Models.SortEnum? sort = null,
-    Models.Status70Enum? status = null)
+    Models.Sort? sort = null,
+    Models.Status70? status = null)
 ```
 
 
@@ -21,15 +21,15 @@ GetAllServersAsync(
 |  --- | --- | --- | --- |
 | `name` | `string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
-| `sort` | [`SortEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`Status70Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-70.md) | Query, Optional | Can be used multiple times. The response will only contain Server matching the status |
+| `sort` | [`Sort?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`Status70?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-70.md) | Query, Optional | Can be used multiple times. The response will only contain Server matching the status |
 
 
 # Response Type
 
 **200**: A paged array of servers
 
-[`Task<Models.ServersResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServersResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-response.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ GetAllServersAsync(
 ```csharp
 try
 {
-    ServersResponse result = await serversController.GetAllServersAsync();
+    ApiResponse<ServersResponse> result = await serversApi.GetAllServersAsync();
 }
 catch (ApiException e)
 {

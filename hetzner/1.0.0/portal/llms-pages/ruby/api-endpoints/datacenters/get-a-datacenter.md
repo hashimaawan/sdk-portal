@@ -22,7 +22,7 @@ def get_a_datacenter(id)
 
 **200**: The `datacenter` key in the reply contains a Datacenter object with this structure
 
-[`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/datacenters-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`DatacentersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/datacenters-response-1.md).
 
 
 # Example Usage
@@ -30,8 +30,13 @@ def get_a_datacenter(id)
 ```ruby
 id = 112
 
-result = datacenters_controller.get_a_datacenter(id)
-puts result
+result = datacenters_api.get_a_datacenter(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

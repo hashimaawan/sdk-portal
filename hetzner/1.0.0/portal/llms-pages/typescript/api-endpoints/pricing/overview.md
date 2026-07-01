@@ -7,10 +7,10 @@ Returns prices for resources.
 
 # Create Instance
 
-The instance of the `PricingController` class can be created using the API Client.
+The instance of the `PricingApi` class can be created using the API Client.
 
 ```
-const pricingController = new PricingController(client);
+const pricingApi = new PricingApi(client);
 ```
 
 

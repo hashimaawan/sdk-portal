@@ -43,7 +43,7 @@ const body: DeleteSubnetRequest = {
 };
 
 try {
-  const response = await networkActionsController.deleteASubnetFromANetwork(
+  const response = await networkActionsApi.deleteASubnetFromANetwork(
     id,
     body
   );

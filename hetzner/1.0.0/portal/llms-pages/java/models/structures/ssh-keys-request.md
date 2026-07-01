@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRlNzaCUyNTIwS2V5cyUyNTIwUmVxdWVzdA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Labels` | `Object` | Optional | User-defined labels (key-value pairs) | Object getLabels() | setLabels(Object labels) |
 | `Name` | `String` | Required | Name of the SSH key | String getName() | setName(String name) |
 | `PublicKey` | `String` | Required | Public key | String getPublicKey() | setPublicKey(String publicKey) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -29,6 +32,7 @@ SshKeysRequest sshKeysRequest = new SshKeysRequest.Builder(
     "ssh-rsa AAAjjk76kgf...Xt"
 )
 .labels(ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

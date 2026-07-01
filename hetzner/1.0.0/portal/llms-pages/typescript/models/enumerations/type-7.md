@@ -7,7 +7,7 @@ Type of the resource
 
 # Enum Type Name
 
-`Type7Enum`
+`Type7`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the resource
 # Example
 
 ```ts
-import { Type7Enum } from 'hetzner-cloud-apilib';
+import { Type7 } from 'hetzner-cloud-apilib';
 
-const type7 = Type7Enum.Server;
+const type7 = Type7.Server;
 ```
 
 

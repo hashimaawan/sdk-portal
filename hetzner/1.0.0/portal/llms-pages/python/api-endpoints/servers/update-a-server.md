@@ -27,7 +27,7 @@ def update_a_server(self,
 
 **200**: The `server` key in the reply contains the updated Server
 
-[`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ServersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-response-2.md).
 
 
 # Example Usage
@@ -40,11 +40,15 @@ body = UpdateServerRequest(
     name='my-server'
 )
 
-result = servers_controller.update_a_server(
+result = servers_api.update_a_server(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

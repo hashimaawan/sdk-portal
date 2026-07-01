@@ -5,17 +5,17 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`Type21Enum`
+`Type21`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SYSTEM` |
-| `SNAPSHOT` |
-| `BACKUP` |
-| `APP` |
+| `System` |
+| `Snapshot` |
+| `Backup` |
+| `App` |
 
 
 # Example
@@ -24,11 +24,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type21 := models.Type21Enum_BACKUP
+    type21 := models.Type21_Backup
 
 }
 ```

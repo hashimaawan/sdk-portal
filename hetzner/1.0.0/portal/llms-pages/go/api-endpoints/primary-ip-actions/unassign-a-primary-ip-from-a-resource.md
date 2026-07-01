@@ -18,7 +18,7 @@ Note that only Servers that have at least one network interface (public or priva
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-UnassignAPrimaryIPFromAResource(
+UnassignAPrimaryIpFromAResource(
     ctx context.Context,
     id int) (
     models.ApiResponse[models.ActionResponse],
@@ -47,7 +47,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := primaryIPActionsController.UnassignAPrimaryIPFromAResource(ctx, id)
+apiResponse, err := primaryIpActionsApi.UnassignAPrimaryIpFromAResource(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

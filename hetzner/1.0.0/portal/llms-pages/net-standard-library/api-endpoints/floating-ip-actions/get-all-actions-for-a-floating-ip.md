@@ -7,10 +7,10 @@ Returns all Action objects for a Floating IP. You can sort the results by using 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-GetAllActionsForAFloatingIPAsync(
+GetAllActionsForAFloatingIpAsync(
     int id,
-    Models.ParameterSortEnum? sort = null,
-    Models.ParameterStatusEnum? status = null)
+    Models.ParameterSort? sort = null,
+    Models.ParameterStatus? status = null)
 ```
 
 
@@ -19,15 +19,15 @@ GetAllActionsForAFloatingIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `sort` | [`ParameterSortEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`ParameterStatusEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
+| `sort` | [`ParameterSort?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`ParameterStatus?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/parameter-status.md) | Query, Optional | Can be used multiple times, the response will contain only Actions with specified statuses |
 
 
 # Response Type
 
 **200**: The `actions` key contains a list of Actions
 
-[`Task<Models.FloatingIpsActionsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.FloatingIpsActionsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/floating-ips-actions-response.md).
 
 
 # Example Usage
@@ -36,7 +36,7 @@ GetAllActionsForAFloatingIPAsync(
 int id = 112;
 try
 {
-    FloatingIpsActionsResponse result = await floatingIPActionsController.GetAllActionsForAFloatingIPAsync(id);
+    ApiResponse<FloatingIpsActionsResponse> result = await floatingIpActionsApi.GetAllActionsForAFloatingIpAsync(id);
 }
 catch (ApiException e)
 {

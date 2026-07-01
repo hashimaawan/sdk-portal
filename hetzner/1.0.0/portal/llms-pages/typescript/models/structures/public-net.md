@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Public network information
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -17,6 +19,7 @@ Public network information
 | `enabled` | `boolean` | Required | Public Interface enabled or not |
 | `ipv4` | [`Ipv4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/ipv-4.md) | Required | IP address (v4) |
 | `ipv6` | [`Ipv6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/ipv-6.md) | Required | IP address (v6) |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -29,10 +32,19 @@ const publicNet: PublicNet = {
   ipv4: {
     dnsPtr: 'lb1.example.com',
     ip: '1.2.3.4',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   ipv6: {
     dnsPtr: 'lb1.example.com',
     ip: '2001:db8::1',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -27,14 +29,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `startAfterCreate` | `?bool` | Optional | Start Server right after creation. Defaults to true. | getStartAfterCreate(): ?bool | setStartAfterCreate(?bool startAfterCreate): void |
 | `userData` | `?string` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. | getUserData(): ?string | setUserData(?string userData): void |
 | `volumes` | `?(int[])` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. | getVolumes(): ?array | setVolumes(?array volumes): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreateServerRequestBuilder;
-use HetznerCloudAPILib\Models\Builders\Firewall4Builder;
-use HetznerCloudAPILib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\CreateServerRequestBuilder;
+use HetznerCloudApiLib\Models\Builders\Firewall4Builder;
+use HetznerCloudApiLib\ApiHelper;
 
 $createServerRequest = CreateServerRequestBuilder::init(
     'ubuntu-20.04',
@@ -47,6 +50,7 @@ $createServerRequest = CreateServerRequestBuilder::init(
         [
             Firewall4Builder::init()
                 ->firewall(38)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -73,6 +77,7 @@ runcmd:
             123
         ]
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

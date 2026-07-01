@@ -7,10 +7,10 @@ Actions show the results and progress of asynchronous requests to the API.
 
 # Create Instance
 
-The instance of the `ActionsController` class can be created using the API Client.
+The instance of the `ActionsApi` class can be created using the API Client.
 
 ```
-const actionsController = new ActionsController(client);
+const actionsApi = new ActionsApi(client);
 ```
 
 

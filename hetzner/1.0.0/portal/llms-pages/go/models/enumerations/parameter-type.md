@@ -5,15 +5,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`ParameterTypeEnum`
+`ParameterType`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `UPLOADED` |
-| `MANAGED` |
+| `Uploaded` |
+| `Managed` |
 
 
 # Example
@@ -22,11 +22,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    parameterType := models.ParameterTypeEnum_UPLOADED
+    parameterType := models.ParameterType_Uploaded
 
 }
 ```

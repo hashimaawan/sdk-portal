@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status23Enum`
+`Status23`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Status23Enum } from 'hetzner-cloud-apilib';
+import { Status23 } from 'hetzner-cloud-apilib';
 
-const status23 = Status23Enum.Available;
+const status23 = Status23.Available;
 ```
 
 

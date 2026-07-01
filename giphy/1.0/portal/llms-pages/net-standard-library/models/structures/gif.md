@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkdpZg
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -27,17 +29,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `SourceTld` | `string` | Optional | The top level domain of the source URL. |
 | `Tags` | `List<string>` | Optional | An array of tags for this GIF (Note: Not available when using the Public Beta Key) |
 | `TrendingDatetime` | `DateTime?` | Optional | The date on which this gif was marked trending, if applicable. |
-| `Type` | [`TypeEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `TypeEnum.gif` |
+| `Type` | [`Type?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/enumerations/type.md) | Optional | Type of the gif. By default, this is almost always gif<br><br>**Default**: `Type.gif` |
 | `UpdateDatetime` | `DateTime?` | Optional | The date on which this GIF was last updated. |
 | `Url` | `string` | Optional | The unique URL for this GIF |
 | `User` | [`User`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/net-standard-library/models/structures/user.md) | Optional | The User Object contains information about the user associated with a GIF and URLs to assets such as that user's avatar image, profile, and more. |
 | `Username` | `string` | Optional | The username this GIF is attached to, if applicable |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using GiphyAPI.Standard.Models;
+using GiphyApi.Standard.Models;
+using GiphyApi.Standard.Utilities;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -65,12 +69,13 @@ Gif gif = new Gif
     TrendingDatetime = DateTime.ParseExact("2013-08-01 12:41:48", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
         provider: CultureInfo.InvariantCulture,
         DateTimeStyles.RoundtripKind),
-    Type = TypeEnum.Gif,
+    Type = GiphyApi.Standard.Models.Type.Gif,
     UpdateDatetime = DateTime.ParseExact("2013-08-01 12:41:48", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
         provider: CultureInfo.InvariantCulture,
         DateTimeStyles.RoundtripKind),
     Url = "http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq",
     Username = "JoeCool4000",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

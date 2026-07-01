@@ -7,7 +7,7 @@ Status of the Action
 
 # Enum Type Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the Action
 # Example
 
 ```java
-import cloud.hetzner.api.models.StatusEnum;
+import cloud.hetzner.api.models.Status;
 
-StatusEnum status = StatusEnum.ERROR;
+Status status = Status.ERROR;
 ```
 
 

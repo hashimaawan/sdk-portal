@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlN0ZXA
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -21,6 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `passthru` | `?bool` | Optional | true for pass-through points anchoring route | getPassthru(): ?bool | setPassthru(?bool passthru): void |
 | `route` | [`?Route`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/php/models/structures/route.md) | Optional | route leading to the stop | getRoute(): ?Route | setRoute(?Route route): void |
 | `url` | `?string` | Optional | url of the page with more information about the stop | getUrl(): ?string | setUrl(?string url): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -29,6 +32,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 use FurkotTripsLib\Models\Builders\StepBuilder;
 use FurkotTripsLib\Utils\DateTimeHelper;
 use FurkotTripsLib\Models\Builders\CoordinatesBuilder;
+use FurkotTripsLib\ApiHelper;
 
 $step = StepBuilder::init()
     ->address('address4')
@@ -37,10 +41,12 @@ $step = StepBuilder::init()
         CoordinatesBuilder::init()
             ->lat(182.98)
             ->lon(16.08)
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->departure(DateTimeHelper::fromRfc3339DateTime('2016-03-13T12:52:32.123Z'))
     ->name('name8')
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

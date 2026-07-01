@@ -23,7 +23,7 @@ def get_a_load_balancer_type(self,
 
 **200**: The `load_balancer_type` key in the reply contains a Load Balancer type object with this structure
 
-[`LoadBalancerTypesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancer-types-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`LoadBalancerTypesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancer-types-response-1.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_a_load_balancer_type(self,
 ```python
 id = 112
 
-result = load_balancer_types_controller.get_a_load_balancer_type(id)
-print(result)
+result = load_balancer_types_api.get_a_load_balancer_type(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

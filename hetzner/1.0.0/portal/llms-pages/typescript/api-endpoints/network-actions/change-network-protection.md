@@ -43,7 +43,7 @@ const body: ChangeProtectionRequest1 = {
 };
 
 try {
-  const response = await networkActionsController.changeNetworkProtection(
+  const response = await networkActionsApi.changeNetworkProtection(
     id,
     body
   );

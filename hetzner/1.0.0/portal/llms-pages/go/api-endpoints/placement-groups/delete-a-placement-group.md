@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := placementGroupsController.DeleteAPlacementGroup(ctx, id)
+resp, err := placementGroupsApi.DeleteAPlacementGroup(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

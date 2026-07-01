@@ -8,10 +8,10 @@ Also note that when updating labels, the Floating IP’s current set of labels w
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-UpdateAFloatingIP(
+UpdateAFloatingIp(
     ctx context.Context,
     id int,
-    body *models.UpdateFloatingIPRequest) (
+    body *models.UpdateFloatingIpRequest) (
     models.ApiResponse[models.FloatingIpsResponse2],
     error)
 ```
@@ -22,7 +22,7 @@ UpdateAFloatingIP(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`*models.UpdateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/update-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`*models.UpdateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/update-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
@@ -39,13 +39,13 @@ ctx := context.Background()
 
 id := 112
 
-body := models.UpdateFloatingIPRequest{
-    Description:          models.ToPointer("Web Frontend"),
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("Web Frontend"),
+body := models.UpdateFloatingIpRequest{
+    Description:           models.ToPointer("Web Frontend"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("Web Frontend"),
 }
 
-apiResponse, err := floatingIPsController.UpdateAFloatingIP(ctx, id, &body)
+apiResponse, err := floatingIPsApi.UpdateAFloatingIp(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

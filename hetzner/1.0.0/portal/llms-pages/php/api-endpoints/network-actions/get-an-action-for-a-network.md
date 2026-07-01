@@ -7,7 +7,7 @@ Returns a specific Action for a Network.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAnActionForANetwork(int $id, int $actionId): ActionResponse
+function getAnActionForANetwork(int $id, int $actionId): ApiResponse
 ```
 
 
@@ -23,7 +23,7 @@ function getAnActionForANetwork(int $id, int $actionId): ActionResponse
 
 **200**: The `action` key contains the Network Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -33,17 +33,23 @@ $id = 112;
 
 $actionId = 224;
 
-$networkActionsController = $client->getNetworkActionsController();
+$networkActionsApi = $client->getNetworkActionsApi();
+$apiResponse = $networkActionsApi->getAnActionForANetwork(
+    $id,
+    $actionId
+);
 
-try {
-    $result = $networkActionsController->getAnActionForANetwork(
-        $id,
-        $actionId
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

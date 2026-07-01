@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Label selector and a list of selected targets
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ Label selector and a list of selected targets
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Selector` | `string` | Required | Label selector |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,12 +26,15 @@ Label selector and a list of selected targets
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     labelSelector7 := models.LabelSelector7{
-        Selector:             "env=prod",
+        Selector:              "env=prod",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

@@ -23,7 +23,7 @@ def get_a_placement_group(self,
 
 **200**: The `placement_group` key contains a PlacementGroup object
 
-[`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_a_placement_group(self,
 ```python
 id = 112
 
-result = placement_groups_controller.get_a_placement_group(id)
-print(result)
+result = placement_groups_api.get_a_placement_group(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

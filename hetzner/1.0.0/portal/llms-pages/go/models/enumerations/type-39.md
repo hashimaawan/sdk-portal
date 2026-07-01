@@ -7,15 +7,15 @@ Algorithm of the Load Balancer
 
 # Class Name
 
-`Type39Enum`
+`Type39`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `ROUNDROBIN` |
-| `LEASTCONNECTIONS` |
+| `RoundRobin` |
+| `LeastConnections` |
 
 
 # Example
@@ -24,11 +24,11 @@ Algorithm of the Load Balancer
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type39 := models.Type39Enum_ROUNDROBIN
+    type39 := models.Type39_RoundRobin
 
 }
 ```

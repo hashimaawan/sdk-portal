@@ -22,7 +22,7 @@ Only applicable if the type of the Certificate is `managed` and the issuance or 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function retryIssuanceOrRenewal(int $id): ActionResponse
+function retryIssuanceOrRenewal(int $id): ApiResponse
 ```
 
 
@@ -37,7 +37,7 @@ function retryIssuanceOrRenewal(int $id): ActionResponse
 
 **201**: The `action` key contains the resulting Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/action-response.md).
 
 
 # Example Usage
@@ -45,14 +45,20 @@ function retryIssuanceOrRenewal(int $id): ActionResponse
 ```php
 $id = 112;
 
-$certificateActionsController = $client->getCertificateActionsController();
+$certificateActionsApi = $client->getCertificateActionsApi();
+$apiResponse = $certificateActionsApi->retryIssuanceOrRenewal($id);
 
-try {
-    $result = $certificateActionsController->retryIssuanceOrRenewal($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ActionResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

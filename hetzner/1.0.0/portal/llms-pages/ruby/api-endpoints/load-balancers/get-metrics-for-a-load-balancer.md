@@ -36,7 +36,7 @@ def get_metrics_for_a_load_balancer(id,
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `Integer` | Template, Required | ID of the Load Balancer |
-| `type` | [`Type41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-41.md) | Query, Required | Type of metrics to get |
 | `start` | `String` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `mend` | `String` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `String` | Query, Optional | Resolution of results in seconds |
@@ -46,7 +46,7 @@ def get_metrics_for_a_load_balancer(id,
 
 **200**: The `metrics` key in the reply contains a metrics object with this structure
 
-[`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancers-metrics-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`LoadBalancersMetricsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancers-metrics-response.md).
 
 
 # Example Usage
@@ -54,19 +54,24 @@ def get_metrics_for_a_load_balancer(id,
 ```ruby
 id = 112
 
-type = Type41Enum::REQUESTS_PER_SECOND
+type = Type41::REQUESTS_PER_SECOND
 
 start = 'start4'
 
 mend = 'end8'
 
-result = load_balancers_controller.get_metrics_for_a_load_balancer(
+result = load_balancers_api.get_metrics_for_a_load_balancer(
   id,
   type,
   start,
   mend
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

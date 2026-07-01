@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := placementGroupsController.GetAPlacementGroup(ctx, id)
+apiResponse, err := placementGroupsApi.GetAPlacementGroup(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

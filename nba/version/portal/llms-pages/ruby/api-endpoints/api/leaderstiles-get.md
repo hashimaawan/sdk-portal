@@ -36,7 +36,7 @@ def leaderstiles_get(stat,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -56,7 +56,7 @@ player_scope = 'PlayerScope2'
 
 game_scope = 'GameScope0'
 
-client_controller.leaderstiles_get(
+result = client_api.leaderstiles_get(
   stat,
   league_id,
   season,
@@ -65,6 +65,12 @@ client_controller.leaderstiles_get(
   player_scope,
   game_scope
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

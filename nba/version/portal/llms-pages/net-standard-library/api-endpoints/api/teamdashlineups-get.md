@@ -5,11 +5,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-TeamdashlineupsGETAsync(
+TeamdashlineupsGetAsync(
     string groupQuantity,
-    string gameID,
+    string gameId,
     string seasonType,
-    string teamID,
+    string teamId,
     string measureType,
     string perMode,
     string plusMinus,
@@ -22,7 +22,7 @@ TeamdashlineupsGETAsync(
     string seasonSegment,
     string dateFrom,
     string dateTo,
-    string opponentTeamID,
+    string opponentTeamId,
     string vsConference,
     string vsDivision,
     string gameSegment,
@@ -36,9 +36,9 @@ TeamdashlineupsGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `groupQuantity` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `plusMinus` | `string` | Query, Required | - |
@@ -51,7 +51,7 @@ TeamdashlineupsGETAsync(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -70,9 +70,9 @@ TeamdashlineupsGETAsync(
 
 ```csharp
 string groupQuantity = "GroupQuantity0";
-string gameID = "GameID8";
+string gameId = "GameID8";
 string seasonType = "SeasonType8";
-string teamID = "TeamID8";
+string teamId = "TeamID8";
 string measureType = "MeasureType8";
 string perMode = "PerMode6";
 string plusMinus = "PlusMinus0";
@@ -85,7 +85,7 @@ string month = "Month0";
 string seasonSegment = "SeasonSegment8";
 string dateFrom = "DateFrom6";
 string dateTo = "DateTo0";
-string opponentTeamID = "OpponentTeamID6";
+string opponentTeamId = "OpponentTeamID6";
 string vsConference = "VsConference6";
 string vsDivision = "VsDivision6";
 string gameSegment = "GameSegment6";
@@ -93,11 +93,11 @@ string period = "Period2";
 string lastNGames = "LastNGames4";
 try
 {
-    await aPIController.TeamdashlineupsGETAsync(
+    await api.TeamdashlineupsGetAsync(
         groupQuantity,
-        gameID,
+        gameId,
         seasonType,
-        teamID,
+        teamId,
         measureType,
         perMode,
         plusMinus,
@@ -110,7 +110,7 @@ try
         seasonSegment,
         dateFrom,
         dateTo,
-        opponentTeamID,
+        opponentTeamId,
         vsConference,
         vsDivision,
         gameSegment,

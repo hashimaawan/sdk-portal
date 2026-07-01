@@ -25,7 +25,7 @@ GetQuotesForAllSymbolsAsync()
 ```csharp
 try
 {
-    await forexController.GetQuotesForAllSymbolsAsync();
+    await forexApi.GetQuotesForAllSymbolsAsync();
 }
 catch (ApiException e)
 {

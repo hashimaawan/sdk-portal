@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IP address (v4) and its reverse DNS entry of this Server
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -18,6 +20,7 @@ IP address (v4) and its reverse DNS entry of this Server
 | `DnsPtr` | `string` | Required | Reverse DNS PTR entry for the IPv4 addresses of this Server |
 | `Id` | `*int` | Optional | ID of the Resource |
 | `Ip` | `string` | Required | IP address (v4) of this Server |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +29,18 @@ IP address (v4) and its reverse DNS entry of this Server
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     ipv44 := models.Ipv44{
-        Blocked:              false,
-        DnsPtr:               "server01.example.com",
-        Id:                   models.ToPointer(42),
-        Ip:                   "1.2.3.4",
+        Blocked:               false,
+        DnsPtr:                "server01.example.com",
+        Id:                    models.ToPointer(42),
+        Ip:                    "1.2.3.4",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

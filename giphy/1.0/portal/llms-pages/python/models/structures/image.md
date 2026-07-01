@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/python/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -21,11 +23,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `webp` | `str` | Optional | The URL for this GIF in .webp format. |
 | `webp_size` | `str` | Optional | The size in bytes of the .webp file corresponding to this GIF. |
 | `width` | `str` | Optional | The width of this GIF in pixels. |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from giphyapi.models.image import Image
 
 image = Image(
@@ -37,7 +42,10 @@ image = Image(
     url='https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif',
     webp='https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp',
     webp_size='12321',
-    width='320'
+    width='320',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

@@ -7,15 +7,15 @@ Status of the Firewall on the Server
 
 # Class Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `APPLIED` |
-| `PENDING` |
+| `Applied` |
+| `Pending` |
 
 
 # Example
@@ -24,11 +24,11 @@ Status of the Firewall on the Server
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status72 := models.Status72Enum_APPLIED
+    status72 := models.Status72_Applied
 
 }
 ```

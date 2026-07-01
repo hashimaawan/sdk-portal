@@ -7,7 +7,7 @@ Gets a specific PlacementGroup object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<PlacementGroupResponse> getAPlacementGroupAsync(
+CompletableFuture<ApiResponse<PlacementGroupResponse>> getAPlacementGroupAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<PlacementGroupResponse> getAPlacementGroupAsync(
 
 **200**: The `placement_group` key contains a PlacementGroup object
 
-[`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<PlacementGroupResponse> getAPlacementGroupAsync(
 ```java
 int id = 112;
 
-placementGroupsController.getAPlacementGroupAsync(id).thenAccept(result -> {
+placementGroupsApi.getAPlacementGroupAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

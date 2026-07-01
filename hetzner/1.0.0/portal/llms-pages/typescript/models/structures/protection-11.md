@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Protection configuration for the Network
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -15,6 +17,7 @@ Protection configuration for the Network
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `mDelete` | `boolean` | Required | If true, prevents the Network from being deleted |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -24,6 +27,9 @@ import { Protection11 } from 'hetzner-cloud-apilib';
 
 const protection11: Protection11 = {
   mDelete: false,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

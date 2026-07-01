@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-Boxscoreadvancedv2GETAsync(
-    string gameID,
+Boxscoreadvancedv2GetAsync(
+    string gameId,
     string startPeriod,
     string endPeriod,
     string startRange,
@@ -19,7 +19,7 @@ Boxscoreadvancedv2GETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `startPeriod` | `string` | Query, Required | - |
 | `endPeriod` | `string` | Query, Required | - |
 | `startRange` | `string` | Query, Required | - |
@@ -37,7 +37,7 @@ Boxscoreadvancedv2GETAsync(
 # Example Usage
 
 ```csharp
-string gameID = "GameID8";
+string gameId = "GameID8";
 string startPeriod = "StartPeriod4";
 string endPeriod = "EndPeriod0";
 string startRange = "StartRange0";
@@ -45,8 +45,8 @@ string endRange = "EndRange2";
 string rangeType = "RangeType0";
 try
 {
-    await aPIController.Boxscoreadvancedv2GETAsync(
-        gameID,
+    await api.Boxscoreadvancedv2GetAsync(
+        gameId,
         startPeriod,
         endPeriod,
         startRange,

@@ -7,7 +7,7 @@ Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> deleteAnImageAsync(
+CompletableFuture<ApiResponse<Void>> deleteAnImageAsync(
     final int id)
 ```
 
@@ -31,8 +31,9 @@ CompletableFuture<Void> deleteAnImageAsync(
 ```java
 int id = 112;
 
-imagesController.deleteAnImageAsync(id).thenAccept(result -> {
+imagesApi.deleteAnImageAsync(id).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

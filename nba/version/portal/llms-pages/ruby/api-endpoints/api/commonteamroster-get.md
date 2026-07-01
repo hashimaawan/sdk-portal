@@ -22,7 +22,7 @@ def commonteamroster_get(season,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -32,10 +32,16 @@ season = 'Season0'
 
 team_id = 'TeamID8'
 
-client_controller.commonteamroster_get(
+result = client_api.commonteamroster_get(
   season,
   team_id
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

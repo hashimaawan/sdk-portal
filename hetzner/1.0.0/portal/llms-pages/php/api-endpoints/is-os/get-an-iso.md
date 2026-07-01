@@ -7,7 +7,7 @@ Returns a specific ISO object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function getAnISO(int $id): IsosResponse1
+function getAnIso(int $id): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function getAnISO(int $id): IsosResponse1
 
 **200**: The `iso` key in the reply contains an array of ISO objects with this structure
 
-[`IsosResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/isos-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`IsosResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/isos-response-1.md).
 
 
 # Example Usage
@@ -30,14 +30,20 @@ function getAnISO(int $id): IsosResponse1
 ```php
 $id = 112;
 
-$iSOsController = $client->getISOsController();
+$isOsApi = $client->getIsOsApi();
+$apiResponse = $isOsApi->getAnIso($id);
 
-try {
-    $result = $iSOsController->getAnISO($id);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'IsosResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

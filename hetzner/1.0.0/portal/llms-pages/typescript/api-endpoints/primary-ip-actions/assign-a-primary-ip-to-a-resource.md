@@ -20,9 +20,9 @@ The Server must be powered off (status `off`) in order for this operation to suc
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async assignAPrimaryIPToAResource(
+async assignAPrimaryIpToAResource(
   id: number,
-  body?: AssignPrimaryIPRequest,
+  body?: AssignPrimaryIpRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
 ```
@@ -33,7 +33,7 @@ async assignAPrimaryIPToAResource(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Primary IP |
-| `body` | [`AssignPrimaryIPRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`AssignPrimaryIpRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -49,13 +49,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const body: AssignPrimaryIPRequest = {
+const body: AssignPrimaryIpRequest = {
   assigneeId: 4711,
   assigneeType: 'server',
 };
 
 try {
-  const response = await primaryIPActionsController.assignAPrimaryIPToAResource(
+  const response = await primaryIpActionsApi.assignAPrimaryIpToAResource(
     id,
     body
   );

@@ -13,9 +13,9 @@ Note: if the Network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async changeIPRangeOfANetwork(
+async changeIpRangeOfANetwork(
   id: number,
-  body?: ChangeIPRangeRequest,
+  body?: ChangeIpRangeRequest,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<ActionResponse>>
 ```
@@ -26,7 +26,7 @@ async changeIPRangeOfANetwork(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Network |
-| `body` | [`ChangeIPRangeRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/change-ip-range-request.md) | Body, Optional | - |
+| `body` | [`ChangeIpRangeRequest \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/change-ip-range-request.md) | Body, Optional | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -42,12 +42,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const body: ChangeIPRangeRequest = {
+const body: ChangeIpRangeRequest = {
   ipRange: '10.0.0.0/12',
 };
 
 try {
-  const response = await networkActionsController.changeIPRangeOfANetwork(
+  const response = await networkActionsApi.changeIpRangeOfANetwork(
     id,
     body
   );

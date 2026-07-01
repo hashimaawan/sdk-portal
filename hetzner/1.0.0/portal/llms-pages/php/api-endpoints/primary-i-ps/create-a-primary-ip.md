@@ -19,7 +19,7 @@ Note that a Primary IP can only be assigned to a Server in the same Datacenter l
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createAPrimaryIP(?CreatePrimaryIPRequest $body = null): CreatePrimaryIPResponse
+function createAPrimaryIp(?CreatePrimaryIpRequest $body = null): ApiResponse
 ```
 
 
@@ -27,22 +27,22 @@ function createAPrimaryIP(?CreatePrimaryIPRequest $body = null): CreatePrimaryIP
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`?CreatePrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
+| `body` | [`?CreatePrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-primary-ip-request.md) | Body, Optional | The `type` argument is required while `datacenter` and `assignee_id` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `primary_ip` key contains the Primary IP that was just created
 
-[`CreatePrimaryIPResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-primary-ip-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CreatePrimaryIpResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-primary-ip-response.md).
 
 
 # Example Usage
 
 ```php
-$body = CreatePrimaryIPRequestBuilder::init(
+$body = CreatePrimaryIpRequestBuilder::init(
     'my-ip',
-    Type51Enum::IPV4
+    Type51::IPV4
 )
     ->assigneeId(17)
     ->autoDelete(false)
@@ -50,14 +50,20 @@ $body = CreatePrimaryIPRequestBuilder::init(
     ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
     ->build();
 
-$primaryIPsController = $client->getPrimaryIPsController();
+$primaryIPsApi = $client->getPrimaryIPsApi();
+$apiResponse = $primaryIPsApi->createAPrimaryIp($body);
 
-try {
-    $result = $primaryIPsController->createAPrimaryIP($body);
-    echo 'CreatePrimaryIPResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'CreatePrimaryIpResponse:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -7,10 +7,10 @@ Assigns a Floating IP to a Server.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-AssignAFloatingIPToAServer(
+AssignAFloatingIpToAServer(
     ctx context.Context,
     id int,
-    body *models.AssignFloatingIPRequest) (
+    body *models.AssignFloatingIpRequest) (
     models.ApiResponse[models.ActionResponse],
     error)
 ```
@@ -21,7 +21,7 @@ AssignAFloatingIPToAServer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`*models.AssignFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`*models.AssignFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/assign-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
@@ -38,11 +38,11 @@ ctx := context.Background()
 
 id := 112
 
-body := models.AssignFloatingIPRequest{
-    Server:               42,
+body := models.AssignFloatingIpRequest{
+    Server:                42,
 }
 
-apiResponse, err := floatingIPActionsController.AssignAFloatingIPToAServer(ctx, id, &body)
+apiResponse, err := floatingIpActionsApi.AssignAFloatingIpToAServer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

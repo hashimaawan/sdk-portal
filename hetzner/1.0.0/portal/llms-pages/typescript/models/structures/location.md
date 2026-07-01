@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkxvY2F0aW9u
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -20,6 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `longitude` | `number` | Required | Longitude of the city closest to the Location |
 | `name` | `string` | Required | Unique identifier of the Location |
 | `networkZone` | `string` | Required | Name of network zone this Location resides in |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -36,6 +39,9 @@ const location: Location = {
   longitude: 12.370071,
   name: 'fsn1',
   networkZone: 'eu-central',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

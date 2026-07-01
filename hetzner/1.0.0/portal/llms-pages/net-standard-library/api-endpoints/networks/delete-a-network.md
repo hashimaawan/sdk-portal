@@ -34,7 +34,7 @@ DeleteANetworkAsync(
 int id = 112;
 try
 {
-    await networksController.DeleteANetworkAsync(id);
+    await networksApi.DeleteANetworkAsync(id);
 }
 catch (ApiException e)
 {

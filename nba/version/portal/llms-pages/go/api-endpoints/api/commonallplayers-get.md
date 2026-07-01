@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-CommonallplayersGET(
+CommonallplayersGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     season string,
     isOnlyCurrentSeason string) (
     http.Response,
@@ -19,7 +19,7 @@ CommonallplayersGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `isOnlyCurrentSeason` | `string` | Query, Required | - |
 
@@ -36,13 +36,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 season := "Season0"
 
 isOnlyCurrentSeason := "IsOnlyCurrentSeason6"
 
-resp, err := aPIController.CommonallplayersGET(ctx, leagueID, season, isOnlyCurrentSeason)
+resp, err := api.CommonallplayersGet(ctx, leagueId, season, isOnlyCurrentSeason)
 if err != nil {
     log.Fatalln(err)
 } else {

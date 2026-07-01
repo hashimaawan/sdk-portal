@@ -7,10 +7,10 @@ Servers are virtual machines that can be provisioned.
 
 # Create Instance
 
-The instance of the `ServersController` class can be created using the API Client.
+The instance of the `ServersApi` class can be created using the API Client.
 
 ```
-const serversController = new ServersController(client);
+const serversApi = new ServersApi(client);
 ```
 
 

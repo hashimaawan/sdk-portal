@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 The cost of Volume per GB/month
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ The cost of Volume per GB/month
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `PricePerGbMonth` | [`models.PricePerGbMonth`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/price-per-gb-month.md) | Required | - |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,14 +26,20 @@ The cost of Volume per GB/month
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     volume := models.Volume{
-        PricePerGbMonth:      models.PricePerGbMonth{
-            Gross:                "1.1900000000000000",
-            Net:                  "1.0000000000",
+        PricePerGbMonth:       models.PricePerGbMonth{
+            Gross:                 "1.1900000000000000",
+            Net:                   "1.0000000000",
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

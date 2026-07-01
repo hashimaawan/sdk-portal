@@ -17,14 +17,18 @@ def get_a_list_of_symbols_for_which_we_provide_real_time_quotes(self)
 
 **200**: A list of symbols
 
-`List[str]`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type `List[str]`.
 
 
 # Example Usage
 
 ```python
-result = forex_controller.get_a_list_of_symbols_for_which_we_provide_real_time_quotes()
-print(result)
+result = forex_api.get_a_list_of_symbols_for_which_we_provide_real_time_quotes()
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

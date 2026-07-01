@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort8Enum`
+`Sort8`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.sort_8_enum import Sort8Enum
+from hetznercloudapi.models.sort_8 import Sort8
 
-sort_8 = Sort8Enum.ENUM_IDDESC
+sort_8 = Sort8.ENUM_IDDESC
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNyZWF0ZVNlcnZlclJlcXVlc3Q
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -27,6 +29,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `start_after_create` | `bool` | Optional | Start Server right after creation. Defaults to true. |
 | `user_data` | `str` | Optional | Cloud-Init user data to use during Server creation. This field is limited to 32KiB. |
 | `volumes` | `List[int]` | Optional | Volume IDs which should be attached to the Server at the creation time. Volumes must be in the same Location. |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
@@ -45,7 +48,10 @@ create_server_request = CreateServerRequest(
     datacenter='nbg1-dc3',
     firewalls=[
         Firewall4(
-            firewall=38
+            firewall=38,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         )
     ],
     labels=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
@@ -61,7 +67,10 @@ create_server_request = CreateServerRequest(
     user_data='#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n',
     volumes=[
         123
-    ]
+    ],
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

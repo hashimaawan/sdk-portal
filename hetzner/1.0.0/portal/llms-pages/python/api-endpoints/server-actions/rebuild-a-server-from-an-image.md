@@ -29,7 +29,7 @@ def rebuild_a_server_from_an_image(self,
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-rebuild-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/servers-actions-rebuild-response.md).
 
 
 # Example Usage
@@ -41,11 +41,15 @@ body = RebuildServerRequest(
     image='ubuntu-20.04'
 )
 
-result = server_actions_controller.rebuild_a_server_from_an_image(
+result = server_actions_api.rebuild_a_server_from_an_image(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

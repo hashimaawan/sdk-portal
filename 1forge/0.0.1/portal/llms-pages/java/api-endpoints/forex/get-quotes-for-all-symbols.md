@@ -9,7 +9,7 @@ Find out more: [http://1forge.com/forex-data-api](http://1forge.com/forex-data-a
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> getQuotesForAllSymbolsAsync()
+CompletableFuture<ApiResponse<Void>> getQuotesForAllSymbolsAsync()
 ```
 
 
@@ -23,8 +23,9 @@ CompletableFuture<Void> getQuotesForAllSymbolsAsync()
 # Example Usage
 
 ```java
-forexController.getQuotesForAllSymbolsAsync().thenAccept(result -> {
+forexApi.getQuotesForAllSymbolsAsync().thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

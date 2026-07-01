@@ -7,7 +7,7 @@ Status of the Server
 
 # Enum Type Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
@@ -28,9 +28,9 @@ Status of the Server
 # Example
 
 ```python
-from hetznercloudapi.models.status_73_enum import Status73Enum
+from hetznercloudapi.models.status_73 import Status73
 
-status_73 = Status73Enum.STOPPING
+status_73 = Status73.STOPPING
 ```
 
 

@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Location of the Volume. Volume can only be attached to Servers in the same Location.
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -22,12 +24,14 @@ Location of the Volume. Volume can only be attached to Servers in the same Locat
 | `longitude` | `float` | Required | Longitude of the city closest to the Location | getLongitude(): float | setLongitude(float longitude): void |
 | `name` | `string` | Required | Unique identifier of the Location | getName(): string | setName(string name): void |
 | `networkZone` | `string` | Required | Name of network zone this Location resides in | getNetworkZone(): string | setNetworkZone(string networkZone): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\Location16Builder;
+use HetznerCloudApiLib\Models\Builders\Location16Builder;
+use HetznerCloudApiLib\ApiHelper;
 
 $location16 = Location16Builder::init(
     'Falkenstein',
@@ -38,7 +42,9 @@ $location16 = Location16Builder::init(
     12.370071,
     'fsn1',
     'eu-central'
-)->build();
+)
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

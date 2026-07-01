@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRlJlbW92ZVRhcmdldFJlcXVlc3Q
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,7 +17,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Ip` | [`*models.Ip`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/ip.md) | Optional | IP targets where the traffic should be routed through. It is only possible to use the (Public or vSwitch) IPs of Hetzner Online Root Servers belonging to the project owner. IPs belonging to other users are blocked. Additionally IPs belonging to services provided by Hetzner Cloud (Servers, Load Balancers, ...) are blocked as well. |
 | `LabelSelector` | [`*models.LabelSelector12`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/label-selector-12.md) | Optional | Configuration for label selector targets, required if type is `label_selector` |
 | `Server` | [`*models.Server16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/server-16.md) | Optional | Configuration for type Server, required if type is `server` |
-| `Type` | [`models.Type29Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-29.md) | Required | Type of the resource |
+| `Type` | [`models.Type29`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/enumerations/type-29.md) | Required | Type of the resource |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -24,21 +27,30 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     removeTargetRequest := models.RemoveTargetRequest{
-        Ip:                   models.ToPointer(models.Ip{
-            Ip:                   "ip8",
+        Ip:                    models.ToPointer(models.Ip{
+            Ip:                    "ip8",
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
-        LabelSelector:        models.ToPointer(models.LabelSelector12{
-            Selector:             "selector8",
+        LabelSelector:         models.ToPointer(models.LabelSelector12{
+            Selector:              "selector8",
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
         }),
-        Server:               models.ToPointer(models.Server16{
+        Server:                models.ToPointer(models.Server16{
             Id: float64(217.74),
         }),
-        Type:                 models.Type29Enum_IP,
+        Type:                  models.Type29_Ip,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

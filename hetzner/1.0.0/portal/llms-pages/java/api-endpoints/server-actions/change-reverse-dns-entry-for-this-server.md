@@ -9,7 +9,7 @@ Floating IPs assigned to the Server are not affected by this.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> changeReverseDNSEntryForThisServerAsync(
+CompletableFuture<ApiResponse<ActionResponse>> changeReverseDnsEntryForThisServerAsync(
     final int id,
     final ServersActionsChangeDnsPtrRequest body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<ActionResponse> changeReverseDNSEntryForThisServerAsync(
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -40,7 +40,7 @@ ServersActionsChangeDnsPtrRequest body = new ServersActionsChangeDnsPtrRequest.B
 )
 .build();
 
-serverActionsController.changeReverseDNSEntryForThisServerAsync(id, body).thenAccept(result -> {
+serverActionsApi.changeReverseDnsEntryForThisServerAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

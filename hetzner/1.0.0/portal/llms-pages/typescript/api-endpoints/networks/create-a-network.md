@@ -42,7 +42,7 @@ const body: CreateNetworkRequest = {
 };
 
 try {
-  const response = await networksController.createANetwork(body);
+  const response = await networksApi.createANetwork(body);
 
   // Extracting fully parsed response body.
   console.log(response.result);

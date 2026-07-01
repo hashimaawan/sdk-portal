@@ -24,7 +24,7 @@ def commonallplayers_get(league_id,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -36,11 +36,17 @@ season = 'Season0'
 
 is_only_current_season = 'IsOnlyCurrentSeason6'
 
-client_controller.commonallplayers_get(
+result = client_api.commonallplayers_get(
   league_id,
   season,
   is_only_current_season
 )
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -8,9 +8,9 @@ The following parameters are configurable for the HttpConfiguration:
 
 | Name | Type | Description | Setter | Getter |
 |  --- | --- | --- | --- | --- |
-| timeout | `float64` | Timeout in seconds.<br>*Default*: `0` | `WithTimeout` | `Timeout()` |
+| timeout | `float64` | Timeout in seconds.<br>*Default*: `30` | `WithTimeout` | `Timeout()` |
 | transport | `httpRoundTripper` | Establishes network connection and caches them for reuse.<br>*Default*: `http.DefaultTransport` | `WithTransport` | `Transport()` |
-| retryConfiguration | [`hetznercloudapiRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `hetznercloudapi.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
+| retryConfiguration | [`hetznerCloudApiRetryConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/sdk-infrastructure/configuration/retryconfiguration.md) | Configurations to retry requests.<br>*Default*: `hetznerCloudApi.DefaultRetryConfiguration()` | `WithRetryConfiguration` | `RetryConfiguration()` |
 
 The httpConfiguration can be initialized as follows:
 
@@ -18,15 +18,15 @@ The httpConfiguration can be initialized as follows:
 package main
 
 import (
-    "hetznercloudapi"
+    "hetznerCloudApi"
     "net/http"
 )
 
 func main() {
-    httpConfiguration := hetznercloudapi.CreateHttpConfiguration(
-        hetznercloudapi.WithTimeout(0),
-        hetznercloudapi.WithTransport(http.DefaultTransport),
-        hetznercloudapi.WithRetryConfiguration(hetznercloudapi.DefaultRetryConfiguration()),
+    httpConfiguration := hetznerCloudApi.CreateHttpConfiguration(
+        hetznerCloudApi.WithTimeout(30),
+        hetznerCloudApi.WithTransport(http.DefaultTransport),
+        hetznerCloudApi.WithRetryConfiguration(hetznerCloudApi.DefaultRetryConfiguration()),
     )
 }
 ```

@@ -7,15 +7,15 @@ Type of Image to create (default: `snapshot`)
 
 # Class Name
 
-`Type63Enum`
+`Type63`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SNAPSHOT` |
-| `BACKUP` |
+| `Snapshot` |
+| `Backup` |
 
 
 # Example
@@ -24,11 +24,11 @@ Type of Image to create (default: `snapshot`)
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type63 := models.Type63Enum_SNAPSHOT
+    type63 := models.Type63_Snapshot
 
 }
 ```

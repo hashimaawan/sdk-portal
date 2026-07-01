@@ -35,7 +35,7 @@ def create_a_load_balancer(self,
 
 **201**: The `load_balancer` key contains the Load Balancer that was just created
 
-[`LoadBalancersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancers-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`LoadBalancersResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/load-balancers-response-1.md).
 
 
 # Example Usage
@@ -43,7 +43,7 @@ def create_a_load_balancer(self,
 ```python
 body = CreateLoadBalancerRequest(
     algorithm=LoadBalancerAlgorithm(
-        mtype=Type28Enum.ROUND_ROBIN
+        mtype=Type28.ROUND_ROBIN
     ),
     load_balancer_type='lb11',
     name='Web Frontend',
@@ -52,10 +52,14 @@ body = CreateLoadBalancerRequest(
     public_interface=True
 )
 
-result = load_balancers_controller.create_a_load_balancer(
+result = load_balancers_api.create_a_load_balancer(
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

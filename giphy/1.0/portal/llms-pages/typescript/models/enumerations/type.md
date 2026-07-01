@@ -7,7 +7,7 @@ Type of the gif. By default, this is almost always gif
 
 # Enum Type Name
 
-`TypeEnum`
+`Type`
 
 
 # Fields
@@ -20,9 +20,9 @@ Type of the gif. By default, this is almost always gif
 # Example
 
 ```ts
-import { TypeEnum } from 'giphy-apilib';
+import { Type } from 'giphy-apilib';
 
-const type = TypeEnum.Gif;
+const type = Type.Gif;
 ```
 
 

@@ -7,7 +7,7 @@ Gets a specific Load Balancer object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<LoadBalancersResponse2> getALoadBalancerAsync(
+CompletableFuture<ApiResponse<LoadBalancersResponse2>> getALoadBalancerAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<LoadBalancersResponse2> getALoadBalancerAsync(
 
 **200**: The `load_balancer` key contains the Load Balancer
 
-[`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`LoadBalancersResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/load-balancers-response-2.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<LoadBalancersResponse2> getALoadBalancerAsync(
 ```java
 int id = 112;
 
-loadBalancersController.getALoadBalancerAsync(id).thenAccept(result -> {
+loadBalancersApi.getALoadBalancerAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

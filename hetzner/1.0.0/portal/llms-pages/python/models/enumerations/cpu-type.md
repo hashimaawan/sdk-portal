@@ -7,7 +7,7 @@ Type of cpu
 
 # Enum Type Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of cpu
 # Example
 
 ```python
-from hetznercloudapi.models.cpu_type_enum import CpuTypeEnum
+from hetznercloudapi.models.cpu_type import CpuType
 
-cpu_type = CpuTypeEnum.SHARED
+cpu_type = CpuType.SHARED
 ```
 
 

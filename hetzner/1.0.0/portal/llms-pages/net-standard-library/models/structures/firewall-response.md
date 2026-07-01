@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkZpcmV3YWxsUmVzcG9uc2U
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -13,12 +15,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Firewall` | [`Firewall`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/firewall.md) | Required | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 FirewallResponse firewallResponse = new FirewallResponse
@@ -29,7 +33,7 @@ FirewallResponse firewallResponse = new FirewallResponse
         {
             new AppliedTo
             {
-                Type = Type6Enum.Server,
+                Type = Type6.Server,
                 AppliedToResources = new List<AppliedToResource>
                 {
                     new AppliedToResource
@@ -37,18 +41,23 @@ FirewallResponse firewallResponse = new FirewallResponse
                         Server = new Server
                         {
                             Id = 14,
+                            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                         },
-                        Type = Type5Enum.Server,
+                        Type = Type5.Server,
+                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                 },
                 LabelSelector = new LabelSelector
                 {
                     Selector = "selector8",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 Server = new Server
                 {
                     Id = 14,
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Created = "2016-01-30T23:55:00+00:00",
@@ -58,8 +67,8 @@ FirewallResponse firewallResponse = new FirewallResponse
         {
             new Rule
             {
-                Direction = DirectionEnum.In,
-                Protocol = ProtocolEnum.Udp,
+                Direction = Direction.In,
+                Protocol = Protocol.Udp,
                 Description = "description2",
                 DestinationIps = new List<string>
                 {
@@ -74,6 +83,7 @@ FirewallResponse firewallResponse = new FirewallResponse
                     "28.239.14.0/24",
                     "ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128",
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         Labels = new Dictionary<string, string>
@@ -81,7 +91,9 @@ FirewallResponse firewallResponse = new FirewallResponse
             ["key0"] = "labels2",
             ["key1"] = "labels1",
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function leaguedashplayershotlocationsGET(
+function leaguedashplayershotlocationsGet(
     string $measureType,
     string $perMode,
     string $plusMinus,
@@ -19,7 +19,7 @@ function leaguedashplayershotlocationsGET(
     string $seasonSegment,
     string $dateFrom,
     string $dateTo,
-    string $opponentTeamID,
+    string $opponentTeamId,
     string $vsConference,
     string $vsDivision,
     string $gameSegment,
@@ -30,7 +30,7 @@ function leaguedashplayershotlocationsGET(
     string $playerExperience,
     string $playerPosition,
     string $starterBench
-): void
+): ApiResponse
 ```
 
 
@@ -51,7 +51,7 @@ function leaguedashplayershotlocationsGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -68,7 +68,7 @@ function leaguedashplayershotlocationsGET(
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -100,7 +100,7 @@ $dateFrom = 'DateFrom6';
 
 $dateTo = 'DateTo0';
 
-$opponentTeamID = 'OpponentTeamID6';
+$opponentTeamId = 'OpponentTeamID6';
 
 $vsConference = 'VsConference6';
 
@@ -122,37 +122,45 @@ $playerPosition = 'PlayerPosition8';
 
 $starterBench = 'StarterBench0';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->leaguedashplayershotlocationsGet(
+    $measureType,
+    $perMode,
+    $plusMinus,
+    $paceAdjust,
+    $rank,
+    $season,
+    $seasonType,
+    $outcome,
+    $location,
+    $month,
+    $seasonSegment,
+    $dateFrom,
+    $dateTo,
+    $opponentTeamId,
+    $vsConference,
+    $vsDivision,
+    $gameSegment,
+    $period,
+    $lastNGames,
+    $distanceRange,
+    $gameScope,
+    $playerExperience,
+    $playerPosition,
+    $starterBench
+);
 
-try {
-    $aPIController->leaguedashplayershotlocationsGET(
-        $measureType,
-        $perMode,
-        $plusMinus,
-        $paceAdjust,
-        $rank,
-        $season,
-        $seasonType,
-        $outcome,
-        $location,
-        $month,
-        $seasonSegment,
-        $dateFrom,
-        $dateTo,
-        $opponentTeamID,
-        $vsConference,
-        $vsDivision,
-        $gameSegment,
-        $period,
-        $lastNGames,
-        $distanceRange,
-        $gameScope,
-        $playerExperience,
-        $playerPosition,
-        $starterBench
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

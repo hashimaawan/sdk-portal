@@ -32,7 +32,7 @@ DeleteAnImageAsync(
 int id = 112;
 try
 {
-    await imagesController.DeleteAnImageAsync(id);
+    await imagesApi.DeleteAnImageAsync(id);
 }
 catch (ApiException e)
 {

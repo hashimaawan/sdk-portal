@@ -7,7 +7,7 @@ Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createAnSSHKey(?SshKeysRequest $body = null): SshKeysResponse1
+function createAnSshKey(?SshKeysRequest $body = null): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function createAnSSHKey(?SshKeysRequest $body = null): SshKeysResponse1
 
 **201**: The `ssh_key` key in the reply contains the object that was just created
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -33,14 +33,20 @@ $body = SshKeysRequestBuilder::init(
     'ssh-rsa AAAjjk76kgf...Xt'
 )->build();
 
-$sSHKeysController = $client->getSSHKeysController();
+$sshKeysApi = $client->getSshKeysApi();
+$apiResponse = $sshKeysApi->createAnSshKey($body);
 
-try {
-    $result = $sSHKeysController->createAnSSHKey($body);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'SshKeysResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

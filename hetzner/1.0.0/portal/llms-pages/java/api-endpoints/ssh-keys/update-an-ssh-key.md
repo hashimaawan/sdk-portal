@@ -9,7 +9,7 @@ Please note that when updating labels, the SSH key current set of labels will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<SshKeysResponse1> updateAnSSHKeyAsync(
+CompletableFuture<ApiResponse<SshKeysResponse1>> updateAnSshKeyAsync(
     final String id,
     final SshKeysRequest1 body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<SshKeysResponse1> updateAnSSHKeyAsync(
 
 **200**: The `ssh_key` key in the reply contains the modified SSH key object with the new description
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ SshKeysRequest1 body = new SshKeysRequest1.Builder()
     .name("My ssh key")
     .build();
 
-sSHKeysController.updateAnSSHKeyAsync(id, body).thenAccept(result -> {
+sshKeysApi.updateAnSshKeyAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlNlcnZlcjE4
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -32,14 +34,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `PublicNet` | [`PublicNet4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/public-net-4.md) | Required | Public network information. The Server's IPv4 address can be found in `public_net->ipv4->ip` |
 | `RescueEnabled` | `bool` | Required | True if rescue mode is enabled. Server will then boot into rescue system on next reboot |
 | `ServerType` | [`ServerType1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/server-type-1.md) | Required | Type of Server - determines how much ram, disk and cpu a Server has |
-| `Status` | [`Status73Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-73.md) | Required | Status of the Server |
+| `Status` | [`Status73`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-73.md) | Required | Status of the Server |
 | `Volumes` | `List<int>` | Optional | IDs of Volumes assigned to this Server |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Server18 server18 = new Server18
@@ -60,6 +64,7 @@ Server18 server18 = new Server18
             Longitude = 12.370071,
             Name = "fsn1",
             NetworkZone = "eu-central",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Name = "fsn1-dc8",
         ServerTypes = new ServerTypes
@@ -82,7 +87,9 @@ Server18 server18 = new Server18
                 2,
                 3,
             },
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Id = 42,
     Image = new Image
@@ -93,6 +100,7 @@ Server18 server18 = new Server18
         {
             Id = 1,
             Name = "Server",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Deleted = null,
         Deprecated = "2018-02-28T00:00:00+00:00",
@@ -105,15 +113,17 @@ Server18 server18 = new Server18
             ["key0"] = "labels4",
         },
         Name = "ubuntu-20.04",
-        OsFlavor = OsFlavorEnum.Ubuntu,
+        OsFlavor = OsFlavor.Ubuntu,
         OsVersion = "20.04",
         Protection = new Protection
         {
             Delete = false,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
-        Status = Status24Enum.Unavailable,
-        Type = Type22Enum.Snapshot,
+        Status = Status24.Unavailable,
+        Type = Type22.Snapshot,
         RapidDeploy = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     IncludedTraffic = 654321,
     IngoingTraffic = 123456,
@@ -123,7 +133,8 @@ Server18 server18 = new Server18
         Description = "FreeBSD 11.0 x64",
         Id = 42,
         Name = "FreeBSD-11.0-RELEASE-amd64-dvd1",
-        Type = Type26Enum.Public,
+        Type = Type26.Public,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Labels = new Dictionary<string, string>
     {
@@ -146,12 +157,14 @@ Server18 server18 = new Server18
             Ip = "10.0.0.2",
             MacAddress = "86:00:ff:2a:7d:e1",
             Network = 4711,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     Protection = new Protection20
     {
         Delete = false,
         Rebuild = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     PublicNet = new PublicNet4
     {
@@ -165,6 +178,7 @@ Server18 server18 = new Server18
             DnsPtr = "server01.example.com",
             Ip = "1.2.3.4",
             Id = 42,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Ipv6 = new Ipv64
         {
@@ -175,30 +189,35 @@ Server18 server18 = new Server18
                 {
                     DnsPtr = "server.example.com",
                     Ip = "2001:db8::1",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             Ip = "2001:db8::/64",
             Id = 42,
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         Firewalls = new List<ServerPublicNetFirewall>
         {
             new ServerPublicNetFirewall
             {
                 Id = 250,
-                Status = Status72Enum.Applied,
+                Status = Status72.Applied,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             new ServerPublicNetFirewall
             {
                 Id = 250,
-                Status = Status72Enum.Applied,
+                Status = Status72.Applied,
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     RescueEnabled = false,
     ServerType = new ServerType1
     {
         Cores = 1,
-        CpuType = CpuTypeEnum.Shared,
+        CpuType = CpuType.Shared,
         Deprecated = false,
         Description = "CX11",
         Disk = 25,
@@ -214,17 +233,21 @@ Server18 server18 = new Server18
                 {
                     Gross = "1.1900000000000000",
                     Net = "1.0000000000",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 PriceMonthly = new PriceMonthly10
                 {
                     Gross = "1.1900000000000000",
                     Net = "1.0000000000",
+                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
+                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
-        StorageType = StorageTypeEnum.Local,
+        StorageType = StorageType.Local,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
-    Status = Status73Enum.Running,
+    Status = Status73.Running,
     LoadBalancers = new List<int>
     {
         248,
@@ -245,6 +268,7 @@ Server18 server18 = new Server18
             253,
         },
         Type = "type2",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Volumes = new List<int>
     {
@@ -252,6 +276,7 @@ Server18 server18 = new Server18
         200,
         201,
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

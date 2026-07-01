@@ -7,7 +7,7 @@ Algorithm of the Load Balancer
 
 # Enum Type Name
 
-`Type39Enum`
+`Type39`
 
 
 # Fields
@@ -21,9 +21,9 @@ Algorithm of the Load Balancer
 # Example
 
 ```python
-from hetznercloudapi.models.type_39_enum import Type39Enum
+from hetznercloudapi.models.type_39 import Type39
 
-type_39 = Type39Enum.ROUND_ROBIN
+type_39 = Type39.ROUND_ROBIN
 ```
 
 

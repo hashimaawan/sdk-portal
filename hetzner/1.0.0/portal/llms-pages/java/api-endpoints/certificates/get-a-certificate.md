@@ -7,7 +7,7 @@ Gets a specific Certificate object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<CertificateResponse> getACertificateAsync(
+CompletableFuture<ApiResponse<CertificateResponse>> getACertificateAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<CertificateResponse> getACertificateAsync(
 
 **200**: The `certificate` key contains a Certificate object
 
-[`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificate-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CertificateResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/certificate-response.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<CertificateResponse> getACertificateAsync(
 ```java
 int id = 112;
 
-certificatesController.getACertificateAsync(id).thenAccept(result -> {
+certificatesApi.getACertificateAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

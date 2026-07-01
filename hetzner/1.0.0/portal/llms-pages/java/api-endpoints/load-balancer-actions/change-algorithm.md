@@ -7,7 +7,7 @@ Change the algorithm that determines to which target new requests are sent.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> changeAlgorithmAsync(
+CompletableFuture<ApiResponse<ActionResponse>> changeAlgorithmAsync(
     final int id,
     final LoadBalancersActionsChangeAlgorithmRequest body)
 ```
@@ -25,14 +25,14 @@ CompletableFuture<ActionResponse> changeAlgorithmAsync(
 
 **201**: The `action` key contains the `change_algorithm` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-loadBalancerActionsController.changeAlgorithmAsync(id, null).thenAccept(result -> {
+loadBalancerActionsApi.changeAlgorithmAsync(id, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

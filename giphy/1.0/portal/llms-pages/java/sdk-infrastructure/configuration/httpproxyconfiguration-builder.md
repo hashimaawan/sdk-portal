@@ -26,10 +26,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```java
-import com.giphy.api.GiphyAPIClient;
+import com.giphy.api.GiphyApiClient;
 import com.giphy.api.http.client.HttpProxyConfiguration;
 
-GiphyAPIClient client = new GiphyAPIClient.Builder()
+GiphyApiClient client = new GiphyApiClient.Builder()
   .httpClientConfig(configBuilder -> configBuilder
       .proxyConfig(new HttpProxyConfiguration.Builder("http://localhost",
           8080).auth("username", "password")))

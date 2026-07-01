@@ -17,10 +17,10 @@ Primary IPs are billed on an hourly basis.
 
 # Get singleton instance
 
-The singleton instance of the `PrimaryIPsController` class can be accessed from the API Client.
+The singleton instance of the `PrimaryIPsApi` class can be accessed from the API Client.
 
 ```
-$primaryIPsController = $client->getPrimaryIPsController();
+$primaryIPsApi = $client->getPrimaryIPsApi();
 ```
 
 

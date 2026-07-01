@@ -9,7 +9,7 @@ Please note that when updating labels, the SSH key current set of labels will be
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAnSSHKey(string $id, ?SshKeysRequest1 $body = null): SshKeysResponse1
+function updateAnSshKey(string $id, ?SshKeysRequest1 $body = null): ApiResponse
 ```
 
 
@@ -25,7 +25,7 @@ function updateAnSSHKey(string $id, ?SshKeysRequest1 $body = null): SshKeysRespo
 
 **200**: The `ssh_key` key in the reply contains the modified SSH key object with the new description
 
-[`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/ssh-keys-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`SshKeysResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/ssh-keys-response-1.md).
 
 
 # Example Usage
@@ -38,17 +38,23 @@ $body = SshKeysRequest1Builder::init()
     ->name('My ssh key')
     ->build();
 
-$sSHKeysController = $client->getSSHKeysController();
+$sshKeysApi = $client->getSshKeysApi();
+$apiResponse = $sshKeysApi->updateAnSshKey(
+    $id,
+    $body
+);
 
-try {
-    $result = $sSHKeysController->updateAnSSHKey(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'SshKeysResponse1:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

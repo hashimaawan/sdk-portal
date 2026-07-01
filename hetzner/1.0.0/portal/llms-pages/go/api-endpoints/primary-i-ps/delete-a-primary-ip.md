@@ -9,7 +9,7 @@ The Primary IP may be assigned to a Server. In this case it is unassigned automa
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-DeleteAPrimaryIP(
+DeleteAPrimaryIp(
     ctx context.Context,
     id int) (
     http.Response,
@@ -38,7 +38,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := primaryIPsController.DeleteAPrimaryIP(ctx, id)
+resp, err := primaryIPsApi.DeleteAPrimaryIp(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

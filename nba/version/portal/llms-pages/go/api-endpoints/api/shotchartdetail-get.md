@@ -5,19 +5,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-ShotchartdetailGET(
+ShotchartdetailGet(
     ctx context.Context,
     seasonType string,
-    teamID string,
-    playerID string,
-    gameID string,
+    teamId string,
+    playerId string,
+    gameId string,
     outcome string,
     location string,
     month string,
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     position string,
@@ -36,16 +36,16 @@ ShotchartdetailGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `position` | `string` | Query, Required | - |
@@ -70,11 +70,11 @@ ctx := context.Background()
 
 seasonType := "SeasonType8"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
-playerID := "PlayerID6"
+playerId := "PlayerID6"
 
-gameID := "GameID8"
+gameId := "GameID8"
 
 outcome := "Outcome4"
 
@@ -88,7 +88,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -106,7 +106,7 @@ lastNGames := "LastNGames4"
 
 contextMeasure := "ContextMeasure2"
 
-resp, err := aPIController.ShotchartdetailGET(ctx, seasonType, teamID, playerID, gameID, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, position, rookieYear, gameSegment, period, lastNGames, contextMeasure)
+resp, err := api.ShotchartdetailGet(ctx, seasonType, teamId, playerId, gameId, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, position, rookieYear, gameSegment, period, lastNGames, contextMeasure)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRlByaWNlOQ
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -15,21 +17,31 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `location` | `String` | Required | Name of the Location the price is for |
 | `price_hourly` | [`PriceHourly8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/price-hourly-8.md) | Required | Hourly costs for a Server type in this Location |
 | `price_monthly` | [`PriceMonthly10`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/price-monthly-10.md) | Required | Monthly costs for a Server type in this Location |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 price9 = Price9.new(
-  'fsn1',
-  PriceHourly8.new(
-    '1.1900000000000000',
-    '1.0000000000'
+  location: 'fsn1',
+  price_hourly: PriceHourly8.new(
+    gross: '1.1900000000000000',
+    net: '1.0000000000',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  PriceMonthly10.new(
-    '1.1900000000000000',
-    '1.0000000000'
-  )
+  price_monthly: PriceMonthly10.new(
+    gross: '1.1900000000000000',
+    net: '1.0000000000',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
+  ),
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

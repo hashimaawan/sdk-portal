@@ -11,7 +11,7 @@ Your Server will automatically be powered off before the rebuild command execute
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function rebuildAServerFromAnImage(int $id, ?RebuildServerRequest $body = null): ServersActionsRebuildResponse
+function rebuildAServerFromAnImage(int $id, ?RebuildServerRequest $body = null): ApiResponse
 ```
 
 
@@ -27,7 +27,7 @@ function rebuildAServerFromAnImage(int $id, ?RebuildServerRequest $body = null):
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-rebuild-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ServersActionsRebuildResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/servers-actions-rebuild-response.md).
 
 
 # Example Usage
@@ -39,17 +39,23 @@ $body = RebuildServerRequestBuilder::init(
     'ubuntu-20.04'
 )->build();
 
-$serverActionsController = $client->getServerActionsController();
+$serverActionsApi = $client->getServerActionsApi();
+$apiResponse = $serverActionsApi->rebuildAServerFromAnImage(
+    $id,
+    $body
+);
 
-try {
-    $result = $serverActionsController->rebuildAServerFromAnImage(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'ServersActionsRebuildResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

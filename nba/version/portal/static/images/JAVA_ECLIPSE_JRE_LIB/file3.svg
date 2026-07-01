@@ -245,7 +245,7 @@
   <text transform="translate(503 63) scale(0.94 0.94)" class="cls-4"><tspan class="cls-5">Help</tspan></text>
   <path d="M47.422,194.485 L111.406,194.485 L111.406,219.804 L47.422,219.804 L47.422,194.485 Z" class="cls-3"/>
   <text transform="translate(52 158) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">Project 1</tspan></text>
-  <text transform="translate(52 189) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">NBAStatsAPILib</tspan></text>
+  <text transform="translate(52 189) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">NbaStatsApiLib</tspan></text>
   <text transform="translate(81 213) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">src</tspan></text>
   <text transform="translate(80 398) scale(1.13 1.13)" class="cls-4"><tspan class="cls-4"><tspan class="cls-9">JRE System Library <tspan class="cls-10">[JavaSE-1.7]</tspan></tspan></tspan></text>
   <text transform="translate(80 424) scale(1.13 1.13)" class="cls-4"><tspan class="cls-5">Maven Dependencies</tspan></text>

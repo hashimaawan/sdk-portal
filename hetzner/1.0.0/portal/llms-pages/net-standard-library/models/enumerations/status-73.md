@@ -7,7 +7,7 @@ Status of the Server
 
 # Enum Type Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
@@ -28,9 +28,9 @@ Status of the Server
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Status73Enum status73 = Status73Enum.Starting;
+Status73 status73 = Status73.Starting;
 ```
 
 

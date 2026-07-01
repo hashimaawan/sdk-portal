@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkNyZWF0ZUxvYWRCYWxhbmNlclJlcXVlc3Q
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -22,26 +24,34 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `public_interface` | `TrueClass \| FalseClass` | Optional | Enable or disable the public interface of the Load Balancer |
 | `services` | [`Array[LoadBalancerService]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer-service.md) | Optional | Array of services |
 | `targets` | [`Array[LoadBalancerTarget]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer-target.md) | Optional | Array of targets |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 create_load_balancer_request = CreateLoadBalancerRequest.new(
-  LoadBalancerAlgorithm.new(
-    Type28Enum::ROUND_ROBIN
+  algorithm: LoadBalancerAlgorithm.new(
+    type: Type28::ROUND_ROBIN,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  'lb11',
-  'Web Frontend',
-  Labels.new(
-    'labelkey4'
+  load_balancer_type: 'lb11',
+  name: 'Web Frontend',
+  labels: Labels.new(
+    labelkey: 'labelkey4',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  'location8',
-  123,
-  'eu-central',
-  true,
-  [],
-  []
+  location: 'location8',
+  network: 123,
+  network_zone: 'eu-central',
+  public_interface: true,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

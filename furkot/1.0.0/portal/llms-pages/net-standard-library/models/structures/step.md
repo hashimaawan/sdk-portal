@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlN0ZXA
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -21,12 +23,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 | `Passthru` | `bool?` | Optional | true for pass-through points anchoring route |
 | `Route` | [`Route`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/net-standard-library/models/structures/route.md) | Optional | route leading to the stop |
 | `Url` | `string` | Optional | url of the page with more information about the stop |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using FurkotTrips.Standard.Models;
+using FurkotTrips.Standard.Utilities;
 using System.Globalization;
 
 Step step = new Step
@@ -39,11 +43,13 @@ Step step = new Step
     {
         Lat = 182.98,
         Lon = 16.08,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Departure = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
         provider: CultureInfo.InvariantCulture,
         DateTimeStyles.RoundtripKind),
     Name = "name8",
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -8,8 +8,8 @@ Gets all existing Volumes that you have available.
 
 ```csharp
 GetAllVolumesAsync(
-    Models.Status23Enum? status = null,
-    Models.SortEnum? sort = null,
+    Models.Status23? status = null,
+    Models.Sort? sort = null,
     string name = null,
     string labelSelector = null)
 ```
@@ -19,8 +19,8 @@ GetAllVolumesAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `status` | [`Status23Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Volumes matching the status. |
-| `sort` | [`SortEnum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`Status23?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Volumes matching the status. |
+| `sort` | [`Sort?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
 | `name` | `string` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
 | `labelSelector` | `string` | Query, Optional | Can be used to filter resources by labels. The response will only contain resources matching the label selector. |
 
@@ -29,7 +29,7 @@ GetAllVolumesAsync(
 
 **200**: The `volumes` key contains a list of volumes
 
-[`Task<Models.VolumesResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/volumes-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.VolumesResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/volumes-response.md).
 
 
 # Example Usage
@@ -37,7 +37,7 @@ GetAllVolumesAsync(
 ```csharp
 try
 {
-    VolumesResponse result = await volumesController.GetAllVolumesAsync();
+    ApiResponse<VolumesResponse> result = await volumesApi.GetAllVolumesAsync();
 }
 catch (ApiException e)
 {

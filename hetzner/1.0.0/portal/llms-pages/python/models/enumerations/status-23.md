@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Status23Enum`
+`Status23`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```python
-from hetznercloudapi.models.status_23_enum import Status23Enum
+from hetznercloudapi.models.status_23 import Status23
 
-status_23 = Status23Enum.AVAILABLE
+status_23 = Status23.AVAILABLE
 ```
 
 

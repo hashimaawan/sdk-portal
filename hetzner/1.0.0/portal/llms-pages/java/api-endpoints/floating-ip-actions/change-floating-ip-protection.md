@@ -7,7 +7,7 @@ Changes the protection configuration of the Floating IP.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> changeFloatingIPProtectionAsync(
+CompletableFuture<ApiResponse<ActionResponse>> changeFloatingIpProtectionAsync(
     final int id,
     final ChangeProtectionRequest body)
 ```
@@ -25,7 +25,7 @@ CompletableFuture<ActionResponse> changeFloatingIPProtectionAsync(
 
 **201**: The `action` key contains the `change_protection` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -36,7 +36,7 @@ ChangeProtectionRequest body = new ChangeProtectionRequest.Builder()
     .delete(true)
     .build();
 
-floatingIPActionsController.changeFloatingIPProtectionAsync(id, body).thenAccept(result -> {
+floatingIpActionsApi.changeFloatingIpProtectionAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

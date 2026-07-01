@@ -7,7 +7,7 @@ Type of the resource
 
 # Enum Type Name
 
-`Type29Enum`
+`Type29`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of the resource
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Type29Enum type29 = Type29Enum.Server;
+Type29 type29 = Type29.Server;
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -23,18 +25,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `ImageSize` | `double?` | Required | Size of the Image file in our storage in GB. For snapshot Images this is the value relevant for calculating costs for the Image. |
 | `Labels` | `Dictionary<string, string>` | Required | User-defined labels (key-value pairs) |
 | `Name` | `string` | Required | Unique identifier of the Image. This value is only set for system Images. |
-| `OsFlavor` | [`OsFlavorEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
+| `OsFlavor` | [`OsFlavor`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/os-flavor.md) | Required | Flavor of operating system contained in the Image |
 | `OsVersion` | `string` | Required | Operating system version |
 | `Protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `RapidDeploy` | `bool?` | Optional | Indicates that rapid deploy of the Image is available |
-| `Status` | [`Status24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
-| `Type` | [`Type22Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-22.md) | Required | Type of the Image |
+| `Status` | [`Status24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/status-24.md) | Required | Whether the Image can be used or if it's still being created or unavailable |
+| `Type` | [`Type22`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-22.md) | Required | Type of the Image |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 Image image = new Image
@@ -45,6 +49,7 @@ Image image = new Image
     {
         Id = 1,
         Name = "Server",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Deleted = null,
     Deprecated = "2018-02-28T00:00:00+00:00",
@@ -57,15 +62,17 @@ Image image = new Image
         ["key0"] = "labels4",
     },
     Name = "ubuntu-20.04",
-    OsFlavor = OsFlavorEnum.Ubuntu,
+    OsFlavor = OsFlavor.Ubuntu,
     OsVersion = "20.04",
     Protection = new Protection
     {
         Delete = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
-    Status = Status24Enum.Unavailable,
-    Type = Type22Enum.Snapshot,
+    Status = Status24.Unavailable,
+    Type = Type22.Snapshot,
     RapidDeploy = false,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -8,10 +8,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |------------------------------ |-------------------------------------------------------------- |
 | `floating_ip_assigned`        | The floating IP is already assigned                           |
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
-`AssignFloatingIPRequest`
+`AssignFloatingIpRequest`
 
 
 # Fields
@@ -19,6 +21,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Server` | `int` | Required | ID of the Server the Floating IP shall be assigned to |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,12 +30,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    assignFloatingIPRequest := models.AssignFloatingIPRequest{
-        Server:               42,
+    assignFloatingIpRequest := models.AssignFloatingIpRequest{
+        Server:                42,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

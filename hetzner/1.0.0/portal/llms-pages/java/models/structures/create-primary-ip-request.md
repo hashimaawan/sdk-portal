@@ -2,10 +2,12 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRkNyZWF0ZVByaW1hcnlJUFJlcXVlc3Q
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
-`CreatePrimaryIPRequest`
+`CreatePrimaryIpRequest`
 
 
 # Fields
@@ -18,26 +20,28 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Datacenter` | `String` | Optional | ID or name of Datacenter the Primary IP will be bound to. Needs to be omitted if `assignee_id` is passed. | String getDatacenter() | setDatacenter(String datacenter) |
 | `Labels` | `Object` | Optional | User-defined labels (key-value pairs) | Object getLabels() | setLabels(Object labels) |
 | `Name` | `String` | Required | - | String getName() | setName(String name) |
-| `Type` | [`Type51Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-51.md) | Required | Primary IP type | Type51Enum getType() | setType(Type51Enum type) |
+| `Type` | [`Type51`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/enumerations/type-51.md) | Required | Primary IP type | Type51 getType() | setType(Type51 type) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
 import cloud.hetzner.api.ApiHelper;
-import cloud.hetzner.api.models.CreatePrimaryIPRequest;
-import cloud.hetzner.api.models.Type51Enum;
+import cloud.hetzner.api.models.CreatePrimaryIpRequest;
+import cloud.hetzner.api.models.Type51;
 import java.io.IOException;
 
-CreatePrimaryIPRequest createPrimaryIPRequest = new CreatePrimaryIPRequest.Builder(
+CreatePrimaryIpRequest createPrimaryIpRequest = new CreatePrimaryIpRequest.Builder(
     "server",
     "my-ip",
-    Type51Enum.IPV4
+    Type51.IPV4
 )
 .assigneeId(17)
 .autoDelete(false)
 .datacenter("fsn1-dc8")
 .labels(ApiHelper.deserialize("{\"labelkey\":\"value\"}"))
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

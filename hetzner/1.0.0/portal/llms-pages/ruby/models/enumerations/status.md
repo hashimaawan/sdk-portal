@@ -7,7 +7,7 @@ Status of the Action
 
 # Enum Type Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
@@ -22,7 +22,7 @@ Status of the Action
 # Example
 
 ```ruby
-status = StatusEnum::ERROR
+status = Status::ERROR
 ```
 
 

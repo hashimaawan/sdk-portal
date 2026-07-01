@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IPv6 network assigned to this Server and its reverse DNS entry
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -18,21 +20,28 @@ IPv6 network assigned to this Server and its reverse DNS entry
 | `dns_ptr` | [`Array[DnsPtr8]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/dns-ptr-8.md) | Required | Reverse DNS PTR entries for the IPv6 addresses of this Server, `null` by default |
 | `id` | `Integer` | Optional | ID of the Resource |
 | `ip` | `String` | Required | IP address (v6) of this Server |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 ipv64 = Ipv64.new(
-  false,
-  [
+  blocked: false,
+  dns_ptr: [
     DnsPtr8.new(
-      'server.example.com',
-      '2001:db8::1'
+      dns_ptr: 'server.example.com',
+      ip: '2001:db8::1',
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  '2001:db8::/64',
-  42
+  ip: '2001:db8::/64',
+  id: 42,
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

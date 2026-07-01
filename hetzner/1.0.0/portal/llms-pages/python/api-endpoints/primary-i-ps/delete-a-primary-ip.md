@@ -25,7 +25,7 @@ def delete_a_primary_ip(self,
 
 **204**: Primary IP deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -33,7 +33,12 @@ def delete_a_primary_ip(self,
 ```python
 id = 112
 
-primary_i_ps_controller.delete_a_primary_ip(id)
+result = primary_i_ps_api.delete_a_primary_ip(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

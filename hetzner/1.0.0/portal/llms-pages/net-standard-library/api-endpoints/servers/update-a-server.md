@@ -27,7 +27,7 @@ UpdateAServerAsync(
 
 **200**: The `server` key in the reply contains the updated Server
 
-[`Task<Models.ServersResponse2>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ServersResponse2](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/servers-response-2.md).
 
 
 # Example Usage
@@ -42,7 +42,7 @@ UpdateServerRequest body = new UpdateServerRequest
 
 try
 {
-    ServersResponse2 result = await serversController.UpdateAServerAsync(
+    ApiResponse<ServersResponse2> result = await serversApi.UpdateAServerAsync(
         id,
         body
     );

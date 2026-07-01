@@ -35,7 +35,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 const id = 112;
 
 try {
-  const response = await serverActionsController.requestConsoleForAServer(id);
+  const response = await serverActionsApi.requestConsoleForAServer(id);
 
   // Extracting fully parsed response body.
   console.log(response.result);

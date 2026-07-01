@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkNyZWF0ZVZvbHVtZVJlcXVlc3Q
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -19,6 +21,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Name` | `string` | Required | Name of the volume |
 | `Server` | `*int` | Optional | Server to which to attach the Volume once it's created (Volume will be created in the same Location as the server) |
 | `Size` | `int` | Required | Size of the Volume in GB |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,18 +30,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     createVolumeRequest := models.CreateVolumeRequest{
-        Automount:            models.ToPointer(false),
-        Format:               models.ToPointer("xfs"),
-        Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-        Location:             models.ToPointer("nbg1"),
-        Name:                 "databases-storage",
-        Server:               models.ToPointer(182),
-        Size:                 42,
+        Automount:             models.ToPointer(false),
+        Format:                models.ToPointer("xfs"),
+        Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+        Location:              models.ToPointer("nbg1"),
+        Name:                  "databases-storage",
+        Server:                models.ToPointer(182),
+        Size:                  42,
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

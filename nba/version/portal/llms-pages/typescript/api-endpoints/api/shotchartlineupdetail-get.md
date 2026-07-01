@@ -5,25 +5,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async shotchartlineupdetailGET(
-  leagueID: string,
+async shotchartlineupdetailGet(
+  leagueId: string,
   season: string,
   seasonType: string,
-  teamID: string,
+  teamId: string,
   outcome: string,
   location: string,
   month: string,
   seasonSegment: string,
   dateFrom: string,
   dateTo: string,
-  opponentTeamID: string,
+  opponentTeamId: string,
   vsConference: string,
   vsDivision: string,
   gameSegment: string,
   period: string,
   lastNGames: string,
-  gameID: string,
-  gROUPID: string,
+  gameId: string,
+  groupId: string,
   contextMeasure: string,
   contextFilter: string,
   requestOptions?: RequestOptions
@@ -35,24 +35,24 @@ async shotchartlineupdetailGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
 | `period` | `string` | Query, Required | - |
 | `lastNGames` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
-| `gROUPID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
+| `groupId` | `string` | Query, Required | - |
 | `contextMeasure` | `string` | Query, Required | - |
 | `contextFilter` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
@@ -68,13 +68,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
 const season = 'Season0';
 
 const seasonType = 'SeasonType8';
 
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
 const outcome = 'Outcome4';
 
@@ -88,7 +88,7 @@ const dateFrom = 'DateFrom6';
 
 const dateTo = 'DateTo0';
 
-const opponentTeamID = 'OpponentTeamID6';
+const opponentTeamId = 'OpponentTeamID6';
 
 const vsConference = 'VsConference6';
 
@@ -100,34 +100,34 @@ const period = 'Period2';
 
 const lastNGames = 'LastNGames4';
 
-const gameID = 'GameID8';
+const gameId = 'GameID8';
 
-const gROUPID = 'GROUP_ID6';
+const groupId = 'GROUP_ID6';
 
 const contextMeasure = 'ContextMeasure2';
 
 const contextFilter = 'ContextFilter6';
 
 try {
-  const response = await apiController.shotchartlineupdetailGET(
-    leagueID,
+  const response = await api.shotchartlineupdetailGet(
+    leagueId,
     season,
     seasonType,
-    teamID,
+    teamId,
     outcome,
     location,
     month,
     seasonSegment,
     dateFrom,
     dateTo,
-    opponentTeamID,
+    opponentTeamId,
     vsConference,
     vsDivision,
     gameSegment,
     period,
     lastNGames,
-    gameID,
-    gROUPID,
+    gameId,
+    groupId,
     contextMeasure,
     contextFilter
   );

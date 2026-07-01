@@ -41,7 +41,7 @@ const body: LoadBalancersActionsDeleteServiceRequest = {
 };
 
 try {
-  const response = await loadBalancerActionsController.deleteService(
+  const response = await loadBalancerActionsApi.deleteService(
     id,
     body
   );

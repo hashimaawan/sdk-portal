@@ -30,13 +30,19 @@ def boxscorefourfactors_get(game_id: nil,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
 
 ```ruby
-client_controller.boxscorefourfactors_get
+result = client_api.boxscorefourfactors_get
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRkNyZWF0ZUZpcmV3YWxsUmVxdWVzdA
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -16,20 +18,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `?array` | Optional | User-defined labels (key-value pairs) | getLabels(): ?array | setLabels(?array labels): void |
 | `name` | `string` | Required | Name of the Firewall | getName(): string | setName(string name): void |
 | `rules` | [`?(Rule[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/rule.md) | Optional | Array of rules | getRules(): ?array | setRules(?array rules): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\CreateFirewallRequestBuilder;
-use HetznerCloudAPILib\Models\Builders\ApplyToBuilder;
-use HetznerCloudAPILib\Models\Type7Enum;
-use HetznerCloudAPILib\Models\Builders\LabelSelector1Builder;
-use HetznerCloudAPILib\Models\Builders\Server2Builder;
-use HetznerCloudAPILib\ApiHelper;
-use HetznerCloudAPILib\Models\Builders\RuleBuilder;
-use HetznerCloudAPILib\Models\DirectionEnum;
-use HetznerCloudAPILib\Models\ProtocolEnum;
+use HetznerCloudApiLib\Models\Builders\CreateFirewallRequestBuilder;
+use HetznerCloudApiLib\Models\Builders\ApplyToBuilder;
+use HetznerCloudApiLib\Models\Type7;
+use HetznerCloudApiLib\Models\Builders\LabelSelector1Builder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\Server2Builder;
+use HetznerCloudApiLib\Models\Builders\RuleBuilder;
+use HetznerCloudApiLib\Models\Direction;
+use HetznerCloudApiLib\Models\Protocol;
 
 $createFirewallRequest = CreateFirewallRequestBuilder::init(
     'Corporate Intranet Protection'
@@ -37,52 +40,70 @@ $createFirewallRequest = CreateFirewallRequestBuilder::init(
     ->applyTo(
         [
             ApplyToBuilder::init(
-                Type7Enum::SERVER
+                Type7::SERVER
             )
                 ->labelSelector(
                     LabelSelector1Builder::init(
                         'selector8'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->server(
                     Server2Builder::init(
                         14
-                    )->build()
-                )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             ApplyToBuilder::init(
-                Type7Enum::SERVER
+                Type7::SERVER
             )
                 ->labelSelector(
                     LabelSelector1Builder::init(
                         'selector8'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->server(
                     Server2Builder::init(
                         14
-                    )->build()
-                )->build(),
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             ApplyToBuilder::init(
-                Type7Enum::SERVER
+                Type7::SERVER
             )
                 ->labelSelector(
                     LabelSelector1Builder::init(
                         'selector8'
-                    )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 )
                 ->server(
                     Server2Builder::init(
                         14
-                    )->build()
-                )->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
+                )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build()
         ]
     )
     ->labels(ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->rules(
         [
             RuleBuilder::init(
-                DirectionEnum::IN,
-                ProtocolEnum::TCP
+                Direction::IN,
+                Protocol::TCP
             )
                 ->description('description2')
                 ->destinationIps(
@@ -100,9 +121,11 @@ $createFirewallRequest = CreateFirewallRequestBuilder::init(
                         'ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128'
                     ]
                 )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

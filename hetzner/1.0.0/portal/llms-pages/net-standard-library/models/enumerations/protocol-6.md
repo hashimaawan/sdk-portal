@@ -7,7 +7,7 @@ Type of the health check
 
 # Enum Type Name
 
-`Protocol6Enum`
+`Protocol6`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the health check
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Protocol6Enum protocol6 = Protocol6Enum.Tcp;
+Protocol6 protocol6 = Protocol6.Tcp;
 ```
 
 

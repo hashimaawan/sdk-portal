@@ -7,7 +7,7 @@ Type of the ISO
 
 # Enum Type Name
 
-`Type26Enum`
+`Type26`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of the ISO
 # Example
 
 ```python
-from hetznercloudapi.models.type_26_enum import Type26Enum
+from hetznercloudapi.models.type_26 import Type26
 
-type_26 = Type26Enum.PUBLIC
+type_26 = Type26.PUBLIC
 ```
 
 

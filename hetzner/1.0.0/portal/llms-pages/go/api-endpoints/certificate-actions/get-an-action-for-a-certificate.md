@@ -40,7 +40,7 @@ id := 112
 
 actionId := 224
 
-apiResponse, err := certificateActionsController.GetAnActionForACertificate(ctx, id, actionId)
+apiResponse, err := certificateActionsApi.GetAnActionForACertificate(ctx, id, actionId)
 if err != nil {
     log.Fatalln(err)
 } else {

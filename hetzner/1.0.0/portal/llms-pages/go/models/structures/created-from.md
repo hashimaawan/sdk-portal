@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 Information about the Server the Image was created from
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -16,6 +18,7 @@ Information about the Server the Image was created from
 |  --- | --- | --- | --- |
 | `Id` | `int` | Required | ID of the Server the Image was created from |
 | `Name` | `string` | Required | Server name at the time the Image was created |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -24,13 +27,16 @@ Information about the Server the Image was created from
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     createdFrom := models.CreatedFrom{
-        Id:                   1,
-        Name:                 "Server",
+        Id:                    1,
+        Name:                  "Server",
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

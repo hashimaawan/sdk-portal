@@ -37,7 +37,7 @@ def retry_issuance_or_renewal(id)
 
 **201**: The `action` key contains the resulting Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/action-response.md).
 
 
 # Example Usage
@@ -45,8 +45,13 @@ def retry_issuance_or_renewal(id)
 ```ruby
 id = 112
 
-result = certificate_actions_controller.retry_issuance_or_renewal(id)
-puts result
+result = certificate_actions_api.retry_issuance_or_renewal(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

@@ -11,7 +11,7 @@ Note: if the PlacementGroup object changes during the request, the response will
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAPlacementGroup(int $id, ?UpdatePlacementGroupRequest $body = null): PlacementGroupResponse
+function updateAPlacementGroup(int $id, ?UpdatePlacementGroupRequest $body = null): ApiResponse
 ```
 
 
@@ -27,7 +27,7 @@ function updateAPlacementGroup(int $id, ?UpdatePlacementGroupRequest $body = nul
 
 **200**: The `certificate` key contains the PlacementGroup that was just updated
 
-[`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`PlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -40,17 +40,23 @@ $body = UpdatePlacementGroupRequestBuilder::init()
     ->name('my Placement Group')
     ->build();
 
-$placementGroupsController = $client->getPlacementGroupsController();
+$placementGroupsApi = $client->getPlacementGroupsApi();
+$apiResponse = $placementGroupsApi->updateAPlacementGroup(
+    $id,
+    $body
+);
 
-try {
-    $result = $placementGroupsController->updateAPlacementGroup(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'PlacementGroupResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -7,7 +7,7 @@ Returns a specific Action for a Certificate. Only type `managed` Certificates ha
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> getAnActionForACertificateAsync(
+CompletableFuture<ApiResponse<ActionResponse>> getAnActionForACertificateAsync(
     final int id,
     final int actionId)
 ```
@@ -25,7 +25,7 @@ CompletableFuture<ActionResponse> getAnActionForACertificateAsync(
 
 **200**: The `action` key contains the Certificate Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
@@ -34,7 +34,7 @@ CompletableFuture<ActionResponse> getAnActionForACertificateAsync(
 int id = 112;
 int actionId = 224;
 
-certificateActionsController.getAnActionForACertificateAsync(id, actionId).thenAccept(result -> {
+certificateActionsApi.getAnActionForACertificateAsync(id, actionId).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

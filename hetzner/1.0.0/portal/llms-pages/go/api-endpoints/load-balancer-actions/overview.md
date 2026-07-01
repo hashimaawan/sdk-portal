@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get Instance
 
-The instance of the `LoadBalancerActionsController` class can be accessed from the API Client.
+The instance of the `LoadBalancerActionsApi` class can be accessed from the API Client.
 
 ```
-loadBalancerActionsController := client.LoadBalancerActionsController()
+loadBalancerActionsApi := client.LoadBalancerActionsApi()
 ```
 
 

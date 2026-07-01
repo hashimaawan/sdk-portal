@@ -31,7 +31,7 @@ We limit the number of samples returned to a maximum of 500 and will adjust the 
 ```ts
 async getMetricsForAServer(
   id: number,
-  type: Type66Enum,
+  type: Type66,
   start: string,
   end: string,
   step?: string,
@@ -45,7 +45,7 @@ async getMetricsForAServer(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `number` | Template, Required | ID of the Server |
-| `type` | [`Type66Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
+| `type` | [`Type66`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-66.md) | Query, Required | Type of metrics to get |
 | `start` | `string` | Query, Required | Start of period to get Metrics for (in ISO-8601 format) |
 | `end` | `string` | Query, Required | End of period to get Metrics for (in ISO-8601 format) |
 | `step` | `string \| undefined` | Query, Optional | Resolution of results in seconds |
@@ -64,14 +64,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const id = 112;
 
-const type = Type66Enum.Network;
+const type = Type66.Network;
 
 const start = 'start4';
 
 const end = 'end8';
 
 try {
-  const response = await serversController.getMetricsForAServer(
+  const response = await serversApi.getMetricsForAServer(
     id,
     type,
     start,

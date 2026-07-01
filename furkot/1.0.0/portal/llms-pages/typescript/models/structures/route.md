@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 
 route leading to the stop
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,20 +18,24 @@ route leading to the stop
 |  --- | --- | --- | --- |
 | `distance` | `bigint \| undefined` | Optional | route distance in meters |
 | `duration` | `bigint \| undefined` | Optional | route duration in seconds |
-| `mode` | [`ModeEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/models/enumerations/mode.md) | Optional | travel mode |
+| `mode` | [`Mode \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/typescript/models/enumerations/mode.md) | Optional | travel mode |
 | `polyline` | `string \| undefined` | Optional | route path compatible with Google polyline encoding algorithm |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { ModeEnum, Route } from 'furkot-tripslib';
+import { Mode, Route } from 'furkot-tripslib';
 
 const route: Route = {
   distance: BigInt(134),
   duration: BigInt(168),
-  mode: ModeEnum.Car,
+  mode: Mode.Car,
   polyline: 'polyline0',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

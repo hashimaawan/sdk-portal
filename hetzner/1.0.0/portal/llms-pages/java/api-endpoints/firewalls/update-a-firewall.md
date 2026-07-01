@@ -11,7 +11,7 @@ Note: if the Firewall object changes during the request, the response will be a 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<FirewallResponse> updateAFirewallAsync(
+CompletableFuture<ApiResponse<FirewallResponse>> updateAFirewallAsync(
     final int id,
     final UpdateFirewallRequest body)
 ```
@@ -29,7 +29,7 @@ CompletableFuture<FirewallResponse> updateAFirewallAsync(
 
 **200**: The `firewall` key contains the Firewall that was just updated
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -41,7 +41,7 @@ UpdateFirewallRequest body = new UpdateFirewallRequest.Builder()
     .name("new-name")
     .build();
 
-firewallsController.updateAFirewallAsync(id, body).thenAccept(result -> {
+firewallsApi.updateAFirewallAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

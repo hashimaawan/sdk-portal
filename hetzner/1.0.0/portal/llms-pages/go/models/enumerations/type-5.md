@@ -7,14 +7,14 @@ Type of resource referenced
 
 # Class Name
 
-`Type5Enum`
+`Type5`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SERVER` |
+| `Server` |
 
 
 # Example
@@ -23,11 +23,11 @@ Type of resource referenced
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    type5 := models.Type5Enum_SERVER
+    type5 := models.Type5_Server
 
 }
 ```

@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMFJlc3BvbnNlMg
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -13,21 +15,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `server` | [`Server18 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/server-18.md) | Optional | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  CpuTypeEnum,
-  OsFlavorEnum,
+  CpuType,
+  OsFlavor,
   ServersResponse2,
-  Status24Enum,
-  Status72Enum,
-  Status73Enum,
-  StorageTypeEnum,
-  Type22Enum,
-  Type26Enum,
+  Status24,
+  Status72,
+  Status73,
+  StorageType,
+  Type22,
+  Type26,
 } from 'hetzner-cloud-apilib';
 
 const serversResponse2: ServersResponse2 = {
@@ -46,6 +49,9 @@ const serversResponse2: ServersResponse2 = {
         longitude: 59.18,
         name: 'name4',
         networkZone: 'network_zone2',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       name: 'name0',
       serverTypes: {
@@ -61,6 +67,12 @@ const serversResponse2: ServersResponse2 = {
           69.53,
           69.54
         ],
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
+      },
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
       },
     },
     id: 14,
@@ -70,6 +82,9 @@ const serversResponse2: ServersResponse2 = {
       createdFrom: {
         id: 60,
         name: 'name6',
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       deleted: 'deleted4',
       deprecated: 'deprecated8',
@@ -81,14 +96,20 @@ const serversResponse2: ServersResponse2 = {
         'key0': 'labels4'
       },
       name: 'name6',
-      osFlavor: OsFlavorEnum.Debian,
+      osFlavor: OsFlavor.Debian,
       osVersion: 'os_version4',
       protection: {
         mDelete: false,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
-      status: Status24Enum.Unavailable,
-      type: Type22Enum.App,
+      status: Status24.Unavailable,
+      type: Type22.App,
       rapidDeploy: false,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     includedTraffic: 123.68,
     ingoingTraffic: 151.82,
@@ -97,7 +118,10 @@ const serversResponse2: ServersResponse2 = {
       description: 'description2',
       id: 66,
       name: 'name8',
-      type: Type26Enum.Public,
+      type: Type26.Public,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     labels: {
       'key0': 'labels0',
@@ -115,6 +139,9 @@ const serversResponse2: ServersResponse2 = {
         ip: 'ip6',
         macAddress: 'mac_address0',
         network: 154,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       {
         aliasIps: [
@@ -123,11 +150,17 @@ const serversResponse2: ServersResponse2 = {
         ip: 'ip6',
         macAddress: 'mac_address0',
         network: 154,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       }
     ],
     protection: {
       mDelete: false,
       rebuild: false,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     publicNet: {
       floatingIps: [
@@ -140,6 +173,9 @@ const serversResponse2: ServersResponse2 = {
         dnsPtr: 'dns_ptr4',
         ip: 'ip2',
         id: 104,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       ipv6: {
         blocked: false,
@@ -147,30 +183,48 @@ const serversResponse2: ServersResponse2 = {
           {
             dnsPtr: 'dns_ptr0',
             ip: 'ip6',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           {
             dnsPtr: 'dns_ptr0',
             ip: 'ip6',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           }
         ],
         ip: 'ip0',
         id: 8,
+        additionalProperties: {
+          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+        },
       },
       firewalls: [
         {
           id: 250,
-          status: Status72Enum.Applied,
+          status: Status72.Applied,
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         },
         {
           id: 250,
-          status: Status72Enum.Applied,
+          status: Status72.Applied,
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          },
         }
       ],
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     rescueEnabled: false,
     serverType: {
       cores: 12.84,
-      cpuType: CpuTypeEnum.Shared,
+      cpuType: CpuType.Shared,
       deprecated: false,
       description: 'description0',
       disk: 14.32,
@@ -183,16 +237,28 @@ const serversResponse2: ServersResponse2 = {
           priceHourly: {
             gross: 'gross4',
             net: 'net2',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
           },
           priceMonthly: {
             gross: 'gross2',
             net: 'net0',
+            additionalProperties: {
+              'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+            },
+          },
+          additionalProperties: {
+            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
           },
         }
       ],
-      storageType: StorageTypeEnum.Local,
+      storageType: StorageType.Local,
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
-    status: Status73Enum.Starting,
+    status: Status73.Starting,
     loadBalancers: [
       144,
       143,
@@ -211,11 +277,20 @@ const serversResponse2: ServersResponse2 = {
         253
       ],
       type: 'type2',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     },
     volumes: [
       91,
       92
     ],
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

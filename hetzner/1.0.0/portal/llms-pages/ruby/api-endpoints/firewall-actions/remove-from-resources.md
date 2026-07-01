@@ -34,7 +34,7 @@ def remove_from_resources(id,
 
 **201**: The `actions` key contains multiple `remove_firewall` Actions
 
-[`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/actions-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ActionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/actions-response.md).
 
 
 # Example Usage
@@ -43,22 +43,26 @@ def remove_from_resources(id,
 id = 112
 
 body = RemoveFromResourcesRequest.new(
-  [
+  remove_from: [
     FirewallRemoveFromResources.new(
-      LabelSelector5.new,
-      Server9.new(
-        42
+      server: Server9.new(
+        id: 42
       ),
-      Type7Enum::SERVER
+      type: Type7::SERVER
     )
   ]
 )
 
-result = firewall_actions_controller.remove_from_resources(
+result = firewall_actions_api.remove_from_resources(
   id,
   body: body
 )
-puts result
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

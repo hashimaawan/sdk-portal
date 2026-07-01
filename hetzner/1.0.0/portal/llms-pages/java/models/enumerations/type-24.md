@@ -7,7 +7,7 @@ Destination Image type to convert to
 
 # Enum Type Name
 
-`Type24Enum`
+`Type24`
 
 
 # Fields
@@ -20,9 +20,9 @@ Destination Image type to convert to
 # Example
 
 ```java
-import cloud.hetzner.api.models.Type24Enum;
+import cloud.hetzner.api.models.Type24;
 
-Type24Enum type24 = Type24Enum.SNAPSHOT;
+Type24 type24 = Type24.SNAPSHOT;
 ```
 
 

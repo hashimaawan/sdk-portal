@@ -7,7 +7,7 @@ Returns all Datacenter objects.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<DatacentersResponse> getAllDatacentersAsync(
+CompletableFuture<ApiResponse<DatacentersResponse>> getAllDatacentersAsync(
     final String name)
 ```
 
@@ -23,13 +23,13 @@ CompletableFuture<DatacentersResponse> getAllDatacentersAsync(
 
 **200**: The reply contains the `datacenters` and `recommendation` keys
 
-[`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/datacenters-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/datacenters-response.md).
 
 
 # Example Usage
 
 ```java
-datacentersController.getAllDatacentersAsync(null).thenAccept(result -> {
+datacentersApi.getAllDatacentersAsync(null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

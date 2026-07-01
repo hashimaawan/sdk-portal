@@ -7,16 +7,16 @@ Status of the Action
 
 # Class Name
 
-`StatusEnum`
+`Status`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SUCCESS` |
-| `RUNNING` |
-| `ENUMERROR` |
+| `Success` |
+| `Running` |
+| `EnumError` |
 
 
 # Example
@@ -25,11 +25,11 @@ Status of the Action
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    status := models.StatusEnum_ENUMERROR
+    status := models.Status_EnumError
 
 }
 ```

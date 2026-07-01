@@ -9,7 +9,7 @@ Both net and gross prices are included in the response.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<PricingResponse> getAllPricesAsync()
+CompletableFuture<ApiResponse<PricingResponse>> getAllPricesAsync()
 ```
 
 
@@ -17,13 +17,13 @@ CompletableFuture<PricingResponse> getAllPricesAsync()
 
 **200**: The `pricing` key in the reply contains an pricing object with this structure
 
-[`PricingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/pricing-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`PricingResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/pricing-response.md).
 
 
 # Example Usage
 
 ```java
-pricingController.getAllPricesAsync().thenAccept(result -> {
+pricingApi.getAllPricesAsync().thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

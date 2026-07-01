@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/java/x-redirect/JTI0bSUyRk5ldHdvcmtzJTI1MjBSZXNwb25zZQ
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `Meta` | [`Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/meta.md) | Optional | - | Meta getMeta() | setMeta(Meta meta) |
 | `Networks` | [`List<Network>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/network.md) | Required | - | List<Network> getNetworks() | setNetworks(List<Network> networks) |
+| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
@@ -27,7 +30,7 @@ import cloud.hetzner.api.models.Pagination;
 import cloud.hetzner.api.models.Protection11;
 import cloud.hetzner.api.models.Route;
 import cloud.hetzner.api.models.Subnet;
-import cloud.hetzner.api.models.Type42Enum;
+import cloud.hetzner.api.models.Type42;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -42,12 +45,14 @@ NetworksResponse networksResponse = new NetworksResponse.Builder(
             new Protection11.Builder(
                 false
             )
+            .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build(),
             Arrays.asList(
                 new Route.Builder(
                     "10.100.1.0/24",
                     "10.0.1.1"
                 )
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ),
             Arrays.asList(
@@ -57,15 +62,17 @@ NetworksResponse networksResponse = new NetworksResponse.Builder(
                 new Subnet.Builder(
                     "10.0.0.1",
                     "eu-central",
-                    Type42Enum.CLOUD
+                    Type42.CLOUD
                 )
                 .ipRange("10.0.1.0/24")
+                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             )
         )
         .loadBalancers(Arrays.asList(
                 42
             ))
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
 )
@@ -78,9 +85,12 @@ NetworksResponse networksResponse = new NetworksResponse.Builder(
             50.02D,
             206.64D
         )
+        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     )
+    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
+.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

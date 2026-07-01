@@ -41,7 +41,7 @@ const body: LoadBalancersActionsChangeProtectionRequest = {
 };
 
 try {
-  const response = await loadBalancerActionsController.changeLoadBalancerProtection(
+  const response = await loadBalancerActionsApi.changeLoadBalancerProtection(
     id,
     body
   );

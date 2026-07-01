@@ -23,7 +23,7 @@ GetAFirewallAsync(
 
 **200**: The `firewall` key contains a Firewall object
 
-[`Task<Models.FirewallResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.FirewallResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetAFirewallAsync(
 int id = 112;
 try
 {
-    FirewallResponse result = await firewallsController.GetAFirewallAsync(id);
+    ApiResponse<FirewallResponse> result = await firewallsApi.GetAFirewallAsync(id);
 }
 catch (ApiException e)
 {

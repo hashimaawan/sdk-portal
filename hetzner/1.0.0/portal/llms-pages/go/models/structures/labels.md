@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 User-defined labels (key-value pairs)
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -15,6 +17,7 @@ User-defined labels (key-value pairs)
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Labelkey` | `*string` | Optional | New label |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -23,12 +26,15 @@ User-defined labels (key-value pairs)
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
     labels := models.Labels{
-        Labelkey:             models.ToPointer("value"),
+        Labelkey:              models.ToPointer("value"),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

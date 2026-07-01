@@ -5,12 +5,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-TeamyearbyyearstatsGET(
+TeamyearbyyearstatsGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     seasonType string,
     perMode string,
-    teamID string) (
+    teamId string) (
     http.Response,
     error)
 ```
@@ -20,10 +20,10 @@ TeamyearbyyearstatsGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -38,15 +38,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 seasonType := "SeasonType8"
 
 perMode := "PerMode6"
 
-teamID := "TeamID8"
+teamId := "TeamID8"
 
-resp, err := aPIController.TeamyearbyyearstatsGET(ctx, leagueID, seasonType, perMode, teamID)
+resp, err := api.TeamyearbyyearstatsGet(ctx, leagueId, seasonType, perMode, teamId)
 if err != nil {
     log.Fatalln(err)
 } else {

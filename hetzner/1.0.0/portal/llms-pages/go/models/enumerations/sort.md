@@ -5,22 +5,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Class Name
 
-`SortEnum`
+`Sort`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `ID` |
-| `ENUMIDASC` |
-| `ENUMIDDESC` |
-| `NAME` |
-| `ENUMNAMEASC` |
-| `ENUMNAMEDESC` |
-| `CREATED` |
-| `ENUMCREATEDASC` |
-| `ENUMCREATEDDESC` |
+| `Id` |
+| `EnumIdasc` |
+| `EnumIddesc` |
+| `Name` |
+| `EnumNameasc` |
+| `EnumNamedesc` |
+| `Created` |
+| `EnumCreatedasc` |
+| `EnumCreateddesc` |
 
 
 # Example
@@ -29,11 +29,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 package main
 
 import (
-    "hetznercloudapi/models"
+    "hetznerCloudApi/models"
 )
 
 func main() {
-    sort := models.SortEnum_ENUMIDASC
+    sort := models.Sort_EnumIdasc
 
 }
 ```

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort2Enum`
+`Sort2`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Sort2Enum;
+use HetznerCloudApiLib\Models\Sort2;
 
-$sort2 = Sort2Enum::ENUM_CREATEDASC;
+$sort2 = Sort2::ENUM_CREATEDASC;
 ```
 
 

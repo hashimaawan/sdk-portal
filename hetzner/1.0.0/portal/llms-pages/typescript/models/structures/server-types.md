@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 The Server types the Datacenter can handle
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -17,6 +19,7 @@ The Server types the Datacenter can handle
 | `available` | `number[]` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `availableForMigration` | `number[]` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `supported` | `number[]` | Required | IDs of Server types that are supported in the Datacenter |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -40,6 +43,9 @@ const serverTypes: ServerTypes = {
     2,
     3
   ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

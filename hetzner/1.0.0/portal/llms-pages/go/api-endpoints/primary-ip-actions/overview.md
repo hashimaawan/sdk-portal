@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Get Instance
 
-The instance of the `PrimaryIPActionsController` class can be accessed from the API Client.
+The instance of the `PrimaryIpActionsApi` class can be accessed from the API Client.
 
 ```
-primaryIPActionsController := client.PrimaryIPActionsController()
+primaryIpActionsApi := client.PrimaryIpActionsApi()
 ```
 
 

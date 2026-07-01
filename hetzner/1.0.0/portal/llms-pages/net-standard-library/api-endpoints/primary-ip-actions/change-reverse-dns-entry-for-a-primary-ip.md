@@ -7,9 +7,9 @@ Changes the hostname that will appear when getting the hostname belonging to thi
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-ChangeReverseDNSEntryForAPrimaryIPAsync(
+ChangeReverseDnsEntryForAPrimaryIpAsync(
     int id,
-    Models.ChangeDNSPTRRequest body = null)
+    Models.ChangeDnsptrRequest body = null)
 ```
 
 
@@ -18,21 +18,21 @@ ChangeReverseDNSEntryForAPrimaryIPAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Primary IP |
-| `body` | [`ChangeDNSPTRRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.<br><br>The target hostname is set by passing `dns_ptr`. |
+| `body` | [`ChangeDnsptrRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/change-dnsptr-request.md) | Body, Optional | Select the IP address for which to change the DNS entry by passing `ip`. For a Primary IP of type `ipv4` this must exactly match the IP address of the Primary IP. For a Primary IP of type `ipv6` this must be a single IP within the IPv6 /64 range that belongs to this Primary IP.<br><br>The target hostname is set by passing `dns_ptr`. |
 
 
 # Response Type
 
 **201**: The `action` key contains the `change_dns_ptr` Action
 
-[`Task<Models.ActionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ActionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```csharp
 int id = 112;
-ChangeDNSPTRRequest body = new ChangeDNSPTRRequest
+ChangeDnsptrRequest body = new ChangeDnsptrRequest
 {
     DnsPtr = "server02.example.com",
     Ip = "1.2.3.4",
@@ -40,7 +40,7 @@ ChangeDNSPTRRequest body = new ChangeDNSPTRRequest
 
 try
 {
-    ActionResponse result = await primaryIPActionsController.ChangeReverseDNSEntryForAPrimaryIPAsync(
+    ApiResponse<ActionResponse> result = await primaryIpActionsApi.ChangeReverseDnsEntryForAPrimaryIpAsync(
         id,
         body
     );

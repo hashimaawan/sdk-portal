@@ -8,7 +8,7 @@ Also note that when updating labels, the Floating IP’s current set of labels w
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function updateAFloatingIP(int $id, ?UpdateFloatingIPRequest $body = null): FloatingIpsResponse2
+function updateAFloatingIp(int $id, ?UpdateFloatingIpRequest $body = null): ApiResponse
 ```
 
 
@@ -17,14 +17,14 @@ function updateAFloatingIP(int $id, ?UpdateFloatingIPRequest $body = null): Floa
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Floating IP |
-| `body` | [`?UpdateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/update-floating-ip-request.md) | Body, Optional | - |
+| `body` | [`?UpdateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/update-floating-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **200**: The `floating_ip` key in the reply contains the modified Floating IP object with the new description
 
-[`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ips-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`FloatingIpsResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/floating-ips-response-2.md).
 
 
 # Example Usage
@@ -32,23 +32,29 @@ function updateAFloatingIP(int $id, ?UpdateFloatingIPRequest $body = null): Floa
 ```php
 $id = 112;
 
-$body = UpdateFloatingIPRequestBuilder::init()
+$body = UpdateFloatingIpRequestBuilder::init()
     ->description('Web Frontend')
     ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
     ->name('Web Frontend')
     ->build();
 
-$floatingIPsController = $client->getFloatingIPsController();
+$floatingIPsApi = $client->getFloatingIPsApi();
+$apiResponse = $floatingIPsApi->updateAFloatingIp(
+    $id,
+    $body
+);
 
-try {
-    $result = $floatingIPsController->updateAFloatingIP(
-        $id,
-        $body
-    );
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'FloatingIpsResponse2:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

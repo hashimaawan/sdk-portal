@@ -46,7 +46,7 @@ const body: UpdateFirewallRequest = {
 };
 
 try {
-  const response = await firewallsController.updateAFirewall(
+  const response = await firewallsApi.updateAFirewall(
     id,
     body
   );

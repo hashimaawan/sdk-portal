@@ -7,7 +7,7 @@ Status of the Server
 
 # Enum Type Name
 
-`Status73Enum`
+`Status73`
 
 
 # Fields
@@ -28,7 +28,7 @@ Status of the Server
 # Example
 
 ```ruby
-status73 = Status73Enum::STARTING
+status73 = Status73::STARTING
 ```
 
 

@@ -7,7 +7,7 @@ Creates a new PlacementGroup.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createAPlacementGroup(?CreatePlacementGroupRequest $body = null): CreatePlacementGroupResponse
+function createAPlacementGroup(?CreatePlacementGroupRequest $body = null): ApiResponse
 ```
 
 
@@ -22,7 +22,7 @@ function createAPlacementGroup(?CreatePlacementGroupRequest $body = null): Creat
 
 **201**: The `PlacementGroup` key contains the PlacementGroup that was just created.
 
-[`CreatePlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CreatePlacementGroupResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-placement-group-response.md).
 
 
 # Example Usage
@@ -32,14 +32,20 @@ $body = CreatePlacementGroupRequestBuilder::init(
     'my Placement Group'
 )->build();
 
-$placementGroupsController = $client->getPlacementGroupsController();
+$placementGroupsApi = $client->getPlacementGroupsApi();
+$apiResponse = $placementGroupsApi->createAPlacementGroup($body);
 
-try {
-    $result = $placementGroupsController->createAPlacementGroup($body);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'CreatePlacementGroupResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

@@ -9,10 +9,10 @@ In `spread` placement groups, all virtual servers will run on different physical
 
 # Create Instance
 
-The instance of the `PlacementGroupsController` class can be created using the API Client.
+The instance of the `PlacementGroupsApi` class can be created using the API Client.
 
 ```
-const placementGroupsController = new PlacementGroupsController(client);
+const placementGroupsApi = new PlacementGroupsApi(client);
 ```
 
 

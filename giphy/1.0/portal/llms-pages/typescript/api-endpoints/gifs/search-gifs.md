@@ -18,7 +18,7 @@ async searchGifs(
 
 # Authentication
 
-This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/getting-started/authorization.md)
+This endpoint requires [api_key](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -50,7 +50,7 @@ const limit = 25;
 const offset = 0;
 
 try {
-  const response = await gifsController.searchGifs(
+  const response = await gifsApi.searchGifs(
     q,
     limit,
     offset

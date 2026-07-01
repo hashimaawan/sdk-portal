@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-apiResponse, err := volumesController.GetAVolume(ctx, id)
+apiResponse, err := volumesApi.GetAVolume(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

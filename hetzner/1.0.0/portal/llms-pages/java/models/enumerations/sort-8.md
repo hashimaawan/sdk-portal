@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Sort8Enum`
+`Sort8`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```java
-import cloud.hetzner.api.models.Sort8Enum;
+import cloud.hetzner.api.models.Sort8;
 
-Sort8Enum sort8 = Sort8Enum.ENUM_NAMEASC;
+Sort8 sort8 = Sort8.ENUM_NAMEASC;
 ```
 
 

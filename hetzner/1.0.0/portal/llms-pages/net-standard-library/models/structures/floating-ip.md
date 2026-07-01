@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkZsb2F0aW5nSXA
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -23,13 +25,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `Name` | `string` | Required | Name of the Resource. Must be unique per Project. |
 | `Protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `Server` | `int?` | Required | ID of the Server the Floating IP is assigned to, null if it is not assigned at all |
-| `Type` | [`Type16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `Type` | [`Type16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/type-16.md) | Required | Type of the Floating IP |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 FloatingIp floatingIp = new FloatingIp
@@ -43,6 +47,7 @@ FloatingIp floatingIp = new FloatingIp
         {
             DnsPtrProp = "server.example.com",
             Ip = "2001:db8::1",
+            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     HomeLocation = new HomeLocation
@@ -55,6 +60,7 @@ FloatingIp floatingIp = new FloatingIp
         Longitude = 12.370071,
         Name = "fsn1",
         NetworkZone = "eu-central",
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Id = 42,
     Ip = "131.232.99.1",
@@ -66,9 +72,11 @@ FloatingIp floatingIp = new FloatingIp
     Protection = new Protection
     {
         Delete = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Server = 42,
-    Type = Type16Enum.Ipv4,
+    Type = Type16.Ipv4,
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

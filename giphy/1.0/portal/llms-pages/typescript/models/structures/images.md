@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 An object containing data for various available formats and sizes of this GIF.
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -34,6 +36,7 @@ An object containing data for various available formats and sizes of this GIF.
 | `originalStill` | [`Image \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/models/structures/image.md) | Optional | - |
 | `preview` | [`Image \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/models/structures/image.md) | Optional | - |
 | `previewGif` | [`Image \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/llms-pages/typescript/models/structures/image.md) | Optional | - |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -48,6 +51,9 @@ const images: Images = {
     mp4: 'mp40',
     mp4Size: 'mp4_size2',
     size: 'size2',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   downsizedLarge: {
     frames: 'frames6',
@@ -55,6 +61,9 @@ const images: Images = {
     mp4: 'mp46',
     mp4Size: 'mp4_size8',
     size: 'size8',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   downsizedMedium: {
     frames: 'frames2',
@@ -62,6 +71,9 @@ const images: Images = {
     mp4: 'mp42',
     mp4Size: 'mp4_size4',
     size: 'size4',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   downsizedSmall: {
     frames: 'frames0',
@@ -69,6 +81,9 @@ const images: Images = {
     mp4: 'mp40',
     mp4Size: 'mp4_size2',
     size: 'size2',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   downsizedStill: {
     frames: 'frames4',
@@ -76,6 +91,12 @@ const images: Images = {
     mp4: 'mp46',
     mp4Size: 'mp4_size8',
     size: 'size2',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
+  },
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

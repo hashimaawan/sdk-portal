@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Create Instance
 
-The instance of the `NetworkActionsController` class can be created using the API Client.
+The instance of the `NetworkActionsApi` class can be created using the API Client.
 
 ```
-const networkActionsController = new NetworkActionsController(client);
+const networkActionsApi = new NetworkActionsApi(client);
 ```
 
 

@@ -17,10 +17,10 @@ Primary IPs are billed on an hourly basis.
 
 # Create Instance
 
-The instance of the `PrimaryIPsController` class can be created using the API Client.
+The instance of the `PrimaryIPsApi` class can be created using the API Client.
 
 ```
-const primaryIPsController = new PrimaryIPsController(client);
+const primaryIPsApi = new PrimaryIPsApi(client);
 ```
 
 

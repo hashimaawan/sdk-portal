@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/portal/#/go/x-redirect/JTI0bSUyRkltYWdl
 
+*This model accepts additional fields of type interface{}.*
+
 
 # Class Name
 
@@ -21,6 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 | `Webp` | `*string` | Optional | The URL for this GIF in .webp format. |
 | `WebpSize` | `*string` | Optional | The size in bytes of the .webp file corresponding to this GIF. |
 | `Width` | `*string` | Optional | The width of this GIF in pixels. |
+| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -29,20 +32,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 package main
 
 import (
-    "giphyapi/models"
+    "giphyApi/models"
 )
 
 func main() {
     image := models.Image{
-        Frames:               models.ToPointer("15"),
-        Height:               models.ToPointer("200"),
-        Mp4:                  models.ToPointer("https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4"),
-        Mp4Size:              models.ToPointer("25123"),
-        Size:                 models.ToPointer("32381"),
-        Url:                  models.ToPointer("https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif"),
-        Webp:                 models.ToPointer("https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp"),
-        WebpSize:             models.ToPointer("12321"),
-        Width:                models.ToPointer("320"),
+        Frames:                models.ToPointer("15"),
+        Height:                models.ToPointer("200"),
+        Mp4:                   models.ToPointer("https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4"),
+        Mp4Size:               models.ToPointer("25123"),
+        Size:                  models.ToPointer("32381"),
+        Url:                   models.ToPointer("https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif"),
+        Webp:                  models.ToPointer("https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp"),
+        WebpSize:              models.ToPointer("12321"),
+        Width:                 models.ToPointer("320"),
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
     }
 
 }

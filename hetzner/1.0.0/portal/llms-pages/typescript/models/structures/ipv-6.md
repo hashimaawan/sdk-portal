@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 IP address (v6)
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -16,6 +18,7 @@ IP address (v6)
 |  --- | --- | --- | --- |
 | `dnsPtr` | `string \| null \| undefined` | Optional | Reverse DNS PTR entry for the IPv6 address of this Load Balancer |
 | `ip` | `string \| null \| undefined` | Optional | IP address (v6) of this Load Balancer |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -26,6 +29,9 @@ import { Ipv6 } from 'hetzner-cloud-apilib';
 const ipv6: Ipv6 = {
   dnsPtr: 'lb1.example.com',
   ip: '2001:db8::1',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

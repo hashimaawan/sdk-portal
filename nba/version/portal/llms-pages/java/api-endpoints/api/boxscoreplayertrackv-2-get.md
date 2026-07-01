@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> boxscoreplayertrackv2GETAsync(
-    final String gameID)
+CompletableFuture<ApiResponse<Void>> boxscoreplayertrackv2GetAsync(
+    final String gameId)
 ```
 
 
@@ -14,7 +14,7 @@ CompletableFuture<Void> boxscoreplayertrackv2GETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `String` | Query, Required | - |
+| `gameId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -27,10 +27,11 @@ CompletableFuture<Void> boxscoreplayertrackv2GETAsync(
 # Example Usage
 
 ```java
-String gameID = "GameID8";
+String gameId = "GameID8";
 
-aPIController.boxscoreplayertrackv2GETAsync(gameID).thenAccept(result -> {
+api.boxscoreplayertrackv2GetAsync(gameId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

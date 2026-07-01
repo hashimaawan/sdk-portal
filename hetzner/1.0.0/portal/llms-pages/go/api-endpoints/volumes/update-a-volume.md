@@ -41,10 +41,10 @@ ctx := context.Background()
 id := "id0"
 
 body := models.UpdateVolumeRequest{
-    Name:                 "database-storage",
+    Name:                  "database-storage",
 }
 
-apiResponse, err := volumesController.UpdateAVolume(ctx, id, &body)
+apiResponse, err := volumesApi.UpdateAVolume(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

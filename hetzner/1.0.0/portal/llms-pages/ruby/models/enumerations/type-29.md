@@ -7,7 +7,7 @@ Type of the resource
 
 # Enum Type Name
 
-`Type29Enum`
+`Type29`
 
 
 # Fields
@@ -22,7 +22,7 @@ Type of the resource
 # Example
 
 ```ruby
-type29 = Type29Enum::SERVER
+type29 = Type29::SERVER
 ```
 
 

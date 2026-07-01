@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> franchisehistoryGETAsync(
-    final String leagueID)
+CompletableFuture<ApiResponse<Void>> franchisehistoryGetAsync(
+    final String leagueId)
 ```
 
 
@@ -14,7 +14,7 @@ CompletableFuture<Void> franchisehistoryGETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 
 
 # Response Type
@@ -27,10 +27,11 @@ CompletableFuture<Void> franchisehistoryGETAsync(
 # Example Usage
 
 ```java
-String leagueID = "LeagueID4";
+String leagueId = "LeagueID4";
 
-aPIController.franchisehistoryGETAsync(leagueID).thenAccept(result -> {
+api.franchisehistoryGetAsync(leagueId).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

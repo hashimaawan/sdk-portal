@@ -81,7 +81,7 @@ def playersvsplayers_get(self,
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -149,7 +149,7 @@ period = 'Period2'
 
 last_n_games = 'LastNGames4'
 
-client_controller.playersvsplayers_get(
+result = client_api.playersvsplayers_get(
     player_team_id,
     player_id_1,
     player_id_2,
@@ -182,6 +182,11 @@ client_controller.playersvsplayers_get(
     period,
     last_n_games
 )
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 
@@ -189,8 +194,8 @@ client_controller.playersvsplayers_get(
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad request - bad parameters | `APIException` |
-| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `APIException` |
+| 400 | Bad request - bad parameters | `ApiException` |
+| 404 | 'No HTTP resource was found that matches the request URI' - possible deprecated endpoint | `ApiException` |
 
 
 

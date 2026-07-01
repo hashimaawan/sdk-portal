@@ -7,7 +7,7 @@ Status of the issuance process of the Certificate
 
 # Enum Type Name
 
-`IssuanceEnum`
+`Issuance`
 
 
 # Fields
@@ -22,9 +22,9 @@ Status of the issuance process of the Certificate
 # Example
 
 ```java
-import cloud.hetzner.api.models.IssuanceEnum;
+import cloud.hetzner.api.models.Issuance;
 
-IssuanceEnum issuance = IssuanceEnum.FAILED;
+Issuance issuance = Issuance.FAILED;
 ```
 
 

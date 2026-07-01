@@ -7,10 +7,10 @@ SSH keys are public keys you provide to the cloud system. They can be injected i
 
 # Get singleton instance
 
-The singleton instance of the `SSHKeysController` class can be accessed from the API Client.
+The singleton instance of the `SshKeysApi` class can be accessed from the API Client.
 
 ```
-$sSHKeysController = $client->getSSHKeysController();
+$sshKeysApi = $client->getSshKeysApi();
 ```
 
 

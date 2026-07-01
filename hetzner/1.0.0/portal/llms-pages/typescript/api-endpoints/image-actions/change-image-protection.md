@@ -41,7 +41,7 @@ const body: ImagesActionsChangeProtectionRequest = {
 };
 
 try {
-  const response = await imageActionsController.changeImageProtection(
+  const response = await imageActionsApi.changeImageProtection(
     id,
     body
   );

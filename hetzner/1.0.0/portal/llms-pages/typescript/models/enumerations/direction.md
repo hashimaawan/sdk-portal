@@ -7,7 +7,7 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 
 # Enum Type Name
 
-`DirectionEnum`
+`Direction`
 
 
 # Fields
@@ -21,9 +21,9 @@ Select traffic direction on which rule should be applied. Use `source_ips` for d
 # Example
 
 ```ts
-import { DirectionEnum } from 'hetzner-cloud-apilib';
+import { Direction } from 'hetzner-cloud-apilib';
 
-const direction = DirectionEnum.In;
+const direction = Direction.In;
 ```
 
 

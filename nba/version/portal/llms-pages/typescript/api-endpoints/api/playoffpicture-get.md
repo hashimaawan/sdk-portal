@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async playoffpictureGET(
-  leagueID: string,
-  seasonID: string,
+async playoffpictureGet(
+  leagueId: string,
+  seasonId: string,
   requestOptions?: RequestOptions
 ): Promise<ApiResponse<void>>
 ```
@@ -17,8 +17,8 @@ async playoffpictureGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
-| `seasonID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
+| `seasonId` | `string` | Query, Required | - |
 | `requestOptions` | `RequestOptions \| undefined` | Optional | Pass additional request options. |
 
 
@@ -32,14 +32,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const leagueID = 'LeagueID4';
+const leagueId = 'LeagueID4';
 
-const seasonID = 'SeasonID6';
+const seasonId = 'SeasonID6';
 
 try {
-  const response = await apiController.playoffpictureGET(
-    leagueID,
-    seasonID
+  const response = await api.playoffpictureGet(
+    leagueId,
+    seasonId
   );
 
   // Extracting fully parsed response body.

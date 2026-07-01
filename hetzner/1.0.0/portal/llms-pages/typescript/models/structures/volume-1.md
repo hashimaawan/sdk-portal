@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRlZvbHVtZTE
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -22,13 +24,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `protection` | [`Protection`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/protection.md) | Required | Protection configuration for the Resource |
 | `server` | `number \| null` | Required | ID of the Server the Volume is attached to, null if it is not attached at all |
 | `size` | `number` | Required | Size in GB of the Volume |
-| `status` | [`Status113Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `status` | [`Status113`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-113.md) | Required | Current status of the Volume |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { Status113Enum, Volume1 } from 'hetzner-cloud-apilib';
+import { Status113, Volume1 } from 'hetzner-cloud-apilib';
 
 const volume1: Volume1 = {
   created: '2016-01-30T23:55:00+00:00',
@@ -47,14 +50,23 @@ const volume1: Volume1 = {
     longitude: 12.370071,
     name: 'fsn1',
     networkZone: 'eu-central',
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   name: 'my-resource',
   protection: {
     mDelete: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   server: 12,
   size: 42,
-  status: Status113Enum.Available,
+  status: Status113.Available,
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-LeagueleadersGET(
+LeagueleadersGet(
     ctx context.Context,
-    leagueID string,
+    leagueId string,
     perMode string,
     season string,
     seasonType string,
@@ -22,7 +22,7 @@ LeagueleadersGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `leagueID` | `string` | Query, Required | - |
+| `leagueId` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
 | `season` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
@@ -42,7 +42,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-leagueID := "LeagueID4"
+leagueId := "LeagueID4"
 
 perMode := "PerMode6"
 
@@ -52,7 +52,7 @@ seasonType := "SeasonType8"
 
 scope := "Scope0"
 
-resp, err := aPIController.LeagueleadersGET(ctx, leagueID, perMode, season, seasonType, scope, nil)
+resp, err := api.LeagueleadersGet(ctx, leagueId, perMode, season, seasonType, scope, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

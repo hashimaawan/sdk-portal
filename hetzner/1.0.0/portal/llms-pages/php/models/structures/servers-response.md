@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlNlcnZlcnMlMjUyMFJlc3BvbnNl
 
+*This model accepts additional fields of type array.*
+
 
 # Class Name
 
@@ -14,42 +16,44 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- | --- | --- |
 | `meta` | [`?Meta`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/meta.md) | Optional | - | getMeta(): ?Meta | setMeta(?Meta meta): void |
 | `servers` | [`Server18[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/server-18.md) | Required | - | getServers(): array | setServers(array servers): void |
+| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Builders\ServersResponseBuilder;
-use HetznerCloudAPILib\Models\Builders\Server18Builder;
-use HetznerCloudAPILib\Models\Builders\Datacenter6Builder;
-use HetznerCloudAPILib\Models\Builders\LocationBuilder;
-use HetznerCloudAPILib\Models\Builders\ServerTypesBuilder;
-use HetznerCloudAPILib\Models\Builders\PrivateNet4Builder;
-use HetznerCloudAPILib\Models\Builders\Protection20Builder;
-use HetznerCloudAPILib\Models\Builders\PublicNet4Builder;
-use HetznerCloudAPILib\Models\Builders\ServerPublicNetFirewallBuilder;
-use HetznerCloudAPILib\Models\Status72Enum;
-use HetznerCloudAPILib\Models\Builders\Ipv44Builder;
-use HetznerCloudAPILib\Models\Builders\Ipv64Builder;
-use HetznerCloudAPILib\Models\Builders\DnsPtr8Builder;
-use HetznerCloudAPILib\Models\Builders\ServerType1Builder;
-use HetznerCloudAPILib\Models\CpuTypeEnum;
-use HetznerCloudAPILib\Models\Builders\Price9Builder;
-use HetznerCloudAPILib\Models\Builders\PriceHourly8Builder;
-use HetznerCloudAPILib\Models\Builders\PriceMonthly10Builder;
-use HetznerCloudAPILib\Models\StorageTypeEnum;
-use HetznerCloudAPILib\Models\Status73Enum;
-use HetznerCloudAPILib\Models\Builders\ImageBuilder;
-use HetznerCloudAPILib\Models\OsFlavorEnum;
-use HetznerCloudAPILib\Models\Builders\ProtectionBuilder;
-use HetznerCloudAPILib\Models\Status24Enum;
-use HetznerCloudAPILib\Models\Type22Enum;
-use HetznerCloudAPILib\Models\Builders\CreatedFromBuilder;
-use HetznerCloudAPILib\Models\Builders\Iso2Builder;
-use HetznerCloudAPILib\Models\Type26Enum;
-use HetznerCloudAPILib\Models\Builders\PlacementGroupNullableBuilder;
-use HetznerCloudAPILib\Models\Builders\MetaBuilder;
-use HetznerCloudAPILib\Models\Builders\PaginationBuilder;
+use HetznerCloudApiLib\Models\Builders\ServersResponseBuilder;
+use HetznerCloudApiLib\Models\Builders\Server18Builder;
+use HetznerCloudApiLib\Models\Builders\Datacenter6Builder;
+use HetznerCloudApiLib\Models\Builders\LocationBuilder;
+use HetznerCloudApiLib\ApiHelper;
+use HetznerCloudApiLib\Models\Builders\ServerTypesBuilder;
+use HetznerCloudApiLib\Models\Builders\PrivateNet4Builder;
+use HetznerCloudApiLib\Models\Builders\Protection20Builder;
+use HetznerCloudApiLib\Models\Builders\PublicNet4Builder;
+use HetznerCloudApiLib\Models\Builders\ServerPublicNetFirewallBuilder;
+use HetznerCloudApiLib\Models\Status72;
+use HetznerCloudApiLib\Models\Builders\Ipv44Builder;
+use HetznerCloudApiLib\Models\Builders\Ipv64Builder;
+use HetznerCloudApiLib\Models\Builders\DnsPtr8Builder;
+use HetznerCloudApiLib\Models\Builders\ServerType1Builder;
+use HetznerCloudApiLib\Models\CpuType;
+use HetznerCloudApiLib\Models\Builders\Price9Builder;
+use HetznerCloudApiLib\Models\Builders\PriceHourly8Builder;
+use HetznerCloudApiLib\Models\Builders\PriceMonthly10Builder;
+use HetznerCloudApiLib\Models\StorageType;
+use HetznerCloudApiLib\Models\Status73;
+use HetznerCloudApiLib\Models\Builders\ImageBuilder;
+use HetznerCloudApiLib\Models\OsFlavor;
+use HetznerCloudApiLib\Models\Builders\ProtectionBuilder;
+use HetznerCloudApiLib\Models\Status24;
+use HetznerCloudApiLib\Models\Type22;
+use HetznerCloudApiLib\Models\Builders\CreatedFromBuilder;
+use HetznerCloudApiLib\Models\Builders\Iso2Builder;
+use HetznerCloudApiLib\Models\Type26;
+use HetznerCloudApiLib\Models\Builders\PlacementGroupNullableBuilder;
+use HetznerCloudApiLib\Models\Builders\MetaBuilder;
+use HetznerCloudApiLib\Models\Builders\PaginationBuilder;
 
 $serversResponse = ServersResponseBuilder::init(
     [
@@ -67,7 +71,9 @@ $serversResponse = ServersResponseBuilder::init(
                     12.370071,
                     'fsn1',
                     'eu-central'
-                )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build(),
                 'fsn1-dc8',
                 ServerTypesBuilder::init(
                     [
@@ -85,8 +91,12 @@ $serversResponse = ServersResponseBuilder::init(
                         2,
                         3
                     ]
-                )->build()
-            )->build(),
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             42,
             [
                 'key0' => 'labels0'
@@ -104,12 +114,15 @@ $serversResponse = ServersResponseBuilder::init(
                     ->ip('10.0.0.2')
                     ->macAddress('86:00:ff:2a:7d:e1')
                     ->network(4711)
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             ],
             Protection20Builder::init(
                 false,
                 false
-            )->build(),
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
             PublicNet4Builder::init(
                 [
                     478
@@ -119,11 +132,13 @@ $serversResponse = ServersResponseBuilder::init(
                     [
                         ServerPublicNetFirewallBuilder::init()
                             ->id(250)
-                            ->status(Status72Enum::APPLIED)
+                            ->status(Status72::APPLIED)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build(),
                         ServerPublicNetFirewallBuilder::init()
                             ->id(250)
-                            ->status(Status72Enum::APPLIED)
+                            ->status(Status72::APPLIED)
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                             ->build()
                     ]
                 )
@@ -134,6 +149,7 @@ $serversResponse = ServersResponseBuilder::init(
                         '1.2.3.4'
                     )
                         ->id(42)
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build()
                 )
                 ->ipv6(
@@ -146,17 +162,21 @@ $serversResponse = ServersResponseBuilder::init(
                                 DnsPtr8Builder::init(
                                     'server.example.com',
                                     '2001:db8::1'
-                                )->build()
+                                )
+                                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                                    ->build()
                             ]
                         )
                         ->id(42)
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build()
                 )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             false,
             ServerType1Builder::init(
                 1,
-                CpuTypeEnum::SHARED,
+                CpuType::SHARED,
                 false,
                 'CX11',
                 25,
@@ -169,16 +189,24 @@ $serversResponse = ServersResponseBuilder::init(
                         PriceHourly8Builder::init(
                             '1.1900000000000000',
                             '1.0000000000'
-                        )->build(),
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build(),
                         PriceMonthly10Builder::init(
                             '1.1900000000000000',
                             '1.0000000000'
-                        )->build()
-                    )->build()
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build()
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build()
                 ],
-                StorageTypeEnum::LOCAL
-            )->build(),
-            Status73Enum::STARTING
+                StorageType::LOCAL
+            )
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                ->build(),
+            Status73::STARTING
         )
             ->backupWindow('22-02')
             ->image(
@@ -190,19 +218,23 @@ $serversResponse = ServersResponseBuilder::init(
                     [
                         'key0' => 'labels4'
                     ],
-                    OsFlavorEnum::UBUNTU,
+                    OsFlavor::UBUNTU,
                     ProtectionBuilder::init(
                         false
-                    )->build(),
-                    Status24Enum::UNAVAILABLE,
-                    Type22Enum::SNAPSHOT
+                    )
+                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                        ->build(),
+                    Status24::UNAVAILABLE,
+                    Type22::SNAPSHOT
                 )
                     ->boundTo(null)
                     ->createdFrom(
                         CreatedFromBuilder::init(
                             1,
                             'Server'
-                        )->build()
+                        )
+                            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                            ->build()
                     )
                     ->deleted(null)
                     ->deprecated('2018-02-28T00:00:00+00:00')
@@ -210,6 +242,7 @@ $serversResponse = ServersResponseBuilder::init(
                     ->name('ubuntu-20.04')
                     ->osVersion('20.04')
                     ->rapidDeploy(false)
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->includedTraffic(654321)
@@ -218,10 +251,11 @@ $serversResponse = ServersResponseBuilder::init(
                 Iso2Builder::init(
                     'FreeBSD 11.0 x64',
                     42,
-                    Type26Enum::PUBLIC_
+                    Type26::PUBLIC_
                 )
                     ->deprecated('2018-02-28T00:00:00+00:00')
                     ->name('FreeBSD-11.0-RELEASE-amd64-dvd1')
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->loadBalancers(
@@ -245,13 +279,16 @@ $serversResponse = ServersResponseBuilder::init(
                         252,
                         253
                     ]
-                )->build()
+                )
+                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+                    ->build()
             )
             ->volumes(
                 [
                     177
                 ]
             )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     ]
 )
@@ -265,9 +302,14 @@ $serversResponse = ServersResponseBuilder::init(
                 ->nextPage(209.18)
                 ->previousPage(50.02)
                 ->totalEntries(206.64)
+                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
-        )->build()
-    )->build();
+        )
+            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+            ->build()
+    )
+    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
+    ->build();
 ```
 
 

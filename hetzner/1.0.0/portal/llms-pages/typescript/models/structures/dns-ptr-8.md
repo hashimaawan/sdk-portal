@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkRuc1B0cjg
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -14,6 +16,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `dnsPtr` | `string` | Required | DNS pointer for the specific IP address |
 | `ip` | `string` | Required | Single IPv6 address of this Server for which the reverse DNS entry has been set up |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -24,6 +27,9 @@ import { DnsPtr8 } from 'hetzner-cloud-apilib';
 const dnsPtr8: DnsPtr8 = {
   dnsPtr: 'server.example.com',
   ip: '2001:db8::1',
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

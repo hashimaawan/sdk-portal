@@ -7,7 +7,7 @@ Status of the Firewall on the Server
 
 # Enum Type Name
 
-`Status72Enum`
+`Status72`
 
 
 # Fields
@@ -21,9 +21,9 @@ Status of the Firewall on the Server
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-Status72Enum status72 = Status72Enum.Applied;
+Status72 status72 = Status72.Applied;
 ```
 
 

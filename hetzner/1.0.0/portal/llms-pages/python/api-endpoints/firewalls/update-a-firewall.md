@@ -29,7 +29,7 @@ def update_a_firewall(self,
 
 **200**: The `firewall` key contains the Firewall that was just updated
 
-[`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`FirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/firewall-response.md).
 
 
 # Example Usage
@@ -42,11 +42,15 @@ body = UpdateFirewallRequest(
     name='new-name'
 )
 
-result = firewalls_controller.update_a_firewall(
+result = firewalls_api.update_a_firewall(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

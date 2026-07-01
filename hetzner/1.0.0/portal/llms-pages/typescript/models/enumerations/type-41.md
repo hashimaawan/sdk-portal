@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 # Enum Type Name
 
-`Type41Enum`
+`Type41`
 
 
 # Fields
@@ -21,9 +21,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 # Example
 
 ```ts
-import { Type41Enum } from 'hetzner-cloud-apilib';
+import { Type41 } from 'hetzner-cloud-apilib';
 
-const type41 = Type41Enum.RequestsPerSecond;
+const type41 = Type41.RequestsPerSecond;
 ```
 
 

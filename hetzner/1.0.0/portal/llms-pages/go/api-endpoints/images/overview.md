@@ -27,10 +27,10 @@ Prebuild images with specific software configurations, e.g. “Wordpress”. All
 
 # Get Instance
 
-The instance of the `ImagesController` class can be accessed from the API Client.
+The instance of the `ImagesApi` class can be accessed from the API Client.
 
 ```
-imagesController := client.ImagesController()
+imagesApi := client.ImagesApi()
 ```
 
 

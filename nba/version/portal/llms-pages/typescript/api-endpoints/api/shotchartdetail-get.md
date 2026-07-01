@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```ts
-async shotchartdetailGET(
+async shotchartdetailGet(
   seasonType: string,
-  teamID: string,
-  playerID: string,
-  gameID: string,
+  teamId: string,
+  playerId: string,
+  gameId: string,
   outcome: string,
   location: string,
   month: string,
   seasonSegment: string,
   dateFrom: string,
   dateTo: string,
-  opponentTeamID: string,
+  opponentTeamId: string,
   vsConference: string,
   vsDivision: string,
   position: string,
@@ -35,16 +35,16 @@ async shotchartdetailGET(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `seasonType` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
-| `playerID` | `string` | Query, Required | - |
-| `gameID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
+| `playerId` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 | `outcome` | `string` | Query, Required | - |
 | `location` | `string` | Query, Required | - |
 | `month` | `string` | Query, Required | - |
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `position` | `string` | Query, Required | - |
@@ -68,11 +68,11 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```ts
 const seasonType = 'SeasonType8';
 
-const teamID = 'TeamID8';
+const teamId = 'TeamID8';
 
-const playerID = 'PlayerID6';
+const playerId = 'PlayerID6';
 
-const gameID = 'GameID8';
+const gameId = 'GameID8';
 
 const outcome = 'Outcome4';
 
@@ -86,7 +86,7 @@ const dateFrom = 'DateFrom6';
 
 const dateTo = 'DateTo0';
 
-const opponentTeamID = 'OpponentTeamID6';
+const opponentTeamId = 'OpponentTeamID6';
 
 const vsConference = 'VsConference6';
 
@@ -105,18 +105,18 @@ const lastNGames = 'LastNGames4';
 const contextMeasure = 'ContextMeasure2';
 
 try {
-  const response = await apiController.shotchartdetailGET(
+  const response = await api.shotchartdetailGet(
     seasonType,
-    teamID,
-    playerID,
-    gameID,
+    teamId,
+    playerId,
+    gameId,
     outcome,
     location,
     month,
     seasonSegment,
     dateFrom,
     dateTo,
-    opponentTeamID,
+    opponentTeamId,
     vsConference,
     vsDivision,
     position,

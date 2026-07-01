@@ -7,7 +7,7 @@ Type of Subnetwork
 
 # Enum Type Name
 
-`Type42Enum`
+`Type42`
 
 
 # Fields
@@ -22,9 +22,9 @@ Type of Subnetwork
 # Example
 
 ```python
-from hetznercloudapi.models.type_42_enum import Type42Enum
+from hetznercloudapi.models.type_42 import Type42
 
-type_42 = Type42Enum.CLOUD
+type_42 = Type42.CLOUD
 ```
 
 

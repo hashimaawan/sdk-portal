@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclRhcmdldA
 
+*This model accepts additional fields of type Object.*
+
 
 # Class Name
 
@@ -17,57 +19,91 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `label_selector` | [`LabelSelector7`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/label-selector-7.md) | Optional | Label selector and a list of selected targets |
 | `server` | [`LoadBalancerTargetServer`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/load-balancer-target-server.md) | Optional | Server where the traffic should be routed through |
 | `targets` | [`Array[Target]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/structures/target.md) | Optional | List of selected targets |
-| `type` | [`Type29Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-29.md) | Required | Type of the resource |
+| `type` | [`Type29`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/models/enumerations/type-29.md) | Required | Type of the resource |
 | `use_private_ip` | `TrueClass \| FalseClass` | Optional | Use the private network IP instead of the public IP. Default value is false. |
+| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 load_balancer_target = LoadBalancerTarget.new(
-  Type29Enum::SERVER,
-  [
+  type: Type29::SERVER,
+  health_status: [
     HealthStatus.new(
-      142,
-      Status30Enum::UNKNOWN
+      listen_port: 142,
+      status: Status30::UNKNOWN,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
     HealthStatus.new(
-      142,
-      Status30Enum::UNKNOWN
+      listen_port: 142,
+      status: Status30::UNKNOWN,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     ),
     HealthStatus.new(
-      142,
-      Status30Enum::UNKNOWN
+      listen_port: 142,
+      status: Status30::UNKNOWN,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
   ],
-  Ip.new(
-    'ip8'
+  ip: Ip.new(
+    ip: 'ip8',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  LabelSelector7.new(
-    'selector8'
+  label_selector: LabelSelector7.new(
+    selector: 'selector8',
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  LoadBalancerTargetServer.new(
-    14
+  server: LoadBalancerTargetServer.new(
+    id: 14,
+    additional_properties: {
+      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+    }
   ),
-  [
+  targets: [
     Target.new(
-      [
+      health_status: [
         HealthStatus.new(
-          142,
-          Status30Enum::UNKNOWN
+          listen_port: 142,
+          status: Status30::UNKNOWN,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         ),
         HealthStatus.new(
-          142,
-          Status30Enum::UNKNOWN
+          listen_port: 142,
+          status: Status30::UNKNOWN,
+          additional_properties: {
+            'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+          }
         )
       ],
-      Server11.new(
-        14
+      server: Server11.new(
+        id: 14,
+        additional_properties: {
+          'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+        }
       ),
-      'type2',
-      false
+      type: 'type2',
+      use_private_ip: false,
+      additional_properties: {
+        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+      }
     )
-  ]
+  ],
+  additional_properties: {
+    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
+  }
 )
 ```
 

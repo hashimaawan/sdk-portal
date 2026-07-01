@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVxdWVzdA
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -17,7 +19,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `labels` | `Any` | Optional | User-defined labels (key-value pairs) |
 | `name` | `str` | Required | Name of the Certificate |
 | `private_key` | `str` | Optional | Certificate key in PEM format. Required for type `uploaded` Certificates. |
-| `mtype` | [`Type1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-1.md) | Optional | Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`. |
+| `mtype` | [`Type1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/enumerations/type-1.md) | Optional | Choose between uploading a Certificate in PEM format or requesting a managed *Let's Encrypt* Certificate. If omitted defaults to `uploaded`. |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
@@ -26,7 +29,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 import jsonpickle
 
 from hetznercloudapi.models.create_certificate_request import CreateCertificateRequest
-from hetznercloudapi.models.type_1_enum import Type1Enum
+from hetznercloudapi.models.type_1 import Type1
 
 create_certificate_request = CreateCertificateRequest(
     name='my website cert',
@@ -36,7 +39,10 @@ create_certificate_request = CreateCertificateRequest(
     ],
     labels=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
     private_key='-----BEGIN PRIVATE KEY-----\n...',
-    mtype=Type1Enum.UPLOADED
+    mtype=Type1.UPLOADED,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> boxscorefourfactorsv2GETAsync(
-    final String gameID,
+CompletableFuture<ApiResponse<Void>> boxscorefourfactorsv2GetAsync(
+    final String gameId,
     final String startPeriod,
     final String endPeriod,
     final String startRange,
@@ -19,7 +19,7 @@ CompletableFuture<Void> boxscorefourfactorsv2GETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `String` | Query, Required | - |
+| `gameId` | `String` | Query, Required | - |
 | `startPeriod` | `String` | Query, Required | - |
 | `endPeriod` | `String` | Query, Required | - |
 | `startRange` | `String` | Query, Required | - |
@@ -37,15 +37,16 @@ CompletableFuture<Void> boxscorefourfactorsv2GETAsync(
 # Example Usage
 
 ```java
-String gameID = "GameID8";
+String gameId = "GameID8";
 String startPeriod = "StartPeriod4";
 String endPeriod = "EndPeriod0";
 String startRange = "StartRange0";
 String endRange = "EndRange2";
 String rangeType = "RangeType0";
 
-aPIController.boxscorefourfactorsv2GETAsync(gameID, startPeriod, endPeriod, startRange, endRange, rangeType).thenAccept(result -> {
+api.boxscorefourfactorsv2GetAsync(gameId, startPeriod, endPeriod, startRange, endRange, rangeType).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

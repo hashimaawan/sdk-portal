@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```go
-PlayercompareGET(
+PlayercompareGet(
     ctx context.Context,
-    playerIDList string,
-    vsPlayerIDList string,
+    playerIdList string,
+    vsPlayerIdList string,
     seasonType string,
     measureType string,
     perMode string,
@@ -22,7 +22,7 @@ PlayercompareGET(
     seasonSegment string,
     dateFrom string,
     dateTo string,
-    opponentTeamID string,
+    opponentTeamId string,
     vsConference string,
     vsDivision string,
     gameSegment string,
@@ -37,8 +37,8 @@ PlayercompareGET(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `playerIDList` | `string` | Query, Required | - |
-| `vsPlayerIDList` | `string` | Query, Required | - |
+| `playerIdList` | `string` | Query, Required | - |
+| `vsPlayerIdList` | `string` | Query, Required | - |
 | `seasonType` | `string` | Query, Required | - |
 | `measureType` | `string` | Query, Required | - |
 | `perMode` | `string` | Query, Required | - |
@@ -52,7 +52,7 @@ PlayercompareGET(
 | `seasonSegment` | `string` | Query, Required | - |
 | `dateFrom` | `string` | Query, Required | - |
 | `dateTo` | `string` | Query, Required | - |
-| `opponentTeamID` | `string` | Query, Required | - |
+| `opponentTeamId` | `string` | Query, Required | - |
 | `vsConference` | `string` | Query, Required | - |
 | `vsDivision` | `string` | Query, Required | - |
 | `gameSegment` | `string` | Query, Required | - |
@@ -72,9 +72,9 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-playerIDList := "PlayerIDList4"
+playerIdList := "PlayerIDList4"
 
-vsPlayerIDList := "VsPlayerIDList2"
+vsPlayerIdList := "VsPlayerIDList2"
 
 seasonType := "SeasonType8"
 
@@ -102,7 +102,7 @@ dateFrom := "DateFrom6"
 
 dateTo := "DateTo0"
 
-opponentTeamID := "OpponentTeamID6"
+opponentTeamId := "OpponentTeamID6"
 
 vsConference := "VsConference6"
 
@@ -114,7 +114,7 @@ period := "Period2"
 
 lastNGames := "LastNGames4"
 
-resp, err := aPIController.PlayercompareGET(ctx, playerIDList, vsPlayerIDList, seasonType, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamID, vsConference, vsDivision, gameSegment, period, lastNGames)
+resp, err := api.PlayercompareGet(ctx, playerIdList, vsPlayerIdList, seasonType, measureType, perMode, plusMinus, paceAdjust, rank, season, outcome, location, month, seasonSegment, dateFrom, dateTo, opponentTeamId, vsConference, vsDivision, gameSegment, period, lastNGames)
 if err != nil {
     log.Fatalln(err)
 } else {

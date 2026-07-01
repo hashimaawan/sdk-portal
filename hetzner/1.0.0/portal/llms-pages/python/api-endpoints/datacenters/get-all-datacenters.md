@@ -23,14 +23,18 @@ def get_all_datacenters(self,
 
 **200**: The reply contains the `datacenters` and `recommendation` keys
 
-[`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/datacenters-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`DatacentersResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/datacenters-response.md).
 
 
 # Example Usage
 
 ```python
-result = datacenters_controller.get_all_datacenters()
-print(result)
+result = datacenters_api.get_all_datacenters()
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

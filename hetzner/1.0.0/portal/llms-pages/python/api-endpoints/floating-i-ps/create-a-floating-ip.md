@@ -16,21 +16,21 @@ def create_a_floating_ip(self,
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `body` | [`CreateFloatingIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
+| `body` | [`CreateFloatingIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/create-floating-ip-request.md) | Body, Optional | The `type` argument is required while `home_location` and `server` are mutually exclusive. |
 
 
 # Response Type
 
 **201**: The `floating_ip` key in the reply contains the object that was just created
 
-[`FloatingIpsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/floating-ips-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`FloatingIpsResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/floating-ips-response-1.md).
 
 
 # Example Usage
 
 ```python
-body = CreateFloatingIPRequest(
-    mtype=Type17Enum.IPV4,
+body = CreateFloatingIpRequest(
+    mtype=Type17.IPV4,
     description='Web Frontend',
     home_location='fsn1',
     labels=jsonpickle.decode('{"labelkey":"value"}'),
@@ -38,10 +38,14 @@ body = CreateFloatingIPRequest(
     server=42
 )
 
-result = floating_i_ps_controller.create_a_floating_ip(
+result = floating_i_ps_api.create_a_floating_ip(
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

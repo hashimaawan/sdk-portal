@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/python/x-redirect/JTI0bSUyRkNyZWF0ZUNlcnRpZmljYXRlUmVzcG9uc2U
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -14,21 +16,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `action` | [`NullableAction`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/nullable-action.md) | Optional | - |
 | `certificate` | [`Certificate`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/certificate.md) | Required | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.certificate import Certificate
 from hetznercloudapi.models.create_certificate_response import CreateCertificateResponse
 from hetznercloudapi.models.error import Error
-from hetznercloudapi.models.issuance_enum import IssuanceEnum
+from hetznercloudapi.models.issuance import Issuance
+from hetznercloudapi.models.mtype import Type
 from hetznercloudapi.models.nullable_action import NullableAction
-from hetznercloudapi.models.renewal_enum import RenewalEnum
+from hetznercloudapi.models.renewal import Renewal
 from hetznercloudapi.models.resource import Resource
+from hetznercloudapi.models.status import Status
 from hetznercloudapi.models.status_2 import Status2
-from hetznercloudapi.models.status_enum import StatusEnum
-from hetznercloudapi.models.type_enum import TypeEnum
 from hetznercloudapi.models.used_by import UsedBy
 
 create_certificate_response = CreateCertificateResponse(
@@ -53,21 +58,33 @@ create_certificate_response = CreateCertificateResponse(
         used_by=[
             UsedBy(
                 id=4711,
-                mtype='load_balancer'
+                mtype='load_balancer',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             )
         ],
         status=Status2(
             error=None,
-            issuance=IssuanceEnum.COMPLETED,
-            renewal=RenewalEnum.FAILED
+            issuance=Issuance.COMPLETED,
+            renewal=Renewal.FAILED,
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
-        mtype=TypeEnum.UPLOADED
+        mtype=Type.UPLOADED,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
     ),
     action=NullableAction(
         command='command6',
         error=Error(
             code='code2',
-            message='message4'
+            message='message4',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
         ),
         finished='finished0',
         id=238,
@@ -75,20 +92,35 @@ create_certificate_response = CreateCertificateResponse(
         resources=[
             Resource(
                 id=198,
-                mtype='type0'
+                mtype='type0',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             Resource(
                 id=198,
-                mtype='type0'
+                mtype='type0',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             ),
             Resource(
                 id=198,
-                mtype='type0'
+                mtype='type0',
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
             )
         ],
         started='started8',
-        status=StatusEnum.RUNNING
-    )
+        status=Status.RUNNING,
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

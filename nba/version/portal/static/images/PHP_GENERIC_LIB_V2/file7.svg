@@ -80,7 +80,7 @@
     <rect x="457" y="65" width="385" height="474" class="cls-3" />
     <rect x="1" y="65" width="401" height="28" class="cls-4" />
     <rect x="1" y="136" width="401" height="26" class="cls-5" />
-    <text transform="translate(31 53) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">NBAStatsAPI</tspan></text>
+    <text transform="translate(31 53) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">NbaStatsApi</tspan></text>
     <text transform="translate(39 83) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">project</tspan></text>
     <path d="M97.694,83.000 L94.771,77.937 L100.617,77.937 L97.694,83.000 Z" class="cls-8" />
     <path d="M10.694,111.000 L7.771,105.937 L13.617,105.937 L10.694,111.000 Z" class="cls-8" />
@@ -109,8 +109,8 @@
     <path d="M494.853,47.901 L492.753,49.998 L494.853,52.096 L494.853,52.096 C494.949,52.192 495.008,52.324 495.008,52.470 C495.008,52.763 494.771,53.000 494.478,53.000 C494.331,53.000 494.199,52.941 494.103,52.845 L494.103,52.845 L492.002,50.747 L489.902,52.845 L489.902,52.845 C489.806,52.941 489.673,53.000 489.527,53.000 C489.234,53.000 488.996,52.763 488.996,52.470 C488.996,52.324 489.055,52.192 489.151,52.096 L489.151,52.096 L491.252,49.998 L489.151,47.901 L489.151,47.901 C489.055,47.805 488.996,47.673 488.996,47.527 C488.996,47.234 489.234,46.997 489.527,46.997 C489.673,46.997 489.806,47.056 489.902,47.152 L489.902,47.152 L492.002,49.249 L494.103,47.152 L494.103,47.152 C494.199,47.056 494.331,46.997 494.478,46.997 C494.771,46.997 495.008,47.234 495.008,47.527 C495.008,47.673 494.949,47.805 494.853,47.901 L494.853,47.901 Z" class="cls-8" />
     <path d="M141.000,54.000 L127.000,54.000 L127.000,42.000 L133.000,42.000 L135.000,44.000 L141.000,44.000 L141.000,54.000 Z" class="cls-11" />
     <rect x="129" y="46" width="10" height="6" class="cls-5" />
-    <text transform="translate(39 113) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">NBAStatsAPI</tspan></text>
-    <text transform="translate(120 113) scale(0.5 0.5)" class="cls-6"><tspan class="cls-15">C:\Users\Username\Desktop\NBAStatsAPI</tspan></text>
+    <text transform="translate(39 113) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">NbaStatsApi</tspan></text>
+    <text transform="translate(120 113) scale(0.5 0.5)" class="cls-6"><tspan class="cls-15">C:\Users\Username\Desktop\NbaStatsApi</tspan></text>
     <path d="M34.000,114.000 L20.000,114.000 L20.000,102.000 L26.000,102.000 L28.000,104.000 L34.000,104.000 L34.000,114.000 Z" class="cls-11" />
     <rect x="22" y="106" width="10" height="6" class="cls-5" />
     <text transform="translate(64 133) scale(0.5 0.5)" class="cls-6"><tspan class="cls-7">src</tspan></text>

@@ -20,9 +20,9 @@ The Server must be powered off (status `off`) in order for this operation to suc
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> assignAPrimaryIPToAResourceAsync(
+CompletableFuture<ApiResponse<ActionResponse>> assignAPrimaryIpToAResourceAsync(
     final int id,
-    final AssignPrimaryIPRequest body)
+    final AssignPrimaryIpRequest body)
 ```
 
 
@@ -31,27 +31,27 @@ CompletableFuture<ActionResponse> assignAPrimaryIPToAResourceAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Primary IP |
-| `body` | [`AssignPrimaryIPRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
+| `body` | [`AssignPrimaryIpRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/assign-primary-ip-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-AssignPrimaryIPRequest body = new AssignPrimaryIPRequest.Builder(
+AssignPrimaryIpRequest body = new AssignPrimaryIpRequest.Builder(
     4711,
     "server"
 )
 .build();
 
-primaryIPActionsController.assignAPrimaryIPToAResourceAsync(id, body).thenAccept(result -> {
+primaryIpActionsApi.assignAPrimaryIpToAResourceAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

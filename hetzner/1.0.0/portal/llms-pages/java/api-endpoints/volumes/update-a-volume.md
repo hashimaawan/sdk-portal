@@ -9,7 +9,7 @@ Note that when updating labels, the volume’s current set of labels will be rep
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<VolumesResponse2> updateAVolumeAsync(
+CompletableFuture<ApiResponse<VolumesResponse2>> updateAVolumeAsync(
     final String id,
     final UpdateVolumeRequest body)
 ```
@@ -27,7 +27,7 @@ CompletableFuture<VolumesResponse2> updateAVolumeAsync(
 
 **200**: The `volume` key contains the updated volume
 
-[`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volumes-response-2.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`VolumesResponse2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/volumes-response-2.md).
 
 
 # Example Usage
@@ -39,7 +39,7 @@ UpdateVolumeRequest body = new UpdateVolumeRequest.Builder(
 )
 .build();
 
-volumesController.updateAVolumeAsync(id, body).thenAccept(result -> {
+volumesApi.updateAVolumeAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

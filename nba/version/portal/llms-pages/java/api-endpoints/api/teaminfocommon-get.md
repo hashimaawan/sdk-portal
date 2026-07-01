@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<Void> teaminfocommonGETAsync(
+CompletableFuture<ApiResponse<Void>> teaminfocommonGetAsync(
     final String season,
-    final String teamID,
-    final String leagueID,
+    final String teamId,
+    final String leagueId,
     final String seasonType)
 ```
 
@@ -18,8 +18,8 @@ CompletableFuture<Void> teaminfocommonGETAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `String` | Query, Required | - |
-| `teamID` | `String` | Query, Required | - |
-| `leagueID` | `String` | Query, Required | - |
+| `teamId` | `String` | Query, Required | - |
+| `leagueId` | `String` | Query, Required | - |
 | `seasonType` | `String` | Query, Required | - |
 
 
@@ -34,12 +34,13 @@ CompletableFuture<Void> teaminfocommonGETAsync(
 
 ```java
 String season = "Season0";
-String teamID = "TeamID8";
-String leagueID = "LeagueID4";
+String teamId = "TeamID8";
+String leagueId = "LeagueID4";
 String seasonType = "SeasonType8";
 
-aPIController.teaminfocommonGETAsync(season, teamID, leagueID, seasonType).thenAccept(result -> {
+api.teaminfocommonGetAsync(season, teamId, leagueId, seasonType).thenAccept(result -> {
     // TODO success callback handler
+    System.out.println(result);
 }).exceptionally(exception -> {
     // TODO failure callback handler
     exception.printStackTrace();

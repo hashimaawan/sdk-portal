@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkxvYWRCYWxhbmNlclNlcnZpY2U
 
+*This model accepts additional fields of type object.*
+
 
 # Class Name
 
@@ -14,16 +16,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 |  --- | --- | --- | --- |
 | `DestinationPort` | `int` | Required | Port the Load Balancer will balance to |
 | `HealthCheck` | [`LoadBalancerServiceHealthCheck`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-service-health-check.md) | Required | Service health check |
-| `Http` | [`LoadBalancerServiceHTTP`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-service-http.md) | Optional | Configuration option for protocols http and https |
+| `Http` | [`LoadBalancerServiceHttp`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/load-balancer-service-http.md) | Optional | Configuration option for protocols http and https |
 | `ListenPort` | `int` | Required | Port the Load Balancer listens on |
-| `Protocol` | [`Protocol7Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/protocol-7.md) | Required | Protocol of the Load Balancer |
+| `Protocol` | [`Protocol7`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/enumerations/protocol-7.md) | Required | Protocol of the Load Balancer |
 | `Proxyprotocol` | `bool` | Required | Is Proxyprotocol enabled or not |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
+using HetznerCloudApi.Standard.Utilities;
 using System.Collections.Generic;
 
 LoadBalancerService loadBalancerService = new LoadBalancerService
@@ -33,7 +37,7 @@ LoadBalancerService loadBalancerService = new LoadBalancerService
     {
         Interval = 15,
         Port = 4711,
-        Protocol = Protocol6Enum.Http,
+        Protocol = Protocol6.Http,
         Retries = 3,
         Timeout = 10,
         Http = new Http
@@ -51,9 +55,9 @@ LoadBalancerService loadBalancerService = new LoadBalancerService
         },
     },
     ListenPort = 443,
-    Protocol = Protocol7Enum.Https,
+    Protocol = Protocol7.Https,
     Proxyprotocol = false,
-    Http = new LoadBalancerServiceHTTP
+    Http = new LoadBalancerServiceHttp
     {
         Certificates = new List<int>
         {
@@ -63,7 +67,9 @@ LoadBalancerService loadBalancerService = new LoadBalancerService
         CookieName = "cookie_name6",
         RedirectHttp = false,
         StickySessions = false,
+        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
+    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

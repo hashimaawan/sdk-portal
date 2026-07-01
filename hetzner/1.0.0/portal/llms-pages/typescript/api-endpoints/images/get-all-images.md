@@ -8,9 +8,9 @@ Returns all Image objects. You can select specific Image types only and sort the
 
 ```ts
 async getAllImages(
-  sort?: SortEnum,
-  type?: Type21Enum,
-  status?: Status23Enum,
+  sort?: Sort,
+  type?: Type21,
+  status?: Status23,
   boundTo?: string,
   includeDeprecated?: boolean,
   name?: string,
@@ -24,9 +24,9 @@ async getAllImages(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `sort` | [`SortEnum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
-| `type` | [`Type21Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-21.md) | Query, Optional | Can be used multiple times. |
-| `status` | [`Status23Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Images matching the status. |
+| `sort` | [`Sort \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/sort.md) | Query, Optional | Can be used multiple times. |
+| `type` | [`Type21 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/type-21.md) | Query, Optional | Can be used multiple times. |
+| `status` | [`Status23 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/enumerations/status-23.md) | Query, Optional | Can be used multiple times. The response will only contain Images matching the status. |
 | `boundTo` | `string \| undefined` | Query, Optional | Can be used multiple times. Server ID linked to the Image. Only available for Images of type `backup` |
 | `includeDeprecated` | `boolean \| undefined` | Query, Optional | Can be used multiple times. |
 | `name` | `string \| undefined` | Query, Optional | Can be used to filter resources by their name. The response will only contain the resources matching the specified name |
@@ -45,7 +45,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await imagesController.getAllImages();
+  const response = await imagesApi.getAllImages();
 
   // Extracting fully parsed response body.
   console.log(response.result);

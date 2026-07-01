@@ -23,7 +23,7 @@ def get_a_network(self,
 
 **200**: The `network` key contains the network
 
-[`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/networks-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`NetworksResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/networks-response-1.md).
 
 
 # Example Usage
@@ -31,8 +31,12 @@ def get_a_network(self,
 ```python
 id = 112
 
-result = networks_controller.get_a_network(id)
-print(result)
+result = networks_api.get_a_network(id)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

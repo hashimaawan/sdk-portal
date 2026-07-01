@@ -7,7 +7,7 @@ Returns a specific Image object.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ImagesResponse1> getAnImageAsync(
+CompletableFuture<ApiResponse<ImagesResponse1>> getAnImageAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<ImagesResponse1> getAnImageAsync(
 
 **200**: The `image` key in the reply contains an Image object with this structure
 
-[`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/images-response-1.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ImagesResponse1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/images-response-1.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<ImagesResponse1> getAnImageAsync(
 ```java
 int id = 112;
 
-imagesController.getAnImageAsync(id).thenAccept(result -> {
+imagesApi.getAnImageAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

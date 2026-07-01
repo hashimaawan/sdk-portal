@@ -7,10 +7,10 @@ Datacenters are organized by Locations. Datacenters in the same Location are con
 
 # Create Instance
 
-The instance of the `LocationsController` class can be created using the API Client.
+The instance of the `LocationsApi` class can be created using the API Client.
 
 ```
-const locationsController = new LocationsController(client);
+const locationsApi = new LocationsApi(client);
 ```
 
 

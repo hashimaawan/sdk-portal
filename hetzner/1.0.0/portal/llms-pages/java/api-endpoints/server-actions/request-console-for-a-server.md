@@ -7,7 +7,7 @@ Requests credentials for remote access via VNC over websocket to keyboard, monit
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ServersActionsRequestConsoleResponse> requestConsoleForAServerAsync(
+CompletableFuture<ApiResponse<ServersActionsRequestConsoleResponse>> requestConsoleForAServerAsync(
     final int id)
 ```
 
@@ -23,7 +23,7 @@ CompletableFuture<ServersActionsRequestConsoleResponse> requestConsoleForAServer
 
 **201**: The `action` key in the reply contains an Action object with this structure
 
-[`ServersActionsRequestConsoleResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-request-console-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ServersActionsRequestConsoleResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/servers-actions-request-console-response.md).
 
 
 # Example Usage
@@ -31,7 +31,7 @@ CompletableFuture<ServersActionsRequestConsoleResponse> requestConsoleForAServer
 ```java
 int id = 112;
 
-serverActionsController.requestConsoleForAServerAsync(id).thenAccept(result -> {
+serverActionsApi.requestConsoleForAServerAsync(id).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

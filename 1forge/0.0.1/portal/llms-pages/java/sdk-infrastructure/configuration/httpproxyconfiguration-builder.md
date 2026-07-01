@@ -26,10 +26,10 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 # Usage Example
 
 ```java
-import com.m1forge.M1ForgeFinanceAPIsClient;
+import com.m1forge.M1ForgeFinanceApIsClient;
 import com.m1forge.http.client.HttpProxyConfiguration;
 
-M1ForgeFinanceAPIsClient client = new M1ForgeFinanceAPIsClient.Builder()
+M1ForgeFinanceApIsClient client = new M1ForgeFinanceApIsClient.Builder()
   .httpClientConfig(configBuilder -> configBuilder
       .proxyConfig(new HttpProxyConfiguration.Builder("http://localhost",
           8080).auth("username", "password")))

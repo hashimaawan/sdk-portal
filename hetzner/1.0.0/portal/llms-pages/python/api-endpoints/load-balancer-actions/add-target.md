@@ -36,7 +36,7 @@ def add_target(self,
 
 **201**: The `action` key contains the `add_target` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/python/models/structures/action-response.md).
 
 
 # Example Usage
@@ -45,15 +45,19 @@ def add_target(self,
 id = 112
 
 body = AddTargetRequest(
-    mtype=Type29Enum.LABEL_SELECTOR,
+    mtype=Type29.LABEL_SELECTOR,
     use_private_ip=True
 )
 
-result = load_balancer_actions_controller.add_target(
+result = load_balancer_actions_api.add_target(
     id,
     body=body
 )
-print(result)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
 ```
 
 

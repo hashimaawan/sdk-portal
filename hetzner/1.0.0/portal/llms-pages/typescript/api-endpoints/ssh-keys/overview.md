@@ -7,10 +7,10 @@ SSH keys are public keys you provide to the cloud system. They can be injected i
 
 # Create Instance
 
-The instance of the `SSHKeysController` class can be created using the API Client.
+The instance of the `SshKeysApi` class can be created using the API Client.
 
 ```
-const sSHKeysController = new SSHKeysController(client);
+const sshKeysApi = new SshKeysApi(client);
 ```
 
 

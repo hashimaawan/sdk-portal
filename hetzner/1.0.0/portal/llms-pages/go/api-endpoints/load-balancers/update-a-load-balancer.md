@@ -43,11 +43,11 @@ ctx := context.Background()
 id := 112
 
 body := models.LoadBalancersRequest{
-    Labels:               models.ToPointer(interface{}("[labelkey, value]")),
-    Name:                 models.ToPointer("new-name"),
+    Labels:                models.ToPointer(interface{}("[labelkey, value]")),
+    Name:                  models.ToPointer("new-name"),
 }
 
-apiResponse, err := loadBalancersController.UpdateALoadBalancer(ctx, id, &body)
+apiResponse, err := loadBalancersApi.UpdateALoadBalancer(ctx, id, &body)
 if err != nil {
     log.Fatalln(err)
 } else {

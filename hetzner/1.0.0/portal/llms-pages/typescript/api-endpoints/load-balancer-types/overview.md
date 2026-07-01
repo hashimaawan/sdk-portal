@@ -9,10 +9,10 @@ Currency for all amounts is €. All prices exclude VAT.
 
 # Create Instance
 
-The instance of the `LoadBalancerTypesController` class can be created using the API Client.
+The instance of the `LoadBalancerTypesApi` class can be created using the API Client.
 
 ```
-const loadBalancerTypesController = new LoadBalancerTypesController(client);
+const loadBalancerTypesApi = new LoadBalancerTypesApi(client);
 ```
 
 

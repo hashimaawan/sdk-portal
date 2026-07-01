@@ -7,7 +7,7 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 
 # Enum Type Name
 
-`Type1Enum`
+`Type1`
 
 
 # Fields
@@ -21,9 +21,9 @@ Choose between uploading a Certificate in PEM format or requesting a managed *Le
 # Example
 
 ```php
-use HetznerCloudAPILib\Models\Type1Enum;
+use HetznerCloudApiLib\Models\Type1;
 
-$type1 = Type1Enum::UPLOADED;
+$type1 = Type1::UPLOADED;
 ```
 
 

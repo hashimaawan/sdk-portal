@@ -7,7 +7,7 @@ Type of cpu
 
 # Enum Type Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
@@ -21,9 +21,9 @@ Type of cpu
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 
-CpuTypeEnum cpuType = CpuTypeEnum.Shared;
+CpuType cpuType = CpuType.Shared;
 ```
 
 

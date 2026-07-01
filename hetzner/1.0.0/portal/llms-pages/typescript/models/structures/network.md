@@ -2,6 +2,8 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRk5ldHdvcms
 
+*This model accepts additional fields of type unknown.*
+
 
 # Interface Name
 
@@ -22,12 +24,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 | `routes` | [`Route[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/route.md) | Required | Array of routes set in this Network |
 | `servers` | `number[]` | Required | Array of IDs of Servers attached to this Network |
 | `subnets` | [`Subnet[]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/typescript/models/structures/subnet.md) | Required | Array subnets allocated in this Network |
+| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { Network, Type42Enum } from 'hetzner-cloud-apilib';
+import { Network, Type42 } from 'hetzner-cloud-apilib';
 
 const network: Network = {
   created: '2016-01-30T23:50:00+00:00',
@@ -37,11 +40,17 @@ const network: Network = {
   name: 'mynet',
   protection: {
     mDelete: false,
+    additionalProperties: {
+      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    },
   },
   routes: [
     {
       destination: '10.100.1.0/24',
       gateway: '10.0.1.1',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   servers: [
@@ -51,13 +60,19 @@ const network: Network = {
     {
       gateway: '10.0.0.1',
       networkZone: 'eu-central',
-      type: Type42Enum.Cloud,
+      type: Type42.Cloud,
       ipRange: '10.0.1.0/24',
+      additionalProperties: {
+        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+      },
     }
   ],
   loadBalancers: [
     42
   ],
+  additionalProperties: {
+    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+  },
 };
 ```
 

@@ -13,9 +13,9 @@ Note: if the Network object changes during the request, the response will be a â
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<ActionResponse> changeIPRangeOfANetworkAsync(
+CompletableFuture<ApiResponse<ActionResponse>> changeIpRangeOfANetworkAsync(
     final int id,
-    final ChangeIPRangeRequest body)
+    final ChangeIpRangeRequest body)
 ```
 
 
@@ -24,26 +24,26 @@ CompletableFuture<ActionResponse> changeIPRangeOfANetworkAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `id` | `int` | Template, Required | ID of the Network |
-| `body` | [`ChangeIPRangeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/change-ip-range-request.md) | Body, Optional | - |
+| `body` | [`ChangeIpRangeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/change-ip-range-request.md) | Body, Optional | - |
 
 
 # Response Type
 
 **201**: The `action` key contains the `change_ip_range` Action
 
-[`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ActionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/java/models/structures/action-response.md).
 
 
 # Example Usage
 
 ```java
 int id = 112;
-ChangeIPRangeRequest body = new ChangeIPRangeRequest.Builder(
+ChangeIpRangeRequest body = new ChangeIpRangeRequest.Builder(
     "10.0.0.0/12"
 )
 .build();
 
-networkActionsController.changeIPRangeOfANetworkAsync(id, body).thenAccept(result -> {
+networkActionsApi.changeIpRangeOfANetworkAsync(id, body).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

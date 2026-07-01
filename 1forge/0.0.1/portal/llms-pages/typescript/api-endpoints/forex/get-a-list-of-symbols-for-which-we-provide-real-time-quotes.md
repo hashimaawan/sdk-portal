@@ -33,7 +33,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 
 ```ts
 try {
-  const response = await forexController.getAListOfSymbolsForWhichWeProvideRealTimeQuotes();
+  const response = await forexApi.getAListOfSymbolsForWhichWeProvideRealTimeQuotes();
 
   // Extracting fully parsed response body.
   console.log(response.result);

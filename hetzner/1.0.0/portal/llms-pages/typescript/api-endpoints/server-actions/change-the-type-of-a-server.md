@@ -57,7 +57,7 @@ const body: ServersActionsChangeTypeRequest = {
 };
 
 try {
-  const response = await serverActionsController.changeTheTypeOfAServer(
+  const response = await serverActionsApi.changeTheTypeOfAServer(
     id,
     body
   );

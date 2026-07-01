@@ -24,7 +24,7 @@ Additional configuration for protocol http
 # Example
 
 ```csharp
-using HetznerCloudAPI.Standard.Models;
+using HetznerCloudApi.Standard.Models;
 using System.Collections.Generic;
 
 Http http = new Http

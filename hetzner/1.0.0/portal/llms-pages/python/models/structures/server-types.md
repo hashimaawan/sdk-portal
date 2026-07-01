@@ -4,6 +4,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.
 
 The Server types the Datacenter can handle
 
+*This model accepts additional fields of type Any.*
+
 
 # Class Name
 
@@ -17,11 +19,14 @@ The Server types the Datacenter can handle
 | `available` | `List[float]` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `available_for_migration` | `List[float]` | Required | IDs of Server types that are supported and for which the Datacenter has enough resources left |
 | `supported` | `List[float]` | Required | IDs of Server types that are supported in the Datacenter |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
+import jsonpickle
+
 from hetznercloudapi.models.server_types import ServerTypes
 
 server_types = ServerTypes(
@@ -39,7 +44,10 @@ server_types = ServerTypes(
         1,
         2,
         3
-    ]
+    ],
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
 )
 ```
 

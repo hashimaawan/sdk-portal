@@ -7,7 +7,7 @@ Type of cpu
 
 # Enum Type Name
 
-`CpuTypeEnum`
+`CpuType`
 
 
 # Fields
@@ -21,7 +21,7 @@ Type of cpu
 # Example
 
 ```ruby
-cpu_type = CpuTypeEnum::SHARED
+cpu_type = CpuType::SHARED
 ```
 
 

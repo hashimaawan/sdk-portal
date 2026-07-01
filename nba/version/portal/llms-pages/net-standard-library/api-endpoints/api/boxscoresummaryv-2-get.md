@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-Boxscoresummaryv2GETAsync(
-    string gameID)
+Boxscoresummaryv2GetAsync(
+    string gameId)
 ```
 
 
@@ -14,7 +14,7 @@ Boxscoresummaryv2GETAsync(
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `gameID` | `string` | Query, Required | - |
+| `gameId` | `string` | Query, Required | - |
 
 
 # Response Type
@@ -27,10 +27,10 @@ Boxscoresummaryv2GETAsync(
 # Example Usage
 
 ```csharp
-string gameID = "GameID8";
+string gameId = "GameID8";
 try
 {
-    await aPIController.Boxscoresummaryv2GETAsync(gameID);
+    await api.Boxscoresummaryv2GetAsync(gameId);
 }
 catch (ApiException e)
 {

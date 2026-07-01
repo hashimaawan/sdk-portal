@@ -23,7 +23,7 @@ GetAPlacementGroupAsync(
 
 **200**: The `placement_group` key contains a PlacementGroup object
 
-[`Task<Models.PlacementGroupResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/placement-group-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.PlacementGroupResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/net-standard-library/models/structures/placement-group-response.md).
 
 
 # Example Usage
@@ -32,7 +32,7 @@ GetAPlacementGroupAsync(
 int id = 112;
 try
 {
-    PlacementGroupResponse result = await placementGroupsController.GetAPlacementGroupAsync(id);
+    ApiResponse<PlacementGroupResponse> result = await placementGroupsApi.GetAPlacementGroupAsync(id);
 }
 catch (ApiException e)
 {

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/versio
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function commonteamrosterGET(string $season, string $teamID): void
+function commonteamrosterGet(string $season, string $teamId): ApiResponse
 ```
 
 
@@ -14,14 +14,14 @@ function commonteamrosterGET(string $season, string $teamID): void
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `season` | `string` | Query, Required | - |
-| `teamID` | `string` | Query, Required | - |
+| `teamId` | `string` | Query, Required | - |
 
 
 # Response Type
 
 **200**: 200 OK
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/nba/version/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -29,17 +29,25 @@ function commonteamrosterGET(string $season, string $teamID): void
 ```php
 $season = 'Season0';
 
-$teamID = 'TeamID8';
+$teamId = 'TeamID8';
 
-$aPIController = $client->getAPIController();
+$api = $client->getAPI();
+$apiResponse = $api->commonteamrosterGet(
+    $season,
+    $teamId
+);
 
-try {
-    $aPIController->commonteamrosterGET(
-        $season,
-        $teamID
-    );
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
+    echo 'void:';
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

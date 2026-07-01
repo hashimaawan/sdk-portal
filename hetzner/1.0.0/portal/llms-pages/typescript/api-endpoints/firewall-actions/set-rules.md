@@ -48,8 +48,8 @@ const id = 112;
 const body: SetRulesRequest = {
   rules: [
     {
-      direction: DirectionEnum.In,
-      protocol: ProtocolEnum.Tcp,
+      direction: Direction.In,
+      protocol: Protocol.Tcp,
       description: 'Allow port 80',
       port: '80',
       sourceIps: [
@@ -62,7 +62,7 @@ const body: SetRulesRequest = {
 };
 
 try {
-  const response = await firewallActionsController.setRules(
+  const response = await firewallActionsApi.setRules(
     id,
     body
   );

@@ -22,7 +22,7 @@ def delete_a_load_balancer(id)
 
 **204**: Load Balancer deleted
 
-`void`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance.
 
 
 # Example Usage
@@ -30,7 +30,13 @@ def delete_a_load_balancer(id)
 ```ruby
 id = 112
 
-load_balancers_controller.delete_a_load_balancer(id)
+result = load_balancers_api.delete_a_load_balancer(id)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
 ```
 
 

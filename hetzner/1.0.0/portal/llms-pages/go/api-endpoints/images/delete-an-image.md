@@ -36,7 +36,7 @@ ctx := context.Background()
 
 id := 112
 
-resp, err := imagesController.DeleteAnImage(ctx, id)
+resp, err := imagesApi.DeleteAnImage(ctx, id)
 if err != nil {
     log.Fatalln(err)
 } else {

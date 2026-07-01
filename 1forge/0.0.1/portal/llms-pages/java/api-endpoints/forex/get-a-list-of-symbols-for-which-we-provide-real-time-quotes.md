@@ -9,7 +9,7 @@ Find out more: [http://1forge.com/forex-data-api](http://1forge.com/forex-data-a
 :information_source: **Note** This endpoint does not require authentication.
 
 ```java
-CompletableFuture<List<String>> getAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync()
+CompletableFuture<ApiResponse<List<String>>> getAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync()
 ```
 
 
@@ -17,13 +17,13 @@ CompletableFuture<List<String>> getAListOfSymbolsForWhichWeProvideRealTimeQuotes
 
 **200**: A list of symbols
 
-`List<String>`
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `List<String>`.
 
 
 # Example Usage
 
 ```java
-forexController.getAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync().thenAccept(result -> {
+forexApi.getAListOfSymbolsForWhichWeProvideRealTimeQuotesAsync().thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0
 list stops for a trip identified by {trip_id}
 
 ```go
-TripStopByTripIdGET(
+TripStopByTripIdGet(
     ctx context.Context,
     tripId string) (
     models.ApiResponse[[]models.Step],
@@ -15,7 +15,7 @@ TripStopByTripIdGET(
 
 # Authentication
 
-This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/go/getting-started/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/go/getting-started/authorization.md)
+This endpoint requires [furkot_auth_access_code](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/go/getting-started/quickstart/authorization.md) **OR** [furkot_auth_implicit](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/llms-pages/go/getting-started/quickstart/authorization.md)
 
 
 # Parameters
@@ -50,7 +50,7 @@ ctx := context.Background()
 
 tripId := "trip_id2"
 
-apiResponse, err := aPIController.TripStopByTripIdGET(ctx, tripId)
+apiResponse, err := api.TripStopByTripIdGet(ctx, tripId)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -45,7 +45,7 @@ const body: RebuildServerRequest = {
 };
 
 try {
-  const response = await serverActionsController.rebuildAServerFromAnImage(
+  const response = await serverActionsApi.rebuildAServerFromAnImage(
     id,
     body
   );

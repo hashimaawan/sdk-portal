@@ -15,7 +15,7 @@ Creates a new Firewall.
 :information_source: **Note** This endpoint does not require authentication.
 
 ```php
-function createAFirewall(?CreateFirewallRequest $body = null): CreateFirewallResponse
+function createAFirewall(?CreateFirewallRequest $body = null): ApiResponse
 ```
 
 
@@ -30,7 +30,7 @@ function createAFirewall(?CreateFirewallRequest $body = null): CreateFirewallRes
 
 **201**: The `firewall` key contains the Firewall that was just created
 
-[`CreateFirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-firewall-response.md)
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`CreateFirewallResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/php/models/structures/create-firewall-response.md).
 
 
 # Example Usage
@@ -42,7 +42,7 @@ $body = CreateFirewallRequestBuilder::init(
     ->applyTo(
         [
             ApplyToBuilder::init(
-                Type7Enum::SERVER
+                Type7::SERVER
             )
                 ->server(
                     Server2Builder::init(
@@ -55,8 +55,8 @@ $body = CreateFirewallRequestBuilder::init(
     ->rules(
         [
             RuleBuilder::init(
-                DirectionEnum::IN,
-                ProtocolEnum::TCP
+                Direction::IN,
+                Protocol::TCP
             )
                 ->description('Allow port 80')
                 ->port('80')
@@ -72,14 +72,20 @@ $body = CreateFirewallRequestBuilder::init(
     )
     ->build();
 
-$firewallsController = $client->getFirewallsController();
+$firewallsApi = $client->getFirewallsApi();
+$apiResponse = $firewallsApi->createAFirewall($body);
 
-try {
-    $result = $firewallsController->createAFirewall($body);
+// Extracting response status code
+var_dump($apiResponse->getStatusCode());
+// Extracting response headers
+var_dump($apiResponse->getHeaders());
+
+if ($apiResponse->isSuccess()) {
     echo 'CreateFirewallResponse:';
-    var_dump($result);
-} catch (ApiException $exp) {
-    echo 'Caught:', $exp;
+    var_dump($apiResponse->getResult());
+} else {
+    $error = $apiResponse->getResult();
+    var_dump($error);
 }
 ```
 

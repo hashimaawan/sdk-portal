@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/giphy/1.0/
 
 # Create Instance
 
-The instance of the `GifsController` class can be created using the API Client.
+The instance of the `GifsApi` class can be created using the API Client.
 
 ```
-const gifsController = new GifsController(client);
+const gifsApi = new GifsApi(client);
 ```
 
 

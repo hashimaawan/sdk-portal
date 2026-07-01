@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "1Forge Finance APIs",
-    "_postman_id": "6217240d-b776-4a9c-808a-6e950a651591",
+    "_postman_id": "fcdcb1b6-466c-408d-8025-e34a0590a5e6",
     "description": "Stock and Forex Data and Realtime Quotes",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
@@ -11,7 +11,7 @@
       "description": "",
       "item": [
         {
-          "id": "34808868-2caf-423e-bd43-cfd209db40cf",
+          "id": "2eb72a40-b8bf-4d22-b5ac-bcf827bab213",
           "name": "Get quotes for all symbols",
           "request": {
             "url": {
@@ -40,12 +40,12 @@
               "status": "A list of quotes",
               "code": 200,
               "name": "Response_200",
-              "id": "c2d89264-4a8b-4d7d-92af-dd3ded47c15c"
+              "id": "8e259dc3-5c88-4053-a670-7985639cc190"
             }
           ]
         },
         {
-          "id": "a240aa79-ecff-4b0a-b6d2-d55cdff4a783",
+          "id": "fc9b4dd2-ca04-4cb3-b3fe-be793cad765c",
           "name": "Get a list of symbols for which we provide real-time quotes",
           "request": {
             "url": {
@@ -77,11 +77,11 @@
                   "disabled": false
                 }
               ],
-              "body": "[\n  \"response 20086\"\n]",
+              "body": "[\n  \"response 20095\"\n]",
               "status": "A list of symbols",
               "code": 200,
               "name": "Response_200",
-              "id": "fc57729d-dbfa-45f6-bced-47da1178a614"
+              "id": "44f74095-f0d7-4b05-8cd7-974b3df40026"
             }
           ]
         }

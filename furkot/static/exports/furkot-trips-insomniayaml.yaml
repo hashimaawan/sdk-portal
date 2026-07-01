@@ -4,7 +4,7 @@ __export_source: apimatic.transformer
 resources:
 - name: Furkot Trips
   _type: workspace
-  _id: wrk_9f8edf6748584f928ff766e3d82db1b3
+  _id: wrk_43cabd8c541b4c108d417a9106a77596
   description: >
     Furkot provides Rest API to access user trip data.
 
@@ -16,8 +16,8 @@ resources:
     default: https://trips.furkot.com/pub/api
     authserver: https://trips.furkot.com/oauth
   _type: environment
-  _id: env_03c26a402aca4ffe85f5be8071cd3e18
-  parentId: wrk_9f8edf6748584f928ff766e3d82db1b3
+  _id: env_23c6fe530e944a1f93549b57e7e5ce45
+  parentId: wrk_43cabd8c541b4c108d417a9106a77596
 - name: Trip_GET
   method: GET
   url: '{{default}}/trip'
@@ -27,8 +27,8 @@ resources:
     authorizationUrl: https://trips.furkot.com/oauth/authorize
     grantType: authorization_code
   _type: request
-  _id: req_9820e816af824f18a12a8dfde33fc8c0
-  parentId: wrk_9f8edf6748584f928ff766e3d82db1b3
+  _id: req_b5c3bc945f2e43c6b2864cf073ffb8ca
+  parentId: wrk_43cabd8c541b4c108d417a9106a77596
   description: list user's trips
 - name: TripStopByTripId_GET
   method: GET
@@ -39,6 +39,6 @@ resources:
     authorizationUrl: https://trips.furkot.com/oauth/authorize
     grantType: authorization_code
   _type: request
-  _id: req_f8c512392a544c7d89ec7d1942ee3c0b
-  parentId: wrk_9f8edf6748584f928ff766e3d82db1b3
+  _id: req_3d8d9ae308bb44e8b0f37dceb9c08b2c
+  parentId: wrk_43cabd8c541b4c108d417a9106a77596
   description: list stops for a trip identified by {trip_id}

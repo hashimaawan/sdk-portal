@@ -1,15 +1,15 @@
 {
-  "id": "212c51e1-330b-4a6e-b380-c04bc2415e33",
+  "id": "2f7b01f6-720f-4eb0-bd5a-5d8755fb8cba",
   "name": "Furkot Trips",
   "description": "Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.\n",
   "order": [
-    "0776acac-08d6-4361-a107-a9a19788484a",
-    "340d6038-3da6-4dcb-914b-f29ee8124002"
+    "6b9f8809-da20-4cd0-80e1-ef57139cf364",
+    "3db1cc95-db3c-4153-9848-fff4960d2539"
   ],
   "folders": [],
   "requests": [
     {
-      "id": "0776acac-08d6-4361-a107-a9a19788484a",
+      "id": "6b9f8809-da20-4cd0-80e1-ef57139cf364",
       "name": "Trip_GET",
       "dataDisabled": false,
       "descriptionFormat": "markdown",
@@ -20,8 +20,8 @@
       "url": "{{default}}/trip",
       "responses": [
         {
-          "request": "0776acac-08d6-4361-a107-a9a19788484a",
-          "id": "68786c90-3324-4882-9550-42e78c6030ed",
+          "request": "6b9f8809-da20-4cd0-80e1-ef57139cf364",
+          "id": "32dcfc38-3eea-497c-9382-67bdfde65829",
           "name": "Response_200",
           "status": "Successful response",
           "responseCode": {
@@ -36,12 +36,12 @@
             }
           ],
           "mime": "application/json",
-          "text": "[\n  {\n    \"begin\": \"2026-07-07T11:59:17.6235828Z\",\n    \"description\": \"description92\",\n    \"end\": \"2026-09-27T11:59:17.623606Z\",\n    \"id\": \"id21\",\n    \"name\": \"name21\"\n  }\n]",
+          "text": "[\n  {\n    \"begin\": \"2026-07-05T12:06:40.5706526Z\",\n    \"description\": \"description3\",\n    \"end\": \"2026-09-15T12:06:40.5707155Z\",\n    \"id\": \"id62\",\n    \"name\": \"name29\"\n  }\n]",
           "language": "Text",
           "rawDataType": "text"
         }
       ],
-      "collectionId": "212c51e1-330b-4a6e-b380-c04bc2415e33",
+      "collectionId": "2f7b01f6-720f-4eb0-bd5a-5d8755fb8cba",
       "queryParams": [],
       "headerData": [
         {
@@ -52,7 +52,7 @@
       "pathVariableData": []
     },
     {
-      "id": "340d6038-3da6-4dcb-914b-f29ee8124002",
+      "id": "3db1cc95-db3c-4153-9848-fff4960d2539",
       "name": "TripStopByTripId_GET",
       "dataDisabled": false,
       "descriptionFormat": "markdown",
@@ -60,13 +60,13 @@
       "headers": "Accept:application/json\n",
       "method": "GET",
       "pathVariables": {
-        "trip_id": "trip_id30"
+        "trip_id": "trip_id87"
       },
       "url": "{{default}}/trip/:trip_id/stop",
       "responses": [
         {
-          "request": "340d6038-3da6-4dcb-914b-f29ee8124002",
-          "id": "8d64070f-5e0e-4042-86a2-7b69555254c7",
+          "request": "3db1cc95-db3c-4153-9848-fff4960d2539",
+          "id": "c67a23da-db52-4508-8a6b-e450f350544e",
           "name": "Response_200",
           "status": "Successful response",
           "responseCode": {
@@ -81,12 +81,12 @@
             }
           ],
           "mime": "application/json",
-          "text": "[\n  {\n    \"address\": \"address97\",\n    \"arrival\": \"2026-09-15T11:59:17.6276949Z\",\n    \"coordinates\": {\n      \"lat\": 92.3055466106962,\n      \"lon\": 232.44947117919818\n    },\n    \"departure\": \"2026-09-26T11:59:17.6528507Z\",\n    \"name\": \"name96\",\n    \"nights\": 136,\n    \"passthru\": false,\n    \"route\": {\n      \"distance\": 179,\n      \"duration\": 183,\n      \"mode\": \"car\",\n      \"polyline\": \"polyline85\"\n    },\n    \"url\": \"url69\"\n  }\n]",
+          "text": "[\n  {\n    \"address\": \"address19\",\n    \"arrival\": \"2026-07-03T12:06:40.5710906Z\",\n    \"coordinates\": {\n      \"lat\": 227.53062471296536,\n      \"lon\": 3.635130095412146\n    },\n    \"departure\": \"2026-08-02T12:06:40.5711216Z\",\n    \"name\": \"name20\",\n    \"nights\": 110,\n    \"passthru\": true,\n    \"route\": {\n      \"distance\": 102,\n      \"duration\": 58,\n      \"mode\": \"walk\",\n      \"polyline\": \"polyline67\"\n    },\n    \"url\": \"url87\"\n  }\n]",
           "language": "Text",
           "rawDataType": "text"
         }
       ],
-      "collectionId": "212c51e1-330b-4a6e-b380-c04bc2415e33",
+      "collectionId": "2f7b01f6-720f-4eb0-bd5a-5d8755fb8cba",
       "queryParams": [],
       "headerData": [
         {
@@ -97,7 +97,7 @@
       "pathVariableData": [
         {
           "key": "trip_id",
-          "value": "trip_id30",
+          "value": "trip_id87",
           "description": "id of the trip"
         }
       ]

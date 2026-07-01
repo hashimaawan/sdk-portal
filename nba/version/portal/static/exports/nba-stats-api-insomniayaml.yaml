@@ -4,2336 +4,1676 @@ __export_source: apimatic.transformer
 resources:
 - name: NBA Stats API
   _type: workspace
-  _id: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: The destination for current and historic NBA statistics.
 - name: Allstarballotpredictor_GET
   method: GET
   url: http://stats.nba.com/stats/allstarballotpredictor
   parameters:
   - name: WestPlayer1
-    value: WestPlayer175
+    value: WestPlayer181
     disabled: false
   - name: WestPlayer2
-    value: WestPlayer238
+    value: WestPlayer24
     disabled: false
   - name: WestPlayer3
-    value: WestPlayer319
+    value: WestPlayer326
     disabled: false
   - name: WestPlayer4
-    value: WestPlayer436
+    value: WestPlayer463
     disabled: false
   - name: WestPlayer5
-    value: WestPlayer577
+    value: WestPlayer518
     disabled: false
   - name: EastPlayer1
-    value: EastPlayer113
+    value: EastPlayer144
     disabled: false
   - name: EastPlayer2
-    value: EastPlayer266
+    value: EastPlayer285
     disabled: false
   - name: EastPlayer3
-    value: EastPlayer382
+    value: EastPlayer336
     disabled: false
   - name: EastPlayer4
-    value: EastPlayer47
+    value: EastPlayer44
     disabled: false
   - name: EastPlayer5
-    value: EastPlayer542
+    value: EastPlayer566
     disabled: false
   - name: PointCap
-    value: PointCap78
+    value: PointCap23
     disabled: false
   authentication: {}
   _type: request
-  _id: req_e5599e56254946a79aa2a17f37d86697
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_08b000ee96024061a379be15b5e3d6f4
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscore_GET
   method: GET
   url: http://stats.nba.com/stats/boxscore
   parameters:
   - name: GameID
-    value: GameID68
+    value: GameID20
     disabled: false
   - name: StartPeriod
-    value: StartPeriod5
+    value: StartPeriod33
     disabled: false
   - name: EndPeriod
-    value: EndPeriod27
+    value: EndPeriod62
     disabled: false
   - name: StartRange
-    value: StartRange51
+    value: StartRange14
     disabled: false
   - name: EndRange
-    value: EndRange16
+    value: EndRange37
     disabled: false
   - name: RangeType
-    value: RangeType78
+    value: RangeType34
     disabled: false
   authentication: {}
   _type: request
-  _id: req_a33ba18c2bbc426f976d4e425a96e9c1
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_8786f8fea5ee465285e5d65c9f3d796b
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoreadvanced_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoreadvanced
   parameters:
   - name: GameID
-    value: GameID8
+    value: GameID52
     disabled: false
   - name: StartPeriod
-    value: StartPeriod71
+    value: StartPeriod43
     disabled: false
   - name: EndPeriod
-    value: EndPeriod1
+    value: EndPeriod24
     disabled: false
   - name: StartRange
-    value: StartRange31
+    value: StartRange81
     disabled: false
   - name: EndRange
-    value: EndRange86
+    value: EndRange14
     disabled: false
   - name: RangeType
-    value: RangeType10
+    value: RangeType77
     disabled: false
   authentication: {}
   _type: request
-  _id: req_94b48d804efb42ca8621d2e0c02c7c4a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_9a5fd23fca2b49aba0a90dedbaa6da75
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoreadvancedv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoreadvancedv2
   parameters:
   - name: GameID
-    value: GameID45
+    value: GameID33
     disabled: false
   - name: StartPeriod
-    value: StartPeriod17
+    value: StartPeriod51
     disabled: false
   - name: EndPeriod
-    value: EndPeriod13
+    value: EndPeriod94
     disabled: false
   - name: StartRange
-    value: StartRange72
+    value: StartRange36
     disabled: false
   - name: EndRange
-    value: EndRange91
+    value: EndRange18
     disabled: false
   - name: RangeType
-    value: RangeType97
+    value: RangeType28
     disabled: false
   authentication: {}
   _type: request
-  _id: req_7f4467d2cda64aeba145de8dd68bb015
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_78142c03b89545bea3efc94be75b35dc
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscorefourfactors_GET
   method: GET
   url: http://stats.nba.com/stats/boxscorefourfactors
   parameters:
   - name: GameID
-    value: GameID2
+    value: GameID9
     disabled: false
   - name: StartPeriod
-    value: StartPeriod69
+    value: StartPeriod18
     disabled: false
   - name: EndPeriod
-    value: EndPeriod77
+    value: EndPeriod14
     disabled: false
   - name: StartRange
-    value: StartRange4
+    value: StartRange75
     disabled: false
   - name: EndRange
-    value: EndRange55
+    value: EndRange83
     disabled: false
   - name: RangeType
-    value: RangeType51
+    value: RangeType69
     disabled: false
   authentication: {}
   _type: request
-  _id: req_8a322963eb854d1a8aac437c7be41e1a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_b734cdc282b04085ae2ae823d7f0954c
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscorefourfactorsv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscorefourfactorsv2
   parameters:
   - name: GameID
-    value: GameID4
+    value: GameID13
     disabled: false
   - name: StartPeriod
-    value: StartPeriod90
+    value: StartPeriod89
     disabled: false
   - name: EndPeriod
-    value: EndPeriod36
+    value: EndPeriod58
     disabled: false
   - name: StartRange
-    value: StartRange48
+    value: StartRange47
     disabled: false
   - name: EndRange
-    value: EndRange12
+    value: EndRange70
     disabled: false
   - name: RangeType
-    value: RangeType94
+    value: RangeType43
     disabled: false
   authentication: {}
   _type: request
-  _id: req_0d8e13e94ae24cae8893d478546971fe
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_3d5652b1bcb240ddb6bdeb418258378a
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoremisc_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoremisc
   parameters:
   - name: GameID
-    value: GameID79
+    value: GameID24
     disabled: false
   - name: StartPeriod
-    value: StartPeriod19
+    value: StartPeriod0
     disabled: false
   - name: EndPeriod
-    value: EndPeriod29
+    value: EndPeriod7
     disabled: false
   - name: StartRange
-    value: StartRange80
+    value: StartRange12
     disabled: false
   - name: EndRange
-    value: EndRange92
+    value: EndRange26
     disabled: false
   - name: RangeType
-    value: RangeType12
+    value: RangeType94
     disabled: false
   authentication: {}
   _type: request
-  _id: req_8dc1a01af4f84a25bcd2759059537e78
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_2d288e322590495ebb381f2187956d61
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoremiscv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoremiscv2
   parameters:
   - name: GameID
-    value: GameID27
+    value: GameID75
     disabled: false
   - name: StartPeriod
-    value: StartPeriod5
+    value: StartPeriod0
     disabled: false
   - name: EndPeriod
-    value: EndPeriod60
+    value: EndPeriod49
     disabled: false
   - name: StartRange
-    value: StartRange81
+    value: StartRange76
     disabled: false
   - name: EndRange
-    value: EndRange89
+    value: EndRange49
     disabled: false
   - name: RangeType
-    value: RangeType74
+    value: RangeType92
     disabled: false
   authentication: {}
   _type: request
-  _id: req_e832b0766f474f2bac6475db5a9d4d1a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_00e581afdc3e482190cdbd54e4c13d6d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoreplayertrackv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoreplayertrackv2
   parameters:
   - name: GameID
-    value: GameID77
+    value: GameID28
     disabled: false
   authentication: {}
   _type: request
-  _id: req_88d0ce0591a54543b5d31a59f04a6783
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_fc54bf83c2e941d4a5f1631bfa9cf224
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscorescoring_GET
   method: GET
   url: http://stats.nba.com/stats/boxscorescoring
   parameters:
   - name: GameID
-    value: GameID82
+    value: GameID41
     disabled: false
   - name: StartPeriod
-    value: StartPeriod15
+    value: StartPeriod48
     disabled: false
   - name: EndPeriod
-    value: EndPeriod44
+    value: EndPeriod22
     disabled: false
   - name: StartRange
-    value: StartRange32
+    value: StartRange29
     disabled: false
   - name: EndRange
-    value: EndRange1
+    value: EndRange97
     disabled: false
   - name: RangeType
-    value: RangeType59
+    value: RangeType36
     disabled: false
   authentication: {}
   _type: request
-  _id: req_f80b2de6b35e4569ab192883d70dc10b
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_30a09ee350a145cab60f7876e52ebe0d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscorescoringv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscorescoringv2
   parameters:
   - name: GameID
-    value: GameID34
+    value: GameID30
     disabled: false
   - name: StartPeriod
-    value: StartPeriod38
+    value: StartPeriod24
     disabled: false
   - name: EndPeriod
-    value: EndPeriod61
+    value: EndPeriod64
     disabled: false
   - name: StartRange
-    value: StartRange86
+    value: StartRange95
     disabled: false
   - name: EndRange
-    value: EndRange33
+    value: EndRange14
     disabled: false
   - name: RangeType
-    value: RangeType76
+    value: RangeType56
     disabled: false
   authentication: {}
   _type: request
-  _id: req_775df16eab43441f975a7613630c523b
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_d981179751d644bd8bcad8ceea4a844f
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoresummaryv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoresummaryv2
   parameters:
   - name: GameID
-    value: GameID39
+    value: GameID90
     disabled: false
   authentication: {}
   _type: request
-  _id: req_09471fe7ea5c4bc5a8178d9247d4a2d1
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_8805ca41553f4d53aff6d75be624f78e
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoretraditionalv2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoretraditionalv2
   parameters:
   - name: GameID
-    value: GameID73
+    value: GameID14
     disabled: false
   - name: StartPeriod
-    value: StartPeriod96
+    value: StartPeriod42
     disabled: false
   - name: EndPeriod
-    value: EndPeriod38
+    value: EndPeriod80
     disabled: false
   - name: StartRange
-    value: StartRange14
+    value: StartRange44
     disabled: false
   - name: EndRange
-    value: EndRange42
+    value: EndRange30
     disabled: false
   - name: RangeType
-    value: RangeType4
+    value: RangeType68
     disabled: false
   authentication: {}
   _type: request
-  _id: req_c6dab5dd36ab4f02a5f5ef6259e3d853
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_0f358df9995246419679b714b3e17eb5
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoreusage_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoreusage
   parameters:
   - name: GameID
-    value: GameID47
+    value: GameID15
     disabled: false
   - name: StartPeriod
-    value: StartPeriod46
+    value: StartPeriod44
     disabled: false
   - name: EndPeriod
-    value: EndPeriod54
+    value: EndPeriod34
     disabled: false
   - name: StartRange
-    value: StartRange28
+    value: StartRange89
     disabled: false
   - name: EndRange
-    value: EndRange56
+    value: EndRange45
     disabled: false
   - name: RangeType
-    value: RangeType76
+    value: RangeType51
     disabled: false
   authentication: {}
   _type: request
-  _id: req_c90acb5ec76d4e8dada81cb8da86e94a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_27e5923d2dfc497f8449189e9da5eec0
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Boxscoreusagev2_GET
   method: GET
   url: http://stats.nba.com/stats/boxscoreusagev2
   parameters:
   - name: GameID
-    value: GameID8
+    value: GameID35
     disabled: false
   - name: StartPeriod
-    value: StartPeriod19
+    value: StartPeriod53
     disabled: false
   - name: EndPeriod
-    value: EndPeriod39
+    value: EndPeriod35
     disabled: false
   - name: StartRange
-    value: StartRange7
+    value: StartRange63
     disabled: false
   - name: EndRange
-    value: EndRange85
+    value: EndRange55
     disabled: false
   - name: RangeType
-    value: RangeType98
+    value: RangeType87
     disabled: false
   authentication: {}
   _type: request
-  _id: req_6f31548cad6f4f429bd9c0d0b017ab0d
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_4f8cdf72ccfa4de4b292c5b1871fb3c3
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: CommonTeamYears_GET
   method: GET
   url: http://stats.nba.com/stats/commonTeamYears
   parameters:
   - name: LeagueID
-    value: LeagueID71
+    value: LeagueID23
     disabled: false
   authentication: {}
   _type: request
-  _id: req_28f43e4e78404a27837c0ae90cd99fab
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_82a0dc901c6c4234bc400b9de5ac74a9
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Commonallplayers_GET
   method: GET
   url: http://stats.nba.com/stats/commonallplayers
   parameters:
   - name: LeagueID
-    value: LeagueID48
+    value: LeagueID42
     disabled: false
   - name: Season
-    value: Season32
+    value: Season73
     disabled: false
   - name: IsOnlyCurrentSeason
-    value: IsOnlyCurrentSeason35
+    value: IsOnlyCurrentSeason26
     disabled: false
   authentication: {}
   _type: request
-  _id: req_02207034e01c4cdbb58de3374878f7a4
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_4f52615daab044c4a6faa04f3456df72
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Commonplayerinfo_GET
   method: GET
   url: http://stats.nba.com/stats/commonplayerinfo
   parameters:
   - name: PlayerID
-    value: PlayerID85
+    value: PlayerID58
     disabled: false
   authentication: {}
   _type: request
-  _id: req_2843c1469cf14f03a9b8a8a76f7d9cc7
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_42182a0681244756b33df8dd0591b490
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Commonplayoffseries_GET
   method: GET
   url: http://stats.nba.com/stats/commonplayoffseries
   parameters:
   - name: LeagueID
-    value: LeagueID19
+    value: LeagueID25
     disabled: false
   - name: Season
-    value: Season53
+    value: Season67
     disabled: false
   authentication: {}
   _type: request
-  _id: req_191726338ccf40a5874ec337f5ea27ba
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_f993aff7589646858c4836ddb055b9fe
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Commonteamroster_GET
   method: GET
   url: http://stats.nba.com/stats/commonteamroster
   parameters:
   - name: Season
-    value: Season50
+    value: Season60
     disabled: false
   - name: TeamID
-    value: TeamID86
+    value: TeamID39
     disabled: false
   authentication: {}
   _type: request
-  _id: req_8a9797241deb4899a1103fb574f9eb7c
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_8d885f9c93d44695b37709aec6db7326
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Draftcombinedrillresults_GET
   method: GET
   url: http://stats.nba.com/stats/draftcombinedrillresults
   parameters:
   - name: LeagueID
-    value: LeagueID4
-    disabled: false
-  - name: SeasonYear
-    value: SeasonYear56
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_dd95acd541494a999b653467d120bd59
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Draftcombinenonstationaryshooting_GET
-  method: GET
-  url: http://stats.nba.com/stats/draftcombinenonstationaryshooting
-  parameters:
-  - name: LeagueID
-    value: LeagueID84
-    disabled: false
-  - name: SeasonYear
-    value: SeasonYear23
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_7e66ea2ce4fd466b8405869b07f6c098
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Draftcombineplayeranthro_GET
-  method: GET
-  url: http://stats.nba.com/stats/draftcombineplayeranthro
-  parameters:
-  - name: LeagueID
-    value: LeagueID95
-    disabled: false
-  - name: SeasonYear
-    value: SeasonYear76
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_31ad9e52fb7b4023be16374c8561eef1
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Draftcombinespotshooting_GET
-  method: GET
-  url: http://stats.nba.com/stats/draftcombinespotshooting
-  parameters:
-  - name: LeagueID
-    value: LeagueID29
-    disabled: false
-  - name: SeasonYear
-    value: SeasonYear41
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_bd5c9fdc00aa45439c420e11bd595164
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Draftcombinestats_GET
-  method: GET
-  url: http://stats.nba.com/stats/draftcombinestats
-  parameters:
-  - name: LeagueID
-    value: LeagueID23
+    value: LeagueID40
     disabled: false
   - name: SeasonYear
     value: SeasonYear87
     disabled: false
   authentication: {}
   _type: request
-  _id: req_da88b21f76164f83b3d050476c92eb30
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_3c9bb18c7f944ea0b3dd5b1453bc4fbb
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Draftcombinenonstationaryshooting_GET
+  method: GET
+  url: http://stats.nba.com/stats/draftcombinenonstationaryshooting
+  parameters:
+  - name: LeagueID
+    value: LeagueID93
+    disabled: false
+  - name: SeasonYear
+    value: SeasonYear0
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_de7eb8f13cef4153ad02621ad18485ee
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Draftcombineplayeranthro_GET
+  method: GET
+  url: http://stats.nba.com/stats/draftcombineplayeranthro
+  parameters:
+  - name: LeagueID
+    value: LeagueID32
+    disabled: false
+  - name: SeasonYear
+    value: SeasonYear91
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_13f5768990be4c0ab2ab1a4e8562e5dc
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Draftcombinespotshooting_GET
+  method: GET
+  url: http://stats.nba.com/stats/draftcombinespotshooting
+  parameters:
+  - name: LeagueID
+    value: LeagueID28
+    disabled: false
+  - name: SeasonYear
+    value: SeasonYear19
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_75915a69e2924409bd6fedf6b2569d12
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Draftcombinestats_GET
+  method: GET
+  url: http://stats.nba.com/stats/draftcombinestats
+  parameters:
+  - name: LeagueID
+    value: LeagueID13
+    disabled: false
+  - name: SeasonYear
+    value: SeasonYear76
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_7da6f17f6a6e43a3812624258110a961
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Drafthistory_GET
   method: GET
   url: http://stats.nba.com/stats/drafthistory
   parameters:
   - name: LeagueID
-    value: LeagueID1
+    value: LeagueID39
     disabled: false
   authentication: {}
   _type: request
-  _id: req_17b1f95187e24fe0938d8d6bcf9e4474
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_f4d1edb278304d23b3a27ae4eb515ac7
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Franchisehistory_GET
   method: GET
   url: http://stats.nba.com/stats/franchisehistory
   parameters:
   - name: LeagueID
-    value: LeagueID10
+    value: LeagueID46
     disabled: false
   authentication: {}
   _type: request
-  _id: req_6df9a2f388984c96b41d17083844c16a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_cb0f79a470294efcac5692a0fbd36c9f
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Homepageleaders_GET
   method: GET
   url: http://stats.nba.com/stats/homepageleaders
   parameters:
   - name: StatCategory
-    value: StatCategory84
+    value: StatCategory51
     disabled: false
   - name: LeagueID
-    value: LeagueID65
+    value: LeagueID19
     disabled: false
   - name: Season
-    value: Season88
+    value: Season21
     disabled: false
   - name: SeasonType
-    value: SeasonType97
+    value: SeasonType11
     disabled: false
   - name: PlayerOrTeam
-    value: PlayerOrTeam79
+    value: PlayerOrTeam31
     disabled: false
   - name: PlayerScope
-    value: PlayerScope2
+    value: PlayerScope11
     disabled: false
   - name: GameScope
-    value: GameScope96
+    value: GameScope29
     disabled: false
   - name: Game
-    value: Game89
+    value: Game4
     disabled: false
   - name: Player
-    value: Player82
+    value: Player70
     disabled: false
   authentication: {}
   _type: request
-  _id: req_6e1b8d81c8754429ac75e167849e021c
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_e1f1fb8e72854e3f9211827ec8af058d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Homepagev2_GET
   method: GET
   url: http://stats.nba.com/stats/homepagev2
   parameters:
   - name: StatType
-    value: StatType69
+    value: StatType53
     disabled: false
   - name: LeagueID
-    value: LeagueID87
+    value: LeagueID36
     disabled: false
   - name: Season
-    value: Season58
+    value: Season85
     disabled: false
   - name: SeasonType
-    value: SeasonType6
+    value: SeasonType34
     disabled: false
   - name: PlayerOrTeam
-    value: PlayerOrTeam10
+    value: PlayerOrTeam98
     disabled: false
   - name: PlayerScope
-    value: PlayerScope75
+    value: PlayerScope72
     disabled: false
   - name: GameScope
-    value: GameScope76
+    value: GameScope87
     disabled: false
   - name: Game
-    value: Game49
+    value: Game89
     disabled: false
   - name: Player
-    value: Player10
+    value: Player77
     disabled: false
   authentication: {}
   _type: request
-  _id: req_6aab3fc7fff7442f9356b5f14751b86c
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_b9b605e86ba74d6fa6edfc88425184e9
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaderstiles_GET
   method: GET
   url: http://stats.nba.com/stats/leaderstiles
   parameters:
   - name: Stat
-    value: Stat71
+    value: Stat21
     disabled: false
   - name: LeagueID
-    value: LeagueID0
+    value: LeagueID22
     disabled: false
   - name: Season
-    value: Season1
+    value: Season93
     disabled: false
   - name: SeasonType
-    value: SeasonType48
+    value: SeasonType92
     disabled: false
   - name: PlayerOrTeam
-    value: PlayerOrTeam24
+    value: PlayerOrTeam43
     disabled: false
   - name: PlayerScope
-    value: PlayerScope95
+    value: PlayerScope23
     disabled: false
   - name: GameScope
-    value: GameScope75
+    value: GameScope10
     disabled: false
   - name: Game
-    value: Game5
+    value: Game17
     disabled: false
   - name: Player
-    value: Player7
+    value: Player48
     disabled: false
   authentication: {}
   _type: request
-  _id: req_28111afe1e37464e92ba8296db2e699e
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_75b272484478413d9c29532f04e7a564
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashlineups_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashlineups
   parameters:
   - name: GroupQuantity
-    value: GroupQuantity0
+    value: GroupQuantity19
     disabled: false
   - name: SeasonType
-    value: SeasonType83
+    value: SeasonType90
     disabled: false
   - name: MeasureType
-    value: MeasureType49
+    value: MeasureType63
     disabled: false
   - name: PerMode
-    value: PerMode15
+    value: PerMode71
     disabled: false
   - name: PlusMinus
-    value: PlusMinus50
+    value: PlusMinus0
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust12
+    value: PaceAdjust7
     disabled: false
   - name: Rank
-    value: Rank56
+    value: Rank1
     disabled: false
   - name: Season
-    value: Season15
+    value: Season56
     disabled: false
   - name: Outcome
-    value: Outcome40
+    value: Outcome47
     disabled: false
   - name: Location
-    value: Location62
+    value: Location53
     disabled: false
   - name: Month
-    value: Month68
+    value: Month98
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment7
+    value: SeasonSegment39
     disabled: false
   - name: DateFrom
-    value: DateFrom91
+    value: DateFrom71
     disabled: false
   - name: DateTo
-    value: DateTo9
+    value: DateTo78
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID97
+    value: OpponentTeamID86
     disabled: false
   - name: VsConference
     value: VsConference31
     disabled: false
   - name: VsDivision
-    value: VsDivision59
+    value: VsDivision86
     disabled: false
   - name: GameSegment
-    value: GameSegment74
+    value: GameSegment31
     disabled: false
   - name: Period
-    value: Period29
+    value: Period74
     disabled: false
   - name: LastNGames
-    value: LastNGames29
+    value: LastNGames82
     disabled: false
   authentication: {}
   _type: request
-  _id: req_83b1192a4f114963a06600d8f1f73748
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_1ed8b3f37c1d4f8bb0807dab1729b4b8
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashplayerbiostats_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashplayerbiostats
   parameters:
   - name: PerMode
-    value: PerMode17
+    value: PerMode48
     disabled: false
   - name: LeagueID
-    value: LeagueID11
+    value: LeagueID76
     disabled: false
   - name: Season
-    value: Season73
+    value: Season97
     disabled: false
   - name: SeasonType
-    value: SeasonType43
+    value: SeasonType20
     disabled: false
   authentication: {}
   _type: request
-  _id: req_2f939d3840e94b489113498ba15a2d15
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_324d623cc4cd4e5e83641672b0cfec5d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashplayerclutch_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashplayerclutch
   parameters:
   - name: ClutchTime
-    value: ClutchTime34
+    value: ClutchTime23
     disabled: false
   - name: AheadBehind
-    value: AheadBehind77
+    value: AheadBehind35
     disabled: false
   - name: PointDiff
-    value: PointDiff96
+    value: PointDiff38
     disabled: false
   - name: GameScope
-    value: GameScope96
+    value: GameScope83
     disabled: false
   - name: PlayerExperience
-    value: PlayerExperience48
+    value: PlayerExperience65
     disabled: false
   - name: PlayerPosition
-    value: PlayerPosition53
+    value: PlayerPosition80
     disabled: false
   - name: StarterBench
-    value: StarterBench75
+    value: StarterBench37
     disabled: false
   - name: MeasureType
-    value: MeasureType60
+    value: MeasureType68
     disabled: false
   - name: PerMode
-    value: PerMode65
+    value: PerMode24
     disabled: false
   - name: PlusMinus
-    value: PlusMinus52
+    value: PlusMinus37
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust22
+    value: PaceAdjust34
     disabled: false
   - name: Rank
-    value: Rank34
+    value: Rank83
     disabled: false
   - name: Season
-    value: Season76
+    value: Season96
     disabled: false
   - name: SeasonType
-    value: SeasonType74
+    value: SeasonType25
     disabled: false
   - name: Outcome
-    value: Outcome94
+    value: Outcome20
     disabled: false
   - name: Location
-    value: Location98
+    value: Location4
     disabled: false
   - name: Month
-    value: Month15
+    value: Month78
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment84
+    value: SeasonSegment90
     disabled: false
   - name: DateFrom
-    value: DateFrom63
+    value: DateFrom15
     disabled: false
   - name: DateTo
-    value: DateTo28
+    value: DateTo50
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID53
+    value: OpponentTeamID78
     disabled: false
   - name: VsConference
-    value: VsConference5
+    value: VsConference88
     disabled: false
   - name: VsDivision
-    value: VsDivision72
+    value: VsDivision84
     disabled: false
   - name: GameSegment
-    value: GameSegment38
+    value: GameSegment73
     disabled: false
   - name: Period
-    value: Period55
+    value: Period14
     disabled: false
   - name: LastNGames
-    value: LastNGames28
+    value: LastNGames65
     disabled: false
   authentication: {}
   _type: request
-  _id: req_c86f56227a8249e0a49d65ce53bdcaa2
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_67d7e730759e4802bfbf44c43ae3d7cc
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashplayerptshot_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashplayerptshot
   parameters:
   - name: LeagueID
-    value: LeagueID64
+    value: LeagueID10
     disabled: false
   - name: PerMode
-    value: PerMode55
+    value: PerMode24
     disabled: false
   - name: Season
-    value: Season66
+    value: Season0
     disabled: false
   - name: SeasonType
-    value: SeasonType90
+    value: SeasonType80
     disabled: false
   authentication: {}
   _type: request
-  _id: req_a164ece9ed8f41bbaa528a5c9206d316
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_0edcda8b7605495d9191c323920fedd6
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashplayershotlocations_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashplayershotlocations
   parameters:
   - name: MeasureType
-    value: MeasureType50
+    value: MeasureType5
     disabled: false
   - name: PerMode
-    value: PerMode47
+    value: PerMode94
     disabled: false
   - name: PlusMinus
-    value: PlusMinus66
+    value: PlusMinus93
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust41
+    value: PaceAdjust31
     disabled: false
   - name: Rank
-    value: Rank23
+    value: Rank82
     disabled: false
   - name: Season
-    value: Season98
+    value: Season79
     disabled: false
   - name: SeasonType
-    value: SeasonType83
+    value: SeasonType65
     disabled: false
   - name: Outcome
-    value: Outcome82
+    value: Outcome72
     disabled: false
   - name: Location
-    value: Location85
+    value: Location12
     disabled: false
   - name: Month
-    value: Month87
+    value: Month32
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment59
+    value: SeasonSegment65
     disabled: false
   - name: DateFrom
-    value: DateFrom78
+    value: DateFrom82
     disabled: false
   - name: DateTo
-    value: DateTo44
+    value: DateTo30
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID97
+    value: OpponentTeamID9
     disabled: false
   - name: VsConference
-    value: VsConference88
+    value: VsConference39
     disabled: false
   - name: VsDivision
-    value: VsDivision2
+    value: VsDivision40
     disabled: false
   - name: GameSegment
-    value: GameSegment94
+    value: GameSegment77
     disabled: false
   - name: Period
-    value: Period31
+    value: Period25
     disabled: false
   - name: LastNGames
-    value: LastNGames76
+    value: LastNGames10
     disabled: false
   - name: DistanceRange
-    value: DistanceRange78
+    value: DistanceRange70
     disabled: false
   - name: GameScope
-    value: GameScope7
+    value: GameScope95
     disabled: false
   - name: PlayerExperience
-    value: PlayerExperience66
+    value: PlayerExperience97
     disabled: false
   - name: PlayerPosition
-    value: PlayerPosition41
+    value: PlayerPosition14
     disabled: false
   - name: StarterBench
-    value: StarterBench76
+    value: StarterBench45
     disabled: false
   authentication: {}
   _type: request
-  _id: req_4171cd4746a2463d8775235790567226
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_4ac6ad603c77451790c796629b9da129
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashplayerstats_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashplayerstats
   parameters:
   - name: GameScope
-    value: GameScope50
+    value: GameScope91
     disabled: false
   - name: PlayerExperience
-    value: PlayerExperience36
+    value: PlayerExperience68
     disabled: false
   - name: PlayerPosition
-    value: PlayerPosition26
+    value: PlayerPosition35
     disabled: false
   - name: StarterBench
-    value: StarterBench87
+    value: StarterBench86
     disabled: false
   - name: MeasureType
-    value: MeasureType3
+    value: MeasureType9
     disabled: false
   - name: PerMode
-    value: PerMode6
+    value: PerMode90
     disabled: false
   - name: PlusMinus
-    value: PlusMinus52
+    value: PlusMinus63
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust77
+    value: PaceAdjust19
     disabled: false
   - name: Rank
-    value: Rank78
+    value: Rank34
     disabled: false
   - name: Season
-    value: Season4
+    value: Season81
     disabled: false
   - name: SeasonType
-    value: SeasonType80
+    value: SeasonType96
     disabled: false
   - name: Outcome
-    value: Outcome55
+    value: Outcome72
     disabled: false
   - name: Location
-    value: Location24
+    value: Location64
     disabled: false
   - name: Month
-    value: Month95
+    value: Month24
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment17
+    value: SeasonSegment46
     disabled: false
   - name: DateFrom
-    value: DateFrom49
+    value: DateFrom86
     disabled: false
   - name: DateTo
-    value: DateTo72
+    value: DateTo60
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID28
+    value: OpponentTeamID90
     disabled: false
   - name: VsConference
-    value: VsConference83
+    value: VsConference98
     disabled: false
   - name: VsDivision
-    value: VsDivision7
+    value: VsDivision96
     disabled: false
   - name: GameSegment
-    value: GameSegment25
+    value: GameSegment37
     disabled: false
   - name: Period
-    value: Period57
+    value: Period29
     disabled: false
   - name: LastNGames
-    value: LastNGames7
+    value: LastNGames58
     disabled: false
   authentication: {}
   _type: request
-  _id: req_e1120103ac41401aa9fea7cf1cbedfab
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_57b154d8495e4f509cca4e1b5c6083c9
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashptdefend_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashptdefend
   parameters:
   - name: LeagueID
-    value: LeagueID12
+    value: LeagueID24
     disabled: false
   - name: PerMode
-    value: PerMode54
+    value: PerMode63
     disabled: false
   - name: Season
     value: Season36
     disabled: false
   - name: SeasonType
-    value: SeasonType98
+    value: SeasonType9
     disabled: false
   - name: DefenseCategory
-    value: DefenseCategory45
+    value: DefenseCategory59
     disabled: false
   authentication: {}
   _type: request
-  _id: req_6642b1e871794bcea183ae99874b4caf
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_f64d984f064146a5ad1d376c35561f98
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashptteamdefend_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashptteamdefend
   parameters:
   - name: LeagueID
-    value: LeagueID13
+    value: LeagueID69
     disabled: false
   - name: PerMode
-    value: PerMode85
+    value: PerMode0
     disabled: false
   - name: Season
-    value: Season5
+    value: Season63
     disabled: false
   - name: SeasonType
-    value: SeasonType18
+    value: SeasonType92
     disabled: false
   - name: DefenseCategory
-    value: DefenseCategory61
+    value: DefenseCategory7
     disabled: false
   authentication: {}
   _type: request
-  _id: req_8e2a2f4707734c5db339770d2705b3d2
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_c515a22b43bc4007b5bfbebd266fef48
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashteamclutch_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashteamclutch
   parameters:
   - name: ClutchTime
-    value: ClutchTime89
+    value: ClutchTime36
     disabled: false
   - name: AheadBehind
-    value: AheadBehind11
+    value: AheadBehind69
     disabled: false
   - name: PointDiff
-    value: PointDiff12
+    value: PointDiff84
     disabled: false
   - name: GameScope
-    value: GameScope81
+    value: GameScope19
     disabled: false
   - name: PlayerExperience
-    value: PlayerExperience12
+    value: PlayerExperience72
     disabled: false
   - name: PlayerPosition
-    value: PlayerPosition40
+    value: PlayerPosition88
     disabled: false
   - name: StarterBench
-    value: StarterBench49
+    value: StarterBench28
     disabled: false
   - name: MeasureType
-    value: MeasureType83
+    value: MeasureType50
     disabled: false
   - name: PerMode
-    value: PerMode80
+    value: PerMode59
     disabled: false
   - name: PlusMinus
-    value: PlusMinus77
+    value: PlusMinus83
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust9
+    value: PaceAdjust43
     disabled: false
   - name: Rank
-    value: Rank11
+    value: Rank10
     disabled: false
   - name: Season
-    value: Season95
+    value: Season46
     disabled: false
   - name: SeasonType
-    value: SeasonType45
+    value: SeasonType16
     disabled: false
   - name: Outcome
-    value: Outcome59
+    value: Outcome64
     disabled: false
   - name: Location
-    value: Location59
+    value: Location64
     disabled: false
   - name: Month
-    value: Month30
+    value: Month22
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment11
+    value: SeasonSegment94
     disabled: false
   - name: DateFrom
-    value: DateFrom24
+    value: DateFrom72
     disabled: false
   - name: DateTo
-    value: DateTo40
+    value: DateTo58
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID36
+    value: OpponentTeamID84
     disabled: false
   - name: VsConference
-    value: VsConference89
+    value: VsConference67
     disabled: false
   - name: VsDivision
-    value: VsDivision35
+    value: VsDivision32
     disabled: false
   - name: GameSegment
-    value: GameSegment63
+    value: GameSegment38
     disabled: false
   - name: Period
-    value: Period54
+    value: Period16
     disabled: false
   - name: LastNGames
-    value: LastNGames38
+    value: LastNGames45
     disabled: false
   authentication: {}
   _type: request
-  _id: req_1527973261e1469a84e3cec994428aac
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_edaff11aa1fd45f9a7c7758e8a5c2269
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashteamptshot_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashteamptshot
   parameters:
   - name: LeagueID
-    value: LeagueID32
+    value: LeagueID26
     disabled: false
   - name: PerMode
-    value: PerMode47
+    value: PerMode11
     disabled: false
   - name: Season
     value: Season77
     disabled: false
   - name: SeasonType
-    value: SeasonType32
+    value: SeasonType35
     disabled: false
   authentication: {}
   _type: request
-  _id: req_2c80f06a566047ea824bab4e361a5247
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_d522e848960d44c5b18a8a38a5a91040
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashteamshotlocations_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashteamshotlocations
   parameters:
   - name: MeasureType
-    value: MeasureType25
+    value: MeasureType75
     disabled: false
   - name: PerMode
-    value: PerMode45
+    value: PerMode72
     disabled: false
   - name: PlusMinus
-    value: PlusMinus16
+    value: PlusMinus81
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust30
+    value: PaceAdjust22
     disabled: false
   - name: Rank
-    value: Rank60
+    value: Rank92
     disabled: false
   - name: Season
-    value: Season94
+    value: Season5
     disabled: false
   - name: SeasonType
-    value: SeasonType1
+    value: SeasonType0
     disabled: false
   - name: Outcome
-    value: Outcome55
+    value: Outcome30
     disabled: false
   - name: Location
-    value: Location13
+    value: Location73
     disabled: false
   - name: Month
-    value: Month60
+    value: Month75
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment50
+    value: SeasonSegment77
     disabled: false
   - name: DateFrom
-    value: DateFrom12
+    value: DateFrom55
     disabled: false
   - name: DateTo
-    value: DateTo42
+    value: DateTo95
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID7
+    value: OpponentTeamID57
     disabled: false
   - name: VsConference
-    value: VsConference34
+    value: VsConference92
     disabled: false
   - name: VsDivision
-    value: VsDivision6
+    value: VsDivision52
     disabled: false
   - name: GameSegment
-    value: GameSegment92
+    value: GameSegment28
     disabled: false
   - name: Period
-    value: Period89
+    value: Period49
     disabled: false
   - name: LastNGames
-    value: LastNGames93
+    value: LastNGames28
     disabled: false
   - name: DistanceRange
-    value: DistanceRange96
+    value: DistanceRange76
     disabled: false
   - name: GameScope
-    value: GameScope18
+    value: GameScope50
     disabled: false
   - name: PlayerExperience
-    value: PlayerExperience71
+    value: PlayerExperience85
     disabled: false
   - name: PlayerPosition
-    value: PlayerPosition43
+    value: PlayerPosition41
     disabled: false
   - name: StarterBench
-    value: StarterBench42
+    value: StarterBench81
     disabled: false
   authentication: {}
   _type: request
-  _id: req_54a6668a691349a8acd86d93e8843047
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_934894635fad46b9a8aa3cdd0c30c6f7
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leaguedashteamstats_GET
   method: GET
   url: http://stats.nba.com/stats/leaguedashteamstats
   parameters:
   - name: MeasureType
-    value: MeasureType37
+    value: MeasureType91
     disabled: false
   - name: PerMode
-    value: PerMode34
+    value: PerMode82
     disabled: false
   - name: PlusMinus
-    value: PlusMinus10
+    value: PlusMinus39
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust31
+    value: PaceAdjust24
     disabled: false
   - name: Rank
-    value: Rank94
+    value: Rank23
     disabled: false
   - name: Season
-    value: Season4
+    value: Season19
     disabled: false
   - name: SeasonType
-    value: SeasonType9
+    value: SeasonType63
     disabled: false
   - name: Outcome
-    value: Outcome77
+    value: Outcome86
     disabled: false
   - name: Location
-    value: Location45
+    value: Location80
     disabled: false
   - name: Month
-    value: Month85
+    value: Month50
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment95
+    value: SeasonSegment47
     disabled: false
   - name: DateFrom
-    value: DateFrom30
+    value: DateFrom86
     disabled: false
   - name: DateTo
-    value: DateTo30
+    value: DateTo36
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID89
+    value: OpponentTeamID84
     disabled: false
   - name: VsConference
-    value: VsConference2
+    value: VsConference51
     disabled: false
   - name: VsDivision
-    value: VsDivision97
+    value: VsDivision83
     disabled: false
   - name: GameSegment
-    value: GameSegment51
+    value: GameSegment11
     disabled: false
   - name: Period
-    value: Period44
+    value: Period17
     disabled: false
   - name: LastNGames
-    value: LastNGames7
+    value: LastNGames89
     disabled: false
   authentication: {}
   _type: request
-  _id: req_8be0e8a0d35340ce9bcddfee231f0c18
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_a68cd85fc7bf402b803b13992d1226ce
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Leagueleaders_GET
   method: GET
   url: http://stats.nba.com/stats/leagueleaders
   parameters:
   - name: LeagueID
-    value: LeagueID4
+    value: LeagueID22
     disabled: false
   - name: PerMode
-    value: PerMode80
+    value: PerMode29
     disabled: false
   - name: Season
-    value: Season84
+    value: Season29
     disabled: false
   - name: SeasonType
-    value: SeasonType18
+    value: SeasonType41
     disabled: false
   - name: Scope
-    value: Scope28
+    value: Scope66
     disabled: false
   - name: StatCategory
-    value: StatCategory97
+    value: StatCategory90
     disabled: false
   authentication: {}
   _type: request
-  _id: req_023a5b1d465d40ce8ad9de3592bb0e15
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_b4b543d9d857461d8997e3644dc993b8
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Playbyplay_GET
   method: GET
   url: http://stats.nba.com/stats/playbyplay
   parameters:
   - name: GameID
-    value: GameID28
+    value: GameID16
     disabled: false
   - name: StartPeriod
-    value: StartPeriod34
+    value: StartPeriod73
     disabled: false
   - name: EndPeriod
-    value: EndPeriod86
+    value: EndPeriod42
     disabled: false
   authentication: {}
   _type: request
-  _id: req_a83847f904cd4d68bc5547de469825b8
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_caca038c6a86421e977f411ceeaeab49
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Playbyplayv2_GET
   method: GET
   url: http://stats.nba.com/stats/playbyplayv2
   parameters:
   - name: GameID
-    value: GameID7
+    value: GameID8
     disabled: false
   - name: StartPeriod
-    value: StartPeriod16
+    value: StartPeriod12
     disabled: false
   - name: EndPeriod
-    value: EndPeriod94
+    value: EndPeriod60
     disabled: false
   authentication: {}
   _type: request
-  _id: req_20a669dabcf949389f0e73f036c580a4
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_257d204a08b34df895f9672868dd02a8
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Playercareerstats_GET
   method: GET
   url: http://stats.nba.com/stats/playercareerstats
   parameters:
   - name: PerMode
-    value: PerMode45
+    value: PerMode70
     disabled: false
   - name: PlayerID
-    value: PlayerID54
+    value: PlayerID20
     disabled: false
   authentication: {}
   _type: request
-  _id: req_adb76b9ae332425f9720aeab450380f8
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_32c3d51ed1b04e6ba3ba6ec3bd0791ef
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Playercompare_GET
   method: GET
   url: http://stats.nba.com/stats/playercompare
   parameters:
   - name: PlayerIDList
-    value: PlayerIDList82
+    value: PlayerIDList14
     disabled: false
   - name: VsPlayerIDList
-    value: VsPlayerIDList81
+    value: VsPlayerIDList69
     disabled: false
   - name: SeasonType
-    value: SeasonType54
+    value: SeasonType98
     disabled: false
   - name: MeasureType
-    value: MeasureType50
+    value: MeasureType66
     disabled: false
   - name: PerMode
-    value: PerMode45
+    value: PerMode47
     disabled: false
   - name: PlusMinus
-    value: PlusMinus34
+    value: PlusMinus25
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust63
+    value: PaceAdjust68
     disabled: false
   - name: Rank
-    value: Rank86
+    value: Rank11
     disabled: false
   - name: Season
-    value: Season65
+    value: Season11
     disabled: false
   - name: Outcome
-    value: Outcome82
+    value: Outcome65
     disabled: false
   - name: Location
-    value: Location45
+    value: Location3
     disabled: false
   - name: Month
-    value: Month22
+    value: Month98
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment59
+    value: SeasonSegment28
     disabled: false
   - name: DateFrom
-    value: DateFrom69
+    value: DateFrom7
     disabled: false
   - name: DateTo
-    value: DateTo77
+    value: DateTo33
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID31
+    value: OpponentTeamID88
     disabled: false
   - name: VsConference
-    value: VsConference34
+    value: VsConference79
     disabled: false
   - name: VsDivision
-    value: VsDivision66
+    value: VsDivision28
     disabled: false
   - name: GameSegment
-    value: GameSegment74
+    value: GameSegment1
     disabled: false
   - name: Period
-    value: Period12
+    value: Period96
     disabled: false
   - name: LastNGames
-    value: LastNGames40
+    value: LastNGames15
     disabled: false
   authentication: {}
   _type: request
-  _id: req_9f453e9360084d04b9fbfe2658b83d52
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_18d255e3cc3346da9372355a81f3eb43
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Playerdashboardbyclutch_GET
   method: GET
   url: http://stats.nba.com/stats/playerdashboardbyclutch
   parameters:
   - name: MeasureType
-    value: MeasureType21
+    value: MeasureType17
     disabled: false
   - name: PerMode
-    value: PerMode16
+    value: PerMode47
     disabled: false
   - name: PlusMinus
-    value: PlusMinus50
+    value: PlusMinus26
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust35
+    value: PaceAdjust69
     disabled: false
   - name: Rank
-    value: Rank52
+    value: Rank67
     disabled: false
   - name: Season
-    value: Season0
+    value: Season31
     disabled: false
   - name: SeasonType
-    value: SeasonType42
+    value: SeasonType80
     disabled: false
   - name: PlayerID
-    value: PlayerID24
+    value: PlayerID13
     disabled: false
   - name: Outcome
-    value: Outcome39
+    value: Outcome17
     disabled: false
   - name: Location
-    value: Location53
+    value: Location84
     disabled: false
   - name: Month
-    value: Month69
+    value: Month41
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment53
+    value: SeasonSegment26
     disabled: false
   - name: DateFrom
-    value: DateFrom34
+    value: DateFrom31
     disabled: false
   - name: DateTo
-    value: DateTo9
+    value: DateTo85
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID8
+    value: OpponentTeamID34
     disabled: false
   - name: VsConference
-    value: VsConference81
+    value: VsConference17
     disabled: false
   - name: VsDivision
-    value: VsDivision28
+    value: VsDivision95
     disabled: false
   - name: GameSegment
-    value: GameSegment36
+    value: GameSegment69
     disabled: false
   - name: Period
-    value: Period51
+    value: Period57
     disabled: false
   - name: LastNGames
-    value: LastNGames90
+    value: LastNGames14
     disabled: false
   authentication: {}
   _type: request
-  _id: req_06805f0d19194794a01b36ec1a2dcc69
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_a96c8856dbf84d1ba8a63689b00863ca
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Playerdashboardbygamesplits_GET
   method: GET
   url: http://stats.nba.com/stats/playerdashboardbygamesplits
   parameters:
   - name: MeasureType
-    value: MeasureType90
+    value: MeasureType74
     disabled: false
   - name: PerMode
-    value: PerMode22
+    value: PerMode93
     disabled: false
   - name: PlusMinus
-    value: PlusMinus65
+    value: PlusMinus78
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust67
+    value: PaceAdjust51
     disabled: false
   - name: Rank
-    value: Rank83
+    value: Rank78
     disabled: false
   - name: Season
-    value: Season45
+    value: Season27
     disabled: false
   - name: SeasonType
-    value: SeasonType22
+    value: SeasonType36
     disabled: false
   - name: PlayerID
-    value: PlayerID39
+    value: PlayerID26
     disabled: false
   - name: Outcome
-    value: Outcome66
+    value: Outcome88
     disabled: false
   - name: Location
-    value: Location51
+    value: Location58
     disabled: false
   - name: Month
-    value: Month86
+    value: Month39
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment52
+    value: SeasonSegment77
     disabled: false
   - name: DateFrom
-    value: DateFrom46
+    value: DateFrom21
     disabled: false
   - name: DateTo
-    value: DateTo40
+    value: DateTo25
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID54
+    value: OpponentTeamID63
     disabled: false
   - name: VsConference
-    value: VsConference11
+    value: VsConference44
     disabled: false
   - name: VsDivision
     value: VsDivision67
     disabled: false
   - name: GameSegment
-    value: GameSegment38
+    value: GameSegment40
     disabled: false
   - name: Period
-    value: Period7
-    disabled: false
-  - name: LastNGames
-    value: LastNGames52
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_98d8d0d8595a4a77af57c9c30dd28721
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashboardbygeneralsplits_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashboardbygeneralsplits
-  parameters:
-  - name: MeasureType
-    value: MeasureType93
-    disabled: false
-  - name: PerMode
-    value: PerMode0
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus75
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust57
-    disabled: false
-  - name: Rank
-    value: Rank0
-    disabled: false
-  - name: Season
-    value: Season1
-    disabled: false
-  - name: SeasonType
-    value: SeasonType38
-    disabled: false
-  - name: PlayerID
-    value: PlayerID48
-    disabled: false
-  - name: Outcome
-    value: Outcome7
-    disabled: false
-  - name: Location
-    value: Location80
-    disabled: false
-  - name: Month
-    value: Month75
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment60
-    disabled: false
-  - name: DateFrom
-    value: DateFrom67
-    disabled: false
-  - name: DateTo
-    value: DateTo77
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID17
-    disabled: false
-  - name: VsConference
-    value: VsConference17
-    disabled: false
-  - name: VsDivision
-    value: VsDivision25
-    disabled: false
-  - name: GameSegment
-    value: GameSegment49
-    disabled: false
-  - name: Period
-    value: Period54
+    value: Period69
     disabled: false
   - name: LastNGames
     value: LastNGames59
     disabled: false
   authentication: {}
   _type: request
-  _id: req_552e134a02e743208e4f7a32c8611d7f
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_3d24dd05adff480e80dcb01fe8bad5df
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
-- name: Playerdashboardbylastngames_GET
+- name: Playerdashboardbygeneralsplits_GET
   method: GET
-  url: http://stats.nba.com/stats/playerdashboardbylastngames
+  url: http://stats.nba.com/stats/playerdashboardbygeneralsplits
   parameters:
   - name: MeasureType
-    value: MeasureType63
+    value: MeasureType31
     disabled: false
   - name: PerMode
-    value: PerMode62
+    value: PerMode14
     disabled: false
   - name: PlusMinus
-    value: PlusMinus44
+    value: PlusMinus17
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust63
+    value: PaceAdjust29
     disabled: false
   - name: Rank
-    value: Rank52
+    value: Rank15
     disabled: false
   - name: Season
-    value: Season71
+    value: Season14
     disabled: false
   - name: SeasonType
-    value: SeasonType57
+    value: SeasonType27
     disabled: false
   - name: PlayerID
-    value: PlayerID20
+    value: PlayerID53
     disabled: false
   - name: Outcome
-    value: Outcome7
+    value: Outcome8
     disabled: false
   - name: Location
-    value: Location0
+    value: Location39
     disabled: false
   - name: Month
-    value: Month7
+    value: Month76
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment73
+    value: SeasonSegment69
     disabled: false
   - name: DateFrom
-    value: DateFrom69
-    disabled: false
-  - name: DateTo
-    value: DateTo98
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID27
-    disabled: false
-  - name: VsConference
-    value: VsConference1
-    disabled: false
-  - name: VsDivision
-    value: VsDivision65
-    disabled: false
-  - name: GameSegment
-    value: GameSegment15
-    disabled: false
-  - name: Period
-    value: Period5
-    disabled: false
-  - name: LastNGames
-    value: LastNGames63
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_cd5a0f7b7f1e4f19b935771a2d0671cf
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashboardbyopponent_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashboardbyopponent
-  parameters:
-  - name: MeasureType
-    value: MeasureType22
-    disabled: false
-  - name: PerMode
-    value: PerMode18
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus73
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust60
-    disabled: false
-  - name: Rank
-    value: Rank68
-    disabled: false
-  - name: Season
-    value: Season10
-    disabled: false
-  - name: SeasonType
-    value: SeasonType62
-    disabled: false
-  - name: PlayerID
-    value: PlayerID36
-    disabled: false
-  - name: Outcome
-    value: Outcome49
-    disabled: false
-  - name: Location
-    value: Location31
-    disabled: false
-  - name: Month
-    value: Month81
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment9
-    disabled: false
-  - name: DateFrom
-    value: DateFrom86
-    disabled: false
-  - name: DateTo
-    value: DateTo52
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID46
-    disabled: false
-  - name: VsConference
-    value: VsConference31
-    disabled: false
-  - name: VsDivision
-    value: VsDivision42
-    disabled: false
-  - name: GameSegment
-    value: GameSegment76
-    disabled: false
-  - name: Period
-    value: Period37
-    disabled: false
-  - name: LastNGames
-    value: LastNGames67
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_14137ea2dd804794906f24d2e4515288
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashboardbyshootingsplits_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashboardbyshootingsplits
-  parameters:
-  - name: MeasureType
-    value: MeasureType96
-    disabled: false
-  - name: PerMode
-    value: PerMode51
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus76
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust24
-    disabled: false
-  - name: Rank
-    value: Rank13
-    disabled: false
-  - name: Season
-    value: Season12
-    disabled: false
-  - name: SeasonType
-    value: SeasonType94
-    disabled: false
-  - name: PlayerID
-    value: PlayerID86
-    disabled: false
-  - name: Outcome
-    value: Outcome15
-    disabled: false
-  - name: Location
-    value: Location67
-    disabled: false
-  - name: Month
-    value: Month89
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment39
-    disabled: false
-  - name: DateFrom
-    value: DateFrom94
-    disabled: false
-  - name: DateTo
-    value: DateTo3
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID74
-    disabled: false
-  - name: VsConference
-    value: VsConference79
-    disabled: false
-  - name: VsDivision
-    value: VsDivision31
-    disabled: false
-  - name: GameSegment
-    value: GameSegment7
-    disabled: false
-  - name: Period
-    value: Period87
-    disabled: false
-  - name: LastNGames
-    value: LastNGames41
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_4ef6ad53bd224b7cb9b5ba8fd1b1a581
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashboardbyteamperformance_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashboardbyteamperformance
-  parameters:
-  - name: MeasureType
-    value: MeasureType69
-    disabled: false
-  - name: PerMode
-    value: PerMode28
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus24
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust54
-    disabled: false
-  - name: Rank
-    value: Rank11
-    disabled: false
-  - name: Season
-    value: Season4
-    disabled: false
-  - name: SeasonType
-    value: SeasonType83
-    disabled: false
-  - name: PlayerID
-    value: PlayerID58
-    disabled: false
-  - name: Outcome
-    value: Outcome69
-    disabled: false
-  - name: Location
-    value: Location40
-    disabled: false
-  - name: Month
-    value: Month69
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment17
-    disabled: false
-  - name: DateFrom
-    value: DateFrom20
-    disabled: false
-  - name: DateTo
-    value: DateTo73
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID51
-    disabled: false
-  - name: VsConference
-    value: VsConference40
-    disabled: false
-  - name: VsDivision
-    value: VsDivision8
-    disabled: false
-  - name: GameSegment
-    value: GameSegment74
-    disabled: false
-  - name: Period
-    value: Period80
-    disabled: false
-  - name: LastNGames
-    value: LastNGames95
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_e900a423efcb4a9d937046c339d5446b
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashboardbyyearoveryear_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashboardbyyearoveryear
-  parameters:
-  - name: MeasureType
-    value: MeasureType26
-    disabled: false
-  - name: PerMode
-    value: PerMode63
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus94
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust7
-    disabled: false
-  - name: Rank
-    value: Rank60
-    disabled: false
-  - name: Season
-    value: Season74
-    disabled: false
-  - name: SeasonType
-    value: SeasonType62
-    disabled: false
-  - name: PlayerID
-    value: PlayerID79
-    disabled: false
-  - name: Outcome
-    value: Outcome52
-    disabled: false
-  - name: Location
-    value: Location91
-    disabled: false
-  - name: Month
-    value: Month51
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment89
-    disabled: false
-  - name: DateFrom
-    value: DateFrom62
+    value: DateFrom56
     disabled: false
   - name: DateTo
     value: DateTo66
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID83
+    value: OpponentTeamID19
     disabled: false
   - name: VsConference
-    value: VsConference6
-    disabled: false
-  - name: VsDivision
-    value: VsDivision80
-    disabled: false
-  - name: GameSegment
-    value: GameSegment41
-    disabled: false
-  - name: Period
-    value: Period47
-    disabled: false
-  - name: LastNGames
-    value: LastNGames78
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_764aaa4354264e108a18094ba3392cde
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashptpass_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashptpass
-  parameters:
-  - name: PerMode
-    value: PerMode52
-    disabled: false
-  - name: Season
-    value: Season39
-    disabled: false
-  - name: SeasonType
-    value: SeasonType55
-    disabled: false
-  - name: PlayerID
-    value: PlayerID50
-    disabled: false
-  - name: TeamID
-    value: TeamID87
-    disabled: false
-  - name: Outcome
-    value: Outcome27
-    disabled: false
-  - name: Location
-    value: Location92
-    disabled: false
-  - name: Month
-    value: Month66
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment42
-    disabled: false
-  - name: DateFrom
-    value: DateFrom83
-    disabled: false
-  - name: DateTo
-    value: DateTo79
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID57
-    disabled: false
-  - name: VsConference
-    value: VsConference75
-    disabled: false
-  - name: VsDivision
-    value: VsDivision22
-    disabled: false
-  - name: LastNGames
-    value: LastNGames12
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_c6d0aed3c3f94495856e09231060d9ad
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashptreb_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashptreb
-  parameters:
-  - name: PerMode
-    value: PerMode55
-    disabled: false
-  - name: Season
-    value: Season69
-    disabled: false
-  - name: SeasonType
-    value: SeasonType46
-    disabled: false
-  - name: PlayerID
-    value: PlayerID57
-    disabled: false
-  - name: TeamID
-    value: TeamID15
-    disabled: false
-  - name: Outcome
-    value: Outcome40
-    disabled: false
-  - name: Location
-    value: Location69
-    disabled: false
-  - name: Month
-    value: Month75
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment68
-    disabled: false
-  - name: DateFrom
-    value: DateFrom42
-    disabled: false
-  - name: DateTo
-    value: DateTo26
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID88
-    disabled: false
-  - name: VsConference
-    value: VsConference0
-    disabled: false
-  - name: VsDivision
-    value: VsDivision72
-    disabled: false
-  - name: GameSegment
-    value: GameSegment70
-    disabled: false
-  - name: Period
-    value: Period25
-    disabled: false
-  - name: LastNGames
-    value: LastNGames13
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_bf07c292382e44caa7eb9b8fc6c4428d
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashptreboundlogs_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashptreboundlogs
-  parameters:
-  - name: Season
-    value: Season15
-    disabled: false
-  - name: SeasonType
-    value: SeasonType31
-    disabled: false
-  - name: PlayerID
-    value: PlayerID85
-    disabled: false
-  - name: TeamID
-    value: TeamID80
-    disabled: false
-  - name: Outcome
-    value: Outcome95
-    disabled: false
-  - name: Location
-    value: Location26
-    disabled: false
-  - name: Month
-    value: Month44
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment14
-    disabled: false
-  - name: DateFrom
-    value: DateFrom30
-    disabled: false
-  - name: DateTo
-    value: DateTo96
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID63
-    disabled: false
-  - name: VsConference
-    value: VsConference11
-    disabled: false
-  - name: VsDivision
-    value: VsDivision63
-    disabled: false
-  - name: GameSegment
-    value: GameSegment11
-    disabled: false
-  - name: Period
-    value: Period74
-    disabled: false
-  - name: LastNGames
-    value: LastNGames86
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_e681ca0ff1f041778ac3e0dc6fff9481
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashptshotdefend_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashptshotdefend
-  parameters:
-  - name: PerMode
-    value: PerMode4
-    disabled: false
-  - name: Season
-    value: Season63
-    disabled: false
-  - name: SeasonType
-    value: SeasonType38
-    disabled: false
-  - name: PlayerID
-    value: PlayerID40
-    disabled: false
-  - name: TeamID
-    value: TeamID19
-    disabled: false
-  - name: Outcome
-    value: Outcome3
-    disabled: false
-  - name: Location
-    value: Location29
-    disabled: false
-  - name: Month
-    value: Month59
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment73
-    disabled: false
-  - name: DateFrom
-    value: DateFrom10
-    disabled: false
-  - name: DateTo
-    value: DateTo4
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID23
-    disabled: false
-  - name: VsConference
-    value: VsConference1
-    disabled: false
-  - name: VsDivision
-    value: VsDivision94
-    disabled: false
-  - name: GameSegment
-    value: GameSegment74
-    disabled: false
-  - name: Period
-    value: Period44
-    disabled: false
-  - name: LastNGames
-    value: LastNGames75
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_34fc14357c6c497dba58e30b3247225b
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashptshotlog_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashptshotlog
-  parameters:
-  - name: LeagueID
-    value: LeagueID47
-    disabled: false
-  - name: Season
-    value: Season72
-    disabled: false
-  - name: SeasonType
-    value: SeasonType65
-    disabled: false
-  - name: PlayerID
-    value: PlayerID2
-    disabled: false
-  - name: TeamID
-    value: TeamID52
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_9072fe8b6eee45faacd51e3b6dd52815
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerdashptshots_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerdashptshots
-  parameters:
-  - name: PerMode
-    value: PerMode98
-    disabled: false
-  - name: Season
-    value: Season63
-    disabled: false
-  - name: SeasonType
-    value: SeasonType71
-    disabled: false
-  - name: PlayerID
-    value: PlayerID53
-    disabled: false
-  - name: TeamID
-    value: TeamID4
-    disabled: false
-  - name: Outcome
-    value: Outcome4
-    disabled: false
-  - name: Location
-    value: Location71
-    disabled: false
-  - name: Month
-    value: Month54
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment92
-    disabled: false
-  - name: DateFrom
-    value: DateFrom98
-    disabled: false
-  - name: DateTo
-    value: DateTo93
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID89
-    disabled: false
-  - name: VsConference
-    value: VsConference65
+    value: VsConference84
     disabled: false
   - name: VsDivision
     value: VsDivision5
@@ -2342,1582 +1682,2242 @@ resources:
     value: GameSegment23
     disabled: false
   - name: Period
-    value: Period56
+    value: Period93
     disabled: false
   - name: LastNGames
-    value: LastNGames7
+    value: LastNGames72
     disabled: false
   authentication: {}
   _type: request
-  _id: req_72d65bb65a0f4a7db7fc8727a7a7e9c2
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_399228c5d98b43729bea759e57a1f6b6
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
-- name: Playergamelog_GET
+- name: Playerdashboardbylastngames_GET
   method: GET
-  url: http://stats.nba.com/stats/playergamelog
+  url: http://stats.nba.com/stats/playerdashboardbylastngames
   parameters:
-  - name: PlayerID
-    value: PlayerID38
-    disabled: false
-  - name: Season
-    value: Season57
-    disabled: false
-  - name: SeasonType
-    value: SeasonType35
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_6c0d5c8482894ddfb4fb165139529bc2
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerprofile_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerprofile
-  parameters:
-  - name: LeagueID
-    value: LeagueID12
-    disabled: false
-  - name: PlayerID
-    value: PlayerID91
-    disabled: false
-  - name: Season
-    value: Season66
-    disabled: false
-  - name: SeasonType
-    value: SeasonType64
-    disabled: false
-  - name: GraphStartSeason
-    value: GraphStartSeason18
-    disabled: false
-  - name: GraphEndSeason
-    value: GraphEndSeason95
-    disabled: false
-  - name: GraphStat
-    value: GraphStat66
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_79e514753b4646d0a7942980c9e49e5a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playerprofilev2_GET
-  method: GET
-  url: http://stats.nba.com/stats/playerprofilev2
-  parameters:
-  - name: PerMode
-    value: PerMode47
-    disabled: false
-  - name: PlayerID
-    value: PlayerID11
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_9b97407674044ac98067e4ee3e740e64
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playersvsplayers_GET
-  method: GET
-  url: http://stats.nba.com/stats/playersvsplayers
-  parameters:
-  - name: PlayerTeamID
-    value: PlayerTeamID29
-    disabled: false
-  - name: PlayerID1
-    value: PlayerID175
-    disabled: false
-  - name: PlayerID2
-    value: PlayerID272
-    disabled: false
-  - name: PlayerID3
-    value: PlayerID341
-    disabled: false
-  - name: PlayerID4
-    value: PlayerID447
-    disabled: false
-  - name: PlayerID5
-    value: PlayerID551
-    disabled: false
-  - name: VsTeamID
-    value: VsTeamID53
-    disabled: false
-  - name: VsPlayerID1
-    value: VsPlayerID181
-    disabled: false
-  - name: VsPlayerID2
-    value: VsPlayerID257
-    disabled: false
-  - name: VsPlayerID3
-    value: VsPlayerID356
-    disabled: false
-  - name: VsPlayerID4
-    value: VsPlayerID48
-    disabled: false
-  - name: VsPlayerID5
-    value: VsPlayerID589
-    disabled: false
-  - name: SeasonType
-    value: SeasonType16
-    disabled: false
   - name: MeasureType
-    value: MeasureType50
+    value: MeasureType16
     disabled: false
   - name: PerMode
-    value: PerMode69
+    value: PerMode57
     disabled: false
   - name: PlusMinus
-    value: PlusMinus12
+    value: PlusMinus67
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust40
+    value: PaceAdjust23
     disabled: false
   - name: Rank
-    value: Rank52
+    value: Rank14
     disabled: false
   - name: Season
-    value: Season61
-    disabled: false
-  - name: Outcome
-    value: Outcome40
-    disabled: false
-  - name: Location
-    value: Location73
-    disabled: false
-  - name: Month
-    value: Month25
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment82
-    disabled: false
-  - name: DateFrom
-    value: DateFrom82
-    disabled: false
-  - name: DateTo
-    value: DateTo94
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID20
-    disabled: false
-  - name: VsConference
-    value: VsConference90
-    disabled: false
-  - name: VsDivision
-    value: VsDivision98
-    disabled: false
-  - name: GameSegment
-    value: GameSegment91
-    disabled: false
-  - name: Period
-    value: Period6
-    disabled: false
-  - name: LastNGames
-    value: LastNGames44
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_21e815812ccb42dfbdd7b6c84f5dd93b
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playervsplayer_GET
-  method: GET
-  url: http://stats.nba.com/stats/playervsplayer
-  parameters:
-  - name: PlayerID
-    value: PlayerID71
-    disabled: false
-  - name: VsPlayerID
-    value: VsPlayerID98
+    value: Season47
     disabled: false
   - name: SeasonType
-    value: SeasonType38
-    disabled: false
-  - name: MeasureType
-    value: MeasureType38
-    disabled: false
-  - name: PerMode
-    value: PerMode79
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus14
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust64
-    disabled: false
-  - name: Rank
-    value: Rank6
-    disabled: false
-  - name: Season
-    value: Season33
-    disabled: false
-  - name: Outcome
-    value: Outcome49
-    disabled: false
-  - name: Location
-    value: Location4
-    disabled: false
-  - name: Month
-    value: Month10
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment28
-    disabled: false
-  - name: DateFrom
-    value: DateFrom4
-    disabled: false
-  - name: DateTo
-    value: DateTo56
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID98
-    disabled: false
-  - name: VsConference
-    value: VsConference69
-    disabled: false
-  - name: VsDivision
-    value: VsDivision97
-    disabled: false
-  - name: GameSegment
-    value: GameSegment12
-    disabled: false
-  - name: Period
-    value: Period91
-    disabled: false
-  - name: LastNGames
-    value: LastNGames49
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_5b421ab294404c6abb23511c0fbfc7f7
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Playoffpicture_GET
-  method: GET
-  url: http://stats.nba.com/stats/playoffpicture
-  parameters:
-  - name: LeagueID
-    value: LeagueID62
-    disabled: false
-  - name: SeasonID
-    value: SeasonID72
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_63fcb500ab4640e5b1fd99218f442bb4
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Scoreboard_GET
-  method: GET
-  url: http://stats.nba.com/stats/scoreboard
-  parameters:
-  - name: GameDate
-    value: GameDate73
-    disabled: false
-  - name: LeagueID
-    value: LeagueID64
-    disabled: false
-  - name: DayOffset
-    value: DayOffset89
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_3143ccc13e454d84b199367b9245213a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: ScoreboardV2_GET
-  method: GET
-  url: http://stats.nba.com/stats/scoreboardV2
-  parameters:
-  - name: GameDate
-    value: GameDate92
-    disabled: false
-  - name: LeagueID
-    value: LeagueID19
-    disabled: false
-  - name: DayOffset
-    value: DayOffset11
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_3db2fa5d68fe4493922e947a87688cc6
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Shotchartdetail_GET
-  method: GET
-  url: http://stats.nba.com/stats/shotchartdetail
-  parameters:
-  - name: SeasonType
-    value: SeasonType78
-    disabled: false
-  - name: TeamID
-    value: TeamID66
+    value: SeasonType58
     disabled: false
   - name: PlayerID
-    value: PlayerID38
-    disabled: false
-  - name: GameID
-    value: GameID76
+    value: PlayerID62
     disabled: false
   - name: Outcome
-    value: Outcome19
+    value: Outcome2
     disabled: false
   - name: Location
-    value: Location25
+    value: Location49
     disabled: false
   - name: Month
-    value: Month89
+    value: Month84
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment31
+    value: SeasonSegment30
     disabled: false
   - name: DateFrom
-    value: DateFrom79
+    value: DateFrom25
     disabled: false
   - name: DateTo
     value: DateTo29
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID66
+    value: OpponentTeamID64
     disabled: false
   - name: VsConference
-    value: VsConference8
+    value: VsConference92
     disabled: false
   - name: VsDivision
-    value: VsDivision58
-    disabled: false
-  - name: Position
-    value: Position79
-    disabled: false
-  - name: RookieYear
-    value: RookieYear86
+    value: VsDivision15
     disabled: false
   - name: GameSegment
-    value: GameSegment43
+    value: GameSegment25
     disabled: false
   - name: Period
-    value: Period18
-    disabled: false
-  - name: LastNGames
-    value: LastNGames22
-    disabled: false
-  - name: ContextMeasure
-    value: ContextMeasure35
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_e6352c43e37e4796bc7e685074a5a530
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Shotchartlineupdetail_GET
-  method: GET
-  url: http://stats.nba.com/stats/shotchartlineupdetail
-  parameters:
-  - name: LeagueID
-    value: LeagueID90
-    disabled: false
-  - name: Season
-    value: Season78
-    disabled: false
-  - name: SeasonType
-    value: SeasonType82
-    disabled: false
-  - name: TeamID
-    value: TeamID3
-    disabled: false
-  - name: Outcome
-    value: Outcome56
-    disabled: false
-  - name: Location
-    value: Location19
-    disabled: false
-  - name: Month
-    value: Month43
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment62
-    disabled: false
-  - name: DateFrom
-    value: DateFrom12
-    disabled: false
-  - name: DateTo
-    value: DateTo15
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID84
-    disabled: false
-  - name: VsConference
-    value: VsConference19
-    disabled: false
-  - name: VsDivision
-    value: VsDivision78
-    disabled: false
-  - name: GameSegment
-    value: GameSegment43
-    disabled: false
-  - name: Period
-    value: Period75
-    disabled: false
-  - name: LastNGames
-    value: LastNGames3
-    disabled: false
-  - name: GameID
-    value: GameID6
-    disabled: false
-  - name: GROUP_ID
-    value: GROUP_ID22
-    disabled: false
-  - name: ContextMeasure
-    value: ContextMeasure56
-    disabled: false
-  - name: ContextFilter
-    value: ContextFilter73
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_fd5cfe34c5854c259f8ecb338436c268
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbyclutch_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbyclutch
-  parameters:
-  - name: TeamID
-    value: TeamID21
-    disabled: false
-  - name: MeasureType
-    value: MeasureType36
-    disabled: false
-  - name: PerMode
-    value: PerMode79
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus65
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust86
-    disabled: false
-  - name: Rank
-    value: Rank68
-    disabled: false
-  - name: Season
-    value: Season93
-    disabled: false
-  - name: SeasonType
-    value: SeasonType7
-    disabled: false
-  - name: Outcome
-    value: Outcome1
-    disabled: false
-  - name: Location
-    value: Location34
-    disabled: false
-  - name: Month
-    value: Month67
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment70
-    disabled: false
-  - name: DateFrom
-    value: DateFrom43
-    disabled: false
-  - name: DateTo
-    value: DateTo90
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID38
-    disabled: false
-  - name: VsConference
-    value: VsConference41
-    disabled: false
-  - name: VsDivision
-    value: VsDivision20
-    disabled: false
-  - name: GameSegment
-    value: GameSegment31
-    disabled: false
-  - name: Period
-    value: Period31
-    disabled: false
-  - name: LastNGames
-    value: LastNGames19
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_fc4b2c3255374c18946362f137cac8d2
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbygamesplits_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbygamesplits
-  parameters:
-  - name: TeamID
-    value: TeamID96
-    disabled: false
-  - name: MeasureType
-    value: MeasureType9
-    disabled: false
-  - name: PerMode
-    value: PerMode35
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus3
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust67
-    disabled: false
-  - name: Rank
-    value: Rank65
-    disabled: false
-  - name: Season
-    value: Season13
-    disabled: false
-  - name: SeasonType
-    value: SeasonType6
-    disabled: false
-  - name: Outcome
-    value: Outcome84
-    disabled: false
-  - name: Location
-    value: Location2
-    disabled: false
-  - name: Month
-    value: Month56
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment41
-    disabled: false
-  - name: DateFrom
-    value: DateFrom2
-    disabled: false
-  - name: DateTo
-    value: DateTo64
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID42
-    disabled: false
-  - name: VsConference
-    value: VsConference49
-    disabled: false
-  - name: VsDivision
-    value: VsDivision43
-    disabled: false
-  - name: GameSegment
-    value: GameSegment41
-    disabled: false
-  - name: Period
-    value: Period95
-    disabled: false
-  - name: LastNGames
-    value: LastNGames97
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_870ae0ab50d047a5afd506388a3dd049
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbygeneralsplits_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbygeneralsplits
-  parameters:
-  - name: SeasonType
-    value: SeasonType66
-    disabled: false
-  - name: TeamID
-    value: TeamID29
-    disabled: false
-  - name: MeasureType
-    value: MeasureType38
-    disabled: false
-  - name: PerMode
-    value: PerMode63
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus29
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust86
-    disabled: false
-  - name: Rank
-    value: Rank66
-    disabled: false
-  - name: Season
-    value: Season72
-    disabled: false
-  - name: Outcome
-    value: Outcome76
-    disabled: false
-  - name: Location
-    value: Location74
-    disabled: false
-  - name: Month
-    value: Month0
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment80
-    disabled: false
-  - name: DateFrom
-    value: DateFrom96
-    disabled: false
-  - name: DateTo
-    value: DateTo2
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID68
-    disabled: false
-  - name: VsConference
-    value: VsConference97
-    disabled: false
-  - name: VsDivision
-    value: VsDivision55
-    disabled: false
-  - name: GameSegment
-    value: GameSegment98
-    disabled: false
-  - name: Period
-    value: Period54
-    disabled: false
-  - name: LastNGames
-    value: LastNGames42
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_fb215f2d0641417783cade1e6812b208
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbylastngames_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbylastngames
-  parameters:
-  - name: TeamID
-    value: TeamID15
-    disabled: false
-  - name: MeasureType
-    value: MeasureType59
-    disabled: false
-  - name: PerMode
-    value: PerMode96
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus54
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust4
-    disabled: false
-  - name: Rank
-    value: Rank97
-    disabled: false
-  - name: Season
-    value: Season74
-    disabled: false
-  - name: SeasonType
-    value: SeasonType79
-    disabled: false
-  - name: Outcome
-    value: Outcome83
-    disabled: false
-  - name: Location
-    value: Location56
-    disabled: false
-  - name: Month
-    value: Month52
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment93
-    disabled: false
-  - name: DateFrom
-    value: DateFrom98
-    disabled: false
-  - name: DateTo
-    value: DateTo50
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID83
-    disabled: false
-  - name: VsConference
-    value: VsConference43
-    disabled: false
-  - name: VsDivision
-    value: VsDivision52
-    disabled: false
-  - name: GameSegment
-    value: GameSegment82
-    disabled: false
-  - name: Period
-    value: Period9
+    value: Period91
     disabled: false
   - name: LastNGames
     value: LastNGames39
     disabled: false
   authentication: {}
   _type: request
-  _id: req_92eda1eda1f542e9aba248128592344a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_1d5fe974033a4d13b2a00a3a7f66f417
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
-- name: Teamdashboardbyopponent_GET
+- name: Playerdashboardbyopponent_GET
   method: GET
-  url: http://stats.nba.com/stats/teamdashboardbyopponent
+  url: http://stats.nba.com/stats/playerdashboardbyopponent
   parameters:
-  - name: TeamID
-    value: TeamID9
-    disabled: false
   - name: MeasureType
-    value: MeasureType64
+    value: MeasureType85
     disabled: false
   - name: PerMode
-    value: PerMode23
+    value: PerMode20
     disabled: false
   - name: PlusMinus
-    value: PlusMinus88
+    value: PlusMinus78
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust78
+    value: PaceAdjust69
     disabled: false
   - name: Rank
-    value: Rank40
+    value: Rank1
     disabled: false
   - name: Season
-    value: Season37
+    value: Season19
     disabled: false
   - name: SeasonType
-    value: SeasonType29
+    value: SeasonType69
+    disabled: false
+  - name: PlayerID
+    value: PlayerID78
     disabled: false
   - name: Outcome
-    value: Outcome79
+    value: Outcome84
     disabled: false
   - name: Location
-    value: Location62
+    value: Location39
     disabled: false
   - name: Month
-    value: Month12
+    value: Month4
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment60
+    value: SeasonSegment48
     disabled: false
   - name: DateFrom
-    value: DateFrom45
-    disabled: false
-  - name: DateTo
-    value: DateTo75
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID35
-    disabled: false
-  - name: VsConference
-    value: VsConference11
-    disabled: false
-  - name: VsDivision
-    value: VsDivision66
-    disabled: false
-  - name: GameSegment
-    value: GameSegment88
-    disabled: false
-  - name: Period
-    value: Period17
-    disabled: false
-  - name: LastNGames
-    value: LastNGames42
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_690b0280b2184fd38ef36e7e38dc28df
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbyshootingsplits_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbyshootingsplits
-  parameters:
-  - name: TeamID
-    value: TeamID24
-    disabled: false
-  - name: MeasureType
-    value: MeasureType23
-    disabled: false
-  - name: PerMode
-    value: PerMode1
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus88
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust11
-    disabled: false
-  - name: Rank
-    value: Rank37
-    disabled: false
-  - name: Season
-    value: Season50
-    disabled: false
-  - name: SeasonType
-    value: SeasonType52
-    disabled: false
-  - name: Outcome
-    value: Outcome93
-    disabled: false
-  - name: Location
-    value: Location83
-    disabled: false
-  - name: Month
-    value: Month14
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment46
-    disabled: false
-  - name: DateFrom
-    value: DateFrom16
-    disabled: false
-  - name: DateTo
-    value: DateTo23
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID70
-    disabled: false
-  - name: VsConference
-    value: VsConference67
-    disabled: false
-  - name: VsDivision
-    value: VsDivision80
-    disabled: false
-  - name: GameSegment
-    value: GameSegment20
-    disabled: false
-  - name: Period
-    value: Period55
-    disabled: false
-  - name: LastNGames
-    value: LastNGames7
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_29e91e7c81cc4845b600f25dff96960f
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbyteamperformance_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbyteamperformance
-  parameters:
-  - name: TeamID
-    value: TeamID79
-    disabled: false
-  - name: MeasureType
-    value: MeasureType70
-    disabled: false
-  - name: PerMode
-    value: PerMode22
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus25
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust95
-    disabled: false
-  - name: Rank
-    value: Rank10
-    disabled: false
-  - name: Season
-    value: Season0
-    disabled: false
-  - name: SeasonType
-    value: SeasonType79
-    disabled: false
-  - name: Outcome
-    value: Outcome66
-    disabled: false
-  - name: Location
-    value: Location60
-    disabled: false
-  - name: Month
-    value: Month43
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment34
-    disabled: false
-  - name: DateFrom
-    value: DateFrom95
-    disabled: false
-  - name: DateTo
-    value: DateTo88
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID28
-    disabled: false
-  - name: VsConference
-    value: VsConference79
-    disabled: false
-  - name: VsDivision
-    value: VsDivision21
-    disabled: false
-  - name: GameSegment
-    value: GameSegment59
-    disabled: false
-  - name: Period
-    value: Period97
-    disabled: false
-  - name: LastNGames
-    value: LastNGames0
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_d24d52402bd847709cdd897bddf24c9a
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashboardbyyearoveryear_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashboardbyyearoveryear
-  parameters:
-  - name: TeamID
-    value: TeamID6
-    disabled: false
-  - name: MeasureType
-    value: MeasureType50
-    disabled: false
-  - name: PerMode
-    value: PerMode74
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus87
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust91
-    disabled: false
-  - name: Rank
-    value: Rank18
-    disabled: false
-  - name: Season
-    value: Season68
-    disabled: false
-  - name: SeasonType
-    value: SeasonType19
-    disabled: false
-  - name: Outcome
-    value: Outcome95
-    disabled: false
-  - name: Location
-    value: Location97
-    disabled: false
-  - name: Month
-    value: Month60
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment90
-    disabled: false
-  - name: DateFrom
-    value: DateFrom14
-    disabled: false
-  - name: DateTo
-    value: DateTo23
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID66
-    disabled: false
-  - name: VsConference
-    value: VsConference58
-    disabled: false
-  - name: VsDivision
-    value: VsDivision60
-    disabled: false
-  - name: GameSegment
-    value: GameSegment17
-    disabled: false
-  - name: Period
-    value: Period94
-    disabled: false
-  - name: LastNGames
-    value: LastNGames1
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_2a9deb590e9b459d843111ea7fe106fc
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashlineups_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashlineups
-  parameters:
-  - name: GroupQuantity
-    value: GroupQuantity45
-    disabled: false
-  - name: GameID
-    value: GameID9
-    disabled: false
-  - name: SeasonType
-    value: SeasonType30
-    disabled: false
-  - name: TeamID
-    value: TeamID14
-    disabled: false
-  - name: MeasureType
-    value: MeasureType1
-    disabled: false
-  - name: PerMode
-    value: PerMode48
-    disabled: false
-  - name: PlusMinus
-    value: PlusMinus80
-    disabled: false
-  - name: PaceAdjust
-    value: PaceAdjust68
-    disabled: false
-  - name: Rank
-    value: Rank24
-    disabled: false
-  - name: Season
-    value: Season93
-    disabled: false
-  - name: Outcome
-    value: Outcome25
-    disabled: false
-  - name: Location
-    value: Location84
-    disabled: false
-  - name: Month
-    value: Month73
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment14
-    disabled: false
-  - name: DateFrom
-    value: DateFrom46
-    disabled: false
-  - name: DateTo
-    value: DateTo11
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID93
-    disabled: false
-  - name: VsConference
-    value: VsConference68
-    disabled: false
-  - name: VsDivision
-    value: VsDivision83
-    disabled: false
-  - name: GameSegment
-    value: GameSegment42
-    disabled: false
-  - name: Period
-    value: Period61
-    disabled: false
-  - name: LastNGames
-    value: LastNGames89
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_664fc493e12f4cf4ac4be959f34059c8
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashptpass_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashptpass
-  parameters:
-  - name: PerMode
-    value: PerMode77
-    disabled: false
-  - name: Season
-    value: Season8
-    disabled: false
-  - name: SeasonType
-    value: SeasonType77
-    disabled: false
-  - name: TeamID
-    value: TeamID5
-    disabled: false
-  - name: Outcome
-    value: Outcome12
-    disabled: false
-  - name: Location
-    value: Location45
-    disabled: false
-  - name: Month
-    value: Month32
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment19
-    disabled: false
-  - name: DateFrom
-    value: DateFrom47
-    disabled: false
-  - name: DateTo
-    value: DateTo89
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID15
-    disabled: false
-  - name: VsConference
-    value: VsConference12
-    disabled: false
-  - name: VsDivision
-    value: VsDivision6
-    disabled: false
-  - name: LastNGames
-    value: LastNGames64
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_4526c322cb8e491999c04b181a079526
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashptreb_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashptreb
-  parameters:
-  - name: PerMode
-    value: PerMode55
-    disabled: false
-  - name: Season
-    value: Season10
-    disabled: false
-  - name: SeasonType
-    value: SeasonType18
-    disabled: false
-  - name: TeamID
-    value: TeamID5
-    disabled: false
-  - name: Outcome
-    value: Outcome64
-    disabled: false
-  - name: Location
-    value: Location40
-    disabled: false
-  - name: Month
-    value: Month3
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment27
-    disabled: false
-  - name: DateFrom
-    value: DateFrom44
-    disabled: false
-  - name: DateTo
-    value: DateTo35
-    disabled: false
-  - name: OpponentTeamID
-    value: OpponentTeamID54
-    disabled: false
-  - name: VsConference
-    value: VsConference58
-    disabled: false
-  - name: VsDivision
-    value: VsDivision30
-    disabled: false
-  - name: GameSegment
-    value: GameSegment9
-    disabled: false
-  - name: Period
-    value: Period54
-    disabled: false
-  - name: LastNGames
-    value: LastNGames93
-    disabled: false
-  authentication: {}
-  _type: request
-  _id: req_40b440afa6874a3f9d61c77197f9407d
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
-  description: ''
-- name: Teamdashptshots_GET
-  method: GET
-  url: http://stats.nba.com/stats/teamdashptshots
-  parameters:
-  - name: PerMode
-    value: PerMode42
-    disabled: false
-  - name: Season
-    value: Season35
-    disabled: false
-  - name: SeasonType
-    value: SeasonType3
-    disabled: false
-  - name: TeamID
-    value: TeamID37
-    disabled: false
-  - name: Outcome
-    value: Outcome92
-    disabled: false
-  - name: Location
-    value: Location38
-    disabled: false
-  - name: Month
-    value: Month26
-    disabled: false
-  - name: SeasonSegment
-    value: SeasonSegment54
-    disabled: false
-  - name: DateFrom
-    value: DateFrom88
+    value: DateFrom5
     disabled: false
   - name: DateTo
     value: DateTo64
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID37
+    value: OpponentTeamID53
     disabled: false
   - name: VsConference
-    value: VsConference35
+    value: VsConference85
     disabled: false
   - name: VsDivision
-    value: VsDivision61
+    value: VsDivision79
     disabled: false
   - name: GameSegment
-    value: GameSegment52
+    value: GameSegment24
     disabled: false
   - name: Period
-    value: Period10
+    value: Period8
+    disabled: false
+  - name: LastNGames
+    value: LastNGames26
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_bb4a201133ad447eb9a5db6a04b1f5df
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashboardbyshootingsplits_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashboardbyshootingsplits
+  parameters:
+  - name: MeasureType
+    value: MeasureType41
+    disabled: false
+  - name: PerMode
+    value: PerMode27
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus0
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust13
+    disabled: false
+  - name: Rank
+    value: Rank86
+    disabled: false
+  - name: Season
+    value: Season19
+    disabled: false
+  - name: SeasonType
+    value: SeasonType23
+    disabled: false
+  - name: PlayerID
+    value: PlayerID90
+    disabled: false
+  - name: Outcome
+    value: Outcome67
+    disabled: false
+  - name: Location
+    value: Location6
+    disabled: false
+  - name: Month
+    value: Month15
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment5
+    disabled: false
+  - name: DateFrom
+    value: DateFrom17
+    disabled: false
+  - name: DateTo
+    value: DateTo34
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID36
+    disabled: false
+  - name: VsConference
+    value: VsConference55
+    disabled: false
+  - name: VsDivision
+    value: VsDivision67
+    disabled: false
+  - name: GameSegment
+    value: GameSegment5
+    disabled: false
+  - name: Period
+    value: Period12
+    disabled: false
+  - name: LastNGames
+    value: LastNGames58
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_ee7d5fde1fe841209969fa28268cf3bf
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashboardbyteamperformance_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashboardbyteamperformance
+  parameters:
+  - name: MeasureType
+    value: MeasureType62
+    disabled: false
+  - name: PerMode
+    value: PerMode56
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus83
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust0
+    disabled: false
+  - name: Rank
+    value: Rank2
+    disabled: false
+  - name: Season
+    value: Season76
+    disabled: false
+  - name: SeasonType
+    value: SeasonType86
+    disabled: false
+  - name: PlayerID
+    value: PlayerID33
+    disabled: false
+  - name: Outcome
+    value: Outcome12
+    disabled: false
+  - name: Location
+    value: Location57
+    disabled: false
+  - name: Month
+    value: Month27
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment92
+    disabled: false
+  - name: DateFrom
+    value: DateFrom61
+    disabled: false
+  - name: DateTo
+    value: DateTo46
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID47
+    disabled: false
+  - name: VsConference
+    value: VsConference37
+    disabled: false
+  - name: VsDivision
+    value: VsDivision19
+    disabled: false
+  - name: GameSegment
+    value: GameSegment36
+    disabled: false
+  - name: Period
+    value: Period82
     disabled: false
   - name: LastNGames
     value: LastNGames84
     disabled: false
   authentication: {}
   _type: request
-  _id: req_77f903d47e2f45ecaf72d5ec35906c82
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_89f798d338874b5c84661aeb06dbd464
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashboardbyyearoveryear_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashboardbyyearoveryear
+  parameters:
+  - name: MeasureType
+    value: MeasureType21
+    disabled: false
+  - name: PerMode
+    value: PerMode72
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus14
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust6
+    disabled: false
+  - name: Rank
+    value: Rank72
+    disabled: false
+  - name: Season
+    value: Season9
+    disabled: false
+  - name: SeasonType
+    value: SeasonType74
+    disabled: false
+  - name: PlayerID
+    value: PlayerID52
+    disabled: false
+  - name: Outcome
+    value: Outcome71
+    disabled: false
+  - name: Location
+    value: Location76
+    disabled: false
+  - name: Month
+    value: Month96
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment83
+    disabled: false
+  - name: DateFrom
+    value: DateFrom68
+    disabled: false
+  - name: DateTo
+    value: DateTo12
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID26
+    disabled: false
+  - name: VsConference
+    value: VsConference64
+    disabled: false
+  - name: VsDivision
+    value: VsDivision90
+    disabled: false
+  - name: GameSegment
+    value: GameSegment31
+    disabled: false
+  - name: Period
+    value: Period2
+    disabled: false
+  - name: LastNGames
+    value: LastNGames12
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_9a4546a0e610453a9fc683d085a52bbe
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashptpass_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashptpass
+  parameters:
+  - name: PerMode
+    value: PerMode6
+    disabled: false
+  - name: Season
+    value: Season76
+    disabled: false
+  - name: SeasonType
+    value: SeasonType59
+    disabled: false
+  - name: PlayerID
+    value: PlayerID9
+    disabled: false
+  - name: TeamID
+    value: TeamID43
+    disabled: false
+  - name: Outcome
+    value: Outcome57
+    disabled: false
+  - name: Location
+    value: Location97
+    disabled: false
+  - name: Month
+    value: Month74
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment73
+    disabled: false
+  - name: DateFrom
+    value: DateFrom69
+    disabled: false
+  - name: DateTo
+    value: DateTo96
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID85
+    disabled: false
+  - name: VsConference
+    value: VsConference88
+    disabled: false
+  - name: VsDivision
+    value: VsDivision6
+    disabled: false
+  - name: LastNGames
+    value: LastNGames60
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_2eccc8bccb874b33aa130e9ddbfde25d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashptreb_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashptreb
+  parameters:
+  - name: PerMode
+    value: PerMode26
+    disabled: false
+  - name: Season
+    value: Season93
+    disabled: false
+  - name: SeasonType
+    value: SeasonType73
+    disabled: false
+  - name: PlayerID
+    value: PlayerID98
+    disabled: false
+  - name: TeamID
+    value: TeamID89
+    disabled: false
+  - name: Outcome
+    value: Outcome97
+    disabled: false
+  - name: Location
+    value: Location10
+    disabled: false
+  - name: Month
+    value: Month47
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment41
+    disabled: false
+  - name: DateFrom
+    value: DateFrom64
+    disabled: false
+  - name: DateTo
+    value: DateTo46
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID91
+    disabled: false
+  - name: VsConference
+    value: VsConference29
+    disabled: false
+  - name: VsDivision
+    value: VsDivision56
+    disabled: false
+  - name: GameSegment
+    value: GameSegment7
+    disabled: false
+  - name: Period
+    value: Period12
+    disabled: false
+  - name: LastNGames
+    value: LastNGames97
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_84c57d934f9d4f9f9be1f3ed75272910
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashptreboundlogs_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashptreboundlogs
+  parameters:
+  - name: Season
+    value: Season71
+    disabled: false
+  - name: SeasonType
+    value: SeasonType66
+    disabled: false
+  - name: PlayerID
+    value: PlayerID21
+    disabled: false
+  - name: TeamID
+    value: TeamID53
+    disabled: false
+  - name: Outcome
+    value: Outcome53
+    disabled: false
+  - name: Location
+    value: Location70
+    disabled: false
+  - name: Month
+    value: Month51
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment34
+    disabled: false
+  - name: DateFrom
+    value: DateFrom83
+    disabled: false
+  - name: DateTo
+    value: DateTo57
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID77
+    disabled: false
+  - name: VsConference
+    value: VsConference23
+    disabled: false
+  - name: VsDivision
+    value: VsDivision24
+    disabled: false
+  - name: GameSegment
+    value: GameSegment38
+    disabled: false
+  - name: Period
+    value: Period44
+    disabled: false
+  - name: LastNGames
+    value: LastNGames51
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_efee8e7d3f6f47d1a96b8c4bb6613887
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashptshotdefend_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashptshotdefend
+  parameters:
+  - name: PerMode
+    value: PerMode11
+    disabled: false
+  - name: Season
+    value: Season39
+    disabled: false
+  - name: SeasonType
+    value: SeasonType0
+    disabled: false
+  - name: PlayerID
+    value: PlayerID24
+    disabled: false
+  - name: TeamID
+    value: TeamID2
+    disabled: false
+  - name: Outcome
+    value: Outcome35
+    disabled: false
+  - name: Location
+    value: Location95
+    disabled: false
+  - name: Month
+    value: Month2
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment6
+    disabled: false
+  - name: DateFrom
+    value: DateFrom65
+    disabled: false
+  - name: DateTo
+    value: DateTo3
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID71
+    disabled: false
+  - name: VsConference
+    value: VsConference81
+    disabled: false
+  - name: VsDivision
+    value: VsDivision89
+    disabled: false
+  - name: GameSegment
+    value: GameSegment53
+    disabled: false
+  - name: Period
+    value: Period39
+    disabled: false
+  - name: LastNGames
+    value: LastNGames43
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_aa3d618d24ab4974a2db6120c2545213
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashptshotlog_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashptshotlog
+  parameters:
+  - name: LeagueID
+    value: LeagueID59
+    disabled: false
+  - name: Season
+    value: Season69
+    disabled: false
+  - name: SeasonType
+    value: SeasonType76
+    disabled: false
+  - name: PlayerID
+    value: PlayerID61
+    disabled: false
+  - name: TeamID
+    value: TeamID92
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_114b84843586428aa83eca8f7cf587d9
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerdashptshots_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerdashptshots
+  parameters:
+  - name: PerMode
+    value: PerMode21
+    disabled: false
+  - name: Season
+    value: Season26
+    disabled: false
+  - name: SeasonType
+    value: SeasonType32
+    disabled: false
+  - name: PlayerID
+    value: PlayerID82
+    disabled: false
+  - name: TeamID
+    value: TeamID5
+    disabled: false
+  - name: Outcome
+    value: Outcome56
+    disabled: false
+  - name: Location
+    value: Location65
+    disabled: false
+  - name: Month
+    value: Month44
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment50
+    disabled: false
+  - name: DateFrom
+    value: DateFrom73
+    disabled: false
+  - name: DateTo
+    value: DateTo71
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID49
+    disabled: false
+  - name: VsConference
+    value: VsConference22
+    disabled: false
+  - name: VsDivision
+    value: VsDivision79
+    disabled: false
+  - name: GameSegment
+    value: GameSegment23
+    disabled: false
+  - name: Period
+    value: Period78
+    disabled: false
+  - name: LastNGames
+    value: LastNGames18
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_d9e38a78751d4c75bee31ebf4f57a6df
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playergamelog_GET
+  method: GET
+  url: http://stats.nba.com/stats/playergamelog
+  parameters:
+  - name: PlayerID
+    value: PlayerID58
+    disabled: false
+  - name: Season
+    value: Season68
+    disabled: false
+  - name: SeasonType
+    value: SeasonType81
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_6e32d73586e642c39426cf8ca2404c9b
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerprofile_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerprofile
+  parameters:
+  - name: LeagueID
+    value: LeagueID72
+    disabled: false
+  - name: PlayerID
+    value: PlayerID55
+    disabled: false
+  - name: Season
+    value: Season78
+    disabled: false
+  - name: SeasonType
+    value: SeasonType37
+    disabled: false
+  - name: GraphStartSeason
+    value: GraphStartSeason5
+    disabled: false
+  - name: GraphEndSeason
+    value: GraphEndSeason17
+    disabled: false
+  - name: GraphStat
+    value: GraphStat14
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_567a08e464844719aaee91b1df3952a2
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playerprofilev2_GET
+  method: GET
+  url: http://stats.nba.com/stats/playerprofilev2
+  parameters:
+  - name: PerMode
+    value: PerMode55
+    disabled: false
+  - name: PlayerID
+    value: PlayerID56
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_fd1eaf4443d941b4b278def7b650532d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playersvsplayers_GET
+  method: GET
+  url: http://stats.nba.com/stats/playersvsplayers
+  parameters:
+  - name: PlayerTeamID
+    value: PlayerTeamID59
+    disabled: false
+  - name: PlayerID1
+    value: PlayerID188
+    disabled: false
+  - name: PlayerID2
+    value: PlayerID27
+    disabled: false
+  - name: PlayerID3
+    value: PlayerID332
+    disabled: false
+  - name: PlayerID4
+    value: PlayerID459
+    disabled: false
+  - name: PlayerID5
+    value: PlayerID520
+    disabled: false
+  - name: VsTeamID
+    value: VsTeamID84
+    disabled: false
+  - name: VsPlayerID1
+    value: VsPlayerID121
+    disabled: false
+  - name: VsPlayerID2
+    value: VsPlayerID236
+    disabled: false
+  - name: VsPlayerID3
+    value: VsPlayerID39
+    disabled: false
+  - name: VsPlayerID4
+    value: VsPlayerID46
+    disabled: false
+  - name: VsPlayerID5
+    value: VsPlayerID514
+    disabled: false
+  - name: SeasonType
+    value: SeasonType70
+    disabled: false
+  - name: MeasureType
+    value: MeasureType65
+    disabled: false
+  - name: PerMode
+    value: PerMode15
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus49
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust16
+    disabled: false
+  - name: Rank
+    value: Rank65
+    disabled: false
+  - name: Season
+    value: Season91
+    disabled: false
+  - name: Outcome
+    value: Outcome74
+    disabled: false
+  - name: Location
+    value: Location7
+    disabled: false
+  - name: Month
+    value: Month59
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment55
+    disabled: false
+  - name: DateFrom
+    value: DateFrom40
+    disabled: false
+  - name: DateTo
+    value: DateTo54
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID21
+    disabled: false
+  - name: VsConference
+    value: VsConference9
+    disabled: false
+  - name: VsDivision
+    value: VsDivision37
+    disabled: false
+  - name: GameSegment
+    value: GameSegment23
+    disabled: false
+  - name: Period
+    value: Period40
+    disabled: false
+  - name: LastNGames
+    value: LastNGames79
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_cf5c8fe78451417592aa1aef3d0c8c02
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playervsplayer_GET
+  method: GET
+  url: http://stats.nba.com/stats/playervsplayer
+  parameters:
+  - name: PlayerID
+    value: PlayerID64
+    disabled: false
+  - name: VsPlayerID
+    value: VsPlayerID83
+    disabled: false
+  - name: SeasonType
+    value: SeasonType56
+    disabled: false
+  - name: MeasureType
+    value: MeasureType66
+    disabled: false
+  - name: PerMode
+    value: PerMode87
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus0
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust45
+    disabled: false
+  - name: Rank
+    value: Rank69
+    disabled: false
+  - name: Season
+    value: Season37
+    disabled: false
+  - name: Outcome
+    value: Outcome91
+    disabled: false
+  - name: Location
+    value: Location4
+    disabled: false
+  - name: Month
+    value: Month55
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment15
+    disabled: false
+  - name: DateFrom
+    value: DateFrom20
+    disabled: false
+  - name: DateTo
+    value: DateTo34
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID59
+    disabled: false
+  - name: VsConference
+    value: VsConference87
+    disabled: false
+  - name: VsDivision
+    value: VsDivision87
+    disabled: false
+  - name: GameSegment
+    value: GameSegment46
+    disabled: false
+  - name: Period
+    value: Period87
+    disabled: false
+  - name: LastNGames
+    value: LastNGames55
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a62b80b57f6244d4b4e13225cdab69c4
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Playoffpicture_GET
+  method: GET
+  url: http://stats.nba.com/stats/playoffpicture
+  parameters:
+  - name: LeagueID
+    value: LeagueID71
+    disabled: false
+  - name: SeasonID
+    value: SeasonID34
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_5e1fb0f2a35c4250ae46c89c13d7462b
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Scoreboard_GET
+  method: GET
+  url: http://stats.nba.com/stats/scoreboard
+  parameters:
+  - name: GameDate
+    value: GameDate84
+    disabled: false
+  - name: LeagueID
+    value: LeagueID15
+    disabled: false
+  - name: DayOffset
+    value: DayOffset83
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_bfde8f76f3ef4f5c8def27957d4ae659
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: ScoreboardV2_GET
+  method: GET
+  url: http://stats.nba.com/stats/scoreboardV2
+  parameters:
+  - name: GameDate
+    value: GameDate50
+    disabled: false
+  - name: LeagueID
+    value: LeagueID44
+    disabled: false
+  - name: DayOffset
+    value: DayOffset69
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_7e1bad065af34479ab39b7f7a35e9b1e
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Shotchartdetail_GET
+  method: GET
+  url: http://stats.nba.com/stats/shotchartdetail
+  parameters:
+  - name: SeasonType
+    value: SeasonType32
+    disabled: false
+  - name: TeamID
+    value: TeamID18
+    disabled: false
+  - name: PlayerID
+    value: PlayerID24
+    disabled: false
+  - name: GameID
+    value: GameID34
+    disabled: false
+  - name: Outcome
+    value: Outcome93
+    disabled: false
+  - name: Location
+    value: Location62
+    disabled: false
+  - name: Month
+    value: Month0
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment96
+    disabled: false
+  - name: DateFrom
+    value: DateFrom90
+    disabled: false
+  - name: DateTo
+    value: DateTo27
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID2
+    disabled: false
+  - name: VsConference
+    value: VsConference19
+    disabled: false
+  - name: VsDivision
+    value: VsDivision81
+    disabled: false
+  - name: Position
+    value: Position90
+    disabled: false
+  - name: RookieYear
+    value: RookieYear79
+    disabled: false
+  - name: GameSegment
+    value: GameSegment66
+    disabled: false
+  - name: Period
+    value: Period28
+    disabled: false
+  - name: LastNGames
+    value: LastNGames33
+    disabled: false
+  - name: ContextMeasure
+    value: ContextMeasure45
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_044421ec9f9e4f4fb57dee7f7ab5e5ea
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Shotchartlineupdetail_GET
+  method: GET
+  url: http://stats.nba.com/stats/shotchartlineupdetail
+  parameters:
+  - name: LeagueID
+    value: LeagueID36
+    disabled: false
+  - name: Season
+    value: Season20
+    disabled: false
+  - name: SeasonType
+    value: SeasonType78
+    disabled: false
+  - name: TeamID
+    value: TeamID36
+    disabled: false
+  - name: Outcome
+    value: Outcome36
+    disabled: false
+  - name: Location
+    value: Location15
+    disabled: false
+  - name: Month
+    value: Month94
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment86
+    disabled: false
+  - name: DateFrom
+    value: DateFrom71
+    disabled: false
+  - name: DateTo
+    value: DateTo12
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID25
+    disabled: false
+  - name: VsConference
+    value: VsConference28
+    disabled: false
+  - name: VsDivision
+    value: VsDivision2
+    disabled: false
+  - name: GameSegment
+    value: GameSegment20
+    disabled: false
+  - name: Period
+    value: Period49
+    disabled: false
+  - name: LastNGames
+    value: LastNGames70
+    disabled: false
+  - name: GameID
+    value: GameID88
+    disabled: false
+  - name: GROUP_ID
+    value: GROUP_ID75
+    disabled: false
+  - name: ContextMeasure
+    value: ContextMeasure40
+    disabled: false
+  - name: ContextFilter
+    value: ContextFilter83
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_46f5c9f2f80d44e3940ea32119c300c8
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbyclutch_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbyclutch
+  parameters:
+  - name: TeamID
+    value: TeamID15
+    disabled: false
+  - name: MeasureType
+    value: MeasureType24
+    disabled: false
+  - name: PerMode
+    value: PerMode12
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus64
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust43
+    disabled: false
+  - name: Rank
+    value: Rank29
+    disabled: false
+  - name: Season
+    value: Season64
+    disabled: false
+  - name: SeasonType
+    value: SeasonType16
+    disabled: false
+  - name: Outcome
+    value: Outcome24
+    disabled: false
+  - name: Location
+    value: Location90
+    disabled: false
+  - name: Month
+    value: Month95
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment67
+    disabled: false
+  - name: DateFrom
+    value: DateFrom39
+    disabled: false
+  - name: DateTo
+    value: DateTo18
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID66
+    disabled: false
+  - name: VsConference
+    value: VsConference47
+    disabled: false
+  - name: VsDivision
+    value: VsDivision31
+    disabled: false
+  - name: GameSegment
+    value: GameSegment85
+    disabled: false
+  - name: Period
+    value: Period30
+    disabled: false
+  - name: LastNGames
+    value: LastNGames30
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_2e2b7665503b4a7ba6c64752d3b8039e
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbygamesplits_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbygamesplits
+  parameters:
+  - name: TeamID
+    value: TeamID54
+    disabled: false
+  - name: MeasureType
+    value: MeasureType22
+    disabled: false
+  - name: PerMode
+    value: PerMode47
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus0
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust89
+    disabled: false
+  - name: Rank
+    value: Rank40
+    disabled: false
+  - name: Season
+    value: Season90
+    disabled: false
+  - name: SeasonType
+    value: SeasonType60
+    disabled: false
+  - name: Outcome
+    value: Outcome7
+    disabled: false
+  - name: Location
+    value: Location23
+    disabled: false
+  - name: Month
+    value: Month83
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment77
+    disabled: false
+  - name: DateFrom
+    value: DateFrom28
+    disabled: false
+  - name: DateTo
+    value: DateTo2
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID5
+    disabled: false
+  - name: VsConference
+    value: VsConference29
+    disabled: false
+  - name: VsDivision
+    value: VsDivision65
+    disabled: false
+  - name: GameSegment
+    value: GameSegment61
+    disabled: false
+  - name: Period
+    value: Period22
+    disabled: false
+  - name: LastNGames
+    value: LastNGames20
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_0bc54fc77b3b42838c8d0536ce0cb526
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbygeneralsplits_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbygeneralsplits
+  parameters:
+  - name: SeasonType
+    value: SeasonType48
+    disabled: false
+  - name: TeamID
+    value: TeamID13
+    disabled: false
+  - name: MeasureType
+    value: MeasureType28
+    disabled: false
+  - name: PerMode
+    value: PerMode10
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus23
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust79
+    disabled: false
+  - name: Rank
+    value: Rank46
+    disabled: false
+  - name: Season
+    value: Season18
+    disabled: false
+  - name: Outcome
+    value: Outcome49
+    disabled: false
+  - name: Location
+    value: Location2
+    disabled: false
+  - name: Month
+    value: Month14
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment24
+    disabled: false
+  - name: DateFrom
+    value: DateFrom60
+    disabled: false
+  - name: DateTo
+    value: DateTo87
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID72
+    disabled: false
+  - name: VsConference
+    value: VsConference9
+    disabled: false
+  - name: VsDivision
+    value: VsDivision93
+    disabled: false
+  - name: GameSegment
+    value: GameSegment19
+    disabled: false
+  - name: Period
+    value: Period25
+    disabled: false
+  - name: LastNGames
+    value: LastNGames18
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_5618c31aa13b48f9b65df2ee88eea4e5
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbylastngames_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbylastngames
+  parameters:
+  - name: TeamID
+    value: TeamID80
+    disabled: false
+  - name: MeasureType
+    value: MeasureType67
+    disabled: false
+  - name: PerMode
+    value: PerMode77
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus23
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust48
+    disabled: false
+  - name: Rank
+    value: Rank32
+    disabled: false
+  - name: Season
+    value: Season34
+    disabled: false
+  - name: SeasonType
+    value: SeasonType55
+    disabled: false
+  - name: Outcome
+    value: Outcome90
+    disabled: false
+  - name: Location
+    value: Location82
+    disabled: false
+  - name: Month
+    value: Month23
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment70
+    disabled: false
+  - name: DateFrom
+    value: DateFrom23
+    disabled: false
+  - name: DateTo
+    value: DateTo34
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID77
+    disabled: false
+  - name: VsConference
+    value: VsConference96
+    disabled: false
+  - name: VsDivision
+    value: VsDivision6
+    disabled: false
+  - name: GameSegment
+    value: GameSegment87
+    disabled: false
+  - name: Period
+    value: Period13
+    disabled: false
+  - name: LastNGames
+    value: LastNGames21
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_5ea31f600447489f9464ef0b1c065df8
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbyopponent_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbyopponent
+  parameters:
+  - name: TeamID
+    value: TeamID34
+    disabled: false
+  - name: MeasureType
+    value: MeasureType86
+    disabled: false
+  - name: PerMode
+    value: PerMode49
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus21
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust27
+    disabled: false
+  - name: Rank
+    value: Rank87
+    disabled: false
+  - name: Season
+    value: Season36
+    disabled: false
+  - name: SeasonType
+    value: SeasonType57
+    disabled: false
+  - name: Outcome
+    value: Outcome7
+    disabled: false
+  - name: Location
+    value: Location61
+    disabled: false
+  - name: Month
+    value: Month17
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment54
+    disabled: false
+  - name: DateFrom
+    value: DateFrom92
+    disabled: false
+  - name: DateTo
+    value: DateTo10
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID82
+    disabled: false
+  - name: VsConference
+    value: VsConference57
+    disabled: false
+  - name: VsDivision
+    value: VsDivision1
+    disabled: false
+  - name: GameSegment
+    value: GameSegment10
+    disabled: false
+  - name: Period
+    value: Period82
+    disabled: false
+  - name: LastNGames
+    value: LastNGames98
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_2034978a597b443e81c648ac95bfeb2c
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbyshootingsplits_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbyshootingsplits
+  parameters:
+  - name: TeamID
+    value: TeamID21
+    disabled: false
+  - name: MeasureType
+    value: MeasureType92
+    disabled: false
+  - name: PerMode
+    value: PerMode64
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus3
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust68
+    disabled: false
+  - name: Rank
+    value: Rank52
+    disabled: false
+  - name: Season
+    value: Season39
+    disabled: false
+  - name: SeasonType
+    value: SeasonType69
+    disabled: false
+  - name: Outcome
+    value: Outcome31
+    disabled: false
+  - name: Location
+    value: Location47
+    disabled: false
+  - name: Month
+    value: Month72
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment27
+    disabled: false
+  - name: DateFrom
+    value: DateFrom73
+    disabled: false
+  - name: DateTo
+    value: DateTo77
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID46
+    disabled: false
+  - name: VsConference
+    value: VsConference44
+    disabled: false
+  - name: VsDivision
+    value: VsDivision81
+    disabled: false
+  - name: GameSegment
+    value: GameSegment62
+    disabled: false
+  - name: Period
+    value: Period25
+    disabled: false
+  - name: LastNGames
+    value: LastNGames90
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_e47d621563dc4c53a2ac78300cb05da4
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbyteamperformance_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbyteamperformance
+  parameters:
+  - name: TeamID
+    value: TeamID11
+    disabled: false
+  - name: MeasureType
+    value: MeasureType67
+    disabled: false
+  - name: PerMode
+    value: PerMode80
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus73
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust10
+    disabled: false
+  - name: Rank
+    value: Rank62
+    disabled: false
+  - name: Season
+    value: Season63
+    disabled: false
+  - name: SeasonType
+    value: SeasonType11
+    disabled: false
+  - name: Outcome
+    value: Outcome51
+    disabled: false
+  - name: Location
+    value: Location6
+    disabled: false
+  - name: Month
+    value: Month95
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment14
+    disabled: false
+  - name: DateFrom
+    value: DateFrom25
+    disabled: false
+  - name: DateTo
+    value: DateTo54
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID75
+    disabled: false
+  - name: VsConference
+    value: VsConference4
+    disabled: false
+  - name: VsDivision
+    value: VsDivision4
+    disabled: false
+  - name: GameSegment
+    value: GameSegment91
+    disabled: false
+  - name: Period
+    value: Period68
+    disabled: false
+  - name: LastNGames
+    value: LastNGames86
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_7ce2fd22226e46fca44ca6a9db9669d8
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashboardbyyearoveryear_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashboardbyyearoveryear
+  parameters:
+  - name: TeamID
+    value: TeamID18
+    disabled: false
+  - name: MeasureType
+    value: MeasureType17
+    disabled: false
+  - name: PerMode
+    value: PerMode79
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus2
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust13
+    disabled: false
+  - name: Rank
+    value: Rank9
+    disabled: false
+  - name: Season
+    value: Season97
+    disabled: false
+  - name: SeasonType
+    value: SeasonType27
+    disabled: false
+  - name: Outcome
+    value: Outcome69
+    disabled: false
+  - name: Location
+    value: Location60
+    disabled: false
+  - name: Month
+    value: Month14
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment8
+    disabled: false
+  - name: DateFrom
+    value: DateFrom64
+    disabled: false
+  - name: DateTo
+    value: DateTo41
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID66
+    disabled: false
+  - name: VsConference
+    value: VsConference18
+    disabled: false
+  - name: VsDivision
+    value: VsDivision8
+    disabled: false
+  - name: GameSegment
+    value: GameSegment67
+    disabled: false
+  - name: Period
+    value: Period83
+    disabled: false
+  - name: LastNGames
+    value: LastNGames79
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_4499256c358b42e1b4a686b9057cdd09
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashlineups_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashlineups
+  parameters:
+  - name: GroupQuantity
+    value: GroupQuantity10
+    disabled: false
+  - name: GameID
+    value: GameID62
+    disabled: false
+  - name: SeasonType
+    value: SeasonType28
+    disabled: false
+  - name: TeamID
+    value: TeamID26
+    disabled: false
+  - name: MeasureType
+    value: MeasureType60
+    disabled: false
+  - name: PerMode
+    value: PerMode12
+    disabled: false
+  - name: PlusMinus
+    value: PlusMinus34
+    disabled: false
+  - name: PaceAdjust
+    value: PaceAdjust49
+    disabled: false
+  - name: Rank
+    value: Rank71
+    disabled: false
+  - name: Season
+    value: Season9
+    disabled: false
+  - name: Outcome
+    value: Outcome73
+    disabled: false
+  - name: Location
+    value: Location59
+    disabled: false
+  - name: Month
+    value: Month58
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment92
+    disabled: false
+  - name: DateFrom
+    value: DateFrom39
+    disabled: false
+  - name: DateTo
+    value: DateTo61
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID80
+    disabled: false
+  - name: VsConference
+    value: VsConference12
+    disabled: false
+  - name: VsDivision
+    value: VsDivision52
+    disabled: false
+  - name: GameSegment
+    value: GameSegment46
+    disabled: false
+  - name: Period
+    value: Period34
+    disabled: false
+  - name: LastNGames
+    value: LastNGames27
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_e4e1d3a19dab4eafa1cafd3202c0b5c9
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashptpass_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashptpass
+  parameters:
+  - name: PerMode
+    value: PerMode5
+    disabled: false
+  - name: Season
+    value: Season70
+    disabled: false
+  - name: SeasonType
+    value: SeasonType81
+    disabled: false
+  - name: TeamID
+    value: TeamID25
+    disabled: false
+  - name: Outcome
+    value: Outcome46
+    disabled: false
+  - name: Location
+    value: Location57
+    disabled: false
+  - name: Month
+    value: Month60
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment76
+    disabled: false
+  - name: DateFrom
+    value: DateFrom4
+    disabled: false
+  - name: DateTo
+    value: DateTo14
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID18
+    disabled: false
+  - name: VsConference
+    value: VsConference39
+    disabled: false
+  - name: VsDivision
+    value: VsDivision77
+    disabled: false
+  - name: LastNGames
+    value: LastNGames96
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_e6b84f7e806840f4a2e81b3c3d39c1a1
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashptreb_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashptreb
+  parameters:
+  - name: PerMode
+    value: PerMode66
+    disabled: false
+  - name: Season
+    value: Season55
+    disabled: false
+  - name: SeasonType
+    value: SeasonType7
+    disabled: false
+  - name: TeamID
+    value: TeamID73
+    disabled: false
+  - name: Outcome
+    value: Outcome98
+    disabled: false
+  - name: Location
+    value: Location27
+    disabled: false
+  - name: Month
+    value: Month96
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment83
+    disabled: false
+  - name: DateFrom
+    value: DateFrom71
+    disabled: false
+  - name: DateTo
+    value: DateTo28
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID56
+    disabled: false
+  - name: VsConference
+    value: VsConference24
+    disabled: false
+  - name: VsDivision
+    value: VsDivision95
+    disabled: false
+  - name: GameSegment
+    value: GameSegment84
+    disabled: false
+  - name: Period
+    value: Period42
+    disabled: false
+  - name: LastNGames
+    value: LastNGames8
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_8cbb28799438456eb470ffc6b5a8a8ab
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
+  description: ''
+- name: Teamdashptshots_GET
+  method: GET
+  url: http://stats.nba.com/stats/teamdashptshots
+  parameters:
+  - name: PerMode
+    value: PerMode88
+    disabled: false
+  - name: Season
+    value: Season91
+    disabled: false
+  - name: SeasonType
+    value: SeasonType41
+    disabled: false
+  - name: TeamID
+    value: TeamID89
+    disabled: false
+  - name: Outcome
+    value: Outcome98
+    disabled: false
+  - name: Location
+    value: Location49
+    disabled: false
+  - name: Month
+    value: Month33
+    disabled: false
+  - name: SeasonSegment
+    value: SeasonSegment72
+    disabled: false
+  - name: DateFrom
+    value: DateFrom75
+    disabled: false
+  - name: DateTo
+    value: DateTo89
+    disabled: false
+  - name: OpponentTeamID
+    value: OpponentTeamID71
+    disabled: false
+  - name: VsConference
+    value: VsConference21
+    disabled: false
+  - name: VsDivision
+    value: VsDivision92
+    disabled: false
+  - name: GameSegment
+    value: GameSegment43
+    disabled: false
+  - name: Period
+    value: Period16
+    disabled: false
+  - name: LastNGames
+    value: LastNGames44
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b0e588852cc5445188949bf1e957e190
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teamgamelog_GET
   method: GET
   url: http://stats.nba.com/stats/teamgamelog
   parameters:
   - name: TeamID
-    value: TeamID3
+    value: TeamID55
     disabled: false
   - name: Season
-    value: Season69
+    value: Season1
     disabled: false
   - name: SeasonType
-    value: SeasonType41
+    value: SeasonType38
     disabled: false
   authentication: {}
   _type: request
-  _id: req_795d4df9d250487882047ba6a64d649f
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_d2ff9326a50749c0a9024c15f06c0083
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teaminfocommon_GET
   method: GET
   url: http://stats.nba.com/stats/teaminfocommon
   parameters:
   - name: Season
-    value: Season55
+    value: Season45
     disabled: false
   - name: TeamID
-    value: TeamID79
+    value: TeamID25
     disabled: false
   - name: LeagueID
-    value: LeagueID97
+    value: LeagueID51
     disabled: false
   - name: SeasonType
-    value: SeasonType30
+    value: SeasonType63
     disabled: false
   authentication: {}
   _type: request
-  _id: req_76f96f9eacde4866a219a9fb21f1030d
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_b33b5e0c31a24b20a76dab5e180ab01a
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teamplayerdashboard_GET
   method: GET
   url: http://stats.nba.com/stats/teamplayerdashboard
   parameters:
   - name: SeasonType
-    value: SeasonType73
+    value: SeasonType39
     disabled: false
   - name: TeamID
-    value: TeamID47
+    value: TeamID38
     disabled: false
   - name: MeasureType
-    value: MeasureType93
+    value: MeasureType21
     disabled: false
   - name: PerMode
-    value: PerMode77
+    value: PerMode26
     disabled: false
   - name: PlusMinus
-    value: PlusMinus33
+    value: PlusMinus91
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust86
+    value: PaceAdjust7
     disabled: false
   - name: Rank
-    value: Rank49
+    value: Rank87
     disabled: false
   - name: Season
-    value: Season67
+    value: Season58
     disabled: false
   - name: Outcome
-    value: Outcome48
+    value: Outcome88
     disabled: false
   - name: Location
-    value: Location4
+    value: Location44
     disabled: false
   - name: Month
-    value: Month90
+    value: Month33
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment53
+    value: SeasonSegment51
     disabled: false
   - name: DateFrom
-    value: DateFrom48
+    value: DateFrom91
     disabled: false
   - name: DateTo
-    value: DateTo83
+    value: DateTo79
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID88
+    value: OpponentTeamID32
     disabled: false
   - name: VsConference
-    value: VsConference70
+    value: VsConference95
     disabled: false
   - name: VsDivision
-    value: VsDivision70
+    value: VsDivision11
     disabled: false
   - name: GameSegment
-    value: GameSegment15
+    value: GameSegment45
     disabled: false
   - name: Period
-    value: Period40
+    value: Period81
     disabled: false
   - name: LastNGames
-    value: LastNGames82
+    value: LastNGames50
     disabled: false
   authentication: {}
   _type: request
-  _id: req_0a5ac468798e46c59608de88016e66e8
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_42454a33015a4bfb9fee8e54b8c52dac
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teamplayeronoffdetails_GET
   method: GET
   url: http://stats.nba.com/stats/teamplayeronoffdetails
   parameters:
   - name: TeamID
-    value: TeamID30
+    value: TeamID20
     disabled: false
   - name: MeasureType
-    value: MeasureType82
+    value: MeasureType21
     disabled: false
   - name: PerMode
-    value: PerMode39
+    value: PerMode41
     disabled: false
   - name: PlusMinus
-    value: PlusMinus16
+    value: PlusMinus92
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust41
+    value: PaceAdjust5
     disabled: false
   - name: Rank
-    value: Rank97
+    value: Rank87
     disabled: false
   - name: Season
-    value: Season53
+    value: Season69
     disabled: false
   - name: SeasonType
-    value: SeasonType63
+    value: SeasonType27
     disabled: false
   - name: Outcome
-    value: Outcome40
+    value: Outcome32
     disabled: false
   - name: Location
-    value: Location85
+    value: Location86
     disabled: false
   - name: Month
-    value: Month66
+    value: Month24
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment21
+    value: SeasonSegment36
     disabled: false
   - name: DateFrom
-    value: DateFrom51
+    value: DateFrom63
     disabled: false
   - name: DateTo
-    value: DateTo83
+    value: DateTo82
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID46
+    value: OpponentTeamID11
     disabled: false
   - name: VsConference
-    value: VsConference27
+    value: VsConference57
     disabled: false
   - name: VsDivision
-    value: VsDivision72
+    value: VsDivision53
     disabled: false
   - name: GameSegment
-    value: GameSegment13
+    value: GameSegment70
     disabled: false
   - name: Period
-    value: Period9
+    value: Period12
     disabled: false
   - name: LastNGames
-    value: LastNGames19
+    value: LastNGames74
     disabled: false
   authentication: {}
   _type: request
-  _id: req_630c5ce055f74bf5830d0571f1e857bc
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_85596f4b36744fd3b6111050cc4e0de0
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teamplayeronoffsummary_GET
   method: GET
   url: http://stats.nba.com/stats/teamplayeronoffsummary
   parameters:
   - name: TeamID
-    value: TeamID58
+    value: TeamID47
     disabled: false
   - name: MeasureType
-    value: MeasureType48
+    value: MeasureType49
     disabled: false
   - name: PerMode
-    value: PerMode61
+    value: PerMode95
     disabled: false
   - name: PlusMinus
-    value: PlusMinus70
+    value: PlusMinus18
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust27
+    value: PaceAdjust2
     disabled: false
   - name: Rank
-    value: Rank98
+    value: Rank9
     disabled: false
   - name: Season
-    value: Season58
+    value: Season52
     disabled: false
   - name: SeasonType
-    value: SeasonType26
+    value: SeasonType60
     disabled: false
   - name: Outcome
-    value: Outcome60
+    value: Outcome45
     disabled: false
   - name: Location
-    value: Location85
+    value: Location37
     disabled: false
   - name: Month
-    value: Month29
+    value: Month34
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment12
+    value: SeasonSegment55
     disabled: false
   - name: DateFrom
-    value: DateFrom6
+    value: DateFrom44
     disabled: false
   - name: DateTo
-    value: DateTo71
+    value: DateTo55
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID28
+    value: OpponentTeamID88
     disabled: false
   - name: VsConference
-    value: VsConference83
+    value: VsConference40
     disabled: false
   - name: VsDivision
-    value: VsDivision40
+    value: VsDivision96
     disabled: false
   - name: GameSegment
-    value: GameSegment82
+    value: GameSegment0
     disabled: false
   - name: Period
-    value: Period76
+    value: Period54
     disabled: false
   - name: LastNGames
-    value: LastNGames52
+    value: LastNGames39
     disabled: false
   authentication: {}
   _type: request
-  _id: req_2c720cde79d942bb91a6ce7d3bf218b1
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_8df9fc0693bf42c684684d7563539115
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teamvsplayer_GET
   method: GET
   url: http://stats.nba.com/stats/teamvsplayer
   parameters:
   - name: TeamID
-    value: TeamID1
+    value: TeamID55
     disabled: false
   - name: VsPlayerID
-    value: VsPlayerID42
+    value: VsPlayerID72
     disabled: false
   - name: SeasonType
-    value: SeasonType56
+    value: SeasonType85
     disabled: false
   - name: MeasureType
-    value: MeasureType59
+    value: MeasureType31
     disabled: false
   - name: PerMode
-    value: PerMode37
+    value: PerMode66
     disabled: false
   - name: PlusMinus
-    value: PlusMinus75
+    value: PlusMinus86
     disabled: false
   - name: PaceAdjust
-    value: PaceAdjust52
+    value: PaceAdjust17
     disabled: false
   - name: Rank
-    value: Rank13
+    value: Rank81
     disabled: false
   - name: Season
-    value: Season58
+    value: Season29
     disabled: false
   - name: Outcome
-    value: Outcome85
+    value: Outcome76
     disabled: false
   - name: Location
-    value: Location76
+    value: Location44
     disabled: false
   - name: Month
-    value: Month48
+    value: Month2
     disabled: false
   - name: SeasonSegment
-    value: SeasonSegment55
+    value: SeasonSegment2
     disabled: false
   - name: DateFrom
-    value: DateFrom83
+    value: DateFrom28
     disabled: false
   - name: DateTo
-    value: DateTo51
+    value: DateTo22
     disabled: false
   - name: OpponentTeamID
-    value: OpponentTeamID62
+    value: OpponentTeamID94
     disabled: false
   - name: VsConference
-    value: VsConference88
+    value: VsConference27
     disabled: false
   - name: VsDivision
-    value: VsDivision62
+    value: VsDivision29
     disabled: false
   - name: GameSegment
-    value: GameSegment40
+    value: GameSegment13
     disabled: false
   - name: Period
-    value: Period52
+    value: Period26
     disabled: false
   - name: LastNGames
-    value: LastNGames65
+    value: LastNGames42
     disabled: false
   authentication: {}
   _type: request
-  _id: req_79d1a9a66d004591b0ca4ae471dfc5e2
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_fe5df556950e42238fe9d635aeb7195d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: Teamyearbyyearstats_GET
   method: GET
   url: http://stats.nba.com/stats/teamyearbyyearstats
   parameters:
   - name: LeagueID
-    value: LeagueID10
+    value: LeagueID81
     disabled: false
   - name: SeasonType
-    value: SeasonType53
+    value: SeasonType60
     disabled: false
   - name: PerMode
-    value: PerMode42
+    value: PerMode75
     disabled: false
   - name: TeamID
     value: TeamID38
     disabled: false
   authentication: {}
   _type: request
-  _id: req_0e9e1a77fe5f415299e8e60faec5303f
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_4d8b475de8c84cc3bc6c1339962b0ded
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''
 - name: VideoStatus_GET
   method: GET
   url: http://stats.nba.com/stats/videoStatus
   parameters:
   - name: LeagueID
-    value: LeagueID30
+    value: LeagueID60
     disabled: false
   - name: GameDate
-    value: GameDate0
+    value: GameDate49
     disabled: false
   authentication: {}
   _type: request
-  _id: req_f18ac45d134d4f96bb06a3c653ff6560
-  parentId: wrk_a01fdb33b6d14a8897a942da6da8d61d
+  _id: req_5ec0719ea85c438ab0948632fe6d837d
+  parentId: wrk_2c05aa93330b48ec9a00d8e2003f27d8
   description: ''

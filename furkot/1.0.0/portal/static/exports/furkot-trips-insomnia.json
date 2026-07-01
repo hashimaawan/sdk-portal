@@ -6,7 +6,7 @@
     {
       "name": "Furkot Trips",
       "_type": "workspace",
-      "_id": "wrk_88ee51f5b78b4195a91dea995e14a46c",
+      "_id": "wrk_b434015478684d50a8bf477039ee94a8",
       "description": "Furkot provides Rest API to access user trip data.\nUsing Furkot API an application can list user trips and display stops for a specific trip.\nFurkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.\n"
     },
     {
@@ -16,8 +16,8 @@
         "authserver": "https://trips.furkot.com/oauth"
       },
       "_type": "environment",
-      "_id": "env_5c3ce9faf48a4d73b14a9941498010b3",
-      "parentId": "wrk_88ee51f5b78b4195a91dea995e14a46c"
+      "_id": "env_9b75a5d3e2e842c6ac5e246be112a502",
+      "parentId": "wrk_b434015478684d50a8bf477039ee94a8"
     },
     {
       "name": "Trip_GET",
@@ -30,8 +30,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_dad1cf5aff0643d5a6e131b325df73f1",
-      "parentId": "wrk_88ee51f5b78b4195a91dea995e14a46c",
+      "_id": "req_2e8ef9e6cf984e1db39c31701029c7f2",
+      "parentId": "wrk_b434015478684d50a8bf477039ee94a8",
       "description": "list user's trips"
     },
     {
@@ -45,8 +45,8 @@
         "grantType": "authorization_code"
       },
       "_type": "request",
-      "_id": "req_d0840427c0fe45939422a83b0ab809d4",
-      "parentId": "wrk_88ee51f5b78b4195a91dea995e14a46c",
+      "_id": "req_23919015d58e46bfaea929e96b7c3a06",
+      "parentId": "wrk_b434015478684d50a8bf477039ee94a8",
       "description": "list stops for a trip identified by {trip_id}"
     }
   ]

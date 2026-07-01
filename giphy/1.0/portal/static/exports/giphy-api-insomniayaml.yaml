@@ -4,29 +4,29 @@ __export_source: apimatic.transformer
 resources:
 - name: Giphy API
   _type: workspace
-  _id: wrk_79deac17d5f9439f885cd6d1a28c2531
+  _id: wrk_69f4bf54fc7140da8010e71ee5e4610f
   description: Giphy API
 - name: gifs
   _type: request_group
-  _id: fld_50bf11e090aa4a468990f6be03643964
-  parentId: wrk_79deac17d5f9439f885cd6d1a28c2531
+  _id: fld_adb9bfba51c24e08ab918f8641ab3bd1
+  parentId: wrk_69f4bf54fc7140da8010e71ee5e4610f
 - name: stickers
   _type: request_group
-  _id: fld_8a6e67b740d04e62ab20fa5555c88fb7
-  parentId: wrk_79deac17d5f9439f885cd6d1a28c2531
+  _id: fld_0de016981ed2451196385549f2b0b681
+  parentId: wrk_69f4bf54fc7140da8010e71ee5e4610f
 - name: getGifsById
   method: GET
   url: https://api.giphy.com/v1/gifs
   parameters:
   - name: ids
-    value: ids57
+    value: ids62
     disabled: false
   - name: api_key
-    value: api_key36
+    value: api_key26
     disabled: false
   _type: request
-  _id: req_06dc612a87f14b518603d946617fdc44
-  parentId: fld_50bf11e090aa4a468990f6be03643964
+  _id: req_f1da8ceb00254940afe784e8134ab6f7
+  parentId: fld_adb9bfba51c24e08ab918f8641ab3bd1
   description: >
     A multiget version of the get GIF by ID endpoint.
 - name: randomGif
@@ -34,17 +34,17 @@ resources:
   url: https://api.giphy.com/v1/gifs/random
   parameters:
   - name: tag
-    value: tag52
+    value: tag14
     disabled: false
   - name: rating
-    value: rating90
+    value: rating23
     disabled: false
   - name: api_key
-    value: api_key13
+    value: api_key32
     disabled: false
   _type: request
-  _id: req_c07d66ba50204a6cb6ca1c306e73fd2e
-  parentId: fld_50bf11e090aa4a468990f6be03643964
+  _id: req_fbdae5da3bb54cb59457a1bc541e4f22
+  parentId: fld_adb9bfba51c24e08ab918f8641ab3bd1
   description: >
     Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
 - name: searchGifs
@@ -52,7 +52,7 @@ resources:
   url: https://api.giphy.com/v1/gifs/search
   parameters:
   - name: q
-    value: q1
+    value: q64
     disabled: false
   - name: limit
     value: '25'
@@ -61,17 +61,17 @@ resources:
     value: '0'
     disabled: false
   - name: rating
-    value: rating43
+    value: rating19
     disabled: false
   - name: lang
-    value: lang71
+    value: lang42
     disabled: false
   - name: api_key
-    value: api_key8
+    value: api_key60
     disabled: false
   _type: request
-  _id: req_36805ac13bed430cbfa6116f3efd21fa
-  parentId: fld_50bf11e090aa4a468990f6be03643964
+  _id: req_a94395f071854cd29eb5b4296f27f430
+  parentId: fld_adb9bfba51c24e08ab918f8641ab3bd1
   description: >
     Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.
 - name: translateGif
@@ -79,14 +79,14 @@ resources:
   url: https://api.giphy.com/v1/gifs/translate
   parameters:
   - name: s
-    value: s0
+    value: s44
     disabled: false
   - name: api_key
-    value: api_key15
+    value: api_key95
     disabled: false
   _type: request
-  _id: req_4ec55ffb0f194239903905c7b0a37ba6
-  parentId: fld_50bf11e090aa4a468990f6be03643964
+  _id: req_82378a9831b447a8a266ae273008f2f1
+  parentId: fld_adb9bfba51c24e08ab918f8641ab3bd1
   description: >
     The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF
 - name: trendingGifs
@@ -100,14 +100,14 @@ resources:
     value: '0'
     disabled: false
   - name: rating
-    value: rating63
+    value: rating82
     disabled: false
   - name: api_key
-    value: api_key54
+    value: api_key14
     disabled: false
   _type: request
-  _id: req_c705201d4a2443c2acef341c9625f573
-  parentId: fld_50bf11e090aa4a468990f6be03643964
+  _id: req_694a848e5ad04f7fbc8e17b394380302
+  parentId: fld_adb9bfba51c24e08ab918f8641ab3bd1
   description: >
     Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.
 - name: getGifById
@@ -115,11 +115,11 @@ resources:
   url: https://api.giphy.com/v1/gifs/{gifId}
   parameters:
   - name: api_key
-    value: api_key72
+    value: api_key40
     disabled: false
   _type: request
-  _id: req_dc4008c491d4421bab54e0866bfb148a
-  parentId: fld_50bf11e090aa4a468990f6be03643964
+  _id: req_23a08b74603c45be86184d0e4fec2dc1
+  parentId: fld_adb9bfba51c24e08ab918f8641ab3bd1
   description: >
     Returns a GIF given that GIF's unique ID
 - name: randomSticker
@@ -127,17 +127,17 @@ resources:
   url: https://api.giphy.com/v1/stickers/random
   parameters:
   - name: tag
-    value: tag34
+    value: tag18
     disabled: false
   - name: rating
-    value: rating1
+    value: rating74
     disabled: false
   - name: api_key
-    value: api_key40
+    value: api_key11
     disabled: false
   _type: request
-  _id: req_db1d692aaceb4ddea664b652adc1c637
-  parentId: fld_8a6e67b740d04e62ab20fa5555c88fb7
+  _id: req_66074714dc7747a68714071f5a4010c9
+  parentId: fld_0de016981ed2451196385549f2b0b681
   description: >
     Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.
 - name: searchStickers
@@ -145,7 +145,7 @@ resources:
   url: https://api.giphy.com/v1/stickers/search
   parameters:
   - name: q
-    value: q86
+    value: q63
     disabled: false
   - name: limit
     value: '25'
@@ -154,17 +154,17 @@ resources:
     value: '0'
     disabled: false
   - name: rating
-    value: rating84
+    value: rating38
     disabled: false
   - name: lang
-    value: lang51
+    value: lang61
     disabled: false
   - name: api_key
-    value: api_key42
+    value: api_key94
     disabled: false
   _type: request
-  _id: req_d4d640ea6913484882b97146c9a3c32d
-  parentId: fld_8a6e67b740d04e62ab20fa5555c88fb7
+  _id: req_9ec37e9374a243949e9c5278a7e5b063
+  parentId: fld_0de016981ed2451196385549f2b0b681
   description: >
     Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.
 - name: translateSticker
@@ -172,14 +172,14 @@ resources:
   url: https://api.giphy.com/v1/stickers/translate
   parameters:
   - name: s
-    value: s49
+    value: s20
     disabled: false
   - name: api_key
-    value: api_key79
+    value: api_key30
     disabled: false
   _type: request
-  _id: req_220b81b43c61447ab0976b63bfe67320
-  parentId: fld_8a6e67b740d04e62ab20fa5555c88fb7
+  _id: req_d2673e6976a0439d9d3b6e5c3fe66b68
+  parentId: fld_0de016981ed2451196385549f2b0b681
   description: >
     The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.
 - name: trendingStickers
@@ -196,10 +196,10 @@ resources:
     value: rating92
     disabled: false
   - name: api_key
-    value: api_key28
+    value: api_key52
     disabled: false
   _type: request
-  _id: req_31169491412c4ed6a366b6c177c365f9
-  parentId: fld_8a6e67b740d04e62ab20fa5555c88fb7
+  _id: req_1b531c0bf0f84669a51d2fa10a5a6876
+  parentId: fld_0de016981ed2451196385549f2b0b681
   description: >
     Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.

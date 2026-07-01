@@ -1,0 +1,1141 @@
+{
+  "id": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+  "name": "Giphy API",
+  "description": "Giphy API",
+  "order": [],
+  "folders": [
+    {
+      "id": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "name": "gifs",
+      "description": "gifs",
+      "order": [
+        "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+        "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+        "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+        "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+        "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+        "4c40090c-0500-44dd-af8b-3ebde19238f2"
+      ],
+      "collection_id": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2"
+    },
+    {
+      "id": "c7648365-555d-418b-b3d8-6b3e584a1d41",
+      "name": "stickers",
+      "description": "stickers",
+      "order": [
+        "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+        "ffdc35fa-a70d-4816-8852-62926f23ddac",
+        "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+        "33a75b79-7e7b-484b-a010-9a6ce4f22328"
+      ],
+      "collection_id": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2"
+    }
+  ],
+  "requests": [
+    {
+      "folder": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "id": "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+      "name": "getGifsById",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "A multiget version of the get GIF by ID endpoint.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/gifs?ids=ids59",
+      "responses": [
+        {
+          "request": "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+          "id": "1b105c24-5ec4-4fb3-a523-aa627d58f32f",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": [\n    {\n      \"bitly_url\": \"http://gph.is/1gsWDcL\",\n      \"content_url\": \"content_url53\",\n      \"create_datetime\": \"2013-08-01 12:41:48\",\n      \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n      \"featured_tags\": [\n        \"featured_tags25\"\n      ],\n      \"id\": \"YsTs5ltWtEhnq\",\n      \"images\": {\n        \"downsized\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_large\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_medium\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"looping\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview_gif\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        }\n      },\n      \"import_datetime\": \"2013-08-01 12:41:48\",\n      \"rating\": \"g\",\n      \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n      \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n      \"source_post_url\": \"http://cheezburger.com/5282328320\",\n      \"source_tld\": \"cheezburger.com\",\n      \"tags\": [\n        \"tags74\"\n      ],\n      \"trending_datetime\": \"2013-08-01 12:41:48\",\n      \"type\": \"gif\",\n      \"update_datetime\": \"2013-08-01 12:41:48\",\n      \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n      \"user\": {\n        \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n        \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n        \"display_name\": \"JoeCool4000\",\n        \"profile_url\": \"https://giphy.com/cheezburger/\",\n        \"twitter\": \"@joecool4000\",\n        \"username\": \"joecool4000\"\n      },\n      \"username\": \"JoeCool4000\"\n    }\n  ],\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  },\n  \"pagination\": {\n    \"count\": 25,\n    \"offset\": 75,\n    \"total_count\": 250\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+          "id": "df5c445c-4b00-4bcc-b37e-41c1d9ad2bb4",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+          "id": "38a7ff36-bc25-488f-ad94-0b596bd66cf7",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+          "id": "582316c7-aaf3-4294-9951-5abc10d65929",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "993b990a-8b59-4ee7-b7ec-40c07e54444c",
+          "id": "2a6ea18e-fbed-4694-ac74-41d58572eb2b",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "ids",
+          "value": "ids59",
+          "description": "Filters results by specified GIF IDs, separated by commas."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "id": "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+      "name": "randomGif",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/gifs/random?tag=tag54&rating=rating6",
+      "responses": [
+        {
+          "request": "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+          "id": "33315f20-bf54-4d38-bbef-7dc3e621618b",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": {\n    \"bitly_url\": \"http://gph.is/1gsWDcL\",\n    \"content_url\": \"content_url53\",\n    \"create_datetime\": \"2013-08-01 12:41:48\",\n    \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n    \"featured_tags\": [\n      \"featured_tags25\"\n    ],\n    \"id\": \"YsTs5ltWtEhnq\",\n    \"images\": {\n      \"downsized\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_large\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_medium\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"looping\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview_gif\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      }\n    },\n    \"import_datetime\": \"2013-08-01 12:41:48\",\n    \"rating\": \"g\",\n    \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n    \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n    \"source_post_url\": \"http://cheezburger.com/5282328320\",\n    \"source_tld\": \"cheezburger.com\",\n    \"tags\": [\n      \"tags74\"\n    ],\n    \"trending_datetime\": \"2013-08-01 12:41:48\",\n    \"type\": \"gif\",\n    \"update_datetime\": \"2013-08-01 12:41:48\",\n    \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n    \"user\": {\n      \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n      \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n      \"display_name\": \"JoeCool4000\",\n      \"profile_url\": \"https://giphy.com/cheezburger/\",\n      \"twitter\": \"@joecool4000\",\n      \"username\": \"joecool4000\"\n    },\n    \"username\": \"JoeCool4000\"\n  },\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+          "id": "d87dc081-3acb-4623-b834-5b37ba9dfe29",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+          "id": "855837cf-183e-4296-aff5-7617fbd7a205",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+          "id": "21f50b0d-71b7-4ed1-ae1e-4abcefd7b4a4",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "aab20e3d-2ad9-40e2-aba5-f01170714f8d",
+          "id": "0fcd6ce4-2fb1-4135-83b1-a67e869415c9",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "tag",
+          "value": "tag54",
+          "description": "Filters results by specified tag."
+        },
+        {
+          "key": "rating",
+          "value": "rating6",
+          "description": "Filters results by specified rating."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "id": "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+      "name": "searchGifs",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/gifs/search?q=q64&limit=25&offset=0&rating=rating42&lang=lang38",
+      "responses": [
+        {
+          "request": "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+          "id": "061cfcca-e426-409a-b7d6-95195829cc2d",
+          "name": "Response_200",
+          "status": "Search results",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Search results"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": [\n    {\n      \"bitly_url\": \"http://gph.is/1gsWDcL\",\n      \"content_url\": \"content_url53\",\n      \"create_datetime\": \"2013-08-01 12:41:48\",\n      \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n      \"featured_tags\": [\n        \"featured_tags25\"\n      ],\n      \"id\": \"YsTs5ltWtEhnq\",\n      \"images\": {\n        \"downsized\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_large\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_medium\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"looping\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview_gif\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        }\n      },\n      \"import_datetime\": \"2013-08-01 12:41:48\",\n      \"rating\": \"g\",\n      \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n      \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n      \"source_post_url\": \"http://cheezburger.com/5282328320\",\n      \"source_tld\": \"cheezburger.com\",\n      \"tags\": [\n        \"tags74\"\n      ],\n      \"trending_datetime\": \"2013-08-01 12:41:48\",\n      \"type\": \"gif\",\n      \"update_datetime\": \"2013-08-01 12:41:48\",\n      \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n      \"user\": {\n        \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n        \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n        \"display_name\": \"JoeCool4000\",\n        \"profile_url\": \"https://giphy.com/cheezburger/\",\n        \"twitter\": \"@joecool4000\",\n        \"username\": \"joecool4000\"\n      },\n      \"username\": \"JoeCool4000\"\n    }\n  ],\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  },\n  \"pagination\": {\n    \"count\": 25,\n    \"offset\": 75,\n    \"total_count\": 250\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+          "id": "da57f2df-51b5-433d-83e5-b97652166d1c",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+          "id": "ba0005f0-d0db-452c-a38a-78980d984c3d",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+          "id": "39ee269f-b209-4985-a3bf-fb70239b4ba0",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "2b105343-c31b-46fa-a94a-f6a8eb23df2f",
+          "id": "1b4b8626-21f3-4721-a8ec-0716e42f303a",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "q",
+          "value": "q64",
+          "description": "Search query term or prhase."
+        },
+        {
+          "key": "limit",
+          "value": "25",
+          "description": "The maximum number of records to return."
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "description": "An optional results offset."
+        },
+        {
+          "key": "rating",
+          "value": "rating42",
+          "description": "Filters results by specified rating."
+        },
+        {
+          "key": "lang",
+          "value": "lang38",
+          "description": "Specify default language for regional content; use a 2-letter ISO 639-1 language code."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "id": "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+      "name": "translateGif",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/gifs/translate?s=s12",
+      "responses": [
+        {
+          "request": "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+          "id": "abdfcf67-6e76-4b4f-93f3-cb5f842c95df",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": {\n    \"bitly_url\": \"http://gph.is/1gsWDcL\",\n    \"content_url\": \"content_url53\",\n    \"create_datetime\": \"2013-08-01 12:41:48\",\n    \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n    \"featured_tags\": [\n      \"featured_tags25\"\n    ],\n    \"id\": \"YsTs5ltWtEhnq\",\n    \"images\": {\n      \"downsized\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_large\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_medium\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"looping\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview_gif\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      }\n    },\n    \"import_datetime\": \"2013-08-01 12:41:48\",\n    \"rating\": \"g\",\n    \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n    \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n    \"source_post_url\": \"http://cheezburger.com/5282328320\",\n    \"source_tld\": \"cheezburger.com\",\n    \"tags\": [\n      \"tags74\"\n    ],\n    \"trending_datetime\": \"2013-08-01 12:41:48\",\n    \"type\": \"gif\",\n    \"update_datetime\": \"2013-08-01 12:41:48\",\n    \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n    \"user\": {\n      \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n      \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n      \"display_name\": \"JoeCool4000\",\n      \"profile_url\": \"https://giphy.com/cheezburger/\",\n      \"twitter\": \"@joecool4000\",\n      \"username\": \"joecool4000\"\n    },\n    \"username\": \"JoeCool4000\"\n  },\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+          "id": "11e3b95d-ea66-402a-a1d4-2d64d645b5c7",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+          "id": "5b5e4860-c34b-490a-91a1-e661571b9402",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+          "id": "92c83aa0-e3f4-4cf4-86bc-d6a4b510b168",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "8eda8ec4-3fcb-408e-adcd-172da751c1d1",
+          "id": "7a36dc53-0d60-4865-9cde-7e8ede5172a8",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "s",
+          "value": "s12",
+          "description": "Search term."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "id": "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+      "name": "trendingGifs",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/gifs/trending?limit=25&offset=0&rating=rating11",
+      "responses": [
+        {
+          "request": "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+          "id": "e20b5014-df1b-4bdd-9f97-fb93a369975c",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": [\n    {\n      \"bitly_url\": \"http://gph.is/1gsWDcL\",\n      \"content_url\": \"content_url53\",\n      \"create_datetime\": \"2013-08-01 12:41:48\",\n      \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n      \"featured_tags\": [\n        \"featured_tags25\"\n      ],\n      \"id\": \"YsTs5ltWtEhnq\",\n      \"images\": {\n        \"downsized\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_large\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_medium\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"looping\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview_gif\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        }\n      },\n      \"import_datetime\": \"2013-08-01 12:41:48\",\n      \"rating\": \"g\",\n      \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n      \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n      \"source_post_url\": \"http://cheezburger.com/5282328320\",\n      \"source_tld\": \"cheezburger.com\",\n      \"tags\": [\n        \"tags74\"\n      ],\n      \"trending_datetime\": \"2013-08-01 12:41:48\",\n      \"type\": \"gif\",\n      \"update_datetime\": \"2013-08-01 12:41:48\",\n      \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n      \"user\": {\n        \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n        \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n        \"display_name\": \"JoeCool4000\",\n        \"profile_url\": \"https://giphy.com/cheezburger/\",\n        \"twitter\": \"@joecool4000\",\n        \"username\": \"joecool4000\"\n      },\n      \"username\": \"JoeCool4000\"\n    }\n  ],\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  },\n  \"pagination\": {\n    \"count\": 25,\n    \"offset\": 75,\n    \"total_count\": 250\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+          "id": "a0fda8ff-c711-4208-b2db-66099345a0bb",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+          "id": "42ac630d-1588-448e-958d-c009e3dbd7eb",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+          "id": "b79d1f96-74bb-4162-ac9b-f54cd30cb1b9",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "629c8a6a-10cd-4698-8a5a-42f42c912c0d",
+          "id": "966a4282-83dc-4986-bdd9-b0e60fe39b49",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "limit",
+          "value": "25",
+          "description": "The maximum number of records to return."
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "description": "An optional results offset."
+        },
+        {
+          "key": "rating",
+          "value": "rating11",
+          "description": "Filters results by specified rating."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "916d9f31-ee9b-4207-9cb4-509aa981a950",
+      "id": "4c40090c-0500-44dd-af8b-3ebde19238f2",
+      "name": "getGifById",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Returns a GIF given that GIF's unique ID\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {
+        "gifId": "246"
+      },
+      "url": "https://api.giphy.com/v1/gifs/:gifId",
+      "responses": [
+        {
+          "request": "4c40090c-0500-44dd-af8b-3ebde19238f2",
+          "id": "8d824036-487f-4bb3-b225-7ad892db1227",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": {\n    \"bitly_url\": \"http://gph.is/1gsWDcL\",\n    \"content_url\": \"content_url53\",\n    \"create_datetime\": \"2013-08-01 12:41:48\",\n    \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n    \"featured_tags\": [\n      \"featured_tags25\"\n    ],\n    \"id\": \"YsTs5ltWtEhnq\",\n    \"images\": {\n      \"downsized\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_large\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_medium\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"looping\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview_gif\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      }\n    },\n    \"import_datetime\": \"2013-08-01 12:41:48\",\n    \"rating\": \"g\",\n    \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n    \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n    \"source_post_url\": \"http://cheezburger.com/5282328320\",\n    \"source_tld\": \"cheezburger.com\",\n    \"tags\": [\n      \"tags74\"\n    ],\n    \"trending_datetime\": \"2013-08-01 12:41:48\",\n    \"type\": \"gif\",\n    \"update_datetime\": \"2013-08-01 12:41:48\",\n    \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n    \"user\": {\n      \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n      \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n      \"display_name\": \"JoeCool4000\",\n      \"profile_url\": \"https://giphy.com/cheezburger/\",\n      \"twitter\": \"@joecool4000\",\n      \"username\": \"joecool4000\"\n    },\n    \"username\": \"JoeCool4000\"\n  },\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "4c40090c-0500-44dd-af8b-3ebde19238f2",
+          "id": "dc6692fe-e854-4217-8103-284dffea12d9",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "4c40090c-0500-44dd-af8b-3ebde19238f2",
+          "id": "53fd307d-1320-426f-b1dc-bce80168635b",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "4c40090c-0500-44dd-af8b-3ebde19238f2",
+          "id": "6e9c1801-ec7d-4c85-bba4-a07834482cc1",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "4c40090c-0500-44dd-af8b-3ebde19238f2",
+          "id": "e82eee95-1265-4093-95f5-353ff28d7503",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": [
+        {
+          "key": "gifId",
+          "value": "246",
+          "description": "Filters results by specified GIF ID."
+        }
+      ]
+    },
+    {
+      "folder": "c7648365-555d-418b-b3d8-6b3e584a1d41",
+      "id": "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+      "name": "randomSticker",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/stickers/random?tag=tag16&rating=rating35",
+      "responses": [
+        {
+          "request": "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+          "id": "9c17807c-5411-49bb-912d-c8024f0914a7",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": {\n    \"bitly_url\": \"http://gph.is/1gsWDcL\",\n    \"content_url\": \"content_url53\",\n    \"create_datetime\": \"2013-08-01 12:41:48\",\n    \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n    \"featured_tags\": [\n      \"featured_tags25\"\n    ],\n    \"id\": \"YsTs5ltWtEhnq\",\n    \"images\": {\n      \"downsized\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_large\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_medium\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"looping\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview_gif\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      }\n    },\n    \"import_datetime\": \"2013-08-01 12:41:48\",\n    \"rating\": \"g\",\n    \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n    \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n    \"source_post_url\": \"http://cheezburger.com/5282328320\",\n    \"source_tld\": \"cheezburger.com\",\n    \"tags\": [\n      \"tags74\"\n    ],\n    \"trending_datetime\": \"2013-08-01 12:41:48\",\n    \"type\": \"gif\",\n    \"update_datetime\": \"2013-08-01 12:41:48\",\n    \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n    \"user\": {\n      \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n      \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n      \"display_name\": \"JoeCool4000\",\n      \"profile_url\": \"https://giphy.com/cheezburger/\",\n      \"twitter\": \"@joecool4000\",\n      \"username\": \"joecool4000\"\n    },\n    \"username\": \"JoeCool4000\"\n  },\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+          "id": "908eeca9-aa21-467b-810e-e506cdfb9d75",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+          "id": "3a15f193-6d30-458c-ac6f-b8c0190c0d27",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+          "id": "c69199af-f7dc-4b98-8a04-6cec8d61588b",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "eec0aa91-4b55-4d82-aae7-b1e6b83176c9",
+          "id": "63aab74c-f664-4b43-b840-321db67e58de",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "tag",
+          "value": "tag16",
+          "description": "Filters results by specified tag."
+        },
+        {
+          "key": "rating",
+          "value": "rating35",
+          "description": "Filters results by specified rating."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "c7648365-555d-418b-b3d8-6b3e584a1d41",
+      "id": "ffdc35fa-a70d-4816-8852-62926f23ddac",
+      "name": "searchStickers",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/stickers/search?q=q73&limit=25&offset=0&rating=rating59&lang=lang65",
+      "responses": [
+        {
+          "request": "ffdc35fa-a70d-4816-8852-62926f23ddac",
+          "id": "fb2b7c7d-78e4-4a20-957f-d7fdad542b68",
+          "name": "Response_200",
+          "status": "Search results",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "Search results"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": [\n    {\n      \"bitly_url\": \"http://gph.is/1gsWDcL\",\n      \"content_url\": \"content_url53\",\n      \"create_datetime\": \"2013-08-01 12:41:48\",\n      \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n      \"featured_tags\": [\n        \"featured_tags25\"\n      ],\n      \"id\": \"YsTs5ltWtEhnq\",\n      \"images\": {\n        \"downsized\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_large\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_medium\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"looping\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview_gif\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        }\n      },\n      \"import_datetime\": \"2013-08-01 12:41:48\",\n      \"rating\": \"g\",\n      \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n      \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n      \"source_post_url\": \"http://cheezburger.com/5282328320\",\n      \"source_tld\": \"cheezburger.com\",\n      \"tags\": [\n        \"tags74\"\n      ],\n      \"trending_datetime\": \"2013-08-01 12:41:48\",\n      \"type\": \"gif\",\n      \"update_datetime\": \"2013-08-01 12:41:48\",\n      \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n      \"user\": {\n        \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n        \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n        \"display_name\": \"JoeCool4000\",\n        \"profile_url\": \"https://giphy.com/cheezburger/\",\n        \"twitter\": \"@joecool4000\",\n        \"username\": \"joecool4000\"\n      },\n      \"username\": \"JoeCool4000\"\n    }\n  ],\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  },\n  \"pagination\": {\n    \"count\": 25,\n    \"offset\": 75,\n    \"total_count\": 250\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "ffdc35fa-a70d-4816-8852-62926f23ddac",
+          "id": "f52b84d8-00cb-41d7-af8e-3f2bd4d78cb2",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "ffdc35fa-a70d-4816-8852-62926f23ddac",
+          "id": "66e419f8-f53c-495d-a07c-9f38be9dbbe6",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "ffdc35fa-a70d-4816-8852-62926f23ddac",
+          "id": "e37da40c-80a6-4b44-a597-350327a1677b",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "ffdc35fa-a70d-4816-8852-62926f23ddac",
+          "id": "59a91687-53c3-4e4e-a9af-598534a5c848",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "q",
+          "value": "q73",
+          "description": "Search query term or prhase."
+        },
+        {
+          "key": "limit",
+          "value": "25",
+          "description": "The maximum number of records to return."
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "description": "An optional results offset."
+        },
+        {
+          "key": "rating",
+          "value": "rating59",
+          "description": "Filters results by specified rating."
+        },
+        {
+          "key": "lang",
+          "value": "lang65",
+          "description": "Specify default language for regional content; use a 2-letter ISO 639-1 language code."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "c7648365-555d-418b-b3d8-6b3e584a1d41",
+      "id": "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+      "name": "translateSticker",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/stickers/translate?s=s68",
+      "responses": [
+        {
+          "request": "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+          "id": "f0e7df6f-0dcd-422b-9517-9c758d71f5fa",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": {\n    \"bitly_url\": \"http://gph.is/1gsWDcL\",\n    \"content_url\": \"content_url53\",\n    \"create_datetime\": \"2013-08-01 12:41:48\",\n    \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n    \"featured_tags\": [\n      \"featured_tags25\"\n    ],\n    \"id\": \"YsTs5ltWtEhnq\",\n    \"images\": {\n      \"downsized\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_large\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_medium\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"downsized_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_height_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_downsampled\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_small_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"fixed_width_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"looping\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"original_still\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      },\n      \"preview_gif\": {\n        \"frames\": \"15\",\n        \"height\": \"200\",\n        \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n        \"mp4_size\": \"25123\",\n        \"size\": \"32381\",\n        \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n        \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n        \"webp_size\": \"12321\",\n        \"width\": \"320\"\n      }\n    },\n    \"import_datetime\": \"2013-08-01 12:41:48\",\n    \"rating\": \"g\",\n    \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n    \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n    \"source_post_url\": \"http://cheezburger.com/5282328320\",\n    \"source_tld\": \"cheezburger.com\",\n    \"tags\": [\n      \"tags74\"\n    ],\n    \"trending_datetime\": \"2013-08-01 12:41:48\",\n    \"type\": \"gif\",\n    \"update_datetime\": \"2013-08-01 12:41:48\",\n    \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n    \"user\": {\n      \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n      \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n      \"display_name\": \"JoeCool4000\",\n      \"profile_url\": \"https://giphy.com/cheezburger/\",\n      \"twitter\": \"@joecool4000\",\n      \"username\": \"joecool4000\"\n    },\n    \"username\": \"JoeCool4000\"\n  },\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+          "id": "51e5e87f-d66d-4371-b8af-031e69e0243d",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+          "id": "bc11244a-f90a-427e-b997-46b557aa7639",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+          "id": "9876de23-655b-4c4c-92f9-e4464f3a8a75",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "958159c6-a7d6-4c63-aa4e-a8f055e1024b",
+          "id": "1f82adb8-0398-4754-b151-787ae9946a15",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "s",
+          "value": "s68",
+          "description": "Search term."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "c7648365-555d-418b-b3d8-6b3e584a1d41",
+      "id": "33a75b79-7e7b-484b-a010-9a6ce4f22328",
+      "name": "trendingStickers",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.\n",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "pathVariables": {},
+      "url": "https://api.giphy.com/v1/stickers/trending?limit=25&offset=0&rating=rating60",
+      "responses": [
+        {
+          "request": "33a75b79-7e7b-484b-a010-9a6ce4f22328",
+          "id": "afdb3621-065f-45d2-8c62-e51111d8a83d",
+          "name": "Response_200",
+          "status": "",
+          "responseCode": {
+            "code": 200,
+            "name": "200"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "{\n  \"data\": [\n    {\n      \"bitly_url\": \"http://gph.is/1gsWDcL\",\n      \"content_url\": \"content_url53\",\n      \"create_datetime\": \"2013-08-01 12:41:48\",\n      \"embded_url\": \"http://giphy.com/embed/YsTs5ltWtEhnq\",\n      \"featured_tags\": [\n        \"featured_tags25\"\n      ],\n      \"id\": \"YsTs5ltWtEhnq\",\n      \"images\": {\n        \"downsized\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_large\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_medium\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"downsized_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_height_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_downsampled\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_small_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"fixed_width_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"looping\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"original_still\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        },\n        \"preview_gif\": {\n          \"frames\": \"15\",\n          \"height\": \"200\",\n          \"mp4\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.mp4\",\n          \"mp4_size\": \"25123\",\n          \"size\": \"32381\",\n          \"url\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/200.gif\",\n          \"webp\": \"https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy.webp\",\n          \"webp_size\": \"12321\",\n          \"width\": \"320\"\n        }\n      },\n      \"import_datetime\": \"2013-08-01 12:41:48\",\n      \"rating\": \"g\",\n      \"slug\": \"confused-flying-YsTs5ltWtEhnq\",\n      \"source\": \"http://www.reddit.com/r/reactiongifs/comments/1xpyaa/superman_goes_to_hollywood/\",\n      \"source_post_url\": \"http://cheezburger.com/5282328320\",\n      \"source_tld\": \"cheezburger.com\",\n      \"tags\": [\n        \"tags74\"\n      ],\n      \"trending_datetime\": \"2013-08-01 12:41:48\",\n      \"type\": \"gif\",\n      \"update_datetime\": \"2013-08-01 12:41:48\",\n      \"url\": \"http://giphy.com/gifs/confused-flying-YsTs5ltWtEhnq\",\n      \"user\": {\n        \"avatar_url\": \"https://media1.giphy.com/avatars/election2016/XwYrZi5H87o6.gif\",\n        \"banner_url\": \"https://media4.giphy.com/avatars/cheezburger/XkuejOhoGLE6.jpg\",\n        \"display_name\": \"JoeCool4000\",\n        \"profile_url\": \"https://giphy.com/cheezburger/\",\n        \"twitter\": \"@joecool4000\",\n        \"username\": \"joecool4000\"\n      },\n      \"username\": \"JoeCool4000\"\n    }\n  ],\n  \"meta\": {\n    \"msg\": \"OK\",\n    \"response_id\": \"57eea03c72381f86e05c35d2\",\n    \"status\": 200\n  },\n  \"pagination\": {\n    \"count\": 25,\n    \"offset\": 75,\n    \"total_count\": 250\n  }\n}",
+          "language": "Text",
+          "rawDataType": "text"
+        },
+        {
+          "request": "33a75b79-7e7b-484b-a010-9a6ce4f22328",
+          "id": "f8e965d3-eac9-4825-894b-97ed6bb6b229",
+          "name": "Response_400",
+          "status": "Your request was formatted incorrectly or missing required parameters.",
+          "responseCode": {
+            "code": 400,
+            "name": "400",
+            "detail": "Your request was formatted incorrectly or missing required parameters."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "33a75b79-7e7b-484b-a010-9a6ce4f22328",
+          "id": "3a24de2f-f8d9-4eba-9388-3d53830cee0f",
+          "name": "Response_403",
+          "status": "You weren't authorized to make your request; most likely this indicates an issue with your API Key.",
+          "responseCode": {
+            "code": 403,
+            "name": "403",
+            "detail": "You weren't authorized to make your request; most likely this indicates an issue with your API Key."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "33a75b79-7e7b-484b-a010-9a6ce4f22328",
+          "id": "1bec8785-0907-491d-ab11-680050058fa3",
+          "name": "Response_404",
+          "status": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist.",
+          "responseCode": {
+            "code": 404,
+            "name": "404",
+            "detail": "The particular GIF you are requesting was not found. This occurs, for example, if you request a GIF by an id that does not exist."
+          },
+          "headers": [],
+          "language": "Text"
+        },
+        {
+          "request": "33a75b79-7e7b-484b-a010-9a6ce4f22328",
+          "id": "9826fa93-63d1-4656-a846-989e557dd090",
+          "name": "Response_429",
+          "status": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits.",
+          "responseCode": {
+            "code": 429,
+            "name": "429",
+            "detail": "Your API Key is making too many requests. Read about [requesting a Production Key](https://developers.giphy.com/docs/#access) to upgrade your API Key rate limits."
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "e8e9b86b-b9c8-48f0-916a-b618c62bb0a2",
+      "queryParams": [
+        {
+          "key": "limit",
+          "value": "25",
+          "description": "The maximum number of records to return."
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "description": "An optional results offset."
+        },
+        {
+          "key": "rating",
+          "value": "rating60",
+          "description": "Filters results by specified rating."
+        }
+      ],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    }
+  ],
+  "variables": [],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "api_key62",
+        "type": "string"
+      }
+    ]
+  }
+}

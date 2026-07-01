@@ -1,0 +1,3590 @@
+_type: export
+__export_format: 4
+__export_source: apimatic.transformer
+resources:
+- name: Hetzner Cloud API
+  _type: workspace
+  _id: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    This is the official API documentation for the Public Hetzner Cloud.
+
+
+    ## Introduction
+
+
+    The Hetzner Cloud API operates over HTTPS and uses JSON as its data format. The API is a RESTful API and utilizes HTTP methods and HTTP status codes to specify requests and responses.
+
+
+    As an alternative to working directly with our API you may also consider to use:
+
+    * Our CLI program [hcloud](https://github.com/hetznercloud/cli)
+
+    * Our [library for Go](https://github.com/hetznercloud/hcloud-go)
+
+    * Our [library for Python](https://github.com/hetznercloud/hcloud-python)
+
+
+    Also you can find a [list of libraries, tools, and integrations on GitHub](https://github.com/hetznercloud/awesome-hcloud).
+
+
+    If you are developing integrations based on our API and your product is Open Source you may be eligible for a free one time €50 (excl. VAT) credit on your account. Please contact us via the the support page on your Cloud Console and let us know the following:
+
+    * The type of integration you would like to develop
+
+    * Link to the GitHub repo you will use for the Project
+
+    * Link to some other Open Source work you have already done (if you have done so)
+
+
+    ## Getting Started
+
+    To get started using the API you first need an API token. Sign in into the [Hetzner Cloud Console](https://console.hetzner.cloud/) choose a Project, go to `Security` → `API Tokens`, and generate a new token. Make sure to copy the token because it won’t be shown to you again. A token is bound to a Project, to interact with the API of another Project you have to create a new token inside the Project. Let’s say your new token is `jEheVytlAoFl7F8MqUQ7jAo2hOXASztX`.
+
+
+    You’re now ready to do your first request against the API. To get a list of all Servers in your Project, issue the example request on the right side using [curl](https://curl.haxx.se/).
+
+
+    Make sure to replace the token in the example command with the token you have just created. Since your Project probably does not contain any Servers yet, the example response will look like the response on the right side. We will almost always provide a resource root like `servers` inside the example response. A response can also contain a `meta` object with information like [Pagination](https://docs.hetzner.cloud/#overview-pagination).
+
+
+    **Example Request**
+
+    ```bash
+
+    curl -H "Authorization: Bearer jEheVytlAoFl7F8MqUQ7jAo2hOXASztX" \
+        https://api.hetzner.cloud/v1/servers
+    ```
+
+
+    **Example Response**
+
+    ```json
+
+    {
+        "servers": [],
+        "meta": {
+            "pagination": {
+                "page": 1,
+                "per_page": 25,
+                "previous_page": null,
+                "next_page": null,
+                "last_page": 1,
+                "total_entries": 0
+            }
+        }
+    }
+
+    ```
+
+
+    ## Authentication
+
+    All requests to the Hetzner Cloud API must be authenticated via a API token. Include your secret API token in every request you send to the API with the `Authorization` HTTP header.
+
+
+    To create a new API token for your Project, switch into the [Hetzner Cloud Console](https://console.hetzner.cloud/) choose a Project, go to `Security` → `API Tokens`, and generate a new token.
+
+
+    **Example Authorization header**
+
+    ```html
+
+    Authorization: Bearer LRK9DAWQ1ZAEFSrCNEEzLCUwhYX1U3g7wMg4dTlkkDC96fyDuyJ39nVbVjCKSDfj
+
+    ```
+
+
+    ## Errors
+
+    Errors are indicated by HTTP status codes. Further, the response of the request which generated the error contains an error code, an error message, and, optionally, error details. The schema of the error details object depends on the error code.
+
+
+    The error response contains the following keys:
+
+
+    | Keys      | Meaning                                                               |
+
+    |-----------|-----------------------------------------------------------------------|
+
+    | `code`    | Short string indicating the type of error (machine-parsable)          |
+
+    | `message` | Textual description on what has gone wrong                            |
+
+    | `details` | An object providing for details on the error (schema depends on code) |
+
+
+    **Example response**
+
+    ```json
+
+    {
+      "error": {
+        "code": "invalid_input",
+        "message": "invalid input in field 'broken_field': is too long",
+        "details": {
+          "fields": [
+            {
+              "name": "broken_field",
+              "messages": ["is too long"]
+            }
+          ]
+        }
+      }
+    }
+
+    ```
+
+
+    ### Error Codes
+
+
+    | Code                      | Description                                                                      |
+
+    |---------------------------|----------------------------------------------------------------------------------|
+
+    | `forbidden`               | Insufficient permissions for this request                                        |
+
+    | `invalid_input`           | Error while parsing or processing the input                                      |
+
+    | `json_error`              | Invalid JSON input in your request                                               |
+
+    | `locked`                  | The item you are trying to access is locked (there is already an Action running) |
+
+    | `not_found`               | Entity not found                                                                 |
+
+    | `rate_limit_exceeded`     | Error when sending too many requests                                             |
+
+    | `resource_limit_exceeded` | Error when exceeding the maximum quantity of a resource for an account           |
+
+    | `resource_unavailable`    | The requested resource is currently unavailable                                  |
+
+    | `service_error`           | Error within a service                                                           |
+
+    | `uniqueness_error`        | One or more of the objects fields must be unique                                 |
+
+    | `protected`               | The Action you are trying to start is protected for this resource                |
+
+    | `maintenance`             | Cannot perform operation due to maintenance                                      |
+
+    | `conflict`                | The resource has changed during the request, please retry                        |
+
+    | `unsupported_error`       | The corresponding resource does not support the Action                           |
+
+    | `token_readonly`          | The token is only allowed to perform GET requests                                |
+
+    | `unavailable`             | A service or product is currently not available                                  |
+
+
+    **invalid_input**
+
+    ```json
+
+    {
+      "error": {
+        "code": "invalid_input",
+        "message": "invalid input in field 'broken_field': is too long",
+        "details": {
+          "fields": [
+            {
+              "name": "broken_field",
+              "messages": ["is too long"]
+            }
+          ]
+        }
+      }
+    }
+
+    ```
+
+
+    **uniqueness_error**
+
+    ```json
+
+    {
+      "error": {
+        "code": "uniqueness_error",
+        "message": "SSH key with the same fingerprint already exists",
+        "details": {
+          "fields": [
+            {
+              "name": "public_key"
+            }
+          ]
+        }
+      }
+    }
+
+    ```
+
+
+    **resource_limit_exceeded**
+
+    ```json
+
+    {
+      "error": {
+        "code": "resource_limit_exceeded",
+        "message": "project limit exceeded",
+        "details": {
+          "limits": [
+            {
+              "name": "project_limit"
+            }
+          ]
+        }
+      }
+    }
+
+    ```
+
+
+    ## Labels
+
+    Labels are `key/value` pairs that can be attached to all resources.
+
+
+    Valid label keys have two segments: an optional prefix and name, separated by a slash (`/`). The name segment is required and must be a string of 63 characters or less, beginning and ending with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between. The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots (`.`), not longer than 253 characters in total, followed by a slash (`/`).
+
+
+    Valid label values must be a string of 63 characters or less and must be empty or begin and end with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between.
+
+
+    The `hetzner.cloud/` prefix is reserved and cannot be used.
+
+
+    **Example Labels**
+
+    ```json
+
+    {
+      "labels": {
+        "environment":"development",
+        "service":"backend",
+        "example.com/my":"label",
+        "just-a-key":""
+      }
+    }
+
+    ```
+
+
+    ## Label Selector
+
+    For resources with labels, you can filter resources by their labels using the label selector query language.
+
+
+    | Expression           | Meaning                                                             |
+
+    |----------------------|---------------------------------------------------------------------|
+
+    | `k==v` / `k=v`       | Value of key `k` does equal value `v`                               |
+
+    | `k!=v`               | Value of key `k` does not equal value `v`                           |
+
+    | `k`                  | Key `k` is present                                                  |
+
+    | `!k`                 | Key `k` is not present                                              |
+
+    | `k in (v1,v2,v3)`    | Value of key `k` is `v1`, `v2`, or `v3`                             |
+
+    | `k notin (v1,v2,v3)` | Value of key `k` is neither `v1`, nor `v2`, nor `v3`                |
+
+    | `k1==v,!k2`          | Value of key `k1` is `v` and key `k2` is not present                |
+
+
+    ### Examples
+
+    * Returns all resources that have a `env=production` label and that don't have a `type=database` label:
+
+      `env=production,type!=database`
+    * Returns all resources that have a `env=testing` or `env=staging` label:
+
+        `env in (testing,staging)`
+    * Returns all resources that don't have a `type` label:
+
+        `!type`
+
+    ## Pagination
+
+    Responses which return multiple items support pagination. If they do support pagination, it can be controlled with following query string parameters:
+
+
+    * A `page` parameter specifies the page to fetch. The number of the first page is 1.
+
+    * A `per_page` parameter specifies the number of items returned per page. The default value is 25, the maximum value is 50 except otherwise specified in the documentation.
+
+
+    Responses contain a `Link` header with pagination information.
+
+
+    Additionally, if the response body is JSON and the root object is an object, that object has a `pagination` object inside the `meta` object with pagination information:
+
+
+    **Example Pagination**
+
+    ```json
+
+    {
+        "servers": [...],
+        "meta": {
+            "pagination": {
+                "page": 2,
+                "per_page": 25,
+                "previous_page": 1,
+                "next_page": 3,
+                "last_page": 4,
+                "total_entries": 100
+            }
+        }
+    }
+
+    ```
+
+
+    The keys `previous_page`, `next_page`, `last_page`, and `total_entries` may be `null` when on the first page, last page, or when the total number of entries is unknown.
+
+
+    **Example Pagination Link header**
+
+    ```bash
+
+    Link: <https://api.hetzner.cloud/v1/actions?page=2&per_page=5>; rel="prev",
+          <https://api.hetzner.cloud/v1/actions?page=4&per_page=5>; rel="next",
+          <https://api.hetzner.cloud/v1/actions?page=6&per_page=5>; rel="last"
+    ```
+
+
+    Line breaks have been added for display purposes only and responses may only contain some of the above `rel` values.
+
+
+    ## Rate Limiting
+
+    All requests, whether they are authenticated or not, are subject to rate limiting. If you have reached your limit, your requests will be handled with a `429 Too Many Requests` error. Burst requests are allowed. Responses contain serveral headers which provide information about your current rate limit status.
+
+
+    * The `RateLimit-Limit` header contains the total number of requests you can perform per hour.
+
+    * The `RateLimit-Remaining` header contains the number of requests remaining in the current rate limit time frame.
+
+    * The `RateLimit-Reset` header contains a UNIX timestamp of the point in time when your rate limit will have recovered and you will have the full number of requests available again.
+
+
+    The default limit is 3600 requests per hour and per Project. The number of remaining requests increases gradually. For example, when your limit is 3600 requests per hour, the number of remaining requests will increase by 1 every second.
+
+
+    ## Server Metadata
+
+    Your Server can discover metadata about itself by doing a HTTP request to specific URLs. The following data is available:
+
+
+    | Data              | Format | Contents                                                     |
+
+    |-------------------|--------|--------------------------------------------------------------|
+
+    | hostname          | text   | Name of the Server as set in the api                         |
+
+    | instance-id       | number | ID of the server                                             |
+
+    | public-ipv4       | text   | Primary public IPv4 address                                  |
+
+    | private-networks  | yaml   | Details about the private networks the Server is attached to |
+
+    | availability-zone | text   | Name of the availability zone that Server runs in            |
+
+    | region            | text   | Network zone, e.g. eu-central                                |
+
+
+    **Example: Summary**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata
+
+    ```
+
+
+    ```yaml
+
+    availability-zone: hel1-dc2
+
+    hostname: my-server
+
+    instance-id: 42
+
+    public-ipv4: 1.2.3.4
+
+    region: eu-central
+
+    ```
+
+
+    **Example: Hostname**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata/hostname
+
+    my-server
+
+    ```
+
+
+    **Example: Instance ID**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata/instance-id
+
+    42
+
+    ```
+
+
+    **Example: Public IPv4**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata/public-ipv4
+
+    1.2.3.4
+
+    ```
+
+
+    **Example: Private Networks**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata/private-networks
+
+    ```
+
+
+    ```json
+
+    - ip: 10.0.0.2
+      alias_ips: [10.0.0.3, 10.0.0.4]
+      interface_num: 1
+      mac_address: 86:00:00:2a:7d:e0
+      network_id: 1234
+      network_name: nw-test1
+      network: 10.0.0.0/8
+      subnet: 10.0.0.0/24
+      gateway: 10.0.0.1
+    - ip: 192.168.0.2
+      alias_ips: []
+      interface_num: 2
+      mac_address: 86:00:00:2a:7d:e1
+      network_id: 4321
+      network_name: nw-test2
+      network: 192.168.0.0/16
+      subnet: 192.168.0.0/24
+      gateway: 192.168.0.1
+    ```
+
+
+    **Example: Availability Zone**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata/availability-zone
+
+    hel1-dc2
+
+    ```
+
+
+    **Example: Region**
+
+    ```bash
+
+    $ curl http://169.254.169.254/hetzner/v1/metadata/region
+
+    eu-central
+
+    ```
+
+
+    ## Sorting
+
+    Some responses which return multiple items support sorting. If they do support sorting the documentation states which fields can be used for sorting. You specify sorting with the `sort` query string parameter. You can sort by multiple fields. You can set the sort direction by appending `:asc` or `:desc` to the field name. By default, ascending sorting is used.
+
+
+    **Example: Sorting**
+
+    ```bash
+
+    https://api.hetzner.cloud/v1/actions?sort=status
+
+    https://api.hetzner.cloud/v1/actions?sort=status:asc
+
+    https://api.hetzner.cloud/v1/actions?sort=status:desc
+
+    https://api.hetzner.cloud/v1/actions?sort=status:asc&sort=command:desc
+
+    ```
+- name: Actions
+  _type: request_group
+  _id: fld_fa578a0802c24993b74a4f6690038dfe
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: Actions show the results and progress of asynchronous requests to the API.
+- name: Certificates
+  _type: request_group
+  _id: fld_a791aa97c80e4c0aa2fbfc0c847d6f2d
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: TLS/SSL Certificates prove the identity of a Server and are used to encrypt client traffic.
+- name: Certificate Actions
+  _type: request_group
+  _id: fld_ebf60d80ab3448e58669491297a2fcac
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Datacenters
+  _type: request_group
+  _id: fld_444665d968d94e1c848d735d213f8b5d
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Each Datacenter represents a *virtual* Datacenter which is made up of possible many physical Datacenters where Servers are hosted.
+
+
+    Datacenter names are composed from their Location and virtual Datacenter number, for example `fsn1-dc14` means virtual Datacenter `14` in Location `fsn1`.
+
+
+    Right now there is only one Datacenter for each Location. The Datacenter numbers for `fsn`, `nbg` and `hel` are arbitrarily set to `14`, `3` and `2` for historic reasons and do not represent real physical Hetzner datacenters.
+- name: Firewalls
+  _type: request_group
+  _id: fld_140e92da3c8142b186924ac17969f0ca
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Firewalls can limit the network access to or from your resources.
+
+
+    * When applying a firewall with no `in` rule all inbound traffic will be dropped. The default for `in` is `DROP`.
+
+    * When applying a firewall with no `out` rule all outbound traffic will be accepted. The default for `out` is `ACCEPT`.
+- name: Firewall Actions
+  _type: request_group
+  _id: fld_50c4d7b6d02544caab53af8107b55c9d
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Floating IPs
+  _type: request_group
+  _id: fld_9c4ed1e7c2d24294a3fe9ef80ab591e4
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Floating IPs help you to create highly available setups. You can assign a Floating IP to any Server. The Server can then use this IP. You can reassign it to a different Server at any time, or you can choose to unassign the IP from Servers all together.
+
+
+    Floating IPs can be used globally. This means you can assign a Floating IP to a Server in one Location and later reassign it to a Server in a different Location. For optimal routing and latency Floating IPs should be used in the Location they were created in.
+
+
+    For Floating IPs to work with your Server, you must configure them inside your operation system.
+
+
+    Floating IPs of type `ipv4` use a single IPv4 address as their `ip` property. Floating IPs of type `ipv6` use a /64 network such as `fc00::/64` as their `ip` property. Any IP address within that network can be used on your host.
+
+
+    Floating IPs are billed on a monthly basis.
+- name: Floating IP Actions
+  _type: request_group
+  _id: fld_8800312257c44e239b7897771dc3557e
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Images
+  _type: request_group
+  _id: fld_2ffbce3941ef4657acb573003e6ace45
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Images are blueprints for your VM disks. They can be of different types:
+
+
+    ### System Images
+
+    Distribution Images maintained by us, e.g. “Ubuntu 20.04”
+
+
+    ### Snapshot Images
+
+    Maintained by you, for example “Ubuntu 20.04 with my own settings”. These are billed per GB per month.
+
+
+    ### Backup Images
+
+    Daily Backups of your Server. Will automatically be created for Servers which have backups enabled (`POST /servers/{id}/actions/enable_backup`)
+
+
+    Bound to exactly one Server. If you delete the Server, you also delete all backups bound to it. You may convert backup Images to snapshot Images to keep them.
+
+
+    These are billed at 20% of your instance price for 7 backup slots.
+
+
+    ### App Images
+
+    Prebuild images with specific software configurations, e.g. “Wordpress”. All app images are created by us.
+- name: Image Actions
+  _type: request_group
+  _id: fld_02d749249a274538b3750da604d03173
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: ISOs
+  _type: request_group
+  _id: fld_20ab66729e13416bb187fb153fa00b4a
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    ISOs are read-only Images of DVDs. While we recommend using our Image functionality to install your Servers we also provide some stock ISOs so you can install more exotic operating systems by yourself.
+
+
+    On request our support uploads a private ISO just for you. These are marked with type `private` and only visible in your Project.
+
+
+    To attach an ISO to your Server use `POST /servers/{id}/actions/attach_iso`.
+- name: Load Balancers
+  _type: request_group
+  _id: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Load Balancer Actions
+  _type: request_group
+  _id: fld_b8300838d76e4853b9731dc5c706ab1e
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Load Balancer Types
+  _type: request_group
+  _id: fld_cc8f74bfa6e947b0b0aa69037447e7e0
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Load Balancer types define kinds of Load Balancers offered. Each type has an hourly and a monthly cost. You will pay whichever amount is lower for your usage of this specific Load Balancer. Costs may differ between Locations.
+
+
+    Currency for all amounts is €. All prices exclude VAT.
+- name: Locations
+  _type: request_group
+  _id: fld_e741959a578c4287a988eff748ca4581
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: Datacenters are organized by Locations. Datacenters in the same Location are connected with very low latency links.
+- name: Primary IPs
+  _type: request_group
+  _id: fld_e1e7eec69d5442c88f24bcbecd08d6d1
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Primary IPs help you to create more flexible networking setups. You can assign at most one Primary IP of type `ipv4` and one of type `ipv6` per Server. This Server then uses these IPs.
+
+
+    You can only unassign a Primary IP from a Server when it's powered off. This Primary IP can then be assigned to a different powered off Server, or you can keep it around for later use.
+
+
+    Primary IPs are bound to a specific Datacenter. You can not assign a Primary IP from one Datacenter to a Server in a different Datacenter. If you need this capability use Floating IPs instead.
+
+
+    If your Server's operating system supports cloud-init there is no further configuration needed to make Primary IPs work.
+
+
+    Primary IPs of type `ipv4` use a single IPv4 address as their `ip` property. Primary IPs of type `ipv6` use a /64 network such as `fc00::/64` as their `ip` property. Any IP address within that network can be used on your host.
+
+
+    Primary IPs are billed on an hourly basis.
+- name: Primary IP Actions
+  _type: request_group
+  _id: fld_dfa5833c4d29446b9ed3612e15b0a5cb
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Networks
+  _type: request_group
+  _id: fld_21f3fd0d8ceb4f24a02103d4df87f7b9
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Networks is a private networks feature. These Networks are optional and they coexist with the public network that every Server has by default.
+
+
+    They allow Servers to talk to each other over a dedicated network interface using private IP addresses not available publicly.
+
+
+    The IP addresses are allocated and managed via the API, they must conform to [RFC1918](https://tools.ietf.org/html/rfc1918#section-3) standard. IPs and network interfaces defined under Networks do not provide public internet connectivity, you will need to use the already existing public network interface for that.
+
+
+    Each network has a user selected `ip_range` which defines all available IP addresses which can be used for Subnets within the Network.
+
+
+    To assign individual IPs to Servers you will need to create Network Subnets, described below.
+
+
+    Currently Networks support IPv4 only.
+
+
+    ### Subnets
+
+    Subnets divide the `ip_range` from the parent Network object into multiple Subnetworks that you can use for different specific purposes.
+
+
+    For each subnet you need to specify its own `ip_range` which must be contained within the parent Network’s `ip_range`. Additionally each subnet must belong to one of the available Network Zones described below. Subnets can not have overlapping IP ranges.
+
+
+    Currently there are three types of subnet:
+
+    * type `cloud` is used to connect cloud Resources into your Network.
+
+    * type `server` was used to connect only cloud Servers into your Network. This type is deprecated and is replaced by type cloud.
+
+    * type `vswitch` allows you to connect [Dedicated Server vSwitch](https://docs.hetzner.com/robot/dedicated-server/network/vswitch) - and all Dedicated Servers attached to it - into your Network
+
+
+    Subnets of type `vswitch` must set a `vswitch_id` which is the ID of the existing vSwitch in Hetzner Robot that should be coupled.
+
+
+    ### Network Zones
+
+    Network Zones are groups of Locations which have special high-speed network connections between them. The [Location object](https://docs.hetzner.cloud/#locations-get-a-location) contains the `network_zone` property each Location belongs to. Currently these network zones exist:
+
+
+    |Network Zone|Contains Locations|
+
+    |------------|------------------|
+
+    |eu-central  | nbg1, fsn1, hel1 |
+
+    |us-east     | ash              |
+
+
+    ### IP address management
+
+    When a cloud Server is attached to a network without the user specifying an IP it automatically gets an IP address assigned from a subnet of type `server` in the same network zone. If you specify the optional `ip` parameter when attaching then we will try to assign that IP. Keep in mind that the Server’s location must be covered by the Subnet’s Network Zone if you specify an IP, or that at least one Subnet with the zone covering Server’s location must exist.
+
+
+    A cloud Server can also have more than one IP address in a Network by specifying aliases. For details see the [attach to network action](https://docs.hetzner.cloud/#server-actions-attach-a-server-to-a-network).
+
+
+    The following IP addresses are reserved in networks and can not be used:
+      * the first IP of the network `ip_range` as it will be used as a default gateway for the private Network interface.
+      * `172.31.1.1` as it is being used as default gateway for our public Network interfaces.
+
+    ### Coupling Dedicated Servers
+
+
+    By using subnets of type `vswitch` you can couple the Cloud Networks with an existing [Dedicated Server vSwitch](https://docs.hetzner.com/robot/dedicated-server/network/vswitch) and enable dedicated and cloud servers to
+
+    talk to each other over the Network.
+
+    In order for this to work the dedicated servers may only use IPs from the subnet and must have a special network configuration. Please refer to [FAQ](https://docs.hetzner.com/cloud/networks/connect-dedi-vswitch). vSwitch Layer 2 features are not supported.
+
+
+    ### Routes
+
+    Networks also support the notion of routes which are automatically applied to private traffic. A route makes sure that all packets for a given `destination` IP prefix will be sent to the address specified in its `gateway`.
+- name: Network Actions
+  _type: request_group
+  _id: fld_7342f0e6ab2048d3a136b50fd39834ef
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Placement Groups
+  _type: request_group
+  _id: fld_b3eb974f3bbc494386e11d257a73a88e
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Placement groups are used to influence the location of interdependent virtual servers in our data centers. The distribution of the different instances within a group is based on a pattern specified in the type. By enforcing certain rules on the placement of instances within our infrastructure, availability can be influenced in a way that fits your needs best.
+
+
+    In `spread` placement groups, all virtual servers will run on different physical servers. This decreases the probability that some instances might fail together.
+- name: Pricing
+  _type: request_group
+  _id: fld_73f8c5cbeae94d5fa8a14c367fcd8718
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: Returns prices for resources.
+- name: Servers
+  _type: request_group
+  _id: fld_e6275f468db3440590c285927b4fe008
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: Servers are virtual machines that can be provisioned.
+- name: Server Actions
+  _type: request_group
+  _id: fld_0039c8df6b854984aced834d51d2bc42
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Server Types
+  _type: request_group
+  _id: fld_ef40a6ecf9674f4a8024d7cb8de47885
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    Server types define kinds of Servers offered. Each type has an hourly and a monthly cost. You will pay whichever cost is lower for your usage of this specific Server. Costs may differ between Locations.
+
+
+    Currency for all amounts is €. All prices exclude VAT.
+- name: SSH Keys
+  _type: request_group
+  _id: fld_f3ae0d9ed21a4f08823659b09e8f770d
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: SSH keys are public keys you provide to the cloud system. They can be injected into Servers at creation time. We highly recommend that you use keys instead of passwords to manage your Servers.
+- name: Volumes
+  _type: request_group
+  _id: fld_8865dec9be344fe2ad72b9b7f94d0eb4
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+  description: >
+    A Volume is a highly-available, scalable, and SSD-based block storage for Servers.
+
+
+    Pricing for Volumes depends on the Volume size and Location, not the actual used storage.
+
+
+    Please see [Hetzner Docs](https://docs.hetzner.com/cloud/#Volumes) for more details about Volumes.
+- name: Volume Actions
+  _type: request_group
+  _id: fld_80591f5d16d5435e8d146445b0809efa
+  parentId: wrk_2085db7ae4214f44aebae2d5bdb5f0a0
+- name: Get all Actions
+  method: GET
+  url: https://api.hetzner.cloud/v1/actions
+  parameters:
+  - name: id
+    value: '90'
+    disabled: false
+  - name: sort
+    value: command:desc
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_1a9bd837dff5469fb8c2714cb710633a
+  parentId: fld_fa578a0802c24993b74a4f6690038dfe
+  description: Returns all Action objects. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.
+- name: Get an Action
+  method: GET
+  url: https://api.hetzner.cloud/v1/actions/{id}
+  authentication: {}
+  _type: request
+  _id: req_8fe7bd5e17ab4d1e99e4969ed9aff4d6
+  parentId: fld_fa578a0802c24993b74a4f6690038dfe
+  description: Returns a specific Action object.
+- name: Get all Certificates
+  method: GET
+  url: https://api.hetzner.cloud/v1/certificates
+  parameters:
+  - name: sort
+    value: name:asc
+    disabled: false
+  - name: name
+    value: name78
+    disabled: false
+  - name: label_selector
+    value: label_selector60
+    disabled: false
+  - name: type
+    value: uploaded
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_f47994d2a5a64225a099105725b46f31
+  parentId: fld_a791aa97c80e4c0aa2fbfc0c847d6f2d
+  description: Returns all Certificate objects.
+- name: Create a Certificate
+  method: POST
+  url: https://api.hetzner.cloud/v1/certificates
+  body:
+    mimeType: application/json
+    text: '{"domain_names":["example.com","webmail.example.com","www.example.com"],"name":"my website cert","type":"managed"}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_f64108f305ae4e3fa02e0d9a3fc5de9e
+  parentId: fld_a791aa97c80e4c0aa2fbfc0c847d6f2d
+  description: >
+    Creates a new Certificate.
+
+
+    The default type **uploaded** allows for uploading your existing `certificate` and `private_key` in PEM format. You have to monitor its expiration date and handle renewal yourself.
+
+
+    In contrast, type **managed** requests a new Certificate from *Let's Encrypt* for the specified `domain_names`. Only domains managed by *Hetzner DNS* are supported. We handle renewal and timely alert the project owner via email if problems occur.
+
+
+    For type `managed` Certificates the `action` key of the response contains the Action that allows for tracking the issuance process. For type `uploaded` Certificates the `action` is always null.
+- name: Delete a Certificate
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/certificates/{id}
+  authentication: {}
+  _type: request
+  _id: req_2c5fcb33412d4953944cd4352ebad46a
+  parentId: fld_a791aa97c80e4c0aa2fbfc0c847d6f2d
+  description: Deletes a Certificate.
+- name: Get a Certificate
+  method: GET
+  url: https://api.hetzner.cloud/v1/certificates/{id}
+  authentication: {}
+  _type: request
+  _id: req_c7afd85486124ca8b49b846cb2c1b687
+  parentId: fld_a791aa97c80e4c0aa2fbfc0c847d6f2d
+  description: Gets a specific Certificate object.
+- name: Update a Certificate
+  method: PUT
+  url: https://api.hetzner.cloud/v1/certificates/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "my website cert"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_8a101ff0b17f430d89aef2a649732228
+  parentId: fld_a791aa97c80e4c0aa2fbfc0c847d6f2d
+  description: >
+    Updates the Certificate properties.
+
+
+    Note that when updating labels, the Certificate’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+
+
+    Note: if the Certificate object changes during the request, the response will be a “conflict” error.
+- name: Get all Actions for a Certificate
+  method: GET
+  url: https://api.hetzner.cloud/v1/certificates/{id}/actions
+  parameters:
+  - name: sort
+    value: progress:desc
+    disabled: false
+  - name: status
+    value: running
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_27a1896861524d658f3ac90ebdbd3916
+  parentId: fld_ebf60d80ab3448e58669491297a2fcac
+  description: >
+    Returns all Action objects for a Certificate. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
+
+
+    Only type `managed` Certificates can have Actions. For type `uploaded` Certificates the `actions` key will always contain an empty array.
+- name: Retry Issuance or Renewal
+  method: POST
+  url: https://api.hetzner.cloud/v1/certificates/{id}/actions/retry
+  authentication: {}
+  _type: request
+  _id: req_7d1123fee80a4828a38ca4a49bf55fe0
+  parentId: fld_ebf60d80ab3448e58669491297a2fcac
+  description: >
+    Retry a failed Certificate issuance or renewal.
+
+
+    Only applicable if the type of the Certificate is `managed` and the issuance or renewal status is `failed`.
+
+
+    #### Call specific error codes
+
+
+    | Code                                                    | Description                                                               |
+
+    |---------------------------------------------------------|---------------------------------------------------------------------------|
+
+    | `caa_record_does_not_allow_ca`                          | CAA record does not allow certificate authority                           |
+
+    | `ca_dns_validation_failed`                              | Certificate Authority: DNS validation failed                              |
+
+    | `ca_too_many_authorizations_failed_recently`            | Certificate Authority: Too many authorizations failed recently            |
+
+    | `ca_too_many_certificates_issued_for_registered_domain` | Certificate Authority: Too many certificates issued for registered domain |
+
+    | `ca_too_many_duplicate_certificates`                    | Certificate Authority: Too many duplicate certificates                    |
+
+    | `could_not_verify_domain_delegated_to_zone`             | Could not verify domain delegated to zone                                 |
+
+    | `dns_zone_not_found`                                    | DNS zone not found                                                        |
+
+    | `dns_zone_is_secondary_zone`                            | DNS zone is a secondary zone                                              |
+- name: Get an Action for a Certificate
+  method: GET
+  url: https://api.hetzner.cloud/v1/certificates/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_08c845ca1696446d9ce554127a81c2b8
+  parentId: fld_ebf60d80ab3448e58669491297a2fcac
+  description: Returns a specific Action for a Certificate. Only type `managed` Certificates have Actions.
+- name: Get all Datacenters
+  method: GET
+  url: https://api.hetzner.cloud/v1/datacenters
+  parameters:
+  - name: name
+    value: name37
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_e9badf2efee24ae3ab69129bca8d9268
+  parentId: fld_444665d968d94e1c848d735d213f8b5d
+  description: Returns all Datacenter objects.
+- name: Get a Datacenter
+  method: GET
+  url: https://api.hetzner.cloud/v1/datacenters/{id}
+  authentication: {}
+  _type: request
+  _id: req_b64832a3443142a6a006d77b83b15a52
+  parentId: fld_444665d968d94e1c848d735d213f8b5d
+  description: Returns a specific Datacenter object.
+- name: Get all Firewalls
+  method: GET
+  url: https://api.hetzner.cloud/v1/firewalls
+  parameters:
+  - name: sort
+    value: name:desc
+    disabled: false
+  - name: name
+    value: name36
+    disabled: false
+  - name: label_selector
+    value: label_selector39
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b8848aced74840dc83fdf02cf9ac4063
+  parentId: fld_140e92da3c8142b186924ac17969f0ca
+  description: Returns all Firewall objects.
+- name: Create a Firewall
+  method: POST
+  url: https://api.hetzner.cloud/v1/firewalls
+  body:
+    mimeType: application/json
+    text: '{"apply_to":[{"server":{"id":42},"type":"server"}],"labels":{"env":"dev"},"name":"Corporate Intranet Protection","rules":[{"description":"Allow port 80","direction":"in","port":"80","protocol":"tcp","source_ips":["28.239.13.1/32","28.239.14.0/24","ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"]}]}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_534e14b0a56240dcb9a9165c2e4ca413
+  parentId: fld_140e92da3c8142b186924ac17969f0ca
+  description: >
+    Creates a new Firewall.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                   |
+
+    |------------------------------ |-------------------------------------------------------------- |
+
+    | `server_already_added`        | Server added more than one time to resource                   |
+
+    | `incompatible_network_type`   | The Network type is incompatible for the given resource       |
+
+    | `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |
+- name: Delete a Firewall
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/firewalls/{id}
+  authentication: {}
+  _type: request
+  _id: req_a877162a5e344d46b56742873c7ee717
+  parentId: fld_140e92da3c8142b186924ac17969f0ca
+  description: >
+    Deletes a Firewall.
+
+
+    #### Call specific error codes
+
+
+    | Code                 | Description                               |
+
+    |--------------------- |-------------------------------------------|
+
+    | `resource_in_use`    | Firewall must not be in use to be deleted |
+- name: Get a Firewall
+  method: GET
+  url: https://api.hetzner.cloud/v1/firewalls/{id}
+  authentication: {}
+  _type: request
+  _id: req_f5f7152f0147423698bf614253109e7a
+  parentId: fld_140e92da3c8142b186924ac17969f0ca
+  description: Gets a specific Firewall object.
+- name: Update a Firewall
+  method: PUT
+  url: https://api.hetzner.cloud/v1/firewalls/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_0da3bc9d29a64c029cbae1fc911076c2
+  parentId: fld_140e92da3c8142b186924ac17969f0ca
+  description: >
+    Updates the Firewall.
+
+
+    Note that when updating labels, the Firewall's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+
+
+    Note: if the Firewall object changes during the request, the response will be a “conflict” error.
+- name: Get all Actions for a Firewall
+  method: GET
+  url: https://api.hetzner.cloud/v1/firewalls/{id}/actions
+  parameters:
+  - name: sort
+    value: finished
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_1001f650002f4f86ad10225fdea9bb59
+  parentId: fld_50c4d7b6d02544caab53af8107b55c9d
+  description: Returns all Action objects for a Firewall. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
+- name: Apply to Resources
+  method: POST
+  url: https://api.hetzner.cloud/v1/firewalls/{id}/actions/apply_to_resources
+  body:
+    mimeType: application/json
+    text: '{"apply_to":[{"server":{"id":42},"type":"server"}]}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_474a4aa3c99847f6904e085681aa6773
+  parentId: fld_50c4d7b6d02544caab53af8107b55c9d
+  description: >
+    Applies one Firewall to multiple resources.
+
+
+    Currently servers (public network interface) and label selectors are supported.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                   |
+
+    |-------------------------------|---------------------------------------------------------------|
+
+    | `firewall_already_applied`    | Firewall was already applied on resource                      |
+
+    | `incompatible_network_type`   | The Network type is incompatible for the given resource       |
+
+    | `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |
+- name: Remove from Resources
+  method: POST
+  url: https://api.hetzner.cloud/v1/firewalls/{id}/actions/remove_from_resources
+  body:
+    mimeType: application/json
+    text: '{"remove_from":[{"server":{"id":42},"type":"server"}]}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_802e8d354327496095860a842d54e060
+  parentId: fld_50c4d7b6d02544caab53af8107b55c9d
+  description: >
+    Removes one Firewall from multiple resources.
+
+
+    Currently only Servers (and their public network interfaces) are supported.
+
+
+    #### Call specific error codes
+
+
+    | Code                                  | Description                                                            |
+
+    |---------------------------------------|------------------------------------------------------------------------|
+
+    | `firewall_already_removed`            | Firewall was already removed from the resource                         |
+
+    | `firewall_resource_not_found`         | The resource the Firewall should be attached to was not found          |
+
+    | `firewall_managed_by_label_selector`  | Firewall was applied via label selector and cannot be removed manually |
+- name: Set Rules
+  method: POST
+  url: https://api.hetzner.cloud/v1/firewalls/{id}/actions/set_rules
+  body:
+    mimeType: application/json
+    text: '{"rules":[{"description":"Allow port 80","direction":"in","port":"80","protocol":"tcp","source_ips":["28.239.13.1/32","28.239.14.0/24","ff21:1eac:9a3b:ee58:5ca:990c:8bc9:c03b/128"]}]}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b98975f4b5b84ef5a297a93afaf75031
+  parentId: fld_50c4d7b6d02544caab53af8107b55c9d
+  description: >
+    Sets the rules of a Firewall.
+
+
+    All existing rules will be overwritten. Pass an empty `rules` array to remove all rules.
+
+    The maximum amount of rules that can be defined is 50.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                   |
+
+    |-------------------------------|---------------------------------------------------------------|
+
+    | `firewall_resource_not_found` | The resource the Firewall should be attached to was not found |
+- name: Get an Action for a Firewall
+  method: GET
+  url: https://api.hetzner.cloud/v1/firewalls/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_c09284c7792541e290fa0086f294c440
+  parentId: fld_50c4d7b6d02544caab53af8107b55c9d
+  description: Returns a specific Action for a Firewall.
+- name: Get all Floating IPs
+  method: GET
+  url: https://api.hetzner.cloud/v1/floating_ips
+  parameters:
+  - name: name
+    value: name92
+    disabled: false
+  - name: label_selector
+    value: label_selector12
+    disabled: false
+  - name: sort
+    value: created:asc
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_50f8ef59b2c1457db4eeaf2f3d999e2f
+  parentId: fld_9c4ed1e7c2d24294a3fe9ef80ab591e4
+  description: Returns all Floating IP objects.
+- name: Create a Floating IP
+  method: POST
+  url: https://api.hetzner.cloud/v1/floating_ips
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "type": "ipv4",
+        "description": "Web Frontend",
+        "home_location": "fsn1",
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "Web Frontend",
+        "server": 42
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_048486aacad8466b8a2bd223a47bee29
+  parentId: fld_9c4ed1e7c2d24294a3fe9ef80ab591e4
+  description: Creates a new Floating IP assigned to a Server. If you want to create a Floating IP that is not bound to a Server, you need to provide the `home_location` key instead of `server`. This can be either the ID or the name of the Location this IP shall be created in. Note that a Floating IP can be assigned to a Server in any Location later on. For optimal routing it is advised to use the Floating IP in the same Location it was created in.
+- name: Delete a Floating IP
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}
+  authentication: {}
+  _type: request
+  _id: req_2f6aaf1c61724792ac12821b6036640a
+  parentId: fld_9c4ed1e7c2d24294a3fe9ef80ab591e4
+  description: Deletes a Floating IP. If it is currently assigned to a Server it will automatically get unassigned.
+- name: Get a Floating IP
+  method: GET
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}
+  authentication: {}
+  _type: request
+  _id: req_b0b427764ea843ddb2622744c4687cf2
+  parentId: fld_9c4ed1e7c2d24294a3fe9ef80ab591e4
+  description: Returns a specific Floating IP object.
+- name: Update a Floating IP
+  method: PUT
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "description": "Web Frontend",
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "Web Frontend"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_6deb20021b3f40ea85f34a50688c1eff
+  parentId: fld_9c4ed1e7c2d24294a3fe9ef80ab591e4
+  description: >-
+    Updates the description or labels of a Floating IP.
+
+    Also note that when updating labels, the Floating IP’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+- name: Get all Actions for a Floating IP
+  method: GET
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}/actions
+  parameters:
+  - name: sort
+    value: status:asc
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_33e380c308b34ae4bc07f989b31fbe12
+  parentId: fld_8800312257c44e239b7897771dc3557e
+  description: Returns all Action objects for a Floating IP. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
+- name: Assign a Floating IP to a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}/actions/assign
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "server": 42
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_2e705308d37c4acc84f8f50a862f9a73
+  parentId: fld_8800312257c44e239b7897771dc3557e
+  description: Assigns a Floating IP to a Server.
+- name: Change reverse DNS entry for a Floating IP
+  method: POST
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}/actions/change_dns_ptr
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "dns_ptr": "server02.example.com",
+        "ip": "1.2.3.4"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b3659810178b40b48ce8b58cf764f6ea
+  parentId: fld_8800312257c44e239b7897771dc3557e
+  description: Changes the hostname that will appear when getting the hostname belonging to this Floating IP.
+- name: Change Floating IP Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_7fa2271f09424d1faa67cdf915107871
+  parentId: fld_8800312257c44e239b7897771dc3557e
+  description: Changes the protection configuration of the Floating IP.
+- name: Unassign a Floating IP
+  method: POST
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}/actions/unassign
+  authentication: {}
+  _type: request
+  _id: req_416584b817f24d678380ab0e8ae0af72
+  parentId: fld_8800312257c44e239b7897771dc3557e
+  description: Unassigns a Floating IP, resulting in it being unreachable. You may assign it to a Server again at a later time.
+- name: Get an Action for a Floating IP
+  method: GET
+  url: https://api.hetzner.cloud/v1/floating_ips/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_ca4f88b9df7a4cc680534648451861b9
+  parentId: fld_8800312257c44e239b7897771dc3557e
+  description: Returns a specific Action object for a Floating IP.
+- name: Get all Images
+  method: GET
+  url: https://api.hetzner.cloud/v1/images
+  parameters:
+  - name: sort
+    value: name:desc
+    disabled: false
+  - name: type
+    value: backup
+    disabled: false
+  - name: status
+    value: available
+    disabled: false
+  - name: bound_to
+    value: bound_to60
+    disabled: false
+  - name: include_deprecated
+    value: 'true'
+    disabled: false
+  - name: name
+    value: name88
+    disabled: false
+  - name: label_selector
+    value: label_selector67
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_02b435ded8614fc7bd1e9e3600d5dc24
+  parentId: fld_2ffbce3941ef4657acb573003e6ace45
+  description: Returns all Image objects. You can select specific Image types only and sort the results by using URI parameters.
+- name: Delete an Image
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/images/{id}
+  authentication: {}
+  _type: request
+  _id: req_6e9d531035a7438c8adb2b0729fc3015
+  parentId: fld_2ffbce3941ef4657acb573003e6ace45
+  description: Deletes an Image. Only Images of type `snapshot` and `backup` can be deleted.
+- name: Get an Image
+  method: GET
+  url: https://api.hetzner.cloud/v1/images/{id}
+  authentication: {}
+  _type: request
+  _id: req_b47917e3a8b34929bf5daa40cee4f650
+  parentId: fld_2ffbce3941ef4657acb573003e6ace45
+  description: Returns a specific Image object.
+- name: Update an Image
+  method: PUT
+  url: https://api.hetzner.cloud/v1/images/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "description": "My new Image description",
+        "labels": {
+          "labelkey": "value"
+        },
+        "type": "snapshot"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_abf2d59d08c241148fe53ab639a6cc25
+  parentId: fld_2ffbce3941ef4657acb573003e6ace45
+  description: >
+    Updates the Image. You may change the description, convert a Backup Image to a Snapshot Image or change the Image labels. Only Images of type `snapshot` and `backup` can be updated.
+
+
+    Note that when updating labels, the current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+- name: Get all Actions for an Image
+  method: GET
+  url: https://api.hetzner.cloud/v1/images/{id}/actions
+  parameters:
+  - name: sort
+    value: id
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_22ece3b3dfd1449491a0987a369bb622
+  parentId: fld_02d749249a274538b3750da604d03173
+  description: Returns all Action objects for an Image. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
+- name: Change Image Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/images/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_88fbd32b94854611b1c656a0d2e6b476
+  parentId: fld_02d749249a274538b3750da604d03173
+  description: Changes the protection configuration of the Image. Can only be used on snapshots.
+- name: Get an Action for an Image
+  method: GET
+  url: https://api.hetzner.cloud/v1/images/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_1f87dc17bb5142478bebb355e6324f8a
+  parentId: fld_02d749249a274538b3750da604d03173
+  description: Returns a specific Action for an Image.
+- name: Get all ISOs
+  method: GET
+  url: https://api.hetzner.cloud/v1/isos
+  parameters:
+  - name: name
+    value: name78
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_bce6157a91454593ba5e3079189b257f
+  parentId: fld_20ab66729e13416bb187fb153fa00b4a
+  description: Returns all available ISO objects.
+- name: Get an ISO
+  method: GET
+  url: https://api.hetzner.cloud/v1/isos/{id}
+  authentication: {}
+  _type: request
+  _id: req_5a537c2edee247f0bc2f6d4a5849a3c1
+  parentId: fld_20ab66729e13416bb187fb153fa00b4a
+  description: Returns a specific ISO object.
+- name: Get all Load Balancers
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancers
+  parameters:
+  - name: sort
+    value: name:asc
+    disabled: false
+  - name: name
+    value: name93
+    disabled: false
+  - name: label_selector
+    value: label_selector61
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_019d9ede4df24f63a4fd59194be0f111
+  parentId: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  description: Gets all existing Load Balancers that you have available.
+- name: Create a Load Balancer
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers
+  body:
+    mimeType: application/json
+    text: >-
+      {"algorithm": {"type": "round_robin"},"load_balancer_type": "lb11","name": "Web Frontend","labels": {"labelkey": "value"},"location": "location30","network": 123,"network_zone": "eu-central","public_interface": true,"services": [{"destination_port": 80,"health_check": {"interval": 15,"port": 4711,"protocol": "http","retries": 3,"timeout": 10,"http": {"domain": "example.com","path": "/","response": "{"status": "ok"}","status_codes": [
+        "2??",
+        "3??"
+      ],"tls": false}},"listen_port": 443,"protocol": "https","proxyprotocol": false,"http": {"certificates": [
+        897
+      ],"cookie_lifetime": 300,"cookie_name": "HCLBSTICKY","redirect_http": true,"sticky_sessions": true}}],"targets": [{"type": "label_selector","health_status": [{"listen_port": 443,"status": "healthy"}],"ip": {"ip": "203.0.113.1"},"label_selector": {"selector": "env=prod"},"server": {"id": 80},"targets": [{"health_status": [{"listen_port": 443,"status": "healthy"}],"server": {"id": 85},"type": "server","use_private_ip": false}],"use_private_ip": true}]}
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_9aa385c36e3d49239743ce2c17f75a95
+  parentId: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  description: >
+    Creates a Load Balancer.
+
+
+    #### Call specific error codes
+
+
+    | Code                                    | Description                                                                                           |
+
+    |-----------------------------------------|-------------------------------------------------------------------------------------------------------|
+
+    | `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |
+
+    | `ip_not_owned`                          | The IP is not owned by the owner of the project of the Load Balancer                                  |
+
+    | `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |
+
+    | `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |
+
+    | `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |
+
+    | `source_port_already_used`              | The source port you are trying to add is already in use                                               |
+
+    | `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |
+- name: Delete a Load Balancer
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}
+  authentication: {}
+  _type: request
+  _id: req_87290a23068b4bb5bfae78893f85ade8
+  parentId: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  description: Deletes a Load Balancer.
+- name: Get a Load Balancer
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}
+  authentication: {}
+  _type: request
+  _id: req_95018c66becf43f39a904816b2437480
+  parentId: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  description: Gets a specific Load Balancer object.
+- name: Update a Load Balancer
+  method: PUT
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_6c86c4310454476d908982d1ad21dc02
+  parentId: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  description: >
+    Updates a Load Balancer. You can update a Load Balancer’s name and a Load Balancer’s labels.
+
+
+    Note that when updating labels, the Load Balancer’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+
+
+    Note: if the Load Balancer object changes during the request, the response will be a “conflict” error.
+- name: Get Metrics for a LoadBalancer
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/metrics
+  parameters:
+  - name: type
+    value: requests_per_second
+    disabled: false
+  - name: start
+    value: start70
+    disabled: false
+  - name: end
+    value: end2
+    disabled: false
+  - name: step
+    value: step74
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_18fa9c3a11504dae9cab124ae02d1a22
+  parentId: fld_dd6db744a2cd46d4bd827d7efad1fcd4
+  description: >
+    You must specify the type of metric to get: `open_connections`, `connections_per_second`, `requests_per_second` or `bandwidth`. You can also specify more than one type by comma separation, e.g. `requests_per_second,bandwidth`.
+
+
+    Depending on the type you will get different time series data:
+
+
+    |Type | Timeseries | Unit | Description |
+
+    |---- |------------|------|-------------|
+
+    | open_connections | open_connections | number | Open connections |
+
+    | connections_per_second | connections_per_second | connections/s | Connections per second |
+
+    | requests_per_second | requests_per_second | requests/s | Requests per second |
+
+    | bandwidth | bandwidth.in | bytes/s | Ingress bandwidth |
+
+    || bandwidth.out | bytes/s | Egress bandwidth |
+
+
+    Metrics are available for the last 30 days only.
+
+
+    If you do not provide the step argument we will automatically adjust it so that 200 samples are returned.
+
+
+    We limit the number of samples to a maximum of 500 and will adjust the step parameter accordingly.
+- name: Get all Actions for a Load Balancer
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions
+  parameters:
+  - name: sort
+    value: progress:asc
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b64c61ffb88a4cd79fdb5c542662fec4
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Returns all Action objects for a Load Balancer. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
+- name: Add Service
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/add_service
+  body:
+    mimeType: application/json
+    text: >-
+      {"destination_port": 80,"health_check": {"interval": 15,"port": 4711,"protocol": "http","retries": 3,"timeout": 10,"http": {"domain": "example.com","path": "/","response": "{"status": "ok"}","status_codes": [
+        "2??",
+        "3??"
+      ],"tls": false}},"listen_port": 443,"protocol": "https","proxyprotocol": false,"http": {"certificates": [
+        897
+      ],"cookie_lifetime": 300,"cookie_name": "HCLBSTICKY","redirect_http": true,"sticky_sessions": true}}
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a13f9fdc480a4ba58d683a9c43728a89
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Adds a service to a Load Balancer.
+
+
+    #### Call specific error codes
+
+
+    | Code                       | Description                                             |
+
+    |----------------------------|---------------------------------------------------------|
+
+    | `source_port_already_used` | The source port you are trying to add is already in use |
+- name: Add Target
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/add_target
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "type": "server",
+        "ip": {
+          "ip": "203.0.113.1"
+        },
+        "label_selector": {
+          "selector": "env=prod"
+        },
+        "server": {
+          "id": 80
+        },
+        "use_private_ip": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_93b9f2f0273c4ef0a667f6ea7a6d4f23
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Adds a target to a Load Balancer.
+
+
+    #### Call specific error codes
+
+
+    | Code                                    | Description                                                                                           |
+
+    |-----------------------------------------|-------------------------------------------------------------------------------------------------------|
+
+    | `cloud_resource_ip_not_allowed`         | The IP you are trying to add as a target belongs to a Hetzner Cloud resource                          |
+
+    | `ip_not_owned`                          | The IP you are trying to add as a target is not owned by the Project owner                            |
+
+    | `load_balancer_not_attached_to_network` | The Load Balancer is not attached to a network                                                        |
+
+    | `robot_unavailable`                     | Robot was not available. The caller may retry the operation after a short delay.                      |
+
+    | `server_not_attached_to_network`        | The server you are trying to add as a target is not attached to the same network as the Load Balancer |
+
+    | `target_already_defined`                | The Load Balancer target you are trying to define is already defined                                  |
+- name: Attach a Load Balancer to a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/attach_to_network
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "network": 4711,
+        "ip": "10.0.1.1"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_f098d0e73eb140e49cd2a20b6ca48623
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Attach a Load Balancer to a Network.
+
+
+    **Call specific error codes**
+
+
+    | Code                             | Description                                                           |
+
+    |----------------------------------|-----------------------------------------------------------------------|
+
+    | `load_balancer_already_attached` | The Load Balancer is already attached to a network                    |
+
+    | `ip_not_available`               | The provided Network IP is not available                              |
+
+    | `no_subnet_available`            | No Subnet or IP is available for the Load Balancer within the network |
+- name: Change Algorithm
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/change_algorithm
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "type": "round_robin"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_eb02e28ee2e24cf6a05ebb5f8f979ff2
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Change the algorithm that determines to which target new requests are sent.
+- name: Change reverse DNS entry for this Load Balancer
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/change_dns_ptr
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "dns_ptr": "lb1.example.com",
+        "ip": "1.2.3.4"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_94246a9a99c64b1aa3a9d5a96bff9ef2
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Changes the hostname that will appear when getting the hostname belonging to the public IPs (IPv4 and IPv6) of this Load Balancer.
+
+
+    Floating IPs assigned to the Server are not affected by this.
+- name: Change Load Balancer Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_fa9b41c056f54ddc9fa8754c4ce6e46b
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Changes the protection configuration of a Load Balancer.
+- name: Change the Type of a Load Balancer
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/change_type
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "load_balancer_type": "lb21"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_29246c31ab854e4bba09cb9092375fa5
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Changes the type (Max Services, Max Targets and Max Connections) of a Load Balancer.
+
+
+    **Call specific error codes**
+
+
+    | Code                         | Description                                                     |
+
+    |------------------------------|-----------------------------------------------------------------|
+
+    | `invalid_load_balancer_type` | The Load Balancer type does not fit for the given Load Balancer |
+- name: Delete Service
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/delete_service
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "listen_port": 4711
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_7c172e797994418da4d7991ace859de6
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Delete a service of a Load Balancer.
+- name: Detach a Load Balancer from a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/detach_from_network
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "network": 4711
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_6f55e8ad26a84d70919c03b0641cbcd5
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Detaches a Load Balancer from a network.
+- name: Disable the public interface of a Load Balancer
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/disable_public_interface
+  authentication: {}
+  _type: request
+  _id: req_21f55a1efe654e2897535a06b0e6c4eb
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Disable the public interface of a Load Balancer. The Load Balancer will be not accessible from the internet via its public IPs.
+
+
+    #### Call specific error codes
+
+
+    | Code                                      | Description                                                                    |
+
+    |-------------------------------------------|--------------------------------------------------------------------------------|
+
+    | `load_balancer_not_attached_to_network`   |  The Load Balancer is not attached to a network                                |
+
+    | `targets_without_use_private_ip`          | The Load Balancer has targets that use the public IP instead of the private IP |
+- name: Enable the public interface of a Load Balancer
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/enable_public_interface
+  authentication: {}
+  _type: request
+  _id: req_17f9d542b66d43da94f1c7b67dac981b
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Enable the public interface of a Load Balancer. The Load Balancer will be accessible from the internet via its public IPs.
+- name: Remove Target
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/remove_target
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "type": "label_selector",
+        "ip": {
+          "ip": "203.0.113.1"
+        },
+        "label_selector": {
+          "selector": "env=prod"
+        },
+        "server": {
+          "id": 80
+        }
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a782becc66094fc481e487ec2e448702
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Removes a target from a Load Balancer.
+- name: Update Service
+  method: POST
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/update_service
+  body:
+    mimeType: application/json
+    text: >-
+      {"destination_port": 80,"health_check": {"interval": 15,"port": 4711,"protocol": "http","retries": 3,"timeout": 10,"http": {"domain": "example.com","path": "/","response": "{"status": "ok"}","status_codes": [
+        "2??",
+        "3??"
+      ],"tls": false}},"listen_port": 443,"protocol": "https","proxyprotocol": false,"http": {"certificates": [
+        897
+      ],"cookie_lifetime": 300,"cookie_name": "HCLBSTICKY","redirect_http": true,"sticky_sessions": true}}
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_4f70401b2105476f8142c554e9d6dd8b
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: >
+    Updates a Load Balancer Service.
+
+
+    #### Call specific error codes
+
+
+    | Code                       | Description                                             |
+
+    |----------------------------|---------------------------------------------------------|
+
+    | `source_port_already_used` | The source port you are trying to add is already in use |
+- name: Get an Action for a Load Balancer
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancers/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_2c0c1bb550f84428a0c7d91e8d94cc14
+  parentId: fld_b8300838d76e4853b9731dc5c706ab1e
+  description: Returns a specific Action for a Load Balancer.
+- name: Get all Load Balancer Types
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancer_types
+  parameters:
+  - name: name
+    value: name49
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_0d05842fd3f24129a705dd1da241a2b6
+  parentId: fld_cc8f74bfa6e947b0b0aa69037447e7e0
+  description: Gets all Load Balancer type objects.
+- name: Get a Load Balancer Type
+  method: GET
+  url: https://api.hetzner.cloud/v1/load_balancer_types/{id}
+  authentication: {}
+  _type: request
+  _id: req_1f63b288142b47819f78acd9dcf9b662
+  parentId: fld_cc8f74bfa6e947b0b0aa69037447e7e0
+  description: Gets a specific Load Balancer type object.
+- name: Get all Locations
+  method: GET
+  url: https://api.hetzner.cloud/v1/locations
+  parameters:
+  - name: name
+    value: name41
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_c2048d2acf9f4e84b6bf2197945c68c1
+  parentId: fld_e741959a578c4287a988eff748ca4581
+  description: Returns all Location objects.
+- name: Get a Location
+  method: GET
+  url: https://api.hetzner.cloud/v1/locations/{id}
+  authentication: {}
+  _type: request
+  _id: req_840be23b0433461eb985b1b20c90223a
+  parentId: fld_e741959a578c4287a988eff748ca4581
+  description: Returns a specific Location object.
+- name: Get all Primary IPs
+  method: GET
+  url: https://api.hetzner.cloud/v1/primary_ips
+  parameters:
+  - name: name
+    value: name73
+    disabled: false
+  - name: label_selector
+    value: label_selector65
+    disabled: false
+  - name: ip
+    value: 127.0.0.1
+    disabled: false
+  - name: sort
+    value: id:desc
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_50ec5792c42740279d6db4a7b91a3d85
+  parentId: fld_e1e7eec69d5442c88f24bcbecd08d6d1
+  description: Returns all Primary IP objects.
+- name: Create a Primary IP
+  method: POST
+  url: https://api.hetzner.cloud/v1/primary_ips
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "assignee_type": "server",
+        "name": "my-ip",
+        "type": "ipv4",
+        "assignee_id": 17,
+        "auto_delete": false,
+        "datacenter": "fsn1-dc8",
+        "labels": {
+          "labelkey": "value"
+        }
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_4f2c26b6ca2a4319a8473c88c564530d
+  parentId: fld_e1e7eec69d5442c88f24bcbecd08d6d1
+  description: >
+    Creates a new Primary IP, optionally assigned to a Server.
+
+
+    If you want to create a Primary IP that is not assigned to a Server, you need to provide the `datacenter` key instead of `assignee_id`. This can be either the ID or the name of the Datacenter this Primary IP shall be created in.
+
+
+    Note that a Primary IP can only be assigned to a Server in the same Datacenter later on.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                   |
+
+    |------------------------------ |-------------------------------------------------------------- |
+
+    | `server_not_stopped`          | The specified server is running, but needs to be powered off  |
+
+    | `server_has_ipv4`             | The server already has an ipv4 address                        |
+
+    | `server_has_ipv6`             | The server already has an ipv6 address                        |
+- name: Delete a Primary IP
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}
+  authentication: {}
+  _type: request
+  _id: req_53b62bab811f422698613091b3502bbd
+  parentId: fld_e1e7eec69d5442c88f24bcbecd08d6d1
+  description: >
+    Deletes a Primary IP.
+
+
+    The Primary IP may be assigned to a Server. In this case it is unassigned automatically. The Server must be powered off (status `off`) in order for this operation to succeed.
+- name: Get a Primary IP
+  method: GET
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}
+  authentication: {}
+  _type: request
+  _id: req_60f20242c5924a0da5918a4c42e40813
+  parentId: fld_e1e7eec69d5442c88f24bcbecd08d6d1
+  description: Returns a specific Primary IP object.
+- name: Update a Primary IP
+  method: PUT
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "auto_delete": true,
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "my-ip"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_84efa99cf2764eebb78ab9d0d8958f6d
+  parentId: fld_e1e7eec69d5442c88f24bcbecd08d6d1
+  description: >
+    Updates the Primary IP.
+
+
+    Note that when updating labels, the Primary IP's current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+
+
+    If the Primary IP object changes during the request, the response will be a “conflict” error.
+- name: Assign a Primary IP to a resource
+  method: POST
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}/actions/assign
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "assignee_id": 4711,
+        "assignee_type": "server"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_6efe78d67a22465d90d38ac5f8604d38
+  parentId: fld_dfa5833c4d29446b9ed3612e15b0a5cb
+  description: >
+    Assigns a Primary IP to a Server.
+
+
+    A Server can only have one Primary IP of type `ipv4` and one of type `ipv6` assigned. If you need more IPs use Floating IPs.
+
+
+    The Server must be powered off (status `off`) in order for this operation to succeed.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                   |
+
+    |------------------------------ |-------------------------------------------------------------- |
+
+    | `server_not_stopped`          | The server is running, but needs to be powered off            |
+
+    | `primary_ip_already_assigned` | Primary ip is already assigned to a different server          |
+
+    | `server_has_ipv4`             | The server already has an ipv4 address                        |
+
+    | `server_has_ipv6`             | The server already has an ipv6 address                        |
+- name: Change reverse DNS entry for a Primary IP
+  method: POST
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}/actions/change_dns_ptr
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "dns_ptr": "server02.example.com",
+        "ip": "1.2.3.4"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_dcb363cb1fe44cde9d71d8d6005d096a
+  parentId: fld_dfa5833c4d29446b9ed3612e15b0a5cb
+  description: Changes the hostname that will appear when getting the hostname belonging to this Primary IP.
+- name: Change Primary IP Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a16a02f6ae004c569aec985198f62bd5
+  parentId: fld_dfa5833c4d29446b9ed3612e15b0a5cb
+  description: >
+    Changes the protection configuration of a Primary IP.
+
+
+    A Primary IP can only be delete protected if its `auto_delete` property is set to `false`.
+- name: Unassign a Primary IP from a resource
+  method: POST
+  url: https://api.hetzner.cloud/v1/primary_ips/{id}/actions/unassign
+  authentication: {}
+  _type: request
+  _id: req_e94a684108444d1e96e91f6983085216
+  parentId: fld_dfa5833c4d29446b9ed3612e15b0a5cb
+  description: >
+    Unassigns a Primary IP from a Server.
+
+
+    The Server must be powered off (status `off`) in order for this operation to succeed.
+
+
+    Note that only Servers that have at least one network interface (public or private) attached can be powered on.
+
+
+    #### Call specific error codes
+
+
+    | Code                              | Description                                                   |
+
+    |---------------------------------- |-------------------------------------------------------------- |
+
+    | `server_not_stopped`              | The server is running, but needs to be powered off            |
+
+    | `server_is_load_balancer_target`  | The server ipv4 address is a loadbalancer target              |
+- name: Get all Networks
+  method: GET
+  url: https://api.hetzner.cloud/v1/networks
+  parameters:
+  - name: name
+    value: name58
+    disabled: false
+  - name: label_selector
+    value: label_selector78
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b332cfd5bf7b44738bfe215fa8c7ff20
+  parentId: fld_21f3fd0d8ceb4f24a02103d4df87f7b9
+  description: Gets all existing networks that you have available.
+- name: Create a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "ip_range": "10.0.0.0/16",
+        "name": "mynet",
+        "labels": {
+          "labelkey": "value"
+        },
+        "routes": [
+          {
+            "destination": "10.100.1.0/24",
+            "gateway": "10.0.1.1"
+          }
+        ],
+        "subnets": [
+          {
+            "network_zone": "eu-central",
+            "type": "server",
+            "ip_range": "10.0.1.0/24"
+          }
+        ]
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_29cb65da554b4b1ea4447069e885c99f
+  parentId: fld_21f3fd0d8ceb4f24a02103d4df87f7b9
+  description: >
+    Creates a network with the specified `ip_range`.
+
+
+    You may specify one or more `subnets`. You can also add more Subnets later by using the [add subnet action](https://docs.hetzner.cloud/#network-actions-add-a-subnet-to-a-network). If you do not specify an `ip_range` in the subnet we will automatically pick the first available /24 range for you.
+
+
+    You may specify one or more routes in `routes`. You can also add more routes later by using the [add route action](https://docs.hetzner.cloud/#network-actions-add-a-route-to-a-network).
+- name: Delete a Network
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/networks/{id}
+  authentication: {}
+  _type: request
+  _id: req_8e12e8bb20884e2ba0eb5d3a2cc8c2c6
+  parentId: fld_21f3fd0d8ceb4f24a02103d4df87f7b9
+  description: >
+    Deletes a network. If there are Servers attached they will be detached in the background.
+
+
+    Note: if the network object changes during the request, the response will be a “conflict” error.
+- name: Get a Network
+  method: GET
+  url: https://api.hetzner.cloud/v1/networks/{id}
+  authentication: {}
+  _type: request
+  _id: req_7894a996193e417298aae30f133efbb2
+  parentId: fld_21f3fd0d8ceb4f24a02103d4df87f7b9
+  description: Gets a specific network object.
+- name: Update a Network
+  method: PUT
+  url: https://api.hetzner.cloud/v1/networks/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "new-name"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_9ddbd4917bd6499cb82c2a255d6203bf
+  parentId: fld_21f3fd0d8ceb4f24a02103d4df87f7b9
+  description: >
+    Updates the network properties.
+
+
+    Note that when updating labels, the network’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+
+
+    Note: if the network object changes during the request, the response will be a “conflict” error.
+- name: Get all Actions for a Network
+  method: GET
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions
+  parameters:
+  - name: sort
+    value: progress:asc
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_20919cec42c14cec80299c54a85bf70c
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: Returns all Action objects for a Network. You can sort the results by using the `sort` URI parameter, and filter them with the `status` parameter.
+- name: Add a route to a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/add_route
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "destination": "10.100.1.0/24",
+        "gateway": "10.0.1.1"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_4d83e7af3aa44ed08b6082291d541254
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: >
+    Adds a route entry to a Network.
+
+
+    Note: if the Network object changes during the request, the response will be a “conflict” error.
+- name: Add a subnet to a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/add_subnet
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "network_zone": "eu-central",
+        "type": "cloud",
+        "ip_range": "10.0.1.0/24",
+        "vswitch_id": 1000
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_eec4d0788dea4680b7d78d7344d3229b
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: >
+    Adds a new subnet object to the Network. If you do not specify an `ip_range` for the subnet we will automatically pick the first available /24 range for you if possible.
+
+
+    Note: if the parent Network object changes during the request, the response will be a “conflict” error.
+- name: Change IP range of a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/change_ip_range
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "ip_range": "10.0.0.0/12"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a216b8238b4f416791f8a5f06479081b
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: >
+    Changes the IP range of a Network. IP ranges can only be extended and never shrunk. You can only add IPs at the end of an existing IP range. This means that the IP part of your existing range must stay the same and you can only change its netmask.
+
+
+    For example if you have a range `10.0.0.0/16` you want to extend then your new range must also start with the IP `10.0.0.0`. Your CIDR netmask `/16` may change to a number that is smaller than `16` thereby increasing the IP range. So valid entries would be `10.0.0.0/15`, `10.0.0.0/14`, `10.0.0.0/13` and so on.
+
+
+    After changing the IP range you will have to adjust the routes on your connected Servers by either rebooting them or manually changing the routes to your private Network interface.
+
+
+    Note: if the Network object changes during the request, the response will be a “conflict” error.
+- name: Change Network Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_2787dfd5d14748aaa0d1894f2eb391e6
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: >
+    Changes the protection configuration of a Network.
+
+
+    Note: if the Network object changes during the request, the response will be a “conflict” error.
+- name: Delete a route from a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/delete_route
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "destination": "10.100.1.0/24",
+        "gateway": "10.0.1.1"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_6f6f6ca717134dc88042b2ce248bfa2e
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: >
+    Delete a route entry from a Network.
+
+
+    Note: if the Network object changes during the request, the response will be a “conflict” error.
+- name: Delete a subnet from a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/delete_subnet
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "ip_range": "10.0.1.0/24"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b4fc7c7c7c4449bc894dcda2948666ec
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: >
+    Deletes a single subnet entry from a Network. You cannot delete subnets which still have Servers attached. If you have Servers attached you first need to detach all Servers that use IPs from this subnet before you can delete the subnet.
+
+
+    Note: if the Network object changes during the request, the response will be a “conflict” error.
+- name: Get an Action for a Network
+  method: GET
+  url: https://api.hetzner.cloud/v1/networks/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_a935d94c4f9f4e5fb4185300f3eeff19
+  parentId: fld_7342f0e6ab2048d3a136b50fd39834ef
+  description: Returns a specific Action for a Network.
+- name: Get all PlacementGroups
+  method: GET
+  url: https://api.hetzner.cloud/v1/placement_groups
+  parameters:
+  - name: sort
+    value: created
+    disabled: false
+  - name: name
+    value: name10
+    disabled: false
+  - name: label_selector
+    value: label_selector84
+    disabled: false
+  - name: type
+    value: spread
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_ab31746223a54c56bde5ec2ec2d4a297
+  parentId: fld_b3eb974f3bbc494386e11d257a73a88e
+  description: Returns all PlacementGroup objects.
+- name: Create a PlacementGroup
+  method: POST
+  url: https://api.hetzner.cloud/v1/placement_groups
+  body:
+    mimeType: application/json
+    text: '{"name":"my Placement Group","type":"spread"}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_87801c3d4e1e4435abbc88baef20ef2a
+  parentId: fld_b3eb974f3bbc494386e11d257a73a88e
+  description: >
+    Creates a new PlacementGroup.
+- name: Delete a PlacementGroup
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/placement_groups/{id}
+  authentication: {}
+  _type: request
+  _id: req_5b05e4b4ab5a49829b515d5a16a2d3fe
+  parentId: fld_b3eb974f3bbc494386e11d257a73a88e
+  description: Deletes a PlacementGroup.
+- name: Get a PlacementGroup
+  method: GET
+  url: https://api.hetzner.cloud/v1/placement_groups/{id}
+  authentication: {}
+  _type: request
+  _id: req_041f7902a0634b1c8be4d57bbd72781a
+  parentId: fld_b3eb974f3bbc494386e11d257a73a88e
+  description: Gets a specific PlacementGroup object.
+- name: Update a PlacementGroup
+  method: PUT
+  url: https://api.hetzner.cloud/v1/placement_groups/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "my Placement Group"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_09b91123f86d4a3caae2b7b26ed23f8e
+  parentId: fld_b3eb974f3bbc494386e11d257a73a88e
+  description: >
+    Updates the PlacementGroup properties.
+
+
+    Note that when updating labels, the PlacementGroup’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+
+
+    Note: if the PlacementGroup object changes during the request, the response will be a “conflict” error.
+- name: Get all prices
+  method: GET
+  url: https://api.hetzner.cloud/v1/pricing
+  authentication: {}
+  _type: request
+  _id: req_0b3f013c198f40dd892a98a323db3260
+  parentId: fld_73f8c5cbeae94d5fa8a14c367fcd8718
+  description: >
+    Returns prices for all resources available on the platform. VAT and currency of the Project owner are used for calculations.
+
+
+    Both net and gross prices are included in the response.
+- name: Get all Servers
+  method: GET
+  url: https://api.hetzner.cloud/v1/servers
+  parameters:
+  - name: name
+    value: name25
+    disabled: false
+  - name: label_selector
+    value: label_selector74
+    disabled: false
+  - name: sort
+    value: name
+    disabled: false
+  - name: status
+    value: stopping
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a08907e7c720451b9735a4d0cf60ef02
+  parentId: fld_e6275f468db3440590c285927b4fe008
+  description: Returns all existing Server objects
+- name: Create a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "image": "ubuntu-20.04",
+        "name": "my-server",
+        "server_type": "cx11",
+        "automount": false,
+        "datacenter": "nbg1-dc3",
+        "firewalls": [
+          {
+            "firewall": 45
+          }
+        ],
+        "labels": {},
+        "location": "nbg1",
+        "networks": [
+          456
+        ],
+        "placement_group": 1,
+        "public_net": {
+          "enable_ipv4": true,
+          "enable_ipv6": false,
+          "ipv4": 76,
+          "ipv6": 175
+        },
+        "ssh_keys": [
+          "my-ssh-key"
+        ],
+        "start_after_create": true,
+        "user_data": "#cloud-config\nruncmd:\n- [touch, /root/cloud-init-worked]\n",
+        "volumes": [
+          123
+        ]
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_39c149abe1fc41f3b1dca2320ffb8268
+  parentId: fld_e6275f468db3440590c285927b4fe008
+  description: Creates a new Server. Returns preliminary information about the Server as well as an Action that covers progress of creation.
+- name: Delete a Server
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/servers/{id}
+  authentication: {}
+  _type: request
+  _id: req_3eccf28fef1345098c7dfcf48c4a40cc
+  parentId: fld_e6275f468db3440590c285927b4fe008
+  description: Deletes a Server. This immediately removes the Server from your account, and it is no longer accessible.
+- name: Get a Server
+  method: GET
+  url: https://api.hetzner.cloud/v1/servers/{id}
+  authentication: {}
+  _type: request
+  _id: req_0f4768c340a241689f83e4c899e369de
+  parentId: fld_e6275f468db3440590c285927b4fe008
+  description: Returns a specific Server object. The Server must exist inside the Project
+- name: Update a Server
+  method: PUT
+  url: https://api.hetzner.cloud/v1/servers/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "my-server"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_7fb8319ef8de48c28495fbee55163aeb
+  parentId: fld_e6275f468db3440590c285927b4fe008
+  description: >-
+    Updates a Server. You can update a Server’s name and a Server’s labels.
+
+    Please note that Server names must be unique per Project and valid hostnames as per RFC 1123 (i.e. may only contain letters, digits, periods, and dashes).
+
+    Also note that when updating labels, the Server’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+- name: Get Metrics for a Server
+  method: GET
+  url: https://api.hetzner.cloud/v1/servers/{id}/metrics
+  parameters:
+  - name: type
+    value: cpu
+    disabled: false
+  - name: start
+    value: start44
+    disabled: false
+  - name: end
+    value: end11
+    disabled: false
+  - name: step
+    value: step3
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_e41a479b2ce849009768ec85380d78a6
+  parentId: fld_e6275f468db3440590c285927b4fe008
+  description: >
+    Get Metrics for specified Server.
+
+
+    You must specify the type of metric to get: cpu, disk or network. You can also specify more than one type by comma separation, e.g. cpu,disk.
+
+
+    Depending on the type you will get different time series data
+
+
+    | Type    | Timeseries              | Unit      | Description                                          |
+
+    |---------|-------------------------|-----------|------------------------------------------------------|
+
+    | cpu     | cpu                     | percent   | Percent CPU usage                                    |
+
+    | disk    | disk.0.iops.read        | iop/s     | Number of read IO operations per second              |
+
+    |         | disk.0.iops.write       | iop/s     | Number of write IO operations per second             |
+
+    |         | disk.0.bandwidth.read   | bytes/s   | Bytes read per second                                |
+
+    |         | disk.0.bandwidth.write  | bytes/s   | Bytes written per second                             |
+
+    | network | network.0.pps.in        | packets/s | Public Network interface packets per second received |
+
+    |         | network.0.pps.out       | packets/s | Public Network interface packets per second sent     |
+
+    |         | network.0.bandwidth.in  | bytes/s   | Public Network interface bytes/s received            |
+
+    |         | network.0.bandwidth.out | bytes/s   | Public Network interface bytes/s sent                |
+
+
+    Metrics are available for the last 30 days only.
+
+
+    If you do not provide the step argument we will automatically adjust it so that a maximum of 200 samples are returned.
+
+
+    We limit the number of samples returned to a maximum of 500 and will adjust the step parameter accordingly.
+- name: Get all Actions for a Server
+  method: GET
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions
+  parameters:
+  - name: sort
+    value: command:desc
+    disabled: false
+  - name: status
+    value: running
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_d1a1053207ab48e9bc4fbed321f1b9bd
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Returns all Action objects for a Server. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.
+- name: Add a Server to a Placement Group
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/add_to_placement_group
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "placement_group": 1
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_b1e5e89c913f4f9fbd4e8e5b123b1500
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Adds a Server to a Placement Group.
+
+
+    Server must be powered off for this command to succeed.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                          |
+
+    |-------------------------------|----------------------------------------------------------------------|
+
+    | `server_not_stopped`          | The action requires a stopped server                                 |
+- name: Attach an ISO to a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/attach_iso
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "iso": "FreeBSD-11.0-RELEASE-amd64-dvd1"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_e09d4539c0e549cf95d721e8b1e181af
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Attaches an ISO to a Server. The Server will immediately see it as a new disk. An already attached ISO will automatically be detached before the new ISO is attached.
+
+
+    Servers with attached ISOs have a modified boot order: They will try to boot from the ISO first before falling back to hard disk.
+- name: Attach a Server to a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/attach_to_network
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "network": 4711,
+        "alias_ips": [
+          "10.0.1.2"
+        ],
+        "ip": "10.0.1.1"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_be15401a911941dfa254e3bdda7ed40f
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Attaches a Server to a network. This will complement the fixed public Server interface by adding an additional ethernet interface to the Server which is connected to the specified network.
+
+
+    The Server will get an IP auto assigned from a subnet of type `server` in the same `network_zone`.
+
+
+    Using the `alias_ips` attribute you can also define one or more additional IPs to the Servers. Please note that you will have to configure these IPs by hand on your Server since only the primary IP will be given out by DHCP.
+
+
+    **Call specific error codes**
+
+
+    | Code                             | Description                                                           |
+
+    |----------------------------------|-----------------------------------------------------------------------|
+
+    | `server_already_attached`        | The server is already attached to the network                         |
+
+    | `ip_not_available`               | The provided Network IP is not available                              |
+
+    | `no_subnet_available`            | No Subnet or IP is available for the Server within the network        |
+
+    | `networks_overlap`               | The network IP range overlaps with one of the server networks         |
+- name: Change alias IPs of a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/change_alias_ips
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "alias_ips": [
+          "10.0.1.2"
+        ],
+        "network": 4711
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_a02b5ebbd1fe4000ae4dd44edc70c9f3
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Changes the alias IPs of an already attached Network. Note that the existing aliases for the specified Network will be replaced with these provided in the request body. So if you want to add an alias IP, you have to provide the existing ones from the Network plus the new alias IP in the request body.
+- name: Change reverse DNS entry for this Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/change_dns_ptr
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "dns_ptr": "server01.example.com",
+        "ip": "1.2.3.4"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_5c4732bc3e46474e8dbf2b59fd7ada54
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Changes the hostname that will appear when getting the hostname belonging to the primary IPs (IPv4 and IPv6) of this Server.
+
+
+    Floating IPs assigned to the Server are not affected by this.
+- name: Change Server Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true,
+        "rebuild": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_23fcc1cf5d9e4a74bf298c97c61ec89b
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Changes the protection configuration of the Server.
+- name: Change the Type of a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/change_type
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "server_type": "cx11",
+        "upgrade_disk": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_335e1c2810264e99b496224eb8650208
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Changes the type (Cores, RAM and disk sizes) of a Server.
+
+
+    Server must be powered off for this command to succeed.
+
+
+    This copies the content of its disk, and starts it again.
+
+
+    You can only migrate to Server types with the same `storage_type` and equal or bigger disks. Shrinking disks is not possible as it might destroy data.
+
+
+    If the disk gets upgraded, the Server type can not be downgraded any more. If you plan to downgrade the Server type, set `upgrade_disk` to `false`.
+
+
+    #### Call specific error codes
+
+
+    | Code                          | Description                                                          |
+
+    |-------------------------------|----------------------------------------------------------------------|
+
+    | `invalid_server_type`         | The server type does not fit for the given server or is deprecated   |
+
+    | `server_not_stopped`          | The action requires a stopped server                                 |
+- name: Create Image from a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/create_image
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "description": "my image",
+        "labels": {
+          "labelkey": "value"
+        },
+        "type": "snapshot"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_5bec39ff04de4b4cbda1540eb7d71910
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Creates an Image (snapshot) from a Server by copying the contents of its disks. This creates a snapshot of the current state of the disk and copies it into an Image. If the Server is currently running you must make sure that its disk content is consistent. Otherwise, the created Image may not be readable.
+
+
+    To make sure disk content is consistent, we recommend to shut down the Server prior to creating an Image.
+
+
+    You can either create a `backup` Image that is bound to the Server and therefore will be deleted when the Server is deleted, or you can create an `snapshot` Image which is completely independent of the Server it was created from and will survive Server deletion. Backup Images are only available when the backup option is enabled for the Server. Snapshot Images are billed on a per GB basis.
+- name: Detach a Server from a Network
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/detach_from_network
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "network": 4711
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_1d4bd21710d64accbadafd989fe67543
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Detaches a Server from a network. The interface for this network will vanish.
+- name: Detach an ISO from a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/detach_iso
+  authentication: {}
+  _type: request
+  _id: req_4c991784cc844353b933ebca1dc7ca80
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Detaches an ISO from a Server. In case no ISO Image is attached to the Server, the status of the returned Action is immediately set to `success`
+- name: Disable Backups for a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/disable_backup
+  authentication: {}
+  _type: request
+  _id: req_5b0556fff02147c1a0aef4026e41f771
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Disables the automatic backup option and deletes all existing Backups for a Server. No more additional charges for backups will be made.
+
+
+    Caution: This immediately removes all existing backups for the Server!
+- name: Disable Rescue Mode for a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/disable_rescue
+  authentication: {}
+  _type: request
+  _id: req_f4b6f29f65724bdd895bde61217ec0e7
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Disables the Hetzner Rescue System for a Server. This makes a Server start from its disks on next reboot.
+
+
+    Rescue Mode is automatically disabled when you first boot into it or if you do not use it for 60 minutes.
+
+
+    Disabling rescue mode will not reboot your Server — you will have to do this yourself.
+- name: Enable and Configure Backups for a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/enable_backup
+  authentication: {}
+  _type: request
+  _id: req_0b7aa5b600394ec3b9b632b273af2bb0
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Enables and configures the automatic daily backup option for the Server. Enabling automatic backups will increase the price of the Server by 20%. In return, you will get seven slots where Images of type backup can be stored.
+
+
+    Backups are automatically created daily.
+- name: Enable Rescue Mode for a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/enable_rescue
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "ssh_keys": [
+          2323
+        ],
+        "type": "linux64"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_fd145dce6d2e4cb8bfe560b08cac04ac
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Enable the Hetzner Rescue System for this Server. The next time a Server with enabled rescue mode boots it will start a special minimal Linux distribution designed for repair and reinstall.
+
+
+    In case a Server cannot boot on its own you can use this to access a Server’s disks.
+
+
+    Rescue Mode is automatically disabled when you first boot into it or if you do not use it for 60 minutes.
+
+
+    Enabling rescue mode will not [reboot](https://docs.hetzner.cloud/#server-actions-soft-reboot-a-server) your Server — you will have to do this yourself.
+- name: Power off a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/poweroff
+  authentication: {}
+  _type: request
+  _id: req_9998e661b841469ca3b77b7a47f6954e
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Cuts power to the Server. This forcefully stops it without giving the Server operating system time to gracefully stop. May lead to data loss, equivalent to pulling the power cord. Power off should only be used when shutdown does not work.
+- name: Power on a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/poweron
+  authentication: {}
+  _type: request
+  _id: req_7803fe4af369494a865681a7e7d37b06
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Starts a Server by turning its power on.
+- name: Soft-reboot a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/reboot
+  authentication: {}
+  _type: request
+  _id: req_9d4c29b98826441082f7cb0d84d649ad
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Reboots a Server gracefully by sending an ACPI request. The Server operating system must support ACPI and react to the request, otherwise the Server will not reboot.
+- name: Rebuild a Server from an Image
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/rebuild
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "image": "ubuntu-20.04"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_36f27a53ae4a44928a1c46dc7eb93cfb
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Rebuilds a Server overwriting its disk with the content of an Image, thereby **destroying all data** on the target Server
+
+
+    The Image can either be one you have created earlier (`backup` or `snapshot` Image) or it can be a completely fresh `system` Image provided by us. You can get a list of all available Images with `GET /images`.
+
+
+    Your Server will automatically be powered off before the rebuild command executes.
+- name: Remove from Placement Group
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/remove_from_placement_group
+  authentication: {}
+  _type: request
+  _id: req_a979b91001144a59aaa58887fba77cae
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Removes a Server from a Placement Group.
+- name: Request Console for a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/request_console
+  authentication: {}
+  _type: request
+  _id: req_a09cafd8312f406c9796442ba58459fa
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Requests credentials for remote access via VNC over websocket to keyboard, monitor, and mouse for a Server. The provided URL is valid for 1 minute, after this period a new url needs to be created to connect to the Server. How long the connection is open after the initial connect is not subject to this timeout.
+- name: Reset a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/reset
+  authentication: {}
+  _type: request
+  _id: req_0942e039f1c04bb3bca7e6dbcf397f68
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Cuts power to a Server and starts it again. This forcefully stops it without giving the Server operating system time to gracefully stop. This may lead to data loss, it’s equivalent to pulling the power cord and plugging it in again. Reset should only be used when reboot does not work.
+- name: Reset root Password of a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/reset_password
+  authentication: {}
+  _type: request
+  _id: req_e14d4683572e406b90fe818055d2ea9f
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: >
+    Resets the root password. Only works for Linux systems that are running the qemu guest agent. Server must be powered on (status `running`) in order for this operation to succeed.
+
+
+    This will generate a new password for this Server and return it.
+
+
+    If this does not succeed you can use the rescue system to netboot the Server and manually change your Server password by hand.
+- name: Shutdown a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/shutdown
+  authentication: {}
+  _type: request
+  _id: req_6fbed5b8e1594a1e91af797e2b672be7
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Shuts down a Server gracefully by sending an ACPI shutdown request. The Server operating system must support ACPI and react to the request, otherwise the Server will not shut down.
+- name: Get an Action for a Server
+  method: GET
+  url: https://api.hetzner.cloud/v1/servers/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_29e69d3b444c4fb7892582e1605289e2
+  parentId: fld_0039c8df6b854984aced834d51d2bc42
+  description: Returns a specific Action object for a Server.
+- name: Get all Server Types
+  method: GET
+  url: https://api.hetzner.cloud/v1/server_types
+  parameters:
+  - name: name
+    value: name41
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_94307657c60243b5b388f7bd684c2e2d
+  parentId: fld_ef40a6ecf9674f4a8024d7cb8de47885
+  description: Gets all Server type objects.
+- name: Get a Server Type
+  method: GET
+  url: https://api.hetzner.cloud/v1/server_types/{id}
+  authentication: {}
+  _type: request
+  _id: req_b45b57358fdc402da45a973978fa3297
+  parentId: fld_ef40a6ecf9674f4a8024d7cb8de47885
+  description: Gets a specific Server type object.
+- name: Get all SSH keys
+  method: GET
+  url: https://api.hetzner.cloud/v1/ssh_keys
+  parameters:
+  - name: sort
+    value: name
+    disabled: false
+  - name: name
+    value: name64
+    disabled: false
+  - name: fingerprint
+    value: fingerprint78
+    disabled: false
+  - name: label_selector
+    value: label_selector2
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_0339a124d61c4839a6fa3627b072c9fc
+  parentId: fld_f3ae0d9ed21a4f08823659b09e8f770d
+  description: Returns all SSH key objects.
+- name: Create an SSH key
+  method: POST
+  url: https://api.hetzner.cloud/v1/ssh_keys
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "name": "My ssh key",
+        "public_key": "ssh-rsa AAAjjk76kgf...Xt",
+        "labels": {}
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_30d6ac3af8dd43608ecbd848c207fa1f
+  parentId: fld_f3ae0d9ed21a4f08823659b09e8f770d
+  description: Creates a new SSH key with the given `name` and `public_key`. Once an SSH key is created, it can be used in other calls such as creating Servers.
+- name: Delete an SSH key
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/ssh_keys/{id}
+  authentication: {}
+  _type: request
+  _id: req_b0633ed091d649d598b5d2bf3094a43d
+  parentId: fld_f3ae0d9ed21a4f08823659b09e8f770d
+  description: Deletes an SSH key. It cannot be used anymore.
+- name: Get a SSH key
+  method: GET
+  url: https://api.hetzner.cloud/v1/ssh_keys/{id}
+  authentication: {}
+  _type: request
+  _id: req_17133e76b2734ad5be45ed4230ea524a
+  parentId: fld_f3ae0d9ed21a4f08823659b09e8f770d
+  description: Returns a specific SSH key object.
+- name: Update an SSH key
+  method: PUT
+  url: https://api.hetzner.cloud/v1/ssh_keys/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "labels": {
+          "labelkey": "value"
+        },
+        "name": "My ssh key"
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_58d81d0334cb4b51841815a4b4c1d8be
+  parentId: fld_f3ae0d9ed21a4f08823659b09e8f770d
+  description: >
+    Updates an SSH key. You can update an SSH key name and an SSH key labels.
+
+
+    Please note that when updating labels, the SSH key current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+- name: Get all Volumes
+  method: GET
+  url: https://api.hetzner.cloud/v1/volumes
+  parameters:
+  - name: status
+    value: available
+    disabled: false
+  - name: sort
+    value: name
+    disabled: false
+  - name: name
+    value: name94
+    disabled: false
+  - name: label_selector
+    value: label_selector42
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_d3910aed9eb34edf87e4430c9d2e8ad1
+  parentId: fld_8865dec9be344fe2ad72b9b7f94d0eb4
+  description: Gets all existing Volumes that you have available.
+- name: Create a Volume
+  method: POST
+  url: https://api.hetzner.cloud/v1/volumes
+  body:
+    mimeType: application/json
+    text: '{"automount":false,"format":"xfs","labels":{"labelkey":"value"},"location":"nbg1","name":"test-database","size":42}'
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_72523de57ba345ac9771d2c171b561f4
+  parentId: fld_8865dec9be344fe2ad72b9b7f94d0eb4
+  description: >
+    Creates a new Volume attached to a Server. If you want to create a Volume that is not attached to a Server, you need to provide the `location` key instead of `server`. This can be either the ID or the name of the Location this Volume will be created in. Note that a Volume can be attached to a Server only in the same Location as the Volume itself.
+
+
+    Specifying the Server during Volume creation will automatically attach the Volume to that Server after it has been initialized. In that case, the `next_actions` key in the response is an array which contains a single `attach_volume` action.
+
+
+    The minimum Volume size is 10GB and the maximum size is 10TB (10240GB).
+
+
+    A volume’s name can consist of alphanumeric characters, dashes, underscores, and dots, but has to start and end with an alphanumeric character. The total length is limited to 64 characters. Volume names must be unique per Project.
+
+
+    #### Call specific error codes
+
+
+    | Code                                | Description                                         |
+
+    |-------------------------------------|-----------------------------------------------------|
+
+    | `no_space_left_in_location`         | There is no volume space left in the given location |
+- name: Delete a Volume
+  method: DELETE
+  url: https://api.hetzner.cloud/v1/volumes/{id}
+  authentication: {}
+  _type: request
+  _id: req_0cfacaab45d548d78b20478c59b983a6
+  parentId: fld_8865dec9be344fe2ad72b9b7f94d0eb4
+  description: Deletes a volume. All Volume data is irreversibly destroyed. The Volume must not be attached to a Server and it must not have delete protection enabled.
+- name: Get a Volume
+  method: GET
+  url: https://api.hetzner.cloud/v1/volumes/{id}
+  authentication: {}
+  _type: request
+  _id: req_b0374a30bbc2454f9367d5d04ff17a0c
+  parentId: fld_8865dec9be344fe2ad72b9b7f94d0eb4
+  description: Gets a specific Volume object.
+- name: Update a Volume
+  method: PUT
+  url: https://api.hetzner.cloud/v1/volumes/{id}
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "name": "database-storage",
+        "labels": {
+          "labelkey": "value"
+        }
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_229de6edc0df44db8524535c8c17bc31
+  parentId: fld_8865dec9be344fe2ad72b9b7f94d0eb4
+  description: >
+    Updates the Volume properties.
+
+
+    Note that when updating labels, the volume’s current set of labels will be replaced with the labels provided in the request body. So, for example, if you want to add a new label, you have to provide all existing labels plus the new label in the request body.
+- name: Get all Actions for a Volume
+  method: GET
+  url: https://api.hetzner.cloud/v1/volumes/{id}/actions
+  parameters:
+  - name: sort
+    value: progress:desc
+    disabled: false
+  - name: status
+    value: success
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_0ea3a1e068ed4be4ab63f972d2264202
+  parentId: fld_80591f5d16d5435e8d146445b0809efa
+  description: Returns all Action objects for a Volume. You can `sort` the results by using the sort URI parameter, and filter them with the `status` parameter.
+- name: Attach Volume to a Server
+  method: POST
+  url: https://api.hetzner.cloud/v1/volumes/{id}/actions/attach
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "server": 43,
+        "automount": false
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_59b76b37c6e949549d0c61e13667db8a
+  parentId: fld_80591f5d16d5435e8d146445b0809efa
+  description: Attaches a Volume to a Server. Works only if the Server is in the same Location as the Volume.
+- name: Change Volume Protection
+  method: POST
+  url: https://api.hetzner.cloud/v1/volumes/{id}/actions/change_protection
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "delete": true
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_bd2760e8923d43d58ce079cb813e6cbc
+  parentId: fld_80591f5d16d5435e8d146445b0809efa
+  description: Changes the protection configuration of a Volume.
+- name: Detach Volume
+  method: POST
+  url: https://api.hetzner.cloud/v1/volumes/{id}/actions/detach
+  authentication: {}
+  _type: request
+  _id: req_c8220624fcab4c4b9fa7cccb5bca9827
+  parentId: fld_80591f5d16d5435e8d146445b0809efa
+  description: Detaches a Volume from the Server it’s attached to. You may attach it to a Server again at a later time.
+- name: Resize Volume
+  method: POST
+  url: https://api.hetzner.cloud/v1/volumes/{id}/actions/resize
+  body:
+    mimeType: application/json
+    text: >-
+      {
+        "size": 50
+      }
+  headers:
+  - name: Content-Type
+    value: application/json
+    disabled: false
+  authentication: {}
+  _type: request
+  _id: req_fd8b570188444ed38b7df6334ea73c1d
+  parentId: fld_80591f5d16d5435e8d146445b0809efa
+  description: Changes the size of a Volume. Note that downsizing a Volume is not possible.
+- name: Get an Action for a Volume
+  method: GET
+  url: https://api.hetzner.cloud/v1/volumes/{id}/actions/{action_id}
+  authentication: {}
+  _type: request
+  _id: req_6650aa1f38d042148aa29fa0cd7d707e
+  parentId: fld_80591f5d16d5435e8d146445b0809efa
+  description: Returns a specific Action for a Volume.

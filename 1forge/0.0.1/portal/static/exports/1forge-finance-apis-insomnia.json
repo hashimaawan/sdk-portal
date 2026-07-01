@@ -1,0 +1,50 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "apimatic.transformer",
+  "resources": [
+    {
+      "name": "1Forge Finance APIs",
+      "_type": "workspace",
+      "_id": "wrk_10385426172b4a6e9f55bdbd68831a2d",
+      "description": "Stock and Forex Data and Realtime Quotes"
+    },
+    {
+      "name": "production",
+      "data": {
+        "server1": "https://1forge.com/forex-quotes",
+        "server2": "http://1forge.com/forex-quotes"
+      },
+      "_type": "environment",
+      "_id": "env_f1c6ac37a90d4541993e98f772c9445e",
+      "parentId": "wrk_10385426172b4a6e9f55bdbd68831a2d"
+    },
+    {
+      "name": "forex",
+      "_type": "request_group",
+      "_id": "fld_ef4269a9ba6a459597ac8229f9df7376",
+      "parentId": "wrk_10385426172b4a6e9f55bdbd68831a2d",
+      "description": ""
+    },
+    {
+      "name": "Get quotes for all symbols",
+      "method": "GET",
+      "url": "{{server1}}/quotes",
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_8d4a8f0a3e1c40b6990309dd3a3df63b",
+      "parentId": "fld_ef4269a9ba6a459597ac8229f9df7376",
+      "description": "Get quotes"
+    },
+    {
+      "name": "Get a list of symbols for which we provide real-time quotes",
+      "method": "GET",
+      "url": "{{server1}}/symbols",
+      "authentication": {},
+      "_type": "request",
+      "_id": "req_80ef1fe58a244cbda32a39ba9ed8b9c9",
+      "parentId": "fld_ef4269a9ba6a459597ac8229f9df7376",
+      "description": "Symbol List"
+    }
+  ]
+}

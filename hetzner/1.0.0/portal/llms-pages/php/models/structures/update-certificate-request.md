@@ -1,0 +1,32 @@
+# Update Certificate Request
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/php/x-redirect/JTI0bSUyRlVwZGF0ZUNlcnRpZmljYXRlUmVxdWVzdA
+
+
+# Class Name
+
+`UpdateCertificateRequest`
+
+
+# Fields
+
+| Name | Type | Tags | Description | Getter | Setter |
+|  --- | --- | --- | --- | --- | --- |
+| `labels` | `?array` | Optional | User-defined labels (key-value pairs) | getLabels(): ?array | setLabels(?array labels): void |
+| `name` | `?string` | Optional | New Certificate name | getName(): ?string | setName(?string name): void |
+
+
+# Example
+
+```php
+use HetznerCloudAPILib\Models\Builders\UpdateCertificateRequestBuilder;
+use HetznerCloudAPILib\ApiHelper;
+
+$updateCertificateRequest = UpdateCertificateRequestBuilder::init()
+    ->labels(ApiHelper::deserialize('{"labelkey":"value"}'))
+    ->name('my website cert')
+    ->build();
+```
+
+
+

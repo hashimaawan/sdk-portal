@@ -1,0 +1,41 @@
+# O Auth Token
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/python/x-redirect/JTI0bSUyRk9BdXRoVG9rZW4
+
+OAuth 2 Authorization endpoint response
+
+
+# Class Name
+
+`OAuthToken`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `access_token` | `str` | Required | Access token |
+| `token_type` | `str` | Required | Type of access token |
+| `expires_in` | `int` | Optional | Time in seconds before the access token expires |
+| `scope` | `str` | Optional | List of scopes granted<br>This is a space-delimited list of strings. |
+| `expiry` | `int` | Optional | Time of token expiry as unix timestamp (UTC) |
+| `refresh_token` | `str` | Optional | Refresh token<br>Used to get a new access token when it expires. |
+
+
+# Example
+
+```python
+from furkottrips.models.o_auth_token import OAuthToken
+
+o_auth_token = OAuthToken(
+    access_token='access_token4',
+    token_type='token_type4',
+    expires_in=80,
+    scope='scope4',
+    expiry=242,
+    refresh_token='refresh_token6'
+)
+```
+
+
+

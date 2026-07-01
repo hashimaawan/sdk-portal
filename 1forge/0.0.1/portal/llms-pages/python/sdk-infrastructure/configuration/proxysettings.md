@@ -1,0 +1,34 @@
+# ProxySettings
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/1forge/0.0.1/portal/#/python/x-redirect/JTI0aCUyRl9fYWRkaXRpb25hbF9kb2N1bWVudGF0aW9uJTJGQ29uZmlndXJhdGlvbiUyRlByb3h5U2V0dGluZ3M
+
+
+Represents the proxy server configurations for API calls.
+
+# Properties
+
+| Name | Type | Tag | Description |
+|  --- | --- | --- | --- |
+| address | `str` | required | The proxy server URL. |
+| port | `int` | optional | The port to connect to the proxy server. |
+| username | `str` | optional | Username for proxy authentication. |
+| password | `str` | optional | Password for proxy authentication. |
+
+# Usage Example
+
+```python
+from m1forgefinanceapis.m_1_forgefinanceapis_client import M1forgefinanceapisClient
+from m1forgefinanceapis.http.proxy_settings import ProxySettings
+
+client = M1forgefinanceapisClient(
+    proxy_settings=ProxySettings(
+        address='http://localhost',
+        port=8888,
+        username='user',
+        password='pass'
+     )
+)
+```
+
+
+

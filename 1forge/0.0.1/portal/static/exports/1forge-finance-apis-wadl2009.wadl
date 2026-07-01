@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:schemas="https://1forge.com/forex-quotes/schemas" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="1Forge Finance APIs" xml:lang="en">Stock and Forex Data and Realtime Quotes</doc>
+  <grammars>
+    <xs:schema xmlns:tns="https://1forge.com/forex-quotes/schemas" targetNamespace="https://1forge.com/forex-quotes/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Getalistofsymbolsforwhichweprovidereal-timequotes200_Response0" type="schemas:Getalistofsymbolsforwhichweprovidereal-timequotes200_Response0" />
+      <xs:complexType name="Getalistofsymbolsforwhichweprovidereal-timequotes200_Response0">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="response" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A list of symbols</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </grammars>
+  <resources base="https://1forge.com/forex-quotes">
+    <resource id="_quotes" path="/quotes">
+      <method id="Getquotesforallsymbols" name="GET">
+        <doc title="Get quotes for all symbols" xml:lang="en">Get quotes</doc>
+        <request />
+        <response status="200">
+          <doc title="200" xml:lang="en">A list of quotes</doc>
+        </response>
+      </method>
+    </resource>
+    <resource id="_symbols" path="/symbols">
+      <method id="Getalistofsymbolsforwhichweprovidereal-timequotes" name="GET">
+        <doc title="Get a list of symbols for which we provide real-time quotes" xml:lang="en">Symbol List</doc>
+        <request />
+        <response status="200">
+          <doc title="200" xml:lang="en">A list of symbols</doc>
+          <representation element="schemas:Getalistofsymbolsforwhichweprovidereal-timequotes200_Response0" mediaType="application/json" />
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

@@ -1,0 +1,71 @@
+# Datacenters Response
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/go/x-redirect/JTI0bSUyRkRhdGFjZW50ZXJzJTI1MjBSZXNwb25zZQ
+
+
+# Class Name
+
+`DatacentersResponse`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `Datacenters` | [`[]models.Datacenter`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/llms-pages/go/models/structures/datacenter.md) | Required | - |
+| `Recommendation` | `float64` | Required | The Datacenter which is recommended to be used to create new Servers. |
+
+
+# Example
+
+```go
+package main
+
+import (
+    "hetznercloudapi/models"
+)
+
+func main() {
+    datacentersResponse := models.DatacentersResponse{
+        Datacenters:          []models.Datacenter{
+            models.Datacenter{
+                Description:          "Falkenstein DC Park 8",
+                Id:                   42,
+                Location:             models.Location{
+                    City:                 "Falkenstein",
+                    Country:              "DE",
+                    Description:          "Falkenstein DC Park 1",
+                    Id:                   float64(1),
+                    Latitude:             float64(50.47612),
+                    Longitude:            float64(12.370071),
+                    Name:                 "fsn1",
+                    NetworkZone:          "eu-central",
+                },
+                Name:                 "fsn1-dc8",
+                ServerTypes:          models.ServerTypes{
+                    Available:             []float64{
+                        float64(1),
+                        float64(2),
+                        float64(3),
+                    },
+                    AvailableForMigration: []float64{
+                        float64(1),
+                        float64(2),
+                        float64(3),
+                    },
+                    Supported:             []float64{
+                        float64(1),
+                        float64(2),
+                        float64(3),
+                    },
+                },
+            },
+        },
+        Recommendation:       float64(1),
+    }
+
+}
+```
+
+
+

@@ -1,0 +1,300 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_source": "apimatic.transformer",
+  "resources": [
+    {
+      "name": "Giphy API",
+      "_type": "workspace",
+      "_id": "wrk_dc799438c0674abba87e84338f83f6a4",
+      "description": "Giphy API"
+    },
+    {
+      "name": "gifs",
+      "_type": "request_group",
+      "_id": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "parentId": "wrk_dc799438c0674abba87e84338f83f6a4"
+    },
+    {
+      "name": "stickers",
+      "_type": "request_group",
+      "_id": "fld_c67879a0372f4f78aee21d7a6d626244",
+      "parentId": "wrk_dc799438c0674abba87e84338f83f6a4"
+    },
+    {
+      "name": "getGifsById",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/gifs",
+      "parameters": [
+        {
+          "name": "ids",
+          "value": "ids16",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key10",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_525b75155de24f96988aa764fd2563b1",
+      "parentId": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "description": "A multiget version of the get GIF by ID endpoint.\n"
+    },
+    {
+      "name": "randomGif",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/gifs/random",
+      "parameters": [
+        {
+          "name": "tag",
+          "value": "tag41",
+          "disabled": false
+        },
+        {
+          "name": "rating",
+          "value": "rating13",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key11",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_ec35f5b04c45427cb7760c6d63919e6d",
+      "parentId": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n"
+    },
+    {
+      "name": "searchGifs",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/gifs/search",
+      "parameters": [
+        {
+          "name": "q",
+          "value": "q20",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "25",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "rating",
+          "value": "rating86",
+          "disabled": false
+        },
+        {
+          "name": "lang",
+          "value": "lang77",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key31",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_6232a32a1e37405e8909f2ee4611ecce",
+      "parentId": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "description": "Search all GIPHY GIFs for a word or phrase. Punctuation will be stripped and ignored.  Use a plus or url encode for phrases. Example paul+rudd, ryan+gosling or american+psycho.\n"
+    },
+    {
+      "name": "translateGif",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/gifs/translate",
+      "parameters": [
+        {
+          "name": "s",
+          "value": "s64",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key92",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_91b621c20d6943d295820fb198aaccec",
+      "parentId": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIF\n"
+    },
+    {
+      "name": "trendingGifs",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/gifs/trending",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "25",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "rating",
+          "value": "rating89",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key4",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_1e19bf6bd1294098b7a5923f0abe8dec",
+      "parentId": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "description": "Fetch GIFs currently trending online. Hand curated by the GIPHY editorial team.  The data returned mirrors the GIFs showcased on the GIPHY homepage. Returns 25 results by default.\n"
+    },
+    {
+      "name": "getGifById",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/gifs/{gifId}",
+      "parameters": [
+        {
+          "name": "api_key",
+          "value": "api_key19",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_168887508ced4560b6e5ade278c4b6dd",
+      "parentId": "fld_362ba28e719e48ae82d3ab41242168e3",
+      "description": "Returns a GIF given that GIF's unique ID\n"
+    },
+    {
+      "name": "randomSticker",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/stickers/random",
+      "parameters": [
+        {
+          "name": "tag",
+          "value": "tag92",
+          "disabled": false
+        },
+        {
+          "name": "rating",
+          "value": "rating74",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key80",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_1ab123d17d324d418f96103111a4964e",
+      "parentId": "fld_c67879a0372f4f78aee21d7a6d626244",
+      "description": "Returns a random GIF, limited by tag. Excluding the tag parameter will return a random GIF from the GIPHY catalog.\n"
+    },
+    {
+      "name": "searchStickers",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/stickers/search",
+      "parameters": [
+        {
+          "name": "q",
+          "value": "q69",
+          "disabled": false
+        },
+        {
+          "name": "limit",
+          "value": "25",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "rating",
+          "value": "rating79",
+          "disabled": false
+        },
+        {
+          "name": "lang",
+          "value": "lang64",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key31",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_7af051c405f443d4b74652128414312e",
+      "parentId": "fld_c67879a0372f4f78aee21d7a6d626244",
+      "description": "Replicates the functionality and requirements of the classic GIPHY search, but returns animated stickers rather than GIFs.\n"
+    },
+    {
+      "name": "translateSticker",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/stickers/translate",
+      "parameters": [
+        {
+          "name": "s",
+          "value": "s13",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key10",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_10d7962b01554df3a8d9f9b002bbb1e6",
+      "parentId": "fld_c67879a0372f4f78aee21d7a6d626244",
+      "description": "The translate API draws on search, but uses the GIPHY `special sauce` to handle translating from one vocabulary to another. In this case, words and phrases to GIFs.\n"
+    },
+    {
+      "name": "trendingStickers",
+      "method": "GET",
+      "url": "https://api.giphy.com/v1/stickers/trending",
+      "parameters": [
+        {
+          "name": "limit",
+          "value": "25",
+          "disabled": false
+        },
+        {
+          "name": "offset",
+          "value": "0",
+          "disabled": false
+        },
+        {
+          "name": "rating",
+          "value": "rating48",
+          "disabled": false
+        },
+        {
+          "name": "api_key",
+          "value": "api_key46",
+          "disabled": false
+        }
+      ],
+      "_type": "request",
+      "_id": "req_3af48b3b0eed4228ad3b940cb009dcd7",
+      "parentId": "fld_c67879a0372f4f78aee21d7a6d626244",
+      "description": "Fetch Stickers currently trending online. Hand curated by the GIPHY editorial team. Returns 25 results by default.\n"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+_type: export
+__export_format: 4
+__export_source: apimatic.transformer
+resources:
+- name: Furkot Trips
+  _type: workspace
+  _id: wrk_2783d5b92d7e4dc28d744d3e5682cd39
+  description: >
+    Furkot provides Rest API to access user trip data.
+
+    Using Furkot API an application can list user trips and display stops for a specific trip.
+
+    Furkot API uses OAuth2 protocol to authorize applications to access data on behalf of users.
+- name: production
+  data:
+    default: https://trips.furkot.com/pub/api
+    authserver: https://trips.furkot.com/oauth
+  _type: environment
+  _id: env_31eff6d6e82a4527b9efdf45b1105c2f
+  parentId: wrk_2783d5b92d7e4dc28d744d3e5682cd39
+- name: Trip_GET
+  method: GET
+  url: '{{default}}/trip'
+  authentication:
+    type: oauth2
+    accessTokenUrl: https://trips.furkot.com/pub/api/access_token
+    authorizationUrl: https://trips.furkot.com/oauth/authorize
+    grantType: authorization_code
+  _type: request
+  _id: req_efc755490fb34b2bad4768abf99038b1
+  parentId: wrk_2783d5b92d7e4dc28d744d3e5682cd39
+  description: list user's trips
+- name: TripStopByTripId_GET
+  method: GET
+  url: '{{default}}/trip/{trip_id}/stop'
+  authentication:
+    type: oauth2
+    accessTokenUrl: https://trips.furkot.com/pub/api/access_token
+    authorizationUrl: https://trips.furkot.com/oauth/authorize
+    grantType: authorization_code
+  _type: request
+  _id: req_6b420f44bcdb4a648f6a210a0205165f
+  parentId: wrk_2783d5b92d7e4dc28d744d3e5682cd39
+  description: list stops for a trip identified by {trip_id}

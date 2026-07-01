@@ -1,0 +1,39 @@
+# O Auth Token
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/furkot/1.0.0/portal/#/ruby/x-redirect/JTI0bSUyRk9BdXRoVG9rZW4
+
+OAuth 2 Authorization endpoint response
+
+
+# Class Name
+
+`OAuthToken`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `access_token` | `String` | Required | Access token |
+| `token_type` | `String` | Required | Type of access token |
+| `expires_in` | `Integer` | Optional | Time in seconds before the access token expires |
+| `scope` | `String` | Optional | List of scopes granted<br>This is a space-delimited list of strings. |
+| `expiry` | `Integer` | Optional | Time of token expiry as unix timestamp (UTC) |
+| `refresh_token` | `String` | Optional | Refresh token<br>Used to get a new access token when it expires. |
+
+
+# Example
+
+```ruby
+o_auth_token = OAuthToken.new(
+  'access_token4',
+  'token_type4',
+  80,
+  'scope4',
+  242,
+  'refresh_token6'
+)
+```
+
+
+

@@ -1,0 +1,115 @@
+{
+  "id": "29ecab8d-3eb9-4f97-ad83-d5d0474e9892",
+  "name": "1Forge Finance APIs",
+  "description": "Stock and Forex Data and Realtime Quotes",
+  "order": [],
+  "folders": [
+    {
+      "id": "eb02f15e-ee8d-4bdd-a9bc-08e22551db34",
+      "name": "forex",
+      "description": "",
+      "order": [
+        "c15d8b4d-659d-4b16-9983-2383ca870427",
+        "bb6d648f-62f6-49a3-97c8-3d1d06c7d918"
+      ],
+      "collection_id": "29ecab8d-3eb9-4f97-ad83-d5d0474e9892"
+    }
+  ],
+  "requests": [
+    {
+      "folder": "eb02f15e-ee8d-4bdd-a9bc-08e22551db34",
+      "id": "c15d8b4d-659d-4b16-9983-2383ca870427",
+      "name": "Get quotes for all symbols",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Get quotes",
+      "headers": "Accept:*/*\n",
+      "method": "GET",
+      "currentHelper": "",
+      "pathVariables": {},
+      "url": "{{server1}}/quotes",
+      "responses": [
+        {
+          "request": "c15d8b4d-659d-4b16-9983-2383ca870427",
+          "id": "977472ba-185d-46d2-a0f3-3c264d6611dc",
+          "name": "Response_200",
+          "status": "A list of quotes",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "A list of quotes"
+          },
+          "headers": [],
+          "language": "Text"
+        }
+      ],
+      "collectionId": "29ecab8d-3eb9-4f97-ad83-d5d0474e9892",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "*/*"
+        }
+      ],
+      "pathVariableData": []
+    },
+    {
+      "folder": "eb02f15e-ee8d-4bdd-a9bc-08e22551db34",
+      "id": "bb6d648f-62f6-49a3-97c8-3d1d06c7d918",
+      "name": "Get a list of symbols for which we provide real-time quotes",
+      "dataDisabled": false,
+      "descriptionFormat": "markdown",
+      "description": "Symbol List",
+      "headers": "Accept:application/json\n",
+      "method": "GET",
+      "currentHelper": "",
+      "pathVariables": {},
+      "url": "{{server1}}/symbols",
+      "responses": [
+        {
+          "request": "bb6d648f-62f6-49a3-97c8-3d1d06c7d918",
+          "id": "3d869308-05d6-47d0-84ed-28baf56a8f83",
+          "name": "Response_200",
+          "status": "A list of symbols",
+          "responseCode": {
+            "code": 200,
+            "name": "200",
+            "detail": "A list of symbols"
+          },
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "mime": "application/json",
+          "text": "[\n  \"response81\"\n]",
+          "language": "Text",
+          "rawDataType": "text"
+        }
+      ],
+      "collectionId": "29ecab8d-3eb9-4f97-ad83-d5d0474e9892",
+      "queryParams": [],
+      "headerData": [
+        {
+          "key": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "pathVariableData": []
+    }
+  ],
+  "variables": [
+    {
+      "key": "server1",
+      "value": "https://1forge.com/forex-quotes"
+    },
+    {
+      "key": "server2",
+      "value": "http://1forge.com/forex-quotes"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  }
+}

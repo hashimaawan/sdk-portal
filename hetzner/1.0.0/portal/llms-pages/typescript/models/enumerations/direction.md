@@ -1,0 +1,30 @@
+# Direction
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/hetzner/1.0.0/portal/#/typescript/x-redirect/JTI0bSUyRkRpcmVjdGlvbg
+
+Select traffic direction on which rule should be applied. Use `source_ips` for direction `in` and `destination_ips` for direction `out`.
+
+
+# Enum Type Name
+
+`DirectionEnum`
+
+
+# Fields
+
+| Name |
+|  --- |
+| `In` |
+| `Out` |
+
+
+# Example
+
+```ts
+import { DirectionEnum } from 'hetzner-cloud-apilib';
+
+const direction = DirectionEnum.In;
+```
+
+
+

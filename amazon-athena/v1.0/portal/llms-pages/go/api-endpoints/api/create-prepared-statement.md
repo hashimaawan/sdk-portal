@@ -7,7 +7,7 @@ Creates a prepared statement for use with SQL queries in Athena.
 ```go
 CreatePreparedStatement(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget6,
+    xAmzTarget models.XAmzTarget6Enum,
     body models.CreatePreparedStatementInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-6.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-6.md) | Header, Required | - |
 | `body` | [`models.CreatePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/create-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,15 +53,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget6_EnumAmazonathenacreatepreparedstatement
+xAmzTarget := models.XAmzTarget6Enum_ENUMAMAZONATHENACREATEPREPAREDSTATEMENT
 
 body := models.CreatePreparedStatementInput{
-    StatementName:         "StatementName4",
-    WorkGroup:             "WorkGroup8",
-    QueryStatement:        "QueryStatement8",
+    StatementName:        "StatementName4",
+    WorkGroup:            "WorkGroup8",
+    QueryStatement:       "QueryStatement8",
 }
 
-apiResponse, err := api.CreatePreparedStatement(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.CreatePreparedStatement(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

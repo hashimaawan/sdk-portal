@@ -6,7 +6,7 @@ Returns information about the workgroup with the specified name.
 
 ```ts
 async getWorkGroup(
-  xAmzTarget: XAmzTarget29,
+  xAmzTarget: XAmzTarget29Enum,
   body: GetWorkGroupInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget29`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-29.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget29Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-29.md) | Header, Required | - |
 | `body` | [`GetWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget29.EnumAmazonAthenaGetWorkGroup;
+const xAmzTarget = XAmzTarget29Enum.EnumAmazonAthenaGetWorkGroup;
 
 const body: GetWorkGroupInput = {
   workGroup: 'WorkGroup8',
 };
 
 try {
-  const response = await api.getWorkGroup(
+  const response = await apiController.getWorkGroup(
     xAmzTarget,
     body
   );

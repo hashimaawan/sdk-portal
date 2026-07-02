@@ -7,7 +7,7 @@ The data catalog type.
 
 # Enum Type Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The data catalog type.
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.DataCatalogType2;
+import com.amazonaws.useast1.athena.models.DataCatalogType2Enum;
 
-DataCatalogType2 dataCatalogType2 = DataCatalogType2.LAMBDA;
+DataCatalogType2Enum dataCatalogType2 = DataCatalogType2Enum.LAMBDA;
 ```
 
 

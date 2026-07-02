@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/java/x-redirect/JTI0bSUyRkdldFNlc3Npb25SZXNwb25zZQ
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -23,17 +21,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `SessionConfiguration` | [`SessionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/session-configuration-2.md) | Optional | - | SessionConfiguration2 getSessionConfiguration() | setSessionConfiguration(SessionConfiguration2 sessionConfiguration) |
 | `Status` | [`Status3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/status-3.md) | Optional | - | Status3 getStatus() | setStatus(Status3 status) |
 | `Statistics` | [`Statistics3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/statistics-3.md) | Optional | - | Statistics3 getStatistics() | setStatistics(Statistics3 statistics) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.AdditionalConfigs;
 import com.amazonaws.useast1.athena.models.EngineConfiguration1;
 import com.amazonaws.useast1.athena.models.GetSessionResponse;
-import java.io.IOException;
 
 GetSessionResponse getSessionResponse = new GetSessionResponse.Builder()
     .sessionId("SessionId6")
@@ -46,11 +41,8 @@ GetSessionResponse getSessionResponse = new GetSessionResponse.Builder()
     .coordinatorDpuSize(1)
     .defaultExecutorDpuSize(1)
     .additionalConfigs(new AdditionalConfigs.Builder()
-        .additionalProperty("exampleAdditionalProperty", "AdditionalConfigs_additionalProperties5")
             .build())
-    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

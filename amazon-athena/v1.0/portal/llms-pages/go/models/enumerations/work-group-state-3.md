@@ -7,15 +7,15 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Class Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Enabled` |
-| `Disabled` |
+| `ENABLED` |
+| `DISABLED` |
 
 
 # Example
@@ -24,11 +24,11 @@ The state of the workgroup: ENABLED or DISABLED.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    workGroupState3 := models.WorkGroupState3_Enabled
+    workGroupState3 := models.WorkGroupState3Enum_ENABLED
 
 }
 ```

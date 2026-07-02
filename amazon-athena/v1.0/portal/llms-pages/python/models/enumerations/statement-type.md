@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`StatementType`
+`StatementTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.statement_type import StatementType
+from amazonathena.models.statement_type_enum import StatementTypeEnum
 
-statement_type = StatementType.DDL
+statement_type = StatementTypeEnum.DDL
 ```
 
 

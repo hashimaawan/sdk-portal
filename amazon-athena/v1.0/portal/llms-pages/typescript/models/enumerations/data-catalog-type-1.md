@@ -7,24 +7,24 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 
 # Enum Type Name
 
-`DataCatalogType1`
+`DataCatalogType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
 
 ```ts
-import { DataCatalogType1 } from 'amazon-athenalib';
+import { DataCatalogType1Enum } from 'amazon-athenalib';
 
-const dataCatalogType1 = DataCatalogType1.Glue;
+const dataCatalogType1 = DataCatalogType1Enum.GLUE;
 ```
 
 

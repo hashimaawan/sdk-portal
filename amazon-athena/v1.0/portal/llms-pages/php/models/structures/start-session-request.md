@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRlN0YXJ0U2Vzc2lvblJlcXVlc3Q
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -20,7 +18,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `notebookVersion` | `?string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | getNotebookVersion(): ?string | setNotebookVersion(?string notebookVersion): void |
 | `sessionIdleTimeoutInMinutes` | `?int` | Optional | **Constraints**: `>= 1`, `<= 480` | getSessionIdleTimeoutInMinutes(): ?int | setSessionIdleTimeoutInMinutes(?int sessionIdleTimeoutInMinutes): void |
 | `clientRequestToken` | `?string` | Optional | **Constraints**: *Minimum Length*: `32`, *Maximum Length*: `128` | getClientRequestToken(): ?string | setClientRequestToken(?string clientRequestToken): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -29,7 +26,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 use AmazonAthenaLib\Models\Builders\StartSessionRequestBuilder;
 use AmazonAthenaLib\Models\Builders\EngineConfiguration1Builder;
 use AmazonAthenaLib\Models\Builders\AdditionalConfigsBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $startSessionRequest = StartSessionRequestBuilder::init(
     'WorkGroup2',
@@ -39,18 +35,13 @@ $startSessionRequest = StartSessionRequestBuilder::init(
         ->coordinatorDpuSize(1)
         ->defaultExecutorDpuSize(1)
         ->additionalConfigs(
-            AdditionalConfigsBuilder::init()
-                ->additionalProperty('exampleAdditionalProperty', 'AdditionalConfigs_additionalProperties5')
-                ->build()
-        )
-        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-        ->build()
+            AdditionalConfigsBuilder::init()->build()
+        )->build()
 )
     ->description('Description4')
     ->notebookVersion('NotebookVersion4')
     ->sessionIdleTimeoutInMinutes(172)
     ->clientRequestToken('ClientRequestToken4')
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

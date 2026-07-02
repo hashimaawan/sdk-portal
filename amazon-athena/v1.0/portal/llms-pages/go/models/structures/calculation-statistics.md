@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains statistics for a notebook calculation.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -18,7 +16,6 @@ Contains statistics for a notebook calculation.
 |  --- | --- | --- | --- |
 | `DpuExecutionInMillis` | `*int` | Optional | - |
 | `Progress` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,16 +24,13 @@ Contains statistics for a notebook calculation.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     calculationStatistics := models.CalculationStatistics{
-        DpuExecutionInMillis:  models.ToPointer(248),
-        Progress:              models.ToPointer("Progress8"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        DpuExecutionInMillis: models.ToPointer(248),
+        Progress:             models.ToPointer("Progress8"),
     }
 
 }

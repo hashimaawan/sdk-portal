@@ -6,7 +6,7 @@ Returns the specified data catalog.
 
 ```csharp
 GetDataCatalogAsync(
-    Models.XAmzTarget18 xAmzTarget,
+    Models.XAmzTarget18Enum xAmzTarget,
     Models.GetDataCatalogInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-18.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget18Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-18.md) | Header, Required | - |
 | `body` | [`GetDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetDataCatalogOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-data-catalog-output.md).
+[`Task<Models.GetDataCatalogOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-data-catalog-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget18 xAmzTarget = XAmzTarget18.EnumAmazonAthenaGetDataCatalog;
+XAmzTarget18Enum xAmzTarget = XAmzTarget18Enum.EnumAmazonAthenaGetDataCatalog;
 GetDataCatalogInput body = new GetDataCatalogInput
 {
     Name = "Name6",
@@ -56,7 +56,7 @@ GetDataCatalogInput body = new GetDataCatalogInput
 
 try
 {
-    ApiResponse<GetDataCatalogOutput> result = await api.GetDataCatalogAsync(
+    GetDataCatalogOutput result = await aPIController.GetDataCatalogAsync(
         xAmzTarget,
         body
     );

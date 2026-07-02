@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
 
 ```java
-CompletableFuture<ApiResponse<Object>> updateNamedQueryAsync(
-    final XAmzTarget55 xAmzTarget,
+CompletableFuture<Object> updateNamedQueryAsync(
+    final XAmzTarget55Enum xAmzTarget,
     final UpdateNamedQueryInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget55`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-55.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget55Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-55.md) | Header, Required | - |
 | `body` | [`UpdateNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/update-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget55 xAmzTarget = XAmzTarget55.ENUM_AMAZONATHENAUPDATENAMEDQUERY;
+XAmzTarget55Enum xAmzTarget = XAmzTarget55Enum.ENUM_AMAZONATHENAUPDATENAMEDQUERY;
 UpdateNamedQueryInput body = new UpdateNamedQueryInput.Builder(
     "NamedQueryId6",
     "Name6",
@@ -57,7 +57,7 @@ UpdateNamedQueryInput body = new UpdateNamedQueryInput.Builder(
 .build();
 
 
-api.updateNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.updateNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

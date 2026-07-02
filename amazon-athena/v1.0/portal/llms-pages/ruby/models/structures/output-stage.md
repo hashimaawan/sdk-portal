@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/ruby/x-redirect/JTI0bSUyRk91dHB1dFN0YWdl
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -23,21 +21,26 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `execution_time` | `Integer` | Optional | - |
 | `query_stage_plan` | [`QueryStagePlan`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/query-stage-plan.md) | Optional | - |
 | `sub_stages` | [`Array[QueryStage]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/query-stage.md) | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 output_stage = OutputStage.new(
-  stage_id: 152,
-  state: 'State2',
-  output_bytes: 86,
-  output_rows: 180,
-  input_bytes: 44,
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  152,
+  'State2',
+  86,
+  180,
+  44,
+  nil,
+  nil,
+  QueryStagePlan.new(
+    nil,
+    nil,
+    [],
+    []
+  ),
+  []
 )
 ```
 

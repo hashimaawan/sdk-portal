@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState4`
+`CalculationExecutionState4Enum`
 
 
 # Fields
@@ -28,9 +28,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\CalculationExecutionState4;
+use AmazonAthenaLib\Models\CalculationExecutionState4Enum;
 
-$calculationExecutionState4 = CalculationExecutionState4::CANCELING;
+$calculationExecutionState4 = CalculationExecutionState4Enum::CANCELING;
 ```
 
 

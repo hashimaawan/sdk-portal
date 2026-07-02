@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRlJlc3VsdENvbmZpZ3VyYXRpb25VcGRhdGVzMg
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -22,7 +20,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `removeExpectedBucketOwner` | `?bool` | Optional | - | getRemoveExpectedBucketOwner(): ?bool | setRemoveExpectedBucketOwner(?bool removeExpectedBucketOwner): void |
 | `aclConfiguration` | [`?AclConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/acl-configuration-1.md) | Optional | - | getAclConfiguration(): ?AclConfiguration1 | setAclConfiguration(?AclConfiguration1 aclConfiguration): void |
 | `removeAclConfiguration` | `?bool` | Optional | - | getRemoveAclConfiguration(): ?bool | setRemoveAclConfiguration(?bool removeAclConfiguration): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -30,23 +27,20 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```php
 use AmazonAthenaLib\Models\Builders\ResultConfigurationUpdates2Builder;
 use AmazonAthenaLib\Models\Builders\EncryptionConfiguration2Builder;
-use AmazonAthenaLib\Models\EncryptionOption1;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\EncryptionOption1Enum;
 
 $resultConfigurationUpdates2 = ResultConfigurationUpdates2Builder::init()
     ->outputLocation('OutputLocation4')
     ->removeOutputLocation(false)
     ->encryptionConfiguration(
         EncryptionConfiguration2Builder::init(
-            EncryptionOption1::SSE_S3
+            EncryptionOption1Enum::SSE_S3
         )
             ->kmsKey('KmsKey6')
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->removeEncryptionConfiguration(false)
     ->expectedBucketOwner('ExpectedBucketOwner4')
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

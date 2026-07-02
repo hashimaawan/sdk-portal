@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRlByZXBhcmVkU3RhdGVtZW50MQ
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -19,7 +17,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `WorkGroupName` | `*string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `Description` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `LastModifiedTime` | `*time.Time` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -30,7 +27,7 @@ package main
 import (
     "log"
     "time"
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -42,14 +39,11 @@ func main() {
         return dateTime
     }
     preparedStatement1 := models.PreparedStatement1{
-        StatementName:         models.ToPointer("StatementName6"),
-        QueryStatement:        models.ToPointer("QueryStatement0"),
-        WorkGroupName:         models.ToPointer("WorkGroupName0"),
-        Description:           models.ToPointer("Description8"),
-        LastModifiedTime:      models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        StatementName:        models.ToPointer("StatementName6"),
+        QueryStatement:       models.ToPointer("QueryStatement0"),
+        WorkGroupName:        models.ToPointer("WorkGroupName0"),
+        Description:          models.ToPointer("Description8"),
+        LastModifiedTime:     models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
     }
 
 }

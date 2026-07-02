@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Get singleton instance
 
-The singleton instance of the `Api` class can be accessed from the API Client.
+The singleton instance of the `APIController` class can be accessed from the API Client.
 
 ```
-$api = $client->getApi();
+$aPIController = $client->getAPIController();
 ```
 
 

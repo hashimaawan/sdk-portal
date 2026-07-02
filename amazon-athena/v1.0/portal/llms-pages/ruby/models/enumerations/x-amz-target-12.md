@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget12`
+`XAmzTarget12Enum`
 
 
 # Fields
@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-x_amz_target12 = XAmzTarget12::ENUM_AMAZONATHENADELETEPREPAREDSTATEMENT
+x_amz_target12 = XAmzTarget12Enum::ENUM_AMAZONATHENADELETEPREPAREDSTATEMENT
 ```
 
 

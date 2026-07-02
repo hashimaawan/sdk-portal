@@ -6,7 +6,7 @@ Submits calculations for execution within a session. You can supply the code to 
 
 ```ts
 async startCalculationExecution(
-  xAmzTarget: XAmzTarget46,
+  xAmzTarget: XAmzTarget46Enum,
   body: StartCalculationExecutionRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget46`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-46.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget46Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-46.md) | Header, Required | - |
 | `body` | [`StartCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/start-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget46.EnumAmazonAthenaStartCalculationExecution;
+const xAmzTarget = XAmzTarget46Enum.EnumAmazonAthenaStartCalculationExecution;
 
 const body: StartCalculationExecutionRequest = {
   sessionId: 'SessionId2',
 };
 
 try {
-  const response = await api.startCalculationExecution(
+  const response = await apiController.startCalculationExecution(
     xAmzTarget,
     body
   );

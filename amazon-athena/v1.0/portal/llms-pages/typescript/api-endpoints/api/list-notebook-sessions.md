@@ -6,7 +6,7 @@ Lists, in descending order, the sessions that have been created in a notebook th
 
 ```ts
 async listNotebookSessions(
-  xAmzTarget: XAmzTarget39,
+  xAmzTarget: XAmzTarget39Enum,
   body: ListNotebookSessionsRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget39`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-39.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget39Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-39.md) | Header, Required | - |
 | `body` | [`ListNotebookSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-notebook-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget39.EnumAmazonAthenaListNotebookSessions;
+const xAmzTarget = XAmzTarget39Enum.EnumAmazonAthenaListNotebookSessions;
 
 const body: ListNotebookSessionsRequest = {
   notebookId: 'NotebookId6',
 };
 
 try {
-  const response = await api.listNotebookSessions(
+  const response = await apiController.listNotebookSessions(
     xAmzTarget,
     body
   );

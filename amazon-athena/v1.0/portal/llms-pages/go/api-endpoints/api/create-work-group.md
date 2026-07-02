@@ -7,7 +7,7 @@ Creates a workgroup with the specified name. A workgroup can be an Apache Spark 
 ```go
 CreateWorkGroup(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget8,
+    xAmzTarget models.XAmzTarget8Enum,
     body models.CreateWorkGroupInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-8.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget8Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-8.md) | Header, Required | - |
 | `body` | [`models.CreateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/create-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget8_EnumAmazonathenacreateworkgroup
+xAmzTarget := models.XAmzTarget8Enum_ENUMAMAZONATHENACREATEWORKGROUP
 
 body := models.CreateWorkGroupInput{
-    Name:                  "Name6",
+    Name:                 "Name6",
 }
 
-apiResponse, err := api.CreateWorkGroup(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.CreateWorkGroup(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

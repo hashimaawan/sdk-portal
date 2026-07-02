@@ -5,24 +5,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`StatementType`
+`StatementTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ddl` |
-| `Dml` |
-| `Utility` |
+| `DDL` |
+| `DML` |
+| `UTILITY` |
 
 
 # Example
 
 ```ts
-import { StatementType } from 'amazon-athenalib';
+import { StatementTypeEnum } from 'amazon-athenalib';
 
-const statementType = StatementType.Ddl;
+const statementType = StatementTypeEnum.DDL;
 ```
 
 

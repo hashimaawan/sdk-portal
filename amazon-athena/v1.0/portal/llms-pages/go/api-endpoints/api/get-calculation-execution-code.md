@@ -7,7 +7,7 @@ Retrieves the unencrypted code that was executed for the calculation.
 ```go
 GetCalculationExecutionCode(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget16,
+    xAmzTarget models.XAmzTarget16Enum,
     body models.GetCalculationExecutionCodeRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-16.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-16.md) | Header, Required | - |
 | `body` | [`models.GetCalculationExecutionCodeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-calculation-execution-code-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget16_EnumAmazonathenagetcalculationexecutioncode
+xAmzTarget := models.XAmzTarget16Enum_ENUMAMAZONATHENAGETCALCULATIONEXECUTIONCODE
 
 body := models.GetCalculationExecutionCodeRequest{
     CalculationExecutionId: "CalculationExecutionId8",
 }
 
-apiResponse, err := api.GetCalculationExecutionCode(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetCalculationExecutionCode(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget56`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-56.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget56Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-56.md) | Header, Required | - |
 | `body` | [`UpdateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/update-notebook-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `str` | Header, Optional | - |
 | `x_amz_date` | `str` | Header, Optional | - |
@@ -42,29 +42,25 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type `Any`.
+`Any`
 
 
 # Example Usage
 
 ```python
-x_amz_target = XAmzTarget56.ENUM_AMAZONATHENAUPDATENOTEBOOK
+x_amz_target = XAmzTarget56Enum.ENUM_AMAZONATHENAUPDATENOTEBOOK
 
 body = UpdateNotebookInput(
     notebook_id='NotebookId6',
     payload='Payload2',
-    mtype=NotebookType2.IPYNB
+    mtype=NotebookType2Enum.IPYNB
 )
 
-result = client_api.update_notebook(
+result = client_controller.update_notebook(
     x_amz_target,
     body
 )
-
-if result.is_success():
-    print(result.body)
-elif result.is_error():
-    print(result.errors)
+print(result)
 ```
 
 
@@ -72,9 +68,9 @@ elif result.is_error():
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 480 | InternalServerException | `ApiException` |
-| 481 | InvalidRequestException | `ApiException` |
-| 482 | TooManyRequestsException | `ApiException` |
+| 480 | InternalServerException | `APIException` |
+| 481 | InvalidRequestException | `APIException` |
+| 482 | TooManyRequestsException | `APIException` |
 
 
 

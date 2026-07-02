@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains an array of query execution IDs.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -17,7 +15,6 @@ Contains an array of query execution IDs.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `queryExecutionIds` | `string[]` | Required | **Constraints**: *Minimum Items*: `1`, *Maximum Items*: `50`, *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -31,9 +28,6 @@ const batchGetQueryExecutionInput: BatchGetQueryExecutionInput = {
     'QueryExecutionIds8',
     'QueryExecutionIds9'
   ],
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

@@ -15,7 +15,7 @@ function getSession(
     ?string $xAmzSecurityToken = null,
     ?string $xAmzSignature = null,
     ?string $xAmzSignedHeaders = null
-): ApiResponse
+): GetSessionResponse
 ```
 
 
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget26)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-26.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget26Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-26.md) | Header, Required | - |
 | `body` | [`GetSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -43,35 +43,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`GetSessionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-session-response.md).
+[`GetSessionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-session-response.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget26::ENUM_AMAZONATHENAGETSESSION;
+$xAmzTarget = XAmzTarget26Enum::ENUM_AMAZONATHENAGETSESSION;
 
 $body = GetSessionRequestBuilder::init(
     'SessionId2'
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->getSession(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->getSession(
+        $xAmzTarget,
+        $body
+    );
     echo 'GetSessionResponse:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

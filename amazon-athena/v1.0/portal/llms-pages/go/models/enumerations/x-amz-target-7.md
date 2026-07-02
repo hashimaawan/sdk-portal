@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`XAmzTarget7`
+`XAmzTarget7Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `EnumAmazonathenacreatepresignednotebookurl` |
+| `ENUMAMAZONATHENACREATEPRESIGNEDNOTEBOOKURL` |
 
 
 # Example
@@ -21,11 +21,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    xAmzTarget7 := models.XAmzTarget7_EnumAmazonathenacreatepresignednotebookurl
+    xAmzTarget7 := models.XAmzTarget7Enum_ENUMAMAZONATHENACREATEPRESIGNEDNOTEBOOKURL
 
 }
 ```

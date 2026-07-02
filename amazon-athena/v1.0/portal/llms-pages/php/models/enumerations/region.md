@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`Region`
+`RegionEnum`
 
 
 # Fields
@@ -40,9 +40,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\Region;
+use AmazonAthenaLib\Models\RegionEnum;
 
-$region = Region::EUWEST3;
+$region = RegionEnum::EUWEST3;
 ```
 
 

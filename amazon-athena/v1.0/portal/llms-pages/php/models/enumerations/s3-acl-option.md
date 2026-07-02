@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`S3AclOption`
+`S3AclOptionEnum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\S3AclOption;
+use AmazonAthenaLib\Models\S3AclOptionEnum;
 
-$s3AclOption = S3AclOption::BUCKET_OWNER_FULL_CONTROL;
+$s3AclOption = S3AclOptionEnum::BUCKET_OWNER_FULL_CONTROL;
 ```
 
 

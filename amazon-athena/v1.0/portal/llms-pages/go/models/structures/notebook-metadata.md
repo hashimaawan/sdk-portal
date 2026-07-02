@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains metadata for notebook, including the notebook name, ID, workgroup, and time created.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -20,9 +18,8 @@ Contains metadata for notebook, including the notebook name, ID, workgroup, and 
 | `Name` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
 | `WorkGroup` | `*string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `CreationTime` | `*time.Time` | Optional | - |
-| `Type` | [`*models.NotebookType1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/notebook-type-1.md) | Optional | - |
+| `Type` | [`*models.NotebookType1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/notebook-type-1.md) | Optional | - |
 | `LastModifiedTime` | `*time.Time` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -33,7 +30,7 @@ package main
 import (
     "log"
     "time"
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -45,14 +42,11 @@ func main() {
         return dateTime
     }
     notebookMetadata := models.NotebookMetadata{
-        NotebookId:            models.ToPointer("NotebookId0"),
-        Name:                  models.ToPointer("Name0"),
-        WorkGroup:             models.ToPointer("WorkGroup2"),
-        CreationTime:          models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-        Type:                  models.ToPointer(models.NotebookType1_Ipynb),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        NotebookId:           models.ToPointer("NotebookId0"),
+        Name:                 models.ToPointer("Name0"),
+        WorkGroup:            models.ToPointer("WorkGroup2"),
+        CreationTime:         models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
+        Type:                 models.ToPointer(models.NotebookType1Enum_IPYNB),
     }
 
 }

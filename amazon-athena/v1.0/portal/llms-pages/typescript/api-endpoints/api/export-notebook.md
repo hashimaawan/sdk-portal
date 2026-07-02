@@ -6,7 +6,7 @@ Exports the specified notebook and its metadata.
 
 ```ts
 async exportNotebook(
-  xAmzTarget: XAmzTarget14,
+  xAmzTarget: XAmzTarget14Enum,
   body: ExportNotebookInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget14`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-14.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget14Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-14.md) | Header, Required | - |
 | `body` | [`ExportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/export-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget14.EnumAmazonAthenaExportNotebook;
+const xAmzTarget = XAmzTarget14Enum.EnumAmazonAthenaExportNotebook;
 
 const body: ExportNotebookInput = {
   notebookId: 'NotebookId6',
 };
 
 try {
-  const response = await api.exportNotebook(
+  const response = await apiController.exportNotebook(
     xAmzTarget,
     body
   );

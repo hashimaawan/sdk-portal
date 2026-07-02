@@ -6,7 +6,7 @@ Returns the details of a single prepared statement or a list of up to 256 prepar
 
 ```csharp
 BatchGetPreparedStatementAsync(
-    Models.XAmzTarget1 xAmzTarget,
+    Models.XAmzTarget1Enum xAmzTarget,
     Models.BatchGetPreparedStatementInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-1.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-1.md) | Header, Required | - |
 | `body` | [`BatchGetPreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.BatchGetPreparedStatementOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-prepared-statement-output.md).
+[`Task<Models.BatchGetPreparedStatementOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-prepared-statement-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget1 xAmzTarget = XAmzTarget1.EnumAmazonAthenaBatchGetPreparedStatement;
+XAmzTarget1Enum xAmzTarget = XAmzTarget1Enum.EnumAmazonAthenaBatchGetPreparedStatement;
 BatchGetPreparedStatementInput body = new BatchGetPreparedStatementInput
 {
     PreparedStatementNames = new List<string>
@@ -62,7 +62,7 @@ BatchGetPreparedStatementInput body = new BatchGetPreparedStatementInput
 
 try
 {
-    ApiResponse<BatchGetPreparedStatementOutput> result = await api.BatchGetPreparedStatementAsync(
+    BatchGetPreparedStatementOutput result = await aPIController.BatchGetPreparedStatementAsync(
         xAmzTarget,
         body
     );

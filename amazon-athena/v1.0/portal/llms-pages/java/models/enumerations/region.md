@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`Region`
+`RegionEnum`
 
 
 # Fields
@@ -40,9 +40,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.Region;
+import com.amazonaws.useast1.athena.models.RegionEnum;
 
-Region region = Region.EUWEST3;
+RegionEnum region = RegionEnum.EUWEST3;
 ```
 
 

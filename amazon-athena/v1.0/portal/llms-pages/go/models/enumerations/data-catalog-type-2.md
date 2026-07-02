@@ -7,16 +7,16 @@ The data catalog type.
 
 # Class Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -25,11 +25,11 @@ The data catalog type.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    dataCatalogType2 := models.DataCatalogType2_Lambda
+    dataCatalogType2 := models.DataCatalogType2Enum_LAMBDA
 
 }
 ```

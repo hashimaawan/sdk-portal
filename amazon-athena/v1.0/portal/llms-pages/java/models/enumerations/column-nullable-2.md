@@ -7,7 +7,7 @@ Indicates the column's nullable status.
 
 # Enum Type Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Indicates the column's nullable status.
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.ColumnNullable2;
+import com.amazonaws.useast1.athena.models.ColumnNullable2Enum;
 
-ColumnNullable2 columnNullable2 = ColumnNullable2.NOT_NULL;
+ColumnNullable2Enum columnNullable2 = ColumnNullable2Enum.NOT_NULL;
 ```
 
 

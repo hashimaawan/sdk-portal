@@ -7,7 +7,7 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 
 # Enum Type Name
 
-`DataCatalogType1`
+`DataCatalogType1Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 # Example
 
 ```python
-from amazonathena.models.data_catalog_type_1 import DataCatalogType1
+from amazonathena.models.data_catalog_type_1_enum import DataCatalogType1Enum
 
-data_catalog_type_1 = DataCatalogType1.GLUE
+data_catalog_type_1 = DataCatalogType1Enum.GLUE
 ```
 
 

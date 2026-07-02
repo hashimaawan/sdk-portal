@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`EncryptionOption`
+`EncryptionOptionEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SseS3` |
-| `SseKms` |
-| `CseKms` |
+| `SSES3` |
+| `SSEKMS` |
+| `CSEKMS` |
 
 
 # Example
@@ -23,11 +23,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    encryptionOption := models.EncryptionOption_SseS3
+    encryptionOption := models.EncryptionOptionEnum_SSES3
 
 }
 ```

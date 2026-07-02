@@ -6,7 +6,7 @@ Returns table metadata for the specified catalog, database, and table.
 
 ```csharp
 GetTableMetadataAsync(
-    Models.XAmzTarget28 xAmzTarget,
+    Models.XAmzTarget28Enum xAmzTarget,
     Models.GetTableMetadataInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-28.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-28.md) | Header, Required | - |
 | `body` | [`GetTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetTableMetadataOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-table-metadata-output.md).
+[`Task<Models.GetTableMetadataOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-table-metadata-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget28 xAmzTarget = XAmzTarget28.EnumAmazonAthenaGetTableMetadata;
+XAmzTarget28Enum xAmzTarget = XAmzTarget28Enum.EnumAmazonAthenaGetTableMetadata;
 GetTableMetadataInput body = new GetTableMetadataInput
 {
     CatalogName = "CatalogName0",
@@ -58,7 +58,7 @@ GetTableMetadataInput body = new GetTableMetadataInput
 
 try
 {
-    ApiResponse<GetTableMetadataOutput> result = await api.GetTableMetadataAsync(
+    GetTableMetadataOutput result = await aPIController.GetTableMetadataAsync(
         xAmzTarget,
         body
     );

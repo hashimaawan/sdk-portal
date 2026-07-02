@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The query execution timeline, statistics on input and output rows and bytes, and the different query stages that form the query execution plan.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -19,7 +17,6 @@ The query execution timeline, statistics on input and output rows and bytes, and
 | `timeline` | [`QueryRuntimeStatisticsTimeline \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/query-runtime-statistics-timeline.md) | Optional | Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time. |
 | `rows` | [`QueryRuntimeStatisticsRows \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/query-runtime-statistics-rows.md) | Optional | Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query. |
 | `outputStage` | [`OutputStage \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/output-stage.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -34,18 +31,12 @@ const queryRuntimeStatistics: QueryRuntimeStatistics = {
     engineExecutionTimeInMillis: 112,
     serviceProcessingTimeInMillis: 126,
     totalExecutionTimeInMillis: 106,
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   rows: {
     inputRows: 230,
     inputBytes: 250,
     outputBytes: 36,
     outputRows: 230,
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   outputStage: {
     stageId: 130,
@@ -53,12 +44,6 @@ const queryRuntimeStatistics: QueryRuntimeStatistics = {
     outputBytes: 108,
     outputRows: 158,
     inputBytes: 190,
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
-  },
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

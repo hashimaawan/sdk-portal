@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRlN0YXRpc3RpY3M
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -22,7 +20,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `queryPlanningTimeInMillis` | `number \| undefined` | Optional | - |
 | `serviceProcessingTimeInMillis` | `number \| undefined` | Optional | - |
 | `resultReuseInformation` | [`ResultReuseInformation2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/result-reuse-information-2.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -36,9 +33,6 @@ const statistics: Statistics = {
   dataManifestLocation: 'DataManifestLocation0',
   totalExecutionTimeInMillis: 146,
   queryQueueTimeInMillis: 116,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

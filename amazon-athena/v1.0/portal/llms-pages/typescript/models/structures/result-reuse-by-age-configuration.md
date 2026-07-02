@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Specifies whether previous query results are reused, and if so, their maximum age.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -18,7 +16,6 @@ Specifies whether previous query results are reused, and if so, their maximum ag
 |  --- | --- | --- | --- |
 | `enabled` | `boolean` | Required | - |
 | `maxAgeInMinutes` | `number \| undefined` | Optional | **Constraints**: `>= 0`, `<= 10080` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -29,9 +26,6 @@ import { ResultReuseByAgeConfiguration } from 'amazon-athenalib';
 const resultReuseByAgeConfiguration: ResultReuseByAgeConfiguration = {
   enabled: false,
   maxAgeInMinutes: 134,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

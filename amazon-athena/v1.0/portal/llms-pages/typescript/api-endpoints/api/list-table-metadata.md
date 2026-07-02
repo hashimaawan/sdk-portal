@@ -6,7 +6,7 @@ Lists the metadata for the tables in the specified data catalog database.
 
 ```ts
 async listTableMetadata(
-  xAmzTarget: XAmzTarget43,
+  xAmzTarget: XAmzTarget43Enum,
   body: ListTableMetadataInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget43`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-43.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget43Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-43.md) | Header, Required | - |
 | `body` | [`ListTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,7 +55,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget43.EnumAmazonAthenaListTableMetadata;
+const xAmzTarget = XAmzTarget43Enum.EnumAmazonAthenaListTableMetadata;
 
 const body: ListTableMetadataInput = {
   catalogName: 'CatalogName0',
@@ -63,7 +63,7 @@ const body: ListTableMetadataInput = {
 };
 
 try {
-  const response = await api.listTableMetadata(
+  const response = await apiController.listTableMetadata(
     xAmzTarget,
     body
   );

@@ -6,7 +6,7 @@ Creates a workgroup with the specified name. A workgroup can be an Apache Spark 
 
 ```csharp
 CreateWorkGroupAsync(
-    Models.XAmzTarget8 xAmzTarget,
+    Models.XAmzTarget8Enum xAmzTarget,
     Models.CreateWorkGroupInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-8.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget8Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-8.md) | Header, Required | - |
 | `body` | [`CreateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/create-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget8 xAmzTarget = XAmzTarget8.EnumAmazonAthenaCreateWorkGroup;
+XAmzTarget8Enum xAmzTarget = XAmzTarget8Enum.EnumAmazonAthenaCreateWorkGroup;
 CreateWorkGroupInput body = new CreateWorkGroupInput
 {
     Name = "Name6",
@@ -56,7 +56,7 @@ CreateWorkGroupInput body = new CreateWorkGroupInput
 
 try
 {
-    ApiResponse<object> result = await api.CreateWorkGroupAsync(
+    object result = await aPIController.CreateWorkGroupAsync(
         xAmzTarget,
         body
     );

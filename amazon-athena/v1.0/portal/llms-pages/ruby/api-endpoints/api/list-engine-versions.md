@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget35`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-35.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget35Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-35.md) | Header, Required | - |
 | `body` | [`ListEngineVersionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-engine-versions-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -45,26 +45,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ListEngineVersionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-engine-versions-output.md).
+[`ListEngineVersionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-engine-versions-output.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget35::ENUM_AMAZONATHENALISTENGINEVERSIONS
+x_amz_target = XAmzTarget35Enum::ENUM_AMAZONATHENALISTENGINEVERSIONS
 
 body = ListEngineVersionsInput.new
 
-result = client_api.list_engine_versions(
+result = client_controller.list_engine_versions(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

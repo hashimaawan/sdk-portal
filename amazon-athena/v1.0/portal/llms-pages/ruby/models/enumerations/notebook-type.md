@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`NotebookType`
+`NotebookTypeEnum`
 
 
 # Fields
@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-notebook_type = NotebookType::IPYNB
+notebook_type = NotebookTypeEnum::IPYNB
 ```
 
 

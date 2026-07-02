@@ -6,7 +6,7 @@ Returns the details of a single query execution or a list of up to 50 query exec
 
 ```ts
 async batchGetQueryExecution(
-  xAmzTarget: XAmzTarget2,
+  xAmzTarget: XAmzTarget2Enum,
   body: BatchGetQueryExecutionInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-2.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-2.md) | Header, Required | - |
 | `body` | [`BatchGetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/batch-get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget2.EnumAmazonAthenaBatchGetQueryExecution;
+const xAmzTarget = XAmzTarget2Enum.EnumAmazonAthenaBatchGetQueryExecution;
 
 const body: BatchGetQueryExecutionInput = {
   queryExecutionIds: [
@@ -60,7 +60,7 @@ const body: BatchGetQueryExecutionInput = {
 };
 
 try {
-  const response = await api.batchGetQueryExecution(
+  const response = await apiController.batchGetQueryExecution(
     xAmzTarget,
     body
   );

@@ -7,7 +7,7 @@ Returns query execution runtime statistics related to a single execution of a qu
 ```go
 GetQueryRuntimeStatistics(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget25,
+    xAmzTarget models.XAmzTarget25Enum,
     body models.GetQueryRuntimeStatisticsInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget25`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-25.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget25Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-25.md) | Header, Required | - |
 | `body` | [`models.GetQueryRuntimeStatisticsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-query-runtime-statistics-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget25_EnumAmazonathenagetqueryruntimestatistics
+xAmzTarget := models.XAmzTarget25Enum_ENUMAMAZONATHENAGETQUERYRUNTIMESTATISTICS
 
 body := models.GetQueryRuntimeStatisticsInput{
-    QueryExecutionId:      "QueryExecutionId0",
+    QueryExecutionId:     "QueryExecutionId0",
 }
 
-apiResponse, err := api.GetQueryRuntimeStatistics(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetQueryRuntimeStatistics(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

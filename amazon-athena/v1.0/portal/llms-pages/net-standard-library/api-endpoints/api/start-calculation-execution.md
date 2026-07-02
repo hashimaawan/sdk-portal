@@ -6,7 +6,7 @@ Submits calculations for execution within a session. You can supply the code to 
 
 ```csharp
 StartCalculationExecutionAsync(
-    Models.XAmzTarget46 xAmzTarget,
+    Models.XAmzTarget46Enum xAmzTarget,
     Models.StartCalculationExecutionRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget46`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-46.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget46Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-46.md) | Header, Required | - |
 | `body` | [`StartCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StartCalculationExecutionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-calculation-execution-response.md).
+[`Task<Models.StartCalculationExecutionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-calculation-execution-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget46 xAmzTarget = XAmzTarget46.EnumAmazonAthenaStartCalculationExecution;
+XAmzTarget46Enum xAmzTarget = XAmzTarget46Enum.EnumAmazonAthenaStartCalculationExecution;
 StartCalculationExecutionRequest body = new StartCalculationExecutionRequest
 {
     SessionId = "SessionId2",
@@ -56,7 +56,7 @@ StartCalculationExecutionRequest body = new StartCalculationExecutionRequest
 
 try
 {
-    ApiResponse<StartCalculationExecutionResponse> result = await api.StartCalculationExecutionAsync(
+    StartCalculationExecutionResponse result = await aPIController.StartCalculationExecutionAsync(
         xAmzTarget,
         body
     );

@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRlN0YXJ0UXVlcnlFeGVjdXRpb25JbnB1dA
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -21,7 +19,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `WorkGroup` | `*string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `ExecutionParameters` | `[]string` | Optional | **Constraints**: *Minimum Items*: `1`, *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `ResultReuseConfiguration` | [`*models.ResultReuseConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/result-reuse-configuration-1.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -30,7 +27,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -38,38 +35,23 @@ func main() {
         QueryString:              "QueryString4",
         ClientRequestToken:       models.ToPointer("ClientRequestToken6"),
         QueryExecutionContext:    models.ToPointer(models.QueryExecutionContext1{
-            Database:              models.ToPointer("Database4"),
-            Catalog:               models.ToPointer("Catalog0"),
-            AdditionalProperties:  map[string]interface{}{
-                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-            },
+            Database:             models.ToPointer("Database4"),
+            Catalog:              models.ToPointer("Catalog0"),
         }),
         ResultConfiguration:      models.ToPointer(models.ResultConfiguration1{
             OutputLocation:          models.ToPointer("OutputLocation0"),
             EncryptionConfiguration: models.ToPointer(models.EncryptionConfiguration2{
-                EncryptionOption:      models.EncryptionOption1_SseS3,
-                KmsKey:                models.ToPointer("KmsKey6"),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                EncryptionOption:     models.EncryptionOption1Enum_SSES3,
+                KmsKey:               models.ToPointer("KmsKey6"),
             }),
             ExpectedBucketOwner:     models.ToPointer("ExpectedBucketOwner0"),
             AclConfiguration:        models.ToPointer(models.AclConfiguration1{
-                S3AclOption:           models.S3AclOption1_BucketOwnerFullControl,
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                S3AclOption:          models.S3AclOption1Enum_BUCKETOWNERFULLCONTROL,
             }),
-            AdditionalProperties:    map[string]interface{}{
-                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-            },
         }),
         WorkGroup:                models.ToPointer("WorkGroup4"),
         ExecutionParameters:      []string{
             "ExecutionParameters8",
-        },
-        AdditionalProperties:     map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

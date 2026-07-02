@@ -7,16 +7,16 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Class Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Coordinator` |
-| `Gateway` |
-| `Worker` |
+| `COORDINATOR` |
+| `GATEWAY` |
+| `WORKER` |
 
 
 # Example
@@ -25,11 +25,11 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    executorType2 := models.ExecutorType2_Coordinator
+    executorType2 := models.ExecutorType2Enum_COORDINATOR
 
 }
 ```

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`StatementType`
+`StatementTypeEnum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-statement_type = StatementType::DDL
+statement_type = StatementTypeEnum::DDL
 ```
 
 

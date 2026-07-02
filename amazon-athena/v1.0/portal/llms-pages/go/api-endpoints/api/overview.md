@@ -5,10 +5,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Get Instance
 
-The instance of the `Api` class can be accessed from the API Client.
+The instance of the `APIController` class can be accessed from the API Client.
 
 ```
-api := client.Api()
+aPIController := client.APIController()
 ```
 
 

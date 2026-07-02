@@ -26,7 +26,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget27`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-27.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget27Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-27.md) | Header, Required | - |
 | `body` | [`GetSessionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/get-session-status-request.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -41,28 +41,23 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`GetSessionStatusResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/get-session-status-response.md).
+[`GetSessionStatusResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/get-session-status-response.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget27::ENUM_AMAZONATHENAGETSESSIONSTATUS
+x_amz_target = XAmzTarget27Enum::ENUM_AMAZONATHENAGETSESSIONSTATUS
 
 body = GetSessionStatusRequest.new(
-  session_id: 'SessionId2'
+  'SessionId2'
 )
 
-result = client_api.get_session_status(
+result = client_controller.get_session_status(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The information about the updates in the query results, such as output location and encryption configuration for the query results.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -24,33 +22,24 @@ The information about the updates in the query results, such as output location 
 | `remove_expected_bucket_owner` | `bool` | Optional | - |
 | `acl_configuration` | [`AclConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/acl-configuration-1.md) | Optional | - |
 | `remove_acl_configuration` | `bool` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.encryption_configuration_2 import EncryptionConfiguration2
-from amazonathena.models.encryption_option_1 import EncryptionOption1
+from amazonathena.models.encryption_option_1_enum import EncryptionOption1Enum
 from amazonathena.models.result_configuration_updates import ResultConfigurationUpdates
 
 result_configuration_updates = ResultConfigurationUpdates(
     output_location='OutputLocation0',
     remove_output_location=False,
     encryption_configuration=EncryptionConfiguration2(
-        encryption_option=EncryptionOption1.SSE_S3,
-        kms_key='KmsKey6',
-        additional_properties={
-            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-        }
+        encryption_option=EncryptionOption1Enum.SSE_S3,
+        kms_key='KmsKey6'
     ),
     remove_encryption_configuration=False,
-    expected_bucket_owner='ExpectedBucketOwner0',
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    expected_bucket_owner='ExpectedBucketOwner0'
 )
 ```
 

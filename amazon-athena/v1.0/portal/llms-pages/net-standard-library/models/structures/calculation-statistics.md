@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains statistics for a notebook calculation.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -18,20 +16,17 @@ Contains statistics for a notebook calculation.
 |  --- | --- | --- | --- |
 | `DpuExecutionInMillis` | `int?` | Optional | - |
 | `Progress` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 CalculationStatistics calculationStatistics = new CalculationStatistics
 {
     DpuExecutionInMillis = 248,
     Progress = "Progress8",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

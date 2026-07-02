@@ -5,22 +5,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`NotebookType`
+`NotebookTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ipynb` |
+| `IPYNB` |
 
 
 # Example
 
 ```ts
-import { NotebookType } from 'amazon-athenalib';
+import { NotebookTypeEnum } from 'amazon-athenalib';
 
-const notebookType = NotebookType.Ipynb;
+const notebookType = NotebookTypeEnum.IPYNB;
 ```
 
 

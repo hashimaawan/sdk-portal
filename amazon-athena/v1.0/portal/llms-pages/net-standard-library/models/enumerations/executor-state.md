@@ -5,19 +5,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState`
+`ExecutorStateEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Registered` |
-| `Terminating` |
-| `Terminated` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `REGISTERED` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `FAILED` |
 
 
 # Example
@@ -25,7 +25,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-ExecutorState executorState = ExecutorState.Terminated;
+ExecutorStateEnum executorState = ExecutorStateEnum.TERMINATED;
 ```
 
 

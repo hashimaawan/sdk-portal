@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState3`
+`ExecutorState3Enum`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\ExecutorState3;
+use AmazonAthenaLib\Models\ExecutorState3Enum;
 
-$executorState3 = ExecutorState3::CREATING;
+$executorState3 = ExecutorState3Enum::CREATING;
 ```
 
 

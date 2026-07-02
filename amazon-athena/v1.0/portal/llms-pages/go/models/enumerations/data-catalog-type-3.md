@@ -7,16 +7,16 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Class Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -25,11 +25,11 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    dataCatalogType3 := models.DataCatalogType3_Lambda
+    dataCatalogType3 := models.DataCatalogType3Enum_LAMBDA
 
 }
 ```

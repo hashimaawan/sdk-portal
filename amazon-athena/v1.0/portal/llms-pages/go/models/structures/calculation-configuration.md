@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains configuration information for the calculation.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ Contains configuration information for the calculation.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `CodeBlock` | `*string` | Optional | **Constraints**: *Maximum Length*: `68000` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +23,12 @@ Contains configuration information for the calculation.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     calculationConfiguration := models.CalculationConfiguration{
-        CodeBlock:             models.ToPointer("CodeBlock2"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        CodeBlock:            models.ToPointer("CodeBlock2"),
     }
 
 }

@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists the prepared statements in the specified workgroup.
 
 ```java
-CompletableFuture<ApiResponse<ListPreparedStatementsOutput>> listPreparedStatementsAsync(
-    final XAmzTarget40 xAmzTarget,
+CompletableFuture<ListPreparedStatementsOutput> listPreparedStatementsAsync(
+    final XAmzTarget40Enum xAmzTarget,
     final ListPreparedStatementsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget40`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-40.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget40Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-40.md) | Header, Required | - |
 | `body` | [`ListPreparedStatementsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-prepared-statements-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListPreparedStatementsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-prepared-statements-output.md).
+[`ListPreparedStatementsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-prepared-statements-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget40 xAmzTarget = XAmzTarget40.ENUM_AMAZONATHENALISTPREPAREDSTATEMENTS;
+XAmzTarget40Enum xAmzTarget = XAmzTarget40Enum.ENUM_AMAZONATHENALISTPREPAREDSTATEMENTS;
 ListPreparedStatementsInput body = new ListPreparedStatementsInput.Builder(
     "WorkGroup8"
 )
 .build();
 
 
-api.listPreparedStatementsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listPreparedStatementsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

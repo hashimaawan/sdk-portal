@@ -6,7 +6,7 @@ Lists the sessions in a workgroup that are in an active state like <code>CREATIN
 
 ```ts
 async listSessions(
-  xAmzTarget: XAmzTarget42,
+  xAmzTarget: XAmzTarget42Enum,
   body: ListSessionsRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget42`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-42.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget42Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-42.md) | Header, Required | - |
 | `body` | [`ListSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,14 +55,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget42.EnumAmazonAthenaListSessions;
+const xAmzTarget = XAmzTarget42Enum.EnumAmazonAthenaListSessions;
 
 const body: ListSessionsRequest = {
   workGroup: 'WorkGroup8',
 };
 
 try {
-  const response = await api.listSessions(
+  const response = await apiController.listSessions(
     xAmzTarget,
     body
   );

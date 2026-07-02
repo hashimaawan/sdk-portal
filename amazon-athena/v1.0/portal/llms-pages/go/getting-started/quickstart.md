@@ -24,16 +24,16 @@ Resolve all the SDK dependencies, using the `go get` command.
 
 # Installation
 
-The following section explains how to use the amazonAthena library in a new project.
+The following section explains how to use the amazonathena library in a new project.
 
 ## 1. Add SDK as a Dependency to the Application
 
 - Add the following lines to your application's `go.mod` file:
 
 ```go
-replace amazonAthena => ".\\Random Directory" // local path to the SDK
+replace amazonathena => ".\\Random Directory" // local path to the SDK
 
-require amazonAthena v0.0.0
+require amazonathena v0.0.0
 ```
 
 - Resolve the dependencies in the updated `go.mod` file, using the `go get` command.
@@ -47,10 +47,10 @@ The SDK can be configured to use a different environment for making API calls. A
 
 | Name | Description |
 |  --- | --- |
-| Production | **Default** The Amazon Athena multi-region endpoint |
-| Environment2 | The Amazon Athena multi-region endpoint |
-| Environment3 | The Amazon Athena endpoint for China (Beijing) and China (Ningxia) |
-| Environment4 | The Amazon Athena endpoint for China (Beijing) and China (Ningxia) |
+| PRODUCTION | **Default** The Amazon Athena multi-region endpoint |
+| ENVIRONMENT2 | The Amazon Athena multi-region endpoint |
+| ENVIRONMENT3 | The Amazon Athena endpoint for China (Beijing) and China (Ningxia) |
+| ENVIRONMENT4 | The Amazon Athena endpoint for China (Beijing) and China (Ningxia) |
 
 
 # Initialize the API Client
@@ -59,10 +59,9 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| region | `models.Region` | The AWS region<br>*Default*: `"us-east-1"` |
+| region | `models.RegionEnum` | The AWS region<br>*Default*: `"us-east-1"` |
 | environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | httpConfiguration | [`HttpConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/sdk-infrastructure/configuration/httpconfiguration.md) | Configurable http client options like timeout and retries. |
-| loggerConfiguration | [`LoggerConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/sdk-infrastructure/configuration/loggerconfiguration.md) | Represents the logger configurations for API calls |
 | customHeaderAuthenticationCredentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/getting-started/quickstart/authorization.md) | The Credentials Setter for Custom Header Signature |
 
 The API client can be initialized as follows:
@@ -71,31 +70,22 @@ The API client can be initialized as follows:
 package main
 
 import (
-    "amazonAthena"
+    "amazonathena"
 )
 
 func main() {
-    client := amazonAthena.NewClient(
-    amazonAthena.CreateConfiguration(
-            amazonAthena.WithHttpConfiguration(
-                amazonAthena.CreateHttpConfiguration(
-                    amazonAthena.WithTimeout(30),
+    client := amazonathena.NewClient(
+    amazonathena.CreateConfiguration(
+            amazonathena.WithHttpConfiguration(
+                amazonathena.CreateHttpConfiguration(
+                    amazonathena.WithTimeout(0),
                 ),
             ),
-            amazonAthena.WithEnvironment(amazonAthena.PRODUCTION),
-            amazonAthena.WithCustomHeaderAuthenticationCredentials(
-                amazonAthena.NewCustomHeaderAuthenticationCredentials("Authorization"),
+            amazonathena.WithEnvironment(amazonathena.PRODUCTION),
+            amazonathena.WithCustomHeaderAuthenticationCredentials(
+                amazonathena.NewCustomHeaderAuthenticationCredentials("Authorization"),
             ),
-            amazonAthena.WithRegion("us-east-1"),
-            amazonAthena.WithLoggerConfiguration(
-                amazonAthena.WithLevel("info"),
-                amazonAthena.WithRequestConfiguration(
-                    amazonAthena.WithRequestBody(true),
-                ),
-                amazonAthena.WithResponseConfiguration(
-                    amazonAthena.WithResponseHeaders(true),
-                ),
-            ),
+            amazonathena.WithRegion("us-east-1"),
         ),
     )
 }
@@ -134,14 +124,14 @@ You must provide credentials in the client as shown in the following code snippe
 package main
 
 import (
-    "amazonAthena"
+    "amazonathena"
 )
 
 func main() {
-    client := amazonAthena.NewClient(
-    amazonAthena.CreateConfiguration(
-            amazonAthena.WithCustomHeaderAuthenticationCredentials(
-                amazonAthena.NewCustomHeaderAuthenticationCredentials("Authorization"),
+    client := amazonathena.NewClient(
+    amazonathena.CreateConfiguration(
+            amazonathena.WithCustomHeaderAuthenticationCredentials(
+                amazonathena.NewCustomHeaderAuthenticationCredentials("Authorization"),
             ),
         ),
     )

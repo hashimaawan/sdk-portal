@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -20,7 +18,6 @@ Contains data processing unit (DPU) configuration settings and parameter mapping
 | `maxConcurrentDpus` | `number` | Required | **Constraints**: `>= 2`, `<= 5000` |
 | `defaultExecutorDpuSize` | `number \| undefined` | Optional | **Constraints**: `>= 1`, `<= 1` |
 | `additionalConfigs` | [`AdditionalConfigs \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/additional-configs.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -32,14 +29,7 @@ const engineConfiguration: EngineConfiguration = {
   maxConcurrentDpus: 194,
   coordinatorDpuSize: 1,
   defaultExecutorDpuSize: 1,
-  additionalConfigs: {
-    additionalProperties: {
-      'exampleAdditionalProperty': 'AdditionalConfigs_additionalProperties5'
-    },
-  },
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
+  additionalConfigs: {},
 };
 ```
 

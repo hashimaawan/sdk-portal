@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRlF1ZXJ5U3RhZ2VQbGFu
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -18,7 +16,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `identifier` | `string \| undefined` | Optional | - |
 | `children` | [`QueryStagePlanNode[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/query-stage-plan-node.md) | Optional | - |
 | `remoteSources` | `string[] \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -42,9 +39,6 @@ const queryStagePlan: QueryStagePlan = {
         'RemoteSources5',
         'RemoteSources6'
       ],
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     }
   ],
   remoteSources: [
@@ -52,9 +46,6 @@ const queryStagePlan: QueryStagePlan = {
     'RemoteSources9',
     'RemoteSources0'
   ],
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

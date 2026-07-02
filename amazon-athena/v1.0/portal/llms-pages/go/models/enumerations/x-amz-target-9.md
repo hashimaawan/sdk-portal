@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`XAmzTarget9`
+`XAmzTarget9Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `EnumAmazonathenadeletedatacatalog` |
+| `ENUMAMAZONATHENADELETEDATACATALOG` |
 
 
 # Example
@@ -21,11 +21,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    xAmzTarget9 := models.XAmzTarget9_EnumAmazonathenadeletedatacatalog
+    xAmzTarget9 := models.XAmzTarget9Enum_ENUMAMAZONATHENADELETEDATACATALOG
 
 }
 ```

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`QueryExecutionState`
+`QueryExecutionStateEnum`
 
 
 # Fields
@@ -22,7 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-query_execution_state = QueryExecutionState::SUCCEEDED
+query_execution_state = QueryExecutionStateEnum::SUCCEEDED
 ```
 
 

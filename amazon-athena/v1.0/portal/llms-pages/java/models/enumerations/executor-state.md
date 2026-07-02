@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState`
+`ExecutorStateEnum`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.ExecutorState;
+import com.amazonaws.useast1.athena.models.ExecutorStateEnum;
 
-ExecutorState executorState = ExecutorState.TERMINATED;
+ExecutorStateEnum executorState = ExecutorStateEnum.TERMINATED;
 ```
 
 

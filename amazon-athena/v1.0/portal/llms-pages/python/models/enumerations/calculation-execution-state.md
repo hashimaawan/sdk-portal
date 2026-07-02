@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState`
+`CalculationExecutionStateEnum`
 
 
 # Fields
@@ -25,9 +25,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.calculation_execution_state import CalculationExecutionState
+from amazonathena.models.calculation_execution_state_enum import CalculationExecutionStateEnum
 
-calculation_execution_state = CalculationExecutionState.CANCELING
+calculation_execution_state = CalculationExecutionStateEnum.CANCELING
 ```
 
 

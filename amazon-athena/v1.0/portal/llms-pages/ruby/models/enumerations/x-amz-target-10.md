@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget10`
+`XAmzTarget10Enum`
 
 
 # Fields
@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-x_amz_target10 = XAmzTarget10::ENUM_AMAZONATHENADELETENAMEDQUERY
+x_amz_target10 = XAmzTarget10Enum::ENUM_AMAZONATHENADELETENAMEDQUERY
 ```
 
 

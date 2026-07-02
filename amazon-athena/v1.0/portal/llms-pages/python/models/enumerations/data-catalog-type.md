@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`DataCatalogType`
+`DataCatalogTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.data_catalog_type import DataCatalogType
+from amazonathena.models.data_catalog_type_enum import DataCatalogTypeEnum
 
-data_catalog_type = DataCatalogType.LAMBDA
+data_catalog_type = DataCatalogTypeEnum.LAMBDA
 ```
 
 

@@ -7,24 +7,24 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Enum Type Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ddl` |
-| `Dml` |
-| `Utility` |
+| `DDL` |
+| `DML` |
+| `UTILITY` |
 
 
 # Example
 
 ```ts
-import { StatementType1 } from 'amazon-athenalib';
+import { StatementType1Enum } from 'amazon-athenalib';
 
-const statementType1 = StatementType1.Ddl;
+const statementType1 = StatementType1Enum.DDL;
 ```
 
 

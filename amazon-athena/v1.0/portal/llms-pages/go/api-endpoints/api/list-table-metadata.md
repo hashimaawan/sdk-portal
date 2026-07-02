@@ -7,7 +7,7 @@ Lists the metadata for the tables in the specified data catalog database.
 ```go
 ListTableMetadata(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget43,
+    xAmzTarget models.XAmzTarget43Enum,
     body models.ListTableMetadataInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget43`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-43.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget43Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-43.md) | Header, Required | - |
 | `body` | [`models.ListTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,14 +57,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget43_EnumAmazonathenalisttablemetadata
+xAmzTarget := models.XAmzTarget43Enum_ENUMAMAZONATHENALISTTABLEMETADATA
 
 body := models.ListTableMetadataInput{
-    CatalogName:           "CatalogName0",
-    DatabaseName:          "DatabaseName0",
+    CatalogName:          "CatalogName0",
+    DatabaseName:         "DatabaseName0",
 }
 
-apiResponse, err := api.ListTableMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListTableMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

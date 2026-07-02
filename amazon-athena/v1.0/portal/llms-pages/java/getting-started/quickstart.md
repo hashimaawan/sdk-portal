@@ -113,10 +113,9 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| region | `Region` | The AWS region<br>*Default*: `Region.USEAST1` |
+| region | `RegionEnum` | The AWS region<br>*Default*: `RegionEnum.USEAST1` |
 | environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | httpClientConfig | [`Consumer<HttpClientConfiguration.Builder>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/configuration/httpclientconfiguration-builder.md) | Set up Http Client Configuration instance. |
-| loggingConfig | [`Consumer<ApiLoggingConfiguration.Builder>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/configuration/apiloggingconfiguration-builder.md) | Set up Logging Configuration instance. |
 | customHeaderAuthenticationCredentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/getting-started/quickstart/authorization.md) | The Credentials Setter for Custom Header Signature |
 
 The API client can be initialized as follows:
@@ -126,17 +125,11 @@ import com.amazonaws.useast1.athena.AmazonAthenaClient;
 import com.amazonaws.useast1.athena.Environment;
 import com.amazonaws.useast1.athena.authentication.CustomHeaderAuthenticationModel;
 import com.amazonaws.useast1.athena.exceptions.ApiException;
-import com.amazonaws.useast1.athena.http.response.ApiResponse;
-import com.amazonaws.useast1.athena.models.Region;
-import org.slf4j.event.Level;
+import com.amazonaws.useast1.athena.models.RegionEnum;
 
 public class Program {
     public static void main(String[] args) {
         AmazonAthenaClient client = new AmazonAthenaClient.Builder()
-            .loggingConfig(builder -> builder
-                    .level(Level.DEBUG)
-                    .requestConfig(logConfigBuilder -> logConfigBuilder.body(true))
-                    .responseConfig(logConfigBuilder -> logConfigBuilder.headers(true)))
             .httpClientConfig(configBuilder -> configBuilder
                     .timeout(0))
             .customHeaderAuthenticationCredentials(new CustomHeaderAuthenticationModel.Builder(
@@ -144,7 +137,7 @@ public class Program {
                 )
                 .build())
             .environment(Environment.PRODUCTION)
-            .region(Region.USEAST1)
+            .region(RegionEnum.USEAST1)
             .build();
 
     }

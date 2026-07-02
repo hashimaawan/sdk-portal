@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`Region2`
+`Region2Enum`
 
 
 # Fields
@@ -19,7 +19,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-region2 = Region2::CNNORTH1
+region2 = Region2Enum::CNNORTH1
 ```
 
 

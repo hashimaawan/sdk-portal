@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<CreateNamedQueryOutput>> createNamedQueryAsync(
-    final XAmzTarget4 xAmzTarget,
+CompletableFuture<CreateNamedQueryOutput> createNamedQueryAsync(
+    final XAmzTarget4Enum xAmzTarget,
     final CreateNamedQueryInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-4.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget4Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-4.md) | Header, Required | - |
 | `body` | [`CreateNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -43,13 +43,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreateNamedQueryOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-named-query-output.md).
+[`CreateNamedQueryOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-named-query-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget4 xAmzTarget = XAmzTarget4.ENUM_AMAZONATHENACREATENAMEDQUERY;
+XAmzTarget4Enum xAmzTarget = XAmzTarget4Enum.ENUM_AMAZONATHENACREATENAMEDQUERY;
 CreateNamedQueryInput body = new CreateNamedQueryInput.Builder(
     "Name6",
     "Database4",
@@ -58,7 +58,7 @@ CreateNamedQueryInput body = new CreateNamedQueryInput.Builder(
 .build();
 
 
-api.createNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.createNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

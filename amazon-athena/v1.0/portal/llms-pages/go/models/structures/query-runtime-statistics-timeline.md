@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -21,7 +19,6 @@ Timeline statistics such as query queue time, planning time, execution time, ser
 | `EngineExecutionTimeInMillis` | `*int` | Optional | - |
 | `ServiceProcessingTimeInMillis` | `*int` | Optional | - |
 | `TotalExecutionTimeInMillis` | `*int` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -30,7 +27,7 @@ Timeline statistics such as query queue time, planning time, execution time, ser
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -40,9 +37,6 @@ func main() {
         EngineExecutionTimeInMillis:   models.ToPointer(78),
         ServiceProcessingTimeInMillis: models.ToPointer(96),
         TotalExecutionTimeInMillis:    models.ToPointer(140),
-        AdditionalProperties:          map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

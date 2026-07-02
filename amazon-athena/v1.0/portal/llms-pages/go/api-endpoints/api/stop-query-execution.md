@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 StopQueryExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget50,
+    xAmzTarget models.XAmzTarget50Enum,
     body models.StopQueryExecutionInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-50.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-50.md) | Header, Required | - |
 | `body` | [`models.StopQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/stop-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -54,13 +54,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget50_EnumAmazonathenastopqueryexecution
+xAmzTarget := models.XAmzTarget50Enum_ENUMAMAZONATHENASTOPQUERYEXECUTION
 
 body := models.StopQueryExecutionInput{
-    QueryExecutionId:      "QueryExecutionId0",
+    QueryExecutionId:     "QueryExecutionId0",
 }
 
-apiResponse, err := api.StopQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.StopQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

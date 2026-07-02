@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -20,24 +18,18 @@ Statistics such as input rows and bytes read by the query, rows and bytes output
 | `input_bytes` | `int` | Optional | - |
 | `output_bytes` | `int` | Optional | - |
 | `output_rows` | `int` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.query_runtime_statistics_rows import QueryRuntimeStatisticsRows
 
 query_runtime_statistics_rows = QueryRuntimeStatisticsRows(
     input_rows=100,
     input_bytes=136,
     output_bytes=94,
-    output_rows=104,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    output_rows=104
 )
 ```
 

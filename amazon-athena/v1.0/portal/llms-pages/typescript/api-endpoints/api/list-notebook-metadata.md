@@ -6,7 +6,7 @@ Displays the notebook files for the specified workgroup in paginated format.
 
 ```ts
 async listNotebookMetadata(
-  xAmzTarget: XAmzTarget38,
+  xAmzTarget: XAmzTarget38Enum,
   body: ListNotebookMetadataInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget38`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-38.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget38Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-38.md) | Header, Required | - |
 | `body` | [`ListNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget38.EnumAmazonAthenaListNotebookMetadata;
+const xAmzTarget = XAmzTarget38Enum.EnumAmazonAthenaListNotebookMetadata;
 
 const body: ListNotebookMetadataInput = {
   workGroup: 'WorkGroup8',
 };
 
 try {
-  const response = await api.listNotebookMetadata(
+  const response = await apiController.listNotebookMetadata(
     xAmzTarget,
     body
   );

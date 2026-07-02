@@ -15,7 +15,7 @@ function getNotebookMetadata(
     ?string $xAmzSecurityToken = null,
     ?string $xAmzSignature = null,
     ?string $xAmzSignedHeaders = null
-): ApiResponse
+): GetNotebookMetadataOutput
 ```
 
 
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget21)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-21.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget21Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-21.md) | Header, Required | - |
 | `body` | [`GetNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -43,35 +43,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`GetNotebookMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-notebook-metadata-output.md).
+[`GetNotebookMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-notebook-metadata-output.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget21::ENUM_AMAZONATHENAGETNOTEBOOKMETADATA;
+$xAmzTarget = XAmzTarget21Enum::ENUM_AMAZONATHENAGETNOTEBOOKMETADATA;
 
 $body = GetNotebookMetadataInputBuilder::init(
     'NotebookId6'
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->getNotebookMetadata(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->getNotebookMetadata(
+        $xAmzTarget,
+        $body
+    );
     echo 'GetNotebookMetadataOutput:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

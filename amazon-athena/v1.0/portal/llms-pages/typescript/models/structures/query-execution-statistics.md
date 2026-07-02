@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -24,7 +22,6 @@ The amount of data scanned during the query execution and the amount of time tha
 | `queryPlanningTimeInMillis` | `number \| undefined` | Optional | - |
 | `serviceProcessingTimeInMillis` | `number \| undefined` | Optional | - |
 | `resultReuseInformation` | [`ResultReuseInformation2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/result-reuse-information-2.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -38,9 +35,6 @@ const queryExecutionStatistics: QueryExecutionStatistics = {
   dataManifestLocation: 'DataManifestLocation2',
   totalExecutionTimeInMillis: 136,
   queryQueueTimeInMillis: 142,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

@@ -6,7 +6,7 @@ Updates the metadata for a notebook.
 
 ```ts
 async updateNotebookMetadata(
-  xAmzTarget: XAmzTarget57,
+  xAmzTarget: XAmzTarget57Enum,
   body: UpdateNotebookMetadataInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget57`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-57.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget57Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-57.md) | Header, Required | - |
 | `body` | [`UpdateNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/update-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget57.EnumAmazonAthenaUpdateNotebookMetadata;
+const xAmzTarget = XAmzTarget57Enum.EnumAmazonAthenaUpdateNotebookMetadata;
 
 const body: UpdateNotebookMetadataInput = {
   notebookId: 'NotebookId6',
@@ -59,7 +59,7 @@ const body: UpdateNotebookMetadataInput = {
 };
 
 try {
-  const response = await api.updateNotebookMetadata(
+  const response = await apiController.updateNotebookMetadata(
     xAmzTarget,
     body
   );

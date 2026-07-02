@@ -8,21 +8,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`CalculationExecutionState3`
+`CalculationExecutionState3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Queued` |
-| `Running` |
-| `Canceling` |
-| `Canceled` |
-| `Completed` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `QUEUED` |
+| `RUNNING` |
+| `CANCELING` |
+| `CANCELED` |
+| `COMPLETED` |
+| `FAILED` |
 
 
 # Example
@@ -31,11 +31,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    calculationExecutionState3 := models.CalculationExecutionState3_Completed
+    calculationExecutionState3 := models.CalculationExecutionState3Enum_COMPLETED
 
 }
 ```

@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRkdldFNlc3Npb25SZXNwb25zZQ
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -23,14 +21,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `session_configuration` | [`SessionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/session-configuration-2.md) | Optional | - |
 | `status` | [`Status3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/status-3.md) | Optional | - |
 | `statistics` | [`Statistics3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/statistics-3.md) | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.additional_configs import AdditionalConfigs
 from amazonathena.models.engine_configuration_1 import EngineConfiguration1
 from amazonathena.models.get_session_response import GetSessionResponse
@@ -44,18 +39,8 @@ get_session_response = GetSessionResponse(
         max_concurrent_dpus=94,
         coordinator_dpu_size=1,
         default_executor_dpu_size=1,
-        additional_configs=AdditionalConfigs(
-            additional_properties={
-                'exampleAdditionalProperty': 'AdditionalConfigs_additionalProperties5'
-            }
-        ),
-        additional_properties={
-            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-        }
-    ),
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+        additional_configs=AdditionalConfigs()
+    )
 )
 ```
 

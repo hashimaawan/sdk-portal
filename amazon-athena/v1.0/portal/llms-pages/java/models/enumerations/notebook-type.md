@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`NotebookType`
+`NotebookTypeEnum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.NotebookType;
+import com.amazonaws.useast1.athena.models.NotebookTypeEnum;
 
-NotebookType notebookType = NotebookType.IPYNB;
+NotebookTypeEnum notebookType = NotebookTypeEnum.IPYNB;
 ```
 
 

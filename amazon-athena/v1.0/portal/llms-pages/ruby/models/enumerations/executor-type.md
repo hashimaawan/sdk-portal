@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorType`
+`ExecutorTypeEnum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-executor_type = ExecutorType::WORKER
+executor_type = ExecutorTypeEnum::WORKER
 ```
 
 

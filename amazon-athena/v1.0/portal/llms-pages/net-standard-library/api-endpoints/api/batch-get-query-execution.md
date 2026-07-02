@@ -6,7 +6,7 @@ Returns the details of a single query execution or a list of up to 50 query exec
 
 ```csharp
 BatchGetQueryExecutionAsync(
-    Models.XAmzTarget2 xAmzTarget,
+    Models.XAmzTarget2Enum xAmzTarget,
     Models.BatchGetQueryExecutionInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-2.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-2.md) | Header, Required | - |
 | `body` | [`BatchGetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.BatchGetQueryExecutionOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-query-execution-output.md).
+[`Task<Models.BatchGetQueryExecutionOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-query-execution-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget2 xAmzTarget = XAmzTarget2.EnumAmazonAthenaBatchGetQueryExecution;
+XAmzTarget2Enum xAmzTarget = XAmzTarget2Enum.EnumAmazonAthenaBatchGetQueryExecution;
 BatchGetQueryExecutionInput body = new BatchGetQueryExecutionInput
 {
     QueryExecutionIds = new List<string>
@@ -59,7 +59,7 @@ BatchGetQueryExecutionInput body = new BatchGetQueryExecutionInput
 
 try
 {
-    ApiResponse<BatchGetQueryExecutionOutput> result = await api.BatchGetQueryExecutionAsync(
+    BatchGetQueryExecutionOutput result = await aPIController.BatchGetQueryExecutionAsync(
         xAmzTarget,
         body
     );

@@ -5,29 +5,29 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState`
+`SessionStateEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Idle` |
-| `Busy` |
-| `Terminating` |
-| `Terminated` |
-| `Degraded` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `IDLE` |
+| `BUSY` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `DEGRADED` |
+| `FAILED` |
 
 
 # Example
 
 ```ts
-import { SessionState } from 'amazon-athenalib';
+import { SessionStateEnum } from 'amazon-athenalib';
 
-const sessionState = SessionState.Terminating;
+const sessionState = SessionStateEnum.TERMINATING;
 ```
 
 

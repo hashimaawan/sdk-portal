@@ -17,7 +17,7 @@ function listEngineVersions(
     ?string $xAmzSignedHeaders = null,
     ?string $maxResults = null,
     ?string $nextToken = null
-): ApiResponse
+): ListEngineVersionsOutput
 ```
 
 
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget35)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-35.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget35Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-35.md) | Header, Required | - |
 | `body` | [`ListEngineVersionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/list-engine-versions-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -47,33 +47,27 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ListEngineVersionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/list-engine-versions-output.md).
+[`ListEngineVersionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/list-engine-versions-output.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget35::ENUM_AMAZONATHENALISTENGINEVERSIONS;
+$xAmzTarget = XAmzTarget35Enum::ENUM_AMAZONATHENALISTENGINEVERSIONS;
 
 $body = ListEngineVersionsInputBuilder::init()->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->listEngineVersions(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->listEngineVersions(
+        $xAmzTarget,
+        $body
+    );
     echo 'ListEngineVersionsOutput:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

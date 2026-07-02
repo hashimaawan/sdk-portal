@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ColumnNullable`
+`ColumnNullableEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `NotNull` |
-| `Nullable` |
-| `Unknown` |
+| `NOTNULL` |
+| `NULLABLE` |
+| `UNKNOWN` |
 
 
 # Example
@@ -22,7 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-ColumnNullable columnNullable = ColumnNullable.NotNull;
+ColumnNullableEnum columnNullable = ColumnNullableEnum.NOTNULL;
 ```
 
 

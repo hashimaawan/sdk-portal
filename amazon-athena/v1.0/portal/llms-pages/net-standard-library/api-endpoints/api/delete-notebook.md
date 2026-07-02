@@ -6,7 +6,7 @@ Deletes the specified notebook.
 
 ```csharp
 DeleteNotebookAsync(
-    Models.XAmzTarget11 xAmzTarget,
+    Models.XAmzTarget11Enum xAmzTarget,
     Models.DeleteNotebookInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget11`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-11.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget11Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-11.md) | Header, Required | - |
 | `body` | [`DeleteNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/delete-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget11 xAmzTarget = XAmzTarget11.EnumAmazonAthenaDeleteNotebook;
+XAmzTarget11Enum xAmzTarget = XAmzTarget11Enum.EnumAmazonAthenaDeleteNotebook;
 DeleteNotebookInput body = new DeleteNotebookInput
 {
     NotebookId = "NotebookId6",
@@ -56,7 +56,7 @@ DeleteNotebookInput body = new DeleteNotebookInput
 
 try
 {
-    ApiResponse<object> result = await api.DeleteNotebookAsync(
+    object result = await aPIController.DeleteNotebookAsync(
         xAmzTarget,
         body
     );

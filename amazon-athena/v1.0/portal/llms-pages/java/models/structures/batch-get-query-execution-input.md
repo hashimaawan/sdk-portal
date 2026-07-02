@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains an array of query execution IDs.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,15 +15,12 @@ Contains an array of query execution IDs.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `QueryExecutionIds` | `List<String>` | Required | **Constraints**: *Minimum Items*: `1`, *Maximum Items*: `50`, *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` | List<String> getQueryExecutionIds() | setQueryExecutionIds(List<String> queryExecutionIds) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.BatchGetQueryExecutionInput;
-import java.io.IOException;
 import java.util.Arrays;
 
 BatchGetQueryExecutionInput batchGetQueryExecutionInput = new BatchGetQueryExecutionInput.Builder(
@@ -35,7 +30,6 @@ BatchGetQueryExecutionInput batchGetQueryExecutionInput = new BatchGetQueryExecu
         "QueryExecutionIds9"
     )
 )
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query and calculation results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -26,7 +24,6 @@ The configuration of the workgroup, which includes the location in Amazon S3 whe
 | `executionRole` | `?string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` | getExecutionRole(): ?string | setExecutionRole(?string executionRole): void |
 | `customerContentEncryptionConfiguration` | [`?CustomerContentEncryptionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/customer-content-encryption-configuration-2.md) | Optional | - | getCustomerContentEncryptionConfiguration(): ?CustomerContentEncryptionConfiguration2 | setCustomerContentEncryptionConfiguration(?CustomerContentEncryptionConfiguration2 customerContentEncryptionConfiguration): void |
 | `enableMinimumEncryptionConfiguration` | `?bool` | Optional | - | getEnableMinimumEncryptionConfiguration(): ?bool | setEnableMinimumEncryptionConfiguration(?bool enableMinimumEncryptionConfiguration): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -35,10 +32,9 @@ The configuration of the workgroup, which includes the location in Amazon S3 whe
 use AmazonAthenaLib\Models\Builders\WorkGroupConfigurationBuilder;
 use AmazonAthenaLib\Models\Builders\ResultConfiguration1Builder;
 use AmazonAthenaLib\Models\Builders\EncryptionConfiguration2Builder;
-use AmazonAthenaLib\Models\EncryptionOption1;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\EncryptionOption1Enum;
 use AmazonAthenaLib\Models\Builders\AclConfiguration1Builder;
-use AmazonAthenaLib\Models\S3AclOption1;
+use AmazonAthenaLib\Models\S3AclOption1Enum;
 
 $workGroupConfiguration = WorkGroupConfigurationBuilder::init()
     ->resultConfiguration(
@@ -46,28 +42,22 @@ $workGroupConfiguration = WorkGroupConfigurationBuilder::init()
             ->outputLocation('OutputLocation0')
             ->encryptionConfiguration(
                 EncryptionConfiguration2Builder::init(
-                    EncryptionOption1::SSE_S3
+                    EncryptionOption1Enum::SSE_S3
                 )
                     ->kmsKey('KmsKey6')
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->expectedBucketOwner('ExpectedBucketOwner0')
             ->aclConfiguration(
                 AclConfiguration1Builder::init(
-                    S3AclOption1::BUCKET_OWNER_FULL_CONTROL
-                )
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-                    ->build()
-            )
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-            ->build()
+                    S3AclOption1Enum::BUCKET_OWNER_FULL_CONTROL
+                )->build()
+            )->build()
     )
     ->enforceWorkGroupConfiguration(false)
     ->publishCloudWatchMetricsEnabled(false)
     ->bytesScannedCutoffPerQuery(10000000)
     ->requesterPaysEnabled(false)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

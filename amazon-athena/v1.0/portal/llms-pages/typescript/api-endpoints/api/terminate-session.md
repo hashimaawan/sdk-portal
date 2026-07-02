@@ -6,7 +6,7 @@ Terminates an active session. A <code>TerminateSession</code> call on a session 
 
 ```ts
 async terminateSession(
-  xAmzTarget: XAmzTarget52,
+  xAmzTarget: XAmzTarget52Enum,
   body: TerminateSessionRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget52`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-52.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget52Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-52.md) | Header, Required | - |
 | `body` | [`TerminateSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/terminate-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget52.EnumAmazonAthenaTerminateSession;
+const xAmzTarget = XAmzTarget52Enum.EnumAmazonAthenaTerminateSession;
 
 const body: TerminateSessionRequest = {
   sessionId: 'SessionId2',
 };
 
 try {
-  const response = await api.terminateSession(
+  const response = await apiController.terminateSession(
     xAmzTarget,
     body
   );

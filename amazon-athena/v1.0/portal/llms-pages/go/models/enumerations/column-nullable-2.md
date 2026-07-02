@@ -7,16 +7,16 @@ Indicates the column's nullable status.
 
 # Class Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `NotNull` |
-| `Nullable` |
-| `Unknown` |
+| `NOTNULL` |
+| `NULLABLE` |
+| `UNKNOWN` |
 
 
 # Example
@@ -25,11 +25,11 @@ Indicates the column's nullable status.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    columnNullable2 := models.ColumnNullable2_NotNull
+    columnNullable2 := models.ColumnNullable2Enum_NOTNULL
 
 }
 ```

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget26`
+`XAmzTarget26Enum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.x_amz_target_26 import XAmzTarget26
+from amazonathena.models.x_amz_target_26_enum import XAmzTarget26Enum
 
-x_amz_target_26 = XAmzTarget26.ENUM_AMAZONATHENAGETSESSION
+x_amz_target_26 = XAmzTarget26Enum.ENUM_AMAZONATHENAGETSESSION
 ```
 
 

@@ -46,44 +46,6 @@ var client = AmazonAthenaClient.Builder
     "CustomHeaderAuthenticationCredentials": {
       "Authorization": "authorization",
     },
-    "LoggingConfig": {
-      "LogLevel": "Debug",
-      "MaskSensitiveHeaders": true,
-      "RequestLoggingConfiguration": {
-        "Body": true,
-        "Headers": true,
-        "IncludeQueryInPath": true,
-        "HeadersToInclude": [
-          "Content-Type",
-          "X-Request-ID"
-        ],
-        "HeadersToExclude": [
-          "Authorization"
-        ],
-        "HeadersToUnmask": [
-          "X-Request-ID"
-        ],
-      },
-      "ResponseLoggingConfiguration": {
-        "Body": true,
-        "Headers": true,
-        "IncludeQueryInPath": true,
-        "HeadersToInclude": [
-          "Content-Type",
-          "X-Correlation-ID",
-          "Date",
-          "Server"
-        ],
-        "HeadersToExclude": [
-          "Set-Cookie",
-          "Authorization",
-          "X-API-Key"
-        ],
-        "HeadersToUnmask": [
-          "X-Correlation-ID"
-        ],
-      }
-    },
     "HttpClientConfig": {
       "Timeout": "00:01:00",
       "NumberOfRetries": 3,

@@ -7,15 +7,15 @@ The workgroup state that will be updated for the given workgroup.
 
 # Class Name
 
-`WorkGroupState2`
+`WorkGroupState2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Enabled` |
-| `Disabled` |
+| `ENABLED` |
+| `DISABLED` |
 
 
 # Example
@@ -24,11 +24,11 @@ The workgroup state that will be updated for the given workgroup.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    workGroupState2 := models.WorkGroupState2_Enabled
+    workGroupState2 := models.WorkGroupState2Enum_ENABLED
 
 }
 ```

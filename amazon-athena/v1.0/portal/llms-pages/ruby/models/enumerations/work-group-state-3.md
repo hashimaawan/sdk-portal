@@ -7,7 +7,7 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Enum Type Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
@@ -21,7 +21,7 @@ The state of the workgroup: ENABLED or DISABLED.
 # Example
 
 ```ruby
-work_group_state3 = WorkGroupState3::ENABLED
+work_group_state3 = WorkGroupState3Enum::ENABLED
 ```
 
 

@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -18,24 +16,18 @@ Contains the application runtime IDs and their supported DPU sizes.
 |  --- | --- | --- | --- |
 | `application_runtime_id` | `str` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `supported_dpu_sizes` | `List[int]` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
+from amazonathena.models.application_dpu_sizes import ApplicationDPUSizes
 
-from amazonathena.models.application_dpu_sizes import ApplicationDpuSizes
-
-application_dpu_sizes = ApplicationDpuSizes(
+application_dpu_sizes = ApplicationDPUSizes(
     application_runtime_id='ApplicationRuntimeId8',
     supported_dpu_sizes=[
         137
-    ],
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    ]
 )
 ```
 

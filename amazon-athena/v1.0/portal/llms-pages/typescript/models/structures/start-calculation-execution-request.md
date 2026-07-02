@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRlN0YXJ0Q2FsY3VsYXRpb25FeGVjdXRpb25SZXF1ZXN0
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -19,7 +17,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `calculationConfiguration` | [`GetCalculationExecutionCodeResponse \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-calculation-execution-code-response.md) | Optional | - |
 | `codeBlock` | `string \| undefined` | Optional | **Constraints**: *Maximum Length*: `68000` |
 | `clientRequestToken` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `32`, *Maximum Length*: `128` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -32,15 +29,9 @@ const startCalculationExecutionRequest: StartCalculationExecutionRequest = {
   description: 'Description2',
   calculationConfiguration: {
     codeBlock: 'CodeBlock4',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   codeBlock: 'CodeBlock6',
   clientRequestToken: 'ClientRequestToken8',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

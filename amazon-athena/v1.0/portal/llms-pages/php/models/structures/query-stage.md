@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -25,14 +23,12 @@ Stage statistics such as input and output rows and bytes, execution time and sta
 | `executionTime` | `?int` | Optional | - | getExecutionTime(): ?int | setExecutionTime(?int executionTime): void |
 | `queryStagePlan` | [`?QueryStagePlan`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/query-stage-plan.md) | Optional | - | getQueryStagePlan(): ?QueryStagePlan | setQueryStagePlan(?QueryStagePlan queryStagePlan): void |
 | `subStages` | [`?(QueryStage[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/query-stage.md) | Optional | - | getSubStages(): ?array | setSubStages(?array subStages): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\QueryStageBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $queryStage = QueryStageBuilder::init()
     ->stageId(118)
@@ -40,7 +36,6 @@ $queryStage = QueryStageBuilder::init()
     ->outputBytes(120)
     ->outputRows(146)
     ->inputBytes(178)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

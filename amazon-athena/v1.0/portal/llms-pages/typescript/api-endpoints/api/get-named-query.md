@@ -6,7 +6,7 @@ Returns information about a single query. Requires that you have access to the w
 
 ```ts
 async getNamedQuery(
-  xAmzTarget: XAmzTarget20,
+  xAmzTarget: XAmzTarget20Enum,
   body: GetNamedQueryInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget20`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-20.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget20Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-20.md) | Header, Required | - |
 | `body` | [`GetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget20.EnumAmazonAthenaGetNamedQuery;
+const xAmzTarget = XAmzTarget20Enum.EnumAmazonAthenaGetNamedQuery;
 
 const body: GetNamedQueryInput = {
   namedQueryId: 'NamedQueryId6',
 };
 
 try {
-  const response = await api.getNamedQuery(
+  const response = await apiController.getNamedQuery(
     xAmzTarget,
     body
   );

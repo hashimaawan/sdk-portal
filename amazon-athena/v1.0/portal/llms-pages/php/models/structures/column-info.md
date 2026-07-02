@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Information about the columns in a query execution result.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -24,16 +22,14 @@ Information about the columns in a query execution result.
 | `type` | `string` | Required | - | getType(): string | setType(string type): void |
 | `precision` | `?int` | Optional | - | getPrecision(): ?int | setPrecision(?int precision): void |
 | `scale` | `?int` | Optional | - | getScale(): ?int | setScale(?int scale): void |
-| `nullable` | [`?string(ColumnNullable2)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/column-nullable-2.md) | Optional | - | getNullable(): ?string | setNullable(?string nullable): void |
+| `nullable` | [`?string(ColumnNullable2Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/column-nullable-2.md) | Optional | - | getNullable(): ?string | setNullable(?string nullable): void |
 | `caseSensitive` | `?bool` | Optional | - | getCaseSensitive(): ?bool | setCaseSensitive(?bool caseSensitive): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\ColumnInfoBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $columnInfo = ColumnInfoBuilder::init(
     'Name8',
@@ -44,7 +40,6 @@ $columnInfo = ColumnInfoBuilder::init(
     ->tableName('TableName4')
     ->label('Label6')
     ->precision(196)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

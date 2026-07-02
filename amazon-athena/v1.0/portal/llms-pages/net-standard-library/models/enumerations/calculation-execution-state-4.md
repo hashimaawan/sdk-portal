@@ -8,21 +8,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState4`
+`CalculationExecutionState4Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Queued` |
-| `Running` |
-| `Canceling` |
-| `Canceled` |
-| `Completed` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `QUEUED` |
+| `RUNNING` |
+| `CANCELING` |
+| `CANCELED` |
+| `COMPLETED` |
+| `FAILED` |
 
 
 # Example
@@ -30,7 +30,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-CalculationExecutionState4 calculationExecutionState4 = CalculationExecutionState4.Canceling;
+CalculationExecutionState4Enum calculationExecutionState4 = CalculationExecutionState4Enum.CANCELING;
 ```
 
 

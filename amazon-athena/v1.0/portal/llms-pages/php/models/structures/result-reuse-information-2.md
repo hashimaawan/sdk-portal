@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRlJlc3VsdFJldXNlSW5mb3JtYXRpb24y
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -15,20 +13,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `reusedPreviousResult` | `bool` | Required | - | getReusedPreviousResult(): bool | setReusedPreviousResult(bool reusedPreviousResult): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\ResultReuseInformation2Builder;
-use AmazonAthenaLib\ApiHelper;
 
 $resultReuseInformation2 = ResultReuseInformation2Builder::init(
     false
-)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-    ->build();
+)->build();
 ```
 
 

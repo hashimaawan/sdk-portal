@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState3`
+`SessionState3Enum`
 
 
 # Fields
@@ -28,9 +28,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\SessionState3;
+use AmazonAthenaLib\Models\SessionState3Enum;
 
-$sessionState3 = SessionState3::DEGRADED;
+$sessionState3 = SessionState3Enum::DEGRADED;
 ```
 
 

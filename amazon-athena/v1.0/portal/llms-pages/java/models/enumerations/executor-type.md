@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorType`
+`ExecutorTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.ExecutorType;
+import com.amazonaws.useast1.athena.models.ExecutorTypeEnum;
 
-ExecutorType executorType = ExecutorType.GATEWAY;
+ExecutorTypeEnum executorType = ExecutorTypeEnum.GATEWAY;
 ```
 
 

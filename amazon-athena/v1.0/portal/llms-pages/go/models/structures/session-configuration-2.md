@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRlNlc3Npb25Db25maWd1cmF0aW9uMg
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -18,7 +16,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `WorkingDirectory` | `*string` | Optional | - |
 | `IdleTimeoutSeconds` | `*int` | Optional | - |
 | `EncryptionConfiguration` | [`*models.EncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/encryption-configuration.md) | Optional | If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,7 +24,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -36,15 +33,9 @@ func main() {
         WorkingDirectory:        models.ToPointer("WorkingDirectory4"),
         IdleTimeoutSeconds:      models.ToPointer(82),
         EncryptionConfiguration: models.ToPointer(models.EncryptionConfiguration{
-            EncryptionOption:      models.EncryptionOption1_SseS3,
-            KmsKey:                models.ToPointer("KmsKey6"),
-            AdditionalProperties:  map[string]interface{}{
-                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-            },
+            EncryptionOption:     models.EncryptionOption1Enum_SSES3,
+            KmsKey:               models.ToPointer("KmsKey6"),
         }),
-        AdditionalProperties:    map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

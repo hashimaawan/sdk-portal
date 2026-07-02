@@ -7,7 +7,7 @@ Gets the full details of a previously created session, including the session sta
 ```go
 GetSession(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget26,
+    xAmzTarget models.XAmzTarget26Enum,
     body models.GetSessionRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget26`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-26.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget26Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-26.md) | Header, Required | - |
 | `body` | [`models.GetSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget26_EnumAmazonathenagetsession
+xAmzTarget := models.XAmzTarget26Enum_ENUMAMAZONATHENAGETSESSION
 
 body := models.GetSessionRequest{
-    SessionId:             "SessionId2",
+    SessionId:            "SessionId2",
 }
 
-apiResponse, err := api.GetSession(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetSession(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

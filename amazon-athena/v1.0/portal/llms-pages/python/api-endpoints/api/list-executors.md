@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget36`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-36.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget36Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-36.md) | Header, Required | - |
 | `body` | [`ListExecutorsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/list-executors-request.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `str` | Header, Optional | - |
 | `x_amz_date` | `str` | Header, Optional | - |
@@ -46,27 +46,23 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`ListExecutorsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/list-executors-response.md).
+[`ListExecutorsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/list-executors-response.md)
 
 
 # Example Usage
 
 ```python
-x_amz_target = XAmzTarget36.ENUM_AMAZONATHENALISTEXECUTORS
+x_amz_target = XAmzTarget36Enum.ENUM_AMAZONATHENALISTEXECUTORS
 
 body = ListExecutorsRequest(
     session_id='SessionId2'
 )
 
-result = client_api.list_executors(
+result = client_controller.list_executors(
     x_amz_target,
     body
 )
-
-if result.is_success():
-    print(result.body)
-elif result.is_error():
-    print(result.errors)
+print(result)
 ```
 
 
@@ -74,9 +70,9 @@ elif result.is_error():
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 480 | InternalServerException | `ApiException` |
-| 481 | InvalidRequestException | `ApiException` |
-| 482 | ResourceNotFoundException | `ApiException` |
+| 480 | InternalServerException | `APIException` |
+| 481 | InvalidRequestException | `APIException` |
+| 482 | ResourceNotFoundException | `APIException` |
 
 
 

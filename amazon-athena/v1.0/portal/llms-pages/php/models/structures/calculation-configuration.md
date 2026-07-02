@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains configuration information for the calculation.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -17,18 +15,15 @@ Contains configuration information for the calculation.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `codeBlock` | `?string` | Optional | **Constraints**: *Maximum Length*: `68000` | getCodeBlock(): ?string | setCodeBlock(?string codeBlock): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\CalculationConfigurationBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $calculationConfiguration = CalculationConfigurationBuilder::init()
     ->codeBlock('CodeBlock2')
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

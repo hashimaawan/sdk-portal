@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```ts
 async getQueryResults(
-  xAmzTarget: XAmzTarget24,
+  xAmzTarget: XAmzTarget24Enum,
   body: GetQueryResultsInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-24.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-24.md) | Header, Required | - |
 | `body` | [`GetQueryResultsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-query-results-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -56,14 +56,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget24.EnumAmazonAthenaGetQueryResults;
+const xAmzTarget = XAmzTarget24Enum.EnumAmazonAthenaGetQueryResults;
 
 const body: GetQueryResultsInput = {
   queryExecutionId: 'QueryExecutionId0',
 };
 
 try {
-  const response = await api.getQueryResults(
+  const response = await apiController.getQueryResults(
     xAmzTarget,
     body
   );

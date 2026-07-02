@@ -7,7 +7,7 @@ Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maxim
 ```go
 ImportNotebook(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget30,
+    xAmzTarget models.XAmzTarget30Enum,
     body models.ImportNotebookInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget30`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-30.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget30Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-30.md) | Header, Required | - |
 | `body` | [`models.ImportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/import-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,16 +53,16 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget30_EnumAmazonathenaimportnotebook
+xAmzTarget := models.XAmzTarget30Enum_ENUMAMAZONATHENAIMPORTNOTEBOOK
 
 body := models.ImportNotebookInput{
-    WorkGroup:             "WorkGroup8",
-    Name:                  "Name6",
-    Payload:               "Payload2",
-    Type:                  models.NotebookType2_Ipynb,
+    WorkGroup:            "WorkGroup8",
+    Name:                 "Name6",
+    Payload:              "Payload2",
+    Type:                 models.NotebookType2Enum_IPYNB,
 }
 
-apiResponse, err := api.ImportNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ImportNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

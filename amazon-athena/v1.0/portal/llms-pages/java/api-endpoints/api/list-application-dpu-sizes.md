@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>).
 
 ```java
-CompletableFuture<ApiResponse<ListApplicationDpuSizesOutput>> listApplicationDpuSizesAsync(
-    final XAmzTarget31 xAmzTarget,
-    final ListApplicationDpuSizesInput body,
+CompletableFuture<ListApplicationDPUSizesOutput> listApplicationDPUSizesAsync(
+    final XAmzTarget31Enum xAmzTarget,
+    final ListApplicationDPUSizesInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
     final String xAmzAlgorithm,
@@ -29,8 +29,8 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget31`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-31.md) | Header, Required | - |
-| `body` | [`ListApplicationDpuSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
+| `xAmzTarget` | [`XAmzTarget31Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-31.md) | Header, Required | - |
+| `body` | [`ListApplicationDPUSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
 | `xAmzAlgorithm` | `String` | Header, Optional | - |
@@ -46,18 +46,18 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListApplicationDpuSizesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-application-dpu-sizes-output.md).
+[`ListApplicationDPUSizesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-application-dpu-sizes-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget31 xAmzTarget = XAmzTarget31.ENUM_AMAZONATHENALISTAPPLICATIONDPUSIZES;
-ListApplicationDpuSizesInput body = new ListApplicationDpuSizesInput.Builder()
+XAmzTarget31Enum xAmzTarget = XAmzTarget31Enum.ENUM_AMAZONATHENALISTAPPLICATIONDPUSIZES;
+ListApplicationDPUSizesInput body = new ListApplicationDPUSizesInput.Builder()
     .build();
 
 
-api.listApplicationDpuSizesAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listApplicationDPUSizesAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

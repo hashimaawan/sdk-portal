@@ -7,7 +7,7 @@ The data catalog type.
 
 # Enum Type Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The data catalog type.
 # Example
 
 ```php
-use AmazonAthenaLib\Models\DataCatalogType2;
+use AmazonAthenaLib\Models\DataCatalogType2Enum;
 
-$dataCatalogType2 = DataCatalogType2::LAMBDA;
+$dataCatalogType2 = DataCatalogType2Enum::LAMBDA;
 ```
 
 

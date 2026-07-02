@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRlVwZGF0ZVdvcmtHcm91cElucHV0
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -17,21 +15,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `work_group` | `str` | Required | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `description` | `str` | Optional | **Constraints**: *Minimum Length*: `0`, *Maximum Length*: `1024` |
 | `configuration_updates` | [`ConfigurationUpdates`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/configuration-updates.md) | Optional | - |
-| `state` | [`WorkGroupState2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/work-group-state-2.md) | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
+| `state` | [`WorkGroupState2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/work-group-state-2.md) | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.configuration_updates import ConfigurationUpdates
 from amazonathena.models.encryption_configuration_2 import EncryptionConfiguration2
-from amazonathena.models.encryption_option_1 import EncryptionOption1
+from amazonathena.models.encryption_option_1_enum import EncryptionOption1Enum
 from amazonathena.models.result_configuration_updates_2 import ResultConfigurationUpdates2
 from amazonathena.models.update_work_group_input import UpdateWorkGroupInput
-from amazonathena.models.work_group_state_2 import WorkGroupState2
+from amazonathena.models.work_group_state_2_enum import WorkGroupState2Enum
 
 update_work_group_input = UpdateWorkGroupInput(
     work_group='WorkGroup0',
@@ -42,29 +37,17 @@ update_work_group_input = UpdateWorkGroupInput(
             output_location='OutputLocation0',
             remove_output_location=False,
             encryption_configuration=EncryptionConfiguration2(
-                encryption_option=EncryptionOption1.SSE_S3,
-                kms_key='KmsKey6',
-                additional_properties={
-                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-                }
+                encryption_option=EncryptionOption1Enum.SSE_S3,
+                kms_key='KmsKey6'
             ),
             remove_encryption_configuration=False,
-            expected_bucket_owner='ExpectedBucketOwner0',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            expected_bucket_owner='ExpectedBucketOwner0'
         ),
         publish_cloud_watch_metrics_enabled=False,
         bytes_scanned_cutoff_per_query=10000000,
-        remove_bytes_scanned_cutoff_per_query=False,
-        additional_properties={
-            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-        }
+        remove_bytes_scanned_cutoff_per_query=False
     ),
-    state=WorkGroupState2.ENABLED,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    state=WorkGroupState2Enum.ENABLED
 )
 ```
 

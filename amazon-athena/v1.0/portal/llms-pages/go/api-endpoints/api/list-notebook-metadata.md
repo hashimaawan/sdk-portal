@@ -7,7 +7,7 @@ Displays the notebook files for the specified workgroup in paginated format.
 ```go
 ListNotebookMetadata(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget38,
+    xAmzTarget models.XAmzTarget38Enum,
     body models.ListNotebookMetadataInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget38`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-38.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget38Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-38.md) | Header, Required | - |
 | `body` | [`models.ListNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget38_EnumAmazonathenalistnotebookmetadata
+xAmzTarget := models.XAmzTarget38Enum_ENUMAMAZONATHENALISTNOTEBOOKMETADATA
 
 body := models.ListNotebookMetadataInput{
-    WorkGroup:             "WorkGroup8",
+    WorkGroup:            "WorkGroup8",
 }
 
-apiResponse, err := api.ListNotebookMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListNotebookMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

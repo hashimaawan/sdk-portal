@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Information about a named query ID that could not be processed.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -19,7 +17,6 @@ Information about a named query ID that could not be processed.
 | `NamedQueryId` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
 | `ErrorCode` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
 | `ErrorMessage` | `*string` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -28,17 +25,14 @@ Information about a named query ID that could not be processed.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     unprocessedNamedQueryId := models.UnprocessedNamedQueryId{
-        NamedQueryId:          models.ToPointer("NamedQueryId0"),
-        ErrorCode:             models.ToPointer("ErrorCode8"),
-        ErrorMessage:          models.ToPointer("ErrorMessage8"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        NamedQueryId:         models.ToPointer("NamedQueryId0"),
+        ErrorCode:            models.ToPointer("ErrorCode8"),
+        ErrorMessage:         models.ToPointer("ErrorMessage8"),
     }
 
 }

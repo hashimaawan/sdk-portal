@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRlN0YXJ0U2Vzc2lvblJlcXVlc3Q
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -20,7 +18,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `notebookVersion` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `sessionIdleTimeoutInMinutes` | `number \| undefined` | Optional | **Constraints**: `>= 1`, `<= 480` |
 | `clientRequestToken` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `32`, *Maximum Length*: `128` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -34,22 +31,12 @@ const startSessionRequest: StartSessionRequest = {
     maxConcurrentDpus: 94,
     coordinatorDpuSize: 1,
     defaultExecutorDpuSize: 1,
-    additionalConfigs: {
-      additionalProperties: {
-        'exampleAdditionalProperty': 'AdditionalConfigs_additionalProperties5'
-      },
-    },
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
+    additionalConfigs: {},
   },
   description: 'Description4',
   notebookVersion: 'NotebookVersion4',
   sessionIdleTimeoutInMinutes: 172,
   clientRequestToken: 'ClientRequestToken4',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

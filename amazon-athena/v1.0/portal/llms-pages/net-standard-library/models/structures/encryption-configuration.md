@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -16,22 +14,19 @@ If query and calculation results are encrypted in Amazon S3, indicates the encry
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `EncryptionOption` | [`EncryptionOption1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/encryption-option-1.md) | Required | - |
+| `EncryptionOption` | [`EncryptionOption1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/encryption-option-1.md) | Required | - |
 | `KmsKey` | `string` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 EncryptionConfiguration encryptionConfiguration = new EncryptionConfiguration
 {
-    EncryptionOption = EncryptionOption1.SseKms,
+    EncryptionOption = EncryptionOption1Enum.SSEKMS,
     KmsKey = "KmsKey6",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

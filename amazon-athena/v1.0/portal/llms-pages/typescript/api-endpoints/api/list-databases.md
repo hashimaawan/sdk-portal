@@ -6,7 +6,7 @@ Lists the databases in the specified data catalog.
 
 ```ts
 async listDatabases(
-  xAmzTarget: XAmzTarget34,
+  xAmzTarget: XAmzTarget34Enum,
   body: ListDatabasesInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget34`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-34.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget34Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-34.md) | Header, Required | - |
 | `body` | [`ListDatabasesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-databases-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,14 +55,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget34.EnumAmazonAthenaListDatabases;
+const xAmzTarget = XAmzTarget34Enum.EnumAmazonAthenaListDatabases;
 
 const body: ListDatabasesInput = {
   catalogName: 'CatalogName0',
 };
 
 try {
-  const response = await api.listDatabases(
+  const response = await apiController.listDatabases(
     xAmzTarget,
     body
   );

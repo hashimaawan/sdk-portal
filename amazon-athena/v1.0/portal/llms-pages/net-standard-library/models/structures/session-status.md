@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains information about the status of a session.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -20,16 +18,14 @@ Contains information about the status of a session.
 | `LastModifiedDateTime` | `DateTime?` | Optional | - |
 | `EndDateTime` | `DateTime?` | Optional | - |
 | `IdleSinceDateTime` | `DateTime?` | Optional | - |
-| `State` | [`SessionState1?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/session-state-1.md) | Optional | - |
+| `State` | [`SessionState1Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/session-state-1.md) | Optional | - |
 | `StateChangeReason` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Globalization;
 
 SessionStatus sessionStatus = new SessionStatus
@@ -46,8 +42,7 @@ SessionStatus sessionStatus = new SessionStatus
     IdleSinceDateTime = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
         provider: CultureInfo.InvariantCulture,
         DateTimeStyles.RoundtripKind),
-    State = SessionState1.Idle,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+    State = SessionState1Enum.IDLE,
 };
 ```
 

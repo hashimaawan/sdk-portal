@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ColumnNullable`
+`ColumnNullableEnum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-column_nullable = ColumnNullable::UNKNOWN
+column_nullable = ColumnNullableEnum::UNKNOWN
 ```
 
 

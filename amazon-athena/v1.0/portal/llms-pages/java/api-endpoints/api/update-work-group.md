@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified.
 
 ```java
-CompletableFuture<ApiResponse<Object>> updateWorkGroupAsync(
-    final XAmzTarget59 xAmzTarget,
+CompletableFuture<Object> updateWorkGroupAsync(
+    final XAmzTarget59Enum xAmzTarget,
     final UpdateWorkGroupInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget59`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-59.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget59Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-59.md) | Header, Required | - |
 | `body` | [`UpdateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/update-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget59 xAmzTarget = XAmzTarget59.ENUM_AMAZONATHENAUPDATEWORKGROUP;
+XAmzTarget59Enum xAmzTarget = XAmzTarget59Enum.ENUM_AMAZONATHENAUPDATEWORKGROUP;
 UpdateWorkGroupInput body = new UpdateWorkGroupInput.Builder(
     "WorkGroup8"
 )
 .build();
 
 
-api.updateWorkGroupAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.updateWorkGroupAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkJhdGNoR2V0UHJlcGFyZWRTdGF0ZW1lbnRPdXRwdXQ
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -16,7 +14,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- | --- | --- |
 | `preparedStatements` | [`?(PreparedStatement[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/prepared-statement.md) | Optional | - | getPreparedStatements(): ?array | setPreparedStatements(?array preparedStatements): void |
 | `unprocessedPreparedStatementNames` | [`?(UnprocessedPreparedStatementName[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/unprocessed-prepared-statement-name.md) | Optional | - | getUnprocessedPreparedStatementNames(): ?array | setUnprocessedPreparedStatementNames(?array unprocessedPreparedStatementNames): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -25,7 +22,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 use AmazonAthenaLib\Models\Builders\BatchGetPreparedStatementOutputBuilder;
 use AmazonAthenaLib\Models\Builders\PreparedStatementBuilder;
 use AmazonAthenaLib\Utils\DateTimeHelper;
-use AmazonAthenaLib\ApiHelper;
 use AmazonAthenaLib\Models\Builders\UnprocessedPreparedStatementNameBuilder;
 
 $batchGetPreparedStatementOutput = BatchGetPreparedStatementOutputBuilder::init()
@@ -37,7 +33,6 @@ $batchGetPreparedStatementOutput = BatchGetPreparedStatementOutputBuilder::init(
                 ->workGroupName('WorkGroupName6')
                 ->description('Description2')
                 ->lastModifiedTime(DateTimeHelper::fromRfc3339DateTime('2016-03-13T12:52:32.123Z'))
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             PreparedStatementBuilder::init()
                 ->statementName('StatementName2')
@@ -45,7 +40,6 @@ $batchGetPreparedStatementOutput = BatchGetPreparedStatementOutputBuilder::init(
                 ->workGroupName('WorkGroupName6')
                 ->description('Description2')
                 ->lastModifiedTime(DateTimeHelper::fromRfc3339DateTime('2016-03-13T12:52:32.123Z'))
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -55,23 +49,19 @@ $batchGetPreparedStatementOutput = BatchGetPreparedStatementOutputBuilder::init(
                 ->statementName('StatementName0')
                 ->errorCode('ErrorCode2')
                 ->errorMessage('ErrorMessage8')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             UnprocessedPreparedStatementNameBuilder::init()
                 ->statementName('StatementName0')
                 ->errorCode('ErrorCode2')
                 ->errorMessage('ErrorMessage8')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             UnprocessedPreparedStatementNameBuilder::init()
                 ->statementName('StatementName0')
                 ->errorCode('ErrorCode2')
                 ->errorMessage('ErrorMessage8')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

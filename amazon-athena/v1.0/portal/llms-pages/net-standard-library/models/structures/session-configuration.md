@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains session configuration information.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -20,14 +18,12 @@ Contains session configuration information.
 | `WorkingDirectory` | `string` | Optional | - |
 | `IdleTimeoutSeconds` | `int?` | Optional | - |
 | `EncryptionConfiguration` | [`EncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/encryption-configuration.md) | Optional | If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 SessionConfiguration sessionConfiguration = new SessionConfiguration
 {
@@ -36,11 +32,9 @@ SessionConfiguration sessionConfiguration = new SessionConfiguration
     IdleTimeoutSeconds = 188,
     EncryptionConfiguration = new EncryptionConfiguration
     {
-        EncryptionOption = EncryptionOption1.SseS3,
+        EncryptionOption = EncryptionOption1Enum.SSES3,
         KmsKey = "KmsKey6",
-        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

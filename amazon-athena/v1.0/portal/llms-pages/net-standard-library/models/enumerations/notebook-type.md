@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`NotebookType`
+`NotebookTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ipynb` |
+| `IPYNB` |
 
 
 # Example
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-NotebookType notebookType = NotebookType.Ipynb;
+NotebookTypeEnum notebookType = NotebookTypeEnum.IPYNB;
 ```
 
 

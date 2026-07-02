@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`DataCatalogType`
+`DataCatalogTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\DataCatalogType;
+use AmazonAthenaLib\Models\DataCatalogTypeEnum;
 
-$dataCatalogType = DataCatalogType::HIVE;
+$dataCatalogType = DataCatalogTypeEnum::HIVE;
 ```
 
 

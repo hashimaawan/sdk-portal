@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -24,14 +22,12 @@ The amount of data scanned during the query execution and the amount of time tha
 | `QueryPlanningTimeInMillis` | `int?` | Optional | - |
 | `ServiceProcessingTimeInMillis` | `int?` | Optional | - |
 | `ResultReuseInformation` | [`ResultReuseInformation2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/result-reuse-information-2.md) | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 QueryExecutionStatistics queryExecutionStatistics = new QueryExecutionStatistics
 {
@@ -40,7 +36,6 @@ QueryExecutionStatistics queryExecutionStatistics = new QueryExecutionStatistics
     DataManifestLocation = "DataManifestLocation2",
     TotalExecutionTimeInMillis = 136,
     QueryQueueTimeInMillis = 142,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget45`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-45.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget45Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-45.md) | Header, Required | - |
 | `body` | [`ListWorkGroupsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-work-groups-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -45,26 +45,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ListWorkGroupsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-work-groups-output.md).
+[`ListWorkGroupsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-work-groups-output.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget45::ENUM_AMAZONATHENALISTWORKGROUPS
+x_amz_target = XAmzTarget45Enum::ENUM_AMAZONATHENALISTWORKGROUPS
 
 body = ListWorkGroupsInput.new
 
-result = client_api.list_work_groups(
+result = client_controller.list_work_groups(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

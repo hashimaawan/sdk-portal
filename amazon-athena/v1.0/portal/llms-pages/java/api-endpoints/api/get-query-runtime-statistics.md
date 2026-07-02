@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation.
 
 ```java
-CompletableFuture<ApiResponse<GetQueryRuntimeStatisticsOutput>> getQueryRuntimeStatisticsAsync(
-    final XAmzTarget25 xAmzTarget,
+CompletableFuture<GetQueryRuntimeStatisticsOutput> getQueryRuntimeStatisticsAsync(
+    final XAmzTarget25Enum xAmzTarget,
     final GetQueryRuntimeStatisticsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget25`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-25.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget25Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-25.md) | Header, Required | - |
 | `body` | [`GetQueryRuntimeStatisticsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-runtime-statistics-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetQueryRuntimeStatisticsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-runtime-statistics-output.md).
+[`GetQueryRuntimeStatisticsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-runtime-statistics-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget25 xAmzTarget = XAmzTarget25.ENUM_AMAZONATHENAGETQUERYRUNTIMESTATISTICS;
+XAmzTarget25Enum xAmzTarget = XAmzTarget25Enum.ENUM_AMAZONATHENAGETQUERYRUNTIMESTATISTICS;
 GetQueryRuntimeStatisticsInput body = new GetQueryRuntimeStatisticsInput.Builder(
     "QueryExecutionId0"
 )
 .build();
 
 
-api.getQueryRuntimeStatisticsAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getQueryRuntimeStatisticsAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

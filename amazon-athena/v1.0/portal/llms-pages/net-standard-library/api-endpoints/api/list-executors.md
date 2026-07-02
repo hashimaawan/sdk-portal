@@ -6,7 +6,7 @@ Lists, in descending order, the executors that joined a session. Newer executors
 
 ```csharp
 ListExecutorsAsync(
-    Models.XAmzTarget36 xAmzTarget,
+    Models.XAmzTarget36Enum xAmzTarget,
     Models.ListExecutorsRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget36`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-36.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget36Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-36.md) | Header, Required | - |
 | `body` | [`ListExecutorsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-executors-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListExecutorsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-executors-response.md).
+[`Task<Models.ListExecutorsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-executors-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget36 xAmzTarget = XAmzTarget36.EnumAmazonAthenaListExecutors;
+XAmzTarget36Enum xAmzTarget = XAmzTarget36Enum.EnumAmazonAthenaListExecutors;
 ListExecutorsRequest body = new ListExecutorsRequest
 {
     SessionId = "SessionId2",
@@ -60,7 +60,7 @@ ListExecutorsRequest body = new ListExecutorsRequest
 
 try
 {
-    ApiResponse<ListExecutorsResponse> result = await api.ListExecutorsAsync(
+    ListExecutorsResponse result = await aPIController.ListExecutorsAsync(
         xAmzTarget,
         body
     );

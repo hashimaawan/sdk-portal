@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 GetQueryResults(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget24,
+    xAmzTarget models.XAmzTarget24Enum,
     body models.GetQueryResultsInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -33,7 +33,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-24.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-24.md) | Header, Required | - |
 | `body` | [`models.GetQueryResultsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-query-results-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -58,13 +58,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget24_EnumAmazonathenagetqueryresults
+xAmzTarget := models.XAmzTarget24Enum_ENUMAMAZONATHENAGETQUERYRESULTS
 
 body := models.GetQueryResultsInput{
-    QueryExecutionId:      "QueryExecutionId0",
+    QueryExecutionId:     "QueryExecutionId0",
 }
 
-apiResponse, err := api.GetQueryResults(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetQueryResults(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

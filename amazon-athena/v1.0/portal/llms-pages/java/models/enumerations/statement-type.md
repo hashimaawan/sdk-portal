@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`StatementType`
+`StatementTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.StatementType;
+import com.amazonaws.useast1.athena.models.StatementTypeEnum;
 
-StatementType statementType = StatementType.DDL;
+StatementTypeEnum statementType = StatementTypeEnum.DDL;
 ```
 
 

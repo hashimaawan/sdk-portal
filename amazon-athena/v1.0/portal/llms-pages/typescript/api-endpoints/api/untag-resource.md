@@ -6,7 +6,7 @@ Removes one or more tags from a data catalog or workgroup resource.
 
 ```ts
 async untagResource(
-  xAmzTarget: XAmzTarget53,
+  xAmzTarget: XAmzTarget53Enum,
   body: UntagResourceInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget53`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-53.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget53Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-53.md) | Header, Required | - |
 | `body` | [`UntagResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/untag-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,10 +51,10 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget53.EnumAmazonAthenaUntagResource;
+const xAmzTarget = XAmzTarget53Enum.EnumAmazonAthenaUntagResource;
 
 const body: UntagResourceInput = {
-  resourceArn: 'ResourceARN4',
+  resourceARN: 'ResourceARN4',
   tagKeys: [
     'TagKeys9',
     'TagKeys0'
@@ -62,7 +62,7 @@ const body: UntagResourceInput = {
 };
 
 try {
-  const response = await api.untagResource(
+  const response = await apiController.untagResource(
     xAmzTarget,
     body
   );

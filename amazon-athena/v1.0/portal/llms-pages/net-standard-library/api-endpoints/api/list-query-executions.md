@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```csharp
 ListQueryExecutionsAsync(
-    Models.XAmzTarget41 xAmzTarget,
+    Models.XAmzTarget41Enum xAmzTarget,
     Models.ListQueryExecutionsInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-41.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-41.md) | Header, Required | - |
 | `body` | [`ListQueryExecutionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-query-executions-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -47,20 +47,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListQueryExecutionsOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-query-executions-output.md).
+[`Task<Models.ListQueryExecutionsOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-query-executions-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget41 xAmzTarget = XAmzTarget41.EnumAmazonAthenaListQueryExecutions;
+XAmzTarget41Enum xAmzTarget = XAmzTarget41Enum.EnumAmazonAthenaListQueryExecutions;
 ListQueryExecutionsInput body = new ListQueryExecutionsInput
 {
 };
 
 try
 {
-    ApiResponse<ListQueryExecutionsOutput> result = await api.ListQueryExecutionsAsync(
+    ListQueryExecutionsOutput result = await aPIController.ListQueryExecutionsAsync(
         xAmzTarget,
         body
     );

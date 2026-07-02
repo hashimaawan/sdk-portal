@@ -6,7 +6,7 @@ Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled w
 
 ```ts
 async createNotebook(
-  xAmzTarget: XAmzTarget5,
+  xAmzTarget: XAmzTarget5Enum,
   body: CreateNotebookInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget5`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-5.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget5Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-5.md) | Header, Required | - |
 | `body` | [`CreateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/create-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget5.EnumAmazonAthenaCreateNotebook;
+const xAmzTarget = XAmzTarget5Enum.EnumAmazonAthenaCreateNotebook;
 
 const body: CreateNotebookInput = {
   workGroup: 'WorkGroup8',
@@ -59,7 +59,7 @@ const body: CreateNotebookInput = {
 };
 
 try {
-  const response = await api.createNotebook(
+  const response = await apiController.createNotebook(
     xAmzTarget,
     body
   );

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`S3AclOption`
+`S3AclOptionEnum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.s_3_acl_option import S3AclOption
+from amazonathena.models.s_3_acl_option_enum import S3AclOptionEnum
 
-s_3_acl_option = S3AclOption.BUCKET_OWNER_FULL_CONTROL
+s_3_acl_option = S3AclOptionEnum.BUCKET_OWNER_FULL_CONTROL
 ```
 
 

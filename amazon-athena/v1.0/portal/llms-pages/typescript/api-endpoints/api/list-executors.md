@@ -6,7 +6,7 @@ Lists, in descending order, the executors that joined a session. Newer executors
 
 ```ts
 async listExecutors(
-  xAmzTarget: XAmzTarget36,
+  xAmzTarget: XAmzTarget36Enum,
   body: ListExecutorsRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget36`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-36.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget36Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-36.md) | Header, Required | - |
 | `body` | [`ListExecutorsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-executors-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,14 +55,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget36.EnumAmazonAthenaListExecutors;
+const xAmzTarget = XAmzTarget36Enum.EnumAmazonAthenaListExecutors;
 
 const body: ListExecutorsRequest = {
   sessionId: 'SessionId2',
 };
 
 try {
-  const response = await api.listExecutors(
+  const response = await apiController.listExecutors(
     xAmzTarget,
     body
   );

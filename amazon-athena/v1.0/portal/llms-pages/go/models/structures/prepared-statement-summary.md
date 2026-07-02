@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The name and last modified time of the prepared statement.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -18,7 +16,6 @@ The name and last modified time of the prepared statement.
 |  --- | --- | --- | --- |
 | `StatementName` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256`, *Pattern*: `[a-zA-Z_][a-zA-Z0-9_@:]{1,256}` |
 | `LastModifiedTime` | `*time.Time` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -29,7 +26,7 @@ package main
 import (
     "log"
     "time"
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -41,11 +38,8 @@ func main() {
         return dateTime
     }
     preparedStatementSummary := models.PreparedStatementSummary{
-        StatementName:         models.ToPointer("StatementName4"),
-        LastModifiedTime:      models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        StatementName:        models.ToPointer("StatementName4"),
+        LastModifiedTime:     models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
     }
 
 }

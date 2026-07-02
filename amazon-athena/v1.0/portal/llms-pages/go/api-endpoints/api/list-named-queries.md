@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 ListNamedQueries(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget37,
+    xAmzTarget models.XAmzTarget37Enum,
     body models.ListNamedQueriesInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -33,7 +33,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget37`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-37.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget37Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-37.md) | Header, Required | - |
 | `body` | [`models.ListNamedQueriesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-named-queries-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -58,12 +58,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget37_EnumAmazonathenalistnamedqueries
+xAmzTarget := models.XAmzTarget37Enum_ENUMAMAZONATHENALISTNAMEDQUERIES
 
 body := models.ListNamedQueriesInput{
 }
 
-apiResponse, err := api.ListNamedQueries(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListNamedQueries(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

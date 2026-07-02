@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 DeleteNamedQuery(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget10,
+    xAmzTarget models.XAmzTarget10Enum,
     body models.DeleteNamedQueryInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget10`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-10.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget10Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-10.md) | Header, Required | - |
 | `body` | [`models.DeleteNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/delete-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -54,13 +54,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget10_EnumAmazonathenadeletenamedquery
+xAmzTarget := models.XAmzTarget10Enum_ENUMAMAZONATHENADELETENAMEDQUERY
 
 body := models.DeleteNamedQueryInput{
-    NamedQueryId:          "NamedQueryId6",
+    NamedQueryId:         "NamedQueryId6",
 }
 
-apiResponse, err := api.DeleteNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.DeleteNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

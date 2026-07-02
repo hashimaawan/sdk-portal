@@ -26,7 +26,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-28.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-28.md) | Header, Required | - |
 | `body` | [`GetTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/get-table-metadata-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -41,30 +41,25 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`GetTableMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/get-table-metadata-output.md).
+[`GetTableMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/get-table-metadata-output.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget28::ENUM_AMAZONATHENAGETTABLEMETADATA
+x_amz_target = XAmzTarget28Enum::ENUM_AMAZONATHENAGETTABLEMETADATA
 
 body = GetTableMetadataInput.new(
-  catalog_name: 'CatalogName0',
-  database_name: 'DatabaseName0',
-  table_name: 'TableName2'
+  'CatalogName0',
+  'DatabaseName0',
+  'TableName2'
 )
 
-result = client_api.get_table_metadata(
+result = client_controller.get_table_metadata(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

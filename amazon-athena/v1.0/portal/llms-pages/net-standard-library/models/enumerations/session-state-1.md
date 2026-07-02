@@ -8,21 +8,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState1`
+`SessionState1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Idle` |
-| `Busy` |
-| `Terminating` |
-| `Terminated` |
-| `Degraded` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `IDLE` |
+| `BUSY` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `DEGRADED` |
+| `FAILED` |
 
 
 # Example
@@ -30,7 +30,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-SessionState1 sessionState1 = SessionState1.Degraded;
+SessionState1Enum sessionState1 = SessionState1Enum.DEGRADED;
 ```
 
 

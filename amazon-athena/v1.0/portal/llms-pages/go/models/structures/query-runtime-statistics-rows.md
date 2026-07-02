@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -20,7 +18,6 @@ Statistics such as input rows and bytes read by the query, rows and bytes output
 | `InputBytes` | `*int` | Optional | - |
 | `OutputBytes` | `*int` | Optional | - |
 | `OutputRows` | `*int` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -29,18 +26,15 @@ Statistics such as input rows and bytes read by the query, rows and bytes output
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     queryRuntimeStatisticsRows := models.QueryRuntimeStatisticsRows{
-        InputRows:             models.ToPointer(234),
-        InputBytes:            models.ToPointer(254),
-        OutputBytes:           models.ToPointer(40),
-        OutputRows:            models.ToPointer(226),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        InputRows:            models.ToPointer(234),
+        InputBytes:           models.ToPointer(254),
+        OutputBytes:          models.ToPointer(40),
+        OutputRows:           models.ToPointer(226),
     }
 
 }

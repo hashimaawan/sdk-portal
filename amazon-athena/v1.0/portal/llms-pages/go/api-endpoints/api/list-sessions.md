@@ -7,7 +7,7 @@ Lists the sessions in a workgroup that are in an active state like <code>CREATIN
 ```go
 ListSessions(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget42,
+    xAmzTarget models.XAmzTarget42Enum,
     body models.ListSessionsRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget42`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-42.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget42Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-42.md) | Header, Required | - |
 | `body` | [`models.ListSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,13 +57,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget42_EnumAmazonathenalistsessions
+xAmzTarget := models.XAmzTarget42Enum_ENUMAMAZONATHENALISTSESSIONS
 
 body := models.ListSessionsRequest{
-    WorkGroup:             "WorkGroup8",
+    WorkGroup:            "WorkGroup8",
 }
 
-apiResponse, err := api.ListSessions(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListSessions(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

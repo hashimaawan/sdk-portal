@@ -7,16 +7,16 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 
 # Enum Type Name
 
-`DataCatalogType1`
+`DataCatalogType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -24,7 +24,7 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 ```csharp
 using AmazonAthena.Standard.Models;
 
-DataCatalogType1 dataCatalogType1 = DataCatalogType1.Glue;
+DataCatalogType1Enum dataCatalogType1 = DataCatalogType1Enum.GLUE;
 ```
 
 

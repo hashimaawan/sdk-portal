@@ -15,7 +15,7 @@ function getQueryExecution(
     ?string $xAmzSecurityToken = null,
     ?string $xAmzSignature = null,
     ?string $xAmzSignedHeaders = null
-): ApiResponse
+): GetQueryExecutionOutput
 ```
 
 
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget23)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-23.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget23Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-23.md) | Header, Required | - |
 | `body` | [`GetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -43,35 +43,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`GetQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-query-execution-output.md).
+[`GetQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-query-execution-output.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget23::ENUM_AMAZONATHENAGETQUERYEXECUTION;
+$xAmzTarget = XAmzTarget23Enum::ENUM_AMAZONATHENAGETQUERYEXECUTION;
 
 $body = GetQueryExecutionInputBuilder::init(
     'QueryExecutionId0'
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->getQueryExecution(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->getQueryExecution(
+        $xAmzTarget,
+        $body
+    );
     echo 'GetQueryExecutionOutput:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

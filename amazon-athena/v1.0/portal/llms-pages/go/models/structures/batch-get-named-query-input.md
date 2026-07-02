@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains an array of named query IDs.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ Contains an array of named query IDs.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `NamedQueryIds` | `[]string` | Required | **Constraints**: *Minimum Items*: `1`, *Maximum Items*: `50`, *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,17 +23,14 @@ Contains an array of named query IDs.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     batchGetNamedQueryInput := models.BatchGetNamedQueryInput{
-        NamedQueryIds:         []string{
+        NamedQueryIds:        []string{
             "NamedQueryIds3",
             "NamedQueryIds4",
-        },
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

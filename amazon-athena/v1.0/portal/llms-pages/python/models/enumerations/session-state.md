@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState`
+`SessionStateEnum`
 
 
 # Fields
@@ -25,9 +25,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.session_state import SessionState
+from amazonathena.models.session_state_enum import SessionStateEnum
 
-session_state = SessionState.IDLE
+session_state = SessionStateEnum.IDLE
 ```
 
 

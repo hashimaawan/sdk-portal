@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists, in descending order, the executors that joined a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state.
 
 ```java
-CompletableFuture<ApiResponse<ListExecutorsResponse>> listExecutorsAsync(
-    final XAmzTarget36 xAmzTarget,
+CompletableFuture<ListExecutorsResponse> listExecutorsAsync(
+    final XAmzTarget36Enum xAmzTarget,
     final ListExecutorsRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget36`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-36.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget36Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-36.md) | Header, Required | - |
 | `body` | [`ListExecutorsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-executors-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListExecutorsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-executors-response.md).
+[`ListExecutorsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-executors-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget36 xAmzTarget = XAmzTarget36.ENUM_AMAZONATHENALISTEXECUTORS;
+XAmzTarget36Enum xAmzTarget = XAmzTarget36Enum.ENUM_AMAZONATHENALISTEXECUTORS;
 ListExecutorsRequest body = new ListExecutorsRequest.Builder(
     "SessionId2"
 )
 .build();
 
 
-api.listExecutorsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listExecutorsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

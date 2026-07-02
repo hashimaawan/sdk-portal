@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -17,24 +15,19 @@ Contains the application runtime IDs and their supported DPU sizes.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `applicationRuntimeId` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
-| `supportedDpuSizes` | `number[] \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
+| `supportedDPUSizes` | `number[] \| undefined` | Optional | - |
 
 
 # Example
 
 ```ts
-import { ApplicationDpuSizes } from 'amazon-athenalib';
+import { ApplicationDPUSizes } from 'amazon-athenalib';
 
-const applicationDpuSizes: ApplicationDpuSizes = {
-  applicationRuntimeId: 'ApplicationRuntimeId4',
-  supportedDpuSizes: [
-    17,
-    18
+const applicationDPUSizes: ApplicationDPUSizes = {
+  applicationRuntimeId: 'ApplicationRuntimeId2',
+  supportedDPUSizes: [
+    57
   ],
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

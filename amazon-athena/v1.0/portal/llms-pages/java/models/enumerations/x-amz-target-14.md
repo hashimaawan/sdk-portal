@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget14`
+`XAmzTarget14Enum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.XAmzTarget14;
+import com.amazonaws.useast1.athena.models.XAmzTarget14Enum;
 
-XAmzTarget14 xAmzTarget14 = XAmzTarget14.ENUM_AMAZONATHENAEXPORTNOTEBOOK;
+XAmzTarget14Enum xAmzTarget14 = XAmzTarget14Enum.ENUM_AMAZONATHENAEXPORTNOTEBOOK;
 ```
 
 

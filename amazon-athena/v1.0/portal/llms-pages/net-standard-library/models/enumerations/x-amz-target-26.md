@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget26`
+`XAmzTarget26Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-XAmzTarget26 xAmzTarget26 = XAmzTarget26.EnumAmazonAthenaGetSession;
+XAmzTarget26Enum xAmzTarget26 = XAmzTarget26Enum.EnumAmazonAthenaGetSession;
 ```
 
 

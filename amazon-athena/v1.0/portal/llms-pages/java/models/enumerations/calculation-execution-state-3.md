@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState3`
+`CalculationExecutionState3Enum`
 
 
 # Fields
@@ -28,9 +28,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.CalculationExecutionState3;
+import com.amazonaws.useast1.athena.models.CalculationExecutionState3Enum;
 
-CalculationExecutionState3 calculationExecutionState3 = CalculationExecutionState3.COMPLETED;
+CalculationExecutionState3Enum calculationExecutionState3 = CalculationExecutionState3Enum.COMPLETED;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains an array of named query IDs.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -17,23 +15,19 @@ Contains an array of named query IDs.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `namedQueryIds` | `string[]` | Required | **Constraints**: *Minimum Items*: `1`, *Maximum Items*: `50`, *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` | getNamedQueryIds(): array | setNamedQueryIds(array namedQueryIds): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\BatchGetNamedQueryInputBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $batchGetNamedQueryInput = BatchGetNamedQueryInputBuilder::init(
     [
         'NamedQueryIds3',
         'NamedQueryIds4'
     ]
-)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-    ->build();
+)->build();
 ```
 
 

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`StatementType`
+`StatementTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\StatementType;
+use AmazonAthenaLib\Models\StatementTypeEnum;
 
-$statementType = StatementType::DDL;
+$statementType = StatementTypeEnum::DDL;
 ```
 
 

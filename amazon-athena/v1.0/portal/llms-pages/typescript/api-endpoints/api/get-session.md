@@ -6,7 +6,7 @@ Gets the full details of a previously created session, including the session sta
 
 ```ts
 async getSession(
-  xAmzTarget: XAmzTarget26,
+  xAmzTarget: XAmzTarget26Enum,
   body: GetSessionRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget26`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-26.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget26Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-26.md) | Header, Required | - |
 | `body` | [`GetSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget26.EnumAmazonAthenaGetSession;
+const xAmzTarget = XAmzTarget26Enum.EnumAmazonAthenaGetSession;
 
 const body: GetSessionRequest = {
   sessionId: 'SessionId2',
 };
 
 try {
-  const response = await api.getSession(
+  const response = await apiController.getSession(
     xAmzTarget,
     body
   );

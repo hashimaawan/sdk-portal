@@ -7,7 +7,7 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Enum Type Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
@@ -21,9 +21,9 @@ The state of the workgroup: ENABLED or DISABLED.
 # Example
 
 ```python
-from amazonathena.models.work_group_state_3 import WorkGroupState3
+from amazonathena.models.work_group_state_3_enum import WorkGroupState3Enum
 
-work_group_state_3 = WorkGroupState3.ENABLED
+work_group_state_3 = WorkGroupState3Enum.ENABLED
 ```
 
 

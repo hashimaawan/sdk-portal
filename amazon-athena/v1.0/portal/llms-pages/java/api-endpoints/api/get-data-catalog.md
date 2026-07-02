@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns the specified data catalog.
 
 ```java
-CompletableFuture<ApiResponse<GetDataCatalogOutput>> getDataCatalogAsync(
-    final XAmzTarget18 xAmzTarget,
+CompletableFuture<GetDataCatalogOutput> getDataCatalogAsync(
+    final XAmzTarget18Enum xAmzTarget,
     final GetDataCatalogInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-18.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget18Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-18.md) | Header, Required | - |
 | `body` | [`GetDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetDataCatalogOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-data-catalog-output.md).
+[`GetDataCatalogOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-data-catalog-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget18 xAmzTarget = XAmzTarget18.ENUM_AMAZONATHENAGETDATACATALOG;
+XAmzTarget18Enum xAmzTarget = XAmzTarget18Enum.ENUM_AMAZONATHENAGETDATACATALOG;
 GetDataCatalogInput body = new GetDataCatalogInput.Builder(
     "Name6"
 )
 .build();
 
 
-api.getDataCatalogAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getDataCatalogAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

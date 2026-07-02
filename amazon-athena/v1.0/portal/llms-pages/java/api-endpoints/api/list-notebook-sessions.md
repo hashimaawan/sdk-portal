@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists, in descending order, the sessions that have been created in a notebook that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
 
 ```java
-CompletableFuture<ApiResponse<ListNotebookSessionsResponse>> listNotebookSessionsAsync(
-    final XAmzTarget39 xAmzTarget,
+CompletableFuture<ListNotebookSessionsResponse> listNotebookSessionsAsync(
+    final XAmzTarget39Enum xAmzTarget,
     final ListNotebookSessionsRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget39`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-39.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget39Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-39.md) | Header, Required | - |
 | `body` | [`ListNotebookSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-notebook-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListNotebookSessionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-notebook-sessions-response.md).
+[`ListNotebookSessionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-notebook-sessions-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget39 xAmzTarget = XAmzTarget39.ENUM_AMAZONATHENALISTNOTEBOOKSESSIONS;
+XAmzTarget39Enum xAmzTarget = XAmzTarget39Enum.ENUM_AMAZONATHENALISTNOTEBOOKSESSIONS;
 ListNotebookSessionsRequest body = new ListNotebookSessionsRequest.Builder(
     "NotebookId6"
 )
 .build();
 
 
-api.listNotebookSessionsAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listNotebookSessionsAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

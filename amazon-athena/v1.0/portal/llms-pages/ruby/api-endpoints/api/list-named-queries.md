@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget37`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-37.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget37Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-37.md) | Header, Required | - |
 | `body` | [`ListNamedQueriesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-named-queries-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -46,26 +46,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ListNamedQueriesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-named-queries-output.md).
+[`ListNamedQueriesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-named-queries-output.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget37::ENUM_AMAZONATHENALISTNAMEDQUERIES
+x_amz_target = XAmzTarget37Enum::ENUM_AMAZONATHENALISTNAMEDQUERIES
 
 body = ListNamedQueriesInput.new
 
-result = client_api.list_named_queries(
+result = client_controller.list_named_queries(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

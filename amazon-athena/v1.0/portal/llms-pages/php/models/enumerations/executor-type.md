@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorType`
+`ExecutorTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\ExecutorType;
+use AmazonAthenaLib\Models\ExecutorTypeEnum;
 
-$executorType = ExecutorType::GATEWAY;
+$executorType = ExecutorTypeEnum::GATEWAY;
 ```
 
 

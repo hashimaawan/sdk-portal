@@ -5,36 +5,36 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`Region`
+`RegionEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Useast1` |
-| `Useast2` |
-| `Uswest1` |
-| `Uswest2` |
-| `Usgovwest1` |
-| `Usgoveast1` |
-| `Cacentral1` |
-| `Eunorth1` |
-| `Euwest1` |
-| `Euwest2` |
-| `Euwest3` |
-| `Eucentral1` |
-| `Eusouth1` |
-| `Afsouth1` |
-| `Apnortheast1` |
-| `Apnortheast2` |
-| `Apnortheast3` |
-| `Apsoutheast1` |
-| `Apsoutheast2` |
-| `Apeast1` |
-| `Apsouth1` |
-| `Saeast1` |
-| `Mesouth1` |
+| `USEAST1` |
+| `USEAST2` |
+| `USWEST1` |
+| `USWEST2` |
+| `USGOVWEST1` |
+| `USGOVEAST1` |
+| `CACENTRAL1` |
+| `EUNORTH1` |
+| `EUWEST1` |
+| `EUWEST2` |
+| `EUWEST3` |
+| `EUCENTRAL1` |
+| `EUSOUTH1` |
+| `AFSOUTH1` |
+| `APNORTHEAST1` |
+| `APNORTHEAST2` |
+| `APNORTHEAST3` |
+| `APSOUTHEAST1` |
+| `APSOUTHEAST2` |
+| `APEAST1` |
+| `APSOUTH1` |
+| `SAEAST1` |
+| `MESOUTH1` |
 
 
 # Example
@@ -43,11 +43,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    region := models.Region_Euwest3
+    region := models.RegionEnum_EUWEST3
 
 }
 ```

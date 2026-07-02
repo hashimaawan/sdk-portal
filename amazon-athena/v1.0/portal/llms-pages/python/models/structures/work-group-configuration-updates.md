@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -28,16 +26,13 @@ The configuration information that will be updated for this workgroup, which inc
 | `execution_role` | `str` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` |
 | `customer_content_encryption_configuration` | [`CustomerContentEncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. |
 | `enable_minimum_encryption_configuration` | `bool` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.encryption_configuration_2 import EncryptionConfiguration2
-from amazonathena.models.encryption_option_1 import EncryptionOption1
+from amazonathena.models.encryption_option_1_enum import EncryptionOption1Enum
 from amazonathena.models.result_configuration_updates_2 import ResultConfigurationUpdates2
 from amazonathena.models.work_group_configuration_updates import WorkGroupConfigurationUpdates
 
@@ -47,24 +42,15 @@ work_group_configuration_updates = WorkGroupConfigurationUpdates(
         output_location='OutputLocation0',
         remove_output_location=False,
         encryption_configuration=EncryptionConfiguration2(
-            encryption_option=EncryptionOption1.SSE_S3,
-            kms_key='KmsKey6',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            encryption_option=EncryptionOption1Enum.SSE_S3,
+            kms_key='KmsKey6'
         ),
         remove_encryption_configuration=False,
-        expected_bucket_owner='ExpectedBucketOwner0',
-        additional_properties={
-            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-        }
+        expected_bucket_owner='ExpectedBucketOwner0'
     ),
     publish_cloud_watch_metrics_enabled=False,
     bytes_scanned_cutoff_per_query=10000000,
-    remove_bytes_scanned_cutoff_per_query=False,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    remove_bytes_scanned_cutoff_per_query=False
 )
 ```
 

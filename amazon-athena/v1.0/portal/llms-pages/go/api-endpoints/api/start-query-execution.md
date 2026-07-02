@@ -7,7 +7,7 @@ Runs the SQL query statements contained in the <code>Query</code>. Requires you 
 ```go
 StartQueryExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget47,
+    xAmzTarget models.XAmzTarget47Enum,
     body models.StartQueryExecutionInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget47`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-47.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget47Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-47.md) | Header, Required | - |
 | `body` | [`models.StartQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/start-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget47_EnumAmazonathenastartqueryexecution
+xAmzTarget := models.XAmzTarget47Enum_ENUMAMAZONATHENASTARTQUERYEXECUTION
 
 body := models.StartQueryExecutionInput{
     QueryString:              "QueryString8",
 }
 
-apiResponse, err := api.StartQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.StartQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

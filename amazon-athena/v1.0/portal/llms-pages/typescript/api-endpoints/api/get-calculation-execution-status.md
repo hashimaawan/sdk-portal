@@ -6,7 +6,7 @@ Gets the status of a current calculation.
 
 ```ts
 async getCalculationExecutionStatus(
-  xAmzTarget: XAmzTarget17,
+  xAmzTarget: XAmzTarget17Enum,
   body: GetCalculationExecutionStatusRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-17.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-17.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-calculation-execution-status-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget17.EnumAmazonAthenaGetCalculationExecutionStatus;
+const xAmzTarget = XAmzTarget17Enum.EnumAmazonAthenaGetCalculationExecutionStatus;
 
 const body: GetCalculationExecutionStatusRequest = {
   calculationExecutionId: 'CalculationExecutionId8',
 };
 
 try {
-  const response = await api.getCalculationExecutionStatus(
+  const response = await apiController.getCalculationExecutionStatus(
     xAmzTarget,
     body
   );

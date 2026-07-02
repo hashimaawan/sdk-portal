@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRkdldFNlc3Npb25SZXNwb25zZQ
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -23,7 +21,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `SessionConfiguration` | [`*models.SessionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/session-configuration-2.md) | Optional | - |
 | `Status` | [`*models.Status3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/status-3.md) | Optional | - |
 | `Statistics` | [`*models.Statistics3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/statistics-3.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -32,31 +29,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     getSessionResponse := models.GetSessionResponse{
-        SessionId:             models.ToPointer("SessionId6"),
-        Description:           models.ToPointer("Description4"),
-        WorkGroup:             models.ToPointer("WorkGroup4"),
-        EngineVersion:         models.ToPointer("EngineVersion8"),
-        EngineConfiguration:   models.ToPointer(models.EngineConfiguration1{
+        SessionId:            models.ToPointer("SessionId6"),
+        Description:          models.ToPointer("Description4"),
+        WorkGroup:            models.ToPointer("WorkGroup4"),
+        EngineVersion:        models.ToPointer("EngineVersion8"),
+        EngineConfiguration:  models.ToPointer(models.EngineConfiguration1{
             CoordinatorDpuSize:     models.ToPointer(1),
             MaxConcurrentDpus:      94,
             DefaultExecutorDpuSize: models.ToPointer(1),
             AdditionalConfigs:      models.ToPointer(models.AdditionalConfigs{
-                AdditionalProperties:  map[string]string{
-                    "exampleAdditionalProperty": "AdditionalConfigs_additionalProperties5",
-                },
             }),
-            AdditionalProperties:   map[string]interface{}{
-                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-            },
         }),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

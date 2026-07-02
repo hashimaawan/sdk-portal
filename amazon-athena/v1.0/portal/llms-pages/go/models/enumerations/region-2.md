@@ -5,15 +5,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`Region2`
+`Region2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Cnnorth1` |
-| `Cnnorthwest1` |
+| `CNNORTH1` |
+| `CNNORTHWEST1` |
 
 
 # Example
@@ -22,11 +22,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    region2 := models.Region2_Cnnorth1
+    region2 := models.Region2Enum_CNNORTH1
 
 }
 ```

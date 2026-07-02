@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkxpc3RUYWJsZU1ldGFkYXRhT3V0cHV0
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -16,14 +14,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `TableMetadataList` | [`List<TableMetadata>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/table-metadata.md) | Optional | - |
 | `NextToken` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -48,7 +44,6 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput
                     Name = "Name0",
                     Type = "Type0",
                     Comment = "Comment4",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             PartitionKeys = new List<Column>
@@ -58,24 +53,20 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput
                     Name = "Name6",
                     Type = "Type6",
                     Comment = "Comment0",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new Column
                 {
                     Name = "Name6",
                     Type = "Type6",
                     Comment = "Comment0",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new Column
                 {
                     Name = "Name6",
                     Type = "Type6",
                     Comment = "Comment0",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         new TableMetadata
         {
@@ -94,7 +85,6 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput
                     Name = "Name0",
                     Type = "Type0",
                     Comment = "Comment4",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
             PartitionKeys = new List<Column>
@@ -104,28 +94,23 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput
                     Name = "Name6",
                     Type = "Type6",
                     Comment = "Comment0",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new Column
                 {
                     Name = "Name6",
                     Type = "Type6",
                     Comment = "Comment0",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
                 new Column
                 {
                     Name = "Name6",
                     Type = "Type6",
                     Comment = "Comment0",
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     NextToken = "NextToken0",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

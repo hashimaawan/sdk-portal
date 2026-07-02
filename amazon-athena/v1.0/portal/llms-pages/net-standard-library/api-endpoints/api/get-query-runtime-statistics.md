@@ -6,7 +6,7 @@ Returns query execution runtime statistics related to a single execution of a qu
 
 ```csharp
 GetQueryRuntimeStatisticsAsync(
-    Models.XAmzTarget25 xAmzTarget,
+    Models.XAmzTarget25Enum xAmzTarget,
     Models.GetQueryRuntimeStatisticsInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget25`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-25.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget25Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-25.md) | Header, Required | - |
 | `body` | [`GetQueryRuntimeStatisticsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-runtime-statistics-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetQueryRuntimeStatisticsOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-runtime-statistics-output.md).
+[`Task<Models.GetQueryRuntimeStatisticsOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-runtime-statistics-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget25 xAmzTarget = XAmzTarget25.EnumAmazonAthenaGetQueryRuntimeStatistics;
+XAmzTarget25Enum xAmzTarget = XAmzTarget25Enum.EnumAmazonAthenaGetQueryRuntimeStatistics;
 GetQueryRuntimeStatisticsInput body = new GetQueryRuntimeStatisticsInput
 {
     QueryExecutionId = "QueryExecutionId0",
@@ -56,7 +56,7 @@ GetQueryRuntimeStatisticsInput body = new GetQueryRuntimeStatisticsInput
 
 try
 {
-    ApiResponse<GetQueryRuntimeStatisticsOutput> result = await api.GetQueryRuntimeStatisticsAsync(
+    GetQueryRuntimeStatisticsOutput result = await aPIController.GetQueryRuntimeStatisticsAsync(
         xAmzTarget,
         body
     );

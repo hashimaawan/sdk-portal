@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ColumnNullable`
+`ColumnNullableEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\ColumnNullable;
+use AmazonAthenaLib\Models\ColumnNullableEnum;
 
-$columnNullable = ColumnNullable::NOT_NULL;
+$columnNullable = ColumnNullableEnum::NOT_NULL;
 ```
 
 

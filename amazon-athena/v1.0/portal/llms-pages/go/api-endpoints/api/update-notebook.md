@@ -7,7 +7,7 @@ Updates the contents of a Spark notebook.
 ```go
 UpdateNotebook(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget56,
+    xAmzTarget models.XAmzTarget56Enum,
     body models.UpdateNotebookInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget56`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-56.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget56Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-56.md) | Header, Required | - |
 | `body` | [`models.UpdateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/update-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,15 +53,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget56_EnumAmazonathenaupdatenotebook
+xAmzTarget := models.XAmzTarget56Enum_ENUMAMAZONATHENAUPDATENOTEBOOK
 
 body := models.UpdateNotebookInput{
-    NotebookId:            "NotebookId6",
-    Payload:               "Payload2",
-    Type:                  models.NotebookType2_Ipynb,
+    NotebookId:           "NotebookId6",
+    Payload:              "Payload2",
+    Type:                 models.NotebookType2Enum_IPYNB,
 }
 
-apiResponse, err := api.UpdateNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.UpdateNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

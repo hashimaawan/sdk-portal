@@ -15,7 +15,7 @@ function exportNotebook(
     ?string $xAmzSecurityToken = null,
     ?string $xAmzSignature = null,
     ?string $xAmzSignedHeaders = null
-): ApiResponse
+): ExportNotebookOutput
 ```
 
 
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget14)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-14.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget14Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-14.md) | Header, Required | - |
 | `body` | [`ExportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/export-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -43,35 +43,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`ExportNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/export-notebook-output.md).
+[`ExportNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/export-notebook-output.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget14::ENUM_AMAZONATHENAEXPORTNOTEBOOK;
+$xAmzTarget = XAmzTarget14Enum::ENUM_AMAZONATHENAEXPORTNOTEBOOK;
 
 $body = ExportNotebookInputBuilder::init(
     'NotebookId6'
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->exportNotebook(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->exportNotebook(
+        $xAmzTarget,
+        $body
+    );
     echo 'ExportNotebookOutput:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

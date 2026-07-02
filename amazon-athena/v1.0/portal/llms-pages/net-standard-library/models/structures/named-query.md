@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A query, where <code>QueryString</code> contains the SQL statements that make up the query.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -22,14 +20,12 @@ A query, where <code>QueryString</code> contains the SQL statements that make up
 | `QueryString` | `string` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `262144` |
 | `NamedQueryId` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
 | `WorkGroup` | `string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 NamedQuery namedQuery = new NamedQuery
 {
@@ -39,7 +35,6 @@ NamedQuery namedQuery = new NamedQuery
     Description = "Description4",
     NamedQueryId = "NamedQueryId0",
     WorkGroup = "WorkGroup4",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

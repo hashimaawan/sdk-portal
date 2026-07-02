@@ -7,7 +7,7 @@ The state of the workgroup.
 
 # Enum Type Name
 
-`WorkGroupState1`
+`WorkGroupState1Enum`
 
 
 # Fields
@@ -21,9 +21,9 @@ The state of the workgroup.
 # Example
 
 ```php
-use AmazonAthenaLib\Models\WorkGroupState1;
+use AmazonAthenaLib\Models\WorkGroupState1Enum;
 
-$workGroupState1 = WorkGroupState1::ENABLED;
+$workGroupState1 = WorkGroupState1Enum::ENABLED;
 ```
 
 

@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/java/x-redirect/JTI0bSUyRkxpc3RUYWJsZU1ldGFkYXRhT3V0cHV0
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -16,18 +14,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- | --- | --- |
 | `TableMetadataList` | [`List<TableMetadata>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/table-metadata.md) | Optional | - | List<TableMetadata> getTableMetadataList() | setTableMetadataList(List<TableMetadata> tableMetadataList) |
 | `NextToken` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` | String getNextToken() | setNextToken(String nextToken) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.DateTimeHelper;
 import com.amazonaws.useast1.athena.models.Column;
 import com.amazonaws.useast1.athena.models.ListTableMetadataOutput;
 import com.amazonaws.useast1.athena.models.TableMetadata;
-import java.io.IOException;
 import java.util.Arrays;
 
 ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput.Builder()
@@ -44,7 +39,6 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput.Bu
                 )
                 .type("Type0")
                 .comment("Comment4")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ))
         .partitionKeys(Arrays.asList(
@@ -53,24 +47,20 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput.Bu
                 )
                 .type("Type6")
                 .comment("Comment0")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new Column.Builder(
                     "Name6"
                 )
                 .type("Type6")
                 .comment("Comment0")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new Column.Builder(
                     "Name6"
                 )
                 .type("Type6")
                 .comment("Comment0")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ))
-        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build(),
         new TableMetadata.Builder(
             "Name2"
@@ -84,7 +74,6 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput.Bu
                 )
                 .type("Type0")
                 .comment("Comment4")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ))
         .partitionKeys(Arrays.asList(
@@ -93,28 +82,23 @@ ListTableMetadataOutput listTableMetadataOutput = new ListTableMetadataOutput.Bu
                 )
                 .type("Type6")
                 .comment("Comment0")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new Column.Builder(
                     "Name6"
                 )
                 .type("Type6")
                 .comment("Comment0")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build(),
                 new Column.Builder(
                     "Name6"
                 )
                 .type("Type6")
                 .comment("Comment0")
-                .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
                 .build()
             ))
-        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build()
     ))
     .nextToken("NextToken0")
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

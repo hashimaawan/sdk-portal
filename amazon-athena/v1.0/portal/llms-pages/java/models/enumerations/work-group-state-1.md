@@ -7,7 +7,7 @@ The state of the workgroup.
 
 # Enum Type Name
 
-`WorkGroupState1`
+`WorkGroupState1Enum`
 
 
 # Fields
@@ -21,9 +21,9 @@ The state of the workgroup.
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.WorkGroupState1;
+import com.amazonaws.useast1.athena.models.WorkGroupState1Enum;
 
-WorkGroupState1 workGroupState1 = WorkGroupState1.ENABLED;
+WorkGroupState1Enum workGroupState1 = WorkGroupState1Enum.ENABLED;
 ```
 
 

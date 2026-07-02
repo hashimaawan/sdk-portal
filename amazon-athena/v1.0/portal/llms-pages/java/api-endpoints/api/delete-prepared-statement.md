@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Deletes the prepared statement with the specified name from the specified workgroup.
 
 ```java
-CompletableFuture<ApiResponse<Object>> deletePreparedStatementAsync(
-    final XAmzTarget12 xAmzTarget,
+CompletableFuture<Object> deletePreparedStatementAsync(
+    final XAmzTarget12Enum xAmzTarget,
     final DeletePreparedStatementInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget12`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-12.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget12Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-12.md) | Header, Required | - |
 | `body` | [`DeletePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/delete-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget12 xAmzTarget = XAmzTarget12.ENUM_AMAZONATHENADELETEPREPAREDSTATEMENT;
+XAmzTarget12Enum xAmzTarget = XAmzTarget12Enum.ENUM_AMAZONATHENADELETEPREPAREDSTATEMENT;
 DeletePreparedStatementInput body = new DeletePreparedStatementInput.Builder(
     "StatementName4",
     "WorkGroup8"
@@ -56,7 +56,7 @@ DeletePreparedStatementInput body = new DeletePreparedStatementInput.Builder(
 .build();
 
 
-api.deletePreparedStatementAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.deletePreparedStatementAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

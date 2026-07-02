@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`NotebookType`
+`NotebookTypeEnum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.notebook_type import NotebookType
+from amazonathena.models.notebook_type_enum import NotebookTypeEnum
 
-notebook_type = NotebookType.IPYNB
+notebook_type = NotebookTypeEnum.IPYNB
 ```
 
 

@@ -5,23 +5,23 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`WorkGroupState`
+`WorkGroupStateEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Enabled` |
-| `Disabled` |
+| `ENABLED` |
+| `DISABLED` |
 
 
 # Example
 
 ```ts
-import { WorkGroupState } from 'amazon-athenalib';
+import { WorkGroupStateEnum } from 'amazon-athenalib';
 
-const workGroupState = WorkGroupState.Enabled;
+const workGroupState = WorkGroupStateEnum.ENABLED;
 ```
 
 

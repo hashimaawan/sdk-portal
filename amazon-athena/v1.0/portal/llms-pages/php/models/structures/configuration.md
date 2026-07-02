@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkNvbmZpZ3VyYXRpb24
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -24,7 +22,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `executionRole` | `?string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` | getExecutionRole(): ?string | setExecutionRole(?string executionRole): void |
 | `customerContentEncryptionConfiguration` | [`?CustomerContentEncryptionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/customer-content-encryption-configuration-2.md) | Optional | - | getCustomerContentEncryptionConfiguration(): ?CustomerContentEncryptionConfiguration2 | setCustomerContentEncryptionConfiguration(?CustomerContentEncryptionConfiguration2 customerContentEncryptionConfiguration): void |
 | `enableMinimumEncryptionConfiguration` | `?bool` | Optional | - | getEnableMinimumEncryptionConfiguration(): ?bool | setEnableMinimumEncryptionConfiguration(?bool enableMinimumEncryptionConfiguration): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -33,10 +30,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 use AmazonAthenaLib\Models\Builders\ConfigurationBuilder;
 use AmazonAthenaLib\Models\Builders\ResultConfiguration1Builder;
 use AmazonAthenaLib\Models\Builders\EncryptionConfiguration2Builder;
-use AmazonAthenaLib\Models\EncryptionOption1;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\EncryptionOption1Enum;
 use AmazonAthenaLib\Models\Builders\AclConfiguration1Builder;
-use AmazonAthenaLib\Models\S3AclOption1;
+use AmazonAthenaLib\Models\S3AclOption1Enum;
 
 $configuration = ConfigurationBuilder::init()
     ->resultConfiguration(
@@ -44,28 +40,22 @@ $configuration = ConfigurationBuilder::init()
             ->outputLocation('OutputLocation0')
             ->encryptionConfiguration(
                 EncryptionConfiguration2Builder::init(
-                    EncryptionOption1::SSE_S3
+                    EncryptionOption1Enum::SSE_S3
                 )
                     ->kmsKey('KmsKey6')
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->expectedBucketOwner('ExpectedBucketOwner0')
             ->aclConfiguration(
                 AclConfiguration1Builder::init(
-                    S3AclOption1::BUCKET_OWNER_FULL_CONTROL
-                )
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-                    ->build()
-            )
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-            ->build()
+                    S3AclOption1Enum::BUCKET_OWNER_FULL_CONTROL
+                )->build()
+            )->build()
     )
     ->enforceWorkGroupConfiguration(false)
     ->publishCloudWatchMetricsEnabled(false)
     ->bytesScannedCutoffPerQuery(10000000)
     ->requesterPaysEnabled(false)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

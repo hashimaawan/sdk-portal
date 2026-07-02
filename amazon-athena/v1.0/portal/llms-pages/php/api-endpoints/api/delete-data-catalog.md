@@ -15,7 +15,7 @@ function deleteDataCatalog(
     ?string $xAmzSecurityToken = null,
     ?string $xAmzSignature = null,
     ?string $xAmzSignedHeaders = null
-): ApiResponse
+): array
 ```
 
 
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget9)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-9.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget9Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-9.md) | Header, Required | - |
 | `body` | [`DeleteDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/delete-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -43,35 +43,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type `array`.
+`array`
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget9::ENUM_AMAZONATHENADELETEDATACATALOG;
+$xAmzTarget = XAmzTarget9Enum::ENUM_AMAZONATHENADELETEDATACATALOG;
 
 $body = DeleteDataCatalogInputBuilder::init(
     'Name6'
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->deleteDataCatalog(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->deleteDataCatalog(
+        $xAmzTarget,
+        $body
+    );
     echo 'array:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

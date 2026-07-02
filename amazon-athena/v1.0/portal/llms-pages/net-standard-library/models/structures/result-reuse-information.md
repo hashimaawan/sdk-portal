@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains information about whether the result of a previous query was reused.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -17,19 +15,16 @@ Contains information about whether the result of a previous query was reused.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ReusedPreviousResult` | `bool` | Required | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 ResultReuseInformation resultReuseInformation = new ResultReuseInformation
 {
     ReusedPreviousResult = false,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

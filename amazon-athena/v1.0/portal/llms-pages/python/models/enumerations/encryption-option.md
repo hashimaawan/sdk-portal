@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`EncryptionOption`
+`EncryptionOptionEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.encryption_option import EncryptionOption
+from amazonathena.models.encryption_option_enum import EncryptionOptionEnum
 
-encryption_option = EncryptionOption.SSE_KMS
+encryption_option = EncryptionOptionEnum.SSE_KMS
 ```
 
 

@@ -7,7 +7,7 @@ The data catalog type.
 
 # Enum Type Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The data catalog type.
 # Example
 
 ```python
-from amazonathena.models.data_catalog_type_2 import DataCatalogType2
+from amazonathena.models.data_catalog_type_2_enum import DataCatalogType2Enum
 
-data_catalog_type_2 = DataCatalogType2.LAMBDA
+data_catalog_type_2 = DataCatalogType2Enum.LAMBDA
 ```
 
 

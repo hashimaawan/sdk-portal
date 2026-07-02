@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains configuration information for the calculation.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -17,21 +15,15 @@ Contains configuration information for the calculation.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `code_block` | `str` | Optional | **Constraints**: *Maximum Length*: `68000` |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.calculation_configuration import CalculationConfiguration
 
 calculation_configuration = CalculationConfiguration(
-    code_block='CodeBlock6',
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    code_block='CodeBlock6'
 )
 ```
 

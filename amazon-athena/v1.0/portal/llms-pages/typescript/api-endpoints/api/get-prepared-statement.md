@@ -6,7 +6,7 @@ Retrieves the prepared statement with the specified name from the specified work
 
 ```ts
 async getPreparedStatement(
-  xAmzTarget: XAmzTarget22,
+  xAmzTarget: XAmzTarget22Enum,
   body: GetPreparedStatementInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget22`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-22.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget22Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-22.md) | Header, Required | - |
 | `body` | [`GetPreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget22.EnumAmazonAthenaGetPreparedStatement;
+const xAmzTarget = XAmzTarget22Enum.EnumAmazonAthenaGetPreparedStatement;
 
 const body: GetPreparedStatementInput = {
   statementName: 'StatementName4',
@@ -59,7 +59,7 @@ const body: GetPreparedStatementInput = {
 };
 
 try {
-  const response = await api.getPreparedStatement(
+  const response = await apiController.getPreparedStatement(
     xAmzTarget,
     body
   );

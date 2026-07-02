@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<StopCalculationExecutionResponse>> stopCalculationExecutionAsync(
-    final XAmzTarget49 xAmzTarget,
+CompletableFuture<StopCalculationExecutionResponse> stopCalculationExecutionAsync(
+    final XAmzTarget49Enum xAmzTarget,
     final StopCalculationExecutionRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget49`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-49.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget49Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-49.md) | Header, Required | - |
 | `body` | [`StopCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/stop-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -43,20 +43,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`StopCalculationExecutionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/stop-calculation-execution-response.md).
+[`StopCalculationExecutionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/stop-calculation-execution-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget49 xAmzTarget = XAmzTarget49.ENUM_AMAZONATHENASTOPCALCULATIONEXECUTION;
+XAmzTarget49Enum xAmzTarget = XAmzTarget49Enum.ENUM_AMAZONATHENASTOPCALCULATIONEXECUTION;
 StopCalculationExecutionRequest body = new StopCalculationExecutionRequest.Builder(
     "CalculationExecutionId8"
 )
 .build();
 
 
-api.stopCalculationExecutionAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.stopCalculationExecutionAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

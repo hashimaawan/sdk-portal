@@ -7,7 +7,7 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Enum Type Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
@@ -21,9 +21,9 @@ The state of the workgroup: ENABLED or DISABLED.
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.WorkGroupState3;
+import com.amazonaws.useast1.athena.models.WorkGroupState3Enum;
 
-WorkGroupState3 workGroupState3 = WorkGroupState3.ENABLED;
+WorkGroupState3Enum workGroupState3 = WorkGroupState3Enum.ENABLED;
 ```
 
 

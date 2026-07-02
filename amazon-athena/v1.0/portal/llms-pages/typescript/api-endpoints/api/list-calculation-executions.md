@@ -6,7 +6,7 @@ Lists the calculations that have been submitted to a session in descending order
 
 ```ts
 async listCalculationExecutions(
-  xAmzTarget: XAmzTarget32,
+  xAmzTarget: XAmzTarget32Enum,
   body: ListCalculationExecutionsRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget32`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-32.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget32Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-32.md) | Header, Required | - |
 | `body` | [`ListCalculationExecutionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-calculation-executions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,14 +55,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget32.EnumAmazonAthenaListCalculationExecutions;
+const xAmzTarget = XAmzTarget32Enum.EnumAmazonAthenaListCalculationExecutions;
 
 const body: ListCalculationExecutionsRequest = {
   sessionId: 'SessionId2',
 };
 
 try {
-  const response = await api.listCalculationExecutions(
+  const response = await apiController.listCalculationExecutions(
     xAmzTarget,
     body
   );

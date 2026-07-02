@@ -6,7 +6,7 @@ Creates (registers) a data catalog with the specified name and properties. Catal
 
 ```csharp
 CreateDataCatalogAsync(
-    Models.XAmzTarget3 xAmzTarget,
+    Models.XAmzTarget3Enum xAmzTarget,
     Models.CreateDataCatalogInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-3.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget3Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-3.md) | Header, Required | - |
 | `body` | [`CreateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/create-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,22 +42,22 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget3 xAmzTarget = XAmzTarget3.EnumAmazonAthenaCreateDataCatalog;
+XAmzTarget3Enum xAmzTarget = XAmzTarget3Enum.EnumAmazonAthenaCreateDataCatalog;
 CreateDataCatalogInput body = new CreateDataCatalogInput
 {
     Name = "Name6",
-    Type = DataCatalogType1.Hive,
+    Type = DataCatalogType1Enum.HIVE,
 };
 
 try
 {
-    ApiResponse<object> result = await api.CreateDataCatalogAsync(
+    object result = await aPIController.CreateDataCatalogAsync(
         xAmzTarget,
         body
     );

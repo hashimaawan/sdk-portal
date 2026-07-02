@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRkNvbmZpZ3VyYXRpb25VcGRhdGVz
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -26,7 +24,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `ExecutionRole` | `*string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` |
 | `CustomerContentEncryptionConfiguration` | [`*models.CustomerContentEncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. |
 | `EnableMinimumEncryptionConfiguration` | `*bool` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -35,7 +32,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -45,24 +42,15 @@ func main() {
             OutputLocation:                models.ToPointer("OutputLocation0"),
             RemoveOutputLocation:          models.ToPointer(false),
             EncryptionConfiguration:       models.ToPointer(models.EncryptionConfiguration2{
-                EncryptionOption:      models.EncryptionOption1_SseS3,
-                KmsKey:                models.ToPointer("KmsKey6"),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                EncryptionOption:     models.EncryptionOption1Enum_SSES3,
+                KmsKey:               models.ToPointer("KmsKey6"),
             }),
             RemoveEncryptionConfiguration: models.ToPointer(false),
             ExpectedBucketOwner:           models.ToPointer("ExpectedBucketOwner0"),
-            AdditionalProperties:          map[string]interface{}{
-                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-            },
         }),
         PublishCloudWatchMetricsEnabled:              models.ToPointer(false),
         BytesScannedCutoffPerQuery:                   models.ToPointer(10000000),
         RemoveBytesScannedCutoffPerQuery:             models.ToPointer(false),
-        AdditionalProperties:                         map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

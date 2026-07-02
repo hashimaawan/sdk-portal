@@ -5,22 +5,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget31`
+`XAmzTarget31Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `EnumAmazonAthenaListApplicationDpuSizes` |
+| `EnumAmazonAthenaListApplicationDPUSizes` |
 
 
 # Example
 
 ```ts
-import { XAmzTarget31 } from 'amazon-athenalib';
+import { XAmzTarget31Enum } from 'amazon-athenalib';
 
-const xAmzTarget31 = XAmzTarget31.EnumAmazonAthenaListApplicationDpuSizes;
+const xAmzTarget31 = XAmzTarget31Enum.EnumAmazonAthenaListApplicationDPUSizes;
 ```
 
 

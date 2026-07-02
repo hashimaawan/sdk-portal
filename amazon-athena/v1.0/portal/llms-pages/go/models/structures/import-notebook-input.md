@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRkltcG9ydE5vdGVib29rSW5wdXQ
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,9 +15,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `WorkGroup` | `string` | Required | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `Name` | `string` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
 | `Payload` | `string` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `10485760` |
-| `Type` | [`models.NotebookType2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/notebook-type-2.md) | Required | - |
+| `Type` | [`models.NotebookType2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/notebook-type-2.md) | Required | - |
 | `ClientRequestToken` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `36`, *Pattern*: `[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -28,19 +25,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     importNotebookInput := models.ImportNotebookInput{
-        WorkGroup:             "WorkGroup2",
-        Name:                  "Name0",
-        Payload:               "Payload6",
-        Type:                  models.NotebookType2_Ipynb,
-        ClientRequestToken:    models.ToPointer("ClientRequestToken4"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        WorkGroup:            "WorkGroup2",
+        Name:                 "Name0",
+        Payload:              "Payload6",
+        Type:                 models.NotebookType2Enum_IPYNB,
+        ClientRequestToken:   models.ToPointer("ClientRequestToken4"),
     }
 
 }

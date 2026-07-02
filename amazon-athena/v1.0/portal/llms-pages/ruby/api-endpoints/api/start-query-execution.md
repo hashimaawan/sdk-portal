@@ -26,7 +26,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget47`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-47.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget47Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-47.md) | Header, Required | - |
 | `body` | [`StartQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/start-query-execution-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -41,28 +41,40 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`StartQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/start-query-execution-output.md).
+[`StartQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/start-query-execution-output.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget47::ENUM_AMAZONATHENASTARTQUERYEXECUTION
+x_amz_target = XAmzTarget47Enum::ENUM_AMAZONATHENASTARTQUERYEXECUTION
 
 body = StartQueryExecutionInput.new(
-  query_string: 'QueryString8'
+  'QueryString8',
+  nil,
+  QueryExecutionContext1.new,
+  ResultConfiguration1.new(
+    nil,
+    EncryptionConfiguration2.new(
+      envrr
+    ),
+    nil,
+    AclConfiguration1.new(
+      envrr
+    )
+  ),
+  nil,
+  [],
+  ResultReuseConfiguration1.new(
+    ResultReuseByAgeConfiguration2.new
+  )
 )
 
-result = client_api.start_query_execution(
+result = client_controller.start_query_execution(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

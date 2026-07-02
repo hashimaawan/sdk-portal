@@ -96,11 +96,11 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| region | `Region` | The AWS region<br>*Default*: `Region::USEAST1` |
+| region | `RegionEnum` | The AWS region<br>*Default*: `RegionEnum::USEAST1` |
 | environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | connection | `Faraday::Connection` | The Faraday connection object passed by the SDK user for making requests |
 | adapter | `Faraday::Adapter` | The Faraday adapter object passed by the SDK user for performing http requests |
-| timeout | `Float` | The value to use for connection timeout. <br> **Default: 30** |
+| timeout | `Float` | The value to use for connection timeout. <br> **Default: 60** |
 | max_retries | `Integer` | The number of times to retry an endpoint call if it fails. <br> **Default: 0** |
 | retry_interval | `Float` | Pause in seconds between retries. <br> **Default: 1** |
 | backoff_factor | `Float` | The amount to multiply each successive retry's interval amount by in order to provide backoff. <br> **Default: 2** |
@@ -108,7 +108,6 @@ The following parameters are configurable for the API Client:
 | retry_methods | `Array` | A list of HTTP methods to retry. <br> **Default: %i[get put get put]** |
 | http_callback | `HttpCallBack` | The Http CallBack allows defining callables for pre and post API calls. |
 | proxy_settings | [`ProxySettings`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/configuration/proxysettings.md) | Optional proxy configuration to route HTTP requests through a proxy server. |
-| logging_configuration | [`LoggingConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/configuration/loggingconfiguration.md) | The SDK logging configuration for API calls |
 | custom_header_authentication_credentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/getting-started/quickstart/authorization.md) | The credential object for Custom Header Signature |
 
 The API client can be initialized as follows:
@@ -124,16 +123,7 @@ client = Client.new(
     authorization: 'Authorization'
   ),
   environment: Environment::PRODUCTION,
-  region: Region::USEAST1,
-  logging_configuration: LoggingConfiguration.new(
-    log_level: Logger::INFO,
-    request_logging_config: RequestLoggingConfiguration.new(
-      log_body: true
-    ),
-    response_logging_config: ResponseLoggingConfiguration.new(
-      log_headers: true
-    )
-  )
+  region: RegionEnum::USEAST1
 )
 ```
 

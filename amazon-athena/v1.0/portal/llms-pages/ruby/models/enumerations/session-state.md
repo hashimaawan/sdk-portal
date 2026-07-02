@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState`
+`SessionStateEnum`
 
 
 # Fields
@@ -25,7 +25,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-session_state = SessionState::IDLE
+session_state = SessionStateEnum::IDLE
 ```
 
 

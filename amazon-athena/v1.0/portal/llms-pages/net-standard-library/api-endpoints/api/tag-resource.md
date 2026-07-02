@@ -6,7 +6,7 @@ Adds one or more tags to an Athena resource. A tag is a label that you assign to
 
 ```csharp
 TagResourceAsync(
-    Models.XAmzTarget51 xAmzTarget,
+    Models.XAmzTarget51Enum xAmzTarget,
     Models.TagResourceInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget51`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-51.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget51Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-51.md) | Header, Required | - |
 | `body` | [`TagResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/tag-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,16 +42,16 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget51 xAmzTarget = XAmzTarget51.EnumAmazonAthenaTagResource;
+XAmzTarget51Enum xAmzTarget = XAmzTarget51Enum.EnumAmazonAthenaTagResource;
 TagResourceInput body = new TagResourceInput
 {
-    ResourceArn = "ResourceARN4",
+    ResourceARN = "ResourceARN4",
     Tags = new List<Tag>
     {
         new Tag
@@ -62,7 +62,7 @@ TagResourceInput body = new TagResourceInput
 
 try
 {
-    ApiResponse<object> result = await api.TagResourceAsync(
+    object result = await aPIController.TagResourceAsync(
         xAmzTarget,
         body
     );

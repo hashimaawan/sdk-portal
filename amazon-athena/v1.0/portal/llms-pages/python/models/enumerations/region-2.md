@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`Region2`
+`Region2Enum`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.region_2 import Region2
+from amazonathena.models.region_2_enum import Region2Enum
 
-region_2 = Region2.CNNORTH1
+region_2 = Region2Enum.CNNORTH1
 ```
 
 

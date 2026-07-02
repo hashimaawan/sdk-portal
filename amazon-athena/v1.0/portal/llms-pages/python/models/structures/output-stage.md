@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRk91dHB1dFN0YWdl
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -23,14 +21,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `execution_time` | `int` | Optional | - |
 | `query_stage_plan` | [`QueryStagePlan`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/query-stage-plan.md) | Optional | - |
 | `sub_stages` | [`List[QueryStage]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/query-stage.md) | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.output_stage import OutputStage
 
 output_stage = OutputStage(
@@ -38,10 +33,7 @@ output_stage = OutputStage(
     state='State2',
     output_bytes=86,
     output_rows=180,
-    input_bytes=44,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    input_bytes=44
 )
 ```
 

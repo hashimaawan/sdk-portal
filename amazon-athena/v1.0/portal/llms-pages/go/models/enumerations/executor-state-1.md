@@ -8,19 +8,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`ExecutorState1`
+`ExecutorState1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Registered` |
-| `Terminating` |
-| `Terminated` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `REGISTERED` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `FAILED` |
 
 
 # Example
@@ -29,11 +29,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    executorState1 := models.ExecutorState1_Creating
+    executorState1 := models.ExecutorState1Enum_CREATING
 
 }
 ```

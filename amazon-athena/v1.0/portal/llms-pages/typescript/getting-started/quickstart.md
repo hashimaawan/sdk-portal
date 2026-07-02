@@ -97,12 +97,11 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| region | `Region` | The AWS region<br>*Default*: `Region.Useast1` |
+| region | `RegionEnum` | The AWS region<br>*Default*: `RegionEnum.Useast1` |
 | environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.Production`** |
-| timeout | `number` | Timeout for API calls.<br>*Default*: `30000` |
+| timeout | `number` | Timeout for API calls.<br>*Default*: `0` |
 | httpClientOptions | [`Partial<HttpClientOptions>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/sdk-infrastructure/configuration/httpclientoptions.md) | Stable configurable http client options. |
 | unstableHttpClientOptions | `any` | Unstable configurable http client options. |
-| logging | [`PartialLoggingOptions`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/sdk-infrastructure/configuration/partialloggingoptions.md) | Logging Configuration to enable logging |
 | customHeaderAuthenticationCredentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/getting-started/quickstart/authorization.md) | The credential object for customHeaderAuthentication |
 
 The API client can be initialized as follows:
@@ -110,24 +109,15 @@ The API client can be initialized as follows:
 ## Code-Based Client Initialization
 
 ```ts
-import { Client, Environment, LogLevel, Region } from 'amazon-athenalib';
+import { Client, Environment, RegionEnum } from 'amazon-athenalib';
 
 const client = new Client({
   customHeaderAuthenticationCredentials: {
     'Authorization': 'Authorization'
   },
-  timeout: 30000,
+  timeout: 0,
   environment: Environment.Production,
-  logging: {
-    logLevel: LogLevel.Info,
-    logRequest: {
-      logBody: true
-    },
-    logResponse: {
-      logHeaders: true
-    }
-  },
-  region: Region.Useast1,
+  region: RegionEnum.Useast1,
 });
 ```
 

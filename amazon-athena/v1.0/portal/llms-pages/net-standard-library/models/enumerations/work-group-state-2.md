@@ -7,15 +7,15 @@ The workgroup state that will be updated for the given workgroup.
 
 # Enum Type Name
 
-`WorkGroupState2`
+`WorkGroupState2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Enabled` |
-| `Disabled` |
+| `ENABLED` |
+| `DISABLED` |
 
 
 # Example
@@ -23,7 +23,7 @@ The workgroup state that will be updated for the given workgroup.
 ```csharp
 using AmazonAthena.Standard.Models;
 
-WorkGroupState2 workGroupState2 = WorkGroupState2.Enabled;
+WorkGroupState2Enum workGroupState2 = WorkGroupState2Enum.ENABLED;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -20,22 +18,18 @@ Provides information about an Athena query error. The <code>AthenaError</code> f
 | `ErrorType` | `Integer` | Optional | **Constraints**: `>= 0`, `<= 9999` | Integer getErrorType() | setErrorType(Integer errorType) |
 | `Retryable` | `Boolean` | Optional | - | Boolean getRetryable() | setRetryable(Boolean retryable) |
 | `ErrorMessage` | `String` | Optional | - | String getErrorMessage() | setErrorMessage(String errorMessage) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.AthenaError;
-import java.io.IOException;
 
 AthenaError athenaError = new AthenaError.Builder()
     .errorCategory(3)
     .errorType(238)
     .retryable(false)
     .errorMessage("ErrorMessage0")
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

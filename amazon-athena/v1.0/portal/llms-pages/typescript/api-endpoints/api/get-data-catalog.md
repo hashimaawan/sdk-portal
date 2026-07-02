@@ -6,7 +6,7 @@ Returns the specified data catalog.
 
 ```ts
 async getDataCatalog(
-  xAmzTarget: XAmzTarget18,
+  xAmzTarget: XAmzTarget18Enum,
   body: GetDataCatalogInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-18.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget18Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-18.md) | Header, Required | - |
 | `body` | [`GetDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget18.EnumAmazonAthenaGetDataCatalog;
+const xAmzTarget = XAmzTarget18Enum.EnumAmazonAthenaGetDataCatalog;
 
 const body: GetDataCatalogInput = {
   name: 'Name6',
 };
 
 try {
-  const response = await api.getDataCatalog(
+  const response = await apiController.getDataCatalog(
     xAmzTarget,
     body
   );

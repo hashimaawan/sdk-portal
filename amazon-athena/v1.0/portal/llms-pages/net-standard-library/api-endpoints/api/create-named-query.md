@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```csharp
 CreateNamedQueryAsync(
-    Models.XAmzTarget4 xAmzTarget,
+    Models.XAmzTarget4Enum xAmzTarget,
     Models.CreateNamedQueryInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-4.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget4Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-4.md) | Header, Required | - |
 | `body` | [`CreateNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/create-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -43,13 +43,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.CreateNamedQueryOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/create-named-query-output.md).
+[`Task<Models.CreateNamedQueryOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/create-named-query-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget4 xAmzTarget = XAmzTarget4.EnumAmazonAthenaCreateNamedQuery;
+XAmzTarget4Enum xAmzTarget = XAmzTarget4Enum.EnumAmazonAthenaCreateNamedQuery;
 CreateNamedQueryInput body = new CreateNamedQueryInput
 {
     Name = "Name6",
@@ -59,7 +59,7 @@ CreateNamedQueryInput body = new CreateNamedQueryInput
 
 try
 {
-    ApiResponse<CreateNamedQueryOutput> result = await api.CreateNamedQueryAsync(
+    CreateNamedQueryOutput result = await aPIController.CreateNamedQueryAsync(
         xAmzTarget,
         body
     );

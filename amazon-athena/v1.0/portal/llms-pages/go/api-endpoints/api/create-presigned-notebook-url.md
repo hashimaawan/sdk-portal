@@ -7,7 +7,7 @@ Gets an authentication token and the URL at which the notebook can be accessed. 
 ```go
 CreatePresignedNotebookUrl(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget7,
+    xAmzTarget models.XAmzTarget7Enum,
     body models.CreatePresignedNotebookUrlRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget7`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-7.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget7Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-7.md) | Header, Required | - |
 | `body` | [`models.CreatePresignedNotebookUrlRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/create-presigned-notebook-url-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget7_EnumAmazonathenacreatepresignednotebookurl
+xAmzTarget := models.XAmzTarget7Enum_ENUMAMAZONATHENACREATEPRESIGNEDNOTEBOOKURL
 
 body := models.CreatePresignedNotebookUrlRequest{
-    SessionId:             "SessionId2",
+    SessionId:            "SessionId2",
 }
 
-apiResponse, err := api.CreatePresignedNotebookUrl(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.CreatePresignedNotebookUrl(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

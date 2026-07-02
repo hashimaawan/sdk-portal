@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`StatementType`
+`StatementTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ddl` |
-| `Dml` |
-| `Utility` |
+| `DDL` |
+| `DML` |
+| `UTILITY` |
 
 
 # Example
@@ -22,7 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-StatementType statementType = StatementType.Ddl;
+StatementTypeEnum statementType = StatementTypeEnum.DDL;
 ```
 
 

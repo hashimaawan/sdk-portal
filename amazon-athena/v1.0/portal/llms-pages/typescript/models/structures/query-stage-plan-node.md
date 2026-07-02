@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Stage plan information such as name, identifier, sub plans, and remote sources.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -20,7 +18,6 @@ Stage plan information such as name, identifier, sub plans, and remote sources.
 | `identifier` | `string \| undefined` | Optional | - |
 | `children` | [`QueryStagePlanNode[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/query-stage-plan-node.md) | Optional | - |
 | `remoteSources` | `string[] \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -44,9 +41,6 @@ const queryStagePlanNode: QueryStagePlanNode = {
         'RemoteSources5',
         'RemoteSources6'
       ],
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     }
   ],
   remoteSources: [
@@ -54,9 +48,6 @@ const queryStagePlanNode: QueryStagePlanNode = {
     'RemoteSources3',
     'RemoteSources4'
   ],
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

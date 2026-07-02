@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/java/x-redirect/JTI0bSUyRlJlc3VsdENvbmZpZ3VyYXRpb25VcGRhdGVzMg
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -22,30 +20,25 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `RemoveExpectedBucketOwner` | `Boolean` | Optional | - | Boolean getRemoveExpectedBucketOwner() | setRemoveExpectedBucketOwner(Boolean removeExpectedBucketOwner) |
 | `AclConfiguration` | [`AclConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/acl-configuration-1.md) | Optional | - | AclConfiguration1 getAclConfiguration() | setAclConfiguration(AclConfiguration1 aclConfiguration) |
 | `RemoveAclConfiguration` | `Boolean` | Optional | - | Boolean getRemoveAclConfiguration() | setRemoveAclConfiguration(Boolean removeAclConfiguration) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.EncryptionConfiguration2;
-import com.amazonaws.useast1.athena.models.EncryptionOption1;
+import com.amazonaws.useast1.athena.models.EncryptionOption1Enum;
 import com.amazonaws.useast1.athena.models.ResultConfigurationUpdates2;
-import java.io.IOException;
 
 ResultConfigurationUpdates2 resultConfigurationUpdates2 = new ResultConfigurationUpdates2.Builder()
     .outputLocation("OutputLocation4")
     .removeOutputLocation(false)
     .encryptionConfiguration(new EncryptionConfiguration2.Builder(
-        EncryptionOption1.SSE_S3
+        EncryptionOption1Enum.SSE_S3
     )
     .kmsKey("KmsKey6")
-    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
     .removeEncryptionConfiguration(false)
     .expectedBucketOwner("ExpectedBucketOwner4")
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

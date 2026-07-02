@@ -6,7 +6,7 @@ Gets the current status of a session.
 
 ```ts
 async getSessionStatus(
-  xAmzTarget: XAmzTarget27,
+  xAmzTarget: XAmzTarget27Enum,
   body: GetSessionStatusRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget27`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-27.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget27Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-27.md) | Header, Required | - |
 | `body` | [`GetSessionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-session-status-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget27.EnumAmazonAthenaGetSessionStatus;
+const xAmzTarget = XAmzTarget27Enum.EnumAmazonAthenaGetSessionStatus;
 
 const body: GetSessionStatusRequest = {
   sessionId: 'SessionId2',
 };
 
 try {
-  const response = await api.getSessionStatus(
+  const response = await apiController.getSessionStatus(
     xAmzTarget,
     body
   );

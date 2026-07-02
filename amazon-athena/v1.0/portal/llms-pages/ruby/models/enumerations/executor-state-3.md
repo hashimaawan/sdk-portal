@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState3`
+`ExecutorState3Enum`
 
 
 # Fields
@@ -26,7 +26,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-executor_state3 = ExecutorState3::REGISTERED
+executor_state3 = ExecutorState3Enum::REGISTERED
 ```
 
 

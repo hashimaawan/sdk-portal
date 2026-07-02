@@ -7,7 +7,7 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 
 # Enum Type Name
 
-`DataCatalogType1`
+`DataCatalogType1Enum`
 
 
 # Fields
@@ -22,7 +22,7 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 # Example
 
 ```ruby
-data_catalog_type1 = DataCatalogType1::GLUE
+data_catalog_type1 = DataCatalogType1Enum::GLUE
 ```
 
 

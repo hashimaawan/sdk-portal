@@ -6,7 +6,7 @@ Deletes the prepared statement with the specified name from the specified workgr
 
 ```csharp
 DeletePreparedStatementAsync(
-    Models.XAmzTarget12 xAmzTarget,
+    Models.XAmzTarget12Enum xAmzTarget,
     Models.DeletePreparedStatementInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget12`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-12.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget12Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-12.md) | Header, Required | - |
 | `body` | [`DeletePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/delete-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget12 xAmzTarget = XAmzTarget12.EnumAmazonAthenaDeletePreparedStatement;
+XAmzTarget12Enum xAmzTarget = XAmzTarget12Enum.EnumAmazonAthenaDeletePreparedStatement;
 DeletePreparedStatementInput body = new DeletePreparedStatementInput
 {
     StatementName = "StatementName4",
@@ -57,7 +57,7 @@ DeletePreparedStatementInput body = new DeletePreparedStatementInput
 
 try
 {
-    ApiResponse<object> result = await api.DeletePreparedStatementAsync(
+    object result = await aPIController.DeletePreparedStatementAsync(
         xAmzTarget,
         body
     );

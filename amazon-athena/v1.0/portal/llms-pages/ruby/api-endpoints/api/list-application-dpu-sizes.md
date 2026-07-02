@@ -28,8 +28,8 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget31`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-31.md) | Header, Required | - |
-| `body` | [`ListApplicationDpuSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
+| `x_amz_target` | [`XAmzTarget31Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-31.md) | Header, Required | - |
+| `body` | [`ListApplicationDPUSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
 | `x_amz_algorithm` | `String` | Header, Optional | - |
@@ -45,26 +45,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`ListApplicationDpuSizesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-application-dpu-sizes-output.md).
+[`ListApplicationDPUSizesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/list-application-dpu-sizes-output.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget31::ENUM_AMAZONATHENALISTAPPLICATIONDPUSIZES
+x_amz_target = XAmzTarget31Enum::ENUM_AMAZONATHENALISTAPPLICATIONDPUSIZES
 
-body = ListApplicationDpuSizesInput.new
+body = ListApplicationDPUSizesInput.new
 
-result = client_api.list_application_dpu_sizes(
+result = client_controller.list_application_dpu_sizes(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

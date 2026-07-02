@@ -7,7 +7,7 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Enum Type Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 # Example
 
 ```php
-use AmazonAthenaLib\Models\ExecutorType2;
+use AmazonAthenaLib\Models\ExecutorType2Enum;
 
-$executorType2 = ExecutorType2::COORDINATOR;
+$executorType2 = ExecutorType2Enum::COORDINATOR;
 ```
 
 

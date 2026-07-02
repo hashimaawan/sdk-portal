@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRlN0YXJ0U2Vzc2lvblJlc3BvbnNl
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -15,8 +13,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `SessionId` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
-| `State` | [`*models.SessionState1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/session-state-1.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
+| `State` | [`*models.SessionState1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/session-state-1.md) | Optional | - |
 
 
 # Example
@@ -25,16 +22,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     startSessionResponse := models.StartSessionResponse{
-        SessionId:             models.ToPointer("SessionId4"),
-        State:                 models.ToPointer(models.SessionState1_Creating),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        SessionId:            models.ToPointer("SessionId4"),
+        State:                models.ToPointer(models.SessionState1Enum_CREATING),
     }
 
 }

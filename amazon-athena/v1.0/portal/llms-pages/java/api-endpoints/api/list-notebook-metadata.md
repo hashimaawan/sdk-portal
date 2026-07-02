@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Displays the notebook files for the specified workgroup in paginated format.
 
 ```java
-CompletableFuture<ApiResponse<ListNotebookMetadataOutput>> listNotebookMetadataAsync(
-    final XAmzTarget38 xAmzTarget,
+CompletableFuture<ListNotebookMetadataOutput> listNotebookMetadataAsync(
+    final XAmzTarget38Enum xAmzTarget,
     final ListNotebookMetadataInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget38`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-38.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget38Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-38.md) | Header, Required | - |
 | `body` | [`ListNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListNotebookMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-notebook-metadata-output.md).
+[`ListNotebookMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-notebook-metadata-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget38 xAmzTarget = XAmzTarget38.ENUM_AMAZONATHENALISTNOTEBOOKMETADATA;
+XAmzTarget38Enum xAmzTarget = XAmzTarget38Enum.ENUM_AMAZONATHENALISTNOTEBOOKMETADATA;
 ListNotebookMetadataInput body = new ListNotebookMetadataInput.Builder(
     "WorkGroup8"
 )
 .build();
 
 
-api.listNotebookMetadataAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listNotebookMetadataAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

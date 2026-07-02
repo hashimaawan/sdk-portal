@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`DataCatalogType`
+`DataCatalogTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -22,7 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-DataCatalogType dataCatalogType = DataCatalogType.Hive;
+DataCatalogTypeEnum dataCatalogType = DataCatalogTypeEnum.HIVE;
 ```
 
 

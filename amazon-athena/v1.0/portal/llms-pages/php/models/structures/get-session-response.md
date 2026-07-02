@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkdldFNlc3Npb25SZXNwb25zZQ
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -23,7 +21,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `sessionConfiguration` | [`?SessionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/session-configuration-2.md) | Optional | - | getSessionConfiguration(): ?SessionConfiguration2 | setSessionConfiguration(?SessionConfiguration2 sessionConfiguration): void |
 | `status` | [`?Status3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/status-3.md) | Optional | - | getStatus(): ?Status3 | setStatus(?Status3 status): void |
 | `statistics` | [`?Statistics3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/statistics-3.md) | Optional | - | getStatistics(): ?Statistics3 | setStatistics(?Statistics3 statistics): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -32,7 +29,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 use AmazonAthenaLib\Models\Builders\GetSessionResponseBuilder;
 use AmazonAthenaLib\Models\Builders\EngineConfiguration1Builder;
 use AmazonAthenaLib\Models\Builders\AdditionalConfigsBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $getSessionResponse = GetSessionResponseBuilder::init()
     ->sessionId('SessionId6')
@@ -46,15 +42,9 @@ $getSessionResponse = GetSessionResponseBuilder::init()
             ->coordinatorDpuSize(1)
             ->defaultExecutorDpuSize(1)
             ->additionalConfigs(
-                AdditionalConfigsBuilder::init()
-                    ->additionalProperty('exampleAdditionalProperty', 'AdditionalConfigs_additionalProperties5')
-                    ->build()
-            )
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-            ->build()
-    )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
-    ->build();
+                AdditionalConfigsBuilder::init()->build()
+            )->build()
+    )->build();
 ```
 
 

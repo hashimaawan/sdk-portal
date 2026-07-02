@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```ts
 async listDataCatalogs(
-  xAmzTarget: XAmzTarget33,
+  xAmzTarget: XAmzTarget33Enum,
   body: ListDataCatalogsInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget33`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-33.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget33Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-33.md) | Header, Required | - |
 | `body` | [`ListDataCatalogsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-data-catalogs-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -56,13 +56,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget33.EnumAmazonAthenaListDataCatalogs;
+const xAmzTarget = XAmzTarget33Enum.EnumAmazonAthenaListDataCatalogs;
 
 const body: ListDataCatalogsInput = {
 };
 
 try {
-  const response = await api.listDataCatalogs(
+  const response = await apiController.listDataCatalogs(
     xAmzTarget,
     body
   );

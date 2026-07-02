@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/ruby/x-redirect/JTI0bSUyRkxpc3ROb3RlYm9va1Nlc3Npb25zUmVxdWVzdA
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,19 +15,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `notebook_id` | `String` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `36`, *Pattern*: `[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}` |
 | `max_results` | `Integer` | Optional | **Constraints**: `>= 1`, `<= 100` |
 | `next_token` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 list_notebook_sessions_request = ListNotebookSessionsRequest.new(
-  notebook_id: 'NotebookId6',
-  max_results: 100,
-  next_token: 'NextToken6',
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  'NotebookId6',
+  100,
+  'NextToken6'
 )
 ```
 

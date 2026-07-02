@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -16,22 +14,21 @@ If query and calculation results are encrypted in Amazon S3, indicates the encry
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `encryptionOption` | [`EncryptionOption1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/encryption-option-1.md) | Required | - |
+| `encryptionOption` | [`EncryptionOption1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/encryption-option-1.md) | Required | - |
 | `kmsKey` | `string \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { EncryptionConfiguration, EncryptionOption1 } from 'amazon-athenalib';
+import {
+  EncryptionConfiguration,
+  EncryptionOption1Enum,
+} from 'amazon-athenalib';
 
 const encryptionConfiguration: EncryptionConfiguration = {
-  encryptionOption: EncryptionOption1.SseKms,
+  encryptionOption: EncryptionOption1Enum.SSEKMS,
   kmsKey: 'KmsKey6',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

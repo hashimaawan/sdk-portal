@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -21,14 +19,11 @@ Timeline statistics such as query queue time, planning time, execution time, ser
 | `engine_execution_time_in_millis` | `int` | Optional | - |
 | `service_processing_time_in_millis` | `int` | Optional | - |
 | `total_execution_time_in_millis` | `int` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.query_runtime_statistics_timeline import QueryRuntimeStatisticsTimeline
 
 query_runtime_statistics_timeline = QueryRuntimeStatisticsTimeline(
@@ -36,10 +31,7 @@ query_runtime_statistics_timeline = QueryRuntimeStatisticsTimeline(
     query_planning_time_in_millis=24,
     engine_execution_time_in_millis=54,
     service_processing_time_in_millis=72,
-    total_execution_time_in_millis=92,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    total_execution_time_in_millis=92
 )
 ```
 

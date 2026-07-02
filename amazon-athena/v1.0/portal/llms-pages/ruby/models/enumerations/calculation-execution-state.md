@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState`
+`CalculationExecutionStateEnum`
 
 
 # Fields
@@ -25,7 +25,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-calculation_execution_state = CalculationExecutionState::CANCELING
+calculation_execution_state = CalculationExecutionStateEnum::CANCELING
 ```
 
 

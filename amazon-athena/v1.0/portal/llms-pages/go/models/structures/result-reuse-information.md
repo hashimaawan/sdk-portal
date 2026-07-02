@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains information about whether the result of a previous query was reused.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ Contains information about whether the result of a previous query was reused.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ReusedPreviousResult` | `bool` | Required | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +23,12 @@ Contains information about whether the result of a previous query was reused.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     resultReuseInformation := models.ResultReuseInformation{
-        ReusedPreviousResult:  false,
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        ReusedPreviousResult: false,
     }
 
 }

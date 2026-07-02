@@ -5,24 +5,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`DataCatalogType`
+`DataCatalogTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
 
 ```ts
-import { DataCatalogType } from 'amazon-athenalib';
+import { DataCatalogTypeEnum } from 'amazon-athenalib';
 
-const dataCatalogType = DataCatalogType.Hive;
+const dataCatalogType = DataCatalogTypeEnum.HIVE;
 ```
 
 

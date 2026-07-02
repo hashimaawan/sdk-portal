@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRkNvbmZpZ3VyYXRpb25VcGRhdGVz
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -26,13 +24,15 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `executionRole` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` |
 | `customerContentEncryptionConfiguration` | [`CustomerContentEncryptionConfiguration \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. |
 | `enableMinimumEncryptionConfiguration` | `boolean \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { ConfigurationUpdates, EncryptionOption1 } from 'amazon-athenalib';
+import {
+  ConfigurationUpdates,
+  EncryptionOption1Enum,
+} from 'amazon-athenalib';
 
 const configurationUpdates: ConfigurationUpdates = {
   enforceWorkGroupConfiguration: false,
@@ -40,24 +40,15 @@ const configurationUpdates: ConfigurationUpdates = {
     outputLocation: 'OutputLocation0',
     removeOutputLocation: false,
     encryptionConfiguration: {
-      encryptionOption: EncryptionOption1.SseS3,
+      encryptionOption: EncryptionOption1Enum.SSES3,
       kmsKey: 'KmsKey6',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     removeEncryptionConfiguration: false,
     expectedBucketOwner: 'ExpectedBucketOwner0',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   publishCloudWatchMetricsEnabled: false,
   bytesScannedCutoffPerQuery: 10000000,
   removeBytesScannedCutoffPerQuery: false,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

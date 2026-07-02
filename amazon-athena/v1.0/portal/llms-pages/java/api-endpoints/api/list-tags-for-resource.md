@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists the tags associated with an Athena workgroup or data catalog resource.
 
 ```java
-CompletableFuture<ApiResponse<ListTagsForResourceOutput>> listTagsForResourceAsync(
-    final XAmzTarget44 xAmzTarget,
+CompletableFuture<ListTagsForResourceOutput> listTagsForResourceAsync(
+    final XAmzTarget44Enum xAmzTarget,
     final ListTagsForResourceInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-44.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget44Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-44.md) | Header, Required | - |
 | `body` | [`ListTagsForResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-tags-for-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListTagsForResourceOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-tags-for-resource-output.md).
+[`ListTagsForResourceOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-tags-for-resource-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget44 xAmzTarget = XAmzTarget44.ENUM_AMAZONATHENALISTTAGSFORRESOURCE;
+XAmzTarget44Enum xAmzTarget = XAmzTarget44Enum.ENUM_AMAZONATHENALISTTAGSFORRESOURCE;
 ListTagsForResourceInput body = new ListTagsForResourceInput.Builder(
     "ResourceARN4"
 )
 .build();
 
 
-api.listTagsForResourceAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listTagsForResourceAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

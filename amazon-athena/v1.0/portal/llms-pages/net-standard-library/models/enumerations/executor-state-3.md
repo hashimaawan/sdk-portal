@@ -8,19 +8,19 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState3`
+`ExecutorState3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Registered` |
-| `Terminating` |
-| `Terminated` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `REGISTERED` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `FAILED` |
 
 
 # Example
@@ -28,7 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-ExecutorState3 executorState3 = ExecutorState3.Creating;
+ExecutorState3Enum executorState3 = ExecutorState3Enum.CREATING;
 ```
 
 

@@ -7,7 +7,7 @@ Returns information about a single execution of a query if you have access to th
 ```go
 GetQueryExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget23,
+    xAmzTarget models.XAmzTarget23Enum,
     body models.GetQueryExecutionInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget23`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-23.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget23Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-23.md) | Header, Required | - |
 | `body` | [`models.GetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget23_EnumAmazonathenagetqueryexecution
+xAmzTarget := models.XAmzTarget23Enum_ENUMAMAZONATHENAGETQUERYEXECUTION
 
 body := models.GetQueryExecutionInput{
-    QueryExecutionId:      "QueryExecutionId0",
+    QueryExecutionId:     "QueryExecutionId0",
 }
 
-apiResponse, err := api.GetQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

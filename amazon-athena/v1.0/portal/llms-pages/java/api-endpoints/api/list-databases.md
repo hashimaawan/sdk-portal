@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists the databases in the specified data catalog.
 
 ```java
-CompletableFuture<ApiResponse<ListDatabasesOutput>> listDatabasesAsync(
-    final XAmzTarget34 xAmzTarget,
+CompletableFuture<ListDatabasesOutput> listDatabasesAsync(
+    final XAmzTarget34Enum xAmzTarget,
     final ListDatabasesInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget34`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-34.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget34Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-34.md) | Header, Required | - |
 | `body` | [`ListDatabasesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-databases-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListDatabasesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-databases-output.md).
+[`ListDatabasesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-databases-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget34 xAmzTarget = XAmzTarget34.ENUM_AMAZONATHENALISTDATABASES;
+XAmzTarget34Enum xAmzTarget = XAmzTarget34Enum.ENUM_AMAZONATHENALISTDATABASES;
 ListDatabasesInput body = new ListDatabasesInput.Builder(
     "CatalogName0"
 )
 .build();
 
 
-api.listDatabasesAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listDatabasesAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

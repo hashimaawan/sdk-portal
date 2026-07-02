@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -21,15 +19,12 @@ Timeline statistics such as query queue time, planning time, execution time, ser
 | `EngineExecutionTimeInMillis` | `Integer` | Optional | - | Integer getEngineExecutionTimeInMillis() | setEngineExecutionTimeInMillis(Integer engineExecutionTimeInMillis) |
 | `ServiceProcessingTimeInMillis` | `Integer` | Optional | - | Integer getServiceProcessingTimeInMillis() | setServiceProcessingTimeInMillis(Integer serviceProcessingTimeInMillis) |
 | `TotalExecutionTimeInMillis` | `Integer` | Optional | - | Integer getTotalExecutionTimeInMillis() | setTotalExecutionTimeInMillis(Integer totalExecutionTimeInMillis) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.QueryRuntimeStatisticsTimeline;
-import java.io.IOException;
 
 QueryRuntimeStatisticsTimeline queryRuntimeStatisticsTimeline = new QueryRuntimeStatisticsTimeline.Builder()
     .queryQueueTimeInMillis(122)
@@ -37,7 +32,6 @@ QueryRuntimeStatisticsTimeline queryRuntimeStatisticsTimeline = new QueryRuntime
     .engineExecutionTimeInMillis(78)
     .serviceProcessingTimeInMillis(96)
     .totalExecutionTimeInMillis(140)
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

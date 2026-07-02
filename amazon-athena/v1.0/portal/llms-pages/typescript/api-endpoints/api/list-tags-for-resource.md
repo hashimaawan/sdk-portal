@@ -6,7 +6,7 @@ Lists the tags associated with an Athena workgroup or data catalog resource.
 
 ```ts
 async listTagsForResource(
-  xAmzTarget: XAmzTarget44,
+  xAmzTarget: XAmzTarget44Enum,
   body: ListTagsForResourceInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-44.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget44Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-44.md) | Header, Required | - |
 | `body` | [`ListTagsForResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-tags-for-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,14 +55,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget44.EnumAmazonAthenaListTagsForResource;
+const xAmzTarget = XAmzTarget44Enum.EnumAmazonAthenaListTagsForResource;
 
 const body: ListTagsForResourceInput = {
-  resourceArn: 'ResourceARN4',
+  resourceARN: 'ResourceARN4',
 };
 
 try {
-  const response = await api.listTagsForResource(
+  const response = await apiController.listTagsForResource(
     xAmzTarget,
     body
   );

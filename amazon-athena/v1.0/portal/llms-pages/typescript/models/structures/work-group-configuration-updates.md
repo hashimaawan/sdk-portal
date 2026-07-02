@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -28,14 +26,13 @@ The configuration information that will be updated for this workgroup, which inc
 | `executionRole` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` |
 | `customerContentEncryptionConfiguration` | [`CustomerContentEncryptionConfiguration \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. |
 | `enableMinimumEncryptionConfiguration` | `boolean \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  EncryptionOption1,
+  EncryptionOption1Enum,
   WorkGroupConfigurationUpdates,
 } from 'amazon-athenalib';
 
@@ -45,24 +42,15 @@ const workGroupConfigurationUpdates: WorkGroupConfigurationUpdates = {
     outputLocation: 'OutputLocation0',
     removeOutputLocation: false,
     encryptionConfiguration: {
-      encryptionOption: EncryptionOption1.SseS3,
+      encryptionOption: EncryptionOption1Enum.SSES3,
       kmsKey: 'KmsKey6',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     removeEncryptionConfiguration: false,
     expectedBucketOwner: 'ExpectedBucketOwner0',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   publishCloudWatchMetricsEnabled: false,
   bytesScannedCutoffPerQuery: 10000000,
   removeBytesScannedCutoffPerQuery: false,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

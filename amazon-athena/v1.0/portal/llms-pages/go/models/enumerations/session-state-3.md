@@ -8,21 +8,21 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`SessionState3`
+`SessionState3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Idle` |
-| `Busy` |
-| `Terminating` |
-| `Terminated` |
-| `Degraded` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `IDLE` |
+| `BUSY` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `DEGRADED` |
+| `FAILED` |
 
 
 # Example
@@ -31,11 +31,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    sessionState3 := models.SessionState3_Degraded
+    sessionState3 := models.SessionState3Enum_DEGRADED
 
 }
 ```

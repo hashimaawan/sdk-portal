@@ -7,7 +7,7 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
@@ -20,9 +20,9 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 # Example
 
 ```php
-use AmazonAthenaLib\Models\NotebookType1;
+use AmazonAthenaLib\Models\NotebookType1Enum;
 
-$notebookType1 = NotebookType1::IPYNB;
+$notebookType1 = NotebookType1Enum::IPYNB;
 ```
 
 

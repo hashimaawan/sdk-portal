@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<ListQueryExecutionsOutput>> listQueryExecutionsAsync(
-    final XAmzTarget41 xAmzTarget,
+CompletableFuture<ListQueryExecutionsOutput> listQueryExecutionsAsync(
+    final XAmzTarget41Enum xAmzTarget,
     final ListQueryExecutionsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget41`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-41.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget41Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-41.md) | Header, Required | - |
 | `body` | [`ListQueryExecutionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-query-executions-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -47,18 +47,18 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListQueryExecutionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-query-executions-output.md).
+[`ListQueryExecutionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-query-executions-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget41 xAmzTarget = XAmzTarget41.ENUM_AMAZONATHENALISTQUERYEXECUTIONS;
+XAmzTarget41Enum xAmzTarget = XAmzTarget41Enum.ENUM_AMAZONATHENALISTQUERYEXECUTIONS;
 ListQueryExecutionsInput body = new ListQueryExecutionsInput.Builder()
     .build();
 
 
-api.listQueryExecutionsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listQueryExecutionsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -7,7 +7,7 @@ Creates a session for running calculations within a workgroup. The session is re
 ```go
 StartSession(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget48,
+    xAmzTarget models.XAmzTarget48Enum,
     body models.StartSessionRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget48`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-48.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget48Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-48.md) | Header, Required | - |
 | `body` | [`models.StartSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/start-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,7 +53,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget48_EnumAmazonathenastartsession
+xAmzTarget := models.XAmzTarget48Enum_ENUMAMAZONATHENASTARTSESSION
 
 body := models.StartSessionRequest{
     WorkGroup:                   "WorkGroup8",
@@ -62,7 +62,7 @@ body := models.StartSessionRequest{
     },
 }
 
-apiResponse, err := api.StartSession(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.StartSession(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

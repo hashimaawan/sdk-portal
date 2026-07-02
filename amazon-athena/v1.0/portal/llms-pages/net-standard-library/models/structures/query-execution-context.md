@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The database and data catalog context in which the query execution occurs.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -18,20 +16,17 @@ The database and data catalog context in which the query execution occurs.
 |  --- | --- | --- | --- |
 | `Database` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
 | `Catalog` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 QueryExecutionContext queryExecutionContext = new QueryExecutionContext
 {
     Database = "Database0",
     Catalog = "Catalog6",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

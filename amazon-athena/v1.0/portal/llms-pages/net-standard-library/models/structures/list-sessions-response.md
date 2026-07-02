@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkxpc3RTZXNzaW9uc1Jlc3BvbnNl
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -16,14 +14,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `NextToken` | `string` | Optional | **Constraints**: *Maximum Length*: `2048` |
 | `Sessions` | [`List<SessionSummary>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/session-summary.md) | Optional | **Constraints**: *Minimum Items*: `0`, *Maximum Items*: `100` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -40,7 +36,6 @@ ListSessionsResponse listSessionsResponse = new ListSessionsResponse
             {
                 SelectedEngineVersion = "SelectedEngineVersion4",
                 EffectiveEngineVersion = "EffectiveEngineVersion6",
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             NotebookVersion = "NotebookVersion6",
             Status = new Status3
@@ -57,10 +52,8 @@ ListSessionsResponse listSessionsResponse = new ListSessionsResponse
                 IdleSinceDateTime = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
                     provider: CultureInfo.InvariantCulture,
                     DateTimeStyles.RoundtripKind),
-                State = SessionState1.Terminating,
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+                State = SessionState1Enum.TERMINATING,
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         new SessionSummary
         {
@@ -70,7 +63,6 @@ ListSessionsResponse listSessionsResponse = new ListSessionsResponse
             {
                 SelectedEngineVersion = "SelectedEngineVersion4",
                 EffectiveEngineVersion = "EffectiveEngineVersion6",
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             NotebookVersion = "NotebookVersion6",
             Status = new Status3
@@ -87,10 +79,8 @@ ListSessionsResponse listSessionsResponse = new ListSessionsResponse
                 IdleSinceDateTime = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
                     provider: CultureInfo.InvariantCulture,
                     DateTimeStyles.RoundtripKind),
-                State = SessionState1.Terminating,
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+                State = SessionState1Enum.TERMINATING,
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         new SessionSummary
         {
@@ -100,7 +90,6 @@ ListSessionsResponse listSessionsResponse = new ListSessionsResponse
             {
                 SelectedEngineVersion = "SelectedEngineVersion4",
                 EffectiveEngineVersion = "EffectiveEngineVersion6",
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             NotebookVersion = "NotebookVersion6",
             Status = new Status3
@@ -117,13 +106,10 @@ ListSessionsResponse listSessionsResponse = new ListSessionsResponse
                 IdleSinceDateTime = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
                     provider: CultureInfo.InvariantCulture,
                     DateTimeStyles.RoundtripKind),
-                State = SessionState1.Terminating,
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+                State = SessionState1Enum.TERMINATING,
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

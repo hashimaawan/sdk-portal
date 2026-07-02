@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`QueryExecutionState`
+`QueryExecutionStateEnum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.QueryExecutionState;
+import com.amazonaws.useast1.athena.models.QueryExecutionStateEnum;
 
-QueryExecutionState queryExecutionState = QueryExecutionState.CANCELLED;
+QueryExecutionStateEnum queryExecutionState = QueryExecutionStateEnum.CANCELLED;
 ```
 
 

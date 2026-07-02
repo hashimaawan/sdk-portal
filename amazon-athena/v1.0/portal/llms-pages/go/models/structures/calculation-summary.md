@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Summary information for a notebook calculation.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -19,7 +17,6 @@ Summary information for a notebook calculation.
 | `CalculationExecutionId` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `36` |
 | `Description` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `Status` | [`*models.Status1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/status-1.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -30,7 +27,7 @@ package main
 import (
     "log"
     "time"
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -45,17 +42,11 @@ func main() {
         CalculationExecutionId: models.ToPointer("CalculationExecutionId4"),
         Description:            models.ToPointer("Description6"),
         Status:                 models.ToPointer(models.Status1{
-            SubmissionDateTime:    models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-            CompletionDateTime:    models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-            State:                 models.ToPointer(models.CalculationExecutionState1_Canceling),
-            StateChangeReason:     models.ToPointer("StateChangeReason8"),
-            AdditionalProperties:  map[string]interface{}{
-                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-            },
+            SubmissionDateTime:   models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
+            CompletionDateTime:   models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
+            State:                models.ToPointer(models.CalculationExecutionState1Enum_CANCELING),
+            StateChangeReason:    models.ToPointer("StateChangeReason8"),
         }),
-        AdditionalProperties:   map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

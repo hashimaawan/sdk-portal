@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns a list of engine versions that are available to choose from, including the Auto option.
 
 ```java
-CompletableFuture<ApiResponse<ListEngineVersionsOutput>> listEngineVersionsAsync(
-    final XAmzTarget35 xAmzTarget,
+CompletableFuture<ListEngineVersionsOutput> listEngineVersionsAsync(
+    final XAmzTarget35Enum xAmzTarget,
     final ListEngineVersionsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget35`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-35.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget35Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-35.md) | Header, Required | - |
 | `body` | [`ListEngineVersionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-engine-versions-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,18 +46,18 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListEngineVersionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-engine-versions-output.md).
+[`ListEngineVersionsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-engine-versions-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget35 xAmzTarget = XAmzTarget35.ENUM_AMAZONATHENALISTENGINEVERSIONS;
+XAmzTarget35Enum xAmzTarget = XAmzTarget35Enum.ENUM_AMAZONATHENALISTENGINEVERSIONS;
 ListEngineVersionsInput body = new ListEngineVersionsInput.Builder()
     .build();
 
 
-api.listEngineVersionsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listEngineVersionsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

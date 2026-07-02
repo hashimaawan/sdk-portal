@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains an array of query execution IDs.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,19 +15,15 @@ Contains an array of query execution IDs.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `query_execution_ids` | `Array[String]` | Required | **Constraints**: *Minimum Items*: `1`, *Maximum Items*: `50`, *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 batch_get_query_execution_input = BatchGetQueryExecutionInput.new(
-  query_execution_ids: [
+  [
     'QueryExecutionIds7'
-  ],
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  ]
 )
 ```
 

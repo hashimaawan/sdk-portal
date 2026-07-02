@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<GetQueryResultsOutput>> getQueryResultsAsync(
-    final XAmzTarget24 xAmzTarget,
+CompletableFuture<GetQueryResultsOutput> getQueryResultsAsync(
+    final XAmzTarget24Enum xAmzTarget,
     final GetQueryResultsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-24.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-24.md) | Header, Required | - |
 | `body` | [`GetQueryResultsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-results-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -47,20 +47,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetQueryResultsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-results-output.md).
+[`GetQueryResultsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-results-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget24 xAmzTarget = XAmzTarget24.ENUM_AMAZONATHENAGETQUERYRESULTS;
+XAmzTarget24Enum xAmzTarget = XAmzTarget24Enum.ENUM_AMAZONATHENAGETQUERYRESULTS;
 GetQueryResultsInput body = new GetQueryResultsInput.Builder(
     "QueryExecutionId0"
 )
 .build();
 
 
-api.getQueryResultsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getQueryResultsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

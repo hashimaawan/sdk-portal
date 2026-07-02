@@ -22,18 +22,18 @@ The retryConfiguration can be initialized as follows:
 package main
 
 import (
-    "amazonAthena"
+    "amazonathena"
 )
 
 func main() {
-    retryConfiguration := amazonAthena.CreateRetryConfiguration(
-        amazonAthena.WithMaxRetryAttempts(0),
-        amazonAthena.WithRetryOnTimeout(true),
-        amazonAthena.WithRetryInterval(1),
-        amazonAthena.WithMaximumRetryWaitTime(0),
-        amazonAthena.WithBackoffFactor(2),
-        amazonAthena.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
-        amazonAthena.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
+    retryConfiguration := amazonathena.CreateRetryConfiguration(
+        amazonathena.WithMaxRetryAttempts(0),
+        amazonathena.WithRetryOnTimeout(true),
+        amazonathena.WithRetryInterval(1),
+        amazonathena.WithMaximumRetryWaitTime(0),
+        amazonathena.WithBackoffFactor(2),
+        amazonathena.WithHttpStatusCodesToRetry([]int64{408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524}),
+        amazonathena.WithHttpMethodsToRetry([]string{"GET", "PUT", "GET", "PUT"}),
     )
 }
 ```

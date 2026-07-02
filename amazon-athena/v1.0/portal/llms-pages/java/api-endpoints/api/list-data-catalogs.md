@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<ListDataCatalogsOutput>> listDataCatalogsAsync(
-    final XAmzTarget33 xAmzTarget,
+CompletableFuture<ListDataCatalogsOutput> listDataCatalogsAsync(
+    final XAmzTarget33Enum xAmzTarget,
     final ListDataCatalogsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget33`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-33.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget33Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-33.md) | Header, Required | - |
 | `body` | [`ListDataCatalogsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-data-catalogs-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -47,18 +47,18 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListDataCatalogsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-data-catalogs-output.md).
+[`ListDataCatalogsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-data-catalogs-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget33 xAmzTarget = XAmzTarget33.ENUM_AMAZONATHENALISTDATACATALOGS;
+XAmzTarget33Enum xAmzTarget = XAmzTarget33Enum.ENUM_AMAZONATHENALISTDATACATALOGS;
 ListDataCatalogsInput body = new ListDataCatalogsInput.Builder()
     .build();
 
 
-api.listDataCatalogsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listDataCatalogsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

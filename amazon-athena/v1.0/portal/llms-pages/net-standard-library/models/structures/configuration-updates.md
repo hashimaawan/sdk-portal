@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNvbmZpZ3VyYXRpb25VcGRhdGVz
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -26,14 +24,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `ExecutionRole` | `string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` |
 | `CustomerContentEncryptionConfiguration` | [`CustomerContentEncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. |
 | `EnableMinimumEncryptionConfiguration` | `bool?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 ConfigurationUpdates configurationUpdates = new ConfigurationUpdates
 {
@@ -44,18 +40,15 @@ ConfigurationUpdates configurationUpdates = new ConfigurationUpdates
         RemoveOutputLocation = false,
         EncryptionConfiguration = new EncryptionConfiguration2
         {
-            EncryptionOption = EncryptionOption1.SseS3,
+            EncryptionOption = EncryptionOption1Enum.SSES3,
             KmsKey = "KmsKey6",
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         RemoveEncryptionConfiguration = false,
         ExpectedBucketOwner = "ExpectedBucketOwner0",
-        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     PublishCloudWatchMetricsEnabled = false,
     BytesScannedCutoffPerQuery = 10000000,
     RemoveBytesScannedCutoffPerQuery = false,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -6,7 +6,7 @@ Creates a prepared statement for use with SQL queries in Athena.
 
 ```csharp
 CreatePreparedStatementAsync(
-    Models.XAmzTarget6 xAmzTarget,
+    Models.XAmzTarget6Enum xAmzTarget,
     Models.CreatePreparedStatementInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-6.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-6.md) | Header, Required | - |
 | `body` | [`CreatePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/create-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget6 xAmzTarget = XAmzTarget6.EnumAmazonAthenaCreatePreparedStatement;
+XAmzTarget6Enum xAmzTarget = XAmzTarget6Enum.EnumAmazonAthenaCreatePreparedStatement;
 CreatePreparedStatementInput body = new CreatePreparedStatementInput
 {
     StatementName = "StatementName4",
@@ -58,7 +58,7 @@ CreatePreparedStatementInput body = new CreatePreparedStatementInput
 
 try
 {
-    ApiResponse<object> result = await api.CreatePreparedStatementAsync(
+    object result = await aPIController.CreatePreparedStatementAsync(
         xAmzTarget,
         body
     );

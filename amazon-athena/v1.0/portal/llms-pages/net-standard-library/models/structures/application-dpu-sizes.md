@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -17,26 +15,22 @@ Contains the application runtime IDs and their supported DPU sizes.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ApplicationRuntimeId` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
-| `SupportedDpuSizes` | `List<int>` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
+| `SupportedDPUSizes` | `List<int>` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Collections.Generic;
 
-ApplicationDpuSizes applicationDpuSizes = new ApplicationDpuSizes
+ApplicationDPUSizes applicationDPUSizes = new ApplicationDPUSizes
 {
-    ApplicationRuntimeId = "ApplicationRuntimeId4",
-    SupportedDpuSizes = new List<int>
+    ApplicationRuntimeId = "ApplicationRuntimeId2",
+    SupportedDPUSizes = new List<int>
     {
-        17,
-        18,
+        57,
     },
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

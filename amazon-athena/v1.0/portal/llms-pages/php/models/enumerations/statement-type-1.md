@@ -7,7 +7,7 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Enum Type Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 # Example
 
 ```php
-use AmazonAthenaLib\Models\StatementType1;
+use AmazonAthenaLib\Models\StatementType1Enum;
 
-$statementType1 = StatementType1::DDL;
+$statementType1 = StatementType1Enum::DDL;
 ```
 
 

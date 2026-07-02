@@ -7,24 +7,24 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Enum Type Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Coordinator` |
-| `Gateway` |
-| `Worker` |
+| `COORDINATOR` |
+| `GATEWAY` |
+| `WORKER` |
 
 
 # Example
 
 ```ts
-import { ExecutorType2 } from 'amazon-athenalib';
+import { ExecutorType2Enum } from 'amazon-athenalib';
 
-const executorType2 = ExecutorType2.Coordinator;
+const executorType2 = ExecutorType2Enum.COORDINATOR;
 ```
 
 

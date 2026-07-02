@@ -6,7 +6,7 @@ Creates a session for running calculations within a workgroup. The session is re
 
 ```ts
 async startSession(
-  xAmzTarget: XAmzTarget48,
+  xAmzTarget: XAmzTarget48Enum,
   body: StartSessionRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget48`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-48.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget48Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-48.md) | Header, Required | - |
 | `body` | [`StartSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/start-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget48.EnumAmazonAthenaStartSession;
+const xAmzTarget = XAmzTarget48Enum.EnumAmazonAthenaStartSession;
 
 const body: StartSessionRequest = {
   workGroup: 'WorkGroup8',
@@ -61,7 +61,7 @@ const body: StartSessionRequest = {
 };
 
 try {
-  const response = await api.startSession(
+  const response = await apiController.startSession(
     xAmzTarget,
     body
   );

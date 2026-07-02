@@ -2,57 +2,50 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkxpc3RBcHBsaWNhdGlvbkRQVVNpemVzT3V0cHV0
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
-`ListApplicationDpuSizesOutput`
+`ListApplicationDPUSizesOutput`
 
 
 # Fields
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `applicationDpuSizes` | [`?(ApplicationDpuSizes[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/application-dpu-sizes.md) | Optional | - | getApplicationDpuSizes(): ?array | setApplicationDpuSizes(?array applicationDpuSizes): void |
+| `applicationDPUSizes` | [`?(ApplicationDPUSizes[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/application-dpu-sizes.md) | Optional | - | getApplicationDPUSizes(): ?array | setApplicationDPUSizes(?array applicationDPUSizes): void |
 | `nextToken` | `?string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` | getNextToken(): ?string | setNextToken(?string nextToken): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
-use AmazonAthenaLib\Models\Builders\ListApplicationDpuSizesOutputBuilder;
-use AmazonAthenaLib\Models\Builders\ApplicationDpuSizesBuilder;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\Builders\ListApplicationDPUSizesOutputBuilder;
+use AmazonAthenaLib\Models\Builders\ApplicationDPUSizesBuilder;
 
-$listApplicationDpuSizesOutput = ListApplicationDpuSizesOutputBuilder::init()
-    ->applicationDpuSizes(
+$listApplicationDPUSizesOutput = ListApplicationDPUSizesOutputBuilder::init()
+    ->applicationDPUSizes(
         [
-            ApplicationDpuSizesBuilder::init()
+            ApplicationDPUSizesBuilder::init()
                 ->applicationRuntimeId('ApplicationRuntimeId0')
-                ->supportedDpuSizes(
+                ->supportedDPUSizes(
                     [
                         113,
                         114
                     ]
                 )
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
-            ApplicationDpuSizesBuilder::init()
+            ApplicationDPUSizesBuilder::init()
                 ->applicationRuntimeId('ApplicationRuntimeId0')
-                ->supportedDpuSizes(
+                ->supportedDPUSizes(
                     [
                         113,
                         114
                     ]
                 )
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
     ->nextToken('NextToken0')
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

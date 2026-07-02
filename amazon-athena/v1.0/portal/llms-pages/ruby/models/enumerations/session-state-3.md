@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState3`
+`SessionState3Enum`
 
 
 # Fields
@@ -28,7 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-session_state3 = SessionState3::CREATING
+session_state3 = SessionState3Enum::CREATING
 ```
 
 

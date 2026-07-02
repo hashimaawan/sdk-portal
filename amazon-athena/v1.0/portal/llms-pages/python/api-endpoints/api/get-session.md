@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget26`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-26.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget26Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-26.md) | Header, Required | - |
 | `body` | [`GetSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/get-session-request.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `str` | Header, Optional | - |
 | `x_amz_date` | `str` | Header, Optional | - |
@@ -42,27 +42,23 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`GetSessionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/get-session-response.md).
+[`GetSessionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/get-session-response.md)
 
 
 # Example Usage
 
 ```python
-x_amz_target = XAmzTarget26.ENUM_AMAZONATHENAGETSESSION
+x_amz_target = XAmzTarget26Enum.ENUM_AMAZONATHENAGETSESSION
 
 body = GetSessionRequest(
     session_id='SessionId2'
 )
 
-result = client_api.get_session(
+result = client_controller.get_session(
     x_amz_target,
     body
 )
-
-if result.is_success():
-    print(result.body)
-elif result.is_error():
-    print(result.errors)
+print(result)
 ```
 
 
@@ -70,9 +66,9 @@ elif result.is_error():
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 480 | InternalServerException | `ApiException` |
-| 481 | InvalidRequestException | `ApiException` |
-| 482 | ResourceNotFoundException | `ApiException` |
+| 480 | InternalServerException | `APIException` |
+| 481 | InvalidRequestException | `APIException` |
+| 482 | ResourceNotFoundException | `APIException` |
 
 
 

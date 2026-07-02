@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`EncryptionOption1`
+`EncryptionOption1Enum`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.EncryptionOption1;
+import com.amazonaws.useast1.athena.models.EncryptionOption1Enum;
 
-EncryptionOption1 encryptionOption1 = EncryptionOption1.CSE_KMS;
+EncryptionOption1Enum encryptionOption1 = EncryptionOption1Enum.CSE_KMS;
 ```
 
 

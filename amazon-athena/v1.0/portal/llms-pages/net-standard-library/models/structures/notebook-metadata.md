@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains metadata for notebook, including the notebook name, ID, workgroup, and time created.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -20,16 +18,14 @@ Contains metadata for notebook, including the notebook name, ID, workgroup, and 
 | `Name` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
 | `WorkGroup` | `string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `CreationTime` | `DateTime?` | Optional | - |
-| `Type` | [`NotebookType1?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/notebook-type-1.md) | Optional | - |
+| `Type` | [`NotebookType1Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/notebook-type-1.md) | Optional | - |
 | `LastModifiedTime` | `DateTime?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Globalization;
 
 NotebookMetadata notebookMetadata = new NotebookMetadata
@@ -40,8 +36,7 @@ NotebookMetadata notebookMetadata = new NotebookMetadata
     CreationTime = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
         provider: CultureInfo.InvariantCulture,
         DateTimeStyles.RoundtripKind),
-    Type = NotebookType1.Ipynb,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+    Type = NotebookType1Enum.IPYNB,
 };
 ```
 

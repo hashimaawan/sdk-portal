@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A string for searching notebook names.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ A string for searching notebook names.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Name` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +23,12 @@ A string for searching notebook names.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     filterDefinition := models.FilterDefinition{
-        Name:                  models.ToPointer("Name2"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        Name:                 models.ToPointer("Name2"),
     }
 
 }

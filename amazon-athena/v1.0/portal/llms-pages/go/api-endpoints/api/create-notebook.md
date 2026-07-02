@@ -7,7 +7,7 @@ Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled w
 ```go
 CreateNotebook(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget5,
+    xAmzTarget models.XAmzTarget5Enum,
     body models.CreateNotebookInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget5`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-5.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget5Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-5.md) | Header, Required | - |
 | `body` | [`models.CreateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/create-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,14 +53,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget5_EnumAmazonathenacreatenotebook
+xAmzTarget := models.XAmzTarget5Enum_ENUMAMAZONATHENACREATENOTEBOOK
 
 body := models.CreateNotebookInput{
-    WorkGroup:             "WorkGroup8",
-    Name:                  "Name6",
+    WorkGroup:            "WorkGroup8",
+    Name:                 "Name6",
 }
 
-apiResponse, err := api.CreateNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.CreateNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

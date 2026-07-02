@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget13`
+`XAmzTarget13Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-XAmzTarget13 xAmzTarget13 = XAmzTarget13.EnumAmazonAthenaDeleteWorkGroup;
+XAmzTarget13Enum xAmzTarget13 = XAmzTarget13Enum.EnumAmazonAthenaDeleteWorkGroup;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains information about the status of a notebook calculation.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -18,26 +16,22 @@ Contains information about the status of a notebook calculation.
 |  --- | --- | --- | --- | --- | --- |
 | `SubmissionDateTime` | `LocalDateTime` | Optional | - | LocalDateTime getSubmissionDateTime() | setSubmissionDateTime(LocalDateTime submissionDateTime) |
 | `CompletionDateTime` | `LocalDateTime` | Optional | - | LocalDateTime getCompletionDateTime() | setCompletionDateTime(LocalDateTime completionDateTime) |
-| `State` | [`CalculationExecutionState1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/calculation-execution-state-1.md) | Optional | - | CalculationExecutionState1 getState() | setState(CalculationExecutionState1 state) |
+| `State` | [`CalculationExecutionState1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/calculation-execution-state-1.md) | Optional | - | CalculationExecutionState1Enum getState() | setState(CalculationExecutionState1Enum state) |
 | `StateChangeReason` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` | String getStateChangeReason() | setStateChangeReason(String stateChangeReason) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.DateTimeHelper;
-import com.amazonaws.useast1.athena.models.CalculationExecutionState1;
+import com.amazonaws.useast1.athena.models.CalculationExecutionState1Enum;
 import com.amazonaws.useast1.athena.models.CalculationStatus;
-import java.io.IOException;
 
 CalculationStatus calculationStatus = new CalculationStatus.Builder()
     .submissionDateTime(DateTimeHelper.fromRfc8601DateTime("2016-03-13T12:52:32.123Z"))
     .completionDateTime(DateTimeHelper.fromRfc8601DateTime("2016-03-13T12:52:32.123Z"))
-    .state(CalculationExecutionState1.CREATING)
+    .state(CalculationExecutionState1Enum.CREATING)
     .stateChangeReason("StateChangeReason2")
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

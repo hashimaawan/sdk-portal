@@ -7,7 +7,7 @@ Returns table metadata for the specified catalog, database, and table.
 ```go
 GetTableMetadata(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget28,
+    xAmzTarget models.XAmzTarget28Enum,
     body models.GetTableMetadataInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-28.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-28.md) | Header, Required | - |
 | `body` | [`models.GetTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,15 +53,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget28_EnumAmazonathenagettablemetadata
+xAmzTarget := models.XAmzTarget28Enum_ENUMAMAZONATHENAGETTABLEMETADATA
 
 body := models.GetTableMetadataInput{
-    CatalogName:           "CatalogName0",
-    DatabaseName:          "DatabaseName0",
-    TableName:             "TableName2",
+    CatalogName:          "CatalogName0",
+    DatabaseName:         "DatabaseName0",
+    TableName:            "TableName2",
 }
 
-apiResponse, err := api.GetTableMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetTableMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains statistics for a session.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ Contains statistics for a session.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `DpuExecutionInMillis` | `*int` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +23,12 @@ Contains statistics for a session.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     sessionStatistics := models.SessionStatistics{
-        DpuExecutionInMillis:  models.ToPointer(188),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        DpuExecutionInMillis: models.ToPointer(188),
     }
 
 }

@@ -6,7 +6,7 @@ Updates a prepared statement.
 
 ```csharp
 UpdatePreparedStatementAsync(
-    Models.XAmzTarget58 xAmzTarget,
+    Models.XAmzTarget58Enum xAmzTarget,
     Models.UpdatePreparedStatementInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget58`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-58.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget58Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-58.md) | Header, Required | - |
 | `body` | [`UpdatePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/update-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget58 xAmzTarget = XAmzTarget58.EnumAmazonAthenaUpdatePreparedStatement;
+XAmzTarget58Enum xAmzTarget = XAmzTarget58Enum.EnumAmazonAthenaUpdatePreparedStatement;
 UpdatePreparedStatementInput body = new UpdatePreparedStatementInput
 {
     StatementName = "StatementName4",
@@ -58,7 +58,7 @@ UpdatePreparedStatementInput body = new UpdatePreparedStatementInput
 
 try
 {
-    ApiResponse<object> result = await api.UpdatePreparedStatementAsync(
+    object result = await aPIController.UpdatePreparedStatementAsync(
         xAmzTarget,
         body
     );

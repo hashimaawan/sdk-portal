@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Updates the metadata for a notebook.
 
 ```java
-CompletableFuture<ApiResponse<Object>> updateNotebookMetadataAsync(
-    final XAmzTarget57 xAmzTarget,
+CompletableFuture<Object> updateNotebookMetadataAsync(
+    final XAmzTarget57Enum xAmzTarget,
     final UpdateNotebookMetadataInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget57`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-57.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget57Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-57.md) | Header, Required | - |
 | `body` | [`UpdateNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/update-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget57 xAmzTarget = XAmzTarget57.ENUM_AMAZONATHENAUPDATENOTEBOOKMETADATA;
+XAmzTarget57Enum xAmzTarget = XAmzTarget57Enum.ENUM_AMAZONATHENAUPDATENOTEBOOKMETADATA;
 UpdateNotebookMetadataInput body = new UpdateNotebookMetadataInput.Builder(
     "NotebookId6",
     "Name6"
@@ -56,7 +56,7 @@ UpdateNotebookMetadataInput body = new UpdateNotebookMetadataInput.Builder(
 .build();
 
 
-api.updateNotebookMetadataAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.updateNotebookMetadataAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

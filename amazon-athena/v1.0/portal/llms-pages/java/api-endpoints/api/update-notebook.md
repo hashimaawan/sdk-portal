@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Updates the contents of a Spark notebook.
 
 ```java
-CompletableFuture<ApiResponse<Object>> updateNotebookAsync(
-    final XAmzTarget56 xAmzTarget,
+CompletableFuture<Object> updateNotebookAsync(
+    final XAmzTarget56Enum xAmzTarget,
     final UpdateNotebookInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget56`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-56.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget56Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-56.md) | Header, Required | - |
 | `body` | [`UpdateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/update-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,22 +42,22 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget56 xAmzTarget = XAmzTarget56.ENUM_AMAZONATHENAUPDATENOTEBOOK;
+XAmzTarget56Enum xAmzTarget = XAmzTarget56Enum.ENUM_AMAZONATHENAUPDATENOTEBOOK;
 UpdateNotebookInput body = new UpdateNotebookInput.Builder(
     "NotebookId6",
     "Payload2",
-    NotebookType2.IPYNB
+    NotebookType2Enum.IPYNB
 )
 .build();
 
 
-api.updateNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.updateNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

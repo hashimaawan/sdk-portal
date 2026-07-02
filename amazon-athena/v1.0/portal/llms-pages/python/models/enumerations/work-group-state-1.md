@@ -7,7 +7,7 @@ The state of the workgroup.
 
 # Enum Type Name
 
-`WorkGroupState1`
+`WorkGroupState1Enum`
 
 
 # Fields
@@ -21,9 +21,9 @@ The state of the workgroup.
 # Example
 
 ```python
-from amazonathena.models.work_group_state_1 import WorkGroupState1
+from amazonathena.models.work_group_state_1_enum import WorkGroupState1Enum
 
-work_group_state_1 = WorkGroupState1.ENABLED
+work_group_state_1 = WorkGroupState1Enum.ENABLED
 ```
 
 

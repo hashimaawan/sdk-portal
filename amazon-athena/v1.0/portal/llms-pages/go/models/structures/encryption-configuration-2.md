@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRkVuY3J5cHRpb25Db25maWd1cmF0aW9uMg
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -14,9 +12,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `EncryptionOption` | [`models.EncryptionOption1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/encryption-option-1.md) | Required | - |
+| `EncryptionOption` | [`models.EncryptionOption1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/encryption-option-1.md) | Required | - |
 | `KmsKey` | `*string` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -25,16 +22,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     encryptionConfiguration2 := models.EncryptionConfiguration2{
-        EncryptionOption:      models.EncryptionOption1_SseS3,
-        KmsKey:                models.ToPointer("KmsKey2"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        EncryptionOption:     models.EncryptionOption1Enum_SSES3,
+        KmsKey:               models.ToPointer("KmsKey2"),
     }
 
 }

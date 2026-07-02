@@ -6,7 +6,7 @@ Gets the current status of a session.
 
 ```csharp
 GetSessionStatusAsync(
-    Models.XAmzTarget27 xAmzTarget,
+    Models.XAmzTarget27Enum xAmzTarget,
     Models.GetSessionStatusRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget27`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-27.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget27Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-27.md) | Header, Required | - |
 | `body` | [`GetSessionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-session-status-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetSessionStatusResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-session-status-response.md).
+[`Task<Models.GetSessionStatusResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-session-status-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget27 xAmzTarget = XAmzTarget27.EnumAmazonAthenaGetSessionStatus;
+XAmzTarget27Enum xAmzTarget = XAmzTarget27Enum.EnumAmazonAthenaGetSessionStatus;
 GetSessionStatusRequest body = new GetSessionStatusRequest
 {
     SessionId = "SessionId2",
@@ -56,7 +56,7 @@ GetSessionStatusRequest body = new GetSessionStatusRequest
 
 try
 {
-    ApiResponse<GetSessionStatusResponse> result = await api.GetSessionStatusAsync(
+    GetSessionStatusResponse result = await aPIController.GetSessionStatusAsync(
         xAmzTarget,
         body
     );

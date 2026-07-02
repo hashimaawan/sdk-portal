@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkdldFRhYmxlTWV0YWRhdGFPdXRwdXQ
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -15,7 +13,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `tableMetadata` | [`?TableMetadata2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/table-metadata-2.md) | Optional | - | getTableMetadata(): ?TableMetadata2 | setTableMetadata(?TableMetadata2 tableMetadata): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -25,7 +22,6 @@ use AmazonAthenaLib\Models\Builders\GetTableMetadataOutputBuilder;
 use AmazonAthenaLib\Models\Builders\TableMetadata2Builder;
 use AmazonAthenaLib\Utils\DateTimeHelper;
 use AmazonAthenaLib\Models\Builders\ColumnBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $getTableMetadataOutput = GetTableMetadataOutputBuilder::init()
     ->tableMetadata(
@@ -42,21 +38,18 @@ $getTableMetadataOutput = GetTableMetadataOutputBuilder::init()
                     )
                         ->type('Type0')
                         ->comment('Comment4')
-                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build(),
                     ColumnBuilder::init(
                         'Name0'
                     )
                         ->type('Type0')
                         ->comment('Comment4')
-                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build(),
                     ColumnBuilder::init(
                         'Name0'
                     )
                         ->type('Type0')
                         ->comment('Comment4')
-                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build()
                 ]
             )
@@ -67,14 +60,11 @@ $getTableMetadataOutput = GetTableMetadataOutputBuilder::init()
                     )
                         ->type('Type6')
                         ->comment('Comment0')
-                        ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                         ->build()
                 ]
             )
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRkF0aGVuYUVycm9yMg
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -18,7 +16,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `errorType` | `number \| undefined` | Optional | **Constraints**: `>= 0`, `<= 9999` |
 | `retryable` | `boolean \| undefined` | Optional | - |
 | `errorMessage` | `string \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -31,9 +28,6 @@ const athenaError2: AthenaError2 = {
   errorType: 56,
   retryable: false,
   errorMessage: 'ErrorMessage0',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

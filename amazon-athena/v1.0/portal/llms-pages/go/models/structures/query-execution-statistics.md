@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -24,7 +22,6 @@ The amount of data scanned during the query execution and the amount of time tha
 | `QueryPlanningTimeInMillis` | `*int` | Optional | - |
 | `ServiceProcessingTimeInMillis` | `*int` | Optional | - |
 | `ResultReuseInformation` | [`*models.ResultReuseInformation2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/result-reuse-information-2.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -33,7 +30,7 @@ The amount of data scanned during the query execution and the amount of time tha
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -43,9 +40,6 @@ func main() {
         DataManifestLocation:          models.ToPointer("DataManifestLocation2"),
         TotalExecutionTimeInMillis:    models.ToPointer(136),
         QueryQueueTimeInMillis:        models.ToPointer(142),
-        AdditionalProperties:          map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

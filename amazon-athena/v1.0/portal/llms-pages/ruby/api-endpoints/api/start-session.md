@@ -26,7 +26,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget48`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-48.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget48Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-48.md) | Header, Required | - |
 | `body` | [`StartSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/start-session-request.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -41,31 +41,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`StartSessionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/start-session-response.md).
+[`StartSessionResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/start-session-response.md)
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget48::ENUM_AMAZONATHENASTARTSESSION
+x_amz_target = XAmzTarget48Enum::ENUM_AMAZONATHENASTARTSESSION
 
 body = StartSessionRequest.new(
-  work_group: 'WorkGroup8',
-  engine_configuration: EngineConfiguration1.new(
-    max_concurrent_dpus: 94
+  'WorkGroup8',
+  EngineConfiguration1.new(
+    94,
+    nil,
+    nil,
+    AdditionalConfigs.new
   )
 )
 
-result = client_api.start_session(
+result = client_controller.start_session(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

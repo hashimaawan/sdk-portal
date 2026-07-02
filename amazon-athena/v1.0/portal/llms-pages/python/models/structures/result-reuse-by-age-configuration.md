@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Specifies whether previous query results are reused, and if so, their maximum age.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -18,22 +16,16 @@ Specifies whether previous query results are reused, and if so, their maximum ag
 |  --- | --- | --- | --- |
 | `enabled` | `bool` | Required | - |
 | `max_age_in_minutes` | `int` | Optional | **Constraints**: `>= 0`, `<= 10080` |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.result_reuse_by_age_configuration import ResultReuseByAgeConfiguration
 
 result_reuse_by_age_configuration = ResultReuseByAgeConfiguration(
     enabled=False,
-    max_age_in_minutes=32,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    max_age_in_minutes=32
 )
 ```
 

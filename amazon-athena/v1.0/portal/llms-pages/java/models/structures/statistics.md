@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/java/x-redirect/JTI0bSUyRlN0YXRpc3RpY3M
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -22,15 +20,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `QueryPlanningTimeInMillis` | `Integer` | Optional | - | Integer getQueryPlanningTimeInMillis() | setQueryPlanningTimeInMillis(Integer queryPlanningTimeInMillis) |
 | `ServiceProcessingTimeInMillis` | `Integer` | Optional | - | Integer getServiceProcessingTimeInMillis() | setServiceProcessingTimeInMillis(Integer serviceProcessingTimeInMillis) |
 | `ResultReuseInformation` | [`ResultReuseInformation2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/result-reuse-information-2.md) | Optional | - | ResultReuseInformation2 getResultReuseInformation() | setResultReuseInformation(ResultReuseInformation2 resultReuseInformation) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.Statistics;
-import java.io.IOException;
 
 Statistics statistics = new Statistics.Builder()
     .engineExecutionTimeInMillis(72)
@@ -38,7 +33,6 @@ Statistics statistics = new Statistics.Builder()
     .dataManifestLocation("DataManifestLocation0")
     .totalExecutionTimeInMillis(146)
     .queryQueueTimeInMillis(116)
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

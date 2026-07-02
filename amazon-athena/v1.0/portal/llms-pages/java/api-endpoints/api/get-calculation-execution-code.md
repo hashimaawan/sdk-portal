@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Retrieves the unencrypted code that was executed for the calculation.
 
 ```java
-CompletableFuture<ApiResponse<GetCalculationExecutionCodeResponse>> getCalculationExecutionCodeAsync(
-    final XAmzTarget16 xAmzTarget,
+CompletableFuture<GetCalculationExecutionCodeResponse> getCalculationExecutionCodeAsync(
+    final XAmzTarget16Enum xAmzTarget,
     final GetCalculationExecutionCodeRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-16.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-16.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionCodeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-calculation-execution-code-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetCalculationExecutionCodeResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-calculation-execution-code-response.md).
+[`GetCalculationExecutionCodeResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-calculation-execution-code-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget16 xAmzTarget = XAmzTarget16.ENUM_AMAZONATHENAGETCALCULATIONEXECUTIONCODE;
+XAmzTarget16Enum xAmzTarget = XAmzTarget16Enum.ENUM_AMAZONATHENAGETCALCULATIONEXECUTIONCODE;
 GetCalculationExecutionCodeRequest body = new GetCalculationExecutionCodeRequest.Builder(
     "CalculationExecutionId8"
 )
 .build();
 
 
-api.getCalculationExecutionCodeAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getCalculationExecutionCodeAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A prepared SQL statement for use with Athena.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -21,7 +19,6 @@ A prepared SQL statement for use with Athena.
 | `workGroupName` | `?string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` | getWorkGroupName(): ?string | setWorkGroupName(?string workGroupName): void |
 | `description` | `?string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` | getDescription(): ?string | setDescription(?string description): void |
 | `lastModifiedTime` | `?DateTime` | Optional | - | getLastModifiedTime(): ?\DateTime | setLastModifiedTime(?\DateTime lastModifiedTime): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -29,7 +26,6 @@ A prepared SQL statement for use with Athena.
 ```php
 use AmazonAthenaLib\Models\Builders\PreparedStatementBuilder;
 use AmazonAthenaLib\Utils\DateTimeHelper;
-use AmazonAthenaLib\ApiHelper;
 
 $preparedStatement = PreparedStatementBuilder::init()
     ->statementName('StatementName8')
@@ -37,7 +33,6 @@ $preparedStatement = PreparedStatementBuilder::init()
     ->workGroupName('WorkGroupName2')
     ->description('Description4')
     ->lastModifiedTime(DateTimeHelper::fromRfc3339DateTime('2016-03-13T12:52:32.123Z'))
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

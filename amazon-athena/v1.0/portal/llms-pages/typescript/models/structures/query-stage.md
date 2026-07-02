@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -25,7 +23,6 @@ Stage statistics such as input and output rows and bytes, execution time and sta
 | `executionTime` | `number \| undefined` | Optional | - |
 | `queryStagePlan` | [`QueryStagePlan \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/query-stage-plan.md) | Optional | - |
 | `subStages` | [`QueryStage[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/query-stage.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -39,9 +36,6 @@ const queryStage: QueryStage = {
   outputBytes: 120,
   outputRows: 146,
   inputBytes: 178,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

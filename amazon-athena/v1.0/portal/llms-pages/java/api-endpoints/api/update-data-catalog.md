@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Updates the data catalog that has the specified name.
 
 ```java
-CompletableFuture<ApiResponse<Object>> updateDataCatalogAsync(
-    final XAmzTarget54 xAmzTarget,
+CompletableFuture<Object> updateDataCatalogAsync(
+    final XAmzTarget54Enum xAmzTarget,
     final UpdateDataCatalogInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget54`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-54.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget54Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-54.md) | Header, Required | - |
 | `body` | [`UpdateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/update-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,21 +42,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget54 xAmzTarget = XAmzTarget54.ENUM_AMAZONATHENAUPDATEDATACATALOG;
+XAmzTarget54Enum xAmzTarget = XAmzTarget54Enum.ENUM_AMAZONATHENAUPDATEDATACATALOG;
 UpdateDataCatalogInput body = new UpdateDataCatalogInput.Builder(
     "Name6",
-    DataCatalogType3.HIVE
+    DataCatalogType3Enum.HIVE
 )
 .build();
 
 
-api.updateDataCatalogAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.updateDataCatalogAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

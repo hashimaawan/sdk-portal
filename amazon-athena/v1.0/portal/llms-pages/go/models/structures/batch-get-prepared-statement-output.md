@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRkJhdGNoR2V0UHJlcGFyZWRTdGF0ZW1lbnRPdXRwdXQ
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -16,7 +14,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `PreparedStatements` | [`[]models.PreparedStatement`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/prepared-statement.md) | Optional | - |
 | `UnprocessedPreparedStatementNames` | [`[]models.UnprocessedPreparedStatementName`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/unprocessed-prepared-statement-name.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,7 +24,7 @@ package main
 import (
     "log"
     "time"
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -41,54 +38,36 @@ func main() {
     batchGetPreparedStatementOutput := models.BatchGetPreparedStatementOutput{
         PreparedStatements:                []models.PreparedStatement{
             models.PreparedStatement{
-                StatementName:         models.ToPointer("StatementName2"),
-                QueryStatement:        models.ToPointer("QueryStatement6"),
-                WorkGroupName:         models.ToPointer("WorkGroupName6"),
-                Description:           models.ToPointer("Description2"),
-                LastModifiedTime:      models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                StatementName:        models.ToPointer("StatementName2"),
+                QueryStatement:       models.ToPointer("QueryStatement6"),
+                WorkGroupName:        models.ToPointer("WorkGroupName6"),
+                Description:          models.ToPointer("Description2"),
+                LastModifiedTime:     models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
             },
             models.PreparedStatement{
-                StatementName:         models.ToPointer("StatementName2"),
-                QueryStatement:        models.ToPointer("QueryStatement6"),
-                WorkGroupName:         models.ToPointer("WorkGroupName6"),
-                Description:           models.ToPointer("Description2"),
-                LastModifiedTime:      models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                StatementName:        models.ToPointer("StatementName2"),
+                QueryStatement:       models.ToPointer("QueryStatement6"),
+                WorkGroupName:        models.ToPointer("WorkGroupName6"),
+                Description:          models.ToPointer("Description2"),
+                LastModifiedTime:     models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
             },
         },
         UnprocessedPreparedStatementNames: []models.UnprocessedPreparedStatementName{
             models.UnprocessedPreparedStatementName{
-                StatementName:         models.ToPointer("StatementName0"),
-                ErrorCode:             models.ToPointer("ErrorCode2"),
-                ErrorMessage:          models.ToPointer("ErrorMessage8"),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                StatementName:        models.ToPointer("StatementName0"),
+                ErrorCode:            models.ToPointer("ErrorCode2"),
+                ErrorMessage:         models.ToPointer("ErrorMessage8"),
             },
             models.UnprocessedPreparedStatementName{
-                StatementName:         models.ToPointer("StatementName0"),
-                ErrorCode:             models.ToPointer("ErrorCode2"),
-                ErrorMessage:          models.ToPointer("ErrorMessage8"),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                StatementName:        models.ToPointer("StatementName0"),
+                ErrorCode:            models.ToPointer("ErrorCode2"),
+                ErrorMessage:         models.ToPointer("ErrorMessage8"),
             },
             models.UnprocessedPreparedStatementName{
-                StatementName:         models.ToPointer("StatementName0"),
-                ErrorCode:             models.ToPointer("ErrorCode2"),
-                ErrorMessage:          models.ToPointer("ErrorMessage8"),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                StatementName:        models.ToPointer("StatementName0"),
+                ErrorCode:            models.ToPointer("ErrorCode2"),
+                ErrorMessage:         models.ToPointer("ErrorMessage8"),
             },
-        },
-        AdditionalProperties:              map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

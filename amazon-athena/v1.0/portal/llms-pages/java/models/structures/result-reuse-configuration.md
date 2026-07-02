@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Specifies the query result reuse behavior for the query.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,25 +15,20 @@ Specifies the query result reuse behavior for the query.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ResultReuseByAgeConfiguration` | [`ResultReuseByAgeConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/result-reuse-by-age-configuration-2.md) | Optional | - | ResultReuseByAgeConfiguration2 getResultReuseByAgeConfiguration() | setResultReuseByAgeConfiguration(ResultReuseByAgeConfiguration2 resultReuseByAgeConfiguration) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.ResultReuseByAgeConfiguration2;
 import com.amazonaws.useast1.athena.models.ResultReuseConfiguration;
-import java.io.IOException;
 
 ResultReuseConfiguration resultReuseConfiguration = new ResultReuseConfiguration.Builder()
     .resultReuseByAgeConfiguration(new ResultReuseByAgeConfiguration2.Builder(
         false
     )
     .maxAgeInMinutes(26)
-    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

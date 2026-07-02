@@ -7,7 +7,7 @@ Submits calculations for execution within a session. You can supply the code to 
 ```go
 StartCalculationExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget46,
+    xAmzTarget models.XAmzTarget46Enum,
     body models.StartCalculationExecutionRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget46`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-46.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget46Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-46.md) | Header, Required | - |
 | `body` | [`models.StartCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/start-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget46_EnumAmazonathenastartcalculationexecution
+xAmzTarget := models.XAmzTarget46Enum_ENUMAMAZONATHENASTARTCALCULATIONEXECUTION
 
 body := models.StartCalculationExecutionRequest{
     SessionId:                "SessionId2",
 }
 
-apiResponse, err := api.StartCalculationExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.StartCalculationExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

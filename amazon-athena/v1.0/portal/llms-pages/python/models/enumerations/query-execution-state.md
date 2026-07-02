@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`QueryExecutionState`
+`QueryExecutionStateEnum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.query_execution_state import QueryExecutionState
+from amazonathena.models.query_execution_state_enum import QueryExecutionStateEnum
 
-query_execution_state = QueryExecutionState.SUCCEEDED
+query_execution_state = QueryExecutionStateEnum.SUCCEEDED
 ```
 
 

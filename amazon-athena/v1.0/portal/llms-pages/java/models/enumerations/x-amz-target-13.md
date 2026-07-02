@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget13`
+`XAmzTarget13Enum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.XAmzTarget13;
+import com.amazonaws.useast1.athena.models.XAmzTarget13Enum;
 
-XAmzTarget13 xAmzTarget13 = XAmzTarget13.ENUM_AMAZONATHENADELETEWORKGROUP;
+XAmzTarget13Enum xAmzTarget13 = XAmzTarget13Enum.ENUM_AMAZONATHENADELETEWORKGROUP;
 ```
 
 

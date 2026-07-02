@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists available workgroups for the account.
 
 ```java
-CompletableFuture<ApiResponse<ListWorkGroupsOutput>> listWorkGroupsAsync(
-    final XAmzTarget45 xAmzTarget,
+CompletableFuture<ListWorkGroupsOutput> listWorkGroupsAsync(
+    final XAmzTarget45Enum xAmzTarget,
     final ListWorkGroupsInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget45`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-45.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget45Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-45.md) | Header, Required | - |
 | `body` | [`ListWorkGroupsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-work-groups-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,18 +46,18 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListWorkGroupsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-work-groups-output.md).
+[`ListWorkGroupsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-work-groups-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget45 xAmzTarget = XAmzTarget45.ENUM_AMAZONATHENALISTWORKGROUPS;
+XAmzTarget45Enum xAmzTarget = XAmzTarget45Enum.ENUM_AMAZONATHENALISTWORKGROUPS;
 ListWorkGroupsInput body = new ListWorkGroupsInput.Builder()
     .build();
 
 
-api.listWorkGroupsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listWorkGroupsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

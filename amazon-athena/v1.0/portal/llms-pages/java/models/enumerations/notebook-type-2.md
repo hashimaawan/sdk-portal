@@ -7,7 +7,7 @@ The notebook content type. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType2`
+`NotebookType2Enum`
 
 
 # Fields
@@ -20,9 +20,9 @@ The notebook content type. Currently, the only valid type is <code>IPYNB</code>.
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.NotebookType2;
+import com.amazonaws.useast1.athena.models.NotebookType2Enum;
 
-NotebookType2 notebookType2 = NotebookType2.IPYNB;
+NotebookType2Enum notebookType2 = NotebookType2Enum.IPYNB;
 ```
 
 

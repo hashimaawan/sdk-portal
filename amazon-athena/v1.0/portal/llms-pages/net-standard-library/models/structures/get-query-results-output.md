@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkdldFF1ZXJ5UmVzdWx0c091dHB1dA
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -17,14 +15,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `UpdateCount` | `int?` | Optional | - |
 | `ResultSet` | [`ResultSet2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/result-set-2.md) | Optional | - |
 | `NextToken` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Collections.Generic;
 
 GetQueryResultsOutput getQueryResultsOutput = new GetQueryResultsOutput
@@ -41,15 +37,12 @@ GetQueryResultsOutput getQueryResultsOutput = new GetQueryResultsOutput
                     new Datum
                     {
                         VarCharValue = "VarCharValue8",
-                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     new Datum
                     {
                         VarCharValue = "VarCharValue8",
-                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                 },
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
             new Row
             {
@@ -58,15 +51,12 @@ GetQueryResultsOutput getQueryResultsOutput = new GetQueryResultsOutput
                     new Datum
                     {
                         VarCharValue = "VarCharValue8",
-                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                     new Datum
                     {
                         VarCharValue = "VarCharValue8",
-                        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                     },
                 },
-                ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
             },
         },
         ResultSetMetadata = new ResultSetMetadata2
@@ -82,15 +72,11 @@ GetQueryResultsOutput getQueryResultsOutput = new GetQueryResultsOutput
                     TableName = "TableName2",
                     Label = "Label4",
                     Precision = 48,
-                    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
                 },
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
-        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     NextToken = "NextToken0",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

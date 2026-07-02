@@ -6,7 +6,7 @@ Retrieves the unencrypted code that was executed for the calculation.
 
 ```csharp
 GetCalculationExecutionCodeAsync(
-    Models.XAmzTarget16 xAmzTarget,
+    Models.XAmzTarget16Enum xAmzTarget,
     Models.GetCalculationExecutionCodeRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-16.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-16.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionCodeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-calculation-execution-code-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetCalculationExecutionCodeResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-calculation-execution-code-response.md).
+[`Task<Models.GetCalculationExecutionCodeResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-calculation-execution-code-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget16 xAmzTarget = XAmzTarget16.EnumAmazonAthenaGetCalculationExecutionCode;
+XAmzTarget16Enum xAmzTarget = XAmzTarget16Enum.EnumAmazonAthenaGetCalculationExecutionCode;
 GetCalculationExecutionCodeRequest body = new GetCalculationExecutionCodeRequest
 {
     CalculationExecutionId = "CalculationExecutionId8",
@@ -56,7 +56,7 @@ GetCalculationExecutionCodeRequest body = new GetCalculationExecutionCodeRequest
 
 try
 {
-    ApiResponse<GetCalculationExecutionCodeResponse> result = await api.GetCalculationExecutionCodeAsync(
+    GetCalculationExecutionCodeResponse result = await aPIController.GetCalculationExecutionCodeAsync(
         xAmzTarget,
         body
     );

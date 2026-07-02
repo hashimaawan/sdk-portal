@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -28,7 +26,6 @@ The configuration information that will be updated for this workgroup, which inc
 | `executionRole` | `?string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` | getExecutionRole(): ?string | setExecutionRole(?string executionRole): void |
 | `customerContentEncryptionConfiguration` | [`?CustomerContentEncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. | getCustomerContentEncryptionConfiguration(): ?CustomerContentEncryptionConfiguration | setCustomerContentEncryptionConfiguration(?CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration): void |
 | `enableMinimumEncryptionConfiguration` | `?bool` | Optional | - | getEnableMinimumEncryptionConfiguration(): ?bool | setEnableMinimumEncryptionConfiguration(?bool enableMinimumEncryptionConfiguration): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -37,8 +34,7 @@ The configuration information that will be updated for this workgroup, which inc
 use AmazonAthenaLib\Models\Builders\WorkGroupConfigurationUpdatesBuilder;
 use AmazonAthenaLib\Models\Builders\ResultConfigurationUpdates2Builder;
 use AmazonAthenaLib\Models\Builders\EncryptionConfiguration2Builder;
-use AmazonAthenaLib\Models\EncryptionOption1;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\EncryptionOption1Enum;
 
 $workGroupConfigurationUpdates = WorkGroupConfigurationUpdatesBuilder::init()
     ->enforceWorkGroupConfiguration(false)
@@ -48,21 +44,18 @@ $workGroupConfigurationUpdates = WorkGroupConfigurationUpdatesBuilder::init()
             ->removeOutputLocation(false)
             ->encryptionConfiguration(
                 EncryptionConfiguration2Builder::init(
-                    EncryptionOption1::SSE_S3
+                    EncryptionOption1Enum::SSE_S3
                 )
                     ->kmsKey('KmsKey6')
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->removeEncryptionConfiguration(false)
             ->expectedBucketOwner('ExpectedBucketOwner0')
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->publishCloudWatchMetricsEnabled(false)
     ->bytesScannedCutoffPerQuery(10000000)
     ->removeBytesScannedCutoffPerQuery(false)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

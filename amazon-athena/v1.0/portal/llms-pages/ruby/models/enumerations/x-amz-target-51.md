@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget51`
+`XAmzTarget51Enum`
 
 
 # Fields
@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-x_amz_target51 = XAmzTarget51::ENUM_AMAZONATHENATAGRESOURCE
+x_amz_target51 = XAmzTarget51Enum::ENUM_AMAZONATHENATAGRESOURCE
 ```
 
 

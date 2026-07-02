@@ -7,22 +7,22 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ipynb` |
+| `IPYNB` |
 
 
 # Example
 
 ```ts
-import { NotebookType1 } from 'amazon-athenalib';
+import { NotebookType1Enum } from 'amazon-athenalib';
 
-const notebookType1 = NotebookType1.Ipynb;
+const notebookType1 = NotebookType1Enum.IPYNB;
 ```
 
 

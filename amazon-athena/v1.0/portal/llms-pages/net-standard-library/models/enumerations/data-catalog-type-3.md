@@ -7,16 +7,16 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Enum Type Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -24,7 +24,7 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 ```csharp
 using AmazonAthena.Standard.Models;
 
-DataCatalogType3 dataCatalogType3 = DataCatalogType3.Lambda;
+DataCatalogType3Enum dataCatalogType3 = DataCatalogType3Enum.LAMBDA;
 ```
 
 

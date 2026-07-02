@@ -7,7 +7,7 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 
 # Enum Type Name
 
-`S3AclOption1`
+`S3AclOption1Enum`
 
 
 # Fields
@@ -20,9 +20,9 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.S3AclOption1;
+import com.amazonaws.useast1.athena.models.S3AclOption1Enum;
 
-S3AclOption1 s3AclOption1 = S3AclOption1.BUCKET_OWNER_FULL_CONTROL;
+S3AclOption1Enum s3AclOption1 = S3AclOption1Enum.BUCKET_OWNER_FULL_CONTROL;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query and calculation results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -26,43 +24,36 @@ The configuration of the workgroup, which includes the location in Amazon S3 whe
 | `ExecutionRole` | `String` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` | String getExecutionRole() | setExecutionRole(String executionRole) |
 | `CustomerContentEncryptionConfiguration` | [`CustomerContentEncryptionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/customer-content-encryption-configuration-2.md) | Optional | - | CustomerContentEncryptionConfiguration2 getCustomerContentEncryptionConfiguration() | setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration2 customerContentEncryptionConfiguration) |
 | `EnableMinimumEncryptionConfiguration` | `Boolean` | Optional | - | Boolean getEnableMinimumEncryptionConfiguration() | setEnableMinimumEncryptionConfiguration(Boolean enableMinimumEncryptionConfiguration) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.AclConfiguration1;
 import com.amazonaws.useast1.athena.models.EncryptionConfiguration2;
-import com.amazonaws.useast1.athena.models.EncryptionOption1;
+import com.amazonaws.useast1.athena.models.EncryptionOption1Enum;
 import com.amazonaws.useast1.athena.models.ResultConfiguration1;
-import com.amazonaws.useast1.athena.models.S3AclOption1;
+import com.amazonaws.useast1.athena.models.S3AclOption1Enum;
 import com.amazonaws.useast1.athena.models.WorkGroupConfiguration;
-import java.io.IOException;
 
 WorkGroupConfiguration workGroupConfiguration = new WorkGroupConfiguration.Builder()
     .resultConfiguration(new ResultConfiguration1.Builder()
         .outputLocation("OutputLocation0")
         .encryptionConfiguration(new EncryptionConfiguration2.Builder(
-            EncryptionOption1.SSE_S3
+            EncryptionOption1Enum.SSE_S3
         )
         .kmsKey("KmsKey6")
-        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
         .expectedBucketOwner("ExpectedBucketOwner0")
         .aclConfiguration(new AclConfiguration1.Builder(
-            S3AclOption1.BUCKET_OWNER_FULL_CONTROL
+            S3AclOption1Enum.BUCKET_OWNER_FULL_CONTROL
         )
-        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
-    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
         .build())
     .enforceWorkGroupConfiguration(false)
     .publishCloudWatchMetricsEnabled(false)
     .bytesScannedCutoffPerQuery(10000000)
     .requesterPaysEnabled(false)
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

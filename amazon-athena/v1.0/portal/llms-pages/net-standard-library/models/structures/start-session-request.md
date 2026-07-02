@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlN0YXJ0U2Vzc2lvblJlcXVlc3Q
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -20,14 +18,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `NotebookVersion` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `SessionIdleTimeoutInMinutes` | `int?` | Optional | **Constraints**: `>= 1`, `<= 480` |
 | `ClientRequestToken` | `string` | Optional | **Constraints**: *Minimum Length*: `32`, *Maximum Length*: `128` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 StartSessionRequest startSessionRequest = new StartSessionRequest
 {
@@ -39,15 +35,12 @@ StartSessionRequest startSessionRequest = new StartSessionRequest
         DefaultExecutorDpuSize = 1,
         AdditionalConfigs = new AdditionalConfigs
         {
-            ["exampleAdditionalProperty"] = "AdditionalConfigs_additionalProperties5",
         },
-        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     Description = "Description4",
     NotebookVersion = "NotebookVersion4",
     SessionIdleTimeoutInMinutes = 172,
     ClientRequestToken = "ClientRequestToken4",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

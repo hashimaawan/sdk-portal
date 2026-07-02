@@ -18,7 +18,7 @@ function getQueryResults(
     ?string $xAmzSignedHeaders = null,
     ?string $maxResults = null,
     ?string $nextToken = null
-): ApiResponse
+): GetQueryResultsOutput
 ```
 
 
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget24)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-24.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget24Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-24.md) | Header, Required | - |
 | `body` | [`GetQueryResultsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-query-results-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -48,35 +48,29 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`GetQueryResultsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-query-results-output.md).
+[`GetQueryResultsOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/get-query-results-output.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget24::ENUM_AMAZONATHENAGETQUERYRESULTS;
+$xAmzTarget = XAmzTarget24Enum::ENUM_AMAZONATHENAGETQUERYRESULTS;
 
 $body = GetQueryResultsInputBuilder::init(
     'QueryExecutionId0'
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->getQueryResults(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->getQueryResults(
+        $xAmzTarget,
+        $body
+    );
     echo 'GetQueryResultsOutput:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

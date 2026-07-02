@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the notebook session ID and notebook session creation time.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -18,14 +16,12 @@ Contains the notebook session ID and notebook session creation time.
 |  --- | --- | --- | --- |
 | `SessionId` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
 | `CreationTime` | `DateTime?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Globalization;
 
 NotebookSessionSummary notebookSessionSummary = new NotebookSessionSummary
@@ -34,7 +30,6 @@ NotebookSessionSummary notebookSessionSummary = new NotebookSessionSummary
     CreationTime = DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK",
         provider: CultureInfo.InvariantCulture,
         DateTimeStyles.RoundtripKind),
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

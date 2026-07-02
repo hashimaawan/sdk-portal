@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -20,7 +18,6 @@ Statistics such as input rows and bytes read by the query, rows and bytes output
 | `inputBytes` | `number \| undefined` | Optional | - |
 | `outputBytes` | `number \| undefined` | Optional | - |
 | `outputRows` | `number \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -33,9 +30,6 @@ const queryRuntimeStatisticsRows: QueryRuntimeStatisticsRows = {
   inputBytes: 254,
   outputBytes: 40,
   outputRows: 226,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

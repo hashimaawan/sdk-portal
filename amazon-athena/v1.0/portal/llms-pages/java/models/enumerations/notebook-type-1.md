@@ -7,7 +7,7 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
@@ -20,9 +20,9 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.NotebookType1;
+import com.amazonaws.useast1.athena.models.NotebookType1Enum;
 
-NotebookType1 notebookType1 = NotebookType1.IPYNB;
+NotebookType1Enum notebookType1 = NotebookType1Enum.IPYNB;
 ```
 
 

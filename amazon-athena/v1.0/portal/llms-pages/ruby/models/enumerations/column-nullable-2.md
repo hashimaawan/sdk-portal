@@ -7,7 +7,7 @@ Indicates the column's nullable status.
 
 # Enum Type Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
@@ -22,7 +22,7 @@ Indicates the column's nullable status.
 # Example
 
 ```ruby
-column_nullable2 = ColumnNullable2::NULLABLE
+column_nullable2 = ColumnNullable2Enum::NULLABLE
 ```
 
 

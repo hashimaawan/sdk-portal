@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see <a href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant programmatic access</a>.
 
 ```java
-CompletableFuture<ApiResponse<CreatePresignedNotebookUrlResponse>> createPresignedNotebookUrlAsync(
-    final XAmzTarget7 xAmzTarget,
+CompletableFuture<CreatePresignedNotebookUrlResponse> createPresignedNotebookUrlAsync(
+    final XAmzTarget7Enum xAmzTarget,
     final CreatePresignedNotebookUrlRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget7`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-7.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget7Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-7.md) | Header, Required | - |
 | `body` | [`CreatePresignedNotebookUrlRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-presigned-notebook-url-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreatePresignedNotebookUrlResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-presigned-notebook-url-response.md).
+[`CreatePresignedNotebookUrlResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-presigned-notebook-url-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget7 xAmzTarget = XAmzTarget7.ENUM_AMAZONATHENACREATEPRESIGNEDNOTEBOOKURL;
+XAmzTarget7Enum xAmzTarget = XAmzTarget7Enum.ENUM_AMAZONATHENACREATEPRESIGNEDNOTEBOOKURL;
 CreatePresignedNotebookUrlRequest body = new CreatePresignedNotebookUrlRequest.Builder(
     "SessionId2"
 )
 .build();
 
 
-api.createPresignedNotebookUrlAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.createPresignedNotebookUrlAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

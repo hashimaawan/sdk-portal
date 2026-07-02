@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`EncryptionOption`
+`EncryptionOptionEnum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-encryption_option = EncryptionOption::SSE_KMS
+encryption_option = EncryptionOptionEnum::SSE_KMS
 ```
 
 

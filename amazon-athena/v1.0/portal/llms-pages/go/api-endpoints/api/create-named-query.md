@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 CreateNamedQuery(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget4,
+    xAmzTarget models.XAmzTarget4Enum,
     body models.CreateNamedQueryInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget4`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-4.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget4Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-4.md) | Header, Required | - |
 | `body` | [`models.CreateNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/create-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -54,15 +54,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget4_EnumAmazonathenacreatenamedquery
+xAmzTarget := models.XAmzTarget4Enum_ENUMAMAZONATHENACREATENAMEDQUERY
 
 body := models.CreateNamedQueryInput{
-    Name:                  "Name6",
-    Database:              "Database4",
-    QueryString:           "QueryString8",
+    Name:                 "Name6",
+    Database:             "Database4",
+    QueryString:          "QueryString8",
 }
 
-apiResponse, err := api.CreateNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.CreateNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

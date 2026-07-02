@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`S3AclOption`
+`S3AclOptionEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `BucketOwnerFullControl` |
+| `BUCKETOWNERFULLCONTROL` |
 
 
 # Example
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-S3AclOption s3AclOption = S3AclOption.BucketOwnerFullControl;
+S3AclOptionEnum s3AclOption = S3AclOptionEnum.BUCKETOWNERFULLCONTROL;
 ```
 
 

@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState1`
+`SessionState1Enum`
 
 
 # Fields
@@ -28,9 +28,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.SessionState1;
+import com.amazonaws.useast1.athena.models.SessionState1Enum;
 
-SessionState1 sessionState1 = SessionState1.DEGRADED;
+SessionState1Enum sessionState1 = SessionState1Enum.DEGRADED;
 ```
 
 

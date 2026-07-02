@@ -6,7 +6,7 @@ Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
 
 ```csharp
 UpdateNamedQueryAsync(
-    Models.XAmzTarget55 xAmzTarget,
+    Models.XAmzTarget55Enum xAmzTarget,
     Models.UpdateNamedQueryInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget55`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-55.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget55Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-55.md) | Header, Required | - |
 | `body` | [`UpdateNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/update-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget55 xAmzTarget = XAmzTarget55.EnumAmazonAthenaUpdateNamedQuery;
+XAmzTarget55Enum xAmzTarget = XAmzTarget55Enum.EnumAmazonAthenaUpdateNamedQuery;
 UpdateNamedQueryInput body = new UpdateNamedQueryInput
 {
     NamedQueryId = "NamedQueryId6",
@@ -58,7 +58,7 @@ UpdateNamedQueryInput body = new UpdateNamedQueryInput
 
 try
 {
-    ApiResponse<object> result = await api.UpdateNamedQueryAsync(
+    object result = await aPIController.UpdateNamedQueryAsync(
         xAmzTarget,
         body
     );

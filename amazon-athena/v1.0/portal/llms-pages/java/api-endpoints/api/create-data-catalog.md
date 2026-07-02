@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.
 
 ```java
-CompletableFuture<ApiResponse<Object>> createDataCatalogAsync(
-    final XAmzTarget3 xAmzTarget,
+CompletableFuture<Object> createDataCatalogAsync(
+    final XAmzTarget3Enum xAmzTarget,
     final CreateDataCatalogInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-3.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget3Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-3.md) | Header, Required | - |
 | `body` | [`CreateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,21 +42,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget3 xAmzTarget = XAmzTarget3.ENUM_AMAZONATHENACREATEDATACATALOG;
+XAmzTarget3Enum xAmzTarget = XAmzTarget3Enum.ENUM_AMAZONATHENACREATEDATACATALOG;
 CreateDataCatalogInput body = new CreateDataCatalogInput.Builder(
     "Name6",
-    DataCatalogType1.HIVE
+    DataCatalogType1Enum.HIVE
 )
 .build();
 
 
-api.createDataCatalogAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.createDataCatalogAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

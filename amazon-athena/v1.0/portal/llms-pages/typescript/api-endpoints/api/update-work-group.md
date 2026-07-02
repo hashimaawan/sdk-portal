@@ -6,7 +6,7 @@ Updates the workgroup with the specified name. The workgroup's name cannot be ch
 
 ```ts
 async updateWorkGroup(
-  xAmzTarget: XAmzTarget59,
+  xAmzTarget: XAmzTarget59Enum,
   body: UpdateWorkGroupInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget59`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-59.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget59Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-59.md) | Header, Required | - |
 | `body` | [`UpdateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/update-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget59.EnumAmazonAthenaUpdateWorkGroup;
+const xAmzTarget = XAmzTarget59Enum.EnumAmazonAthenaUpdateWorkGroup;
 
 const body: UpdateWorkGroupInput = {
   workGroup: 'WorkGroup8',
 };
 
 try {
-  const response = await api.updateWorkGroup(
+  const response = await apiController.updateWorkGroup(
     xAmzTarget,
     body
   );

@@ -7,7 +7,7 @@ Lists, in descending order, the executors that joined a session. Newer executors
 ```go
 ListExecutors(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget36,
+    xAmzTarget models.XAmzTarget36Enum,
     body models.ListExecutorsRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget36`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-36.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget36Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-36.md) | Header, Required | - |
 | `body` | [`models.ListExecutorsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-executors-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,13 +57,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget36_EnumAmazonathenalistexecutors
+xAmzTarget := models.XAmzTarget36Enum_ENUMAMAZONATHENALISTEXECUTORS
 
 body := models.ListExecutorsRequest{
-    SessionId:             "SessionId2",
+    SessionId:            "SessionId2",
 }
 
-apiResponse, err := api.ListExecutors(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListExecutors(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

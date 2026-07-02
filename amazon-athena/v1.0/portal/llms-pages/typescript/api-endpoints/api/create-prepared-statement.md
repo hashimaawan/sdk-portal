@@ -6,7 +6,7 @@ Creates a prepared statement for use with SQL queries in Athena.
 
 ```ts
 async createPreparedStatement(
-  xAmzTarget: XAmzTarget6,
+  xAmzTarget: XAmzTarget6Enum,
   body: CreatePreparedStatementInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-6.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-6.md) | Header, Required | - |
 | `body` | [`CreatePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/create-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget6.EnumAmazonAthenaCreatePreparedStatement;
+const xAmzTarget = XAmzTarget6Enum.EnumAmazonAthenaCreatePreparedStatement;
 
 const body: CreatePreparedStatementInput = {
   statementName: 'StatementName4',
@@ -60,7 +60,7 @@ const body: CreatePreparedStatementInput = {
 };
 
 try {
-  const response = await api.createPreparedStatement(
+  const response = await apiController.createPreparedStatement(
     xAmzTarget,
     body
   );

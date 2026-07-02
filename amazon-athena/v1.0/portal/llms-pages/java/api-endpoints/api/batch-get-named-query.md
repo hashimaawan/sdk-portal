@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of query execution IDs.
 
 ```java
-CompletableFuture<ApiResponse<BatchGetNamedQueryOutput>> batchGetNamedQueryAsync(
-    final XAmzTarget xAmzTarget,
+CompletableFuture<BatchGetNamedQueryOutput> batchGetNamedQueryAsync(
+    final XAmzTargetEnum xAmzTarget,
     final BatchGetNamedQueryInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTargetEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target.md) | Header, Required | - |
 | `body` | [`BatchGetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/batch-get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`BatchGetNamedQueryOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/batch-get-named-query-output.md).
+[`BatchGetNamedQueryOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/batch-get-named-query-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget xAmzTarget = XAmzTarget.ENUM_AMAZONATHENABATCHGETNAMEDQUERY;
+XAmzTargetEnum xAmzTarget = XAmzTargetEnum.ENUM_AMAZONATHENABATCHGETNAMEDQUERY;
 BatchGetNamedQueryInput body = new BatchGetNamedQueryInput.Builder(
     Arrays.asList(
         "NamedQueryIds9"
@@ -57,7 +57,7 @@ BatchGetNamedQueryInput body = new BatchGetNamedQueryInput.Builder(
 .build();
 
 
-api.batchGetNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.batchGetNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

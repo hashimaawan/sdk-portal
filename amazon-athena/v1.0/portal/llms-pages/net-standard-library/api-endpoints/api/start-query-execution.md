@@ -6,7 +6,7 @@ Runs the SQL query statements contained in the <code>Query</code>. Requires you 
 
 ```csharp
 StartQueryExecutionAsync(
-    Models.XAmzTarget47 xAmzTarget,
+    Models.XAmzTarget47Enum xAmzTarget,
     Models.StartQueryExecutionInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget47`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-47.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget47Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-47.md) | Header, Required | - |
 | `body` | [`StartQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StartQueryExecutionOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-query-execution-output.md).
+[`Task<Models.StartQueryExecutionOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-query-execution-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget47 xAmzTarget = XAmzTarget47.EnumAmazonAthenaStartQueryExecution;
+XAmzTarget47Enum xAmzTarget = XAmzTarget47Enum.EnumAmazonAthenaStartQueryExecution;
 StartQueryExecutionInput body = new StartQueryExecutionInput
 {
     QueryString = "QueryString8",
@@ -56,7 +56,7 @@ StartQueryExecutionInput body = new StartQueryExecutionInput
 
 try
 {
-    ApiResponse<StartQueryExecutionOutput> result = await api.StartQueryExecutionAsync(
+    StartQueryExecutionOutput result = await aPIController.StartQueryExecutionAsync(
         xAmzTarget,
         body
     );

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget33`
+`XAmzTarget33Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-XAmzTarget33 xAmzTarget33 = XAmzTarget33.EnumAmazonAthenaListDataCatalogs;
+XAmzTarget33Enum xAmzTarget33 = XAmzTarget33Enum.EnumAmazonAthenaListDataCatalogs;
 ```
 
 

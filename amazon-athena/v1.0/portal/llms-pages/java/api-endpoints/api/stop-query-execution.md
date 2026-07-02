@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<Object>> stopQueryExecutionAsync(
-    final XAmzTarget50 xAmzTarget,
+CompletableFuture<Object> stopQueryExecutionAsync(
+    final XAmzTarget50Enum xAmzTarget,
     final StopQueryExecutionInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-50.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-50.md) | Header, Required | - |
 | `body` | [`StopQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/stop-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -43,20 +43,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget50 xAmzTarget = XAmzTarget50.ENUM_AMAZONATHENASTOPQUERYEXECUTION;
+XAmzTarget50Enum xAmzTarget = XAmzTarget50Enum.ENUM_AMAZONATHENASTOPQUERYEXECUTION;
 StopQueryExecutionInput body = new StopQueryExecutionInput.Builder(
     "QueryExecutionId0"
 )
 .build();
 
 
-api.stopQueryExecutionAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.stopQueryExecutionAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

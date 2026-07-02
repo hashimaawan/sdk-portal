@@ -78,7 +78,7 @@ It is important that the path inside require_once correctly points to the file `
 
 ![Add a new project in PHPStorm - Step 5](https://apidocs.io/illustration/php?workspaceFolder=AmazonAthena&step=projectFiles)
 
-After this you can add code to initialize the client library and acquire the instance of a Api class. Sample code to initialize the client library and use the Api methods is given in the subsequent sections.
+After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and use the Controller methods is given in the subsequent sections.
 
 ## 3. Run the Test Project
 
@@ -125,9 +125,9 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| region | `string(Region)` | The AWS region<br>*Default*: `Region::USEAST1` |
+| region | `string(RegionEnum)` | The AWS region<br>*Default*: `RegionEnum::USEAST1` |
 | environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
-| timeout | `int` | Timeout for API calls in seconds.<br>*Default*: `30` |
+| timeout | `int` | Timeout for API calls in seconds.<br>*Default*: `0` |
 | enableRetries | `bool` | Whether to enable retries and backoff feature.<br>*Default*: `false` |
 | numberOfRetries | `int` | The number of retries to make.<br>*Default*: `0` |
 | retryInterval | `float` | The retry time interval between the endpoint calls.<br>*Default*: `1` |
@@ -136,18 +136,13 @@ The following parameters are configurable for the API Client:
 | retryOnTimeout | `bool` | Whether to retry on request timeout.<br>*Default*: `true` |
 | httpStatusCodesToRetry | `array` | Http status codes to retry against.<br>*Default*: `408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524` |
 | httpMethodsToRetry | `array` | Http methods to retry against.<br>*Default*: `'GET', 'PUT', 'GET', 'PUT'` |
-| loggingConfiguration | [`LoggingConfigurationBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/configuration/loggingconfigurationbuilder.md) | Represents the logging configurations for API calls |
 | proxyConfiguration | [`ProxyConfigurationBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/configuration/proxyconfigurationbuilder.md) | Represents the proxy configurations for API calls |
 | customHeaderAuthenticationCredentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/getting-started/quickstart/authorization.md) | The Credentials Setter for Custom Header Signature |
 
 The API client can be initialized as follows:
 
 ```php
-use AmazonAthenaLib\Logging\LoggingConfigurationBuilder;
-use AmazonAthenaLib\Logging\RequestLoggingConfigurationBuilder;
-use AmazonAthenaLib\Logging\ResponseLoggingConfigurationBuilder;
-use Psr\Log\LogLevel;
-use AmazonAthenaLib\Models\Region;
+use AmazonAthenaLib\Models\RegionEnum;
 use AmazonAthenaLib\Environment;
 use AmazonAthenaLib\Authentication\CustomHeaderAuthenticationCredentialsBuilder;
 use AmazonAthenaLib\AmazonAthenaClientBuilder;
@@ -159,13 +154,7 @@ $client = AmazonAthenaClientBuilder::init()
         )
     )
     ->environment(Environment::PRODUCTION)
-    ->region(Region::USEAST1)
-    ->loggingConfiguration(
-        LoggingConfigurationBuilder::init()
-            ->level(LogLevel::INFO)
-            ->requestConfiguration(RequestLoggingConfigurationBuilder::init()->body(true))
-            ->responseConfiguration(ResponseLoggingConfigurationBuilder::init()->headers(true))
-    )
+    ->region(RegionEnum::USEAST1)
     ->build();
 ```
 

@@ -7,7 +7,7 @@ Indicates the column's nullable status.
 
 # Enum Type Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Indicates the column's nullable status.
 # Example
 
 ```php
-use AmazonAthenaLib\Models\ColumnNullable2;
+use AmazonAthenaLib\Models\ColumnNullable2Enum;
 
-$columnNullable2 = ColumnNullable2::NOT_NULL;
+$columnNullable2 = ColumnNullable2Enum::NOT_NULL;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A query, where <code>QueryString</code> contains the SQL statements that make up the query.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -22,14 +20,11 @@ A query, where <code>QueryString</code> contains the SQL statements that make up
 | `query_string` | `str` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `262144` |
 | `named_query_id` | `str` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
 | `work_group` | `str` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.named_query import NamedQuery
 
 named_query = NamedQuery(
@@ -38,10 +33,7 @@ named_query = NamedQuery(
     query_string='QueryString6',
     description='Description8',
     named_query_id='NamedQueryId8',
-    work_group='WorkGroup6',
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    work_group='WorkGroup6'
 )
 ```
 

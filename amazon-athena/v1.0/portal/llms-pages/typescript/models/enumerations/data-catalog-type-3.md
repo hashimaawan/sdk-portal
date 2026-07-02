@@ -7,24 +7,24 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Enum Type Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
 
 ```ts
-import { DataCatalogType3 } from 'amazon-athenalib';
+import { DataCatalogType3Enum } from 'amazon-athenalib';
 
-const dataCatalogType3 = DataCatalogType3.Lambda;
+const dataCatalogType3 = DataCatalogType3Enum.LAMBDA;
 ```
 
 

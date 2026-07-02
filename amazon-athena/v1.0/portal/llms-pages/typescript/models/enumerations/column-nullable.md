@@ -5,24 +5,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ColumnNullable`
+`ColumnNullableEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `NotNull` |
-| `Nullable` |
-| `Unknown` |
+| `NOTNULL` |
+| `NULLABLE` |
+| `UNKNOWN` |
 
 
 # Example
 
 ```ts
-import { ColumnNullable } from 'amazon-athenalib';
+import { ColumnNullableEnum } from 'amazon-athenalib';
 
-const columnNullable = ColumnNullable.NotNull;
+const columnNullable = ColumnNullableEnum.NOTNULL;
 ```
 
 

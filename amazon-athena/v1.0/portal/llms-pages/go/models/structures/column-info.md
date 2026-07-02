@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Information about the columns in a query execution result.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -24,9 +22,8 @@ Information about the columns in a query execution result.
 | `Type` | `string` | Required | - |
 | `Precision` | `*int` | Optional | - |
 | `Scale` | `*int` | Optional | - |
-| `Nullable` | [`*models.ColumnNullable2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/column-nullable-2.md) | Optional | - |
+| `Nullable` | [`*models.ColumnNullable2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/column-nullable-2.md) | Optional | - |
 | `CaseSensitive` | `*bool` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -35,21 +32,18 @@ Information about the columns in a query execution result.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     columnInfo := models.ColumnInfo{
-        CatalogName:           models.ToPointer("CatalogName2"),
-        SchemaName:            models.ToPointer("SchemaName2"),
-        TableName:             models.ToPointer("TableName4"),
-        Name:                  "Name8",
-        Label:                 models.ToPointer("Label6"),
-        Type:                  "Type8",
-        Precision:             models.ToPointer(196),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        CatalogName:          models.ToPointer("CatalogName2"),
+        SchemaName:           models.ToPointer("SchemaName2"),
+        TableName:            models.ToPointer("TableName4"),
+        Name:                 "Name8",
+        Label:                models.ToPointer("Label6"),
+        Type:                 "Type8",
+        Precision:            models.ToPointer(196),
     }
 
 }

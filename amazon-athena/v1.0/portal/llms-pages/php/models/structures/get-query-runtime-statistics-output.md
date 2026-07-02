@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkdldFF1ZXJ5UnVudGltZVN0YXRpc3RpY3NPdXRwdXQ
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -15,7 +13,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `queryRuntimeStatistics` | [`?QueryRuntimeStatistics2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/query-runtime-statistics-2.md) | Optional | - | getQueryRuntimeStatistics(): ?QueryRuntimeStatistics2 | setQueryRuntimeStatistics(?QueryRuntimeStatistics2 queryRuntimeStatistics): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -24,7 +21,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 use AmazonAthenaLib\Models\Builders\GetQueryRuntimeStatisticsOutputBuilder;
 use AmazonAthenaLib\Models\Builders\QueryRuntimeStatistics2Builder;
 use AmazonAthenaLib\Models\Builders\QueryRuntimeStatisticsTimelineBuilder;
-use AmazonAthenaLib\ApiHelper;
 use AmazonAthenaLib\Models\Builders\QueryRuntimeStatisticsRowsBuilder;
 use AmazonAthenaLib\Models\Builders\OutputStageBuilder;
 
@@ -38,7 +34,6 @@ $getQueryRuntimeStatisticsOutput = GetQueryRuntimeStatisticsOutputBuilder::init(
                     ->engineExecutionTimeInMillis(112)
                     ->serviceProcessingTimeInMillis(126)
                     ->totalExecutionTimeInMillis(106)
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->rows(
@@ -47,7 +42,6 @@ $getQueryRuntimeStatisticsOutput = GetQueryRuntimeStatisticsOutputBuilder::init(
                     ->inputBytes(250)
                     ->outputBytes(36)
                     ->outputRows(230)
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->outputStage(
@@ -57,13 +51,10 @@ $getQueryRuntimeStatisticsOutput = GetQueryRuntimeStatisticsOutputBuilder::init(
                     ->outputBytes(108)
                     ->outputRows(158)
                     ->inputBytes(190)
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

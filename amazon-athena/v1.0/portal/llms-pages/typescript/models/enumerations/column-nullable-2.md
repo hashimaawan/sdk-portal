@@ -7,24 +7,24 @@ Indicates the column's nullable status.
 
 # Enum Type Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `NotNull` |
-| `Nullable` |
-| `Unknown` |
+| `NOTNULL` |
+| `NULLABLE` |
+| `UNKNOWN` |
 
 
 # Example
 
 ```ts
-import { ColumnNullable2 } from 'amazon-athenalib';
+import { ColumnNullable2Enum } from 'amazon-athenalib';
 
-const columnNullable2 = ColumnNullable2.NotNull;
+const columnNullable2 = ColumnNullable2Enum.NOTNULL;
 ```
 
 

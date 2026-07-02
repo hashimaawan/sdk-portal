@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState3`
+`CalculationExecutionState3Enum`
 
 
 # Fields
@@ -28,7 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-calculation_execution_state3 = CalculationExecutionState3::CREATING
+calculation_execution_state3 = CalculationExecutionState3Enum::CREATING
 ```
 
 

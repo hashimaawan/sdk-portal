@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -20,14 +18,12 @@ Statistics such as input rows and bytes read by the query, rows and bytes output
 | `InputBytes` | `int?` | Optional | - |
 | `OutputBytes` | `int?` | Optional | - |
 | `OutputRows` | `int?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 QueryRuntimeStatisticsRows queryRuntimeStatisticsRows = new QueryRuntimeStatisticsRows
 {
@@ -35,7 +31,6 @@ QueryRuntimeStatisticsRows queryRuntimeStatisticsRows = new QueryRuntimeStatisti
     InputBytes = 254,
     OutputBytes = 40,
     OutputRows = 226,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

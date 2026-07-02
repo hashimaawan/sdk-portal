@@ -7,7 +7,7 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Enum Type Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 # Example
 
 ```php
-use AmazonAthenaLib\Models\DataCatalogType3;
+use AmazonAthenaLib\Models\DataCatalogType3Enum;
 
-$dataCatalogType3 = DataCatalogType3::LAMBDA;
+$dataCatalogType3 = DataCatalogType3Enum::LAMBDA;
 ```
 
 

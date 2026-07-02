@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`EncryptionOption`
+`EncryptionOptionEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SseS3` |
-| `SseKms` |
-| `CseKms` |
+| `SSES3` |
+| `SSEKMS` |
+| `CSEKMS` |
 
 
 # Example
@@ -22,7 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-EncryptionOption encryptionOption = EncryptionOption.SseS3;
+EncryptionOptionEnum encryptionOption = EncryptionOptionEnum.SSES3;
 ```
 
 

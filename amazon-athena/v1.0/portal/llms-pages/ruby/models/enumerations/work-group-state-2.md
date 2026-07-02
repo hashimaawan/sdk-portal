@@ -7,7 +7,7 @@ The workgroup state that will be updated for the given workgroup.
 
 # Enum Type Name
 
-`WorkGroupState2`
+`WorkGroupState2Enum`
 
 
 # Fields
@@ -21,7 +21,7 @@ The workgroup state that will be updated for the given workgroup.
 # Example
 
 ```ruby
-work_group_state2 = WorkGroupState2::ENABLED
+work_group_state2 = WorkGroupState2Enum::ENABLED
 ```
 
 

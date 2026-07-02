@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRlN0YXRpc3RpY3M
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -22,14 +20,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `queryPlanningTimeInMillis` | `?int` | Optional | - | getQueryPlanningTimeInMillis(): ?int | setQueryPlanningTimeInMillis(?int queryPlanningTimeInMillis): void |
 | `serviceProcessingTimeInMillis` | `?int` | Optional | - | getServiceProcessingTimeInMillis(): ?int | setServiceProcessingTimeInMillis(?int serviceProcessingTimeInMillis): void |
 | `resultReuseInformation` | [`?ResultReuseInformation2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/result-reuse-information-2.md) | Optional | - | getResultReuseInformation(): ?ResultReuseInformation2 | setResultReuseInformation(?ResultReuseInformation2 resultReuseInformation): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\StatisticsBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $statistics = StatisticsBuilder::init()
     ->engineExecutionTimeInMillis(72)
@@ -37,7 +33,6 @@ $statistics = StatisticsBuilder::init()
     ->dataManifestLocation('DataManifestLocation0')
     ->totalExecutionTimeInMillis(146)
     ->queryQueueTimeInMillis(116)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

@@ -6,7 +6,7 @@ Updates the data catalog that has the specified name.
 
 ```ts
 async updateDataCatalog(
-  xAmzTarget: XAmzTarget54,
+  xAmzTarget: XAmzTarget54Enum,
   body: UpdateDataCatalogInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget54`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-54.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget54Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-54.md) | Header, Required | - |
 | `body` | [`UpdateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/update-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,15 +51,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget54.EnumAmazonAthenaUpdateDataCatalog;
+const xAmzTarget = XAmzTarget54Enum.EnumAmazonAthenaUpdateDataCatalog;
 
 const body: UpdateDataCatalogInput = {
   name: 'Name6',
-  type: DataCatalogType3.Hive,
+  type: DataCatalogType3Enum.HIVE,
 };
 
 try {
-  const response = await api.updateDataCatalog(
+  const response = await apiController.updateDataCatalog(
     xAmzTarget,
     body
   );

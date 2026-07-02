@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```csharp
 GetQueryResultsAsync(
-    Models.XAmzTarget24 xAmzTarget,
+    Models.XAmzTarget24Enum xAmzTarget,
     Models.GetQueryResultsInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget24`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-24.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget24Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-24.md) | Header, Required | - |
 | `body` | [`GetQueryResultsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-results-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -47,13 +47,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetQueryResultsOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-results-output.md).
+[`Task<Models.GetQueryResultsOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-results-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget24 xAmzTarget = XAmzTarget24.EnumAmazonAthenaGetQueryResults;
+XAmzTarget24Enum xAmzTarget = XAmzTarget24Enum.EnumAmazonAthenaGetQueryResults;
 GetQueryResultsInput body = new GetQueryResultsInput
 {
     QueryExecutionId = "QueryExecutionId0",
@@ -61,7 +61,7 @@ GetQueryResultsInput body = new GetQueryResultsInput
 
 try
 {
-    ApiResponse<GetQueryResultsOutput> result = await api.GetQueryResultsAsync(
+    GetQueryResultsOutput result = await aPIController.GetQueryResultsAsync(
         xAmzTarget,
         body
     );

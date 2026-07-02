@@ -6,7 +6,7 @@ Lists available workgroups for the account.
 
 ```ts
 async listWorkGroups(
-  xAmzTarget: XAmzTarget45,
+  xAmzTarget: XAmzTarget45Enum,
   body: ListWorkGroupsInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget45`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-45.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget45Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-45.md) | Header, Required | - |
 | `body` | [`ListWorkGroupsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-work-groups-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,13 +55,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget45.EnumAmazonAthenaListWorkGroups;
+const xAmzTarget = XAmzTarget45Enum.EnumAmazonAthenaListWorkGroups;
 
 const body: ListWorkGroupsInput = {
 };
 
 try {
-  const response = await api.listWorkGroups(
+  const response = await apiController.listWorkGroups(
     xAmzTarget,
     body
   );

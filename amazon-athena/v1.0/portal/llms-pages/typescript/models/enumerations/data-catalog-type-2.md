@@ -7,24 +7,24 @@ The data catalog type.
 
 # Enum Type Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
 
 ```ts
-import { DataCatalogType2 } from 'amazon-athenalib';
+import { DataCatalogType2Enum } from 'amazon-athenalib';
 
-const dataCatalogType2 = DataCatalogType2.Lambda;
+const dataCatalogType2 = DataCatalogType2Enum.LAMBDA;
 ```
 
 

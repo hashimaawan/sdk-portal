@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Creates a prepared statement for use with SQL queries in Athena.
 
 ```java
-CompletableFuture<ApiResponse<Object>> createPreparedStatementAsync(
-    final XAmzTarget6 xAmzTarget,
+CompletableFuture<Object> createPreparedStatementAsync(
+    final XAmzTarget6Enum xAmzTarget,
     final CreatePreparedStatementInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget6`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-6.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget6Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-6.md) | Header, Required | - |
 | `body` | [`CreatePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget6 xAmzTarget = XAmzTarget6.ENUM_AMAZONATHENACREATEPREPAREDSTATEMENT;
+XAmzTarget6Enum xAmzTarget = XAmzTarget6Enum.ENUM_AMAZONATHENACREATEPREPAREDSTATEMENT;
 CreatePreparedStatementInput body = new CreatePreparedStatementInput.Builder(
     "StatementName4",
     "WorkGroup8",
@@ -57,7 +57,7 @@ CreatePreparedStatementInput body = new CreatePreparedStatementInput.Builder(
 .build();
 
 
-api.createPreparedStatementAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.createPreparedStatementAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

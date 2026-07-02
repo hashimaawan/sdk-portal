@@ -7,7 +7,7 @@ Gets the current status of a session.
 ```go
 GetSessionStatus(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget27,
+    xAmzTarget models.XAmzTarget27Enum,
     body models.GetSessionStatusRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget27`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-27.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget27Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-27.md) | Header, Required | - |
 | `body` | [`models.GetSessionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-session-status-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget27_EnumAmazonathenagetsessionstatus
+xAmzTarget := models.XAmzTarget27Enum_ENUMAMAZONATHENAGETSESSIONSTATUS
 
 body := models.GetSessionStatusRequest{
-    SessionId:             "SessionId2",
+    SessionId:            "SessionId2",
 }
 
-apiResponse, err := api.GetSessionStatus(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetSessionStatus(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

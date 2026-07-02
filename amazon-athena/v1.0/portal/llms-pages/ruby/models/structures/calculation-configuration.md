@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains configuration information for the calculation.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,17 +15,13 @@ Contains configuration information for the calculation.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `code_block` | `String` | Optional | **Constraints**: *Maximum Length*: `68000` |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 calculation_configuration = CalculationConfiguration.new(
-  code_block: 'CodeBlock6',
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  'CodeBlock6'
 )
 ```
 

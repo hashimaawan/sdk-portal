@@ -7,7 +7,7 @@ The data catalog type.
 
 # Enum Type Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
@@ -22,7 +22,7 @@ The data catalog type.
 # Example
 
 ```ruby
-data_catalog_type2 = DataCatalogType2::GLUE
+data_catalog_type2 = DataCatalogType2Enum::GLUE
 ```
 
 

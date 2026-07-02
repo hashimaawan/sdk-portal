@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRkxpc3RFbmdpbmVWZXJzaW9uc0lucHV0
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -16,7 +14,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `NextToken` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `MaxResults` | `*int` | Optional | **Constraints**: `>= 1`, `<= 10` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -25,16 +22,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     listEngineVersionsInput := models.ListEngineVersionsInput{
-        NextToken:             models.ToPointer("NextToken6"),
-        MaxResults:            models.ToPointer(10),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        NextToken:            models.ToPointer("NextToken6"),
+        MaxResults:           models.ToPointer(10),
     }
 
 }

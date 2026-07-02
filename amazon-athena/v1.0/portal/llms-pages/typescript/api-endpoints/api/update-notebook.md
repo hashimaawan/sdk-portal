@@ -6,7 +6,7 @@ Updates the contents of a Spark notebook.
 
 ```ts
 async updateNotebook(
-  xAmzTarget: XAmzTarget56,
+  xAmzTarget: XAmzTarget56Enum,
   body: UpdateNotebookInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget56`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-56.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget56Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-56.md) | Header, Required | - |
 | `body` | [`UpdateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/update-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,16 +51,16 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget56.EnumAmazonAthenaUpdateNotebook;
+const xAmzTarget = XAmzTarget56Enum.EnumAmazonAthenaUpdateNotebook;
 
 const body: UpdateNotebookInput = {
   notebookId: 'NotebookId6',
   payload: 'Payload2',
-  type: NotebookType2.Ipynb,
+  type: NotebookType2Enum.IPYNB,
 };
 
 try {
-  const response = await api.updateNotebook(
+  const response = await apiController.updateNotebook(
     xAmzTarget,
     body
   );

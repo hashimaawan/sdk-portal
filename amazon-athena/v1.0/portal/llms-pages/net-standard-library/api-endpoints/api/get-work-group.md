@@ -6,7 +6,7 @@ Returns information about the workgroup with the specified name.
 
 ```csharp
 GetWorkGroupAsync(
-    Models.XAmzTarget29 xAmzTarget,
+    Models.XAmzTarget29Enum xAmzTarget,
     Models.GetWorkGroupInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget29`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-29.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget29Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-29.md) | Header, Required | - |
 | `body` | [`GetWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetWorkGroupOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-work-group-output.md).
+[`Task<Models.GetWorkGroupOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-work-group-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget29 xAmzTarget = XAmzTarget29.EnumAmazonAthenaGetWorkGroup;
+XAmzTarget29Enum xAmzTarget = XAmzTarget29Enum.EnumAmazonAthenaGetWorkGroup;
 GetWorkGroupInput body = new GetWorkGroupInput
 {
     WorkGroup = "WorkGroup8",
@@ -56,7 +56,7 @@ GetWorkGroupInput body = new GetWorkGroupInput
 
 try
 {
-    ApiResponse<GetWorkGroupOutput> result = await api.GetWorkGroupAsync(
+    GetWorkGroupOutput result = await aPIController.GetWorkGroupAsync(
         xAmzTarget,
         body
     );

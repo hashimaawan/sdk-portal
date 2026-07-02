@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The information about the updates in the query results, such as output location and encryption configuration for the query results.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -24,14 +22,13 @@ The information about the updates in the query results, such as output location 
 | `removeExpectedBucketOwner` | `boolean \| undefined` | Optional | - |
 | `aclConfiguration` | [`AclConfiguration1 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/acl-configuration-1.md) | Optional | - |
 | `removeAclConfiguration` | `boolean \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  EncryptionOption1,
+  EncryptionOption1Enum,
   ResultConfigurationUpdates,
 } from 'amazon-athenalib';
 
@@ -39,17 +36,11 @@ const resultConfigurationUpdates: ResultConfigurationUpdates = {
   outputLocation: 'OutputLocation6',
   removeOutputLocation: false,
   encryptionConfiguration: {
-    encryptionOption: EncryptionOption1.SseS3,
+    encryptionOption: EncryptionOption1Enum.SSES3,
     kmsKey: 'KmsKey6',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   removeEncryptionConfiguration: false,
   expectedBucketOwner: 'ExpectedBucketOwner6',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

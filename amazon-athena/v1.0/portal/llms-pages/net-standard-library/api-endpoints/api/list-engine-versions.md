@@ -6,7 +6,7 @@ Returns a list of engine versions that are available to choose from, including t
 
 ```csharp
 ListEngineVersionsAsync(
-    Models.XAmzTarget35 xAmzTarget,
+    Models.XAmzTarget35Enum xAmzTarget,
     Models.ListEngineVersionsInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget35`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-35.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget35Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-35.md) | Header, Required | - |
 | `body` | [`ListEngineVersionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-engine-versions-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListEngineVersionsOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-engine-versions-output.md).
+[`Task<Models.ListEngineVersionsOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-engine-versions-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget35 xAmzTarget = XAmzTarget35.EnumAmazonAthenaListEngineVersions;
+XAmzTarget35Enum xAmzTarget = XAmzTarget35Enum.EnumAmazonAthenaListEngineVersions;
 ListEngineVersionsInput body = new ListEngineVersionsInput
 {
 };
 
 try
 {
-    ApiResponse<ListEngineVersionsOutput> result = await api.ListEngineVersionsAsync(
+    ListEngineVersionsOutput result = await aPIController.ListEngineVersionsAsync(
         xAmzTarget,
         body
     );

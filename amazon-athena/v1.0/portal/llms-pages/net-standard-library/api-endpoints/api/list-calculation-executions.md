@@ -6,7 +6,7 @@ Lists the calculations that have been submitted to a session in descending order
 
 ```csharp
 ListCalculationExecutionsAsync(
-    Models.XAmzTarget32 xAmzTarget,
+    Models.XAmzTarget32Enum xAmzTarget,
     Models.ListCalculationExecutionsRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget32`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-32.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget32Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-32.md) | Header, Required | - |
 | `body` | [`ListCalculationExecutionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-calculation-executions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListCalculationExecutionsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-calculation-executions-response.md).
+[`Task<Models.ListCalculationExecutionsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-calculation-executions-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget32 xAmzTarget = XAmzTarget32.EnumAmazonAthenaListCalculationExecutions;
+XAmzTarget32Enum xAmzTarget = XAmzTarget32Enum.EnumAmazonAthenaListCalculationExecutions;
 ListCalculationExecutionsRequest body = new ListCalculationExecutionsRequest
 {
     SessionId = "SessionId2",
@@ -60,7 +60,7 @@ ListCalculationExecutionsRequest body = new ListCalculationExecutionsRequest
 
 try
 {
-    ApiResponse<ListCalculationExecutionsResponse> result = await api.ListCalculationExecutionsAsync(
+    ListCalculationExecutionsResponse result = await aPIController.ListCalculationExecutionsAsync(
         xAmzTarget,
         body
     );

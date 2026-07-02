@@ -6,7 +6,7 @@ Updates the workgroup with the specified name. The workgroup's name cannot be ch
 
 ```csharp
 UpdateWorkGroupAsync(
-    Models.XAmzTarget59 xAmzTarget,
+    Models.XAmzTarget59Enum xAmzTarget,
     Models.UpdateWorkGroupInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget59`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-59.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget59Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-59.md) | Header, Required | - |
 | `body` | [`UpdateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/update-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget59 xAmzTarget = XAmzTarget59.EnumAmazonAthenaUpdateWorkGroup;
+XAmzTarget59Enum xAmzTarget = XAmzTarget59Enum.EnumAmazonAthenaUpdateWorkGroup;
 UpdateWorkGroupInput body = new UpdateWorkGroupInput
 {
     WorkGroup = "WorkGroup8",
@@ -56,7 +56,7 @@ UpdateWorkGroupInput body = new UpdateWorkGroupInput
 
 try
 {
-    ApiResponse<object> result = await api.UpdateWorkGroupAsync(
+    object result = await aPIController.UpdateWorkGroupAsync(
         xAmzTarget,
         body
     );

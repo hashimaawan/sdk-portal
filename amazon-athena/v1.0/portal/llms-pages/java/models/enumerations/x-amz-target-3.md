@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget3`
+`XAmzTarget3Enum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.XAmzTarget3;
+import com.amazonaws.useast1.athena.models.XAmzTarget3Enum;
 
-XAmzTarget3 xAmzTarget3 = XAmzTarget3.ENUM_AMAZONATHENACREATEDATACATALOG;
+XAmzTarget3Enum xAmzTarget3 = XAmzTarget3Enum.ENUM_AMAZONATHENACREATEDATACATALOG;
 ```
 
 

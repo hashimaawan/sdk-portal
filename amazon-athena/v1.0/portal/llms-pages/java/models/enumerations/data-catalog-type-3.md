@@ -7,7 +7,7 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Enum Type Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.DataCatalogType3;
+import com.amazonaws.useast1.athena.models.DataCatalogType3Enum;
 
-DataCatalogType3 dataCatalogType3 = DataCatalogType3.LAMBDA;
+DataCatalogType3Enum dataCatalogType3 = DataCatalogType3Enum.LAMBDA;
 ```
 
 

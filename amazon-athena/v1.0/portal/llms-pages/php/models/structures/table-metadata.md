@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains metadata for a table.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -23,7 +21,6 @@ Contains metadata for a table.
 | `columns` | [`?(Column[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/column.md) | Optional | - | getColumns(): ?array | setColumns(?array columns): void |
 | `partitionKeys` | [`?(Column[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/column.md) | Optional | - | getPartitionKeys(): ?array | setPartitionKeys(?array partitionKeys): void |
 | `parameters` | [`?Parameters`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/parameters.md) | Optional | - | getParameters(): ?Parameters | setParameters(?Parameters parameters): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -32,7 +29,6 @@ Contains metadata for a table.
 use AmazonAthenaLib\Models\Builders\TableMetadataBuilder;
 use AmazonAthenaLib\Utils\DateTimeHelper;
 use AmazonAthenaLib\Models\Builders\ColumnBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $tableMetadata = TableMetadataBuilder::init(
     'Name0'
@@ -47,7 +43,6 @@ $tableMetadata = TableMetadataBuilder::init(
             )
                 ->type('Type0')
                 ->comment('Comment4')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -58,25 +53,21 @@ $tableMetadata = TableMetadataBuilder::init(
             )
                 ->type('Type6')
                 ->comment('Comment0')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             ColumnBuilder::init(
                 'Name6'
             )
                 ->type('Type6')
                 ->comment('Comment0')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build(),
             ColumnBuilder::init(
                 'Name6'
             )
                 ->type('Type6')
                 ->comment('Comment0')
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

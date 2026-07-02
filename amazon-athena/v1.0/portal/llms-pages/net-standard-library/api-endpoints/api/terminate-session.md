@@ -6,7 +6,7 @@ Terminates an active session. A <code>TerminateSession</code> call on a session 
 
 ```csharp
 TerminateSessionAsync(
-    Models.XAmzTarget52 xAmzTarget,
+    Models.XAmzTarget52Enum xAmzTarget,
     Models.TerminateSessionRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget52`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-52.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget52Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-52.md) | Header, Required | - |
 | `body` | [`TerminateSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/terminate-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.TerminateSessionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/terminate-session-response.md).
+[`Task<Models.TerminateSessionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/terminate-session-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget52 xAmzTarget = XAmzTarget52.EnumAmazonAthenaTerminateSession;
+XAmzTarget52Enum xAmzTarget = XAmzTarget52Enum.EnumAmazonAthenaTerminateSession;
 TerminateSessionRequest body = new TerminateSessionRequest
 {
     SessionId = "SessionId2",
@@ -56,7 +56,7 @@ TerminateSessionRequest body = new TerminateSessionRequest
 
 try
 {
-    ApiResponse<TerminateSessionResponse> result = await api.TerminateSessionAsync(
+    TerminateSessionResponse result = await aPIController.TerminateSessionAsync(
         xAmzTarget,
         body
     );

@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>).
 
 ```ts
-async listApplicationDpuSizes(
-  xAmzTarget: XAmzTarget31,
-  body: ListApplicationDpuSizesInput,
+async listApplicationDPUSizes(
+  xAmzTarget: XAmzTarget31Enum,
+  body: ListApplicationDPUSizesInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
   xAmzAlgorithm?: string,
@@ -18,7 +18,7 @@ async listApplicationDpuSizes(
   maxResults?: string,
   nextToken?: string,
   requestOptions?: RequestOptions
-): Promise<ApiResponse<ListApplicationDpuSizesOutput>>
+): Promise<ApiResponse<ListApplicationDPUSizesOutput>>
 ```
 
 
@@ -31,8 +31,8 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget31`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-31.md) | Header, Required | - |
-| `body` | [`ListApplicationDpuSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
+| `xAmzTarget` | [`XAmzTarget31Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-31.md) | Header, Required | - |
+| `body` | [`ListApplicationDPUSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
 | `xAmzAlgorithm` | `string \| undefined` | Header, Optional | - |
@@ -49,19 +49,19 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/sdk-infrastructure/utilities/apiresponse.md) instance. The `result` property of this instance returns the response data which is of type [`ListApplicationDpuSizesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-application-dpu-sizes-output.md).
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/sdk-infrastructure/utilities/apiresponse.md) instance. The `result` property of this instance returns the response data which is of type [`ListApplicationDPUSizesOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-application-dpu-sizes-output.md).
 
 
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget31.EnumAmazonAthenaListApplicationDpuSizes;
+const xAmzTarget = XAmzTarget31Enum.EnumAmazonAthenaListApplicationDPUSizes;
 
-const body: ListApplicationDpuSizesInput = {
+const body: ListApplicationDPUSizesInput = {
 };
 
 try {
-  const response = await api.listApplicationDpuSizes(
+  const response = await apiController.listApplicationDPUSizes(
     xAmzTarget,
     body
   );

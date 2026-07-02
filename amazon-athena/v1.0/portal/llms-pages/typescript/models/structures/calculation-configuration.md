@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains configuration information for the calculation.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -17,7 +15,6 @@ Contains configuration information for the calculation.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `codeBlock` | `string \| undefined` | Optional | **Constraints**: *Maximum Length*: `68000` |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -27,9 +24,6 @@ import { CalculationConfiguration } from 'amazon-athenalib';
 
 const calculationConfiguration: CalculationConfiguration = {
   codeBlock: 'CodeBlock2',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

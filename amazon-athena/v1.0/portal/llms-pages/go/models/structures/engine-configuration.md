@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -20,7 +18,6 @@ Contains data processing unit (DPU) configuration settings and parameter mapping
 | `MaxConcurrentDpus` | `int` | Required | **Constraints**: `>= 2`, `<= 5000` |
 | `DefaultExecutorDpuSize` | `*int` | Optional | **Constraints**: `>= 1`, `<= 1` |
 | `AdditionalConfigs` | [`*models.AdditionalConfigs`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/additional-configs.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -29,7 +26,7 @@ Contains data processing unit (DPU) configuration settings and parameter mapping
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -38,13 +35,7 @@ func main() {
         MaxConcurrentDpus:      194,
         DefaultExecutorDpuSize: models.ToPointer(1),
         AdditionalConfigs:      models.ToPointer(models.AdditionalConfigs{
-            AdditionalProperties:  map[string]string{
-                "exampleAdditionalProperty": "AdditionalConfigs_additionalProperties5",
-            },
         }),
-        AdditionalProperties:   map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

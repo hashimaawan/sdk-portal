@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -21,14 +19,12 @@ Timeline statistics such as query queue time, planning time, execution time, ser
 | `EngineExecutionTimeInMillis` | `int?` | Optional | - |
 | `ServiceProcessingTimeInMillis` | `int?` | Optional | - |
 | `TotalExecutionTimeInMillis` | `int?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 QueryRuntimeStatisticsTimeline queryRuntimeStatisticsTimeline = new QueryRuntimeStatisticsTimeline
 {
@@ -37,7 +33,6 @@ QueryRuntimeStatisticsTimeline queryRuntimeStatisticsTimeline = new QueryRuntime
     EngineExecutionTimeInMillis = 78,
     ServiceProcessingTimeInMillis = 96,
     TotalExecutionTimeInMillis = 140,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -6,7 +6,7 @@ Displays the notebook files for the specified workgroup in paginated format.
 
 ```csharp
 ListNotebookMetadataAsync(
-    Models.XAmzTarget38 xAmzTarget,
+    Models.XAmzTarget38Enum xAmzTarget,
     Models.ListNotebookMetadataInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget38`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-38.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget38Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-38.md) | Header, Required | - |
 | `body` | [`ListNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListNotebookMetadataOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-notebook-metadata-output.md).
+[`Task<Models.ListNotebookMetadataOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-notebook-metadata-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget38 xAmzTarget = XAmzTarget38.EnumAmazonAthenaListNotebookMetadata;
+XAmzTarget38Enum xAmzTarget = XAmzTarget38Enum.EnumAmazonAthenaListNotebookMetadata;
 ListNotebookMetadataInput body = new ListNotebookMetadataInput
 {
     WorkGroup = "WorkGroup8",
@@ -56,7 +56,7 @@ ListNotebookMetadataInput body = new ListNotebookMetadataInput
 
 try
 {
-    ApiResponse<ListNotebookMetadataOutput> result = await api.ListNotebookMetadataAsync(
+    ListNotebookMetadataOutput result = await aPIController.ListNotebookMetadataAsync(
         xAmzTarget,
         body
     );

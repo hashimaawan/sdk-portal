@@ -6,7 +6,7 @@ Adds one or more tags to an Athena resource. A tag is a label that you assign to
 
 ```ts
 async tagResource(
-  xAmzTarget: XAmzTarget51,
+  xAmzTarget: XAmzTarget51Enum,
   body: TagResourceInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget51`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-51.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget51Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-51.md) | Header, Required | - |
 | `body` | [`TagResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/tag-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,10 +51,10 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget51.EnumAmazonAthenaTagResource;
+const xAmzTarget = XAmzTarget51Enum.EnumAmazonAthenaTagResource;
 
 const body: TagResourceInput = {
-  resourceArn: 'ResourceARN4',
+  resourceARN: 'ResourceARN4',
   tags: [
     {
     }
@@ -62,7 +62,7 @@ const body: TagResourceInput = {
 };
 
 try {
-  const response = await api.tagResource(
+  const response = await apiController.tagResource(
     xAmzTarget,
     body
   );

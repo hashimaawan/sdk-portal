@@ -15,7 +15,7 @@ function batchGetQueryExecution(
     ?string $xAmzSecurityToken = null,
     ?string $xAmzSignature = null,
     ?string $xAmzSignedHeaders = null
-): ApiResponse
+): BatchGetQueryExecutionOutput
 ```
 
 
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`string(XAmzTarget2)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-2.md) | Header, Required | - |
+| `xAmzTarget` | [`string(XAmzTarget2Enum)`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/enumerations/x-amz-target-2.md) | Header, Required | - |
 | `body` | [`BatchGetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/batch-get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `?string` | Header, Optional | - |
 | `xAmzDate` | `?string` | Header, Optional | - |
@@ -43,13 +43,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` method on this instance returns the response data which is of type [`BatchGetQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/batch-get-query-execution-output.md).
+[`BatchGetQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/batch-get-query-execution-output.md)
 
 
 # Example Usage
 
 ```php
-$xAmzTarget = XAmzTarget2::ENUM_AMAZONATHENABATCHGETQUERYEXECUTION;
+$xAmzTarget = XAmzTarget2Enum::ENUM_AMAZONATHENABATCHGETQUERYEXECUTION;
 
 $body = BatchGetQueryExecutionInputBuilder::init(
     [
@@ -57,23 +57,17 @@ $body = BatchGetQueryExecutionInputBuilder::init(
     ]
 )->build();
 
-$api = $client->getAPI();
-$apiResponse = $api->batchGetQueryExecution(
-    $xAmzTarget,
-    $body
-);
+$aPIController = $client->getAPIController();
 
-// Extracting response status code
-var_dump($apiResponse->getStatusCode());
-// Extracting response headers
-var_dump($apiResponse->getHeaders());
-
-if ($apiResponse->isSuccess()) {
+try {
+    $result = $aPIController->batchGetQueryExecution(
+        $xAmzTarget,
+        $body
+    );
     echo 'BatchGetQueryExecutionOutput:';
-    var_dump($apiResponse->getResult());
-} else {
-    $error = $apiResponse->getResult();
-    var_dump($error);
+    var_dump($result);
+} catch (ApiException $exp) {
+    echo 'Caught:', $exp;
 }
 ```
 

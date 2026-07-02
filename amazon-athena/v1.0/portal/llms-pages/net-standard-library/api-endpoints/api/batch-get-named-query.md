@@ -6,7 +6,7 @@ Returns the details of a single named query or a list of up to 50 queries, which
 
 ```csharp
 BatchGetNamedQueryAsync(
-    Models.XAmzTarget xAmzTarget,
+    Models.XAmzTargetEnum xAmzTarget,
     Models.BatchGetNamedQueryInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTargetEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target.md) | Header, Required | - |
 | `body` | [`BatchGetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.BatchGetNamedQueryOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-named-query-output.md).
+[`Task<Models.BatchGetNamedQueryOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/batch-get-named-query-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget xAmzTarget = XAmzTarget.EnumAmazonAthenaBatchGetNamedQuery;
+XAmzTargetEnum xAmzTarget = XAmzTargetEnum.EnumAmazonAthenaBatchGetNamedQuery;
 BatchGetNamedQueryInput body = new BatchGetNamedQueryInput
 {
     NamedQueryIds = new List<string>
@@ -59,7 +59,7 @@ BatchGetNamedQueryInput body = new BatchGetNamedQueryInput
 
 try
 {
-    ApiResponse<BatchGetNamedQueryOutput> result = await api.BatchGetNamedQueryAsync(
+    BatchGetNamedQueryOutput result = await aPIController.BatchGetNamedQueryAsync(
         xAmzTarget,
         body
     );

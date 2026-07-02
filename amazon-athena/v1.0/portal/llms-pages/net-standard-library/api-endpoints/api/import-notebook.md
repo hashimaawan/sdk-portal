@@ -6,7 +6,7 @@ Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maxim
 
 ```csharp
 ImportNotebookAsync(
-    Models.XAmzTarget30 xAmzTarget,
+    Models.XAmzTarget30Enum xAmzTarget,
     Models.ImportNotebookInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget30`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-30.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget30Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-30.md) | Header, Required | - |
 | `body` | [`ImportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/import-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,24 +42,24 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ImportNotebookOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/import-notebook-output.md).
+[`Task<Models.ImportNotebookOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/import-notebook-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget30 xAmzTarget = XAmzTarget30.EnumAmazonAthenaImportNotebook;
+XAmzTarget30Enum xAmzTarget = XAmzTarget30Enum.EnumAmazonAthenaImportNotebook;
 ImportNotebookInput body = new ImportNotebookInput
 {
     WorkGroup = "WorkGroup8",
     Name = "Name6",
     Payload = "Payload2",
-    Type = NotebookType2.Ipynb,
+    Type = NotebookType2Enum.IPYNB,
 };
 
 try
 {
-    ApiResponse<ImportNotebookOutput> result = await api.ImportNotebookAsync(
+    ImportNotebookOutput result = await aPIController.ImportNotebookAsync(
         xAmzTarget,
         body
     );

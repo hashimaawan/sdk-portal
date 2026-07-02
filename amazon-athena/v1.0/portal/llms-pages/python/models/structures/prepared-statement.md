@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A prepared SQL statement for use with Athena.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -21,14 +19,12 @@ A prepared SQL statement for use with Athena.
 | `work_group_name` | `str` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `description` | `str` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `last_modified_time` | `datetime` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
 import dateutil.parser
-import jsonpickle
 
 from amazonathena.models.prepared_statement import PreparedStatement
 
@@ -37,10 +33,7 @@ prepared_statement = PreparedStatement(
     query_statement='QueryStatement2',
     work_group_name='WorkGroupName2',
     description='Description6',
-    last_modified_time=dateutil.parser.parse('2016-03-13T12:52:32.123Z'),
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    last_modified_time=dateutil.parser.parse('2016-03-13T12:52:32.123Z')
 )
 ```
 

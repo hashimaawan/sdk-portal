@@ -7,23 +7,23 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Enum Type Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Enabled` |
-| `Disabled` |
+| `ENABLED` |
+| `DISABLED` |
 
 
 # Example
 
 ```ts
-import { WorkGroupState3 } from 'amazon-athenalib';
+import { WorkGroupState3Enum } from 'amazon-athenalib';
 
-const workGroupState3 = WorkGroupState3.Enabled;
+const workGroupState3 = WorkGroupState3Enum.ENABLED;
 ```
 
 

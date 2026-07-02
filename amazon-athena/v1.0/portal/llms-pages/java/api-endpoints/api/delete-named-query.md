@@ -6,8 +6,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 
 ```java
-CompletableFuture<ApiResponse<Object>> deleteNamedQueryAsync(
-    final XAmzTarget10 xAmzTarget,
+CompletableFuture<Object> deleteNamedQueryAsync(
+    final XAmzTarget10Enum xAmzTarget,
     final DeleteNamedQueryInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget10`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-10.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget10Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-10.md) | Header, Required | - |
 | `body` | [`DeleteNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/delete-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -43,20 +43,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget10 xAmzTarget = XAmzTarget10.ENUM_AMAZONATHENADELETENAMEDQUERY;
+XAmzTarget10Enum xAmzTarget = XAmzTarget10Enum.ENUM_AMAZONATHENADELETENAMEDQUERY;
 DeleteNamedQueryInput body = new DeleteNamedQueryInput.Builder(
     "NamedQueryId6"
 )
 .build();
 
 
-api.deleteNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.deleteNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

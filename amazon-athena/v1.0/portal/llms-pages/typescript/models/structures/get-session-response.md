@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRkdldFNlc3Npb25SZXNwb25zZQ
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -23,7 +21,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `sessionConfiguration` | [`SessionConfiguration2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/session-configuration-2.md) | Optional | - |
 | `status` | [`Status3 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/status-3.md) | Optional | - |
 | `statistics` | [`Statistics3 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/statistics-3.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -40,17 +37,7 @@ const getSessionResponse: GetSessionResponse = {
     maxConcurrentDpus: 94,
     coordinatorDpuSize: 1,
     defaultExecutorDpuSize: 1,
-    additionalConfigs: {
-      additionalProperties: {
-        'exampleAdditionalProperty': 'AdditionalConfigs_additionalProperties5'
-      },
-    },
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
-  },
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    additionalConfigs: {},
   },
 };
 ```

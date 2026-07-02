@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkNvbmZpZ3VyYXRpb24
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -24,14 +22,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `ExecutionRole` | `string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` |
 | `CustomerContentEncryptionConfiguration` | [`CustomerContentEncryptionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/customer-content-encryption-configuration-2.md) | Optional | - |
 | `EnableMinimumEncryptionConfiguration` | `bool?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 Configuration configuration = new Configuration
 {
@@ -40,23 +36,19 @@ Configuration configuration = new Configuration
         OutputLocation = "OutputLocation0",
         EncryptionConfiguration = new EncryptionConfiguration2
         {
-            EncryptionOption = EncryptionOption1.SseS3,
+            EncryptionOption = EncryptionOption1Enum.SSES3,
             KmsKey = "KmsKey6",
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         ExpectedBucketOwner = "ExpectedBucketOwner0",
         AclConfiguration = new AclConfiguration1
         {
-            S3AclOption = S3AclOption1.BucketOwnerFullControl,
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
+            S3AclOption = S3AclOption1Enum.BUCKETOWNERFULLCONTROL,
         },
-        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     EnforceWorkGroupConfiguration = false,
     PublishCloudWatchMetricsEnabled = false,
     BytesScannedCutoffPerQuery = 10000000,
     RequesterPaysEnabled = false,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

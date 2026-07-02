@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 StopCalculationExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget49,
+    xAmzTarget models.XAmzTarget49Enum,
     body models.StopCalculationExecutionRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget49`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-49.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget49Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-49.md) | Header, Required | - |
 | `body` | [`models.StopCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/stop-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -54,13 +54,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget49_EnumAmazonathenastopcalculationexecution
+xAmzTarget := models.XAmzTarget49Enum_ENUMAMAZONATHENASTOPCALCULATIONEXECUTION
 
 body := models.StopCalculationExecutionRequest{
     CalculationExecutionId: "CalculationExecutionId8",
 }
 
-apiResponse, err := api.StopCalculationExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.StopCalculationExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

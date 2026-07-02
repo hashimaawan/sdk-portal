@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState1`
+`ExecutorState1Enum`
 
 
 # Fields
@@ -26,7 +26,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-executor_state1 = ExecutorState1::TERMINATED
+executor_state1 = ExecutorState1Enum::TERMINATED
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -16,25 +14,19 @@ If query and calculation results are encrypted in Amazon S3, indicates the encry
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `encryption_option` | [`EncryptionOption1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/encryption-option-1.md) | Required | - |
+| `encryption_option` | [`EncryptionOption1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/encryption-option-1.md) | Required | - |
 | `kms_key` | `str` | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.encryption_configuration import EncryptionConfiguration
-from amazonathena.models.encryption_option_1 import EncryptionOption1
+from amazonathena.models.encryption_option_1_enum import EncryptionOption1Enum
 
 encryption_configuration = EncryptionConfiguration(
-    encryption_option=EncryptionOption1.SSE_KMS,
-    kms_key='KmsKey4',
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    encryption_option=EncryptionOption1Enum.SSE_KMS,
+    kms_key='KmsKey4'
 )
 ```
 

@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState`
+`ExecutorStateEnum`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\ExecutorState;
+use AmazonAthenaLib\Models\ExecutorStateEnum;
 
-$executorState = ExecutorState::TERMINATED;
+$executorState = ExecutorStateEnum::TERMINATED;
 ```
 
 

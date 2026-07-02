@@ -7,7 +7,7 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Enum Type Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 # Example
 
 ```python
-from amazonathena.models.statement_type_1 import StatementType1
+from amazonathena.models.statement_type_1_enum import StatementType1Enum
 
-statement_type_1 = StatementType1.DDL
+statement_type_1 = StatementType1Enum.DDL
 ```
 
 

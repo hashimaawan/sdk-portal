@@ -6,7 +6,7 @@ Creates a session for running calculations within a workgroup. The session is re
 
 ```csharp
 StartSessionAsync(
-    Models.XAmzTarget48 xAmzTarget,
+    Models.XAmzTarget48Enum xAmzTarget,
     Models.StartSessionRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget48`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-48.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget48Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-48.md) | Header, Required | - |
 | `body` | [`StartSessionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-session-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StartSessionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-session-response.md).
+[`Task<Models.StartSessionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/start-session-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget48 xAmzTarget = XAmzTarget48.EnumAmazonAthenaStartSession;
+XAmzTarget48Enum xAmzTarget = XAmzTarget48Enum.EnumAmazonAthenaStartSession;
 StartSessionRequest body = new StartSessionRequest
 {
     WorkGroup = "WorkGroup8",
@@ -60,7 +60,7 @@ StartSessionRequest body = new StartSessionRequest
 
 try
 {
-    ApiResponse<StartSessionResponse> result = await api.StartSessionAsync(
+    StartSessionResponse result = await aPIController.StartSessionAsync(
         xAmzTarget,
         body
     );

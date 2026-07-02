@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains statistics for a notebook calculation.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -18,20 +16,16 @@ Contains statistics for a notebook calculation.
 |  --- | --- | --- | --- | --- | --- |
 | `DpuExecutionInMillis` | `Integer` | Optional | - | Integer getDpuExecutionInMillis() | setDpuExecutionInMillis(Integer dpuExecutionInMillis) |
 | `Progress` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` | String getProgress() | setProgress(String progress) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.CalculationStatistics;
-import java.io.IOException;
 
 CalculationStatistics calculationStatistics = new CalculationStatistics.Builder()
     .dpuExecutionInMillis(248)
     .progress("Progress8")
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

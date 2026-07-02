@@ -6,7 +6,7 @@
     {
       "name": "Amazon Athena",
       "_type": "workspace",
-      "_id": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/what-is.html\">What is Amazon Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html\">Accessing Amazon Athena with JDBC</a>.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
     },
     {
@@ -15,8 +15,8 @@
         "default": "http://athena.us-east-1.amazonaws.com"
       },
       "_type": "environment",
-      "_id": "env_7a7f23640bd640cba734f425eaac23e8",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b"
+      "_id": "env_3b107d290aee4c92aa9143e1d49ac894",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4"
     },
     {
       "name": "environment2",
@@ -24,8 +24,8 @@
         "default": "https://athena.us-east-1.amazonaws.com"
       },
       "_type": "environment",
-      "_id": "env_93c97e822038491887037c0d5595631a",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b"
+      "_id": "env_423d24b0410b40fba67f821ecc2b193c",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4"
     },
     {
       "name": "environment3",
@@ -33,8 +33,8 @@
         "default": "http://athena.us-east-1.amazonaws.com.cn"
       },
       "_type": "environment",
-      "_id": "env_ca3a00b544b548f192e128148f2ccfbe",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b"
+      "_id": "env_14ff57292e6343688c0f792103074212",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4"
     },
     {
       "name": "environment4",
@@ -42,8 +42,8 @@
         "default": "https://athena.us-east-1.amazonaws.com.cn"
       },
       "_type": "environment",
-      "_id": "env_e7a14cfcafae4ad3a2f496f54423ccf6",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b"
+      "_id": "env_830ca9ea94404db1a372298ca951fc6b",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4"
     },
     {
       "name": "BatchGetNamedQuery",
@@ -51,7 +51,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.BatchGetNamedQuery",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NamedQueryIds\": [\n    \"NamedQueryIds15\"\n  ]\n}"
+        "text": "{\n  \"NamedQueryIds\": [\n    \"NamedQueryIds62\"\n  ]\n}"
       },
       "headers": [
         {
@@ -66,48 +66,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25648",
+          "value": "X-Amz-Content-Sha25618",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date30",
+          "value": "X-Amz-Date26",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm83",
+          "value": "X-Amz-Algorithm21",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential74",
+          "value": "X-Amz-Credential81",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token10",
+          "value": "X-Amz-Security-Token22",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature31",
+          "value": "X-Amz-Signature83",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders13",
+          "value": "X-Amz-SignedHeaders87",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization80",
+          "value": "Authorization96",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_a5708d1e33354199a2a3601a9844e84b",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_db743e9064fc4a8a972513c09a574eeb",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of query execution IDs."
     },
     {
@@ -116,7 +116,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.BatchGetPreparedStatement",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"PreparedStatementNames\": [\n    \"PreparedStatementNames40\"\n  ],\n  \"WorkGroup\": \"WorkGroup24\"\n}"
+        "text": "{\n  \"PreparedStatementNames\": [\n    \"PreparedStatementNames46\"\n  ],\n  \"WorkGroup\": \"WorkGroup39\"\n}"
       },
       "headers": [
         {
@@ -131,48 +131,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25695",
+          "value": "X-Amz-Content-Sha25680",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date37",
+          "value": "X-Amz-Date77",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm25",
+          "value": "X-Amz-Algorithm12",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential82",
+          "value": "X-Amz-Credential59",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token60",
+          "value": "X-Amz-Security-Token59",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature26",
+          "value": "X-Amz-Signature40",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders10",
+          "value": "X-Amz-SignedHeaders24",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization35",
+          "value": "Authorization28",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_cc992301548b4d90bc2569a7656b9b5c",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_000b263ba3b64a07b9f7637823fa02a2",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>."
     },
     {
@@ -181,7 +181,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.BatchGetQueryExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"QueryExecutionIds\": [\n    \"QueryExecutionIds71\"\n  ]\n}"
+        "text": "{\n  \"QueryExecutionIds\": [\n    \"QueryExecutionIds53\"\n  ]\n}"
       },
       "headers": [
         {
@@ -196,48 +196,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25689",
+          "value": "X-Amz-Content-Sha25647",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date98",
+          "value": "X-Amz-Date85",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm79",
+          "value": "X-Amz-Algorithm11",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential27",
+          "value": "X-Amz-Credential44",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token94",
+          "value": "X-Amz-Security-Token72",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature30",
+          "value": "X-Amz-Signature50",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders20",
+          "value": "X-Amz-SignedHeaders58",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization88",
+          "value": "Authorization35",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_387d1c7f781f45feb6242c0dcb528786",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_6c205239b4ca424bbe5d372c30e31150",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries."
     },
     {
@@ -246,7 +246,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.CreateDataCatalog",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"Name\": \"Name7\",\n  \"Type\": \"LAMBDA\",\n  \"Description\": \"Description22\",\n  \"Parameters\": {},\n  \"Tags\": [\n    {\n      \"Key\": \"Key2\",\n      \"Value\": \"Value88\"\n    }\n  ]\n}"
+        "text": "{\n  \"Name\": \"Name67\",\n  \"Type\": \"LAMBDA\",\n  \"Description\": \"Description24\",\n  \"Parameters\": {},\n  \"Tags\": [\n    {\n      \"Key\": \"Key4\",\n      \"Value\": \"Value82\"\n    }\n  ]\n}"
       },
       "headers": [
         {
@@ -261,48 +261,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25610",
+          "value": "X-Amz-Content-Sha25637",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date29",
+          "value": "X-Amz-Date83",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm69",
+          "value": "X-Amz-Algorithm72",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential96",
+          "value": "X-Amz-Credential67",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token69",
+          "value": "X-Amz-Security-Token49",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature55",
+          "value": "X-Amz-Signature11",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders95",
+          "value": "X-Amz-SignedHeaders40",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization35",
+          "value": "Authorization26",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_841229bd851c439abf286dd9ce7f628d",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_3914249e68df4d1080a134cc7a85bd9e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account."
     },
     {
@@ -311,7 +311,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.CreateNamedQuery",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"Name\": \"Name24\",\n  \"Database\": \"Database50\",\n  \"QueryString\": \"QueryString89\",\n  \"Description\": \"Description90\",\n  \"ClientRequestToken\": \"ClientRequestToken74ClientRequestToken74\",\n  \"WorkGroup\": \"WorkGroup3\"\n}"
+        "text": "{\n  \"Name\": \"Name71\",\n  \"Database\": \"Database66\",\n  \"QueryString\": \"QueryString80\",\n  \"Description\": \"Description62\",\n  \"ClientRequestToken\": \"ClientRequestToken45ClientRequestToken45\",\n  \"WorkGroup\": \"WorkGroup17\"\n}"
       },
       "headers": [
         {
@@ -326,48 +326,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25685",
+          "value": "X-Amz-Content-Sha25648",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date36",
+          "value": "X-Amz-Date43",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm50",
+          "value": "X-Amz-Algorithm27",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential4",
+          "value": "X-Amz-Credential83",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token47",
+          "value": "X-Amz-Security-Token51",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature57",
+          "value": "X-Amz-Signature47",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders65",
+          "value": "X-Amz-SignedHeaders39",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization1",
+          "value": "Authorization3",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_afd783d42b94481ea1a5f2fb2d277b53",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_7156de0276a24d2c9f4d30cff08b984c",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
     },
     {
@@ -376,7 +376,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.CreateNotebook",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup26\",\n  \"Name\": \"Name51\",\n  \"ClientRequestToken\": \"ClientRequestToken76\"\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup67\",\n  \"Name\": \"Name79\",\n  \"ClientRequestToken\": \"ClientRequestToken98\"\n}"
       },
       "headers": [
         {
@@ -391,48 +391,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25620",
+          "value": "X-Amz-Content-Sha25625",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date85",
+          "value": "X-Amz-Date18",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm61",
+          "value": "X-Amz-Algorithm13",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential23",
+          "value": "X-Amz-Credential2",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token58",
+          "value": "X-Amz-Security-Token30",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature60",
+          "value": "X-Amz-Signature21",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders18",
+          "value": "X-Amz-SignedHeaders38",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization84",
+          "value": "Authorization18",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_fcd1cfd8f22c4253a121d4aa361a31ea",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_318688cfcea94f13b769e790b433f5e8",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists."
     },
     {
@@ -441,7 +441,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.CreatePreparedStatement",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"StatementName\": \"StatementName67\",\n  \"WorkGroup\": \"WorkGroup2\",\n  \"QueryStatement\": \"QueryStatement67\",\n  \"Description\": \"Description83\"\n}"
+        "text": "{\n  \"StatementName\": \"StatementName16\",\n  \"WorkGroup\": \"WorkGroup12\",\n  \"QueryStatement\": \"QueryStatement82\",\n  \"Description\": \"Description33\"\n}"
       },
       "headers": [
         {
@@ -456,48 +456,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25629",
+          "value": "X-Amz-Content-Sha25671",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date96",
+          "value": "X-Amz-Date83",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm39",
+          "value": "X-Amz-Algorithm45",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential97",
+          "value": "X-Amz-Credential63",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token49",
+          "value": "X-Amz-Security-Token33",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature95",
+          "value": "X-Amz-Signature37",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders20",
+          "value": "X-Amz-SignedHeaders85",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization80",
+          "value": "Authorization16",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_eb15d4e1d7734c0686d591f094be29c7",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_727068e951c34f2d950cc42b437a2716",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Creates a prepared statement for use with SQL queries in Athena."
     },
     {
@@ -506,7 +506,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.CreatePresignedNotebookUrl",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId60\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId65\"\n}"
       },
       "headers": [
         {
@@ -521,48 +521,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25686",
+          "value": "X-Amz-Content-Sha25620",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date4",
+          "value": "X-Amz-Date98",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm89",
+          "value": "X-Amz-Algorithm51",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential49",
+          "value": "X-Amz-Credential53",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token59",
+          "value": "X-Amz-Security-Token39",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature32",
+          "value": "X-Amz-Signature91",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders3",
+          "value": "X-Amz-SignedHeaders14",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization36",
+          "value": "Authorization73",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_f4cdf29a3f7f4ac8984743dbdb034863",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_1c99b0e77f584100b158838504fae3ea",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access\">Grant programmatic access</a>."
     },
     {
@@ -571,7 +571,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.CreateWorkGroup",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"Name\": \"Name37\",\n  \"Configuration\": {\n    \"ResultConfiguration\": {\n      \"OutputLocation\": \"OutputLocation49\",\n      \"EncryptionConfiguration\": {\n        \"EncryptionOption\": \"SSE_S3\",\n        \"KmsKey\": \"KmsKey42\"\n      },\n      \"ExpectedBucketOwner\": \"ExpectedBu90\",\n      \"AclConfiguration\": {\n        \"S3AclOption\": \"BUCKET_OWNER_FULL_CONTROL\"\n      }\n    },\n    \"EnforceWorkGroupConfiguration\": true,\n    \"PublishCloudWatchMetricsEnabled\": true,\n    \"BytesScannedCutoffPerQuery\": 10000000,\n    \"RequesterPaysEnabled\": false,\n    \"EngineVersion\": {\n      \"SelectedEngineVersion\": \"SelectedEngineVersion94\",\n      \"EffectiveEngineVersion\": \"EffectiveEngineVersion35\"\n    },\n    \"AdditionalConfiguration\": \"AdditionalConfiguration61\",\n    \"ExecutionRole\": \"ExecutionRole56ExecutionRole56\",\n    \"CustomerContentEncryptionConfiguration\": {\n      \"KmsKey\": \"KmsKey70\"\n    },\n    \"EnableMinimumEncryptionConfiguration\": true\n  },\n  \"Description\": \"Description55\",\n  \"Tags\": [\n    {\n      \"Key\": \"Key2\",\n      \"Value\": \"Value88\"\n    }\n  ]\n}"
+        "text": "{\n  \"Name\": \"Name65\",\n  \"Configuration\": {\n    \"ResultConfiguration\": {\n      \"OutputLocation\": \"OutputLocation79\",\n      \"EncryptionConfiguration\": {\n        \"EncryptionOption\": \"SSE_S3\",\n        \"KmsKey\": \"KmsKey71\"\n      },\n      \"ExpectedBucketOwner\": \"ExpectedBu93\",\n      \"AclConfiguration\": {\n        \"S3AclOption\": \"BUCKET_OWNER_FULL_CONTROL\"\n      }\n    },\n    \"EnforceWorkGroupConfiguration\": true,\n    \"PublishCloudWatchMetricsEnabled\": false,\n    \"BytesScannedCutoffPerQuery\": 10000000,\n    \"RequesterPaysEnabled\": false,\n    \"EngineVersion\": {\n      \"SelectedEngineVersion\": \"SelectedEngineVersion27\",\n      \"EffectiveEngineVersion\": \"EffectiveEngineVersion23\"\n    },\n    \"AdditionalConfiguration\": \"AdditionalConfiguration5\",\n    \"ExecutionRole\": \"ExecutionRole91ExecutionRole91\",\n    \"CustomerContentEncryptionConfiguration\": {\n      \"KmsKey\": \"KmsKey20\"\n    },\n    \"EnableMinimumEncryptionConfiguration\": true\n  },\n  \"Description\": \"Description95\",\n  \"Tags\": [\n    {\n      \"Key\": \"Key4\",\n      \"Value\": \"Value82\"\n    }\n  ]\n}"
       },
       "headers": [
         {
@@ -586,48 +586,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25689",
+          "value": "X-Amz-Content-Sha25694",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date31",
+          "value": "X-Amz-Date49",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm49",
+          "value": "X-Amz-Algorithm52",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential13",
+          "value": "X-Amz-Credential40",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token72",
+          "value": "X-Amz-Security-Token86",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature36",
+          "value": "X-Amz-Signature59",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders25",
+          "value": "X-Amz-SignedHeaders11",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization69",
+          "value": "Authorization29",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_1810a93fbf4a4736bb84089142470e90",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_7a70bc665f1c4bf4b3871c24c0a0425b",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup."
     },
     {
@@ -636,7 +636,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.DeleteDataCatalog",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"Name\": \"Name25\"\n}"
+        "text": "{\n  \"Name\": \"Name54\"\n}"
       },
       "headers": [
         {
@@ -651,37 +651,37 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25651",
+          "value": "X-Amz-Content-Sha25634",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date29",
+          "value": "X-Amz-Date62",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm57",
+          "value": "X-Amz-Algorithm67",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential61",
+          "value": "X-Amz-Credential15",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token2",
+          "value": "X-Amz-Security-Token41",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature89",
+          "value": "X-Amz-Signature79",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders65",
+          "value": "X-Amz-SignedHeaders13",
           "disabled": false
         },
         {
@@ -691,8 +691,8 @@
         }
       ],
       "_type": "request",
-      "_id": "req_e45c2ba930974af6b01ea686cf1de0b8",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_b9ce3692e96440088f018ec5982e3047",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Deletes a data catalog."
     },
     {
@@ -701,7 +701,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.DeleteNamedQuery",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NamedQueryId\": \"NamedQueryId12\"\n}"
+        "text": "{\n  \"NamedQueryId\": \"NamedQueryId4\"\n}"
       },
       "headers": [
         {
@@ -716,48 +716,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25618",
+          "value": "X-Amz-Content-Sha2565",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date53",
+          "value": "X-Amz-Date90",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm0",
+          "value": "X-Amz-Algorithm20",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential10",
+          "value": "X-Amz-Credential59",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token61",
+          "value": "X-Amz-Security-Token11",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature98",
+          "value": "X-Amz-Signature10",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders65",
+          "value": "X-Amz-SignedHeaders52",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization52",
+          "value": "Authorization4",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_e5e12cc0068d40a4ac02a886b7ba92a8",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_c6b13e65d22344058f2ffe99b34b1630",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Deletes the named query if you have access to the workgroup in which the query was saved.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
     },
     {
@@ -766,7 +766,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.DeleteNotebook",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NotebookId\": \"NotebookId29\"\n}"
+        "text": "{\n  \"NotebookId\": \"NotebookId94\"\n}"
       },
       "headers": [
         {
@@ -781,48 +781,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25645",
+          "value": "X-Amz-Content-Sha25679",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date69",
+          "value": "X-Amz-Date54",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm86",
+          "value": "X-Amz-Algorithm26",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential69",
+          "value": "X-Amz-Credential75",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token26",
+          "value": "X-Amz-Security-Token63",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature41",
+          "value": "X-Amz-Signature49",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders31",
+          "value": "X-Amz-SignedHeaders77",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization95",
+          "value": "Authorization44",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_0b22e43f963e4bc4abcf626b577b33e0",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_e084ced992bf44b592ed9904737b6dc2",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Deletes the specified notebook."
     },
     {
@@ -831,7 +831,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.DeletePreparedStatement",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"StatementName\": \"StatementName38\",\n  \"WorkGroup\": \"WorkGroup49\"\n}"
+        "text": "{\n  \"StatementName\": \"StatementName53\",\n  \"WorkGroup\": \"WorkGroup81\"\n}"
       },
       "headers": [
         {
@@ -846,48 +846,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25615",
+          "value": "X-Amz-Content-Sha25653",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date96",
+          "value": "X-Amz-Date50",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm39",
+          "value": "X-Amz-Algorithm20",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential24",
+          "value": "X-Amz-Credential43",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token84",
+          "value": "X-Amz-Security-Token41",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature71",
+          "value": "X-Amz-Signature88",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders79",
+          "value": "X-Amz-SignedHeaders44",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization59",
+          "value": "Authorization13",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_49ab16b5b66a40c89fe445399252b9cb",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_00ccc1e816134604b515b26a386668b8",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Deletes the prepared statement with the specified name from the specified workgroup."
     },
     {
@@ -896,7 +896,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.DeleteWorkGroup",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup76\",\n  \"RecursiveDeleteOption\": true\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup47\",\n  \"RecursiveDeleteOption\": true\n}"
       },
       "headers": [
         {
@@ -911,48 +911,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha2565",
+          "value": "X-Amz-Content-Sha25637",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date71",
+          "value": "X-Amz-Date39",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm57",
+          "value": "X-Amz-Algorithm29",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential36",
+          "value": "X-Amz-Credential18",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token74",
+          "value": "X-Amz-Security-Token32",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature70",
+          "value": "X-Amz-Signature46",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders10",
+          "value": "X-Amz-SignedHeaders75",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization97",
+          "value": "Authorization42",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_0d90029b5ca04451a4dec1c576d713f9",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_989331a1d6f5489c9dba5c4830b08cac",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Deletes the workgroup with the specified name. The primary workgroup cannot be deleted."
     },
     {
@@ -961,7 +961,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ExportNotebook",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NotebookId\": \"NotebookId50\"\n}"
+        "text": "{\n  \"NotebookId\": \"NotebookId81\"\n}"
       },
       "headers": [
         {
@@ -976,48 +976,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25656",
+          "value": "X-Amz-Content-Sha25634",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date62",
+          "value": "X-Amz-Date54",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm77",
+          "value": "X-Amz-Algorithm82",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential58",
+          "value": "X-Amz-Credential54",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token20",
+          "value": "X-Amz-Security-Token24",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature94",
+          "value": "X-Amz-Signature54",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders90",
+          "value": "X-Amz-SignedHeaders24",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization19",
+          "value": "Authorization26",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_0d9961b934b944cd817f389503c9cece",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_34a8bc04fd344ede94412a75180c6c0e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Exports the specified notebook and its metadata."
     },
     {
@@ -1026,7 +1026,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetCalculationExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId48\"\n}"
+        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId29\"\n}"
       },
       "headers": [
         {
@@ -1041,22 +1041,22 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25690",
+          "value": "X-Amz-Content-Sha25623",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date0",
+          "value": "X-Amz-Date4",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm16",
+          "value": "X-Amz-Algorithm1",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential85",
+          "value": "X-Amz-Credential6",
           "disabled": false
         },
         {
@@ -1066,23 +1066,23 @@
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature67",
+          "value": "X-Amz-Signature59",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders86",
+          "value": "X-Amz-SignedHeaders48",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization63",
+          "value": "Authorization95",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_65893d67254a4cc68cdedaeadf4bbbcb",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_e7689f791a1f4e49bcb92e19ed2501c0",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Describes a previously submitted calculation execution."
     },
     {
@@ -1091,7 +1091,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetCalculationExecutionCode",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId5\"\n}"
+        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId7\"\n}"
       },
       "headers": [
         {
@@ -1106,48 +1106,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25617",
+          "value": "X-Amz-Content-Sha25698",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date78",
+          "value": "X-Amz-Date77",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm10",
+          "value": "X-Amz-Algorithm28",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential67",
+          "value": "X-Amz-Credential29",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token94",
+          "value": "X-Amz-Security-Token47",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature75",
+          "value": "X-Amz-Signature34",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders7",
+          "value": "X-Amz-SignedHeaders1",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization26",
+          "value": "Authorization86",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_ee46a815dd744a47849a4dbf6a871673",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_ab0f44705a0a43ad93ca13449fcd0f46",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Retrieves the unencrypted code that was executed for the calculation."
     },
     {
@@ -1156,7 +1156,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetCalculationExecutionStatus",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId83\"\n}"
+        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId11\"\n}"
       },
       "headers": [
         {
@@ -1171,48 +1171,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25645",
+          "value": "X-Amz-Content-Sha25687",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date50",
+          "value": "X-Amz-Date65",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm66",
+          "value": "X-Amz-Algorithm24",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential30",
+          "value": "X-Amz-Credential7",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token0",
+          "value": "X-Amz-Security-Token44",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature22",
+          "value": "X-Amz-Signature6",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders21",
+          "value": "X-Amz-SignedHeaders74",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization25",
+          "value": "Authorization18",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_36f29233d3c9448398c13ea735ee7a78",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_adf33f027f2646488d0993d3853069a9",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Gets the status of a current calculation."
     },
     {
@@ -1221,7 +1221,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetDataCatalog",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"Name\": \"Name72\"\n}"
+        "text": "{\n  \"Name\": \"Name4\"\n}"
       },
       "headers": [
         {
@@ -1236,48 +1236,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25691",
+          "value": "X-Amz-Content-Sha25661",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date90",
+          "value": "X-Amz-Date47",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm3",
+          "value": "X-Amz-Algorithm21",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential90",
+          "value": "X-Amz-Credential51",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token16",
+          "value": "X-Amz-Security-Token46",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature45",
+          "value": "X-Amz-Signature63",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders14",
+          "value": "X-Amz-SignedHeaders63",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization9",
+          "value": "Authorization76",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_440a0b7de1ab43f0b2cce37f049260ba",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_f655ca5787ca42e8b0d2c30bdb71af1e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns the specified data catalog."
     },
     {
@@ -1286,7 +1286,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetDatabase",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CatalogName\": \"CatalogName21\",\n  \"DatabaseName\": \"DatabaseName82\"\n}"
+        "text": "{\n  \"CatalogName\": \"CatalogName80\",\n  \"DatabaseName\": \"DatabaseName80\"\n}"
       },
       "headers": [
         {
@@ -1301,48 +1301,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25627",
+          "value": "X-Amz-Content-Sha25620",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date95",
+          "value": "X-Amz-Date43",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm7",
+          "value": "X-Amz-Algorithm34",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential15",
+          "value": "X-Amz-Credential78",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token96",
+          "value": "X-Amz-Security-Token63",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature32",
+          "value": "X-Amz-Signature34",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders44",
+          "value": "X-Amz-SignedHeaders64",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization15",
+          "value": "Authorization58",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_c43b9a133c8d435fa56570159bc792be",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_8b78582834c04887bccdf018be6c94d2",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns a database object for the specified database and data catalog."
     },
     {
@@ -1351,7 +1351,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetNamedQuery",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NamedQueryId\": \"NamedQueryId82\"\n}"
+        "text": "{\n  \"NamedQueryId\": \"NamedQueryId5\"\n}"
       },
       "headers": [
         {
@@ -1366,48 +1366,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25638",
+          "value": "X-Amz-Content-Sha25693",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date55",
+          "value": "X-Amz-Date23",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm10",
+          "value": "X-Amz-Algorithm94",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential91",
+          "value": "X-Amz-Credential27",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token46",
+          "value": "X-Amz-Security-Token42",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature92",
+          "value": "X-Amz-Signature24",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders91",
+          "value": "X-Amz-SignedHeaders62",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization78",
+          "value": "Authorization90",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_0f022c7de7bf44d1a6f8990d28e00078",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_20f213ce02604ada803a6ef5e5fce35e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns information about a single query. Requires that you have access to the workgroup in which the query was saved."
     },
     {
@@ -1416,7 +1416,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetNotebookMetadata",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NotebookId\": \"NotebookId33\"\n}"
+        "text": "{\n  \"NotebookId\": \"NotebookId97\"\n}"
       },
       "headers": [
         {
@@ -1431,48 +1431,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25672",
+          "value": "X-Amz-Content-Sha25656",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date4",
+          "value": "X-Amz-Date60",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm28",
+          "value": "X-Amz-Algorithm35",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential35",
+          "value": "X-Amz-Credential84",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token26",
+          "value": "X-Amz-Security-Token28",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature79",
+          "value": "X-Amz-Signature29",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders66",
+          "value": "X-Amz-SignedHeaders98",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization0",
+          "value": "Authorization53",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_fc31364ed4de4d71aa6ce4a1a4d2faa8",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_dc9954629e7c4e5282a989a35309ea27",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Retrieves notebook metadata for the specified notebook ID."
     },
     {
@@ -1481,7 +1481,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetPreparedStatement",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"StatementName\": \"StatementName57\",\n  \"WorkGroup\": \"WorkGroup55\"\n}"
+        "text": "{\n  \"StatementName\": \"StatementName51\",\n  \"WorkGroup\": \"WorkGroup45\"\n}"
       },
       "headers": [
         {
@@ -1496,48 +1496,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25619",
+          "value": "X-Amz-Content-Sha25642",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date47",
+          "value": "X-Amz-Date62",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm29",
+          "value": "X-Amz-Algorithm61",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential92",
+          "value": "X-Amz-Credential15",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token65",
+          "value": "X-Amz-Security-Token88",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature60",
+          "value": "X-Amz-Signature45",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders39",
+          "value": "X-Amz-SignedHeaders16",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization43",
+          "value": "Authorization3",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_b5ab8652e95e49779be1f900e60b36af",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_2170df19c6ec4d698a324d2eaa14aacc",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Retrieves the prepared statement with the specified name from the specified workgroup."
     },
     {
@@ -1546,7 +1546,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetQueryExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId76\"\n}"
+        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId48\"\n}"
       },
       "headers": [
         {
@@ -1561,48 +1561,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25692",
+          "value": "X-Amz-Content-Sha25634",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date80",
+          "value": "X-Amz-Date61",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm43",
+          "value": "X-Amz-Algorithm28",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential12",
+          "value": "X-Amz-Credential31",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token91",
+          "value": "X-Amz-Security-Token83",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature89",
+          "value": "X-Amz-Signature81",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders82",
+          "value": "X-Amz-SignedHeaders76",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization94",
+          "value": "Authorization67",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_375241990c0749e5aed1b8034ad54d6a",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_a53635b0274a4af4b6686b6da14b6c2e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID."
     },
     {
@@ -1611,17 +1611,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetQueryResults",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId4\",\n  \"NextToken\": \"NextToken73\",\n  \"MaxResults\": 358\n}"
+        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId35\",\n  \"NextToken\": \"NextToken78\",\n  \"MaxResults\": 903\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults58",
+          "value": "MaxResults49",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken77",
+          "value": "NextToken44",
           "disabled": false
         }
       ],
@@ -1638,12 +1638,12 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25683",
+          "value": "X-Amz-Content-Sha25655",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date77",
+          "value": "X-Amz-Date28",
           "disabled": false
         },
         {
@@ -1653,33 +1653,33 @@
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential86",
+          "value": "X-Amz-Credential37",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token55",
+          "value": "X-Amz-Security-Token94",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature91",
+          "value": "X-Amz-Signature80",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders95",
+          "value": "X-Amz-SignedHeaders6",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization12",
+          "value": "Authorization95",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_774ac7541e6a4fefa0b78264170d5a2d",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_b30bffcdf51b4609a5868384deeb2ca9",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query results location in Amazon S3. For more information, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/querying.html\">Working with query results, recent queries, and output files</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.</p> <p>To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code> also must have permissions to the Amazon S3 <code>GetObject</code> action for the Athena query results location.</p> <important> <p>IAM principals with permission to the Amazon S3 <code>GetObject</code> action for the query results location are able to retrieve query results from Amazon S3 even if permission to the <code>GetQueryResults</code> action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena query location are denied.</p> </important>"
     },
     {
@@ -1688,7 +1688,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetQueryRuntimeStatistics",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId44\"\n}"
+        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId29\"\n}"
       },
       "headers": [
         {
@@ -1703,48 +1703,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25619",
+          "value": "X-Amz-Content-Sha25626",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date81",
+          "value": "X-Amz-Date53",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm75",
+          "value": "X-Amz-Algorithm81",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential86",
+          "value": "X-Amz-Credential33",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token31",
+          "value": "X-Amz-Security-Token32",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature57",
+          "value": "X-Amz-Signature61",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders28",
+          "value": "X-Amz-SignedHeaders45",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization74",
+          "value": "Authorization36",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_42a60a72e8ee4d8f92ab9fb1590945bf",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_f71c3b6fb68b4c4896abda2eaedfb5c6",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation."
     },
     {
@@ -1753,7 +1753,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetSession",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId94\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId56\"\n}"
       },
       "headers": [
         {
@@ -1768,48 +1768,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25697",
+          "value": "X-Amz-Content-Sha2565",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date64",
+          "value": "X-Amz-Date17",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm18",
+          "value": "X-Amz-Algorithm38",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential71",
+          "value": "X-Amz-Credential85",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token81",
+          "value": "X-Amz-Security-Token50",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature76",
+          "value": "X-Amz-Signature1",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders1",
+          "value": "X-Amz-SignedHeaders75",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization75",
+          "value": "Authorization90",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_de43c05809f04c93a8eb84fc799f6a94",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_1e5291d1ecbd4411826a93391d33c678",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Gets the full details of a previously created session, including the session status and configuration."
     },
     {
@@ -1818,7 +1818,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetSessionStatus",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId74\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId71\"\n}"
       },
       "headers": [
         {
@@ -1833,48 +1833,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25617",
+          "value": "X-Amz-Content-Sha25622",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date75",
+          "value": "X-Amz-Date60",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm56",
+          "value": "X-Amz-Algorithm88",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential85",
+          "value": "X-Amz-Credential28",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token1",
+          "value": "X-Amz-Security-Token73",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature31",
+          "value": "X-Amz-Signature50",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders45",
+          "value": "X-Amz-SignedHeaders64",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization55",
+          "value": "Authorization93",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_ec07d7fdb9b54daf82808b54b74ed681",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_c3977e37976a47ab89fe0b2a4454672e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Gets the current status of a session."
     },
     {
@@ -1883,7 +1883,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetTableMetadata",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CatalogName\": \"CatalogName67\",\n  \"DatabaseName\": \"DatabaseName28\",\n  \"TableName\": \"TableName93\"\n}"
+        "text": "{\n  \"CatalogName\": \"CatalogName27\",\n  \"DatabaseName\": \"DatabaseName87\",\n  \"TableName\": \"TableName91\"\n}"
       },
       "headers": [
         {
@@ -1898,48 +1898,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25695",
+          "value": "X-Amz-Content-Sha25635",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date30",
+          "value": "X-Amz-Date91",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm17",
+          "value": "X-Amz-Algorithm8",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential70",
+          "value": "X-Amz-Credential92",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token18",
+          "value": "X-Amz-Security-Token73",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature79",
+          "value": "X-Amz-Signature4",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders70",
+          "value": "X-Amz-SignedHeaders36",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization30",
+          "value": "Authorization33",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_db6146f529e4461bb69877f5c3ad3c31",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_f7951a8c132a4c33b671eaea329c8ed2",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns table metadata for the specified catalog, database, and table."
     },
     {
@@ -1948,7 +1948,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.GetWorkGroup",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup92\"\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup94\"\n}"
       },
       "headers": [
         {
@@ -1963,7 +1963,7 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25652",
+          "value": "X-Amz-Content-Sha25677",
           "disabled": false
         },
         {
@@ -1973,38 +1973,38 @@
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm87",
+          "value": "X-Amz-Algorithm93",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential67",
+          "value": "X-Amz-Credential92",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token5",
+          "value": "X-Amz-Security-Token64",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature98",
+          "value": "X-Amz-Signature18",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders27",
+          "value": "X-Amz-SignedHeaders16",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization24",
+          "value": "Authorization20",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_652e5c7ce1254c4db3cd6bcbdd7b1a02",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_67a32201cdf74e7fa1990a02b90de9e0",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns information about the workgroup with the specified name."
     },
     {
@@ -2013,7 +2013,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ImportNotebook",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup34\",\n  \"Name\": \"Name34\",\n  \"Payload\": \"Payload56\",\n  \"Type\": \"IPYNB\",\n  \"ClientRequestToken\": \"ClientRequestToken25\"\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup69\",\n  \"Name\": \"Name67\",\n  \"Payload\": \"Payload83\",\n  \"Type\": \"IPYNB\",\n  \"ClientRequestToken\": \"ClientRequestToken39\"\n}"
       },
       "headers": [
         {
@@ -2028,48 +2028,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25620",
+          "value": "X-Amz-Content-Sha25669",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date32",
+          "value": "X-Amz-Date11",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm94",
+          "value": "X-Amz-Algorithm13",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential24",
+          "value": "X-Amz-Credential61",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token14",
+          "value": "X-Amz-Security-Token32",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature10",
+          "value": "X-Amz-Signature29",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders40",
+          "value": "X-Amz-SignedHeaders94",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization78",
+          "value": "Authorization98",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_3c962f63e49b4acfaf9dbb1cd63536b6",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_cba2628625264c77ab80150053097fe7",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error."
     },
     {
@@ -2078,17 +2078,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListApplicationDPUSizes",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"MaxResults\": 7,\n  \"NextToken\": \"NextToken82\"\n}"
+        "text": "{\n  \"MaxResults\": 38,\n  \"NextToken\": \"NextToken86\"\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults78",
+          "value": "MaxResults93",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken10",
+          "value": "NextToken34",
           "disabled": false
         }
       ],
@@ -2105,48 +2105,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25625",
+          "value": "X-Amz-Content-Sha25628",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date82",
+          "value": "X-Amz-Date24",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm58",
+          "value": "X-Amz-Algorithm80",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential95",
+          "value": "X-Amz-Credential15",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token32",
+          "value": "X-Amz-Security-Token82",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature36",
+          "value": "X-Amz-Signature75",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders32",
+          "value": "X-Amz-SignedHeaders46",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization15",
+          "value": "Authorization52",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_676df2bd5e2e4d7d8c62309d2f03c95f",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_117a9157f34744e199d5119ed1786cb9",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>). "
     },
     {
@@ -2155,17 +2155,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListCalculationExecutions",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId84\",\n  \"StateFilter\": \"CANCELED\",\n  \"MaxResults\": 73,\n  \"NextToken\": \"NextToken28\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId21\",\n  \"StateFilter\": \"CREATED\",\n  \"MaxResults\": 95,\n  \"NextToken\": \"NextToken16\"\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults27",
+          "value": "MaxResults40",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken85",
+          "value": "NextToken52",
           "disabled": false
         }
       ],
@@ -2182,48 +2182,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25682",
+          "value": "X-Amz-Content-Sha25637",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date66",
+          "value": "X-Amz-Date60",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm44",
+          "value": "X-Amz-Algorithm35",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential11",
+          "value": "X-Amz-Credential33",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token36",
+          "value": "X-Amz-Security-Token12",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature71",
+          "value": "X-Amz-Signature44",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders66",
+          "value": "X-Amz-SignedHeaders93",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization36",
+          "value": "Authorization31",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_e20d129b465445a98f4581aa7788ba66",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_ebd378fd2a864394a46ad52410646e1a",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later."
     },
     {
@@ -2232,17 +2232,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListDataCatalogs",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NextToken\": \"NextToken92\",\n  \"MaxResults\": 11\n}"
+        "text": "{\n  \"NextToken\": \"NextToken60\",\n  \"MaxResults\": 46\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults47",
+          "value": "MaxResults43",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken83",
+          "value": "NextToken14",
           "disabled": false
         }
       ],
@@ -2259,48 +2259,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25658",
+          "value": "X-Amz-Content-Sha25617",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date17",
+          "value": "X-Amz-Date48",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm76",
+          "value": "X-Amz-Algorithm81",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential34",
+          "value": "X-Amz-Credential47",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token39",
+          "value": "X-Amz-Security-Token55",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature86",
+          "value": "X-Amz-Signature27",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders41",
+          "value": "X-Amz-SignedHeaders63",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization28",
+          "value": "Authorization6",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_118e5eec815b438b82b918f81cf2926e",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_eaed08548bb444e0b447b050c11c837e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Lists the data catalogs in the current Amazon Web Services account.</p> <note> <p>In the Athena console, data catalogs are listed as \"data sources\" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p> </note>"
     },
     {
@@ -2309,17 +2309,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListDatabases",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CatalogName\": \"CatalogName16\",\n  \"NextToken\": \"NextToken49\",\n  \"MaxResults\": 33\n}"
+        "text": "{\n  \"CatalogName\": \"CatalogName27\",\n  \"NextToken\": \"NextToken95\",\n  \"MaxResults\": 10\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults15",
+          "value": "MaxResults31",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken50",
+          "value": "NextToken97",
           "disabled": false
         }
       ],
@@ -2336,48 +2336,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25684",
+          "value": "X-Amz-Content-Sha25648",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date62",
+          "value": "X-Amz-Date75",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm39",
+          "value": "X-Amz-Algorithm64",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential75",
+          "value": "X-Amz-Credential59",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token35",
+          "value": "X-Amz-Security-Token26",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature24",
+          "value": "X-Amz-Signature64",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders22",
+          "value": "X-Amz-SignedHeaders46",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization6",
+          "value": "Authorization49",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_1becff230db34f90a0020556bb70338b",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_083fb8bed96a4268ba8ea0a059666f3e",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists the databases in the specified data catalog."
     },
     {
@@ -2386,17 +2386,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListEngineVersions",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NextToken\": \"NextToken8\",\n  \"MaxResults\": 1\n}"
+        "text": "{\n  \"NextToken\": \"NextToken82\",\n  \"MaxResults\": 5\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults94",
+          "value": "MaxResults16",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken45",
+          "value": "NextToken92",
           "disabled": false
         }
       ],
@@ -2413,48 +2413,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25682",
+          "value": "X-Amz-Content-Sha25610",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date73",
+          "value": "X-Amz-Date42",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm80",
+          "value": "X-Amz-Algorithm50",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential15",
+          "value": "X-Amz-Credential45",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token4",
+          "value": "X-Amz-Security-Token49",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature24",
+          "value": "X-Amz-Signature94",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders7",
+          "value": "X-Amz-SignedHeaders78",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization14",
+          "value": "Authorization2",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_a7189a9579df4cadab3e61eb4fa0b79c",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_60fc7d74d2df4ee2a4b2905d18fff2de",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Returns a list of engine versions that are available to choose from, including the Auto option."
     },
     {
@@ -2463,17 +2463,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListExecutors",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId55\",\n  \"ExecutorStateFilter\": \"TERMINATING\",\n  \"MaxResults\": 89,\n  \"NextToken\": \"NextToken68\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId63\",\n  \"ExecutorStateFilter\": \"TERMINATING\",\n  \"MaxResults\": 90,\n  \"NextToken\": \"NextToken86\"\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults28",
+          "value": "MaxResults64",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken3",
+          "value": "NextToken10",
           "disabled": false
         }
       ],
@@ -2490,48 +2490,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25645",
+          "value": "X-Amz-Content-Sha25621",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date53",
+          "value": "X-Amz-Date8",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm67",
+          "value": "X-Amz-Algorithm18",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential84",
+          "value": "X-Amz-Credential72",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token47",
+          "value": "X-Amz-Security-Token51",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature87",
+          "value": "X-Amz-Signature74",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders51",
+          "value": "X-Amz-SignedHeaders38",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization60",
+          "value": "Authorization27",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_3b910b6cee9441cfb3111a4050f4fdf4",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_01100713f22f4131a226224752fa2338",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists, in descending order, the executors that joined a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state."
     },
     {
@@ -2540,12 +2540,12 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListNamedQueries",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NextToken\": \"NextToken76\",\n  \"MaxResults\": 23,\n  \"WorkGroup\": \"WorkGroup37\"\n}"
+        "text": "{\n  \"NextToken\": \"NextToken46\",\n  \"MaxResults\": 0,\n  \"WorkGroup\": \"WorkGroup98\"\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults65",
+          "value": "MaxResults7",
           "disabled": false
         },
         {
@@ -2567,48 +2567,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25627",
+          "value": "X-Amz-Content-Sha25673",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date21",
+          "value": "X-Amz-Date17",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm13",
+          "value": "X-Amz-Algorithm47",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential14",
+          "value": "X-Amz-Credential43",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token85",
+          "value": "X-Amz-Security-Token4",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature84",
+          "value": "X-Amz-Signature79",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders95",
+          "value": "X-Amz-SignedHeaders63",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization3",
+          "value": "Authorization8",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_6220b7c8f7824697b0733a48408fbd3d",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_2515122ac24e434fbd547b1f8095c276",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
     },
     {
@@ -2617,7 +2617,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListNotebookMetadata",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup85\",\n  \"Filters\": {\n    \"Name\": \"Name98\"\n  },\n  \"NextToken\": \"NextToken21\",\n  \"MaxResults\": 24\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup26\",\n  \"Filters\": {\n    \"Name\": \"Name13\"\n  },\n  \"NextToken\": \"NextToken90\",\n  \"MaxResults\": 38\n}"
       },
       "headers": [
         {
@@ -2632,48 +2632,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25611",
+          "value": "X-Amz-Content-Sha25690",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date21",
+          "value": "X-Amz-Date16",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm89",
+          "value": "X-Amz-Algorithm35",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential75",
+          "value": "X-Amz-Credential21",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token96",
+          "value": "X-Amz-Security-Token8",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature22",
+          "value": "X-Amz-Signature71",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders44",
+          "value": "X-Amz-SignedHeaders96",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization15",
+          "value": "Authorization26",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_b625118749954f1bbff144734647d308",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_01ad440003a84a9cb6a01c164eff8498",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Displays the notebook files for the specified workgroup in paginated format."
     },
     {
@@ -2682,7 +2682,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListNotebookSessions",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NotebookId\": \"NotebookId6\",\n  \"MaxResults\": 99,\n  \"NextToken\": \"NextToken82\"\n}"
+        "text": "{\n  \"NotebookId\": \"NotebookId85\",\n  \"MaxResults\": 82,\n  \"NextToken\": \"NextToken83\"\n}"
       },
       "headers": [
         {
@@ -2697,48 +2697,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25656",
+          "value": "X-Amz-Content-Sha25654",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date61",
+          "value": "X-Amz-Date1",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm84",
+          "value": "X-Amz-Algorithm88",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential46",
+          "value": "X-Amz-Credential42",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token61",
+          "value": "X-Amz-Security-Token23",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature28",
+          "value": "X-Amz-Signature76",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders38",
+          "value": "X-Amz-SignedHeaders35",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization41",
+          "value": "Authorization36",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_fab89cc79dc643edaa337bf25f7bd133",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_6bdbde75f9794f85a59a6273cd9ddc43",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists, in descending order, the sessions that have been created in a notebook that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later."
     },
     {
@@ -2747,17 +2747,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListPreparedStatements",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup44\",\n  \"NextToken\": \"NextToken81\",\n  \"MaxResults\": 34\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup90\",\n  \"NextToken\": \"NextToken98\",\n  \"MaxResults\": 30\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults39",
+          "value": "MaxResults11",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken46",
+          "value": "NextToken30",
           "disabled": false
         }
       ],
@@ -2774,48 +2774,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25669",
+          "value": "X-Amz-Content-Sha25652",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date73",
+          "value": "X-Amz-Date9",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm36",
+          "value": "X-Amz-Algorithm59",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential44",
+          "value": "X-Amz-Credential95",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token44",
+          "value": "X-Amz-Security-Token74",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature35",
+          "value": "X-Amz-Signature50",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders72",
+          "value": "X-Amz-SignedHeaders71",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization0",
+          "value": "Authorization32",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_3663ccf33d164c4dbad0313b1522ceb7",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_e719a4705e604b2db3fdede948d8035c",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists the prepared statements in the specified workgroup."
     },
     {
@@ -2824,17 +2824,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListQueryExecutions",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NextToken\": \"NextToken34\",\n  \"MaxResults\": 45,\n  \"WorkGroup\": \"WorkGroup44\"\n}"
+        "text": "{\n  \"NextToken\": \"NextToken50\",\n  \"MaxResults\": 4,\n  \"WorkGroup\": \"WorkGroup8\"\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults25",
+          "value": "MaxResults96",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken52",
+          "value": "NextToken72",
           "disabled": false
         }
       ],
@@ -2851,48 +2851,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25617",
+          "value": "X-Amz-Content-Sha25646",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date55",
+          "value": "X-Amz-Date7",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm39",
+          "value": "X-Amz-Algorithm41",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential32",
+          "value": "X-Amz-Credential0",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token11",
+          "value": "X-Amz-Security-Token42",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature88",
+          "value": "X-Amz-Signature25",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders56",
+          "value": "X-Amz-SignedHeaders72",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization17",
+          "value": "Authorization22",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_68f247e9c59d48bdacb9bf6c88c9a176",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_592798228d7f4663b5b658ad76f3ffd4",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
     },
     {
@@ -2901,17 +2901,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListSessions",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup63\",\n  \"StateFilter\": \"TERMINATED\",\n  \"MaxResults\": 17,\n  \"NextToken\": \"NextToken33\"\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup48\",\n  \"StateFilter\": \"BUSY\",\n  \"MaxResults\": 88,\n  \"NextToken\": \"NextToken27\"\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults96",
+          "value": "MaxResults1",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken18",
+          "value": "NextToken79",
           "disabled": false
         }
       ],
@@ -2928,48 +2928,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25629",
+          "value": "X-Amz-Content-Sha25621",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date3",
+          "value": "X-Amz-Date45",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm97",
+          "value": "X-Amz-Algorithm90",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential71",
+          "value": "X-Amz-Credential2",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token30",
+          "value": "X-Amz-Security-Token62",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature15",
+          "value": "X-Amz-Signature90",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders76",
+          "value": "X-Amz-SignedHeaders43",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization62",
+          "value": "Authorization73",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_19afd79c7090488fadb9121af2731c88",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_4f94f69c6d5848d78adda3fbd30e60bd",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later."
     },
     {
@@ -2978,17 +2978,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListTableMetadata",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CatalogName\": \"CatalogName63\",\n  \"DatabaseName\": \"DatabaseName26\",\n  \"Expression\": \"Expression68\",\n  \"NextToken\": \"NextToken82\",\n  \"MaxResults\": 47\n}"
+        "text": "{\n  \"CatalogName\": \"CatalogName17\",\n  \"DatabaseName\": \"DatabaseName66\",\n  \"Expression\": \"Expression59\",\n  \"NextToken\": \"NextToken53\",\n  \"MaxResults\": 10\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults48",
+          "value": "MaxResults74",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken57",
+          "value": "NextToken41",
           "disabled": false
         }
       ],
@@ -3005,48 +3005,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25675",
+          "value": "X-Amz-Content-Sha25645",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date9",
+          "value": "X-Amz-Date36",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm94",
+          "value": "X-Amz-Algorithm7",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential21",
+          "value": "X-Amz-Credential36",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token94",
+          "value": "X-Amz-Security-Token91",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature51",
+          "value": "X-Amz-Signature11",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders55",
+          "value": "X-Amz-SignedHeaders33",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization79",
+          "value": "Authorization34",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_2ed6e650315b467295d4c914b2f44fea",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_11039444894e4991a529d4c52aaa0079",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists the metadata for the tables in the specified data catalog database."
     },
     {
@@ -3055,17 +3055,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListTagsForResource",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ResourceARN\": \"ResourceARN89\",\n  \"NextToken\": \"NextToken10\",\n  \"MaxResults\": 241\n}"
+        "text": "{\n  \"ResourceARN\": \"ResourceARN69\",\n  \"NextToken\": \"NextToken62\",\n  \"MaxResults\": 243\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults11",
+          "value": "MaxResults13",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken63",
+          "value": "NextToken14",
           "disabled": false
         }
       ],
@@ -3082,48 +3082,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25682",
+          "value": "X-Amz-Content-Sha25623",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date47",
+          "value": "X-Amz-Date25",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm86",
+          "value": "X-Amz-Algorithm77",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential75",
+          "value": "X-Amz-Credential79",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token3",
+          "value": "X-Amz-Security-Token44",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature76",
+          "value": "X-Amz-Signature79",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders83",
+          "value": "X-Amz-SignedHeaders19",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization18",
+          "value": "Authorization80",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_94ba196b4679450abd6e8764bbad2ce1",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_0c58c5ac960d4d88990d46d19d5ff178",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists the tags associated with an Athena workgroup or data catalog resource."
     },
     {
@@ -3132,17 +3132,17 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.ListWorkGroups",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NextToken\": \"NextToken53\",\n  \"MaxResults\": 4\n}"
+        "text": "{\n  \"NextToken\": \"NextToken22\",\n  \"MaxResults\": 6\n}"
       },
       "parameters": [
         {
           "name": "MaxResults",
-          "value": "MaxResults83",
+          "value": "MaxResults47",
           "disabled": false
         },
         {
           "name": "NextToken",
-          "value": "NextToken84",
+          "value": "NextToken42",
           "disabled": false
         }
       ],
@@ -3159,48 +3159,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25662",
+          "value": "X-Amz-Content-Sha25631",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date41",
+          "value": "X-Amz-Date19",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm68",
+          "value": "X-Amz-Algorithm17",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential77",
+          "value": "X-Amz-Credential90",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token21",
+          "value": "X-Amz-Security-Token95",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature87",
+          "value": "X-Amz-Signature74",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders1",
+          "value": "X-Amz-SignedHeaders60",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization71",
+          "value": "Authorization22",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_e9cc9f12cf2e43d3910fbd057d657818",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_825ed35b29044ecf9b4810701bba1635",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Lists available workgroups for the account."
     },
     {
@@ -3209,7 +3209,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.StartCalculationExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId86\",\n  \"Description\": \"Description74\",\n  \"CalculationConfiguration\": {\n    \"CodeBlock\": \"CodeBlock14\"\n  },\n  \"CodeBlock\": \"CodeBlock84\",\n  \"ClientRequestToken\": \"ClientRequestToken38ClientRequestToken38\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId4\",\n  \"Description\": \"Description20\",\n  \"CalculationConfiguration\": {\n    \"CodeBlock\": \"CodeBlock5\"\n  },\n  \"CodeBlock\": \"CodeBlock5\",\n  \"ClientRequestToken\": \"ClientRequestToken63ClientRequestToken63\"\n}"
       },
       "headers": [
         {
@@ -3224,48 +3224,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha2562",
+          "value": "X-Amz-Content-Sha25627",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date51",
+          "value": "X-Amz-Date7",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm55",
+          "value": "X-Amz-Algorithm78",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential41",
+          "value": "X-Amz-Credential73",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token82",
+          "value": "X-Amz-Security-Token48",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature50",
+          "value": "X-Amz-Signature76",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders55",
+          "value": "X-Amz-SignedHeaders64",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization4",
+          "value": "Authorization67",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_fe8a46f9edfd4de1a1d435693c2ef1fb",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_15738d0b3c834e8d89cc22ed6507a1db",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request."
     },
     {
@@ -3274,7 +3274,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.StartQueryExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"QueryString\": \"QueryString95\",\n  \"ClientRequestToken\": \"ClientRequestToken51ClientRequestToken51\",\n  \"QueryExecutionContext\": {\n    \"Database\": \"Database54\",\n    \"Catalog\": \"Catalog51\"\n  },\n  \"ResultConfiguration\": {\n    \"OutputLocation\": \"OutputLocation49\",\n    \"EncryptionConfiguration\": {\n      \"EncryptionOption\": \"SSE_S3\",\n      \"KmsKey\": \"KmsKey42\"\n    },\n    \"ExpectedBucketOwner\": \"ExpectedBu90\",\n    \"AclConfiguration\": {\n      \"S3AclOption\": \"BUCKET_OWNER_FULL_CONTROL\"\n    }\n  },\n  \"WorkGroup\": \"WorkGroup75\",\n  \"ExecutionParameters\": [\n    \"ExecutionParameters44\"\n  ],\n  \"ResultReuseConfiguration\": {\n    \"ResultReuseByAgeConfiguration\": {\n      \"Enabled\": true,\n      \"MaxAgeInMinutes\": 3110\n    }\n  }\n}"
+        "text": "{\n  \"QueryString\": \"QueryString80\",\n  \"ClientRequestToken\": \"ClientRequestToken86ClientRequestToken86\",\n  \"QueryExecutionContext\": {\n    \"Database\": \"Database16\",\n    \"Catalog\": \"Catalog97\"\n  },\n  \"ResultConfiguration\": {\n    \"OutputLocation\": \"OutputLocation79\",\n    \"EncryptionConfiguration\": {\n      \"EncryptionOption\": \"SSE_S3\",\n      \"KmsKey\": \"KmsKey71\"\n    },\n    \"ExpectedBucketOwner\": \"ExpectedBu93\",\n    \"AclConfiguration\": {\n      \"S3AclOption\": \"BUCKET_OWNER_FULL_CONTROL\"\n    }\n  },\n  \"WorkGroup\": \"WorkGroup90\",\n  \"ExecutionParameters\": [\n    \"ExecutionParameters90\"\n  ],\n  \"ResultReuseConfiguration\": {\n    \"ResultReuseByAgeConfiguration\": {\n      \"Enabled\": true,\n      \"MaxAgeInMinutes\": 7699\n    }\n  }\n}"
       },
       "headers": [
         {
@@ -3289,48 +3289,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25656",
+          "value": "X-Amz-Content-Sha25626",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date12",
+          "value": "X-Amz-Date49",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm75",
+          "value": "X-Amz-Algorithm91",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential0",
+          "value": "X-Amz-Credential16",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token44",
+          "value": "X-Amz-Security-Token47",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature49",
+          "value": "X-Amz-Signature14",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders7",
+          "value": "X-Amz-SignedHeaders8",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization32",
+          "value": "Authorization43",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_9140ee8635674781867dc96cc8cd4f2b",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_ca2ce10a52704414b3b6b740ae4b9441",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>."
     },
     {
@@ -3339,7 +3339,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.StartSession",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup53\",\n  \"EngineConfiguration\": {\n    \"MaxConcurrentDpus\": 478,\n    \"CoordinatorDpuSize\": 1,\n    \"DefaultExecutorDpuSize\": 1,\n    \"AdditionalConfigs\": {}\n  },\n  \"Description\": \"Description57\",\n  \"NotebookVersion\": \"NotebookVersion5\",\n  \"SessionIdleTimeoutInMinutes\": 212,\n  \"ClientRequestToken\": \"ClientRequestToken93ClientRequestToken93\"\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup90\",\n  \"EngineConfiguration\": {\n    \"MaxConcurrentDpus\": 4973,\n    \"CoordinatorDpuSize\": 1,\n    \"DefaultExecutorDpuSize\": 1,\n    \"AdditionalConfigs\": {}\n  },\n  \"Description\": \"Description68\",\n  \"NotebookVersion\": \"NotebookVersion47\",\n  \"SessionIdleTimeoutInMinutes\": 232,\n  \"ClientRequestToken\": \"ClientRequestToken5ClientRequestToken5\"\n}"
       },
       "headers": [
         {
@@ -3354,48 +3354,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha2562",
+          "value": "X-Amz-Content-Sha25647",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date29",
+          "value": "X-Amz-Date23",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm60",
+          "value": "X-Amz-Algorithm57",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential1",
+          "value": "X-Amz-Credential73",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token15",
+          "value": "X-Amz-Security-Token69",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature30",
+          "value": "X-Amz-Signature88",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders68",
+          "value": "X-Amz-SignedHeaders47",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization12",
+          "value": "Authorization3",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_e9f776d9f000470cbea91e7f38e87fb6",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_75ea93b6f59e4b25b9d7d3d8b9ee77b2",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Creates a session for running calculations within a workgroup. The session is ready when it reaches an <code>IDLE</code> state."
     },
     {
@@ -3404,7 +3404,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.StopCalculationExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId68\"\n}"
+        "text": "{\n  \"CalculationExecutionId\": \"CalculationExecutionId69\"\n}"
       },
       "headers": [
         {
@@ -3419,48 +3419,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25617",
+          "value": "X-Amz-Content-Sha25663",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date22",
+          "value": "X-Amz-Date17",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm49",
+          "value": "X-Amz-Algorithm22",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential39",
+          "value": "X-Amz-Credential15",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token56",
+          "value": "X-Amz-Security-Token96",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature27",
+          "value": "X-Amz-Signature52",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders86",
+          "value": "X-Amz-SignedHeaders62",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization0",
+          "value": "Authorization46",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_6367463bbf664d279766e103420699b2",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_e0954d1ee62e42a0afb7adb4b29c7a86",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.</p> <note> <p>Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider terminating the session in which the calculation is running.</p> </note>"
     },
     {
@@ -3469,7 +3469,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.StopQueryExecution",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId86\"\n}"
+        "text": "{\n  \"QueryExecutionId\": \"QueryExecutionId79\"\n}"
       },
       "headers": [
         {
@@ -3489,43 +3489,43 @@
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date1",
+          "value": "X-Amz-Date44",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm37",
+          "value": "X-Amz-Algorithm49",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential46",
+          "value": "X-Amz-Credential33",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token81",
+          "value": "X-Amz-Security-Token18",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature31",
+          "value": "X-Amz-Signature43",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders71",
+          "value": "X-Amz-SignedHeaders62",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization22",
+          "value": "Authorization92",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_a1dd5fb6e931485a932bf3d932198f9e",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_0156ee3b9b234a89b59f5e011d87eca2",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "<p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
     },
     {
@@ -3534,7 +3534,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.TagResource",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ResourceARN\": \"ResourceARN81\",\n  \"Tags\": [\n    {\n      \"Key\": \"Key2\",\n      \"Value\": \"Value88\"\n    }\n  ]\n}"
+        "text": "{\n  \"ResourceARN\": \"ResourceARN89\",\n  \"Tags\": [\n    {\n      \"Key\": \"Key4\",\n      \"Value\": \"Value82\"\n    }\n  ]\n}"
       },
       "headers": [
         {
@@ -3549,48 +3549,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25684",
+          "value": "X-Amz-Content-Sha25681",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date44",
+          "value": "X-Amz-Date43",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm10",
+          "value": "X-Amz-Algorithm7",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential53",
+          "value": "X-Amz-Credential43",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token58",
+          "value": "X-Amz-Security-Token29",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature89",
+          "value": "X-Amz-Signature4",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders85",
+          "value": "X-Amz-SignedHeaders73",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization26",
+          "value": "Authorization35",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_104989bfcabd446caf53eed6e46b1f2a",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_623b3eb0421342d39cd659bcc702b5a3",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas."
     },
     {
@@ -3599,7 +3599,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.TerminateSession",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"SessionId\": \"SessionId89\"\n}"
+        "text": "{\n  \"SessionId\": \"SessionId39\"\n}"
       },
       "headers": [
         {
@@ -3614,48 +3614,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25646",
+          "value": "X-Amz-Content-Sha25620",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date91",
+          "value": "X-Amz-Date24",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm55",
+          "value": "X-Amz-Algorithm8",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential72",
+          "value": "X-Amz-Credential0",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token46",
+          "value": "X-Amz-Security-Token86",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature45",
+          "value": "X-Amz-Signature59",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders35",
+          "value": "X-Amz-SignedHeaders97",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization86",
+          "value": "Authorization56",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_5bf4e0414f934ad4b57fa925af6ae309",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_2413ad740eab4c22bf51194a1304f109",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped, but may display as <code>FAILED</code> instead of <code>STOPPED</code>."
     },
     {
@@ -3664,7 +3664,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UntagResource",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"ResourceARN\": \"ResourceARN10\",\n  \"TagKeys\": [\n    \"TagKeys34\"\n  ]\n}"
+        "text": "{\n  \"ResourceARN\": \"ResourceARN46\",\n  \"TagKeys\": [\n    \"TagKeys78\"\n  ]\n}"
       },
       "headers": [
         {
@@ -3679,48 +3679,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25644",
+          "value": "X-Amz-Content-Sha25612",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date18",
+          "value": "X-Amz-Date24",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm34",
+          "value": "X-Amz-Algorithm37",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential23",
+          "value": "X-Amz-Credential39",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token88",
+          "value": "X-Amz-Security-Token11",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature19",
+          "value": "X-Amz-Signature57",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders53",
+          "value": "X-Amz-SignedHeaders98",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization15",
+          "value": "Authorization42",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_551889aca8e548c2973ccb561dd3e75b",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_8479848301424470acee476f215a9750",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Removes one or more tags from a data catalog or workgroup resource."
     },
     {
@@ -3729,7 +3729,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UpdateDataCatalog",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"Name\": \"Name48\",\n  \"Type\": \"LAMBDA\",\n  \"Description\": \"Description9\",\n  \"Parameters\": {}\n}"
+        "text": "{\n  \"Name\": \"Name31\",\n  \"Type\": \"LAMBDA\",\n  \"Description\": \"Description20\",\n  \"Parameters\": {}\n}"
       },
       "headers": [
         {
@@ -3744,48 +3744,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25622",
+          "value": "X-Amz-Content-Sha25613",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date60",
+          "value": "X-Amz-Date89",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm94",
+          "value": "X-Amz-Algorithm61",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential40",
+          "value": "X-Amz-Credential70",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token92",
+          "value": "X-Amz-Security-Token64",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature40",
+          "value": "X-Amz-Signature14",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders66",
+          "value": "X-Amz-SignedHeaders48",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization91",
+          "value": "Authorization79",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_d0fa94654720439b87cd6cef1c4475d2",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_56f3848c84bb492184e9ac06719449be",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Updates the data catalog that has the specified name."
     },
     {
@@ -3794,7 +3794,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UpdateNamedQuery",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NamedQueryId\": \"NamedQueryId52\",\n  \"Name\": \"Name76\",\n  \"QueryString\": \"QueryString58\",\n  \"Description\": \"Description72\"\n}"
+        "text": "{\n  \"NamedQueryId\": \"NamedQueryId80\",\n  \"Name\": \"Name70\",\n  \"QueryString\": \"QueryString51\",\n  \"Description\": \"Description79\"\n}"
       },
       "headers": [
         {
@@ -3809,48 +3809,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25616",
+          "value": "X-Amz-Content-Sha25664",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date29",
+          "value": "X-Amz-Date4",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm56",
+          "value": "X-Amz-Algorithm42",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential76",
+          "value": "X-Amz-Credential27",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token75",
+          "value": "X-Amz-Security-Token5",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature30",
+          "value": "X-Amz-Signature20",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders97",
+          "value": "X-Amz-SignedHeaders23",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization88",
+          "value": "Authorization85",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_6db39b563d12409b996e7158a51102bc",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_25ba4764f6ef4d7ba95998ba2129bb04",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated."
     },
     {
@@ -3859,7 +3859,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UpdateNotebook",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NotebookId\": \"NotebookId92\",\n  \"Payload\": \"Payload48\",\n  \"Type\": \"IPYNB\",\n  \"SessionId\": \"SessionId40\",\n  \"ClientRequestToken\": \"ClientRequestToken76\"\n}"
+        "text": "{\n  \"NotebookId\": \"NotebookId59\",\n  \"Payload\": \"Payload60\",\n  \"Type\": \"IPYNB\",\n  \"SessionId\": \"SessionId54\",\n  \"ClientRequestToken\": \"ClientRequestToken86\"\n}"
       },
       "headers": [
         {
@@ -3874,48 +3874,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25659",
+          "value": "X-Amz-Content-Sha25685",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date84",
+          "value": "X-Amz-Date51",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm69",
+          "value": "X-Amz-Algorithm56",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential98",
+          "value": "X-Amz-Credential15",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token53",
+          "value": "X-Amz-Security-Token21",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature82",
+          "value": "X-Amz-Signature46",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders36",
+          "value": "X-Amz-SignedHeaders57",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization93",
+          "value": "Authorization6",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_e4bc21c9ed8a4c3aa505678d0c391098",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_6b43dd84e8d34989ab3f70e626aaa3ff",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Updates the contents of a Spark notebook."
     },
     {
@@ -3924,7 +3924,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UpdateNotebookMetadata",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"NotebookId\": \"NotebookId83\",\n  \"Name\": \"Name33\",\n  \"ClientRequestToken\": \"ClientRequestToken20\"\n}"
+        "text": "{\n  \"NotebookId\": \"NotebookId60\",\n  \"Name\": \"Name75\",\n  \"ClientRequestToken\": \"ClientRequestToken45\"\n}"
       },
       "headers": [
         {
@@ -3939,48 +3939,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25665",
+          "value": "X-Amz-Content-Sha25671",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date64",
+          "value": "X-Amz-Date83",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm91",
+          "value": "X-Amz-Algorithm95",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential72",
+          "value": "X-Amz-Credential10",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token79",
+          "value": "X-Amz-Security-Token22",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature57",
+          "value": "X-Amz-Signature8",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders73",
+          "value": "X-Amz-SignedHeaders19",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization83",
+          "value": "Authorization30",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_75fab9b2f6c441dcbc2c339a16bd2c41",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_a4de6f9c1fda4694bba4488508ebea70",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Updates the metadata for a notebook."
     },
     {
@@ -3989,7 +3989,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UpdatePreparedStatement",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"StatementName\": \"StatementName67\",\n  \"WorkGroup\": \"WorkGroup84\",\n  \"QueryStatement\": \"QueryStatement18\",\n  \"Description\": \"Description24\"\n}"
+        "text": "{\n  \"StatementName\": \"StatementName8\",\n  \"WorkGroup\": \"WorkGroup3\",\n  \"QueryStatement\": \"QueryStatement21\",\n  \"Description\": \"Description30\"\n}"
       },
       "headers": [
         {
@@ -4004,48 +4004,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25653",
+          "value": "X-Amz-Content-Sha2568",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date63",
+          "value": "X-Amz-Date66",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm13",
+          "value": "X-Amz-Algorithm82",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential75",
+          "value": "X-Amz-Credential32",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token32",
+          "value": "X-Amz-Security-Token48",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature15",
+          "value": "X-Amz-Signature34",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders12",
+          "value": "X-Amz-SignedHeaders63",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization39",
+          "value": "Authorization51",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_3ecc86b7ff424041b9a14d979d925016",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_83cf7a3bdfcd49dfa66e49b950238622",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Updates a prepared statement."
     },
     {
@@ -4054,7 +4054,7 @@
       "url": "{{default}}/#X-Amz-Target=AmazonAthena.UpdateWorkGroup",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n  \"WorkGroup\": \"WorkGroup98\",\n  \"Description\": \"Description63\",\n  \"ConfigurationUpdates\": {\n    \"EnforceWorkGroupConfiguration\": false,\n    \"ResultConfigurationUpdates\": {\n      \"OutputLocation\": \"OutputLocation93\",\n      \"RemoveOutputLocation\": false,\n      \"EncryptionConfiguration\": {\n        \"EncryptionOption\": \"SSE_S3\",\n        \"KmsKey\": \"KmsKey42\"\n      },\n      \"RemoveEncryptionConfiguration\": true,\n      \"ExpectedBucketOwner\": \"ExpectedBu87\",\n      \"RemoveExpectedBucketOwner\": true,\n      \"AclConfiguration\": {\n        \"S3AclOption\": \"BUCKET_OWNER_FULL_CONTROL\"\n      },\n      \"RemoveAclConfiguration\": false\n    },\n    \"PublishCloudWatchMetricsEnabled\": true,\n    \"BytesScannedCutoffPerQuery\": 10000000,\n    \"RemoveBytesScannedCutoffPerQuery\": true,\n    \"RequesterPaysEnabled\": false,\n    \"EngineVersion\": {\n      \"SelectedEngineVersion\": \"SelectedEngineVersion94\",\n      \"EffectiveEngineVersion\": \"EffectiveEngineVersion35\"\n    },\n    \"RemoveCustomerContentEncryptionConfiguration\": false,\n    \"AdditionalConfiguration\": \"AdditionalConfiguration4\",\n    \"ExecutionRole\": \"ExecutionRole29ExecutionRole29\",\n    \"CustomerContentEncryptionConfiguration\": {\n      \"KmsKey\": \"KmsKey75\"\n    },\n    \"EnableMinimumEncryptionConfiguration\": false\n  },\n  \"State\": \"ENABLED\"\n}"
+        "text": "{\n  \"WorkGroup\": \"WorkGroup82\",\n  \"Description\": \"Description95\",\n  \"ConfigurationUpdates\": {\n    \"EnforceWorkGroupConfiguration\": true,\n    \"ResultConfigurationUpdates\": {\n      \"OutputLocation\": \"OutputLocation80\",\n      \"RemoveOutputLocation\": true,\n      \"EncryptionConfiguration\": {\n        \"EncryptionOption\": \"SSE_S3\",\n        \"KmsKey\": \"KmsKey71\"\n      },\n      \"RemoveEncryptionConfiguration\": false,\n      \"ExpectedBucketOwner\": \"ExpectedBu68\",\n      \"RemoveExpectedBucketOwner\": true,\n      \"AclConfiguration\": {\n        \"S3AclOption\": \"BUCKET_OWNER_FULL_CONTROL\"\n      },\n      \"RemoveAclConfiguration\": false\n    },\n    \"PublishCloudWatchMetricsEnabled\": false,\n    \"BytesScannedCutoffPerQuery\": 10000000,\n    \"RemoveBytesScannedCutoffPerQuery\": false,\n    \"RequesterPaysEnabled\": true,\n    \"EngineVersion\": {\n      \"SelectedEngineVersion\": \"SelectedEngineVersion27\",\n      \"EffectiveEngineVersion\": \"EffectiveEngineVersion23\"\n    },\n    \"RemoveCustomerContentEncryptionConfiguration\": true,\n    \"AdditionalConfiguration\": \"AdditionalConfiguration50\",\n    \"ExecutionRole\": \"ExecutionRole88ExecutionRole88\",\n    \"CustomerContentEncryptionConfiguration\": {\n      \"KmsKey\": \"KmsKey20\"\n    },\n    \"EnableMinimumEncryptionConfiguration\": false\n  },\n  \"State\": \"ENABLED\"\n}"
       },
       "headers": [
         {
@@ -4069,48 +4069,48 @@
         },
         {
           "name": "X-Amz-Content-Sha256",
-          "value": "X-Amz-Content-Sha25690",
+          "value": "X-Amz-Content-Sha25622",
           "disabled": false
         },
         {
           "name": "X-Amz-Date",
-          "value": "X-Amz-Date79",
+          "value": "X-Amz-Date62",
           "disabled": false
         },
         {
           "name": "X-Amz-Algorithm",
-          "value": "X-Amz-Algorithm34",
+          "value": "X-Amz-Algorithm8",
           "disabled": false
         },
         {
           "name": "X-Amz-Credential",
-          "value": "X-Amz-Credential35",
+          "value": "X-Amz-Credential90",
           "disabled": false
         },
         {
           "name": "X-Amz-Security-Token",
-          "value": "X-Amz-Security-Token48",
+          "value": "X-Amz-Security-Token54",
           "disabled": false
         },
         {
           "name": "X-Amz-Signature",
-          "value": "X-Amz-Signature32",
+          "value": "X-Amz-Signature38",
           "disabled": false
         },
         {
           "name": "X-Amz-SignedHeaders",
-          "value": "X-Amz-SignedHeaders20",
+          "value": "X-Amz-SignedHeaders39",
           "disabled": false
         },
         {
           "name": "Authorization",
-          "value": "Authorization6",
+          "value": "Authorization28",
           "disabled": false
         }
       ],
       "_type": "request",
-      "_id": "req_1445143085254dec8bd5b4020288023b",
-      "parentId": "wrk_ae15a2e4635944c0813bb4ab5e93732b",
+      "_id": "req_a0e5f5a025d04323b9daec783422cacc",
+      "parentId": "wrk_2b91d2c113e04577babadb3cb49504b4",
       "description": "Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified."
     }
   ]

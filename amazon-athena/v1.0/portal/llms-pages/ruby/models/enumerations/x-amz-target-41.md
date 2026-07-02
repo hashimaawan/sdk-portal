@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget41`
+`XAmzTarget41Enum`
 
 
 # Fields
@@ -18,7 +18,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-x_amz_target41 = XAmzTarget41::ENUM_AMAZONATHENALISTQUERYEXECUTIONS
+x_amz_target41 = XAmzTarget41Enum::ENUM_AMAZONATHENALISTQUERYEXECUTIONS
 ```
 
 

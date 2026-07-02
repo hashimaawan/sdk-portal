@@ -7,7 +7,7 @@ Lists the prepared statements in the specified workgroup.
 ```go
 ListPreparedStatements(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget40,
+    xAmzTarget models.XAmzTarget40Enum,
     body models.ListPreparedStatementsInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget40`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-40.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget40Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-40.md) | Header, Required | - |
 | `body` | [`models.ListPreparedStatementsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-prepared-statements-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,13 +57,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget40_EnumAmazonathenalistpreparedstatements
+xAmzTarget := models.XAmzTarget40Enum_ENUMAMAZONATHENALISTPREPAREDSTATEMENTS
 
 body := models.ListPreparedStatementsInput{
-    WorkGroup:             "WorkGroup8",
+    WorkGroup:            "WorkGroup8",
 }
 
-apiResponse, err := api.ListPreparedStatements(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListPreparedStatements(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

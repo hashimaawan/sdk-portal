@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Gets the status of a current calculation.
 
 ```java
-CompletableFuture<ApiResponse<GetCalculationExecutionStatusResponse>> getCalculationExecutionStatusAsync(
-    final XAmzTarget17 xAmzTarget,
+CompletableFuture<GetCalculationExecutionStatusResponse> getCalculationExecutionStatusAsync(
+    final XAmzTarget17Enum xAmzTarget,
     final GetCalculationExecutionStatusRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-17.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-17.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-calculation-execution-status-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetCalculationExecutionStatusResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-calculation-execution-status-response.md).
+[`GetCalculationExecutionStatusResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-calculation-execution-status-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget17 xAmzTarget = XAmzTarget17.ENUM_AMAZONATHENAGETCALCULATIONEXECUTIONSTATUS;
+XAmzTarget17Enum xAmzTarget = XAmzTarget17Enum.ENUM_AMAZONATHENAGETCALCULATIONEXECUTIONSTATUS;
 GetCalculationExecutionStatusRequest body = new GetCalculationExecutionStatusRequest.Builder(
     "CalculationExecutionId8"
 )
 .build();
 
 
-api.getCalculationExecutionStatusAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getCalculationExecutionStatusAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

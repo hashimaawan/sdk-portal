@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Information about the columns in a query execution result.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -24,9 +22,8 @@ Information about the columns in a query execution result.
 | `type` | `string` | Required | - |
 | `precision` | `number \| undefined` | Optional | - |
 | `scale` | `number \| undefined` | Optional | - |
-| `nullable` | [`ColumnNullable2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/column-nullable-2.md) | Optional | - |
+| `nullable` | [`ColumnNullable2Enum \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/column-nullable-2.md) | Optional | - |
 | `caseSensitive` | `boolean \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -42,9 +39,6 @@ const columnInfo: ColumnInfo = {
   tableName: 'TableName4',
   label: 'Label6',
   precision: 196,
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

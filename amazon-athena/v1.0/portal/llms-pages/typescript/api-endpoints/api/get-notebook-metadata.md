@@ -6,7 +6,7 @@ Retrieves notebook metadata for the specified notebook ID.
 
 ```ts
 async getNotebookMetadata(
-  xAmzTarget: XAmzTarget21,
+  xAmzTarget: XAmzTarget21Enum,
   body: GetNotebookMetadataInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget21`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-21.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget21Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-21.md) | Header, Required | - |
 | `body` | [`GetNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget21.EnumAmazonAthenaGetNotebookMetadata;
+const xAmzTarget = XAmzTarget21Enum.EnumAmazonAthenaGetNotebookMetadata;
 
 const body: GetNotebookMetadataInput = {
   notebookId: 'NotebookId6',
 };
 
 try {
-  const response = await api.getNotebookMetadata(
+  const response = await apiController.getNotebookMetadata(
     xAmzTarget,
     body
   );

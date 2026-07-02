@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns information about a single query. Requires that you have access to the workgroup in which the query was saved.
 
 ```java
-CompletableFuture<ApiResponse<GetNamedQueryOutput>> getNamedQueryAsync(
-    final XAmzTarget20 xAmzTarget,
+CompletableFuture<GetNamedQueryOutput> getNamedQueryAsync(
+    final XAmzTarget20Enum xAmzTarget,
     final GetNamedQueryInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget20`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-20.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget20Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-20.md) | Header, Required | - |
 | `body` | [`GetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetNamedQueryOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-named-query-output.md).
+[`GetNamedQueryOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-named-query-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget20 xAmzTarget = XAmzTarget20.ENUM_AMAZONATHENAGETNAMEDQUERY;
+XAmzTarget20Enum xAmzTarget = XAmzTarget20Enum.ENUM_AMAZONATHENAGETNAMEDQUERY;
 GetNamedQueryInput body = new GetNamedQueryInput.Builder(
     "NamedQueryId6"
 )
 .build();
 
 
-api.getNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getNamedQueryAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

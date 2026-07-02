@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
 
 ```java
-CompletableFuture<ApiResponse<Object>> deleteWorkGroupAsync(
-    final XAmzTarget13 xAmzTarget,
+CompletableFuture<Object> deleteWorkGroupAsync(
+    final XAmzTarget13Enum xAmzTarget,
     final DeleteWorkGroupInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget13`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-13.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget13Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-13.md) | Header, Required | - |
 | `body` | [`DeleteWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/delete-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget13 xAmzTarget = XAmzTarget13.ENUM_AMAZONATHENADELETEWORKGROUP;
+XAmzTarget13Enum xAmzTarget = XAmzTarget13Enum.ENUM_AMAZONATHENADELETEWORKGROUP;
 DeleteWorkGroupInput body = new DeleteWorkGroupInput.Builder(
     "WorkGroup8"
 )
 .build();
 
 
-api.deleteWorkGroupAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.deleteWorkGroupAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

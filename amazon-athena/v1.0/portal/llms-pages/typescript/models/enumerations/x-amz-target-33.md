@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget33`
+`XAmzTarget33Enum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ts
-import { XAmzTarget33 } from 'amazon-athenalib';
+import { XAmzTarget33Enum } from 'amazon-athenalib';
 
-const xAmzTarget33 = XAmzTarget33.EnumAmazonAthenaListDataCatalogs;
+const xAmzTarget33 = XAmzTarget33Enum.EnumAmazonAthenaListDataCatalogs;
 ```
 
 

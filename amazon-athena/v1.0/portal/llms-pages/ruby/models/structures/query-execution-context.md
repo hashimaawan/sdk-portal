@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The database and data catalog context in which the query execution occurs.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -18,18 +16,14 @@ The database and data catalog context in which the query execution occurs.
 |  --- | --- | --- | --- |
 | `database` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
 | `catalog` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 query_execution_context = QueryExecutionContext.new(
-  database: 'Database4',
-  catalog: 'Catalog0',
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  'Database4',
+  'Catalog0'
 )
 ```
 

@@ -7,7 +7,7 @@ Lists the calculations that have been submitted to a session in descending order
 ```go
 ListCalculationExecutions(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget32,
+    xAmzTarget models.XAmzTarget32Enum,
     body models.ListCalculationExecutionsRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget32`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-32.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget32Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-32.md) | Header, Required | - |
 | `body` | [`models.ListCalculationExecutionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-calculation-executions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,13 +57,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget32_EnumAmazonathenalistcalculationexecutions
+xAmzTarget := models.XAmzTarget32Enum_ENUMAMAZONATHENALISTCALCULATIONEXECUTIONS
 
 body := models.ListCalculationExecutionsRequest{
-    SessionId:             "SessionId2",
+    SessionId:            "SessionId2",
 }
 
-apiResponse, err := api.ListCalculationExecutions(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListCalculationExecutions(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

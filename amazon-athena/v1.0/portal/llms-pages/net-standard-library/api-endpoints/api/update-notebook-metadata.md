@@ -6,7 +6,7 @@ Updates the metadata for a notebook.
 
 ```csharp
 UpdateNotebookMetadataAsync(
-    Models.XAmzTarget57 xAmzTarget,
+    Models.XAmzTarget57Enum xAmzTarget,
     Models.UpdateNotebookMetadataInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget57`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-57.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget57Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-57.md) | Header, Required | - |
 | `body` | [`UpdateNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/update-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget57 xAmzTarget = XAmzTarget57.EnumAmazonAthenaUpdateNotebookMetadata;
+XAmzTarget57Enum xAmzTarget = XAmzTarget57Enum.EnumAmazonAthenaUpdateNotebookMetadata;
 UpdateNotebookMetadataInput body = new UpdateNotebookMetadataInput
 {
     NotebookId = "NotebookId6",
@@ -57,7 +57,7 @@ UpdateNotebookMetadataInput body = new UpdateNotebookMetadataInput
 
 try
 {
-    ApiResponse<object> result = await api.UpdateNotebookMetadataAsync(
+    object result = await aPIController.UpdateNotebookMetadataAsync(
         xAmzTarget,
         body
     );

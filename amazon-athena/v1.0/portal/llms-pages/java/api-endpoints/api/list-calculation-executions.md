@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later.
 
 ```java
-CompletableFuture<ApiResponse<ListCalculationExecutionsResponse>> listCalculationExecutionsAsync(
-    final XAmzTarget32 xAmzTarget,
+CompletableFuture<ListCalculationExecutionsResponse> listCalculationExecutionsAsync(
+    final XAmzTarget32Enum xAmzTarget,
     final ListCalculationExecutionsRequest body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget32`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-32.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget32Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-32.md) | Header, Required | - |
 | `body` | [`ListCalculationExecutionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-calculation-executions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListCalculationExecutionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-calculation-executions-response.md).
+[`ListCalculationExecutionsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-calculation-executions-response.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget32 xAmzTarget = XAmzTarget32.ENUM_AMAZONATHENALISTCALCULATIONEXECUTIONS;
+XAmzTarget32Enum xAmzTarget = XAmzTarget32Enum.ENUM_AMAZONATHENALISTCALCULATIONEXECUTIONS;
 ListCalculationExecutionsRequest body = new ListCalculationExecutionsRequest.Builder(
     "SessionId2"
 )
 .build();
 
 
-api.listCalculationExecutionsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listCalculationExecutionsAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

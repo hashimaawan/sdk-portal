@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Summary information for a notebook calculation.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -19,14 +17,13 @@ Summary information for a notebook calculation.
 | `calculationExecutionId` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `36` |
 | `description` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `status` | [`Status1 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/status-1.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  CalculationExecutionState1,
+  CalculationExecutionState1Enum,
   CalculationSummary,
 } from 'amazon-athenalib';
 
@@ -36,14 +33,8 @@ const calculationSummary: CalculationSummary = {
   status: {
     submissionDateTime: '2016-03-13T12:52:32.123Z',
     completionDateTime: '2016-03-13T12:52:32.123Z',
-    state: CalculationExecutionState1.Canceling,
+    state: CalculationExecutionState1Enum.CANCELING,
     stateChangeReason: 'StateChangeReason8',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
-  },
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

@@ -6,7 +6,7 @@ Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maxim
 
 ```ts
 async importNotebook(
-  xAmzTarget: XAmzTarget30,
+  xAmzTarget: XAmzTarget30Enum,
   body: ImportNotebookInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget30`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-30.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget30Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-30.md) | Header, Required | - |
 | `body` | [`ImportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/import-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,17 +51,17 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget30.EnumAmazonAthenaImportNotebook;
+const xAmzTarget = XAmzTarget30Enum.EnumAmazonAthenaImportNotebook;
 
 const body: ImportNotebookInput = {
   workGroup: 'WorkGroup8',
   name: 'Name6',
   payload: 'Payload2',
-  type: NotebookType2.Ipynb,
+  type: NotebookType2Enum.IPYNB,
 };
 
 try {
-  const response = await api.importNotebook(
+  const response = await apiController.importNotebook(
     xAmzTarget,
     body
   );

@@ -7,7 +7,7 @@ Deletes the prepared statement with the specified name from the specified workgr
 ```go
 DeletePreparedStatement(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget12,
+    xAmzTarget models.XAmzTarget12Enum,
     body models.DeletePreparedStatementInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget12`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-12.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget12Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-12.md) | Header, Required | - |
 | `body` | [`models.DeletePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/delete-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,14 +53,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget12_EnumAmazonathenadeletepreparedstatement
+xAmzTarget := models.XAmzTarget12Enum_ENUMAMAZONATHENADELETEPREPAREDSTATEMENT
 
 body := models.DeletePreparedStatementInput{
-    StatementName:         "StatementName4",
-    WorkGroup:             "WorkGroup8",
+    StatementName:        "StatementName4",
+    WorkGroup:            "WorkGroup8",
 }
 
-apiResponse, err := api.DeletePreparedStatement(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.DeletePreparedStatement(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

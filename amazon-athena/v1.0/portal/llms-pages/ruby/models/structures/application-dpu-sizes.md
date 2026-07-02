@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -18,20 +16,16 @@ Contains the application runtime IDs and their supported DPU sizes.
 |  --- | --- | --- | --- |
 | `application_runtime_id` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `supported_dpu_sizes` | `Array[Integer]` | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
-application_dpu_sizes = ApplicationDpuSizes.new(
-  application_runtime_id: 'ApplicationRuntimeId8',
-  supported_dpu_sizes: [
+application_dpu_sizes = ApplicationDPUSizes.new(
+  'ApplicationRuntimeId8',
+  [
     137
-  ],
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  ]
 )
 ```
 

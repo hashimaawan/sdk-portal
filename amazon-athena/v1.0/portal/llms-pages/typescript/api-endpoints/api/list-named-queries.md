@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```ts
 async listNamedQueries(
-  xAmzTarget: XAmzTarget37,
+  xAmzTarget: XAmzTarget37Enum,
   body: ListNamedQueriesInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget37`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-37.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget37Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-37.md) | Header, Required | - |
 | `body` | [`ListNamedQueriesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-named-queries-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -56,13 +56,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget37.EnumAmazonAthenaListNamedQueries;
+const xAmzTarget = XAmzTarget37Enum.EnumAmazonAthenaListNamedQueries;
 
 const body: ListNamedQueriesInput = {
 };
 
 try {
-  const response = await api.listNamedQueries(
+  const response = await apiController.listNamedQueries(
     xAmzTarget,
     body
   );

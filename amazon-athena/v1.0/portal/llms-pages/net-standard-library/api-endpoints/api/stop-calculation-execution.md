@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```csharp
 StopCalculationExecutionAsync(
-    Models.XAmzTarget49 xAmzTarget,
+    Models.XAmzTarget49Enum xAmzTarget,
     Models.StopCalculationExecutionRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget49`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-49.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget49Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-49.md) | Header, Required | - |
 | `body` | [`StopCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/stop-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -43,13 +43,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.StopCalculationExecutionResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/stop-calculation-execution-response.md).
+[`Task<Models.StopCalculationExecutionResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/stop-calculation-execution-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget49 xAmzTarget = XAmzTarget49.EnumAmazonAthenaStopCalculationExecution;
+XAmzTarget49Enum xAmzTarget = XAmzTarget49Enum.EnumAmazonAthenaStopCalculationExecution;
 StopCalculationExecutionRequest body = new StopCalculationExecutionRequest
 {
     CalculationExecutionId = "CalculationExecutionId8",
@@ -57,7 +57,7 @@ StopCalculationExecutionRequest body = new StopCalculationExecutionRequest
 
 try
 {
-    ApiResponse<StopCalculationExecutionResponse> result = await api.StopCalculationExecutionAsync(
+    StopCalculationExecutionResponse result = await aPIController.StopCalculationExecutionAsync(
         xAmzTarget,
         body
     );

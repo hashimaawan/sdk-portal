@@ -7,7 +7,7 @@ Deletes the specified notebook.
 ```go
 DeleteNotebook(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget11,
+    xAmzTarget models.XAmzTarget11Enum,
     body models.DeleteNotebookInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget11`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-11.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget11Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-11.md) | Header, Required | - |
 | `body` | [`models.DeleteNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/delete-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget11_EnumAmazonathenadeletenotebook
+xAmzTarget := models.XAmzTarget11Enum_ENUMAMAZONATHENADELETENOTEBOOK
 
 body := models.DeleteNotebookInput{
-    NotebookId:            "NotebookId6",
+    NotebookId:           "NotebookId6",
 }
 
-apiResponse, err := api.DeleteNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.DeleteNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

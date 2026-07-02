@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Updates a prepared statement.
 
 ```java
-CompletableFuture<ApiResponse<Object>> updatePreparedStatementAsync(
-    final XAmzTarget58 xAmzTarget,
+CompletableFuture<Object> updatePreparedStatementAsync(
+    final XAmzTarget58Enum xAmzTarget,
     final UpdatePreparedStatementInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget58`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-58.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget58Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-58.md) | Header, Required | - |
 | `body` | [`UpdatePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/update-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```java
-XAmzTarget58 xAmzTarget = XAmzTarget58.ENUM_AMAZONATHENAUPDATEPREPAREDSTATEMENT;
+XAmzTarget58Enum xAmzTarget = XAmzTarget58Enum.ENUM_AMAZONATHENAUPDATEPREPAREDSTATEMENT;
 UpdatePreparedStatementInput body = new UpdatePreparedStatementInput.Builder(
     "StatementName4",
     "WorkGroup8",
@@ -57,7 +57,7 @@ UpdatePreparedStatementInput body = new UpdatePreparedStatementInput.Builder(
 .build();
 
 
-api.updatePreparedStatementAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.updatePreparedStatementAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

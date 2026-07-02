@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/java/x-redirect/JTI0bSUyRlF1ZXJ5U3RhZ2VQbGFu
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -18,16 +16,13 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `Identifier` | `String` | Optional | - | String getIdentifier() | setIdentifier(String identifier) |
 | `Children` | [`List<QueryStagePlanNode>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/query-stage-plan-node.md) | Optional | - | List<QueryStagePlanNode> getChildren() | setChildren(List<QueryStagePlanNode> children) |
 | `RemoteSources` | `List<String>` | Optional | - | List<String> getRemoteSources() | setRemoteSources(List<String> remoteSources) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.QueryStagePlan;
 import com.amazonaws.useast1.athena.models.QueryStagePlanNode;
-import java.io.IOException;
 import java.util.Arrays;
 
 QueryStagePlan queryStagePlan = new QueryStagePlan.Builder()
@@ -46,7 +41,6 @@ QueryStagePlan queryStagePlan = new QueryStagePlan.Builder()
                 "RemoteSources5",
                 "RemoteSources6"
             ))
-        .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
             .build()
     ))
     .remoteSources(Arrays.asList(
@@ -54,7 +48,6 @@ QueryStagePlan queryStagePlan = new QueryStagePlan.Builder()
         "RemoteSources9",
         "RemoteSources0"
     ))
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

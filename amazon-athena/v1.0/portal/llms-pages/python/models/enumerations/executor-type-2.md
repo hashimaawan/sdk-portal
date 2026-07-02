@@ -7,7 +7,7 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Enum Type Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 # Example
 
 ```python
-from amazonathena.models.executor_type_2 import ExecutorType2
+from amazonathena.models.executor_type_2_enum import ExecutorType2Enum
 
-executor_type_2 = ExecutorType2.GATEWAY
+executor_type_2 = ExecutorType2Enum.GATEWAY
 ```
 
 

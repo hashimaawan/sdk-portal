@@ -7,7 +7,7 @@ Updates the workgroup with the specified name. The workgroup's name cannot be ch
 ```go
 UpdateWorkGroup(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget59,
+    xAmzTarget models.XAmzTarget59Enum,
     body models.UpdateWorkGroupInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget59`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-59.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget59Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-59.md) | Header, Required | - |
 | `body` | [`models.UpdateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/update-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget59_EnumAmazonathenaupdateworkgroup
+xAmzTarget := models.XAmzTarget59Enum_ENUMAMAZONATHENAUPDATEWORKGROUP
 
 body := models.UpdateWorkGroupInput{
-    WorkGroup:             "WorkGroup8",
+    WorkGroup:            "WorkGroup8",
 }
 
-apiResponse, err := api.UpdateWorkGroup(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.UpdateWorkGroup(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

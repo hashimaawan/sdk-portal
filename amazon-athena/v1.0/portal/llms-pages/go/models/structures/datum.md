@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A piece of data (a field in the table).
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ A piece of data (a field in the table).
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `VarCharValue` | `*string` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,15 +23,12 @@ A piece of data (a field in the table).
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     datum := models.Datum{
-        VarCharValue:          models.ToPointer("VarCharValue8"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        VarCharValue:         models.ToPointer("VarCharValue8"),
     }
 
 }

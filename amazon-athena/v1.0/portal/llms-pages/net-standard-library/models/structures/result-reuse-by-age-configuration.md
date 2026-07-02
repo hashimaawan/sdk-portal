@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Specifies whether previous query results are reused, and if so, their maximum age.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -18,20 +16,17 @@ Specifies whether previous query results are reused, and if so, their maximum ag
 |  --- | --- | --- | --- |
 | `Enabled` | `bool` | Required | - |
 | `MaxAgeInMinutes` | `int?` | Optional | **Constraints**: `>= 0`, `<= 10080` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 ResultReuseByAgeConfiguration resultReuseByAgeConfiguration = new ResultReuseByAgeConfiguration
 {
     Enabled = false,
     MaxAgeInMinutes = 134,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

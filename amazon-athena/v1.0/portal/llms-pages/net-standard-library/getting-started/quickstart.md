@@ -56,7 +56,7 @@ Next, a window will be displayed where we must set the `checkbox` on `AmazonAthe
 
 ## 4. Write sample code
 
-Once the `TestConsoleProject` is created, a file named `Program.cs` will be visible in the solution explorer with an empty `Main` method. This is the entry point for the execution of the entire solution. Here, you can add code to initialize the client library and acquire the instance of a Api class. Sample code to initialize the client library and using Api methods is given in the subsequent sections.
+Once the `TestConsoleProject` is created, a file named `Program.cs` will be visible in the solution explorer with an empty `Main` method. This is the entry point for the execution of the entire solution. Here, you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using Controller methods is given in the subsequent sections.
 
 ![Adding a project reference](https://apidocs.io/illustration/cs?workspaceFolder=Amazon%20Athena-CSharp&workspaceName=AmazonAthena&projectName=AmazonAthena.Standard&rootNamespace=AmazonAthena.Standard&step=addCode)
 
@@ -81,11 +81,10 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| Region | `Models.Region` | The AWS region<br>*Default*: `Region.useast1` |
+| Region | `Models.RegionEnum` | The AWS region<br>*Default*: `RegionEnum.useast1` |
 | Environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.Production`** |
-| Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(30)` |
+| Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
 | HttpClientConfiguration | [`Action<HttpClientConfiguration.Builder>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/httpclientconfigurationbuilder.md) | Action delegate that configures the HTTP client by using the HttpClientConfiguration.Builder for customizing API call settings.<br>*Default*: `new HttpClient()` |
-| LogBuilder | [`LogBuilder`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/configuration/logbuilder.md) | Represents the logging configuration builder for API calls |
 | CustomHeaderAuthenticationCredentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/getting-started/quickstart/authorization.md) | The Credentials Setter for Custom Header Signature |
 
 The API client can be initialized as follows:
@@ -96,7 +95,6 @@ The API client can be initialized as follows:
 using AmazonAthena.Standard;
 using AmazonAthena.Standard.Authentication;
 using AmazonAthena.Standard.Models;
-using Microsoft.Extensions.Logging;
 
 namespace ConsoleApp;
 
@@ -109,12 +107,7 @@ AmazonAthenaClient client = new AmazonAthenaClient.Builder()
     .HttpClientConfig(httpClientConfig =>
         httpClientConfig.Timeout(TimeSpan.FromSeconds(100)))
     .Environment(AmazonAthena.Standard.Environment.Production)
-    .Region(Region.Useast1)
-    .LoggingConfig(config => config
-        .LogLevel(LogLevel.Information)
-        .RequestConfig(reqConfig => reqConfig.Body(true))
-        .ResponseConfig(respConfig => respConfig.Headers(true))
-    )
+    .Region(RegionEnum.Useast1)
     .Build();
 ```
 

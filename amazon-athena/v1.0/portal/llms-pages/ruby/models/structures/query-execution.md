@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Information about a single instance of a query execution.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -18,7 +16,7 @@ Information about a single instance of a query execution.
 |  --- | --- | --- | --- |
 | `query_execution_id` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
 | `query` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `262144` |
-| `statement_type` | [`StatementType1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/statement-type-1.md) | Optional | - |
+| `statement_type` | [`StatementType1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/statement-type-1.md) | Optional | - |
 | `result_configuration` | [`ResultConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/result-configuration-1.md) | Optional | - |
 | `result_reuse_configuration` | [`ResultReuseConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/result-reuse-configuration-1.md) | Optional | - |
 | `query_execution_context` | [`QueryExecutionContext1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/query-execution-context-1.md) | Optional | - |
@@ -28,51 +26,53 @@ Information about a single instance of a query execution.
 | `engine_version` | [`EngineVersion1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/engine-version-1.md) | Optional | - |
 | `execution_parameters` | `Array[String]` | Optional | **Constraints**: *Minimum Items*: `1`, *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `substatement_type` | `String` | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 query_execution = QueryExecution.new(
-  query_execution_id: 'QueryExecutionId8',
-  query: 'Query8',
-  statement_type: StatementType1::DDL,
-  result_configuration: ResultConfiguration1.new(
-    output_location: 'OutputLocation0',
-    encryption_configuration: EncryptionConfiguration2.new(
-      encryption_option: EncryptionOption1::SSE_S3,
-      kms_key: 'KmsKey6',
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+  'QueryExecutionId8',
+  'Query8',
+  StatementType1Enum::DDL,
+  ResultConfiguration1.new(
+    'OutputLocation0',
+    EncryptionConfiguration2.new(
+      EncryptionOption1Enum::SSE_S3,
+      'KmsKey6'
     ),
-    expected_bucket_owner: 'ExpectedBucketOwner0',
-    acl_configuration: AclConfiguration1.new(
-      s3_acl_option: S3AclOption1::BUCKET_OWNER_FULL_CONTROL,
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
-    ),
-    additional_properties: {
-      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-    }
+    'ExpectedBucketOwner0',
+    AclConfiguration1.new(
+      S3AclOption1Enum::BUCKET_OWNER_FULL_CONTROL
+    )
   ),
-  result_reuse_configuration: ResultReuseConfiguration1.new(
-    result_reuse_by_age_configuration: ResultReuseByAgeConfiguration2.new(
-      enabled: false,
-      max_age_in_minutes: 26,
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
-    ),
-    additional_properties: {
-      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-    }
+  ResultReuseConfiguration1.new(
+    ResultReuseByAgeConfiguration2.new(
+      false,
+      26
+    )
   ),
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  QueryExecutionContext1.new,
+  Status.new(
+    envrr,
+    nil,
+    DateTimeHelper.from_rfc3339(nil),
+    DateTimeHelper.from_rfc3339(nil),
+    AthenaError2.new
+  ),
+  Statistics.new(
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    ResultReuseInformation2.new
+  ),
+  nil,
+  EngineVersion1.new,
+  []
 )
 ```
 

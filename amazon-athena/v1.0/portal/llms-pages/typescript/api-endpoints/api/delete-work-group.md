@@ -6,7 +6,7 @@ Deletes the workgroup with the specified name. The primary workgroup cannot be d
 
 ```ts
 async deleteWorkGroup(
-  xAmzTarget: XAmzTarget13,
+  xAmzTarget: XAmzTarget13Enum,
   body: DeleteWorkGroupInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget13`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-13.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget13Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-13.md) | Header, Required | - |
 | `body` | [`DeleteWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/delete-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget13.EnumAmazonAthenaDeleteWorkGroup;
+const xAmzTarget = XAmzTarget13Enum.EnumAmazonAthenaDeleteWorkGroup;
 
 const body: DeleteWorkGroupInput = {
   workGroup: 'WorkGroup8',
 };
 
 try {
-  const response = await api.deleteWorkGroup(
+  const response = await apiController.deleteWorkGroup(
     xAmzTarget,
     body
   );

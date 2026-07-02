@@ -6,7 +6,7 @@ Deletes the workgroup with the specified name. The primary workgroup cannot be d
 
 ```csharp
 DeleteWorkGroupAsync(
-    Models.XAmzTarget13 xAmzTarget,
+    Models.XAmzTarget13Enum xAmzTarget,
     Models.DeleteWorkGroupInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget13`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-13.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget13Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-13.md) | Header, Required | - |
 | `body` | [`DeleteWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/delete-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget13 xAmzTarget = XAmzTarget13.EnumAmazonAthenaDeleteWorkGroup;
+XAmzTarget13Enum xAmzTarget = XAmzTarget13Enum.EnumAmazonAthenaDeleteWorkGroup;
 DeleteWorkGroupInput body = new DeleteWorkGroupInput
 {
     WorkGroup = "WorkGroup8",
@@ -56,7 +56,7 @@ DeleteWorkGroupInput body = new DeleteWorkGroupInput
 
 try
 {
-    ApiResponse<object> result = await api.DeleteWorkGroupAsync(
+    object result = await aPIController.DeleteWorkGroupAsync(
         xAmzTarget,
         body
     );

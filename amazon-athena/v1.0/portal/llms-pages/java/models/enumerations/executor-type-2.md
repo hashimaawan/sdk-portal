@@ -7,7 +7,7 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Enum Type Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.ExecutorType2;
+import com.amazonaws.useast1.athena.models.ExecutorType2Enum;
 
-ExecutorType2 executorType2 = ExecutorType2.COORDINATOR;
+ExecutorType2Enum executorType2 = ExecutorType2Enum.COORDINATOR;
 ```
 
 

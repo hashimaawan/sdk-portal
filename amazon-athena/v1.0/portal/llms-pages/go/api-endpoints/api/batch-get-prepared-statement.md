@@ -7,7 +7,7 @@ Returns the details of a single prepared statement or a list of up to 256 prepar
 ```go
 BatchGetPreparedStatement(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget1,
+    xAmzTarget models.XAmzTarget1Enum,
     body models.BatchGetPreparedStatementInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-1.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-1.md) | Header, Required | - |
 | `body` | [`models.BatchGetPreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/batch-get-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,7 +53,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget1_EnumAmazonathenabatchgetpreparedstatement
+xAmzTarget := models.XAmzTarget1Enum_ENUMAMAZONATHENABATCHGETPREPAREDSTATEMENT
 
 body := models.BatchGetPreparedStatementInput{
     PreparedStatementNames: []string{
@@ -64,7 +64,7 @@ body := models.BatchGetPreparedStatementInput{
     WorkGroup:              "WorkGroup8",
 }
 
-apiResponse, err := api.BatchGetPreparedStatement(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.BatchGetPreparedStatement(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRlF1ZXJ5U3RhZ2VQbGFu
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -18,7 +16,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `Identifier` | `*string` | Optional | - |
 | `Children` | [`[]models.QueryStagePlanNode`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/query-stage-plan-node.md) | Optional | - |
 | `RemoteSources` | `[]string` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,38 +24,32 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     queryStagePlan := models.QueryStagePlan{
-        Name:                  models.ToPointer("Name0"),
-        Identifier:            models.ToPointer("Identifier6"),
-        Children:              []models.QueryStagePlanNode{
+        Name:                 models.ToPointer("Name0"),
+        Identifier:           models.ToPointer("Identifier6"),
+        Children:             []models.QueryStagePlanNode{
             models.QueryStagePlanNode{
-                Name:                  models.ToPointer("Name6"),
-                Identifier:            models.ToPointer("Identifier2"),
-                Children:              []models.QueryStagePlanNode{
+                Name:                 models.ToPointer("Name6"),
+                Identifier:           models.ToPointer("Identifier2"),
+                Children:             []models.QueryStagePlanNode{
                     models.QueryStagePlanNode{
                     },
                 },
-                RemoteSources:         []string{
+                RemoteSources:        []string{
                     "RemoteSources4",
                     "RemoteSources5",
                     "RemoteSources6",
                 },
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
             },
         },
-        RemoteSources:         []string{
+        RemoteSources:        []string{
             "RemoteSources8",
             "RemoteSources9",
             "RemoteSources0",
-        },
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

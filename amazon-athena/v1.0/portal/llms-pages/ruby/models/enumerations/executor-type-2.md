@@ -7,7 +7,7 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Enum Type Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
@@ -22,7 +22,7 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 # Example
 
 ```ruby
-executor_type2 = ExecutorType2::WORKER
+executor_type2 = ExecutorType2Enum::WORKER
 ```
 
 

@@ -6,7 +6,7 @@ Deletes a data catalog.
 
 ```ts
 async deleteDataCatalog(
-  xAmzTarget: XAmzTarget9,
+  xAmzTarget: XAmzTarget9Enum,
   body: DeleteDataCatalogInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget9`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-9.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget9Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-9.md) | Header, Required | - |
 | `body` | [`DeleteDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/delete-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget9.EnumAmazonAthenaDeleteDataCatalog;
+const xAmzTarget = XAmzTarget9Enum.EnumAmazonAthenaDeleteDataCatalog;
 
 const body: DeleteDataCatalogInput = {
   name: 'Name6',
 };
 
 try {
-  const response = await api.deleteDataCatalog(
+  const response = await apiController.deleteDataCatalog(
     xAmzTarget,
     body
   );

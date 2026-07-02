@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`SessionState`
+`SessionStateEnum`
 
 
 # Fields
@@ -25,9 +25,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.SessionState;
+import com.amazonaws.useast1.athena.models.SessionStateEnum;
 
-SessionState sessionState = SessionState.TERMINATING;
+SessionStateEnum sessionState = SessionStateEnum.TERMINATING;
 ```
 
 

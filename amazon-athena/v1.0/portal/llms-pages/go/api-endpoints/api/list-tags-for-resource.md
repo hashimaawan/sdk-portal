@@ -7,7 +7,7 @@ Lists the tags associated with an Athena workgroup or data catalog resource.
 ```go
 ListTagsForResource(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget44,
+    xAmzTarget models.XAmzTarget44Enum,
     body models.ListTagsForResourceInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-44.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget44Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-44.md) | Header, Required | - |
 | `body` | [`models.ListTagsForResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-tags-for-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,13 +57,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget44_EnumAmazonathenalisttagsforresource
+xAmzTarget := models.XAmzTarget44Enum_ENUMAMAZONATHENALISTTAGSFORRESOURCE
 
 body := models.ListTagsForResourceInput{
-    ResourceArn:           "ResourceARN4",
+    ResourceARN:          "ResourceARN4",
 }
 
-apiResponse, err := api.ListTagsForResource(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListTagsForResource(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

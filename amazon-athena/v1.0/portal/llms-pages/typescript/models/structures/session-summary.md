@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains summary information about a session.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -21,13 +19,12 @@ Contains summary information about a session.
 | `engineVersion` | [`EngineVersion1 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/engine-version-1.md) | Optional | - |
 | `notebookVersion` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `status` | [`Status3 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/status-3.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
-import { SessionState1, SessionSummary } from 'amazon-athenalib';
+import { SessionState1Enum, SessionSummary } from 'amazon-athenalib';
 
 const sessionSummary: SessionSummary = {
   sessionId: 'SessionId0',
@@ -35,9 +32,6 @@ const sessionSummary: SessionSummary = {
   engineVersion: {
     selectedEngineVersion: 'SelectedEngineVersion4',
     effectiveEngineVersion: 'EffectiveEngineVersion6',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
   },
   notebookVersion: 'NotebookVersion2',
   status: {
@@ -45,13 +39,7 @@ const sessionSummary: SessionSummary = {
     lastModifiedDateTime: '2016-03-13T12:52:32.123Z',
     endDateTime: '2016-03-13T12:52:32.123Z',
     idleSinceDateTime: '2016-03-13T12:52:32.123Z',
-    state: SessionState1.Terminating,
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
-  },
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+    state: SessionState1Enum.TERMINATING,
   },
 };
 ```

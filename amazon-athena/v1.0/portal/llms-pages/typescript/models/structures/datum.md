@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A piece of data (a field in the table).
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -17,7 +15,6 @@ A piece of data (a field in the table).
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `varCharValue` | `string \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -27,9 +24,6 @@ import { Datum } from 'amazon-athenalib';
 
 const datum: Datum = {
   varCharValue: 'VarCharValue8',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

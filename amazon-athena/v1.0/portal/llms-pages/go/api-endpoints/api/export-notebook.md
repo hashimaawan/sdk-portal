@@ -7,7 +7,7 @@ Exports the specified notebook and its metadata.
 ```go
 ExportNotebook(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget14,
+    xAmzTarget models.XAmzTarget14Enum,
     body models.ExportNotebookInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget14`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-14.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget14Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-14.md) | Header, Required | - |
 | `body` | [`models.ExportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/export-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget14_EnumAmazonathenaexportnotebook
+xAmzTarget := models.XAmzTarget14Enum_ENUMAMAZONATHENAEXPORTNOTEBOOK
 
 body := models.ExportNotebookInput{
-    NotebookId:            "NotebookId6",
+    NotebookId:           "NotebookId6",
 }
 
-apiResponse, err := api.ExportNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ExportNotebook(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -7,7 +7,7 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 
 # Enum Type Name
 
-`S3AclOption1`
+`S3AclOption1Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 # Example
 
 ```ruby
-s3_acl_option1 = S3AclOption1::BUCKET_OWNER_FULL_CONTROL
+s3_acl_option1 = S3AclOption1Enum::BUCKET_OWNER_FULL_CONTROL
 ```
 
 

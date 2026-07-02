@@ -6,7 +6,7 @@ Describes a previously submitted calculation execution.
 
 ```ts
 async getCalculationExecution(
-  xAmzTarget: XAmzTarget15,
+  xAmzTarget: XAmzTarget15Enum,
   body: GetCalculationExecutionRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget15`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-15.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget15Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-15.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget15.EnumAmazonAthenaGetCalculationExecution;
+const xAmzTarget = XAmzTarget15Enum.EnumAmazonAthenaGetCalculationExecution;
 
 const body: GetCalculationExecutionRequest = {
   calculationExecutionId: 'CalculationExecutionId8',
 };
 
 try {
-  const response = await api.getCalculationExecution(
+  const response = await apiController.getCalculationExecution(
     xAmzTarget,
     body
   );

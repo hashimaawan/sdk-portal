@@ -7,7 +7,7 @@ Gets the status of a current calculation.
 ```go
 GetCalculationExecutionStatus(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget17,
+    xAmzTarget models.XAmzTarget17Enum,
     body models.GetCalculationExecutionStatusRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-17.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-17.md) | Header, Required | - |
 | `body` | [`models.GetCalculationExecutionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-calculation-execution-status-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget17_EnumAmazonathenagetcalculationexecutionstatus
+xAmzTarget := models.XAmzTarget17Enum_ENUMAMAZONATHENAGETCALCULATIONEXECUTIONSTATUS
 
 body := models.GetCalculationExecutionStatusRequest{
     CalculationExecutionId: "CalculationExecutionId8",
 }
 
-apiResponse, err := api.GetCalculationExecutionStatus(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetCalculationExecutionStatus(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

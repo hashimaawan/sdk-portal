@@ -6,7 +6,7 @@ Runs the SQL query statements contained in the <code>Query</code>. Requires you 
 
 ```ts
 async startQueryExecution(
-  xAmzTarget: XAmzTarget47,
+  xAmzTarget: XAmzTarget47Enum,
   body: StartQueryExecutionInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget47`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-47.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget47Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-47.md) | Header, Required | - |
 | `body` | [`StartQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/start-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget47.EnumAmazonAthenaStartQueryExecution;
+const xAmzTarget = XAmzTarget47Enum.EnumAmazonAthenaStartQueryExecution;
 
 const body: StartQueryExecutionInput = {
   queryString: 'QueryString8',
 };
 
 try {
-  const response = await api.startQueryExecution(
+  const response = await apiController.startQueryExecution(
     xAmzTarget,
     body
   );

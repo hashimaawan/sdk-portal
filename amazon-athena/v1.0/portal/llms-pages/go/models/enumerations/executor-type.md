@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`ExecutorType`
+`ExecutorTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Coordinator` |
-| `Gateway` |
-| `Worker` |
+| `COORDINATOR` |
+| `GATEWAY` |
+| `WORKER` |
 
 
 # Example
@@ -23,11 +23,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    executorType := models.ExecutorType_Gateway
+    executorType := models.ExecutorTypeEnum_GATEWAY
 
 }
 ```

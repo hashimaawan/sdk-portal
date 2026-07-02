@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.
 
 ```java
-CompletableFuture<ApiResponse<ImportNotebookOutput>> importNotebookAsync(
-    final XAmzTarget30 xAmzTarget,
+CompletableFuture<ImportNotebookOutput> importNotebookAsync(
+    final XAmzTarget30Enum xAmzTarget,
     final ImportNotebookInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget30`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-30.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget30Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-30.md) | Header, Required | - |
 | `body` | [`ImportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/import-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,23 +42,23 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ImportNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/import-notebook-output.md).
+[`ImportNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/import-notebook-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget30 xAmzTarget = XAmzTarget30.ENUM_AMAZONATHENAIMPORTNOTEBOOK;
+XAmzTarget30Enum xAmzTarget = XAmzTarget30Enum.ENUM_AMAZONATHENAIMPORTNOTEBOOK;
 ImportNotebookInput body = new ImportNotebookInput.Builder(
     "WorkGroup8",
     "Name6",
     "Payload2",
-    NotebookType2.IPYNB
+    NotebookType2Enum.IPYNB
 )
 .build();
 
 
-api.importNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.importNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

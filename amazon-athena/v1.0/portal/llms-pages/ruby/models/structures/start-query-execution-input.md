@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/ruby/x-redirect/JTI0bSUyRlN0YXJ0UXVlcnlFeGVjdXRpb25JbnB1dA
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -21,50 +19,37 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `work_group` | `String` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `execution_parameters` | `Array[String]` | Optional | **Constraints**: *Minimum Items*: `1`, *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `result_reuse_configuration` | [`ResultReuseConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/result-reuse-configuration-1.md) | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 start_query_execution_input = StartQueryExecutionInput.new(
-  query_string: 'QueryString6',
-  client_request_token: 'ClientRequestToken8',
-  query_execution_context: QueryExecutionContext1.new(
-    database: 'Database4',
-    catalog: 'Catalog0',
-    additional_properties: {
-      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-    }
+  'QueryString6',
+  'ClientRequestToken8',
+  QueryExecutionContext1.new(
+    'Database4',
+    'Catalog0'
   ),
-  result_configuration: ResultConfiguration1.new(
-    output_location: 'OutputLocation0',
-    encryption_configuration: EncryptionConfiguration2.new(
-      encryption_option: EncryptionOption1::SSE_S3,
-      kms_key: 'KmsKey6',
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+  ResultConfiguration1.new(
+    'OutputLocation0',
+    EncryptionConfiguration2.new(
+      EncryptionOption1Enum::SSE_S3,
+      'KmsKey6'
     ),
-    expected_bucket_owner: 'ExpectedBucketOwner0',
-    acl_configuration: AclConfiguration1.new(
-      s3_acl_option: S3AclOption1::BUCKET_OWNER_FULL_CONTROL,
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
-    ),
-    additional_properties: {
-      'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-    }
+    'ExpectedBucketOwner0',
+    AclConfiguration1.new(
+      S3AclOption1Enum::BUCKET_OWNER_FULL_CONTROL
+    )
   ),
-  work_group: 'WorkGroup6',
-  execution_parameters: [
+  'WorkGroup6',
+  [
     'ExecutionParameters8',
     'ExecutionParameters7'
   ],
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  ResultReuseConfiguration1.new(
+    ResultReuseByAgeConfiguration2.new
+  )
 )
 ```
 

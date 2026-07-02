@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -17,25 +15,21 @@ Contains the application runtime IDs and their supported DPU sizes.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `applicationRuntimeId` | `?string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | getApplicationRuntimeId(): ?string | setApplicationRuntimeId(?string applicationRuntimeId): void |
-| `supportedDpuSizes` | `?(int[])` | Optional | - | getSupportedDpuSizes(): ?array | setSupportedDpuSizes(?array supportedDpuSizes): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
+| `supportedDPUSizes` | `?(int[])` | Optional | - | getSupportedDPUSizes(): ?array | setSupportedDPUSizes(?array supportedDPUSizes): void |
 
 
 # Example
 
 ```php
-use AmazonAthenaLib\Models\Builders\ApplicationDpuSizesBuilder;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\Builders\ApplicationDPUSizesBuilder;
 
-$applicationDpuSizes = ApplicationDpuSizesBuilder::init()
-    ->applicationRuntimeId('ApplicationRuntimeId4')
-    ->supportedDpuSizes(
+$applicationDPUSizes = ApplicationDPUSizesBuilder::init()
+    ->applicationRuntimeId('ApplicationRuntimeId2')
+    ->supportedDPUSizes(
         [
-            17,
-            18
+            57
         ]
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

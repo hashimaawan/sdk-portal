@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains session configuration information.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -20,7 +18,6 @@ Contains session configuration information.
 | `workingDirectory` | `?string` | Optional | - | getWorkingDirectory(): ?string | setWorkingDirectory(?string workingDirectory): void |
 | `idleTimeoutSeconds` | `?int` | Optional | - | getIdleTimeoutSeconds(): ?int | setIdleTimeoutSeconds(?int idleTimeoutSeconds): void |
 | `encryptionConfiguration` | [`?EncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/encryption-configuration.md) | Optional | If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. | getEncryptionConfiguration(): ?EncryptionConfiguration | setEncryptionConfiguration(?EncryptionConfiguration encryptionConfiguration): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -28,8 +25,7 @@ Contains session configuration information.
 ```php
 use AmazonAthenaLib\Models\Builders\SessionConfigurationBuilder;
 use AmazonAthenaLib\Models\Builders\EncryptionConfigurationBuilder;
-use AmazonAthenaLib\Models\EncryptionOption1;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\EncryptionOption1Enum;
 
 $sessionConfiguration = SessionConfigurationBuilder::init()
     ->executionRole('ExecutionRole2')
@@ -37,13 +33,11 @@ $sessionConfiguration = SessionConfigurationBuilder::init()
     ->idleTimeoutSeconds(188)
     ->encryptionConfiguration(
         EncryptionConfigurationBuilder::init(
-            EncryptionOption1::SSE_S3
+            EncryptionOption1Enum::SSE_S3
         )
             ->kmsKey('KmsKey6')
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

@@ -7,7 +7,7 @@ Indicates the column's nullable status.
 
 # Enum Type Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Indicates the column's nullable status.
 # Example
 
 ```python
-from amazonathena.models.column_nullable_2 import ColumnNullable2
+from amazonathena.models.column_nullable_2_enum import ColumnNullable2Enum
 
-column_nullable_2 = ColumnNullable2.NOT_NULL
+column_nullable_2 = ColumnNullable2Enum.NOT_NULL
 ```
 
 

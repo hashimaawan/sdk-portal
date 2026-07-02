@@ -6,7 +6,7 @@ Lists the databases in the specified data catalog.
 
 ```csharp
 ListDatabasesAsync(
-    Models.XAmzTarget34 xAmzTarget,
+    Models.XAmzTarget34Enum xAmzTarget,
     Models.ListDatabasesInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget34`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-34.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget34Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-34.md) | Header, Required | - |
 | `body` | [`ListDatabasesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-databases-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListDatabasesOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-databases-output.md).
+[`Task<Models.ListDatabasesOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-databases-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget34 xAmzTarget = XAmzTarget34.EnumAmazonAthenaListDatabases;
+XAmzTarget34Enum xAmzTarget = XAmzTarget34Enum.EnumAmazonAthenaListDatabases;
 ListDatabasesInput body = new ListDatabasesInput
 {
     CatalogName = "CatalogName0",
@@ -60,7 +60,7 @@ ListDatabasesInput body = new ListDatabasesInput
 
 try
 {
-    ApiResponse<ListDatabasesOutput> result = await api.ListDatabasesAsync(
+    ListDatabasesOutput result = await aPIController.ListDatabasesAsync(
         xAmzTarget,
         body
     );

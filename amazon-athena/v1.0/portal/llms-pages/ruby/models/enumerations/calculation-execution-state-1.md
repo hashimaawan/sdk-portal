@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState1`
+`CalculationExecutionState1Enum`
 
 
 # Fields
@@ -28,7 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-calculation_execution_state1 = CalculationExecutionState1::QUEUED
+calculation_execution_state1 = CalculationExecutionState1Enum::QUEUED
 ```
 
 

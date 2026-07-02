@@ -6,7 +6,7 @@ Returns a list of engine versions that are available to choose from, including t
 
 ```ts
 async listEngineVersions(
-  xAmzTarget: XAmzTarget35,
+  xAmzTarget: XAmzTarget35Enum,
   body: ListEngineVersionsInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget35`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-35.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget35Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-35.md) | Header, Required | - |
 | `body` | [`ListEngineVersionsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-engine-versions-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,13 +55,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget35.EnumAmazonAthenaListEngineVersions;
+const xAmzTarget = XAmzTarget35Enum.EnumAmazonAthenaListEngineVersions;
 
 const body: ListEngineVersionsInput = {
 };
 
 try {
-  const response = await api.listEngineVersions(
+  const response = await apiController.listEngineVersions(
     xAmzTarget,
     body
   );

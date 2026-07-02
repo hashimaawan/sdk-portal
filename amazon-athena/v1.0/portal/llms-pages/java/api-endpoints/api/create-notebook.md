@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists.
 
 ```java
-CompletableFuture<ApiResponse<CreateNotebookOutput>> createNotebookAsync(
-    final XAmzTarget5 xAmzTarget,
+CompletableFuture<CreateNotebookOutput> createNotebookAsync(
+    final XAmzTarget5Enum xAmzTarget,
     final CreateNotebookInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget5`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-5.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget5Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-5.md) | Header, Required | - |
 | `body` | [`CreateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`CreateNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-notebook-output.md).
+[`CreateNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/create-notebook-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget5 xAmzTarget = XAmzTarget5.ENUM_AMAZONATHENACREATENOTEBOOK;
+XAmzTarget5Enum xAmzTarget = XAmzTarget5Enum.ENUM_AMAZONATHENACREATENOTEBOOK;
 CreateNotebookInput body = new CreateNotebookInput.Builder(
     "WorkGroup8",
     "Name6"
@@ -56,7 +56,7 @@ CreateNotebookInput body = new CreateNotebookInput.Builder(
 .build();
 
 
-api.createNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.createNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

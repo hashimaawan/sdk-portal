@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlJlc3VsdENvbmZpZ3VyYXRpb25VcGRhdGVzMg
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -22,14 +20,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `RemoveExpectedBucketOwner` | `bool?` | Optional | - |
 | `AclConfiguration` | [`AclConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/acl-configuration-1.md) | Optional | - |
 | `RemoveAclConfiguration` | `bool?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 ResultConfigurationUpdates2 resultConfigurationUpdates2 = new ResultConfigurationUpdates2
 {
@@ -37,13 +33,11 @@ ResultConfigurationUpdates2 resultConfigurationUpdates2 = new ResultConfiguratio
     RemoveOutputLocation = false,
     EncryptionConfiguration = new EncryptionConfiguration2
     {
-        EncryptionOption = EncryptionOption1.SseS3,
+        EncryptionOption = EncryptionOption1Enum.SSES3,
         KmsKey = "KmsKey6",
-        ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
     },
     RemoveEncryptionConfiguration = false,
     ExpectedBucketOwner = "ExpectedBucketOwner4",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

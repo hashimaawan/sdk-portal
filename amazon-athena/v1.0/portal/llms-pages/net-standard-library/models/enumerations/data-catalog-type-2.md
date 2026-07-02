@@ -7,16 +7,16 @@ The data catalog type.
 
 # Enum Type Name
 
-`DataCatalogType2`
+`DataCatalogType2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -24,7 +24,7 @@ The data catalog type.
 ```csharp
 using AmazonAthena.Standard.Models;
 
-DataCatalogType2 dataCatalogType2 = DataCatalogType2.Lambda;
+DataCatalogType2Enum dataCatalogType2 = DataCatalogType2Enum.LAMBDA;
 ```
 
 

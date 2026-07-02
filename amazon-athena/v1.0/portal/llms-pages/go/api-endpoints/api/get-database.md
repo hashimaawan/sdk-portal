@@ -7,7 +7,7 @@ Returns a database object for the specified database and data catalog.
 ```go
 GetDatabase(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget19,
+    xAmzTarget models.XAmzTarget19Enum,
     body models.GetDatabaseInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget19`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-19.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget19Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-19.md) | Header, Required | - |
 | `body` | [`models.GetDatabaseInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-database-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,14 +53,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget19_EnumAmazonathenagetdatabase
+xAmzTarget := models.XAmzTarget19Enum_ENUMAMAZONATHENAGETDATABASE
 
 body := models.GetDatabaseInput{
-    CatalogName:           "CatalogName0",
-    DatabaseName:          "DatabaseName0",
+    CatalogName:          "CatalogName0",
+    DatabaseName:         "DatabaseName0",
 }
 
-apiResponse, err := api.GetDatabase(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetDatabase(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

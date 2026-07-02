@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID.
 
 ```java
-CompletableFuture<ApiResponse<GetQueryExecutionOutput>> getQueryExecutionAsync(
-    final XAmzTarget23 xAmzTarget,
+CompletableFuture<GetQueryExecutionOutput> getQueryExecutionAsync(
+    final XAmzTarget23Enum xAmzTarget,
     final GetQueryExecutionInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget23`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-23.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget23Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-23.md) | Header, Required | - |
 | `body` | [`GetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-execution-output.md).
+[`GetQueryExecutionOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-query-execution-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget23 xAmzTarget = XAmzTarget23.ENUM_AMAZONATHENAGETQUERYEXECUTION;
+XAmzTarget23Enum xAmzTarget = XAmzTarget23Enum.ENUM_AMAZONATHENAGETQUERYEXECUTION;
 GetQueryExecutionInput body = new GetQueryExecutionInput.Builder(
     "QueryExecutionId0"
 )
 .build();
 
 
-api.getQueryExecutionAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getQueryExecutionAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

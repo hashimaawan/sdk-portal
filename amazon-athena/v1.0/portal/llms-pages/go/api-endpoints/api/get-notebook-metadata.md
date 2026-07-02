@@ -7,7 +7,7 @@ Retrieves notebook metadata for the specified notebook ID.
 ```go
 GetNotebookMetadata(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget21,
+    xAmzTarget models.XAmzTarget21Enum,
     body models.GetNotebookMetadataInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget21`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-21.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget21Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-21.md) | Header, Required | - |
 | `body` | [`models.GetNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget21_EnumAmazonathenagetnotebookmetadata
+xAmzTarget := models.XAmzTarget21Enum_ENUMAMAZONATHENAGETNOTEBOOKMETADATA
 
 body := models.GetNotebookMetadataInput{
-    NotebookId:            "NotebookId6",
+    NotebookId:           "NotebookId6",
 }
 
-apiResponse, err := api.GetNotebookMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetNotebookMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

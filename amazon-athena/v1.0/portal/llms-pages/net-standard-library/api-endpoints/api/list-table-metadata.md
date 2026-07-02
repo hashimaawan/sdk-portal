@@ -6,7 +6,7 @@ Lists the metadata for the tables in the specified data catalog database.
 
 ```csharp
 ListTableMetadataAsync(
-    Models.XAmzTarget43 xAmzTarget,
+    Models.XAmzTarget43Enum xAmzTarget,
     Models.ListTableMetadataInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget43`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-43.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget43Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-43.md) | Header, Required | - |
 | `body` | [`ListTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListTableMetadataOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-table-metadata-output.md).
+[`Task<Models.ListTableMetadataOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-table-metadata-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget43 xAmzTarget = XAmzTarget43.EnumAmazonAthenaListTableMetadata;
+XAmzTarget43Enum xAmzTarget = XAmzTarget43Enum.EnumAmazonAthenaListTableMetadata;
 ListTableMetadataInput body = new ListTableMetadataInput
 {
     CatalogName = "CatalogName0",
@@ -61,7 +61,7 @@ ListTableMetadataInput body = new ListTableMetadataInput
 
 try
 {
-    ApiResponse<ListTableMetadataOutput> result = await api.ListTableMetadataAsync(
+    ListTableMetadataOutput result = await aPIController.ListTableMetadataAsync(
         xAmzTarget,
         body
     );

@@ -6,7 +6,7 @@ Returns information about a single query. Requires that you have access to the w
 
 ```csharp
 GetNamedQueryAsync(
-    Models.XAmzTarget20 xAmzTarget,
+    Models.XAmzTarget20Enum xAmzTarget,
     Models.GetNamedQueryInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget20`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-20.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget20Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-20.md) | Header, Required | - |
 | `body` | [`GetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetNamedQueryOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-named-query-output.md).
+[`Task<Models.GetNamedQueryOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-named-query-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget20 xAmzTarget = XAmzTarget20.EnumAmazonAthenaGetNamedQuery;
+XAmzTarget20Enum xAmzTarget = XAmzTarget20Enum.EnumAmazonAthenaGetNamedQuery;
 GetNamedQueryInput body = new GetNamedQueryInput
 {
     NamedQueryId = "NamedQueryId6",
@@ -56,7 +56,7 @@ GetNamedQueryInput body = new GetNamedQueryInput
 
 try
 {
-    ApiResponse<GetNamedQueryOutput> result = await api.GetNamedQueryAsync(
+    GetNamedQueryOutput result = await aPIController.GetNamedQueryAsync(
         xAmzTarget,
         body
     );

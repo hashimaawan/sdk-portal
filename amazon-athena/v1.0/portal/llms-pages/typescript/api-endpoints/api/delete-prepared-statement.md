@@ -6,7 +6,7 @@ Deletes the prepared statement with the specified name from the specified workgr
 
 ```ts
 async deletePreparedStatement(
-  xAmzTarget: XAmzTarget12,
+  xAmzTarget: XAmzTarget12Enum,
   body: DeletePreparedStatementInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget12`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-12.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget12Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-12.md) | Header, Required | - |
 | `body` | [`DeletePreparedStatementInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/delete-prepared-statement-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget12.EnumAmazonAthenaDeletePreparedStatement;
+const xAmzTarget = XAmzTarget12Enum.EnumAmazonAthenaDeletePreparedStatement;
 
 const body: DeletePreparedStatementInput = {
   statementName: 'StatementName4',
@@ -59,7 +59,7 @@ const body: DeletePreparedStatementInput = {
 };
 
 try {
-  const response = await api.deletePreparedStatement(
+  const response = await apiController.deletePreparedStatement(
     xAmzTarget,
     body
   );

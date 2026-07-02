@@ -7,7 +7,7 @@ Updates the metadata for a notebook.
 ```go
 UpdateNotebookMetadata(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget57,
+    xAmzTarget models.XAmzTarget57Enum,
     body models.UpdateNotebookMetadataInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget57`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-57.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget57Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-57.md) | Header, Required | - |
 | `body` | [`models.UpdateNotebookMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/update-notebook-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,14 +53,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget57_EnumAmazonathenaupdatenotebookmetadata
+xAmzTarget := models.XAmzTarget57Enum_ENUMAMAZONATHENAUPDATENOTEBOOKMETADATA
 
 body := models.UpdateNotebookMetadataInput{
-    NotebookId:            "NotebookId6",
-    Name:                  "Name6",
+    NotebookId:           "NotebookId6",
+    Name:                 "Name6",
 }
 
-apiResponse, err := api.UpdateNotebookMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.UpdateNotebookMetadata(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

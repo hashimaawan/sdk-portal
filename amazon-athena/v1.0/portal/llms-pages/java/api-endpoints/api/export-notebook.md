@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Exports the specified notebook and its metadata.
 
 ```java
-CompletableFuture<ApiResponse<ExportNotebookOutput>> exportNotebookAsync(
-    final XAmzTarget14 xAmzTarget,
+CompletableFuture<ExportNotebookOutput> exportNotebookAsync(
+    final XAmzTarget14Enum xAmzTarget,
     final ExportNotebookInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget14`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-14.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget14Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-14.md) | Header, Required | - |
 | `body` | [`ExportNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/export-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,20 +42,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ExportNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/export-notebook-output.md).
+[`ExportNotebookOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/export-notebook-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget14 xAmzTarget = XAmzTarget14.ENUM_AMAZONATHENAEXPORTNOTEBOOK;
+XAmzTarget14Enum xAmzTarget = XAmzTarget14Enum.ENUM_AMAZONATHENAEXPORTNOTEBOOK;
 ExportNotebookInput body = new ExportNotebookInput.Builder(
     "NotebookId6"
 )
 .build();
 
 
-api.exportNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.exportNotebookAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

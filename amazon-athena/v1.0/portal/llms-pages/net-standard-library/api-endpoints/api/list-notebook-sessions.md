@@ -6,7 +6,7 @@ Lists, in descending order, the sessions that have been created in a notebook th
 
 ```csharp
 ListNotebookSessionsAsync(
-    Models.XAmzTarget39 xAmzTarget,
+    Models.XAmzTarget39Enum xAmzTarget,
     Models.ListNotebookSessionsRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget39`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-39.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget39Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-39.md) | Header, Required | - |
 | `body` | [`ListNotebookSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-notebook-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListNotebookSessionsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-notebook-sessions-response.md).
+[`Task<Models.ListNotebookSessionsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-notebook-sessions-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget39 xAmzTarget = XAmzTarget39.EnumAmazonAthenaListNotebookSessions;
+XAmzTarget39Enum xAmzTarget = XAmzTarget39Enum.EnumAmazonAthenaListNotebookSessions;
 ListNotebookSessionsRequest body = new ListNotebookSessionsRequest
 {
     NotebookId = "NotebookId6",
@@ -56,7 +56,7 @@ ListNotebookSessionsRequest body = new ListNotebookSessionsRequest
 
 try
 {
-    ApiResponse<ListNotebookSessionsResponse> result = await api.ListNotebookSessionsAsync(
+    ListNotebookSessionsResponse result = await aPIController.ListNotebookSessionsAsync(
         xAmzTarget,
         body
     );

@@ -7,7 +7,7 @@ Describes a previously submitted calculation execution.
 ```go
 GetCalculationExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget15,
+    xAmzTarget models.XAmzTarget15Enum,
     body models.GetCalculationExecutionRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget15`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-15.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget15Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-15.md) | Header, Required | - |
 | `body` | [`models.GetCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget15_EnumAmazonathenagetcalculationexecution
+xAmzTarget := models.XAmzTarget15Enum_ENUMAMAZONATHENAGETCALCULATIONEXECUTION
 
 body := models.GetCalculationExecutionRequest{
     CalculationExecutionId: "CalculationExecutionId8",
 }
 
-apiResponse, err := api.GetCalculationExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetCalculationExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

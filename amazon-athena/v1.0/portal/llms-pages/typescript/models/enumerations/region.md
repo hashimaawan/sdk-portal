@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`Region`
+`RegionEnum`
 
 
 # Fields
@@ -40,9 +40,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ts
-import { Region } from 'amazon-athenalib';
+import { RegionEnum } from 'amazon-athenalib';
 
-const region = Region.Euwest3;
+const region = RegionEnum.Euwest3;
 ```
 
 

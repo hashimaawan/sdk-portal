@@ -7,7 +7,7 @@ Returns the details of a single query execution or a list of up to 50 query exec
 ```go
 BatchGetQueryExecution(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget2,
+    xAmzTarget models.XAmzTarget2Enum,
     body models.BatchGetQueryExecutionInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-2.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-2.md) | Header, Required | - |
 | `body` | [`models.BatchGetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/batch-get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,15 +53,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget2_EnumAmazonathenabatchgetqueryexecution
+xAmzTarget := models.XAmzTarget2Enum_ENUMAMAZONATHENABATCHGETQUERYEXECUTION
 
 body := models.BatchGetQueryExecutionInput{
-    QueryExecutionIds:     []string{
+    QueryExecutionIds:    []string{
         "QueryExecutionIds3",
     },
 }
 
-apiResponse, err := api.BatchGetQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.BatchGetQueryExecution(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

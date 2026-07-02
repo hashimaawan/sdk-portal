@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget56`
+`XAmzTarget56Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-XAmzTarget56 xAmzTarget56 = XAmzTarget56.EnumAmazonAthenaUpdateNotebook;
+XAmzTarget56Enum xAmzTarget56 = XAmzTarget56Enum.EnumAmazonAthenaUpdateNotebook;
 ```
 
 

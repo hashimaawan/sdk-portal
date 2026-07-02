@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRkJhdGNoR2V0TmFtZWRRdWVyeU91dHB1dA
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -16,14 +14,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `named_queries` | [`List[NamedQuery]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/named-query.md) | Optional | - |
 | `unprocessed_named_query_ids` | [`List[UnprocessedNamedQueryId]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/unprocessed-named-query-id.md) | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.batch_get_named_query_output import BatchGetNamedQueryOutput
 from amazonathena.models.named_query import NamedQuery
 from amazonathena.models.unprocessed_named_query_id import UnprocessedNamedQueryId
@@ -36,10 +31,7 @@ batch_get_named_query_output = BatchGetNamedQueryOutput(
             query_string='QueryString4',
             description='Description4',
             named_query_id='NamedQueryId0',
-            work_group='WorkGroup4',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            work_group='WorkGroup4'
         ),
         NamedQuery(
             name='Name2',
@@ -47,10 +39,7 @@ batch_get_named_query_output = BatchGetNamedQueryOutput(
             query_string='QueryString4',
             description='Description4',
             named_query_id='NamedQueryId0',
-            work_group='WorkGroup4',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            work_group='WorkGroup4'
         ),
         NamedQuery(
             name='Name2',
@@ -58,33 +47,21 @@ batch_get_named_query_output = BatchGetNamedQueryOutput(
             query_string='QueryString4',
             description='Description4',
             named_query_id='NamedQueryId0',
-            work_group='WorkGroup4',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            work_group='WorkGroup4'
         )
     ],
     unprocessed_named_query_ids=[
         UnprocessedNamedQueryId(
             named_query_id='NamedQueryId4',
             error_code='ErrorCode6',
-            error_message='ErrorMessage4',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            error_message='ErrorMessage4'
         ),
         UnprocessedNamedQueryId(
             named_query_id='NamedQueryId4',
             error_code='ErrorCode6',
-            error_message='ErrorMessage4',
-            additional_properties={
-                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-            }
+            error_message='ErrorMessage4'
         )
-    ],
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    ]
 )
 ```
 

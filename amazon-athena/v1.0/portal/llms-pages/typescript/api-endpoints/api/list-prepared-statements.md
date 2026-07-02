@@ -6,7 +6,7 @@ Lists the prepared statements in the specified workgroup.
 
 ```ts
 async listPreparedStatements(
-  xAmzTarget: XAmzTarget40,
+  xAmzTarget: XAmzTarget40Enum,
   body: ListPreparedStatementsInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -31,7 +31,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget40`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-40.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget40Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-40.md) | Header, Required | - |
 | `body` | [`ListPreparedStatementsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/list-prepared-statements-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -55,14 +55,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget40.EnumAmazonAthenaListPreparedStatements;
+const xAmzTarget = XAmzTarget40Enum.EnumAmazonAthenaListPreparedStatements;
 
 const body: ListPreparedStatementsInput = {
   workGroup: 'WorkGroup8',
 };
 
 try {
-  const response = await api.listPreparedStatements(
+  const response = await apiController.listPreparedStatements(
     xAmzTarget,
     body
   );

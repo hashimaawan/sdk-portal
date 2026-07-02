@@ -7,7 +7,7 @@ Updates the data catalog that has the specified name.
 ```go
 UpdateDataCatalog(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget54,
+    xAmzTarget models.XAmzTarget54Enum,
     body models.UpdateDataCatalogInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget54`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-54.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget54Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-54.md) | Header, Required | - |
 | `body` | [`models.UpdateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/update-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,14 +53,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget54_EnumAmazonathenaupdatedatacatalog
+xAmzTarget := models.XAmzTarget54Enum_ENUMAMAZONATHENAUPDATEDATACATALOG
 
 body := models.UpdateDataCatalogInput{
-    Name:                  "Name6",
-    Type:                  models.DataCatalogType3_Hive,
+    Name:                 "Name6",
+    Type:                 models.DataCatalogType3Enum_HIVE,
 }
 
-apiResponse, err := api.UpdateDataCatalog(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.UpdateDataCatalog(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

@@ -7,7 +7,7 @@ Returns the specified data catalog.
 ```go
 GetDataCatalog(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget18,
+    xAmzTarget models.XAmzTarget18Enum,
     body models.GetDataCatalogInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget18`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-18.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget18Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-18.md) | Header, Required | - |
 | `body` | [`models.GetDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget18_EnumAmazonathenagetdatacatalog
+xAmzTarget := models.XAmzTarget18Enum_ENUMAMAZONATHENAGETDATACATALOG
 
 body := models.GetDataCatalogInput{
-    Name:                  "Name6",
+    Name:                 "Name6",
 }
 
-apiResponse, err := api.GetDataCatalog(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetDataCatalog(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

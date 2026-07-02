@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`WorkGroupState`
+`WorkGroupStateEnum`
 
 
 # Fields
@@ -19,9 +19,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.work_group_state import WorkGroupState
+from amazonathena.models.work_group_state_enum import WorkGroupStateEnum
 
-work_group_state = WorkGroupState.ENABLED
+work_group_state = WorkGroupStateEnum.ENABLED
 ```
 
 

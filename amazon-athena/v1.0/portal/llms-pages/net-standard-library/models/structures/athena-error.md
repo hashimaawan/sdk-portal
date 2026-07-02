@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -20,14 +18,12 @@ Provides information about an Athena query error. The <code>AthenaError</code> f
 | `ErrorType` | `int?` | Optional | **Constraints**: `>= 0`, `<= 9999` |
 | `Retryable` | `bool?` | Optional | - |
 | `ErrorMessage` | `string` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 AthenaError athenaError = new AthenaError
 {
@@ -35,7 +31,6 @@ AthenaError athenaError = new AthenaError
     ErrorType = 238,
     Retryable = false,
     ErrorMessage = "ErrorMessage0",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

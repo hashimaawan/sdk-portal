@@ -7,16 +7,16 @@ Indicates the column's nullable status.
 
 # Enum Type Name
 
-`ColumnNullable2`
+`ColumnNullable2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `NotNull` |
-| `Nullable` |
-| `Unknown` |
+| `NOTNULL` |
+| `NULLABLE` |
+| `UNKNOWN` |
 
 
 # Example
@@ -24,7 +24,7 @@ Indicates the column's nullable status.
 ```csharp
 using AmazonAthena.Standard.Models;
 
-ColumnNullable2 columnNullable2 = ColumnNullable2.NotNull;
+ColumnNullable2Enum columnNullable2 = ColumnNullable2Enum.NOTNULL;
 ```
 
 

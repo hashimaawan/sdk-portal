@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRkdldFRhYmxlTWV0YWRhdGFPdXRwdXQ
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -15,14 +13,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `table_metadata` | [`TableMetadata2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/table-metadata-2.md) | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
 import dateutil.parser
-import jsonpickle
 
 from amazonathena.models.column import Column
 from amazonathena.models.get_table_metadata_output import GetTableMetadataOutput
@@ -38,45 +34,27 @@ get_table_metadata_output = GetTableMetadataOutput(
             Column(
                 name='Name0',
                 mtype='Type0',
-                comment='Comment4',
-                additional_properties={
-                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-                }
+                comment='Comment4'
             ),
             Column(
                 name='Name0',
                 mtype='Type0',
-                comment='Comment4',
-                additional_properties={
-                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-                }
+                comment='Comment4'
             ),
             Column(
                 name='Name0',
                 mtype='Type0',
-                comment='Comment4',
-                additional_properties={
-                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-                }
+                comment='Comment4'
             )
         ],
         partition_keys=[
             Column(
                 name='Name6',
                 mtype='Type6',
-                comment='Comment0',
-                additional_properties={
-                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-                }
+                comment='Comment0'
             )
-        ],
-        additional_properties={
-            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-        }
-    ),
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+        ]
+    )
 )
 ```
 

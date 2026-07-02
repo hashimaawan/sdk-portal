@@ -6,7 +6,7 @@ Lists the tags associated with an Athena workgroup or data catalog resource.
 
 ```csharp
 ListTagsForResourceAsync(
-    Models.XAmzTarget44 xAmzTarget,
+    Models.XAmzTarget44Enum xAmzTarget,
     Models.ListTagsForResourceInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget44`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-44.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget44Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-44.md) | Header, Required | - |
 | `body` | [`ListTagsForResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-tags-for-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,21 +46,21 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListTagsForResourceOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-tags-for-resource-output.md).
+[`Task<Models.ListTagsForResourceOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-tags-for-resource-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget44 xAmzTarget = XAmzTarget44.EnumAmazonAthenaListTagsForResource;
+XAmzTarget44Enum xAmzTarget = XAmzTarget44Enum.EnumAmazonAthenaListTagsForResource;
 ListTagsForResourceInput body = new ListTagsForResourceInput
 {
-    ResourceArn = "ResourceARN4",
+    ResourceARN = "ResourceARN4",
 };
 
 try
 {
-    ApiResponse<ListTagsForResourceOutput> result = await api.ListTagsForResourceAsync(
+    ListTagsForResourceOutput result = await aPIController.ListTagsForResourceAsync(
         xAmzTarget,
         body
     );

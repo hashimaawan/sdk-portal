@@ -6,7 +6,7 @@ Returns information about a single execution of a query if you have access to th
 
 ```csharp
 GetQueryExecutionAsync(
-    Models.XAmzTarget23 xAmzTarget,
+    Models.XAmzTarget23Enum xAmzTarget,
     Models.GetQueryExecutionInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget23`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-23.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget23Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-23.md) | Header, Required | - |
 | `body` | [`GetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.GetQueryExecutionOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-execution-output.md).
+[`Task<Models.GetQueryExecutionOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/get-query-execution-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget23 xAmzTarget = XAmzTarget23.EnumAmazonAthenaGetQueryExecution;
+XAmzTarget23Enum xAmzTarget = XAmzTarget23Enum.EnumAmazonAthenaGetQueryExecution;
 GetQueryExecutionInput body = new GetQueryExecutionInput
 {
     QueryExecutionId = "QueryExecutionId0",
@@ -56,7 +56,7 @@ GetQueryExecutionInput body = new GetQueryExecutionInput
 
 try
 {
-    ApiResponse<GetQueryExecutionOutput> result = await api.GetQueryExecutionAsync(
+    GetQueryExecutionOutput result = await aPIController.GetQueryExecutionAsync(
         xAmzTarget,
         body
     );

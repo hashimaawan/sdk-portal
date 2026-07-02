@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget31`
+`XAmzTarget31Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `EnumAmazonAthenaListApplicationDpuSizes` |
+| `EnumAmazonAthenaListApplicationDPUSizes` |
 
 
 # Example
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-XAmzTarget31 xAmzTarget31 = XAmzTarget31.EnumAmazonAthenaListApplicationDpuSizes;
+XAmzTarget31Enum xAmzTarget31 = XAmzTarget31Enum.EnumAmazonAthenaListApplicationDPUSizes;
 ```
 
 

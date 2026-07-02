@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -17,8 +15,7 @@ Contains the application runtime IDs and their supported DPU sizes.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ApplicationRuntimeId` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
-| `SupportedDpuSizes` | `[]int` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
+| `SupportedDPUSizes` | `[]int` | Optional | - |
 
 
 # Example
@@ -27,18 +24,14 @@ Contains the application runtime IDs and their supported DPU sizes.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    applicationDpuSizes := models.ApplicationDpuSizes{
-        ApplicationRuntimeId:  models.ToPointer("ApplicationRuntimeId4"),
-        SupportedDpuSizes:     []int{
-            17,
-            18,
-        },
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+    applicationDPUSizes := models.ApplicationDPUSizes{
+        ApplicationRuntimeId: models.ToPointer("ApplicationRuntimeId2"),
+        SupportedDPUSizes:    []int{
+            57,
         },
     }
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains session configuration information.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -20,29 +18,24 @@ Contains session configuration information.
 | `WorkingDirectory` | `String` | Optional | - | String getWorkingDirectory() | setWorkingDirectory(String workingDirectory) |
 | `IdleTimeoutSeconds` | `Integer` | Optional | - | Integer getIdleTimeoutSeconds() | setIdleTimeoutSeconds(Integer idleTimeoutSeconds) |
 | `EncryptionConfiguration` | [`EncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/encryption-configuration.md) | Optional | If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. | EncryptionConfiguration getEncryptionConfiguration() | setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.EncryptionConfiguration;
-import com.amazonaws.useast1.athena.models.EncryptionOption1;
+import com.amazonaws.useast1.athena.models.EncryptionOption1Enum;
 import com.amazonaws.useast1.athena.models.SessionConfiguration;
-import java.io.IOException;
 
 SessionConfiguration sessionConfiguration = new SessionConfiguration.Builder()
     .executionRole("ExecutionRole2")
     .workingDirectory("WorkingDirectory6")
     .idleTimeoutSeconds(188)
     .encryptionConfiguration(new EncryptionConfiguration.Builder(
-        EncryptionOption1.SSE_S3
+        EncryptionOption1Enum.SSE_S3
     )
     .kmsKey("KmsKey6")
-    .additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build())
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

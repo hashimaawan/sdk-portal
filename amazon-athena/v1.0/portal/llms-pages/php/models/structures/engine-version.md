@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The Athena engine version for running queries, or the PySpark engine version for running sessions.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -18,19 +16,16 @@ The Athena engine version for running queries, or the PySpark engine version for
 |  --- | --- | --- | --- | --- | --- |
 | `selectedEngineVersion` | `?string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | getSelectedEngineVersion(): ?string | setSelectedEngineVersion(?string selectedEngineVersion): void |
 | `effectiveEngineVersion` | `?string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | getEffectiveEngineVersion(): ?string | setEffectiveEngineVersion(?string effectiveEngineVersion): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\EngineVersionBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $engineVersion = EngineVersionBuilder::init()
     ->selectedEngineVersion('SelectedEngineVersion0')
     ->effectiveEngineVersion('EffectiveEngineVersion0')
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

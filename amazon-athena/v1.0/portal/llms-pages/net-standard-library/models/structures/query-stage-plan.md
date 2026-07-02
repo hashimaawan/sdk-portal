@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlF1ZXJ5U3RhZ2VQbGFu
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -18,14 +16,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `Identifier` | `string` | Optional | - |
 | `Children` | [`List<QueryStagePlanNode>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/query-stage-plan-node.md) | Optional | - |
 | `RemoteSources` | `List<string>` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Collections.Generic;
 
 QueryStagePlan queryStagePlan = new QueryStagePlan
@@ -50,7 +46,6 @@ QueryStagePlan queryStagePlan = new QueryStagePlan
                 "RemoteSources5",
                 "RemoteSources6",
             },
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
     RemoteSources = new List<string>
@@ -59,7 +54,6 @@ QueryStagePlan queryStagePlan = new QueryStagePlan
         "RemoteSources9",
         "RemoteSources0",
     },
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

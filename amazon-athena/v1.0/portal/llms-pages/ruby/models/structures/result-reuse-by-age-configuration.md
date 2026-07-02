@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Specifies whether previous query results are reused, and if so, their maximum age.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -18,18 +16,14 @@ Specifies whether previous query results are reused, and if so, their maximum ag
 |  --- | --- | --- | --- |
 | `enabled` | `TrueClass \| FalseClass` | Required | - |
 | `max_age_in_minutes` | `Integer` | Optional | **Constraints**: `>= 0`, `<= 10080` |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 result_reuse_by_age_configuration = ResultReuseByAgeConfiguration.new(
-  enabled: false,
-  max_age_in_minutes: 32,
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  false,
+  32
 )
 ```
 

@@ -6,7 +6,7 @@ Deletes a data catalog.
 
 ```csharp
 DeleteDataCatalogAsync(
-    Models.XAmzTarget9 xAmzTarget,
+    Models.XAmzTarget9Enum xAmzTarget,
     Models.DeleteDataCatalogInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget9`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-9.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget9Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-9.md) | Header, Required | - |
 | `body` | [`DeleteDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/delete-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget9 xAmzTarget = XAmzTarget9.EnumAmazonAthenaDeleteDataCatalog;
+XAmzTarget9Enum xAmzTarget = XAmzTarget9Enum.EnumAmazonAthenaDeleteDataCatalog;
 DeleteDataCatalogInput body = new DeleteDataCatalogInput
 {
     Name = "Name6",
@@ -56,7 +56,7 @@ DeleteDataCatalogInput body = new DeleteDataCatalogInput
 
 try
 {
-    ApiResponse<object> result = await api.DeleteDataCatalogAsync(
+    object result = await aPIController.DeleteDataCatalogAsync(
         xAmzTarget,
         body
     );

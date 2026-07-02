@@ -6,7 +6,7 @@ Lists the sessions in a workgroup that are in an active state like <code>CREATIN
 
 ```csharp
 ListSessionsAsync(
-    Models.XAmzTarget42 xAmzTarget,
+    Models.XAmzTarget42Enum xAmzTarget,
     Models.ListSessionsRequest body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget42`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-42.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget42Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-42.md) | Header, Required | - |
 | `body` | [`ListSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListSessionsResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-sessions-response.md).
+[`Task<Models.ListSessionsResponse>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-sessions-response.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget42 xAmzTarget = XAmzTarget42.EnumAmazonAthenaListSessions;
+XAmzTarget42Enum xAmzTarget = XAmzTarget42Enum.EnumAmazonAthenaListSessions;
 ListSessionsRequest body = new ListSessionsRequest
 {
     WorkGroup = "WorkGroup8",
@@ -60,7 +60,7 @@ ListSessionsRequest body = new ListSessionsRequest
 
 try
 {
-    ApiResponse<ListSessionsResponse> result = await api.ListSessionsAsync(
+    ListSessionsResponse result = await aPIController.ListSessionsAsync(
         xAmzTarget,
         body
     );

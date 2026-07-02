@@ -7,14 +7,14 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Class Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ipynb` |
+| `IPYNB` |
 
 
 # Example
@@ -23,11 +23,11 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    notebookType1 := models.NotebookType1_Ipynb
+    notebookType1 := models.NotebookType1Enum_IPYNB
 
 }
 ```

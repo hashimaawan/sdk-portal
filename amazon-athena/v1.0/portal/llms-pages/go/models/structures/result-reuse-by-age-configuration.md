@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Specifies whether previous query results are reused, and if so, their maximum age.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -18,7 +16,6 @@ Specifies whether previous query results are reused, and if so, their maximum ag
 |  --- | --- | --- | --- |
 | `Enabled` | `bool` | Required | - |
 | `MaxAgeInMinutes` | `*int` | Optional | **Constraints**: `>= 0`, `<= 10080` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,16 +24,13 @@ Specifies whether previous query results are reused, and if so, their maximum ag
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     resultReuseByAgeConfiguration := models.ResultReuseByAgeConfiguration{
-        Enabled:               false,
-        MaxAgeInMinutes:       models.ToPointer(134),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        Enabled:              false,
+        MaxAgeInMinutes:      models.ToPointer(134),
     }
 
 }

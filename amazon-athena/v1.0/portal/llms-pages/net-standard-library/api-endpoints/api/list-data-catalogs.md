@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```csharp
 ListDataCatalogsAsync(
-    Models.XAmzTarget33 xAmzTarget,
+    Models.XAmzTarget33Enum xAmzTarget,
     Models.ListDataCatalogsInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget33`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-33.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget33Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-33.md) | Header, Required | - |
 | `body` | [`ListDataCatalogsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-data-catalogs-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -47,20 +47,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListDataCatalogsOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-data-catalogs-output.md).
+[`Task<Models.ListDataCatalogsOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-data-catalogs-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget33 xAmzTarget = XAmzTarget33.EnumAmazonAthenaListDataCatalogs;
+XAmzTarget33Enum xAmzTarget = XAmzTarget33Enum.EnumAmazonAthenaListDataCatalogs;
 ListDataCatalogsInput body = new ListDataCatalogsInput
 {
 };
 
 try
 {
-    ApiResponse<ListDataCatalogsOutput> result = await api.ListDataCatalogsAsync(
+    ListDataCatalogsOutput result = await aPIController.ListDataCatalogsAsync(
         xAmzTarget,
         body
     );

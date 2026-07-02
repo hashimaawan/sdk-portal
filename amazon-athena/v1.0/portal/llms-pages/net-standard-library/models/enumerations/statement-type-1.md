@@ -7,16 +7,16 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Enum Type Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ddl` |
-| `Dml` |
-| `Utility` |
+| `DDL` |
+| `DML` |
+| `UTILITY` |
 
 
 # Example
@@ -24,7 +24,7 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 ```csharp
 using AmazonAthena.Standard.Models;
 
-StatementType1 statementType1 = StatementType1.Ddl;
+StatementType1Enum statementType1 = StatementType1Enum.DDL;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains statistics for a session.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -17,19 +15,16 @@ Contains statistics for a session.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `DpuExecutionInMillis` | `int?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 SessionStatistics sessionStatistics = new SessionStatistics
 {
     DpuExecutionInMillis = 188,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

@@ -7,7 +7,7 @@ Creates (registers) a data catalog with the specified name and properties. Catal
 ```go
 CreateDataCatalog(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget3,
+    xAmzTarget models.XAmzTarget3Enum,
     body models.CreateDataCatalogInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-3.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget3Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-3.md) | Header, Required | - |
 | `body` | [`models.CreateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/create-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,14 +53,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget3_EnumAmazonathenacreatedatacatalog
+xAmzTarget := models.XAmzTarget3Enum_ENUMAMAZONATHENACREATEDATACATALOG
 
 body := models.CreateDataCatalogInput{
-    Name:                  "Name6",
-    Type:                  models.DataCatalogType1_Hive,
+    Name:                 "Name6",
+    Type:                 models.DataCatalogType1Enum_HIVE,
 }
 
-apiResponse, err := api.CreateDataCatalog(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.CreateDataCatalog(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

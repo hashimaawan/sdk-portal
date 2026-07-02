@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -20,16 +18,13 @@ Contains data processing unit (DPU) configuration settings and parameter mapping
 | `MaxConcurrentDpus` | `int` | Required | **Constraints**: `>= 2`, `<= 5000` | int getMaxConcurrentDpus() | setMaxConcurrentDpus(int maxConcurrentDpus) |
 | `DefaultExecutorDpuSize` | `Integer` | Optional | **Constraints**: `>= 1`, `<= 1` | Integer getDefaultExecutorDpuSize() | setDefaultExecutorDpuSize(Integer defaultExecutorDpuSize) |
 | `AdditionalConfigs` | [`AdditionalConfigs`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/additional-configs.md) | Optional | - | AdditionalConfigs getAdditionalConfigs() | setAdditionalConfigs(AdditionalConfigs additionalConfigs) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.AdditionalConfigs;
 import com.amazonaws.useast1.athena.models.EngineConfiguration;
-import java.io.IOException;
 
 EngineConfiguration engineConfiguration = new EngineConfiguration.Builder(
     194
@@ -37,9 +32,7 @@ EngineConfiguration engineConfiguration = new EngineConfiguration.Builder(
 .coordinatorDpuSize(1)
 .defaultExecutorDpuSize(1)
 .additionalConfigs(new AdditionalConfigs.Builder()
-    .additionalProperty("exampleAdditionalProperty", "AdditionalConfigs_additionalProperties5")
         .build())
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
 .build();
 ```
 

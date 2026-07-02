@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/go/x-redirect/JTI0bSUyRlN0YXRpc3RpY3M
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -22,7 +20,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `QueryPlanningTimeInMillis` | `*int` | Optional | - |
 | `ServiceProcessingTimeInMillis` | `*int` | Optional | - |
 | `ResultReuseInformation` | [`*models.ResultReuseInformation2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/result-reuse-information-2.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -31,7 +28,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -41,9 +38,6 @@ func main() {
         DataManifestLocation:          models.ToPointer("DataManifestLocation0"),
         TotalExecutionTimeInMillis:    models.ToPointer(146),
         QueryQueueTimeInMillis:        models.ToPointer(116),
-        AdditionalProperties:          map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
     }
 
 }

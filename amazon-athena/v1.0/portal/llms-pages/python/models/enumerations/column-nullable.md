@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ColumnNullable`
+`ColumnNullableEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.column_nullable import ColumnNullable
+from amazonathena.models.column_nullable_enum import ColumnNullableEnum
 
-column_nullable = ColumnNullable.UNKNOWN
+column_nullable = ColumnNullableEnum.UNKNOWN
 ```
 
 

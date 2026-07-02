@@ -5,24 +5,24 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`EncryptionOption`
+`EncryptionOptionEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `SseS3` |
-| `SseKms` |
-| `CseKms` |
+| `SSES3` |
+| `SSEKMS` |
+| `CSEKMS` |
 
 
 # Example
 
 ```ts
-import { EncryptionOption } from 'amazon-athenalib';
+import { EncryptionOptionEnum } from 'amazon-athenalib';
 
-const encryptionOption = EncryptionOption.SseS3;
+const encryptionOption = EncryptionOptionEnum.SSES3;
 ```
 
 

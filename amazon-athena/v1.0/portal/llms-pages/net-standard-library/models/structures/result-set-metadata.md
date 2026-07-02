@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -17,14 +15,12 @@ The metadata that describes the column structure and data types of a table of qu
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ColumnInfo` | [`List<ColumnInfo>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/column-info.md) | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 using System.Collections.Generic;
 
 ResultSetMetadata resultSetMetadata = new ResultSetMetadata
@@ -40,7 +36,6 @@ ResultSetMetadata resultSetMetadata = new ResultSetMetadata
             TableName = "TableName2",
             Label = "Label4",
             Precision = 48,
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
         new ColumnInfo
         {
@@ -51,10 +46,8 @@ ResultSetMetadata resultSetMetadata = new ResultSetMetadata
             TableName = "TableName2",
             Label = "Label4",
             Precision = 48,
-            ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
         },
     },
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

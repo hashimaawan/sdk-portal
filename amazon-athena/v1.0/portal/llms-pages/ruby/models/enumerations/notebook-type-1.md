@@ -7,7 +7,7 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 # Example
 
 ```ruby
-notebook_type1 = NotebookType1::IPYNB
+notebook_type1 = NotebookType1Enum::IPYNB
 ```
 
 

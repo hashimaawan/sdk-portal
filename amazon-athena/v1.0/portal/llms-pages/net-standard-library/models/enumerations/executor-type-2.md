@@ -7,16 +7,16 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 
 # Enum Type Name
 
-`ExecutorType2`
+`ExecutorType2Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Coordinator` |
-| `Gateway` |
-| `Worker` |
+| `COORDINATOR` |
+| `GATEWAY` |
+| `WORKER` |
 
 
 # Example
@@ -24,7 +24,7 @@ The type of executor used for the application (<code>COORDINATOR</code>, <code>G
 ```csharp
 using AmazonAthena.Standard.Models;
 
-ExecutorType2 executorType2 = ExecutorType2.Coordinator;
+ExecutorType2Enum executorType2 = ExecutorType2Enum.COORDINATOR;
 ```
 
 

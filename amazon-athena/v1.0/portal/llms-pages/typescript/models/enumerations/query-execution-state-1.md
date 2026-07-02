@@ -8,26 +8,26 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`QueryExecutionState1`
+`QueryExecutionState1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Queued` |
-| `Running` |
-| `Succeeded` |
-| `Failed` |
-| `Cancelled` |
+| `QUEUED` |
+| `RUNNING` |
+| `SUCCEEDED` |
+| `FAILED` |
+| `CANCELLED` |
 
 
 # Example
 
 ```ts
-import { QueryExecutionState1 } from 'amazon-athenalib';
+import { QueryExecutionState1Enum } from 'amazon-athenalib';
 
-const queryExecutionState1 = QueryExecutionState1.Cancelled;
+const queryExecutionState1 = QueryExecutionState1Enum.CANCELLED;
 ```
 
 

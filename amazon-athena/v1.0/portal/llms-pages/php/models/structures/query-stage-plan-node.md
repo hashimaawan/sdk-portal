@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Stage plan information such as name, identifier, sub plans, and remote sources.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -20,14 +18,12 @@ Stage plan information such as name, identifier, sub plans, and remote sources.
 | `identifier` | `?string` | Optional | - | getIdentifier(): ?string | setIdentifier(?string identifier): void |
 | `children` | [`?(QueryStagePlanNode[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/query-stage-plan-node.md) | Optional | - | getChildren(): ?array | setChildren(?array children): void |
 | `remoteSources` | `?(string[])` | Optional | - | getRemoteSources(): ?array | setRemoteSources(?array remoteSources): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\QueryStagePlanNodeBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $queryStagePlanNode = QueryStagePlanNodeBuilder::init()
     ->name('Name4')
@@ -49,7 +45,6 @@ $queryStagePlanNode = QueryStagePlanNodeBuilder::init()
                         'RemoteSources6'
                     ]
                 )
-                ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                 ->build()
         ]
     )
@@ -60,7 +55,6 @@ $queryStagePlanNode = QueryStagePlanNodeBuilder::init()
             'RemoteSources4'
         ]
     )
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

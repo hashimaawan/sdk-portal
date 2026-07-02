@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorType`
+`ExecutorTypeEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.executor_type import ExecutorType
+from amazonathena.models.executor_type_enum import ExecutorTypeEnum
 
-executor_type = ExecutorType.WORKER
+executor_type = ExecutorTypeEnum.WORKER
 ```
 
 

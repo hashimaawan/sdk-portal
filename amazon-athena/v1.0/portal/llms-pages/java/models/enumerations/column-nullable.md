@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ColumnNullable`
+`ColumnNullableEnum`
 
 
 # Fields
@@ -20,9 +20,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.ColumnNullable;
+import com.amazonaws.useast1.athena.models.ColumnNullableEnum;
 
-ColumnNullable columnNullable = ColumnNullable.NOT_NULL;
+ColumnNullableEnum columnNullable = ColumnNullableEnum.NOT_NULL;
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The summary information for the data catalog, which includes its name and type.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,22 +15,18 @@ The summary information for the data catalog, which includes its name and type.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `CatalogName` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` | String getCatalogName() | setCatalogName(String catalogName) |
-| `Type` | [`DataCatalogType2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/data-catalog-type-2.md) | Optional | - | DataCatalogType2 getType() | setType(DataCatalogType2 type) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
+| `Type` | [`DataCatalogType2Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/data-catalog-type-2.md) | Optional | - | DataCatalogType2Enum getType() | setType(DataCatalogType2Enum type) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
 import com.amazonaws.useast1.athena.models.DataCatalogSummary;
-import com.amazonaws.useast1.athena.models.DataCatalogType2;
-import java.io.IOException;
+import com.amazonaws.useast1.athena.models.DataCatalogType2Enum;
 
 DataCatalogSummary dataCatalogSummary = new DataCatalogSummary.Builder()
     .catalogName("CatalogName2")
-    .type(DataCatalogType2.HIVE)
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
+    .type(DataCatalogType2Enum.HIVE)
     .build();
 ```
 

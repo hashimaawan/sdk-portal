@@ -7,7 +7,7 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Enum Type Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
@@ -21,9 +21,9 @@ The state of the workgroup: ENABLED or DISABLED.
 # Example
 
 ```php
-use AmazonAthenaLib\Models\WorkGroupState3;
+use AmazonAthenaLib\Models\WorkGroupState3Enum;
 
-$workGroupState3 = WorkGroupState3::ENABLED;
+$workGroupState3 = WorkGroupState3Enum::ENABLED;
 ```
 
 

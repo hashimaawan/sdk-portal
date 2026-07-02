@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A prepared SQL statement for use with Athena.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -21,7 +19,6 @@ A prepared SQL statement for use with Athena.
 | `WorkGroupName` | `*string` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `Description` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `LastModifiedTime` | `*time.Time` | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -32,7 +29,7 @@ package main
 import (
     "log"
     "time"
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
@@ -44,14 +41,11 @@ func main() {
         return dateTime
     }
     preparedStatement := models.PreparedStatement{
-        StatementName:         models.ToPointer("StatementName8"),
-        QueryStatement:        models.ToPointer("QueryStatement2"),
-        WorkGroupName:         models.ToPointer("WorkGroupName2"),
-        Description:           models.ToPointer("Description4"),
-        LastModifiedTime:      models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        StatementName:        models.ToPointer("StatementName8"),
+        QueryStatement:       models.ToPointer("QueryStatement2"),
+        WorkGroupName:        models.ToPointer("WorkGroupName2"),
+        Description:          models.ToPointer("Description4"),
+        LastModifiedTime:     models.ToPointer(parseTime(time.RFC3339, "2016-03-13T12:52:32.123Z", func(err error) { log.Fatalln(err) })),
     }
 
 }

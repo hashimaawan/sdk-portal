@@ -6,7 +6,7 @@ Removes one or more tags from a data catalog or workgroup resource.
 
 ```csharp
 UntagResourceAsync(
-    Models.XAmzTarget53 xAmzTarget,
+    Models.XAmzTarget53Enum xAmzTarget,
     Models.UntagResourceInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget53`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-53.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget53Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-53.md) | Header, Required | - |
 | `body` | [`UntagResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/untag-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,16 +42,16 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget53 xAmzTarget = XAmzTarget53.EnumAmazonAthenaUntagResource;
+XAmzTarget53Enum xAmzTarget = XAmzTarget53Enum.EnumAmazonAthenaUntagResource;
 UntagResourceInput body = new UntagResourceInput
 {
-    ResourceArn = "ResourceARN4",
+    ResourceARN = "ResourceARN4",
     TagKeys = new List<string>
     {
         "TagKeys9",
@@ -61,7 +61,7 @@ UntagResourceInput body = new UntagResourceInput
 
 try
 {
-    ApiResponse<object> result = await api.UntagResourceAsync(
+    object result = await aPIController.UntagResourceAsync(
         xAmzTarget,
         body
     );

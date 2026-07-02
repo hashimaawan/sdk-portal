@@ -6,7 +6,7 @@ Deletes the specified notebook.
 
 ```ts
 async deleteNotebook(
-  xAmzTarget: XAmzTarget11,
+  xAmzTarget: XAmzTarget11Enum,
   body: DeleteNotebookInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget11`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-11.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget11Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-11.md) | Header, Required | - |
 | `body` | [`DeleteNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/delete-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget11.EnumAmazonAthenaDeleteNotebook;
+const xAmzTarget = XAmzTarget11Enum.EnumAmazonAthenaDeleteNotebook;
 
 const body: DeleteNotebookInput = {
   notebookId: 'NotebookId6',
 };
 
 try {
-  const response = await api.deleteNotebook(
+  const response = await apiController.deleteNotebook(
     xAmzTarget,
     body
   );

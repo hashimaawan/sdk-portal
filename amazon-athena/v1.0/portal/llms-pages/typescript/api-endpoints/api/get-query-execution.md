@@ -6,7 +6,7 @@ Returns information about a single execution of a query if you have access to th
 
 ```ts
 async getQueryExecution(
-  xAmzTarget: XAmzTarget23,
+  xAmzTarget: XAmzTarget23Enum,
   body: GetQueryExecutionInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget23`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-23.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget23Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-23.md) | Header, Required | - |
 | `body` | [`GetQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget23.EnumAmazonAthenaGetQueryExecution;
+const xAmzTarget = XAmzTarget23Enum.EnumAmazonAthenaGetQueryExecution;
 
 const body: GetQueryExecutionInput = {
   queryExecutionId: 'QueryExecutionId0',
 };
 
 try {
-  const response = await api.getQueryExecution(
+  const response = await apiController.getQueryExecution(
     xAmzTarget,
     body
   );

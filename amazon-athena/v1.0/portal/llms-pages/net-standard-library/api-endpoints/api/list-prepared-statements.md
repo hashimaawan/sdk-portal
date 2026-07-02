@@ -6,7 +6,7 @@ Lists the prepared statements in the specified workgroup.
 
 ```csharp
 ListPreparedStatementsAsync(
-    Models.XAmzTarget40 xAmzTarget,
+    Models.XAmzTarget40Enum xAmzTarget,
     Models.ListPreparedStatementsInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget40`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-40.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget40Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-40.md) | Header, Required | - |
 | `body` | [`ListPreparedStatementsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-prepared-statements-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListPreparedStatementsOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-prepared-statements-output.md).
+[`Task<Models.ListPreparedStatementsOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-prepared-statements-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget40 xAmzTarget = XAmzTarget40.EnumAmazonAthenaListPreparedStatements;
+XAmzTarget40Enum xAmzTarget = XAmzTarget40Enum.EnumAmazonAthenaListPreparedStatements;
 ListPreparedStatementsInput body = new ListPreparedStatementsInput
 {
     WorkGroup = "WorkGroup8",
@@ -60,7 +60,7 @@ ListPreparedStatementsInput body = new ListPreparedStatementsInput
 
 try
 {
-    ApiResponse<ListPreparedStatementsOutput> result = await api.ListPreparedStatementsAsync(
+    ListPreparedStatementsOutput result = await aPIController.ListPreparedStatementsAsync(
         xAmzTarget,
         body
     );

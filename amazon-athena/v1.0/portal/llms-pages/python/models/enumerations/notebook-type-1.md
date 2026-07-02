@@ -7,7 +7,7 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
@@ -20,9 +20,9 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 # Example
 
 ```python
-from amazonathena.models.notebook_type_1 import NotebookType1
+from amazonathena.models.notebook_type_1_enum import NotebookType1Enum
 
-notebook_type_1 = NotebookType1.IPYNB
+notebook_type_1 = NotebookType1Enum.IPYNB
 ```
 
 

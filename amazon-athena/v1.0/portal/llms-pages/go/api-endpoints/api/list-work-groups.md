@@ -7,7 +7,7 @@ Lists available workgroups for the account.
 ```go
 ListWorkGroups(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget45,
+    xAmzTarget models.XAmzTarget45Enum,
     body models.ListWorkGroupsInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -32,7 +32,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget45`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-45.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget45Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-45.md) | Header, Required | - |
 | `body` | [`models.ListWorkGroupsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-work-groups-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -57,12 +57,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget45_EnumAmazonathenalistworkgroups
+xAmzTarget := models.XAmzTarget45Enum_ENUMAMAZONATHENALISTWORKGROUPS
 
 body := models.ListWorkGroupsInput{
 }
 
-apiResponse, err := api.ListWorkGroups(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListWorkGroups(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

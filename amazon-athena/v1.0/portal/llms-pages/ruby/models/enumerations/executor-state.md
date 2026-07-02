@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState`
+`ExecutorStateEnum`
 
 
 # Fields
@@ -23,7 +23,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-executor_state = ExecutorState::TERMINATED
+executor_state = ExecutorStateEnum::TERMINATED
 ```
 
 

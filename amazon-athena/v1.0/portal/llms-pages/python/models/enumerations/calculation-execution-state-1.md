@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState1`
+`CalculationExecutionState1Enum`
 
 
 # Fields
@@ -28,9 +28,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.calculation_execution_state_1 import CalculationExecutionState1
+from amazonathena.models.calculation_execution_state_1_enum import CalculationExecutionState1Enum
 
-calculation_execution_state_1 = CalculationExecutionState1.CREATING
+calculation_execution_state_1 = CalculationExecutionState1Enum.CREATING
 ```
 
 

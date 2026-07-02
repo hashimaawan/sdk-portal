@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```ts
 async stopCalculationExecution(
-  xAmzTarget: XAmzTarget49,
+  xAmzTarget: XAmzTarget49Enum,
   body: StopCalculationExecutionRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget49`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-49.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget49Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-49.md) | Header, Required | - |
 | `body` | [`StopCalculationExecutionRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/stop-calculation-execution-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -52,14 +52,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget49.EnumAmazonAthenaStopCalculationExecution;
+const xAmzTarget = XAmzTarget49Enum.EnumAmazonAthenaStopCalculationExecution;
 
 const body: StopCalculationExecutionRequest = {
   calculationExecutionId: 'CalculationExecutionId8',
 };
 
 try {
-  const response = await api.stopCalculationExecution(
+  const response = await apiController.stopCalculationExecution(
     xAmzTarget,
     body
   );

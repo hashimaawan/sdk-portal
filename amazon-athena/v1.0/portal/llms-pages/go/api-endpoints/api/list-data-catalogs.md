@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```go
 ListDataCatalogs(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget33,
+    xAmzTarget models.XAmzTarget33Enum,
     body models.ListDataCatalogsInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -33,7 +33,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget33`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-33.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget33Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-33.md) | Header, Required | - |
 | `body` | [`models.ListDataCatalogsInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-data-catalogs-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -58,12 +58,12 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget33_EnumAmazonathenalistdatacatalogs
+xAmzTarget := models.XAmzTarget33Enum_ENUMAMAZONATHENALISTDATACATALOGS
 
 body := models.ListDataCatalogsInput{
 }
 
-apiResponse, err := api.ListDataCatalogs(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListDataCatalogs(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

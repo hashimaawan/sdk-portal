@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 A prepared SQL statement for use with Athena.
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -21,7 +19,6 @@ A prepared SQL statement for use with Athena.
 | `workGroupName` | `string \| undefined` | Optional | **Constraints**: *Pattern*: `[a-zA-Z0-9._-]{1,128}` |
 | `description` | `string \| undefined` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `1024` |
 | `lastModifiedTime` | `string \| undefined` | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -35,9 +32,6 @@ const preparedStatement: PreparedStatement = {
   workGroupName: 'WorkGroupName2',
   description: 'Description4',
   lastModifiedTime: '2016-03-13T12:52:32.123Z',
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

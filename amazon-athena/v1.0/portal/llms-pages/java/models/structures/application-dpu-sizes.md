@@ -4,12 +4,10 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains the application runtime IDs and their supported DPU sizes.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
-`ApplicationDpuSizes`
+`ApplicationDPUSizes`
 
 
 # Fields
@@ -17,25 +15,20 @@ Contains the application runtime IDs and their supported DPU sizes.
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `ApplicationRuntimeId` | `String` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` | String getApplicationRuntimeId() | setApplicationRuntimeId(String applicationRuntimeId) |
-| `SupportedDpuSizes` | `List<Integer>` | Optional | - | List<Integer> getSupportedDpuSizes() | setSupportedDpuSizes(List<Integer> supportedDpuSizes) |
-| `AdditionalProperties` | `Map<String, Object>` | Optional | - | Object getAdditionalProperty(String key) | additionalProperty(String key, Object value) |
+| `SupportedDPUSizes` | `List<Integer>` | Optional | - | List<Integer> getSupportedDPUSizes() | setSupportedDPUSizes(List<Integer> supportedDPUSizes) |
 
 
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.ApiHelper;
-import com.amazonaws.useast1.athena.models.ApplicationDpuSizes;
-import java.io.IOException;
+import com.amazonaws.useast1.athena.models.ApplicationDPUSizes;
 import java.util.Arrays;
 
-ApplicationDpuSizes applicationDpuSizes = new ApplicationDpuSizes.Builder()
-    .applicationRuntimeId("ApplicationRuntimeId4")
-    .supportedDpuSizes(Arrays.asList(
-        17,
-        18
+ApplicationDPUSizes applicationDPUSizes = new ApplicationDPUSizes.Builder()
+    .applicationRuntimeId("ApplicationRuntimeId2")
+    .supportedDPUSizes(Arrays.asList(
+        57
     ))
-.additionalProperty("exampleAdditionalProperty", ApiHelper.deserialize("{\"key1\":\"val1\",\"key2\":\"val2\"}"))
     .build();
 ```
 

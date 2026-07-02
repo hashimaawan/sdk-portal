@@ -7,7 +7,7 @@ Adds one or more tags to an Athena resource. A tag is a label that you assign to
 ```go
 TagResource(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget51,
+    xAmzTarget models.XAmzTarget51Enum,
     body models.TagResourceInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget51`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-51.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget51Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-51.md) | Header, Required | - |
 | `body` | [`models.TagResourceInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/tag-resource-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,17 +53,17 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget51_EnumAmazonathenatagresource
+xAmzTarget := models.XAmzTarget51Enum_ENUMAMAZONATHENATAGRESOURCE
 
 body := models.TagResourceInput{
-    ResourceArn:           "ResourceARN4",
-    Tags:                  []models.Tag{
+    ResourceARN:          "ResourceARN4",
+    Tags:                 []models.Tag{
         models.Tag{
         },
     },
 }
 
-apiResponse, err := api.TagResource(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.TagResource(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

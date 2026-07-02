@@ -7,7 +7,7 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Enum Type Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.StatementType1;
+import com.amazonaws.useast1.athena.models.StatementType1Enum;
 
-StatementType1 statementType1 = StatementType1.DDL;
+StatementType1Enum statementType1 = StatementType1Enum.DDL;
 ```
 
 

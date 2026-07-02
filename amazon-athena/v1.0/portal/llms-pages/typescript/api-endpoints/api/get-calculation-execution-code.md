@@ -6,7 +6,7 @@ Retrieves the unencrypted code that was executed for the calculation.
 
 ```ts
 async getCalculationExecutionCode(
-  xAmzTarget: XAmzTarget16,
+  xAmzTarget: XAmzTarget16Enum,
   body: GetCalculationExecutionCodeRequest,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget16`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-16.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget16Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-16.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionCodeRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-calculation-execution-code-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget16.EnumAmazonAthenaGetCalculationExecutionCode;
+const xAmzTarget = XAmzTarget16Enum.EnumAmazonAthenaGetCalculationExecutionCode;
 
 const body: GetCalculationExecutionCodeRequest = {
   calculationExecutionId: 'CalculationExecutionId8',
 };
 
 try {
-  const response = await api.getCalculationExecutionCode(
+  const response = await apiController.getCalculationExecutionCode(
     xAmzTarget,
     body
   );

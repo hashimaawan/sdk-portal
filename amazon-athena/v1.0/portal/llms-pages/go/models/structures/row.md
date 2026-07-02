@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The rows that make up a query result table.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -17,7 +15,6 @@ The rows that make up a query result table.
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `Data` | [`[]models.Datum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/datum.md) | Optional | - |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -26,21 +23,15 @@ The rows that make up a query result table.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     row := models.Row{
-        Data:                  []models.Datum{
+        Data:                 []models.Datum{
             models.Datum{
-                VarCharValue:          models.ToPointer("VarCharValue8"),
-                AdditionalProperties:  map[string]interface{}{
-                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-                },
+                VarCharValue:         models.ToPointer("VarCharValue8"),
             },
-        },
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
         },
     }
 

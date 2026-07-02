@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRkxpc3RFeGVjdXRvcnNSZXF1ZXN0
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -15,25 +13,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `SessionId` | `string` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
-| `ExecutorStateFilter` | [`ExecutorState1?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/executor-state-1.md) | Optional | - |
+| `ExecutorStateFilter` | [`ExecutorState1Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/executor-state-1.md) | Optional | - |
 | `MaxResults` | `int?` | Optional | **Constraints**: `>= 1`, `<= 100` |
 | `NextToken` | `string` | Optional | **Constraints**: *Maximum Length*: `2048` |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 ListExecutorsRequest listExecutorsRequest = new ListExecutorsRequest
 {
     SessionId = "SessionId0",
-    ExecutorStateFilter = ExecutorState1.Creating,
+    ExecutorStateFilter = ExecutorState1Enum.CREATING,
     MaxResults = 100,
     NextToken = "NextToken8",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

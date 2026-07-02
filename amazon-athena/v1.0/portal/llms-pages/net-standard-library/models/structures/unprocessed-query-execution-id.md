@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Describes a query execution that failed to process.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -19,21 +17,18 @@ Describes a query execution that failed to process.
 | `QueryExecutionId` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128`, *Pattern*: `\S+` |
 | `ErrorCode` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
 | `ErrorMessage` | `string` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 UnprocessedQueryExecutionId unprocessedQueryExecutionId = new UnprocessedQueryExecutionId
 {
     QueryExecutionId = "QueryExecutionId6",
     ErrorCode = "ErrorCode2",
     ErrorMessage = "ErrorMessage8",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

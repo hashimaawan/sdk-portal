@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState1`
+`ExecutorState1Enum`
 
 
 # Fields
@@ -26,9 +26,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.ExecutorState1;
+import com.amazonaws.useast1.athena.models.ExecutorState1Enum;
 
-ExecutorState1 executorState1 = ExecutorState1.CREATING;
+ExecutorState1Enum executorState1 = ExecutorState1Enum.CREATING;
 ```
 
 

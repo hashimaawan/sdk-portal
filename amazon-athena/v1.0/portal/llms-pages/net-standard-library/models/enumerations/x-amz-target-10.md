@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget10`
+`XAmzTarget10Enum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-XAmzTarget10 xAmzTarget10 = XAmzTarget10.EnumAmazonAthenaDeleteNamedQuery;
+XAmzTarget10Enum xAmzTarget10 = XAmzTarget10Enum.EnumAmazonAthenaDeleteNamedQuery;
 ```
 
 

@@ -7,7 +7,7 @@ Returns the details of a single named query or a list of up to 50 queries, which
 ```go
 BatchGetNamedQuery(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget,
+    xAmzTarget models.XAmzTargetEnum,
     body models.BatchGetNamedQueryInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTargetEnum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target.md) | Header, Required | - |
 | `body` | [`models.BatchGetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/batch-get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,15 +53,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget_EnumAmazonathenabatchgetnamedquery
+xAmzTarget := models.XAmzTargetEnum_ENUMAMAZONATHENABATCHGETNAMEDQUERY
 
 body := models.BatchGetNamedQueryInput{
-    NamedQueryIds:         []string{
+    NamedQueryIds:        []string{
         "NamedQueryIds9",
     },
 }
 
-apiResponse, err := api.BatchGetNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.BatchGetNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

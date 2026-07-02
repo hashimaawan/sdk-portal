@@ -7,7 +7,7 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Enum Type Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
@@ -22,7 +22,7 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 # Example
 
 ```ruby
-data_catalog_type3 = DataCatalogType3::LAMBDA
+data_catalog_type3 = DataCatalogType3Enum::LAMBDA
 ```
 
 

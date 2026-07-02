@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRkJhdGNoR2V0TmFtZWRRdWVyeU91dHB1dA
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -16,7 +14,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `namedQueries` | [`NamedQuery[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/named-query.md) | Optional | - |
 | `unprocessedNamedQueryIds` | [`UnprocessedNamedQueryId[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/unprocessed-named-query-id.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -33,9 +30,6 @@ const batchGetNamedQueryOutput: BatchGetNamedQueryOutput = {
       description: 'Description4',
       namedQueryId: 'NamedQueryId0',
       workGroup: 'WorkGroup4',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     {
       name: 'Name2',
@@ -44,9 +38,6 @@ const batchGetNamedQueryOutput: BatchGetNamedQueryOutput = {
       description: 'Description4',
       namedQueryId: 'NamedQueryId0',
       workGroup: 'WorkGroup4',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     {
       name: 'Name2',
@@ -55,9 +46,6 @@ const batchGetNamedQueryOutput: BatchGetNamedQueryOutput = {
       description: 'Description4',
       namedQueryId: 'NamedQueryId0',
       workGroup: 'WorkGroup4',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     }
   ],
   unprocessedNamedQueryIds: [
@@ -65,22 +53,13 @@ const batchGetNamedQueryOutput: BatchGetNamedQueryOutput = {
       namedQueryId: 'NamedQueryId4',
       errorCode: 'ErrorCode6',
       errorMessage: 'ErrorMessage4',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     {
       namedQueryId: 'NamedQueryId4',
       errorCode: 'ErrorCode6',
       errorMessage: 'ErrorMessage4',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     }
   ],
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

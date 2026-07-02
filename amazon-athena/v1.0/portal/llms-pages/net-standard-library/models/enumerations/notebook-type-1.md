@@ -7,14 +7,14 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 
 # Enum Type Name
 
-`NotebookType1`
+`NotebookType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ipynb` |
+| `IPYNB` |
 
 
 # Example
@@ -22,7 +22,7 @@ The type of notebook. Currently, the only valid type is <code>IPYNB</code>.
 ```csharp
 using AmazonAthena.Standard.Models;
 
-NotebookType1 notebookType1 = NotebookType1.Ipynb;
+NotebookType1Enum notebookType1 = NotebookType1Enum.IPYNB;
 ```
 
 

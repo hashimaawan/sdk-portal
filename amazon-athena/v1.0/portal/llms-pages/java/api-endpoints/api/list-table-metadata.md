@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Lists the metadata for the tables in the specified data catalog database.
 
 ```java
-CompletableFuture<ApiResponse<ListTableMetadataOutput>> listTableMetadataAsync(
-    final XAmzTarget43 xAmzTarget,
+CompletableFuture<ListTableMetadataOutput> listTableMetadataAsync(
+    final XAmzTarget43Enum xAmzTarget,
     final ListTableMetadataInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget43`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-43.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget43Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-43.md) | Header, Required | - |
 | `body` | [`ListTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -46,13 +46,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`ListTableMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-table-metadata-output.md).
+[`ListTableMetadataOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/list-table-metadata-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget43 xAmzTarget = XAmzTarget43.ENUM_AMAZONATHENALISTTABLEMETADATA;
+XAmzTarget43Enum xAmzTarget = XAmzTarget43Enum.ENUM_AMAZONATHENALISTTABLEMETADATA;
 ListTableMetadataInput body = new ListTableMetadataInput.Builder(
     "CatalogName0",
     "DatabaseName0"
@@ -60,7 +60,7 @@ ListTableMetadataInput body = new ListTableMetadataInput.Builder(
 .build();
 
 
-api.listTableMetadataAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.listTableMetadataAsync(xAmzTarget, body, null, null, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

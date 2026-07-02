@@ -5,16 +5,16 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorType`
+`ExecutorTypeEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Coordinator` |
-| `Gateway` |
-| `Worker` |
+| `COORDINATOR` |
+| `GATEWAY` |
+| `WORKER` |
 
 
 # Example
@@ -22,7 +22,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-ExecutorType executorType = ExecutorType.Gateway;
+ExecutorTypeEnum executorType = ExecutorTypeEnum.GATEWAY;
 ```
 
 

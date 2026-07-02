@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -21,14 +19,12 @@ Timeline statistics such as query queue time, planning time, execution time, ser
 | `engineExecutionTimeInMillis` | `?int` | Optional | - | getEngineExecutionTimeInMillis(): ?int | setEngineExecutionTimeInMillis(?int engineExecutionTimeInMillis): void |
 | `serviceProcessingTimeInMillis` | `?int` | Optional | - | getServiceProcessingTimeInMillis(): ?int | setServiceProcessingTimeInMillis(?int serviceProcessingTimeInMillis): void |
 | `totalExecutionTimeInMillis` | `?int` | Optional | - | getTotalExecutionTimeInMillis(): ?int | setTotalExecutionTimeInMillis(?int totalExecutionTimeInMillis): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\QueryRuntimeStatisticsTimelineBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $queryRuntimeStatisticsTimeline = QueryRuntimeStatisticsTimelineBuilder::init()
     ->queryQueueTimeInMillis(122)
@@ -36,7 +32,6 @@ $queryRuntimeStatisticsTimeline = QueryRuntimeStatisticsTimelineBuilder::init()
     ->engineExecutionTimeInMillis(78)
     ->serviceProcessingTimeInMillis(96)
     ->totalExecutionTimeInMillis(140)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

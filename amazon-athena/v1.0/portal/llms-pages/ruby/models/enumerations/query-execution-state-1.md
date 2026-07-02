@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`QueryExecutionState1`
+`QueryExecutionState1Enum`
 
 
 # Fields
@@ -25,7 +25,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-query_execution_state1 = QueryExecutionState1::RUNNING
+query_execution_state1 = QueryExecutionState1Enum::RUNNING
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Information about the columns in a query execution result.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -24,16 +22,14 @@ Information about the columns in a query execution result.
 | `Type` | `string` | Required | - |
 | `Precision` | `int?` | Optional | - |
 | `Scale` | `int?` | Optional | - |
-| `Nullable` | [`ColumnNullable2?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/column-nullable-2.md) | Optional | - |
+| `Nullable` | [`ColumnNullable2Enum?`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/column-nullable-2.md) | Optional | - |
 | `CaseSensitive` | `bool?` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 ColumnInfo columnInfo = new ColumnInfo
 {
@@ -44,7 +40,6 @@ ColumnInfo columnInfo = new ColumnInfo
     TableName = "TableName4",
     Label = "Label6",
     Precision = 196,
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

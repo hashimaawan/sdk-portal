@@ -7,16 +7,16 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Class Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Ddl` |
-| `Dml` |
-| `Utility` |
+| `DDL` |
+| `DML` |
+| `UTILITY` |
 
 
 # Example
@@ -25,11 +25,11 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    statementType1 := models.StatementType1_Ddl
+    statementType1 := models.StatementType1Enum_DDL
 
 }
 ```

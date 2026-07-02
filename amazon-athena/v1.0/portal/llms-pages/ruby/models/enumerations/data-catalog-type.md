@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`DataCatalogType`
+`DataCatalogTypeEnum`
 
 
 # Fields
@@ -20,7 +20,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```ruby
-data_catalog_type = DataCatalogType::LAMBDA
+data_catalog_type = DataCatalogTypeEnum::LAMBDA
 ```
 
 

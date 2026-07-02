@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```csharp
 DeleteNamedQueryAsync(
-    Models.XAmzTarget10 xAmzTarget,
+    Models.XAmzTarget10Enum xAmzTarget,
     Models.DeleteNamedQueryInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -28,7 +28,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget10`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-10.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget10Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-10.md) | Header, Required | - |
 | `body` | [`DeleteNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/delete-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -43,13 +43,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget10 xAmzTarget = XAmzTarget10.EnumAmazonAthenaDeleteNamedQuery;
+XAmzTarget10Enum xAmzTarget = XAmzTarget10Enum.EnumAmazonAthenaDeleteNamedQuery;
 DeleteNamedQueryInput body = new DeleteNamedQueryInput
 {
     NamedQueryId = "NamedQueryId6",
@@ -57,7 +57,7 @@ DeleteNamedQueryInput body = new DeleteNamedQueryInput
 
 try
 {
-    ApiResponse<object> result = await api.DeleteNamedQueryAsync(
+    object result = await aPIController.DeleteNamedQueryAsync(
         xAmzTarget,
         body
     );

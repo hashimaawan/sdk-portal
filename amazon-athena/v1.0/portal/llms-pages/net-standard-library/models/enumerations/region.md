@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`Region`
+`RegionEnum`
 
 
 # Fields
@@ -42,7 +42,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-Region region = Region.Euwest3;
+RegionEnum region = RegionEnum.Euwest3;
 ```
 
 

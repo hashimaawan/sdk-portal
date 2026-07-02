@@ -8,7 +8,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState3`
+`CalculationExecutionState3Enum`
 
 
 # Fields
@@ -28,9 +28,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\CalculationExecutionState3;
+use AmazonAthenaLib\Models\CalculationExecutionState3Enum;
 
-$calculationExecutionState3 = CalculationExecutionState3::COMPLETED;
+$calculationExecutionState3 = CalculationExecutionState3Enum::COMPLETED;
 ```
 
 

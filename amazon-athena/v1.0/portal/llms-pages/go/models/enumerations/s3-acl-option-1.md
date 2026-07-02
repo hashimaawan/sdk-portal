@@ -7,14 +7,14 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 
 # Class Name
 
-`S3AclOption1`
+`S3AclOption1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `BucketOwnerFullControl` |
+| `BUCKETOWNERFULLCONTROL` |
 
 
 # Example
@@ -23,11 +23,11 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    s3AclOption1 := models.S3AclOption1_BucketOwnerFullControl
+    s3AclOption1 := models.S3AclOption1Enum_BUCKETOWNERFULLCONTROL
 
 }
 ```

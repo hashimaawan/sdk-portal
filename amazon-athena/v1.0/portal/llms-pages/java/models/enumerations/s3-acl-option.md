@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`S3AclOption`
+`S3AclOptionEnum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```java
-import com.amazonaws.useast1.athena.models.S3AclOption;
+import com.amazonaws.useast1.athena.models.S3AclOptionEnum;
 
-S3AclOption s3AclOption = S3AclOption.BUCKET_OWNER_FULL_CONTROL;
+S3AclOptionEnum s3AclOption = S3AclOptionEnum.BUCKET_OWNER_FULL_CONTROL;
 ```
 
 

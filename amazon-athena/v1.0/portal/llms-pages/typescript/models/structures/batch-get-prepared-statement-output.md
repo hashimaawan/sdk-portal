@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRkJhdGNoR2V0UHJlcGFyZWRTdGF0ZW1lbnRPdXRwdXQ
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -16,7 +14,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 |  --- | --- | --- | --- |
 | `preparedStatements` | [`PreparedStatement[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/prepared-statement.md) | Optional | - |
 | `unprocessedPreparedStatementNames` | [`UnprocessedPreparedStatementName[] \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/unprocessed-prepared-statement-name.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
@@ -32,9 +29,6 @@ const batchGetPreparedStatementOutput: BatchGetPreparedStatementOutput = {
       workGroupName: 'WorkGroupName6',
       description: 'Description2',
       lastModifiedTime: '2016-03-13T12:52:32.123Z',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     {
       statementName: 'StatementName2',
@@ -42,9 +36,6 @@ const batchGetPreparedStatementOutput: BatchGetPreparedStatementOutput = {
       workGroupName: 'WorkGroupName6',
       description: 'Description2',
       lastModifiedTime: '2016-03-13T12:52:32.123Z',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     }
   ],
   unprocessedPreparedStatementNames: [
@@ -52,30 +43,18 @@ const batchGetPreparedStatementOutput: BatchGetPreparedStatementOutput = {
       statementName: 'StatementName0',
       errorCode: 'ErrorCode2',
       errorMessage: 'ErrorMessage8',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     {
       statementName: 'StatementName0',
       errorCode: 'ErrorCode2',
       errorMessage: 'ErrorMessage8',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     {
       statementName: 'StatementName0',
       errorCode: 'ErrorCode2',
       errorMessage: 'ErrorMessage8',
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     }
   ],
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-  },
 };
 ```
 

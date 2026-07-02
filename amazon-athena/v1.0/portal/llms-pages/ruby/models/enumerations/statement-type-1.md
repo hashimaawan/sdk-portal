@@ -7,7 +7,7 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 
 # Enum Type Name
 
-`StatementType1`
+`StatementType1Enum`
 
 
 # Fields
@@ -22,7 +22,7 @@ The type of query statement that was run. <code>DDL</code> indicates DDL query s
 # Example
 
 ```ruby
-statement_type1 = StatementType1::DDL
+statement_type1 = StatementType1Enum::DDL
 ```
 
 

@@ -7,16 +7,16 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 
 # Class Name
 
-`DataCatalogType1`
+`DataCatalogType1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Lambda` |
-| `Glue` |
-| `Hive` |
+| `LAMBDA` |
+| `GLUE` |
+| `HIVE` |
 
 
 # Example
@@ -25,11 +25,11 @@ The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    dataCatalogType1 := models.DataCatalogType1_Glue
+    dataCatalogType1 := models.DataCatalogType1Enum_GLUE
 
 }
 ```

@@ -5,22 +5,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`S3AclOption`
+`S3AclOptionEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `BucketOwnerFullControl` |
+| `BUCKETOWNERFULLCONTROL` |
 
 
 # Example
 
 ```ts
-import { S3AclOption } from 'amazon-athenalib';
+import { S3AclOptionEnum } from 'amazon-athenalib';
 
-const s3AclOption = S3AclOption.BucketOwnerFullControl;
+const s3AclOption = S3AclOptionEnum.BUCKETOWNERFULLCONTROL;
 ```
 
 

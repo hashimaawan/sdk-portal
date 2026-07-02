@@ -8,18 +8,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`QueryExecutionState1`
+`QueryExecutionState1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Queued` |
-| `Running` |
-| `Succeeded` |
-| `Failed` |
-| `Cancelled` |
+| `QUEUED` |
+| `RUNNING` |
+| `SUCCEEDED` |
+| `FAILED` |
+| `CANCELLED` |
 
 
 # Example
@@ -27,7 +27,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 ```csharp
 using AmazonAthena.Standard.Models;
 
-QueryExecutionState1 queryExecutionState1 = QueryExecutionState1.Cancelled;
+QueryExecutionState1Enum queryExecutionState1 = QueryExecutionState1Enum.CANCELLED;
 ```
 
 

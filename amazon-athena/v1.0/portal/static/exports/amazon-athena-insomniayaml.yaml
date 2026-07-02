@@ -4,32 +4,32 @@ __export_source: apimatic.transformer
 resources:
 - name: Amazon Athena
   _type: workspace
-  _id: wrk_06463df186eb4609a7c36c287338c052
+  _id: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see <a href="http://docs.aws.amazon.com/athena/latest/ug/what-is.html">What is Amazon Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing Amazon Athena with JDBC</a>.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 - name: production
   data:
     default: http://athena.us-east-1.amazonaws.com
   _type: environment
-  _id: env_d273a2b4a4a64d4ab9940d10b8f74a9e
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: env_99a699b6d1ae414e83bb16b26e0ebb28
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
 - name: environment2
   data:
     default: https://athena.us-east-1.amazonaws.com
   _type: environment
-  _id: env_22e8c21ad5d84eedac6d74d530db132d
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: env_5125a5f361a24634b69ac760b15fe095
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
 - name: environment3
   data:
     default: http://athena.us-east-1.amazonaws.com.cn
   _type: environment
-  _id: env_8054df159f954e49809441ebbc339666
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: env_e5d780cec8264099b0d079fe843c79ba
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
 - name: environment4
   data:
     default: https://athena.us-east-1.amazonaws.com.cn
   _type: environment
-  _id: env_2d30d34efd4042338554d8c42c0fade3
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: env_723037b81c2c4667a956e79e8320a003
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
 - name: BatchGetNamedQuery
   method: POST
   url: '{{default}}/#X-Amz-Target=AmazonAthena.BatchGetNamedQuery'
@@ -38,7 +38,7 @@ resources:
     text: >-
       {
         "NamedQueryIds": [
-          "NamedQueryIds42"
+          "NamedQueryIds34"
         ]
       }
   headers:
@@ -49,32 +49,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25660
+    value: X-Amz-Content-Sha25648
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date66
+    value: X-Amz-Date59
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm61
+    value: X-Amz-Algorithm88
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential27
+    value: X-Amz-Credential88
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token78
+    value: X-Amz-Security-Token88
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature13
+    value: X-Amz-Signature67
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders5
+    value: X-Amz-SignedHeaders60
     disabled: false
   - name: Authorization
-    value: Authorization14
+    value: Authorization54
     disabled: false
   _type: request
-  _id: req_3223fba52876445884d6e6c7cda77495
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_b99d1416e23e4e26a9c8307bc31c276d
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of query execution IDs.
 - name: BatchGetPreparedStatement
   method: POST
@@ -84,9 +84,9 @@ resources:
     text: >-
       {
         "PreparedStatementNames": [
-          "PreparedStatementNames9"
+          "PreparedStatementNames25"
         ],
-        "WorkGroup": "WorkGroup0"
+        "WorkGroup": "WorkGroup91"
       }
   headers:
   - name: X-Amz-Target
@@ -96,32 +96,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha2565
+    value: X-Amz-Content-Sha25625
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date96
+    value: X-Amz-Date97
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm39
+    value: X-Amz-Algorithm74
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential77
+    value: X-Amz-Credential85
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token7
+    value: X-Amz-Security-Token12
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature30
+    value: X-Amz-Signature95
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders41
+    value: X-Amz-SignedHeaders51
     disabled: false
   - name: Authorization
-    value: Authorization93
+    value: Authorization23
     disabled: false
   _type: request
-  _id: req_78950862b0e344ed850a32de34ffebea
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_d75ea857221c47c8859a12dbe3efa366
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.
 - name: BatchGetQueryExecution
   method: POST
@@ -131,7 +131,7 @@ resources:
     text: >-
       {
         "QueryExecutionIds": [
-          "QueryExecutionIds11"
+          "QueryExecutionIds20"
         ]
       }
   headers:
@@ -142,32 +142,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25672
+    value: X-Amz-Content-Sha25642
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date19
+    value: X-Amz-Date92
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm42
+    value: X-Amz-Algorithm14
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential39
+    value: X-Amz-Credential4
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token36
+    value: X-Amz-Security-Token32
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature36
+    value: X-Amz-Signature3
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders43
+    value: X-Amz-SignedHeaders73
     disabled: false
   - name: Authorization
-    value: Authorization45
+    value: Authorization47
     disabled: false
   _type: request
-  _id: req_2b793c432baf4743b7170d16244f826c
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_904ae6c9f7db42de9735fc72631dd226
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries.
 - name: CreateDataCatalog
   method: POST
@@ -176,14 +176,14 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "Name": "Name13",
+        "Name": "Name89",
         "Type": "GLUE",
-        "Description": "Description8",
+        "Description": "Description81",
         "Parameters": {},
         "Tags": [
           {
-            "Key": "Key65",
-            "Value": "Value84"
+            "Key": "Key70",
+            "Value": "Value70"
           }
         ]
       }
@@ -195,32 +195,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha2566
+    value: X-Amz-Content-Sha25691
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date61
+    value: X-Amz-Date79
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm7
+    value: X-Amz-Algorithm69
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential35
+    value: X-Amz-Credential31
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token78
+    value: X-Amz-Security-Token40
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature15
+    value: X-Amz-Signature21
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders65
+    value: X-Amz-SignedHeaders34
     disabled: false
   - name: Authorization
-    value: Authorization78
+    value: Authorization20
     disabled: false
   _type: request
-  _id: req_e34fc0c44edf41788c2e9b211764194d
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_1b02268741a941e9ba5a331f2c8e50f9
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.
 - name: CreateNamedQuery
   method: POST
@@ -229,12 +229,12 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "Name": "Name91",
-        "Database": "Database92",
-        "QueryString": "QueryString75",
-        "Description": "Description64",
-        "ClientRequestToken": "ClientRequestToken14ClientRequestToken14",
-        "WorkGroup": "WorkGroup25"
+        "Name": "Name83",
+        "Database": "Database19",
+        "QueryString": "QueryString54",
+        "Description": "Description12",
+        "ClientRequestToken": "ClientRequestToken18ClientRequestToken18",
+        "WorkGroup": "WorkGroup85"
       }
   headers:
   - name: X-Amz-Target
@@ -244,32 +244,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25684
+    value: X-Amz-Content-Sha25648
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date9
+    value: X-Amz-Date33
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm76
+    value: X-Amz-Algorithm86
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential34
+    value: X-Amz-Credential53
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token83
+    value: X-Amz-Security-Token14
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature50
+    value: X-Amz-Signature32
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders5
+    value: X-Amz-SignedHeaders84
     disabled: false
   - name: Authorization
-    value: Authorization8
+    value: Authorization24
     disabled: false
   _type: request
-  _id: req_4109cc6d951d46e5b9f650a5dbd153ba
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_a4eededb4c654e59a5de669aa3c71833
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 - name: CreateNotebook
   method: POST
@@ -278,9 +278,9 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup35",
-        "Name": "Name14",
-        "ClientRequestToken": "ClientRequestToken67"
+        "WorkGroup": "WorkGroup54",
+        "Name": "Name47",
+        "ClientRequestToken": "ClientRequestToken40"
       }
   headers:
   - name: X-Amz-Target
@@ -290,32 +290,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25681
+    value: X-Amz-Content-Sha25626
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date96
+    value: X-Amz-Date79
     disabled: false
   - name: X-Amz-Algorithm
     value: X-Amz-Algorithm79
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential20
+    value: X-Amz-Credential36
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token62
+    value: X-Amz-Security-Token90
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature88
+    value: X-Amz-Signature35
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders38
+    value: X-Amz-SignedHeaders91
     disabled: false
   - name: Authorization
-    value: Authorization37
+    value: Authorization68
     disabled: false
   _type: request
-  _id: req_338f548083ee4355a97ece0ef6550129
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_4682e4530baf4a67a765625e30cbb4a3
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists.
 - name: CreatePreparedStatement
   method: POST
@@ -324,10 +324,10 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "StatementName": "StatementName71",
-        "WorkGroup": "WorkGroup32",
-        "QueryStatement": "QueryStatement27",
-        "Description": "Description16"
+        "StatementName": "StatementName63",
+        "WorkGroup": "WorkGroup41",
+        "QueryStatement": "QueryStatement81",
+        "Description": "Description12"
       }
   headers:
   - name: X-Amz-Target
@@ -337,32 +337,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25650
+    value: X-Amz-Content-Sha25656
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date78
+    value: X-Amz-Date52
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm82
+    value: X-Amz-Algorithm56
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential82
+    value: X-Amz-Credential85
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token6
+    value: X-Amz-Security-Token82
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature32
+    value: X-Amz-Signature1
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders49
+    value: X-Amz-SignedHeaders29
     disabled: false
   - name: Authorization
-    value: Authorization31
+    value: Authorization28
     disabled: false
   _type: request
-  _id: req_e3ca8746eeae4ab5b720af81c1970026
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_77e53e6184994d42b0ee8f676ec9b8bc
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Creates a prepared statement for use with SQL queries in Athena.
 - name: CreatePresignedNotebookUrl
   method: POST
@@ -371,7 +371,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId15"
+        "SessionId": "SessionId72"
       }
   headers:
   - name: X-Amz-Target
@@ -381,32 +381,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25619
+    value: X-Amz-Content-Sha25674
     disabled: false
   - name: X-Amz-Date
     value: X-Amz-Date52
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm8
+    value: X-Amz-Algorithm63
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential53
+    value: X-Amz-Credential4
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token77
+    value: X-Amz-Security-Token49
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature5
+    value: X-Amz-Signature66
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders27
+    value: X-Amz-SignedHeaders32
     disabled: false
   - name: Authorization
-    value: Authorization81
+    value: Authorization85
     disabled: false
   _type: request
-  _id: req_b7138d306b3c4319a014693cd01aeda2
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_81f446dd2c514588b14651d163f0cc6f
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see <a href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant programmatic access</a>.
 - name: CreateWorkGroup
   method: POST
@@ -415,39 +415,39 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "Name": "Name79",
+        "Name": "Name47",
         "Configuration": {
           "ResultConfiguration": {
-            "OutputLocation": "OutputLocation58",
+            "OutputLocation": "OutputLocation98",
             "EncryptionConfiguration": {
-              "EncryptionOption": "SSE_KMS",
-              "KmsKey": "KmsKey51"
+              "EncryptionOption": "SSE_S3",
+              "KmsKey": "KmsKey76"
             },
-            "ExpectedBucketOwner": "ExpectedBu71",
+            "ExpectedBucketOwner": "ExpectedBu72",
             "AclConfiguration": {
               "S3AclOption": "BUCKET_OWNER_FULL_CONTROL"
             }
           },
-          "EnforceWorkGroupConfiguration": false,
-          "PublishCloudWatchMetricsEnabled": true,
+          "EnforceWorkGroupConfiguration": true,
+          "PublishCloudWatchMetricsEnabled": false,
           "BytesScannedCutoffPerQuery": 10000000,
-          "RequesterPaysEnabled": true,
+          "RequesterPaysEnabled": false,
           "EngineVersion": {
-            "SelectedEngineVersion": "SelectedEngineVersion47",
-            "EffectiveEngineVersion": "EffectiveEngineVersion0"
+            "SelectedEngineVersion": "SelectedEngineVersion3",
+            "EffectiveEngineVersion": "EffectiveEngineVersion11"
           },
-          "AdditionalConfiguration": "AdditionalConfiguration65",
-          "ExecutionRole": "ExecutionRole52ExecutionRole52",
+          "AdditionalConfiguration": "AdditionalConfiguration15",
+          "ExecutionRole": "ExecutionRole14ExecutionRole14",
           "CustomerContentEncryptionConfiguration": {
-            "KmsKey": "KmsKey94"
+            "KmsKey": "KmsKey69"
           },
-          "EnableMinimumEncryptionConfiguration": false
+          "EnableMinimumEncryptionConfiguration": true
         },
-        "Description": "Description27",
+        "Description": "Description92",
         "Tags": [
           {
-            "Key": "Key65",
-            "Value": "Value84"
+            "Key": "Key70",
+            "Value": "Value70"
           }
         ]
       }
@@ -459,32 +459,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25673
+    value: X-Amz-Content-Sha25681
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date48
+    value: X-Amz-Date1
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm22
+    value: X-Amz-Algorithm98
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential9
+    value: X-Amz-Credential33
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token57
+    value: X-Amz-Security-Token78
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature46
+    value: X-Amz-Signature27
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders96
+    value: X-Amz-SignedHeaders77
     disabled: false
   - name: Authorization
-    value: Authorization59
+    value: Authorization2
     disabled: false
   _type: request
-  _id: req_18396167b97749c8916d2e505c1afc9d
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_4a2db54609b04d78b239bfa8c92d2bdc
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup.
 - name: DeleteDataCatalog
   method: POST
@@ -493,7 +493,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "Name": "Name39"
+        "Name": "Name15"
       }
   headers:
   - name: X-Amz-Target
@@ -503,32 +503,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25634
+    value: X-Amz-Content-Sha25661
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date33
+    value: X-Amz-Date38
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm9
+    value: X-Amz-Algorithm35
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential27
+    value: X-Amz-Credential39
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token90
+    value: X-Amz-Security-Token10
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature50
+    value: X-Amz-Signature88
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders46
+    value: X-Amz-SignedHeaders41
     disabled: false
   - name: Authorization
-    value: Authorization70
+    value: Authorization90
     disabled: false
   _type: request
-  _id: req_cef3eef70d524d648ee1234f491a4658
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_db85cb867cd54045b7023e8359149591
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Deletes a data catalog.
 - name: DeleteNamedQuery
   method: POST
@@ -537,7 +537,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NamedQueryId": "NamedQueryId93"
+        "NamedQueryId": "NamedQueryId38"
       }
   headers:
   - name: X-Amz-Target
@@ -547,32 +547,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25612
+    value: X-Amz-Content-Sha25688
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date30
+    value: X-Amz-Date31
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm13
+    value: X-Amz-Algorithm81
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential31
+    value: X-Amz-Credential36
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token13
+    value: X-Amz-Security-Token8
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature80
+    value: X-Amz-Signature63
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders45
+    value: X-Amz-SignedHeaders59
     disabled: false
   - name: Authorization
-    value: Authorization87
+    value: Authorization63
     disabled: false
   _type: request
-  _id: req_3ee78f96f7294098a2fc49bd7cd27f8b
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_f76ca6b0f9564fde8c4865dcb60bd330
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Deletes the named query if you have access to the workgroup in which the query was saved.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 - name: DeleteNotebook
   method: POST
@@ -581,7 +581,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NotebookId": "NotebookId61"
+        "NotebookId": "NotebookId47"
       }
   headers:
   - name: X-Amz-Target
@@ -591,32 +591,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25671
+    value: X-Amz-Content-Sha25636
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date89
+    value: X-Amz-Date42
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm75
+    value: X-Amz-Algorithm18
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential46
+    value: X-Amz-Credential94
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token27
+    value: X-Amz-Security-Token5
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature97
+    value: X-Amz-Signature90
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders13
+    value: X-Amz-SignedHeaders73
     disabled: false
   - name: Authorization
-    value: Authorization98
+    value: Authorization64
     disabled: false
   _type: request
-  _id: req_4e774e1bec2b45e5aa568dff8833cabb
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_472485edf4484c2ca1a0fe9876e7be59
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Deletes the specified notebook.
 - name: DeletePreparedStatement
   method: POST
@@ -625,8 +625,8 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "StatementName": "StatementName92",
-        "WorkGroup": "WorkGroup50"
+        "StatementName": "StatementName62",
+        "WorkGroup": "WorkGroup53"
       }
   headers:
   - name: X-Amz-Target
@@ -636,32 +636,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25626
+    value: X-Amz-Content-Sha2563
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date58
+    value: X-Amz-Date26
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm23
+    value: X-Amz-Algorithm85
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential57
+    value: X-Amz-Credential24
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token87
+    value: X-Amz-Security-Token59
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature22
+    value: X-Amz-Signature80
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders29
+    value: X-Amz-SignedHeaders57
     disabled: false
   - name: Authorization
-    value: Authorization60
+    value: Authorization92
     disabled: false
   _type: request
-  _id: req_9135b02c01174c57b33ecf1cb7750b33
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_2fe72abbf0814c5fbf48ccd801ed9292
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Deletes the prepared statement with the specified name from the specified workgroup.
 - name: DeleteWorkGroup
   method: POST
@@ -670,8 +670,8 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup79",
-        "RecursiveDeleteOption": true
+        "WorkGroup": "WorkGroup44",
+        "RecursiveDeleteOption": false
       }
   headers:
   - name: X-Amz-Target
@@ -681,32 +681,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25669
+    value: X-Amz-Content-Sha25634
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date66
+    value: X-Amz-Date41
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm72
+    value: X-Amz-Algorithm7
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential39
+    value: X-Amz-Credential53
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token31
+    value: X-Amz-Security-Token16
     disabled: false
   - name: X-Amz-Signature
     value: X-Amz-Signature94
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders5
+    value: X-Amz-SignedHeaders10
     disabled: false
   - name: Authorization
-    value: Authorization50
+    value: Authorization0
     disabled: false
   _type: request
-  _id: req_df32594d8ccc4ab09ec693588c0f689d
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_579899d0b9894fbbb94e5e323fb8e4ba
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
 - name: ExportNotebook
   method: POST
@@ -715,7 +715,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NotebookId": "NotebookId56"
+        "NotebookId": "NotebookId52"
       }
   headers:
   - name: X-Amz-Target
@@ -725,32 +725,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25696
+    value: X-Amz-Content-Sha25659
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date63
+    value: X-Amz-Date4
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm55
+    value: X-Amz-Algorithm94
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential67
+    value: X-Amz-Credential93
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token51
+    value: X-Amz-Security-Token87
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature75
+    value: X-Amz-Signature65
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders91
+    value: X-Amz-SignedHeaders55
     disabled: false
   - name: Authorization
-    value: Authorization2
+    value: Authorization55
     disabled: false
   _type: request
-  _id: req_6475ad7d2a51477c9baa2a9fe4390d26
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_c42b32c685ba46cc8cb14500d329bd6c
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Exports the specified notebook and its metadata.
 - name: GetCalculationExecution
   method: POST
@@ -759,7 +759,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CalculationExecutionId": "CalculationExecutionId13"
+        "CalculationExecutionId": "CalculationExecutionId16"
       }
   headers:
   - name: X-Amz-Target
@@ -769,32 +769,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25668
+    value: X-Amz-Content-Sha25661
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date54
+    value: X-Amz-Date55
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm6
+    value: X-Amz-Algorithm53
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential44
+    value: X-Amz-Credential56
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token82
+    value: X-Amz-Security-Token81
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature57
+    value: X-Amz-Signature87
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders32
+    value: X-Amz-SignedHeaders93
     disabled: false
   - name: Authorization
-    value: Authorization35
+    value: Authorization31
     disabled: false
   _type: request
-  _id: req_cd3cfdcd5ae14e90860cb2a156455bcd
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_6523fafa4e6e4d99b367fde21ffd28dc
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Describes a previously submitted calculation execution.
 - name: GetCalculationExecutionCode
   method: POST
@@ -803,7 +803,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CalculationExecutionId": "CalculationExecutionId8"
+        "CalculationExecutionId": "CalculationExecutionId35"
       }
   headers:
   - name: X-Amz-Target
@@ -813,32 +813,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25623
+    value: X-Amz-Content-Sha25693
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date28
+    value: X-Amz-Date74
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm18
+    value: X-Amz-Algorithm12
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential1
+    value: X-Amz-Credential51
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token58
+    value: X-Amz-Security-Token19
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature42
+    value: X-Amz-Signature92
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders25
+    value: X-Amz-SignedHeaders37
     disabled: false
   - name: Authorization
-    value: Authorization38
+    value: Authorization33
     disabled: false
   _type: request
-  _id: req_cc09bc7b53184aee833d40a190041390
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_7186cce424674d46956d485074c75afa
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Retrieves the unencrypted code that was executed for the calculation.
 - name: GetCalculationExecutionStatus
   method: POST
@@ -847,7 +847,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CalculationExecutionId": "CalculationExecutionId75"
+        "CalculationExecutionId": "CalculationExecutionId5"
       }
   headers:
   - name: X-Amz-Target
@@ -857,32 +857,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25622
+    value: X-Amz-Content-Sha25635
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date80
+    value: X-Amz-Date88
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm2
+    value: X-Amz-Algorithm58
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential20
+    value: X-Amz-Credential97
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token90
+    value: X-Amz-Security-Token57
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature97
+    value: X-Amz-Signature98
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders72
+    value: X-Amz-SignedHeaders53
     disabled: false
   - name: Authorization
-    value: Authorization48
+    value: Authorization44
     disabled: false
   _type: request
-  _id: req_58b9b6623d3f4d40a310f10d9394a5d2
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_90012ebb4cbc44c7bce7d905bbd067f2
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Gets the status of a current calculation.
 - name: GetDataCatalog
   method: POST
@@ -891,7 +891,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "Name": "Name77"
+        "Name": "Name55"
       }
   headers:
   - name: X-Amz-Target
@@ -901,32 +901,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25625
+    value: X-Amz-Content-Sha25648
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date54
+    value: X-Amz-Date45
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm8
+    value: X-Amz-Algorithm91
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential91
+    value: X-Amz-Credential89
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token81
+    value: X-Amz-Security-Token58
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature39
+    value: X-Amz-Signature70
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders71
+    value: X-Amz-SignedHeaders80
     disabled: false
   - name: Authorization
-    value: Authorization24
+    value: Authorization88
     disabled: false
   _type: request
-  _id: req_4302f0ccbefb4fe3818ddea4cfb50513
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_f3265bf099d94de0b910a5d73947ef0e
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns the specified data catalog.
 - name: GetDatabase
   method: POST
@@ -935,8 +935,8 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CatalogName": "CatalogName45",
-        "DatabaseName": "DatabaseName75"
+        "CatalogName": "CatalogName2",
+        "DatabaseName": "DatabaseName12"
       }
   headers:
   - name: X-Amz-Target
@@ -946,32 +946,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25650
+    value: X-Amz-Content-Sha2565
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date30
+    value: X-Amz-Date29
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm47
+    value: X-Amz-Algorithm43
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential16
+    value: X-Amz-Credential54
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token83
+    value: X-Amz-Security-Token84
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature98
+    value: X-Amz-Signature87
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders25
+    value: X-Amz-SignedHeaders83
     disabled: false
   - name: Authorization
-    value: Authorization76
+    value: Authorization90
     disabled: false
   _type: request
-  _id: req_5cfc108e5f25476c9f947b7b22e1d584
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_45957ec51b7b4a8399725db1a3823276
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns a database object for the specified database and data catalog.
 - name: GetNamedQuery
   method: POST
@@ -980,7 +980,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NamedQueryId": "NamedQueryId17"
+        "NamedQueryId": "NamedQueryId45"
       }
   headers:
   - name: X-Amz-Target
@@ -990,32 +990,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25676
+    value: X-Amz-Content-Sha25665
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date32
+    value: X-Amz-Date97
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm79
+    value: X-Amz-Algorithm65
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential3
+    value: X-Amz-Credential7
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token36
+    value: X-Amz-Security-Token49
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature42
+    value: X-Amz-Signature23
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders25
+    value: X-Amz-SignedHeaders67
     disabled: false
   - name: Authorization
-    value: Authorization50
+    value: Authorization93
     disabled: false
   _type: request
-  _id: req_1072e29c60aa441598ceed5953cf92d4
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_0562aed9fe174944bf3add744a4f093c
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns information about a single query. Requires that you have access to the workgroup in which the query was saved.
 - name: GetNotebookMetadata
   method: POST
@@ -1024,7 +1024,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NotebookId": "NotebookId91"
+        "NotebookId": "NotebookId48"
       }
   headers:
   - name: X-Amz-Target
@@ -1034,32 +1034,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25610
+    value: X-Amz-Content-Sha25614
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date75
+    value: X-Amz-Date42
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm43
+    value: X-Amz-Algorithm11
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential68
+    value: X-Amz-Credential11
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token92
+    value: X-Amz-Security-Token27
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature85
+    value: X-Amz-Signature18
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders51
+    value: X-Amz-SignedHeaders6
     disabled: false
   - name: Authorization
-    value: Authorization60
+    value: Authorization94
     disabled: false
   _type: request
-  _id: req_65c1e5bde2e342dfb763039e5788873f
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_e22f72975c084d478cdb4f93ec593b18
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Retrieves notebook metadata for the specified notebook ID.
 - name: GetPreparedStatement
   method: POST
@@ -1068,8 +1068,8 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "StatementName": "StatementName22",
-        "WorkGroup": "WorkGroup34"
+        "StatementName": "StatementName86",
+        "WorkGroup": "WorkGroup19"
       }
   headers:
   - name: X-Amz-Target
@@ -1079,32 +1079,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25697
+    value: X-Amz-Content-Sha25690
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date11
+    value: X-Amz-Date77
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm94
+    value: X-Amz-Algorithm64
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential95
+    value: X-Amz-Credential4
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token37
+    value: X-Amz-Security-Token12
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature96
+    value: X-Amz-Signature95
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders13
+    value: X-Amz-SignedHeaders48
     disabled: false
   - name: Authorization
-    value: Authorization21
+    value: Authorization65
     disabled: false
   _type: request
-  _id: req_ba42b52b75dc4fcfb49c3fa292f7626e
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_b9cc8516ddfa425082cf688e9d2fdf3d
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Retrieves the prepared statement with the specified name from the specified workgroup.
 - name: GetQueryExecution
   method: POST
@@ -1113,7 +1113,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "QueryExecutionId": "QueryExecutionId0"
+        "QueryExecutionId": "QueryExecutionId48"
       }
   headers:
   - name: X-Amz-Target
@@ -1123,32 +1123,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25683
+    value: X-Amz-Content-Sha25630
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date85
+    value: X-Amz-Date40
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm5
+    value: X-Amz-Algorithm76
     disabled: false
   - name: X-Amz-Credential
     value: X-Amz-Credential59
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token95
+    value: X-Amz-Security-Token5
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature61
+    value: X-Amz-Signature42
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders76
+    value: X-Amz-SignedHeaders79
     disabled: false
   - name: Authorization
-    value: Authorization21
+    value: Authorization46
     disabled: false
   _type: request
-  _id: req_d2b123b8adc74e618f330c8d29a8b64b
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_76e0ddba130542918e14fefac5b033d4
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID.
 - name: GetQueryResults
   method: POST
@@ -1157,16 +1157,16 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "QueryExecutionId": "QueryExecutionId87",
-        "NextToken": "NextToken48",
-        "MaxResults": 220
+        "QueryExecutionId": "QueryExecutionId51",
+        "NextToken": "NextToken25",
+        "MaxResults": 954
       }
   parameters:
   - name: MaxResults
-    value: MaxResults3
+    value: MaxResults56
     disabled: false
   - name: NextToken
-    value: NextToken80
+    value: NextToken6
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1176,32 +1176,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25690
+    value: X-Amz-Content-Sha25611
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date71
+    value: X-Amz-Date94
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm1
+    value: X-Amz-Algorithm50
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential13
+    value: X-Amz-Credential45
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token77
+    value: X-Amz-Security-Token3
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature59
+    value: X-Amz-Signature45
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders52
+    value: X-Amz-SignedHeaders97
     disabled: false
   - name: Authorization
-    value: Authorization82
+    value: Authorization94
     disabled: false
   _type: request
-  _id: req_87d755683e574b02bfd1d1b742e263af
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_825a71ff263d427fa8ff39c4770cf3d7
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query results location in Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.</p> <p>To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code> also must have permissions to the Amazon S3 <code>GetObject</code> action for the Athena query results location.</p> <important> <p>IAM principals with permission to the Amazon S3 <code>GetObject</code> action for the query results location are able to retrieve query results from Amazon S3 even if permission to the <code>GetQueryResults</code> action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena query location are denied.</p> </important>
 - name: GetQueryRuntimeStatistics
   method: POST
@@ -1210,7 +1210,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "QueryExecutionId": "QueryExecutionId96"
+        "QueryExecutionId": "QueryExecutionId76"
       }
   headers:
   - name: X-Amz-Target
@@ -1220,32 +1220,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25664
+    value: X-Amz-Content-Sha25681
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date50
+    value: X-Amz-Date7
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm52
+    value: X-Amz-Algorithm74
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential3
+    value: X-Amz-Credential76
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token87
+    value: X-Amz-Security-Token52
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature50
+    value: X-Amz-Signature18
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders71
+    value: X-Amz-SignedHeaders14
     disabled: false
   - name: Authorization
-    value: Authorization0
+    value: Authorization22
     disabled: false
   _type: request
-  _id: req_919140d55b8d43a7b7d86e34dc5a9225
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_862c8bc0c0e34812860647fa9212382f
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation.
 - name: GetSession
   method: POST
@@ -1254,7 +1254,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId38"
+        "SessionId": "SessionId50"
       }
   headers:
   - name: X-Amz-Target
@@ -1264,32 +1264,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25617
+    value: X-Amz-Content-Sha25657
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date71
+    value: X-Amz-Date79
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm11
+    value: X-Amz-Algorithm46
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential79
+    value: X-Amz-Credential42
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token81
+    value: X-Amz-Security-Token66
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature34
+    value: X-Amz-Signature70
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders98
+    value: X-Amz-SignedHeaders47
     disabled: false
   - name: Authorization
-    value: Authorization20
+    value: Authorization31
     disabled: false
   _type: request
-  _id: req_1f6d8041ef96447a8d46d56bef9d1b78
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_cd39a23b8db44c0c9bc76028f71bff28
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Gets the full details of a previously created session, including the session status and configuration.
 - name: GetSessionStatus
   method: POST
@@ -1298,7 +1298,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId14"
+        "SessionId": "SessionId35"
       }
   headers:
   - name: X-Amz-Target
@@ -1308,32 +1308,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25644
+    value: X-Amz-Content-Sha25681
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date9
+    value: X-Amz-Date62
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm69
+    value: X-Amz-Algorithm63
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential84
+    value: X-Amz-Credential83
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token82
+    value: X-Amz-Security-Token90
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature1
+    value: X-Amz-Signature71
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders26
+    value: X-Amz-SignedHeaders47
     disabled: false
   - name: Authorization
-    value: Authorization87
+    value: Authorization84
     disabled: false
   _type: request
-  _id: req_55e13b22fd3c4ca8abd16e586fff7aa9
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_3727172e3efe4753a0275f450ec3c9f5
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Gets the current status of a session.
 - name: GetTableMetadata
   method: POST
@@ -1342,9 +1342,9 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CatalogName": "CatalogName40",
-        "DatabaseName": "DatabaseName72",
-        "TableName": "TableName85"
+        "CatalogName": "CatalogName43",
+        "DatabaseName": "DatabaseName35",
+        "TableName": "TableName88"
       }
   headers:
   - name: X-Amz-Target
@@ -1354,32 +1354,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha2566
+    value: X-Amz-Content-Sha25651
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date65
+    value: X-Amz-Date71
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm69
+    value: X-Amz-Algorithm57
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential76
+    value: X-Amz-Credential65
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token36
+    value: X-Amz-Security-Token0
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature62
+    value: X-Amz-Signature61
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders64
+    value: X-Amz-SignedHeaders55
     disabled: false
   - name: Authorization
-    value: Authorization47
+    value: Authorization59
     disabled: false
   _type: request
-  _id: req_960e08b1b32d408597222aac17283215
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_9b84dec676ec473ebcc6017ae69868c4
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns table metadata for the specified catalog, database, and table.
 - name: GetWorkGroup
   method: POST
@@ -1388,7 +1388,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup28"
+        "WorkGroup": "WorkGroup27"
       }
   headers:
   - name: X-Amz-Target
@@ -1398,32 +1398,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25617
+    value: X-Amz-Content-Sha25673
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date71
+    value: X-Amz-Date82
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm60
+    value: X-Amz-Algorithm5
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential61
+    value: X-Amz-Credential0
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token51
+    value: X-Amz-Security-Token4
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature0
+    value: X-Amz-Signature66
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders82
+    value: X-Amz-SignedHeaders39
     disabled: false
   - name: Authorization
-    value: Authorization91
+    value: Authorization30
     disabled: false
   _type: request
-  _id: req_27e5e1631fd244caaab8f9fe1021b2f5
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_26b74e0296034fb48af3d508fc52f43f
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns information about the workgroup with the specified name.
 - name: ImportNotebook
   method: POST
@@ -1432,11 +1432,11 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup43",
-        "Name": "Name54",
-        "Payload": "Payload83",
+        "WorkGroup": "WorkGroup63",
+        "Name": "Name10",
+        "Payload": "Payload67",
         "Type": "IPYNB",
-        "ClientRequestToken": "ClientRequestToken13"
+        "ClientRequestToken": "ClientRequestToken50"
       }
   headers:
   - name: X-Amz-Target
@@ -1446,32 +1446,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25628
+    value: X-Amz-Content-Sha25691
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date26
+    value: X-Amz-Date11
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm92
+    value: X-Amz-Algorithm55
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential80
+    value: X-Amz-Credential41
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token73
+    value: X-Amz-Security-Token55
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature25
+    value: X-Amz-Signature52
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders61
+    value: X-Amz-SignedHeaders37
     disabled: false
   - name: Authorization
-    value: Authorization68
+    value: Authorization56
     disabled: false
   _type: request
-  _id: req_35f9733dca1f49ec8aaee3484083b56b
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_d587e8a45d8d43d9a4d06ef592995a64
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.
 - name: ListApplicationDPUSizes
   method: POST
@@ -1480,15 +1480,15 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "MaxResults": 15,
-        "NextToken": "NextToken57"
+        "MaxResults": 59,
+        "NextToken": "NextToken44"
       }
   parameters:
   - name: MaxResults
-    value: MaxResults53
+    value: MaxResults80
     disabled: false
   - name: NextToken
-    value: NextToken54
+    value: NextToken79
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1498,32 +1498,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25676
+    value: X-Amz-Content-Sha25688
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date72
+    value: X-Amz-Date7
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm77
+    value: X-Amz-Algorithm82
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential52
+    value: X-Amz-Credential21
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token24
+    value: X-Amz-Security-Token45
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature73
+    value: X-Amz-Signature92
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders98
+    value: X-Amz-SignedHeaders31
     disabled: false
   - name: Authorization
-    value: Authorization72
+    value: Authorization19
     disabled: false
   _type: request
-  _id: req_99af2a37b1d7400594e97f31bfa84f6b
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_9a1755ab04564720b4541868a58ea523
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: 'Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>). '
 - name: ListCalculationExecutions
   method: POST
@@ -1532,14 +1532,14 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId98",
-        "StateFilter": "RUNNING",
-        "MaxResults": 53,
-        "NextToken": "NextToken4"
+        "SessionId": "SessionId85",
+        "StateFilter": "CANCELING",
+        "MaxResults": 57,
+        "NextToken": "NextToken60"
       }
   parameters:
   - name: MaxResults
-    value: MaxResults57
+    value: MaxResults15
     disabled: false
   - name: NextToken
     value: NextToken23
@@ -1552,32 +1552,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25688
+    value: X-Amz-Content-Sha2561
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date83
+    value: X-Amz-Date56
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm98
+    value: X-Amz-Algorithm57
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential13
+    value: X-Amz-Credential60
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token92
+    value: X-Amz-Security-Token59
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature13
+    value: X-Amz-Signature10
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders63
+    value: X-Amz-SignedHeaders24
     disabled: false
   - name: Authorization
-    value: Authorization85
+    value: Authorization90
     disabled: false
   _type: request
-  _id: req_8beccd0c520a4a5080df362a98681b92
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_2e13294f31a749bf88ed5174dc4bf629
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later.
 - name: ListDataCatalogs
   method: POST
@@ -1586,15 +1586,15 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NextToken": "NextToken81",
-        "MaxResults": 2
+        "NextToken": "NextToken17",
+        "MaxResults": 44
       }
   parameters:
   - name: MaxResults
-    value: MaxResults92
+    value: MaxResults70
     disabled: false
   - name: NextToken
-    value: NextToken5
+    value: NextToken31
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1604,32 +1604,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25680
+    value: X-Amz-Content-Sha25689
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date13
+    value: X-Amz-Date1
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm4
+    value: X-Amz-Algorithm59
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential47
+    value: X-Amz-Credential65
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token9
+    value: X-Amz-Security-Token89
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature59
+    value: X-Amz-Signature95
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders63
+    value: X-Amz-SignedHeaders13
     disabled: false
   - name: Authorization
-    value: Authorization19
+    value: Authorization40
     disabled: false
   _type: request
-  _id: req_89680e83c4c84524913dc9e06c531f98
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_b7f9023cb8f644fcb73303fe8567a40d
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Lists the data catalogs in the current Amazon Web Services account.</p> <note> <p>In the Athena console, data catalogs are listed as "data sources" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p> </note>
 - name: ListDatabases
   method: POST
@@ -1638,16 +1638,16 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CatalogName": "CatalogName61",
-        "NextToken": "NextToken4",
-        "MaxResults": 11
+        "CatalogName": "CatalogName30",
+        "NextToken": "NextToken59",
+        "MaxResults": 25
       }
   parameters:
   - name: MaxResults
-    value: MaxResults0
+    value: MaxResults15
     disabled: false
   - name: NextToken
-    value: NextToken79
+    value: NextToken30
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1657,32 +1657,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25630
+    value: X-Amz-Content-Sha25678
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date0
+    value: X-Amz-Date11
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm41
+    value: X-Amz-Algorithm94
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential40
+    value: X-Amz-Credential81
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token19
+    value: X-Amz-Security-Token29
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature3
+    value: X-Amz-Signature61
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders8
+    value: X-Amz-SignedHeaders55
     disabled: false
   - name: Authorization
-    value: Authorization29
+    value: Authorization74
     disabled: false
   _type: request
-  _id: req_90c3c7c3e6234ba988f2b02fedf54bcd
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_e41ea7e451b9421588b88822b235bd04
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists the databases in the specified data catalog.
 - name: ListEngineVersions
   method: POST
@@ -1691,15 +1691,15 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NextToken": "NextToken95",
-        "MaxResults": 2
+        "NextToken": "NextToken76",
+        "MaxResults": 5
       }
   parameters:
   - name: MaxResults
-    value: MaxResults29
+    value: MaxResults32
     disabled: false
   - name: NextToken
-    value: NextToken82
+    value: NextToken10
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1709,32 +1709,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25688
+    value: X-Amz-Content-Sha25622
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date28
+    value: X-Amz-Date20
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm77
+    value: X-Amz-Algorithm24
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential78
+    value: X-Amz-Credential96
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token61
+    value: X-Amz-Security-Token85
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature5
+    value: X-Amz-Signature87
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders9
+    value: X-Amz-SignedHeaders51
     disabled: false
   - name: Authorization
-    value: Authorization37
+    value: Authorization86
     disabled: false
   _type: request
-  _id: req_931005bb68de4fda97494ed023e7b046
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_deb2477868f24d3099c82dac14ea9dd5
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Returns a list of engine versions that are available to choose from, including the Auto option.
 - name: ListExecutors
   method: POST
@@ -1743,17 +1743,17 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId37",
-        "ExecutorStateFilter": "CREATED",
-        "MaxResults": 57,
-        "NextToken": "NextToken93"
+        "SessionId": "SessionId41",
+        "ExecutorStateFilter": "TERMINATED",
+        "MaxResults": 92,
+        "NextToken": "NextToken52"
       }
   parameters:
   - name: MaxResults
-    value: MaxResults9
+    value: MaxResults94
     disabled: false
   - name: NextToken
-    value: NextToken97
+    value: NextToken91
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1763,32 +1763,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25651
+    value: X-Amz-Content-Sha25674
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date62
+    value: X-Amz-Date50
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm61
+    value: X-Amz-Algorithm34
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential66
+    value: X-Amz-Credential95
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token68
+    value: X-Amz-Security-Token79
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature65
+    value: X-Amz-Signature0
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders20
+    value: X-Amz-SignedHeaders51
     disabled: false
   - name: Authorization
-    value: Authorization89
+    value: Authorization75
     disabled: false
   _type: request
-  _id: req_8a2fb6fab10841ff8f5307681468d947
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_e19022fbaa62465a82c2af64305be87e
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists, in descending order, the executors that joined a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state.
 - name: ListNamedQueries
   method: POST
@@ -1797,16 +1797,16 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NextToken": "NextToken4",
-        "MaxResults": 9,
-        "WorkGroup": "WorkGroup24"
+        "NextToken": "NextToken58",
+        "MaxResults": 4,
+        "WorkGroup": "WorkGroup75"
       }
   parameters:
   - name: MaxResults
-    value: MaxResults35
+    value: MaxResults66
     disabled: false
   - name: NextToken
-    value: NextToken89
+    value: NextToken74
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1816,32 +1816,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25617
+    value: X-Amz-Content-Sha25667
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date81
+    value: X-Amz-Date57
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm78
+    value: X-Amz-Algorithm67
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential69
+    value: X-Amz-Credential5
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token22
+    value: X-Amz-Security-Token47
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature71
+    value: X-Amz-Signature0
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders30
+    value: X-Amz-SignedHeaders38
     disabled: false
   - name: Authorization
-    value: Authorization53
+    value: Authorization83
     disabled: false
   _type: request
-  _id: req_4f9dce4e68e2409db5eb80007bc65c8d
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_c3c3a580d69e4de5ba0fdab1dd962d9c
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 - name: ListNotebookMetadata
   method: POST
@@ -1850,12 +1850,12 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup16",
+        "WorkGroup": "WorkGroup82",
         "Filters": {
-          "Name": "Name31"
+          "Name": "Name35"
         },
-        "NextToken": "NextToken16",
-        "MaxResults": 5
+        "NextToken": "NextToken12",
+        "MaxResults": 20
       }
   headers:
   - name: X-Amz-Target
@@ -1865,32 +1865,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25697
+    value: X-Amz-Content-Sha25668
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date66
+    value: X-Amz-Date41
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm9
+    value: X-Amz-Algorithm64
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential79
+    value: X-Amz-Credential30
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token6
+    value: X-Amz-Security-Token19
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature45
+    value: X-Amz-Signature71
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders22
+    value: X-Amz-SignedHeaders76
     disabled: false
   - name: Authorization
-    value: Authorization85
+    value: Authorization90
     disabled: false
   _type: request
-  _id: req_2eab8413a7844fb1bd1ef2d3e9a34170
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_394c87ed4a6b437e89d15c691d4ce13b
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Displays the notebook files for the specified workgroup in paginated format.
 - name: ListNotebookSessions
   method: POST
@@ -1899,9 +1899,9 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NotebookId": "NotebookId41",
-        "MaxResults": 76,
-        "NextToken": "NextToken19"
+        "NotebookId": "NotebookId98",
+        "MaxResults": 63,
+        "NextToken": "NextToken21"
       }
   headers:
   - name: X-Amz-Target
@@ -1911,32 +1911,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25670
+    value: X-Amz-Content-Sha25680
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date21
+    value: X-Amz-Date48
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm91
+    value: X-Amz-Algorithm20
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential18
+    value: X-Amz-Credential27
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token70
+    value: X-Amz-Security-Token75
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature38
+    value: X-Amz-Signature5
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders77
+    value: X-Amz-SignedHeaders48
     disabled: false
   - name: Authorization
-    value: Authorization28
+    value: Authorization9
     disabled: false
   _type: request
-  _id: req_00aaca0b4a344d9d90fea13ad440b5e8
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_c19df5d54d2f473eb67e6924a802ffd5
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists, in descending order, the sessions that have been created in a notebook that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
 - name: ListPreparedStatements
   method: POST
@@ -1945,16 +1945,16 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup36",
-        "NextToken": "NextToken87",
-        "MaxResults": 35
+        "WorkGroup": "WorkGroup49",
+        "NextToken": "NextToken96",
+        "MaxResults": 29
       }
   parameters:
   - name: MaxResults
-    value: MaxResults0
+    value: MaxResults32
     disabled: false
   - name: NextToken
-    value: NextToken83
+    value: NextToken82
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -1964,32 +1964,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25610
+    value: X-Amz-Content-Sha25672
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date38
+    value: X-Amz-Date42
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm84
+    value: X-Amz-Algorithm82
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential8
+    value: X-Amz-Credential34
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token69
+    value: X-Amz-Security-Token52
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature39
+    value: X-Amz-Signature57
     disabled: false
   - name: X-Amz-SignedHeaders
     value: X-Amz-SignedHeaders44
     disabled: false
   - name: Authorization
-    value: Authorization7
+    value: Authorization64
     disabled: false
   _type: request
-  _id: req_2204ea937221482a819d60dcc845caa3
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_4e76b6abfd954515b2b5da52ef08a661
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists the prepared statements in the specified workgroup.
 - name: ListQueryExecutions
   method: POST
@@ -1998,16 +1998,16 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NextToken": "NextToken72",
-        "MaxResults": 5,
-        "WorkGroup": "WorkGroup71"
+        "NextToken": "NextToken31",
+        "MaxResults": 39,
+        "WorkGroup": "WorkGroup4"
       }
   parameters:
   - name: MaxResults
-    value: MaxResults50
+    value: MaxResults25
     disabled: false
   - name: NextToken
-    value: NextToken24
+    value: NextToken94
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -2017,32 +2017,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25664
+    value: X-Amz-Content-Sha25690
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date92
+    value: X-Amz-Date32
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm25
+    value: X-Amz-Algorithm76
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential83
+    value: X-Amz-Credential35
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token0
+    value: X-Amz-Security-Token38
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature32
+    value: X-Amz-Signature68
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders67
+    value: X-Amz-SignedHeaders46
     disabled: false
   - name: Authorization
-    value: Authorization20
+    value: Authorization52
     disabled: false
   _type: request
-  _id: req_0c6e324c152c413ca9fcdbe0d4da2417
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_779dbe5a8641464999ea86cf502284f9
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 - name: ListSessions
   method: POST
@@ -2051,17 +2051,17 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup85",
-        "StateFilter": "DEGRADED",
-        "MaxResults": 28,
-        "NextToken": "NextToken63"
+        "WorkGroup": "WorkGroup27",
+        "StateFilter": "BUSY",
+        "MaxResults": 74,
+        "NextToken": "NextToken73"
       }
   parameters:
   - name: MaxResults
-    value: MaxResults12
+    value: MaxResults39
     disabled: false
   - name: NextToken
-    value: NextToken47
+    value: NextToken17
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -2071,32 +2071,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25689
+    value: X-Amz-Content-Sha25625
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date2
+    value: X-Amz-Date3
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm13
+    value: X-Amz-Algorithm61
     disabled: false
   - name: X-Amz-Credential
     value: X-Amz-Credential79
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token19
+    value: X-Amz-Security-Token77
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature47
+    value: X-Amz-Signature10
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders47
+    value: X-Amz-SignedHeaders96
     disabled: false
   - name: Authorization
-    value: Authorization45
+    value: Authorization77
     disabled: false
   _type: request
-  _id: req_e271f4af59a34ed99b42c72d4adc8071
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_57a481f0346840858c7da78535e3e509
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
 - name: ListTableMetadata
   method: POST
@@ -2105,18 +2105,18 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CatalogName": "CatalogName44",
-        "DatabaseName": "DatabaseName9",
-        "Expression": "Expression3",
-        "NextToken": "NextToken19",
-        "MaxResults": 28
+        "CatalogName": "CatalogName63",
+        "DatabaseName": "DatabaseName44",
+        "Expression": "Expression52",
+        "NextToken": "NextToken70",
+        "MaxResults": 18
       }
   parameters:
   - name: MaxResults
-    value: MaxResults54
+    value: MaxResults58
     disabled: false
   - name: NextToken
-    value: NextToken64
+    value: NextToken87
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -2126,32 +2126,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25660
+    value: X-Amz-Content-Sha25666
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date28
+    value: X-Amz-Date71
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm92
+    value: X-Amz-Algorithm61
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential12
+    value: X-Amz-Credential82
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token34
+    value: X-Amz-Security-Token14
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature15
+    value: X-Amz-Signature69
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders95
+    value: X-Amz-SignedHeaders42
     disabled: false
   - name: Authorization
-    value: Authorization97
+    value: Authorization28
     disabled: false
   _type: request
-  _id: req_8b04940c4f284dee90f1c6f373ad8185
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_fbc8d08051dd45a2a96321f73adeefaa
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists the metadata for the tables in the specified data catalog database.
 - name: ListTagsForResource
   method: POST
@@ -2160,16 +2160,16 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "ResourceARN": "ResourceARN92",
-        "NextToken": "NextToken41",
-        "MaxResults": 102
+        "ResourceARN": "ResourceARN64",
+        "NextToken": "NextToken25",
+        "MaxResults": 241
       }
   parameters:
   - name: MaxResults
-    value: MaxResults49
+    value: MaxResults53
     disabled: false
   - name: NextToken
-    value: NextToken32
+    value: NextToken35
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -2179,32 +2179,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25665
+    value: X-Amz-Content-Sha2561
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date39
+    value: X-Amz-Date19
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm77
+    value: X-Amz-Algorithm47
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential27
+    value: X-Amz-Credential25
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token37
+    value: X-Amz-Security-Token65
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature74
+    value: X-Amz-Signature21
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders44
+    value: X-Amz-SignedHeaders5
     disabled: false
   - name: Authorization
-    value: Authorization55
+    value: Authorization88
     disabled: false
   _type: request
-  _id: req_c3ca0c05ac434a91b54ddce82ac4f188
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_313c0ccfe88a44d49f8de00f16b87bcc
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists the tags associated with an Athena workgroup or data catalog resource.
 - name: ListWorkGroups
   method: POST
@@ -2213,15 +2213,15 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NextToken": "NextToken23",
-        "MaxResults": 27
+        "NextToken": "NextToken73",
+        "MaxResults": 18
       }
   parameters:
   - name: MaxResults
-    value: MaxResults30
+    value: MaxResults80
     disabled: false
   - name: NextToken
-    value: NextToken63
+    value: NextToken69
     disabled: false
   headers:
   - name: X-Amz-Target
@@ -2231,32 +2231,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25663
+    value: X-Amz-Content-Sha25653
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date93
+    value: X-Amz-Date19
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm55
+    value: X-Amz-Algorithm39
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential7
+    value: X-Amz-Credential31
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token34
+    value: X-Amz-Security-Token64
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature88
+    value: X-Amz-Signature83
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders69
+    value: X-Amz-SignedHeaders92
     disabled: false
   - name: Authorization
-    value: Authorization17
+    value: Authorization68
     disabled: false
   _type: request
-  _id: req_b4565b890e9e45dfb0a9d40db2cfa8c6
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_e823fe9b396347c19ee3f84626da8c5d
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Lists available workgroups for the account.
 - name: StartCalculationExecution
   method: POST
@@ -2265,13 +2265,13 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId34",
-        "Description": "Description23",
+        "SessionId": "SessionId19",
+        "Description": "Description84",
         "CalculationConfiguration": {
-          "CodeBlock": "CodeBlock19"
+          "CodeBlock": "CodeBlock32"
         },
-        "CodeBlock": "CodeBlock59",
-        "ClientRequestToken": "ClientRequestToken97ClientRequestToken97"
+        "CodeBlock": "CodeBlock44",
+        "ClientRequestToken": "ClientRequestToken85ClientRequestToken85"
       }
   headers:
   - name: X-Amz-Target
@@ -2281,32 +2281,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25676
+    value: X-Amz-Content-Sha25693
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date68
+    value: X-Amz-Date60
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm45
+    value: X-Amz-Algorithm39
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential53
+    value: X-Amz-Credential36
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token62
+    value: X-Amz-Security-Token48
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature88
+    value: X-Amz-Signature73
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders72
+    value: X-Amz-SignedHeaders48
     disabled: false
   - name: Authorization
-    value: Authorization20
+    value: Authorization46
     disabled: false
   _type: request
-  _id: req_b1ce4d9a78ac4dd5873be9f8b88d2ee3
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_b001f497aae848a7a383c80b1de27349
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.
 - name: StartQueryExecution
   method: POST
@@ -2315,31 +2315,31 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "QueryString": "QueryString89",
-        "ClientRequestToken": "ClientRequestToken4ClientRequestToken4",
+        "QueryString": "QueryString45",
+        "ClientRequestToken": "ClientRequestToken63ClientRequestToken63",
         "QueryExecutionContext": {
-          "Database": "Database96",
-          "Catalog": "Catalog38"
+          "Database": "Database58",
+          "Catalog": "Catalog15"
         },
         "ResultConfiguration": {
-          "OutputLocation": "OutputLocation58",
+          "OutputLocation": "OutputLocation98",
           "EncryptionConfiguration": {
-            "EncryptionOption": "SSE_KMS",
-            "KmsKey": "KmsKey51"
+            "EncryptionOption": "SSE_S3",
+            "KmsKey": "KmsKey76"
           },
-          "ExpectedBucketOwner": "ExpectedBu71",
+          "ExpectedBucketOwner": "ExpectedBu72",
           "AclConfiguration": {
             "S3AclOption": "BUCKET_OWNER_FULL_CONTROL"
           }
         },
-        "WorkGroup": "WorkGroup20",
+        "WorkGroup": "WorkGroup54",
         "ExecutionParameters": [
-          "ExecutionParameters81"
+          "ExecutionParameters43"
         ],
         "ResultReuseConfiguration": {
           "ResultReuseByAgeConfiguration": {
             "Enabled": true,
-            "MaxAgeInMinutes": 6144
+            "MaxAgeInMinutes": 5804
           }
         }
       }
@@ -2351,32 +2351,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25621
+    value: X-Amz-Content-Sha25673
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date23
+    value: X-Amz-Date80
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm91
+    value: X-Amz-Algorithm14
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential72
+    value: X-Amz-Credential60
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token7
+    value: X-Amz-Security-Token57
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature24
+    value: X-Amz-Signature65
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders18
+    value: X-Amz-SignedHeaders34
     disabled: false
   - name: Authorization
-    value: Authorization46
+    value: Authorization87
     disabled: false
   _type: request
-  _id: req_6f8c08a7ac6c4c7d979d3063c8ac7b4f
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_28055642848448298466a3f7c3397c2b
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
 - name: StartSession
   method: POST
@@ -2385,17 +2385,17 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup50",
+        "WorkGroup": "WorkGroup43",
         "EngineConfiguration": {
-          "MaxConcurrentDpus": 2396,
+          "MaxConcurrentDpus": 4841,
           "CoordinatorDpuSize": 1,
           "DefaultExecutorDpuSize": 1,
           "AdditionalConfigs": {}
         },
-        "Description": "Description80",
-        "NotebookVersion": "NotebookVersion79",
-        "SessionIdleTimeoutInMinutes": 408,
-        "ClientRequestToken": "ClientRequestToken43ClientRequestToken43"
+        "Description": "Description77",
+        "NotebookVersion": "NotebookVersion61",
+        "SessionIdleTimeoutInMinutes": 318,
+        "ClientRequestToken": "ClientRequestToken66ClientRequestToken66"
       }
   headers:
   - name: X-Amz-Target
@@ -2405,32 +2405,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25678
+    value: X-Amz-Content-Sha25671
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date36
+    value: X-Amz-Date71
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm47
+    value: X-Amz-Algorithm71
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential19
+    value: X-Amz-Credential27
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token84
+    value: X-Amz-Security-Token78
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature64
+    value: X-Amz-Signature20
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders21
+    value: X-Amz-SignedHeaders10
     disabled: false
   - name: Authorization
-    value: Authorization38
+    value: Authorization79
     disabled: false
   _type: request
-  _id: req_160c31dc6a06457894c10a8604dc23dc
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_ccece7236f0e45a8a55ffdd7919883cf
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Creates a session for running calculations within a workgroup. The session is ready when it reaches an <code>IDLE</code> state.
 - name: StopCalculationExecution
   method: POST
@@ -2439,7 +2439,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "CalculationExecutionId": "CalculationExecutionId86"
+        "CalculationExecutionId": "CalculationExecutionId27"
       }
   headers:
   - name: X-Amz-Target
@@ -2449,32 +2449,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25692
+    value: X-Amz-Content-Sha25653
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date95
+    value: X-Amz-Date82
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm75
+    value: X-Amz-Algorithm0
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential77
+    value: X-Amz-Credential29
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token95
+    value: X-Amz-Security-Token63
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature26
+    value: X-Amz-Signature79
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders79
+    value: X-Amz-SignedHeaders23
     disabled: false
   - name: Authorization
-    value: Authorization21
+    value: Authorization31
     disabled: false
   _type: request
-  _id: req_0607d772fa6d4366a3da782d677350b6
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_ea291ce8c934452a9028ed6b0814521e
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.</p> <note> <p>Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider terminating the session in which the calculation is running.</p> </note>
 - name: StopQueryExecution
   method: POST
@@ -2483,7 +2483,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "QueryExecutionId": "QueryExecutionId7"
+        "QueryExecutionId": "QueryExecutionId87"
       }
   headers:
   - name: X-Amz-Target
@@ -2493,32 +2493,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25626
+    value: X-Amz-Content-Sha25621
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date46
+    value: X-Amz-Date45
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm65
+    value: X-Amz-Algorithm40
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential83
+    value: X-Amz-Credential13
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token16
+    value: X-Amz-Security-Token9
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature31
+    value: X-Amz-Signature35
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders3
+    value: X-Amz-SignedHeaders74
     disabled: false
   - name: Authorization
-    value: Authorization14
+    value: Authorization92
     disabled: false
   _type: request
-  _id: req_c0621e722dc5491698022d0a86c73453
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_0ee1a00f15d94749ad41bb776021aec8
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: <p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 - name: TagResource
   method: POST
@@ -2527,11 +2527,11 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "ResourceARN": "ResourceARN67",
+        "ResourceARN": "ResourceARN37",
         "Tags": [
           {
-            "Key": "Key65",
-            "Value": "Value84"
+            "Key": "Key70",
+            "Value": "Value70"
           }
         ]
       }
@@ -2543,32 +2543,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25647
+    value: X-Amz-Content-Sha2564
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date98
+    value: X-Amz-Date34
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm82
+    value: X-Amz-Algorithm9
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential27
+    value: X-Amz-Credential69
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token97
+    value: X-Amz-Security-Token84
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature65
+    value: X-Amz-Signature46
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders4
+    value: X-Amz-SignedHeaders25
     disabled: false
   - name: Authorization
-    value: Authorization57
+    value: Authorization18
     disabled: false
   _type: request
-  _id: req_f277f296b04e45feb997322c1cc4fb0c
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_d1b37730994b40c1ac61d693ffbcea98
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: 'Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.'
 - name: TerminateSession
   method: POST
@@ -2577,7 +2577,7 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "SessionId": "SessionId40"
+        "SessionId": "SessionId7"
       }
   headers:
   - name: X-Amz-Target
@@ -2587,32 +2587,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25644
+    value: X-Amz-Content-Sha25676
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date23
+    value: X-Amz-Date62
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm51
+    value: X-Amz-Algorithm72
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential11
+    value: X-Amz-Credential91
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token40
+    value: X-Amz-Security-Token86
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature22
+    value: X-Amz-Signature4
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders39
+    value: X-Amz-SignedHeaders71
     disabled: false
   - name: Authorization
-    value: Authorization69
+    value: Authorization22
     disabled: false
   _type: request
-  _id: req_fff8e91fed8341ff8b8ad096a52ca4e2
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_424f1200cb494464968f3dca733dbc2a
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped, but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
 - name: UntagResource
   method: POST
@@ -2621,9 +2621,9 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "ResourceARN": "ResourceARN29",
+        "ResourceARN": "ResourceARN75",
         "TagKeys": [
-          "TagKeys10"
+          "TagKeys0"
         ]
       }
   headers:
@@ -2634,32 +2634,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25675
+    value: X-Amz-Content-Sha25631
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date37
+    value: X-Amz-Date10
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm9
+    value: X-Amz-Algorithm32
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential56
+    value: X-Amz-Credential39
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token79
+    value: X-Amz-Security-Token67
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature48
+    value: X-Amz-Signature11
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders35
+    value: X-Amz-SignedHeaders46
     disabled: false
   - name: Authorization
-    value: Authorization42
+    value: Authorization18
     disabled: false
   _type: request
-  _id: req_4d0f560f277742ea8de2be96d257eb8b
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_f8d416f23324491d8da9a69be7ecb035
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Removes one or more tags from a data catalog or workgroup resource.
 - name: UpdateDataCatalog
   method: POST
@@ -2668,9 +2668,9 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "Name": "Name59",
+        "Name": "Name58",
         "Type": "LAMBDA",
-        "Description": "Description38",
+        "Description": "Description14",
         "Parameters": {}
       }
   headers:
@@ -2681,32 +2681,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25661
+    value: X-Amz-Content-Sha25616
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date36
+    value: X-Amz-Date18
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm50
+    value: X-Amz-Algorithm93
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential16
+    value: X-Amz-Credential87
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token98
+    value: X-Amz-Security-Token14
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature12
+    value: X-Amz-Signature24
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders65
+    value: X-Amz-SignedHeaders49
     disabled: false
   - name: Authorization
-    value: Authorization55
+    value: Authorization3
     disabled: false
   _type: request
-  _id: req_0c78c0c198dc492f8780ec896e7aef57
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_4ceeadadf84847b392525d0412f61822
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Updates the data catalog that has the specified name.
 - name: UpdateNamedQuery
   method: POST
@@ -2715,10 +2715,10 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NamedQueryId": "NamedQueryId17",
-        "Name": "Name3",
-        "QueryString": "QueryString26",
-        "Description": "Description0"
+        "NamedQueryId": "NamedQueryId95",
+        "Name": "Name9",
+        "QueryString": "QueryString36",
+        "Description": "Description13"
       }
   headers:
   - name: X-Amz-Target
@@ -2728,32 +2728,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25658
+    value: X-Amz-Content-Sha25638
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date83
+    value: X-Amz-Date86
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm69
+    value: X-Amz-Algorithm78
     disabled: false
   - name: X-Amz-Credential
     value: X-Amz-Credential48
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token86
+    value: X-Amz-Security-Token28
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature21
+    value: X-Amz-Signature18
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders84
+    value: X-Amz-SignedHeaders22
     disabled: false
   - name: Authorization
-    value: Authorization27
+    value: Authorization35
     disabled: false
   _type: request
-  _id: req_b11cab1c7f4a48869ea3958518220f83
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_4d8d74bb6adb4c0ab2fe80de4502a370
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
 - name: UpdateNotebook
   method: POST
@@ -2762,11 +2762,11 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NotebookId": "NotebookId49",
-        "Payload": "Payload47",
+        "NotebookId": "NotebookId70",
+        "Payload": "Payload86",
         "Type": "IPYNB",
-        "SessionId": "SessionId52",
-        "ClientRequestToken": "ClientRequestToken67"
+        "SessionId": "SessionId48",
+        "ClientRequestToken": "ClientRequestToken60"
       }
   headers:
   - name: X-Amz-Target
@@ -2776,32 +2776,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25677
+    value: X-Amz-Content-Sha25666
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date6
+    value: X-Amz-Date84
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm45
+    value: X-Amz-Algorithm40
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential41
+    value: X-Amz-Credential9
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token49
+    value: X-Amz-Security-Token43
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature80
+    value: X-Amz-Signature93
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders72
+    value: X-Amz-SignedHeaders57
     disabled: false
   - name: Authorization
-    value: Authorization90
+    value: Authorization24
     disabled: false
   _type: request
-  _id: req_b3d095f8ebd9408cb35b2f663f3ee94d
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_fca29ccdc74c444e860d1923f3bebbdf
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Updates the contents of a Spark notebook.
 - name: UpdateNotebookMetadata
   method: POST
@@ -2810,9 +2810,9 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "NotebookId": "NotebookId78",
-        "Name": "Name39",
-        "ClientRequestToken": "ClientRequestToken53"
+        "NotebookId": "NotebookId42",
+        "Name": "Name45",
+        "ClientRequestToken": "ClientRequestToken46"
       }
   headers:
   - name: X-Amz-Target
@@ -2822,32 +2822,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25659
+    value: X-Amz-Content-Sha25647
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date96
+    value: X-Amz-Date19
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm10
+    value: X-Amz-Algorithm33
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential80
+    value: X-Amz-Credential90
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token32
+    value: X-Amz-Security-Token71
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature32
+    value: X-Amz-Signature13
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders84
+    value: X-Amz-SignedHeaders4
     disabled: false
   - name: Authorization
-    value: Authorization36
+    value: Authorization65
     disabled: false
   _type: request
-  _id: req_61cb2a2f6e064ee69b840f8335df83ff
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_8dc4a5ea1cd64ccbaa20b1c4424f8b04
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Updates the metadata for a notebook.
 - name: UpdatePreparedStatement
   method: POST
@@ -2856,10 +2856,10 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "StatementName": "StatementName6",
-        "WorkGroup": "WorkGroup73",
-        "QueryStatement": "QueryStatement69",
-        "Description": "Description83"
+        "StatementName": "StatementName70",
+        "WorkGroup": "WorkGroup72",
+        "QueryStatement": "QueryStatement33",
+        "Description": "Description88"
       }
   headers:
   - name: X-Amz-Target
@@ -2869,32 +2869,32 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25637
+    value: X-Amz-Content-Sha25665
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date40
+    value: X-Amz-Date52
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm20
+    value: X-Amz-Algorithm32
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential29
+    value: X-Amz-Credential40
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token97
+    value: X-Amz-Security-Token31
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature88
+    value: X-Amz-Signature11
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders0
+    value: X-Amz-SignedHeaders10
     disabled: false
   - name: Authorization
-    value: Authorization95
+    value: Authorization6
     disabled: false
   _type: request
-  _id: req_ab0635692ace4bfcb3057f01b57d50d9
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_a31b8b9f01a4442588e4ce07e3ab0a90
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Updates a prepared statement.
 - name: UpdateWorkGroup
   method: POST
@@ -2903,19 +2903,19 @@ resources:
     mimeType: application/json
     text: >-
       {
-        "WorkGroup": "WorkGroup87",
-        "Description": "Description98",
+        "WorkGroup": "WorkGroup55",
+        "Description": "Description88",
         "ConfigurationUpdates": {
-          "EnforceWorkGroupConfiguration": false,
+          "EnforceWorkGroupConfiguration": true,
           "ResultConfigurationUpdates": {
-            "OutputLocation": "OutputLocation86",
-            "RemoveOutputLocation": false,
+            "OutputLocation": "OutputLocation44",
+            "RemoveOutputLocation": true,
             "EncryptionConfiguration": {
-              "EncryptionOption": "SSE_KMS",
-              "KmsKey": "KmsKey51"
+              "EncryptionOption": "SSE_S3",
+              "KmsKey": "KmsKey76"
             },
             "RemoveEncryptionConfiguration": false,
-            "ExpectedBucketOwner": "ExpectedBu46",
+            "ExpectedBucketOwner": "ExpectedBu96",
             "RemoveExpectedBucketOwner": false,
             "AclConfiguration": {
               "S3AclOption": "BUCKET_OWNER_FULL_CONTROL"
@@ -2927,14 +2927,14 @@ resources:
           "RemoveBytesScannedCutoffPerQuery": true,
           "RequesterPaysEnabled": true,
           "EngineVersion": {
-            "SelectedEngineVersion": "SelectedEngineVersion47",
-            "EffectiveEngineVersion": "EffectiveEngineVersion0"
+            "SelectedEngineVersion": "SelectedEngineVersion3",
+            "EffectiveEngineVersion": "EffectiveEngineVersion11"
           },
-          "RemoveCustomerContentEncryptionConfiguration": true,
-          "AdditionalConfiguration": "AdditionalConfiguration32",
-          "ExecutionRole": "ExecutionRole69ExecutionRole69",
+          "RemoveCustomerContentEncryptionConfiguration": false,
+          "AdditionalConfiguration": "AdditionalConfiguration59",
+          "ExecutionRole": "ExecutionRole19ExecutionRole19",
           "CustomerContentEncryptionConfiguration": {
-            "KmsKey": "KmsKey90"
+            "KmsKey": "KmsKey85"
           },
           "EnableMinimumEncryptionConfiguration": true
         },
@@ -2948,30 +2948,30 @@ resources:
     value: application/json
     disabled: false
   - name: X-Amz-Content-Sha256
-    value: X-Amz-Content-Sha25694
+    value: X-Amz-Content-Sha25645
     disabled: false
   - name: X-Amz-Date
-    value: X-Amz-Date92
+    value: X-Amz-Date80
     disabled: false
   - name: X-Amz-Algorithm
-    value: X-Amz-Algorithm10
+    value: X-Amz-Algorithm48
     disabled: false
   - name: X-Amz-Credential
-    value: X-Amz-Credential34
+    value: X-Amz-Credential60
     disabled: false
   - name: X-Amz-Security-Token
-    value: X-Amz-Security-Token93
+    value: X-Amz-Security-Token15
     disabled: false
   - name: X-Amz-Signature
-    value: X-Amz-Signature85
+    value: X-Amz-Signature53
     disabled: false
   - name: X-Amz-SignedHeaders
-    value: X-Amz-SignedHeaders68
+    value: X-Amz-SignedHeaders56
     disabled: false
   - name: Authorization
-    value: Authorization95
+    value: Authorization60
     disabled: false
   _type: request
-  _id: req_246a4ddbe0bb47abb0d4bfca41ae7ed0
-  parentId: wrk_06463df186eb4609a7c36c287338c052
+  _id: req_f11d835e671b4b1c94a89d5c690d24bb
+  parentId: wrk_03d741585f6440e8ba97b8a68fcb0a49
   description: Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified.

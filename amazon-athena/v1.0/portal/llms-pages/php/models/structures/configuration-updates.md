@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkNvbmZpZ3VyYXRpb25VcGRhdGVz
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -26,7 +24,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `executionRole` | `?string` | Optional | **Constraints**: *Minimum Length*: `20`, *Maximum Length*: `2048`, *Pattern*: `^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$` | getExecutionRole(): ?string | setExecutionRole(?string executionRole): void |
 | `customerContentEncryptionConfiguration` | [`?CustomerContentEncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/customer-content-encryption-configuration.md) | Optional | Specifies the KMS key that is used to encrypt the user's data stores in Athena. | getCustomerContentEncryptionConfiguration(): ?CustomerContentEncryptionConfiguration | setCustomerContentEncryptionConfiguration(?CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration): void |
 | `enableMinimumEncryptionConfiguration` | `?bool` | Optional | - | getEnableMinimumEncryptionConfiguration(): ?bool | setEnableMinimumEncryptionConfiguration(?bool enableMinimumEncryptionConfiguration): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
@@ -35,8 +32,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 use AmazonAthenaLib\Models\Builders\ConfigurationUpdatesBuilder;
 use AmazonAthenaLib\Models\Builders\ResultConfigurationUpdates2Builder;
 use AmazonAthenaLib\Models\Builders\EncryptionConfiguration2Builder;
-use AmazonAthenaLib\Models\EncryptionOption1;
-use AmazonAthenaLib\ApiHelper;
+use AmazonAthenaLib\Models\EncryptionOption1Enum;
 
 $configurationUpdates = ConfigurationUpdatesBuilder::init()
     ->enforceWorkGroupConfiguration(false)
@@ -46,21 +42,18 @@ $configurationUpdates = ConfigurationUpdatesBuilder::init()
             ->removeOutputLocation(false)
             ->encryptionConfiguration(
                 EncryptionConfiguration2Builder::init(
-                    EncryptionOption1::SSE_S3
+                    EncryptionOption1Enum::SSE_S3
                 )
                     ->kmsKey('KmsKey6')
-                    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
                     ->build()
             )
             ->removeEncryptionConfiguration(false)
             ->expectedBucketOwner('ExpectedBucketOwner0')
-            ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
             ->build()
     )
     ->publishCloudWatchMetricsEnabled(false)
     ->bytesScannedCutoffPerQuery(10000000)
     ->removeBytesScannedCutoffPerQuery(false)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

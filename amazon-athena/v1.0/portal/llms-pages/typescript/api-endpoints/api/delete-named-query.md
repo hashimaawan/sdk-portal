@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```ts
 async deleteNamedQuery(
-  xAmzTarget: XAmzTarget10,
+  xAmzTarget: XAmzTarget10Enum,
   body: DeleteNamedQueryInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget10`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-10.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget10Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-10.md) | Header, Required | - |
 | `body` | [`DeleteNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/delete-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -52,14 +52,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget10.EnumAmazonAthenaDeleteNamedQuery;
+const xAmzTarget = XAmzTarget10Enum.EnumAmazonAthenaDeleteNamedQuery;
 
 const body: DeleteNamedQueryInput = {
   namedQueryId: 'NamedQueryId6',
 };
 
 try {
-  const response = await api.deleteNamedQuery(
+  const response = await apiController.deleteNamedQuery(
     xAmzTarget,
     body
   );

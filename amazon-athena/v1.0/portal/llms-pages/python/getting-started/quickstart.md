@@ -96,18 +96,17 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| region | `Region` | The AWS region<br>*Default*: `"us-east-1"` |
+| region | `RegionEnum` | The AWS region<br>*Default*: `"us-east-1"` |
 | environment | [`Environment`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/getting-started/quickstart/environments.md) | The API environment. <br> **Default: `Environment.PRODUCTION`** |
 | http_client_instance | `Union[Session, HttpClientProvider]` | The Http Client passed from the sdk user for making requests |
 | override_http_client_configuration | `bool` | The value which determines to override properties of the passed Http Client from the sdk user |
 | http_call_back | `HttpCallBack` | The callback value that is invoked before and after an HTTP call is made to an endpoint |
-| timeout | `float` | The value to use for connection timeout. <br> **Default: 30** |
+| timeout | `float` | The value to use for connection timeout. <br> **Default: 60** |
 | max_retries | `int` | The number of times to retry an endpoint call if it fails. <br> **Default: 0** |
 | backoff_factor | `float` | A backoff factor to apply between attempts after the second try. <br> **Default: 2** |
 | retry_statuses | `Array of int` | The http statuses on which retry is to be done. <br> **Default: [408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524]** |
 | retry_methods | `Array of string` | The http methods on which retry is to be done. <br> **Default: ["GET", "PUT", "GET", "PUT"]** |
 | proxy_settings | [`ProxySettings`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/sdk-infrastructure/configuration/proxysettings.md) | Optional proxy configuration to route HTTP requests through a proxy server. |
-| logging_configuration | [`LoggingConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/sdk-infrastructure/configuration/loggingconfiguration.md) | The SDK logging configuration for API calls |
 | custom_header_authentication_credentials | [`CustomHeaderAuthenticationCredentials`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/getting-started/quickstart/authorization.md) | The credential object for Custom Header Signature |
 
 The API client can be initialized as follows:
@@ -115,31 +114,17 @@ The API client can be initialized as follows:
 ## Code-Based Client Initialization
 
 ```python
-import logging
-
 from amazonathena.amazonathena_client import AmazonathenaClient
 from amazonathena.configuration import Environment
 from amazonathena.http.auth.custom_header_authentication import CustomHeaderAuthenticationCredentials
-from amazonathena.logging.configuration.api_logging_configuration import LoggingConfiguration
-from amazonathena.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
-from amazonathena.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
-from amazonathena.models.region import Region
+from amazonathena.models.region_enum import RegionEnum
 
 client = AmazonathenaClient(
     custom_header_authentication_credentials=CustomHeaderAuthenticationCredentials(
         authorization='Authorization'
     ),
     environment=Environment.PRODUCTION,
-    region=Region.USEAST1,
-    logging_configuration=LoggingConfiguration(
-        log_level=logging.INFO,
-        request_logging_config=RequestLoggingConfiguration(
-            log_body=True
-        ),
-        response_logging_config=ResponseLoggingConfiguration(
-            log_headers=True
-        )
-    )
+    region=RegionEnum.USEAST1
 )
 ```
 

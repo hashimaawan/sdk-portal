@@ -7,7 +7,7 @@ Returns information about a single query. Requires that you have access to the w
 ```go
 GetNamedQuery(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget20,
+    xAmzTarget models.XAmzTarget20Enum,
     body models.GetNamedQueryInput,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget20`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-20.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget20Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-20.md) | Header, Required | - |
 | `body` | [`models.GetNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/get-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget20_EnumAmazonathenagetnamedquery
+xAmzTarget := models.XAmzTarget20Enum_ENUMAMAZONATHENAGETNAMEDQUERY
 
 body := models.GetNamedQueryInput{
-    NamedQueryId:          "NamedQueryId6",
+    NamedQueryId:         "NamedQueryId6",
 }
 
-apiResponse, err := api.GetNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.GetNamedQuery(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

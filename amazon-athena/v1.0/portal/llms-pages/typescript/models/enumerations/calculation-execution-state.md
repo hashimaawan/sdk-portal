@@ -5,29 +5,29 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`CalculationExecutionState`
+`CalculationExecutionStateEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Queued` |
-| `Running` |
-| `Canceling` |
-| `Canceled` |
-| `Completed` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `QUEUED` |
+| `RUNNING` |
+| `CANCELING` |
+| `CANCELED` |
+| `COMPLETED` |
+| `FAILED` |
 
 
 # Example
 
 ```ts
-import { CalculationExecutionState } from 'amazon-athenalib';
+import { CalculationExecutionStateEnum } from 'amazon-athenalib';
 
-const calculationExecutionState = CalculationExecutionState.Completed;
+const calculationExecutionState = CalculationExecutionStateEnum.COMPLETED;
 ```
 
 

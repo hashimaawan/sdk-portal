@@ -5,9 +5,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>).
 
 ```csharp
-ListApplicationDpuSizesAsync(
-    Models.XAmzTarget31 xAmzTarget,
-    Models.ListApplicationDpuSizesInput body,
+ListApplicationDPUSizesAsync(
+    Models.XAmzTarget31Enum xAmzTarget,
+    Models.ListApplicationDPUSizesInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
     string xAmzAlgorithm = null,
@@ -29,8 +29,8 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget31`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-31.md) | Header, Required | - |
-| `body` | [`ListApplicationDpuSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
+| `xAmzTarget` | [`XAmzTarget31Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-31.md) | Header, Required | - |
+| `body` | [`ListApplicationDPUSizesInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-application-dpu-sizes-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
 | `xAmzAlgorithm` | `string` | Header, Optional | - |
@@ -46,20 +46,20 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ListApplicationDpuSizesOutput](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-application-dpu-sizes-output.md).
+[`Task<Models.ListApplicationDPUSizesOutput>`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/list-application-dpu-sizes-output.md)
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget31 xAmzTarget = XAmzTarget31.EnumAmazonAthenaListApplicationDpuSizes;
-ListApplicationDpuSizesInput body = new ListApplicationDpuSizesInput
+XAmzTarget31Enum xAmzTarget = XAmzTarget31Enum.EnumAmazonAthenaListApplicationDPUSizes;
+ListApplicationDPUSizesInput body = new ListApplicationDPUSizesInput
 {
 };
 
 try
 {
-    ApiResponse<ListApplicationDpuSizesOutput> result = await api.ListApplicationDpuSizesAsync(
+    ListApplicationDPUSizesOutput result = await aPIController.ListApplicationDPUSizesAsync(
         xAmzTarget,
         body
     );

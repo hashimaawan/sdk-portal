@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The database and data catalog context in which the query execution occurs.
 
-*This model accepts additional fields of type interface{}.*
-
 
 # Class Name
 
@@ -18,7 +16,6 @@ The database and data catalog context in which the query execution occurs.
 |  --- | --- | --- | --- |
 | `Database` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `255` |
 | `Catalog` | `*string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
-| `AdditionalProperties` | `map[string]interface{}` | Optional | - |
 
 
 # Example
@@ -27,16 +24,13 @@ The database and data catalog context in which the query execution occurs.
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
     queryExecutionContext := models.QueryExecutionContext{
-        Database:              models.ToPointer("Database0"),
-        Catalog:               models.ToPointer("Catalog6"),
-        AdditionalProperties:  map[string]interface{}{
-            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
-        },
+        Database:             models.ToPointer("Database0"),
+        Catalog:              models.ToPointer("Catalog6"),
     }
 
 }

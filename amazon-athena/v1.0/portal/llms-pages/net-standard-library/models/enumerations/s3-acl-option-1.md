@@ -7,14 +7,14 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 
 # Enum Type Name
 
-`S3AclOption1`
+`S3AclOption1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `BucketOwnerFullControl` |
+| `BUCKETOWNERFULLCONTROL` |
 
 
 # Example
@@ -22,7 +22,7 @@ The Amazon S3 canned ACL that Athena should specify when storing query results. 
 ```csharp
 using AmazonAthena.Standard.Models;
 
-S3AclOption1 s3AclOption1 = S3AclOption1.BucketOwnerFullControl;
+S3AclOption1Enum s3AclOption1 = S3AclOption1Enum.BUCKETOWNERFULLCONTROL;
 ```
 
 

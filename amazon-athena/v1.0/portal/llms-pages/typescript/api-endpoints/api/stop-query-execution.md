@@ -7,7 +7,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 ```ts
 async stopQueryExecution(
-  xAmzTarget: XAmzTarget50,
+  xAmzTarget: XAmzTarget50Enum,
   body: StopQueryExecutionInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget50`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-50.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget50Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-50.md) | Header, Required | - |
 | `body` | [`StopQueryExecutionInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/stop-query-execution-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -52,14 +52,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget50.EnumAmazonAthenaStopQueryExecution;
+const xAmzTarget = XAmzTarget50Enum.EnumAmazonAthenaStopQueryExecution;
 
 const body: StopQueryExecutionInput = {
   queryExecutionId: 'QueryExecutionId0',
 };
 
 try {
-  const response = await api.stopQueryExecution(
+  const response = await apiController.stopQueryExecution(
     xAmzTarget,
     body
   );

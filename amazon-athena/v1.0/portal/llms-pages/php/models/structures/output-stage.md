@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRk91dHB1dFN0YWdl
 
-*This model accepts additional fields of type array.*
-
 
 # Class Name
 
@@ -23,14 +21,12 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | `executionTime` | `?int` | Optional | - | getExecutionTime(): ?int | setExecutionTime(?int executionTime): void |
 | `queryStagePlan` | [`?QueryStagePlan`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/query-stage-plan.md) | Optional | - | getQueryStagePlan(): ?QueryStagePlan | setQueryStagePlan(?QueryStagePlan queryStagePlan): void |
 | `subStages` | [`?(QueryStage[])`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/php/models/structures/query-stage.md) | Optional | - | getSubStages(): ?array | setSubStages(?array subStages): void |
-| `additionalProperties` | `array<string, array>` | Optional | - | findAdditionalProperty(string key): array | additionalProperty(string key, array value): void |
 
 
 # Example
 
 ```php
 use AmazonAthenaLib\Models\Builders\OutputStageBuilder;
-use AmazonAthenaLib\ApiHelper;
 
 $outputStage = OutputStageBuilder::init()
     ->stageId(26)
@@ -38,7 +34,6 @@ $outputStage = OutputStageBuilder::init()
     ->outputBytes(212)
     ->outputRows(54)
     ->inputBytes(170)
-    ->additionalProperty('exampleAdditionalProperty', ApiHelper::deserialize('{"key1":"val1","key2":"val2"}'))
     ->build();
 ```
 

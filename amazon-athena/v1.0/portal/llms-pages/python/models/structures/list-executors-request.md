@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRkxpc3RFeGVjdXRvcnNSZXF1ZXN0
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -15,28 +13,22 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `session_id` | `str` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
-| `executor_state_filter` | [`ExecutorState1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/executor-state-1.md) | Optional | - |
+| `executor_state_filter` | [`ExecutorState1Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/executor-state-1.md) | Optional | - |
 | `max_results` | `int` | Optional | **Constraints**: `>= 1`, `<= 100` |
 | `next_token` | `str` | Optional | **Constraints**: *Maximum Length*: `2048` |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
-from amazonathena.models.executor_state_1 import ExecutorState1
+from amazonathena.models.executor_state_1_enum import ExecutorState1Enum
 from amazonathena.models.list_executors_request import ListExecutorsRequest
 
 list_executors_request = ListExecutorsRequest(
     session_id='SessionId6',
-    executor_state_filter=ExecutorState1.REGISTERED,
+    executor_state_filter=ExecutorState1Enum.REGISTERED,
     max_results=100,
-    next_token='NextToken2',
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    next_token='NextToken2'
 )
 ```
 

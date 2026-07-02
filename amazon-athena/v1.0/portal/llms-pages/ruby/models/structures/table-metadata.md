@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains metadata for a table.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -23,56 +21,41 @@ Contains metadata for a table.
 | `columns` | [`Array[Column]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/column.md) | Optional | - |
 | `partition_keys` | [`Array[Column]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/column.md) | Optional | - |
 | `parameters` | [`Parameters`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/parameters.md) | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 table_metadata = TableMetadata.new(
-  name: 'Name0',
-  create_time: DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
-  last_access_time: DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
-  table_type: 'TableType4',
-  columns: [
+  'Name0',
+  DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
+  DateTimeHelper.from_rfc3339('2016-03-13T12:52:32.123Z'),
+  'TableType4',
+  [
     Column.new(
-      name: 'Name0',
-      type: 'Type0',
-      comment: 'Comment4',
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+      'Name0',
+      'Type0',
+      'Comment4'
     ),
     Column.new(
-      name: 'Name0',
-      type: 'Type0',
-      comment: 'Comment4',
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+      'Name0',
+      'Type0',
+      'Comment4'
     )
   ],
-  partition_keys: [
+  [
     Column.new(
-      name: 'Name6',
-      type: 'Type6',
-      comment: 'Comment0',
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+      'Name6',
+      'Type6',
+      'Comment0'
     ),
     Column.new(
-      name: 'Name6',
-      type: 'Type6',
-      comment: 'Comment0',
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+      'Name6',
+      'Type6',
+      'Comment0'
     )
   ],
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  Parameters.new
 )
 ```
 

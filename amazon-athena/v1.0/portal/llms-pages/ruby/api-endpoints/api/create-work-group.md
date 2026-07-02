@@ -26,7 +26,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-8.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget8Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/enumerations/x-amz-target-8.md) | Header, Required | - |
 | `body` | [`CreateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/create-work-group-input.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `String` | Header, Optional | - |
 | `x_amz_date` | `String` | Header, Optional | - |
@@ -41,28 +41,45 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type `Object`.
+`Object`
 
 
 # Example Usage
 
 ```ruby
-x_amz_target = XAmzTarget8::ENUM_AMAZONATHENACREATEWORKGROUP
+x_amz_target = XAmzTarget8Enum::ENUM_AMAZONATHENACREATEWORKGROUP
 
 body = CreateWorkGroupInput.new(
-  name: 'Name6'
+  'Name6',
+  Configuration.new(
+    ResultConfiguration1.new(
+      nil,
+      EncryptionConfiguration2.new(
+        envrr
+      ),
+      nil,
+      AclConfiguration1.new(
+        envrr
+      )
+    ),
+    nil,
+    nil,
+    nil,
+    nil,
+    EngineVersion1.new,
+    nil,
+    nil,
+    CustomerContentEncryptionConfiguration2.new
+  ),
+  nil,
+  []
 )
 
-result = client_api.create_work_group(
+result = client_controller.create_work_group(
   x_amz_target,
   body
 )
-
-if result.success?
-  puts result.data
-elsif result.error?
-  warn result.errors
-end
+puts result
 ```
 
 

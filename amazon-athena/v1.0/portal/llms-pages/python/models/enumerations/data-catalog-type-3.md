@@ -7,7 +7,7 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 
 # Enum Type Name
 
-`DataCatalogType3`
+`DataCatalogType3Enum`
 
 
 # Fields
@@ -22,9 +22,9 @@ Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a 
 # Example
 
 ```python
-from amazonathena.models.data_catalog_type_3 import DataCatalogType3
+from amazonathena.models.data_catalog_type_3_enum import DataCatalogType3Enum
 
-data_catalog_type_3 = DataCatalogType3.GLUE
+data_catalog_type_3 = DataCatalogType3Enum.GLUE
 ```
 
 

@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -17,30 +15,25 @@ The metadata that describes the column structure and data types of a table of qu
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `column_info` | [`Array[ColumnInfo]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/column-info.md) | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 result_set_metadata = ResultSetMetadata.new(
-  column_info: [
+  [
     ColumnInfo.new(
-      name: 'Name6',
-      type: 'Type6',
-      catalog_name: 'CatalogName0',
-      schema_name: 'SchemaName0',
-      table_name: 'TableName2',
-      label: 'Label4',
-      precision: 48,
-      additional_properties: {
-        'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-      }
+      'Name6',
+      'Type6',
+      'CatalogName0',
+      'SchemaName0',
+      'TableName2',
+      'Label4',
+      48,
+      nil,
+      envrr
     )
-  ],
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  ]
 )
 ```
 

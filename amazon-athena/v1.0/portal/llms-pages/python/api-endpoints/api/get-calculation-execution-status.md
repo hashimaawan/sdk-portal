@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `x_amz_target` | [`XAmzTarget17`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-17.md) | Header, Required | - |
+| `x_amz_target` | [`XAmzTarget17Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/x-amz-target-17.md) | Header, Required | - |
 | `body` | [`GetCalculationExecutionStatusRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/get-calculation-execution-status-request.md) | Body, Required | - |
 | `x_amz_content_sha_256` | `str` | Header, Optional | - |
 | `x_amz_date` | `str` | Header, Optional | - |
@@ -42,27 +42,23 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`GetCalculationExecutionStatusResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/get-calculation-execution-status-response.md).
+[`GetCalculationExecutionStatusResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/get-calculation-execution-status-response.md)
 
 
 # Example Usage
 
 ```python
-x_amz_target = XAmzTarget17.ENUM_AMAZONATHENAGETCALCULATIONEXECUTIONSTATUS
+x_amz_target = XAmzTarget17Enum.ENUM_AMAZONATHENAGETCALCULATIONEXECUTIONSTATUS
 
 body = GetCalculationExecutionStatusRequest(
     calculation_execution_id='CalculationExecutionId8'
 )
 
-result = client_api.get_calculation_execution_status(
+result = client_controller.get_calculation_execution_status(
     x_amz_target,
     body
 )
-
-if result.is_success():
-    print(result.body)
-elif result.is_error():
-    print(result.errors)
+print(result)
 ```
 
 
@@ -70,9 +66,9 @@ elif result.is_error():
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 480 | InternalServerException | `ApiException` |
-| 481 | InvalidRequestException | `ApiException` |
-| 482 | ResourceNotFoundException | `ApiException` |
+| 480 | InternalServerException | `APIException` |
+| 481 | InvalidRequestException | `APIException` |
+| 482 | ResourceNotFoundException | `APIException` |
 
 
 

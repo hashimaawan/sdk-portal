@@ -6,7 +6,7 @@ Updates the data catalog that has the specified name.
 
 ```csharp
 UpdateDataCatalogAsync(
-    Models.XAmzTarget54 xAmzTarget,
+    Models.XAmzTarget54Enum xAmzTarget,
     Models.UpdateDataCatalogInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget54`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-54.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget54Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-54.md) | Header, Required | - |
 | `body` | [`UpdateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/update-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,22 +42,22 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget54 xAmzTarget = XAmzTarget54.EnumAmazonAthenaUpdateDataCatalog;
+XAmzTarget54Enum xAmzTarget = XAmzTarget54Enum.EnumAmazonAthenaUpdateDataCatalog;
 UpdateDataCatalogInput body = new UpdateDataCatalogInput
 {
     Name = "Name6",
-    Type = DataCatalogType3.Hive,
+    Type = DataCatalogType3Enum.HIVE,
 };
 
 try
 {
-    ApiResponse<object> result = await api.UpdateDataCatalogAsync(
+    object result = await aPIController.UpdateDataCatalogAsync(
         xAmzTarget,
         body
     );

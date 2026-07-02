@@ -7,7 +7,7 @@ Lists, in descending order, the sessions that have been created in a notebook th
 ```go
 ListNotebookSessions(
     ctx context.Context,
-    xAmzTarget models.XAmzTarget39,
+    xAmzTarget models.XAmzTarget39Enum,
     body models.ListNotebookSessionsRequest,
     xAmzContentSha256 *string,
     xAmzDate *string,
@@ -30,7 +30,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`models.XAmzTarget39`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-39.md) | Header, Required | - |
+| `xAmzTarget` | [`models.XAmzTarget39Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/enumerations/x-amz-target-39.md) | Header, Required | - |
 | `body` | [`models.ListNotebookSessionsRequest`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/go/models/structures/list-notebook-sessions-request.md) | Body, Required | - |
 | `xAmzContentSha256` | `*string` | Header, Optional | - |
 | `xAmzDate` | `*string` | Header, Optional | - |
@@ -53,13 +53,13 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 ```go
 ctx := context.Background()
 
-xAmzTarget := models.XAmzTarget39_EnumAmazonathenalistnotebooksessions
+xAmzTarget := models.XAmzTarget39Enum_ENUMAMAZONATHENALISTNOTEBOOKSESSIONS
 
 body := models.ListNotebookSessionsRequest{
-    NotebookId:            "NotebookId6",
+    NotebookId:           "NotebookId6",
 }
 
-apiResponse, err := api.ListNotebookSessions(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
+apiResponse, err := aPIController.ListNotebookSessions(ctx, xAmzTarget, body, nil, nil, nil, nil, nil, nil, nil)
 if err != nil {
     log.Fatalln(err)
 } else {

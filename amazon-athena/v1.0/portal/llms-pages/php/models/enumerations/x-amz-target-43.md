@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`XAmzTarget43`
+`XAmzTarget43Enum`
 
 
 # Fields
@@ -18,9 +18,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```php
-use AmazonAthenaLib\Models\XAmzTarget43;
+use AmazonAthenaLib\Models\XAmzTarget43Enum;
 
-$xAmzTarget43 = XAmzTarget43::ENUM_AMAZONATHENALISTTABLEMETADATA;
+$xAmzTarget43 = XAmzTarget43Enum::ENUM_AMAZONATHENALISTTABLEMETADATA;
 ```
 
 

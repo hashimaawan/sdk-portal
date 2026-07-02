@@ -7,15 +7,15 @@ The state of the workgroup: ENABLED or DISABLED.
 
 # Enum Type Name
 
-`WorkGroupState3`
+`WorkGroupState3Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Enabled` |
-| `Disabled` |
+| `ENABLED` |
+| `DISABLED` |
 
 
 # Example
@@ -23,7 +23,7 @@ The state of the workgroup: ENABLED or DISABLED.
 ```csharp
 using AmazonAthena.Standard.Models;
 
-WorkGroupState3 workGroupState3 = WorkGroupState3.Enabled;
+WorkGroupState3Enum workGroupState3 = WorkGroupState3Enum.ENABLED;
 ```
 
 

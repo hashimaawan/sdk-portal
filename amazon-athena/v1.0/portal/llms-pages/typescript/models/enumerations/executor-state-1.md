@@ -8,27 +8,27 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState1`
+`ExecutorState1Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Creating` |
-| `Created` |
-| `Registered` |
-| `Terminating` |
-| `Terminated` |
-| `Failed` |
+| `CREATING` |
+| `CREATED` |
+| `REGISTERED` |
+| `TERMINATING` |
+| `TERMINATED` |
+| `FAILED` |
 
 
 # Example
 
 ```ts
-import { ExecutorState1 } from 'amazon-athenalib';
+import { ExecutorState1Enum } from 'amazon-athenalib';
 
-const executorState1 = ExecutorState1.Creating;
+const executorState1 = ExecutorState1Enum.CREATING;
 ```
 
 

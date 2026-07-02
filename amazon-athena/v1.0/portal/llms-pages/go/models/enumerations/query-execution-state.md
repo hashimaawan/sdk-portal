@@ -5,18 +5,18 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`QueryExecutionState`
+`QueryExecutionStateEnum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `Queued` |
-| `Running` |
-| `Succeeded` |
-| `Failed` |
-| `Cancelled` |
+| `QUEUED` |
+| `RUNNING` |
+| `SUCCEEDED` |
+| `FAILED` |
+| `CANCELLED` |
 
 
 # Example
@@ -25,11 +25,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    queryExecutionState := models.QueryExecutionState_Cancelled
+    queryExecutionState := models.QueryExecutionStateEnum_CANCELLED
 
 }
 ```

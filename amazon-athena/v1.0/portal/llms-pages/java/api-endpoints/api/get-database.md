@@ -5,8 +5,8 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 Returns a database object for the specified database and data catalog.
 
 ```java
-CompletableFuture<ApiResponse<GetDatabaseOutput>> getDatabaseAsync(
-    final XAmzTarget19 xAmzTarget,
+CompletableFuture<GetDatabaseOutput> getDatabaseAsync(
+    final XAmzTarget19Enum xAmzTarget,
     final GetDatabaseInput body,
     final String xAmzContentSha256,
     final String xAmzDate,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget19`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-19.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget19Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/enumerations/x-amz-target-19.md) | Header, Required | - |
 | `body` | [`GetDatabaseInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-database-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `String` | Header, Optional | - |
 | `xAmzDate` | `String` | Header, Optional | - |
@@ -42,13 +42,13 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/sdk-infrastructure/utilities/apiresponse.md) instance. The `getResult()` getter of this instance returns the response data which is of type [`GetDatabaseOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-database-output.md).
+[`GetDatabaseOutput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/java/models/structures/get-database-output.md)
 
 
 # Example Usage
 
 ```java
-XAmzTarget19 xAmzTarget = XAmzTarget19.ENUM_AMAZONATHENAGETDATABASE;
+XAmzTarget19Enum xAmzTarget = XAmzTarget19Enum.ENUM_AMAZONATHENAGETDATABASE;
 GetDatabaseInput body = new GetDatabaseInput.Builder(
     "CatalogName0",
     "DatabaseName0"
@@ -56,7 +56,7 @@ GetDatabaseInput body = new GetDatabaseInput.Builder(
 .build();
 
 
-api.getDatabaseAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
+aPIController.getDatabaseAsync(xAmzTarget, body, null, null, null, null, null, null, null).thenAccept(result -> {
     // TODO success callback handler
     System.out.println(result);
 }).exceptionally(exception -> {

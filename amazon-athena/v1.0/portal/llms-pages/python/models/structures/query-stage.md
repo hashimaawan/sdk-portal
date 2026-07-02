@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -25,14 +23,11 @@ Stage statistics such as input and output rows and bytes, execution time and sta
 | `execution_time` | `int` | Optional | - |
 | `query_stage_plan` | [`QueryStagePlan`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/query-stage-plan.md) | Optional | - |
 | `sub_stages` | [`List[QueryStage]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/query-stage.md) | Optional | - |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.query_stage import QueryStage
 
 query_stage = QueryStage(
@@ -40,10 +35,7 @@ query_stage = QueryStage(
     state='State0',
     output_bytes=76,
     output_rows=190,
-    input_bytes=222,
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+    input_bytes=222
 )
 ```
 

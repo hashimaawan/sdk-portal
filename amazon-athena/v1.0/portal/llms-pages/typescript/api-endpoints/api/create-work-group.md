@@ -6,7 +6,7 @@ Creates a workgroup with the specified name. A workgroup can be an Apache Spark 
 
 ```ts
 async createWorkGroup(
-  xAmzTarget: XAmzTarget8,
+  xAmzTarget: XAmzTarget8Enum,
   body: CreateWorkGroupInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget8`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-8.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget8Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-8.md) | Header, Required | - |
 | `body` | [`CreateWorkGroupInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/create-work-group-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,14 +51,14 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget8.EnumAmazonAthenaCreateWorkGroup;
+const xAmzTarget = XAmzTarget8Enum.EnumAmazonAthenaCreateWorkGroup;
 
 const body: CreateWorkGroupInput = {
   name: 'Name6',
 };
 
 try {
-  const response = await api.createWorkGroup(
+  const response = await apiController.createWorkGroup(
     xAmzTarget,
     body
   );

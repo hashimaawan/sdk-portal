@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/typescript/x-redirect/JTI0bSUyRkdldFdvcmtHcm91cE91dHB1dA
 
-*This model accepts additional fields of type unknown.*
-
 
 # Interface Name
 
@@ -15,60 +13,41 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `workGroup` | [`WorkGroup2 \| undefined`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/work-group-2.md) | Optional | - |
-| `additionalProperties` | `Record<string, unknown>` | Optional | - |
 
 
 # Example
 
 ```ts
 import {
-  EncryptionOption1,
+  EncryptionOption1Enum,
   GetWorkGroupOutput,
-  S3AclOption1,
-  WorkGroupState3,
+  S3AclOption1Enum,
+  WorkGroupState3Enum,
 } from 'amazon-athenalib';
 
 const getWorkGroupOutput: GetWorkGroupOutput = {
   workGroup: {
     name: 'Name2',
-    state: WorkGroupState3.Enabled,
+    state: WorkGroupState3Enum.ENABLED,
     configuration: {
       resultConfiguration: {
         outputLocation: 'OutputLocation0',
         encryptionConfiguration: {
-          encryptionOption: EncryptionOption1.SseS3,
+          encryptionOption: EncryptionOption1Enum.SSES3,
           kmsKey: 'KmsKey6',
-          additionalProperties: {
-            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-          },
         },
         expectedBucketOwner: 'ExpectedBucketOwner0',
         aclConfiguration: {
-          s3AclOption: S3AclOption1.BucketOwnerFullControl,
-          additionalProperties: {
-            'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-          },
-        },
-        additionalProperties: {
-          'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
+          s3AclOption: S3AclOption1Enum.BUCKETOWNERFULLCONTROL,
         },
       },
       enforceWorkGroupConfiguration: false,
       publishCloudWatchMetricsEnabled: false,
       bytesScannedCutoffPerQuery: 10000000,
       requesterPaysEnabled: false,
-      additionalProperties: {
-        'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-      },
     },
     description: 'Description4',
     creationTime: '2016-03-13T12:52:32.123Z',
-    additionalProperties: {
-      'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
-    },
-  },
-  additionalProperties: {
-    'exampleAdditionalProperty': { 'key1': 'val1', 'key2': 'val2' }
   },
 };
 ```

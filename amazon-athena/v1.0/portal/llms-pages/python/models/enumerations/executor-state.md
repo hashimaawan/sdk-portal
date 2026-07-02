@@ -5,7 +5,7 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Enum Type Name
 
-`ExecutorState`
+`ExecutorStateEnum`
 
 
 # Fields
@@ -23,9 +23,9 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 # Example
 
 ```python
-from amazonathena.models.executor_state import ExecutorState
+from amazonathena.models.executor_state_enum import ExecutorStateEnum
 
-executor_state = ExecutorState.TERMINATED
+executor_state = ExecutorStateEnum.TERMINATED
 ```
 
 

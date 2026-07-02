@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 The name of a prepared statement that could not be returned.
 
-*This model accepts additional fields of type object.*
-
 
 # Class Name
 
@@ -19,21 +17,18 @@ The name of a prepared statement that could not be returned.
 | `StatementName` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256`, *Pattern*: `[a-zA-Z_][a-zA-Z0-9_@:]{1,256}` |
 | `ErrorCode` | `string` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
 | `ErrorMessage` | `string` | Optional | - |
-| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 
 # Example
 
 ```csharp
 using AmazonAthena.Standard.Models;
-using AmazonAthena.Standard.Utilities;
 
 UnprocessedPreparedStatementName unprocessedPreparedStatementName = new UnprocessedPreparedStatementName
 {
     StatementName = "StatementName8",
     ErrorCode = "ErrorCode6",
     ErrorMessage = "ErrorMessage6",
-    ["exampleAdditionalProperty"] = ApiHelper.JsonDeserialize<object>("{\"key1\":\"val1\",\"key2\":\"val2\"}"),
 };
 ```
 

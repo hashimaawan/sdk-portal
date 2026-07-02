@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.
 
-*This model accepts additional fields of type Object.*
-
 
 # Class Name
 
@@ -25,21 +23,26 @@ Stage statistics such as input and output rows and bytes, execution time and sta
 | `execution_time` | `Integer` | Optional | - |
 | `query_stage_plan` | [`QueryStagePlan`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/query-stage-plan.md) | Optional | - |
 | `sub_stages` | [`Array[QueryStage]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/ruby/models/structures/query-stage.md) | Optional | - |
-| `additional_properties` | `Hash[String, Object]` | Optional | - |
 
 
 # Example
 
 ```ruby
 query_stage = QueryStage.new(
-  stage_id: 162,
-  state: 'State0',
-  output_bytes: 76,
-  output_rows: 190,
-  input_bytes: 222,
-  additional_properties: {
-    'exampleAdditionalProperty' => JSON.parse('{"key1":"val1","key2":"val2"}')
-  }
+  162,
+  'State0',
+  76,
+  190,
+  222,
+  nil,
+  nil,
+  QueryStagePlan.new(
+    nil,
+    nil,
+    [],
+    []
+  ),
+  []
 )
 ```
 

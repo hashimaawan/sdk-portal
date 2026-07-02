@@ -6,7 +6,7 @@ Returns table metadata for the specified catalog, database, and table.
 
 ```ts
 async getTableMetadata(
-  xAmzTarget: XAmzTarget28,
+  xAmzTarget: XAmzTarget28Enum,
   body: GetTableMetadataInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget28`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-28.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget28Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-28.md) | Header, Required | - |
 | `body` | [`GetTableMetadataInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/get-table-metadata-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget28.EnumAmazonAthenaGetTableMetadata;
+const xAmzTarget = XAmzTarget28Enum.EnumAmazonAthenaGetTableMetadata;
 
 const body: GetTableMetadataInput = {
   catalogName: 'CatalogName0',
@@ -60,7 +60,7 @@ const body: GetTableMetadataInput = {
 };
 
 try {
-  const response = await api.getTableMetadata(
+  const response = await apiController.getTableMetadata(
     xAmzTarget,
     body
   );

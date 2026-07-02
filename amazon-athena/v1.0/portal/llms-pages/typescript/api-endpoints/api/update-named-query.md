@@ -6,7 +6,7 @@ Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated.
 
 ```ts
 async updateNamedQuery(
-  xAmzTarget: XAmzTarget55,
+  xAmzTarget: XAmzTarget55Enum,
   body: UpdateNamedQueryInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget55`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-55.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget55Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-55.md) | Header, Required | - |
 | `body` | [`UpdateNamedQueryInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/update-named-query-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,7 +51,7 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget55.EnumAmazonAthenaUpdateNamedQuery;
+const xAmzTarget = XAmzTarget55Enum.EnumAmazonAthenaUpdateNamedQuery;
 
 const body: UpdateNamedQueryInput = {
   namedQueryId: 'NamedQueryId6',
@@ -60,7 +60,7 @@ const body: UpdateNamedQueryInput = {
 };
 
 try {
-  const response = await api.updateNamedQuery(
+  const response = await apiController.updateNamedQuery(
     xAmzTarget,
     body
   );

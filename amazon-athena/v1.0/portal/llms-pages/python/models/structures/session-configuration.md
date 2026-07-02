@@ -4,8 +4,6 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 Contains session configuration information.
 
-*This model accepts additional fields of type Any.*
-
 
 # Class Name
 
@@ -20,16 +18,13 @@ Contains session configuration information.
 | `working_directory` | `str` | Optional | - |
 | `idle_timeout_seconds` | `int` | Optional | - |
 | `encryption_configuration` | [`EncryptionConfiguration`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/encryption-configuration.md) | Optional | If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. |
-| `additional_properties` | `Dict[str, Any]` | Optional | - |
 
 
 # Example
 
 ```python
-import jsonpickle
-
 from amazonathena.models.encryption_configuration import EncryptionConfiguration
-from amazonathena.models.encryption_option_1 import EncryptionOption1
+from amazonathena.models.encryption_option_1_enum import EncryptionOption1Enum
 from amazonathena.models.session_configuration import SessionConfiguration
 
 session_configuration = SessionConfiguration(
@@ -37,15 +32,9 @@ session_configuration = SessionConfiguration(
     working_directory='WorkingDirectory2',
     idle_timeout_seconds=176,
     encryption_configuration=EncryptionConfiguration(
-        encryption_option=EncryptionOption1.SSE_S3,
-        kms_key='KmsKey6',
-        additional_properties={
-            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-        }
-    ),
-    additional_properties={
-        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
-    }
+        encryption_option=EncryptionOption1Enum.SSE_S3,
+        kms_key='KmsKey6'
+    )
 )
 ```
 

@@ -6,7 +6,7 @@ Creates (registers) a data catalog with the specified name and properties. Catal
 
 ```ts
 async createDataCatalog(
-  xAmzTarget: XAmzTarget3,
+  xAmzTarget: XAmzTarget3Enum,
   body: CreateDataCatalogInput,
   xAmzContentSha256?: string,
   xAmzDate?: string,
@@ -29,7 +29,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget3`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-3.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget3Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/enumerations/x-amz-target-3.md) | Header, Required | - |
 | `body` | [`CreateDataCatalogInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/typescript/models/structures/create-data-catalog-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string \| undefined` | Header, Optional | - |
 | `xAmzDate` | `string \| undefined` | Header, Optional | - |
@@ -51,15 +51,15 @@ This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashima
 # Example Usage
 
 ```ts
-const xAmzTarget = XAmzTarget3.EnumAmazonAthenaCreateDataCatalog;
+const xAmzTarget = XAmzTarget3Enum.EnumAmazonAthenaCreateDataCatalog;
 
 const body: CreateDataCatalogInput = {
   name: 'Name6',
-  type: DataCatalogType1.Hive,
+  type: DataCatalogType1Enum.HIVE,
 };
 
 try {
-  const response = await api.createDataCatalog(
+  const response = await apiController.createDataCatalog(
     xAmzTarget,
     body
   );

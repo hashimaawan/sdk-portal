@@ -2,8 +2,6 @@
 
 Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/php/x-redirect/JTI0bSUyRkFkZGl0aW9uYWxDb25maWdz
 
-*This model accepts additional fields of type string.*
-
 
 # Class Name
 
@@ -12,17 +10,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Fields
 
-| Name | Type | Tags | Description | Getter | Setter |
-|  --- | --- | --- | --- | --- | --- |
-| `additionalProperties` | `array<string, string>` | Optional | **Constraints**: *Maximum Length*: `51200` | findAdditionalProperty(string key): string | additionalProperty(string key, string value): void |
+|  |
+| 
 
 
 # Example (as JSON)
 
 ```json
-{
-  "exampleAdditionalProperty": "AdditionalConfigs_additionalProperties5"
-}
+{}
 ```
 
 

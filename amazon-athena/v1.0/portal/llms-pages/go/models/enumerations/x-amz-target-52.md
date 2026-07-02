@@ -5,14 +5,14 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 
 # Class Name
 
-`XAmzTarget52`
+`XAmzTarget52Enum`
 
 
 # Fields
 
 | Name |
 |  --- |
-| `EnumAmazonathenaterminatesession` |
+| `ENUMAMAZONATHENATERMINATESESSION` |
 
 
 # Example
@@ -21,11 +21,11 @@ Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-ath
 package main
 
 import (
-    "amazonAthena/models"
+    "amazonathena/models"
 )
 
 func main() {
-    xAmzTarget52 := models.XAmzTarget52_EnumAmazonathenaterminatesession
+    xAmzTarget52 := models.XAmzTarget52Enum_ENUMAMAZONATHENATERMINATESESSION
 
 }
 ```

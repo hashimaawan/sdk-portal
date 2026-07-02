@@ -6,7 +6,7 @@ Updates the contents of a Spark notebook.
 
 ```csharp
 UpdateNotebookAsync(
-    Models.XAmzTarget56 xAmzTarget,
+    Models.XAmzTarget56Enum xAmzTarget,
     Models.UpdateNotebookInput body,
     string xAmzContentSha256 = null,
     string xAmzDate = null,
@@ -27,7 +27,7 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `xAmzTarget` | [`XAmzTarget56`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-56.md) | Header, Required | - |
+| `xAmzTarget` | [`XAmzTarget56Enum`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/enumerations/x-amz-target-56.md) | Header, Required | - |
 | `body` | [`UpdateNotebookInput`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/models/structures/update-notebook-input.md) | Body, Required | - |
 | `xAmzContentSha256` | `string` | Header, Optional | - |
 | `xAmzDate` | `string` | Header, Optional | - |
@@ -42,23 +42,23 @@ This endpoint requires [hmac](https://raw.githubusercontent.com/hashimaawan/sdk-
 
 **200**: Success
 
-This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/net-standard-library/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type object.
+`Task<object>`
 
 
 # Example Usage
 
 ```csharp
-XAmzTarget56 xAmzTarget = XAmzTarget56.EnumAmazonAthenaUpdateNotebook;
+XAmzTarget56Enum xAmzTarget = XAmzTarget56Enum.EnumAmazonAthenaUpdateNotebook;
 UpdateNotebookInput body = new UpdateNotebookInput
 {
     NotebookId = "NotebookId6",
     Payload = "Payload2",
-    Type = NotebookType2.Ipynb,
+    Type = NotebookType2Enum.IPYNB,
 };
 
 try
 {
-    ApiResponse<object> result = await api.UpdateNotebookAsync(
+    object result = await aPIController.UpdateNotebookAsync(
         xAmzTarget,
         body
     );

@@ -1,0 +1,50 @@
+# Database
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/python/x-redirect/JTI0bSUyRkRhdGFiYXNl
+
+*This model accepts additional fields of type [Any](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/object.md).*
+
+
+# Class Name
+
+`Database`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `cluster_name` | `str` | Optional | The name of the underlying DigitalOcean DBaaS cluster. This is required for production databases. For dev databases, if cluster_name is not set, a new cluster will be provisioned. |
+| `db_name` | `str` | Optional | The name of the MySQL or PostgreSQL database to configure. |
+| `db_user` | `str` | Optional | The name of the MySQL or PostgreSQL user to configure. |
+| `engine` | [`Engine`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/enumerations/engine.md) | Optional | - MYSQL: MySQL<br>- PG: PostgreSQL<br>- REDIS: Redis<br><br>**Default**: `"UNSET"` |
+| `name` | `str` | Required | The name. Must be unique across all components within the same app.<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `32`, *Pattern*: `^[a-z][a-z0-9-]{0,30}[a-z0-9]$` |
+| `production` | `bool` | Optional | Whether this is a production or dev database. |
+| `version` | `str` | Optional | The version of the database engine |
+| `additional_properties` | [`Dict[str, Any]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/object.md) | Optional | - |
+
+
+# Example
+
+```python
+import jsonpickle
+
+from digitaloceanapi.models.database import Database
+from digitaloceanapi.models.engine import Engine
+
+database = Database(
+    name='prod-db',
+    cluster_name='cluster_name',
+    db_name='my_db',
+    db_user='superuser',
+    engine=Engine.PG,
+    production=True,
+    version='12',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
+)
+```
+
+
+

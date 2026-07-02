@@ -1,0 +1,133 @@
+# V2 Firewalls Request
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/python/x-redirect/JTI0bSUyRlYyJTI1MjBGaXJld2FsbHMlMjUyMFJlcXVlc3Q
+
+*This model accepts additional fields of type [Any](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/object.md).*
+
+
+# Class Name
+
+`V2FirewallsRequest`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `created_at` | `datetime` | Optional, Read-only | A time value given in ISO8601 combined date and time format that represents when the firewall was created. |
+| `droplet_ids` | `List[int]` | Optional | An array containing the IDs of the Droplets assigned to the firewall. |
+| `id` | `str` | Optional, Read-only | A unique ID that can be used to identify and reference a firewall. |
+| `name` | `str` | Required | A human-readable name for a firewall. The name must begin with an alphanumeric character. Subsequent characters must either be alphanumeric characters, a period (.), or a dash (-).<br><br>**Constraints**: *Pattern*: `^[a-zA-Z0-9][a-zA-Z0-9\.-]+$` |
+| `pending_changes` | [`List[PendingChange]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/pending-change.md) | Optional, Read-only | An array of objects each containing the fields "droplet_id", "removing", and "status". It is provided to detail exactly which Droplets are having their security policies updated. When empty, all changes have been successfully applied. |
+| `status` | [`Status9`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/enumerations/status-9.md) | Optional, Read-only | A status string indicating the current state of the firewall. This can be "waiting", "succeeded", or "failed". |
+| `tags` | `List[str]` | Optional | - |
+| `inbound_rules` | [`List[InboundRule]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/inbound-rule.md) | Required | - |
+| `outbound_rules` | [`List[OutboundRule]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/outbound-rule.md) | Required | - |
+| `additional_properties` | [`Dict[str, Any]`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/object.md) | Optional | - |
+
+
+# Example
+
+```python
+import dateutil.parser
+import jsonpickle
+
+from digitaloceanapi.models.destinations import Destinations
+from digitaloceanapi.models.inbound_rule import InboundRule
+from digitaloceanapi.models.outbound_rule import OutboundRule
+from digitaloceanapi.models.pending_change import PendingChange
+from digitaloceanapi.models.protocol import Protocol
+from digitaloceanapi.models.sources import Sources
+from digitaloceanapi.models.status_9 import Status9
+from digitaloceanapi.models.v_2_firewalls_request import V2FirewallsRequest
+
+v_2_firewalls_request = V2FirewallsRequest(
+    name='firewall',
+    inbound_rules=[
+        InboundRule(
+            ports='8000',
+            protocol=Protocol.TCP,
+            sources=Sources(
+                addresses=[
+                    '1.2.3.4',
+                    '18.0.0.0/8'
+                ],
+                droplet_ids=[
+                    8043964
+                ],
+                kubernetes_ids=[
+                    '41b74c5d-9bd0-5555-5555-a57c495b81a3'
+                ],
+                load_balancer_uids=[
+                    '4de7ac8b-495b-4884-9a69-1050c6793cd6'
+                ],
+                tags=[
+                    'tags1',
+                    'tags2',
+                    'tags3'
+                ],
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
+            ),
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        )
+    ],
+    outbound_rules=[
+        OutboundRule(
+            ports='8000',
+            protocol=Protocol.TCP,
+            destinations=Destinations(
+                addresses=[
+                    '1.2.3.4',
+                    '18.0.0.0/8'
+                ],
+                droplet_ids=[
+                    8043964
+                ],
+                kubernetes_ids=[
+                    '41b74c5d-9bd0-5555-5555-a57c495b81a3'
+                ],
+                load_balancer_uids=[
+                    '4de7ac8b-495b-4884-9a69-1050c6793cd6'
+                ],
+                tags=[
+                    'tags7',
+                    'tags8',
+                    'tags9'
+                ],
+                additional_properties={
+                    'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+                }
+            ),
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        )
+    ],
+    created_at=dateutil.parser.parse('2020-05-23T21:24:00Z'),
+    droplet_ids=[
+        8043964
+    ],
+    id='bb4b2611-3d72-467b-8602-280330ecd65c',
+    pending_changes=[
+        PendingChange(
+            droplet_id=8043964,
+            removing=False,
+            status='waiting',
+            additional_properties={
+                'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+            }
+        )
+    ],
+    status=Status9.WAITING,
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
+)
+```
+
+
+

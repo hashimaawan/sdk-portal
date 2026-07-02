@@ -1,0 +1,157 @@
+# Droplets List Firewalls
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/python/x-redirect/JTI0ZSUyRkRyb3BsZXRzJTJGZHJvcGxldHNfbGlzdF9maXJld2FsbHM
+
+To retrieve a list of all firewalls available to a Droplet, send a GET request
+to `/v2/droplets/$DROPLET_ID/firewalls`
+
+The response will be a JSON object that has a key called `firewalls`. This will
+be set to an array of `firewall` objects, each of which contain the standard
+`firewall` attributes.
+
+```python
+def droplets_list_firewalls(self,
+                           droplet_id,
+                           per_page=20,
+                           page=1)
+```
+
+
+# Authentication
+
+This endpoint requires [bearer_auth](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/getting-started/quickstart/authorization.md)
+
+
+# Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `droplet_id` | `int` | Template, Required | A unique identifier for a Droplet instance.<br><br>**Constraints**: `>= 1` |
+| `per_page` | `int` | Query, Optional | Number of items returned per page<br><br>**Default**: `20`<br><br>**Constraints**: `>= 1`, `<= 200` |
+| `page` | `int` | Query, Optional | Which 'page' of paginated results to return.<br><br>**Default**: `1`<br><br>**Constraints**: `>= 1` |
+
+
+# Response Type
+
+**200**: A JSON object that has a key called `firewalls`.
+
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/sdk-infrastructure/utilities/apiresponse.md) instance. The `body` property of this instance returns the response data which is of type [`V2DropletsFirewallsResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/structures/v2-droplets-firewalls-response.md).
+
+
+# Example Usage
+
+```python
+droplet_id = 3164444
+
+per_page = 2
+
+page = 1
+
+result = droplets_api.droplets_list_firewalls(
+    droplet_id,
+    per_page=per_page,
+    page=page
+)
+
+if result.is_success():
+    print(result.body)
+elif result.is_error():
+    print(result.errors)
+```
+
+
+# Example Response *(as JSON)*
+
+```json
+{
+  "firewalls": [
+    {
+      "created_at": "2020-05-23T21:24:00Z",
+      "droplet_ids": [
+        89989,
+        33322
+      ],
+      "id": "bb4b2611-3d72-467b-8602-280330ecd65c",
+      "inbound_rules": [
+        {
+          "ports": "8000-9000",
+          "protocol": "udp",
+          "sources": {
+            "addresses": [
+              "1.2.3.4",
+              "18.0.0.0/8"
+            ],
+            "droplet_ids": [
+              8282823,
+              3930392
+            ],
+            "load_balancer_uids": [
+              "4de7ac8b-495b-4884-9a69-1050c6793cd6"
+            ],
+            "tags": [
+              "base-image",
+              "dev"
+            ]
+          }
+        }
+      ],
+      "name": "firewall",
+      "outbound_rules": [
+        {
+          "destinations": {
+            "addresses": [
+              "1.2.3.4",
+              "18.0.0.0/8"
+            ],
+            "droplet_ids": [
+              3827493,
+              213213
+            ],
+            "load_balancer_uids": [
+              "4de7ac8b-495b-4884-9a69-1050c6793cd6"
+            ],
+            "tags": [
+              "base-image",
+              "prod"
+            ]
+          },
+          "ports": "7000-9000",
+          "protocol": "tcp"
+        }
+      ],
+      "pending_changes": [
+        {
+          "droplet_id": 8043964,
+          "removing": true,
+          "status": "waiting"
+        }
+      ],
+      "status": "succeeded",
+      "tags": [
+        "base-image",
+        "prod"
+      ]
+    }
+  ],
+  "links": {
+    "pages": {}
+  },
+  "meta": {
+    "total": 1
+  }
+}
+```
+
+
+# Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 401 | Unauthorized | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/exceptions/v2-1-clicks-401-error.md) |
+| 404 | The resource was not found. | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/exceptions/v2-1-clicks-401-error.md) |
+| 429 | API Rate limit exceeded | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/exceptions/v2-1-clicks-401-error.md) |
+| 500 | Server error. | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/exceptions/v2-1-clicks-401-error.md) |
+| Default | Unexpected error | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/python/models/exceptions/v2-1-clicks-401-error.md) |
+
+
+

@@ -1,0 +1,35 @@
+# Overview
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/java/x-redirect/JTI0aCUyRl9fYXBpX3JlZmVyZW5jZSUyRkZsb2F0aW5nJTI1MjBJUHMlMkZPdmVydmlldw
+
+As of 16 June 2022, we have renamed the Floating IP product to [Reserved IPs](https://docs.digitalocean.com/reference/api/api-reference/#tag/Reserved-IPs).
+The Reserved IP product's endpoints function the exact same way as Floating IPs.
+The only difference is the name change throughout the URLs and fields.
+For example, the `floating_ips` field is now the `reserved_ips` field.
+The Floating IP endpoints will remain active until fall 2023 before being
+permanently deprecated.
+
+With the exception of the [Projects API](https://docs.digitalocean.com/reference/api/api-reference/#tag/Projects),
+we will reflect this change as an additional field in the responses across the API
+where the `floating_ip` field is used. For example, the Droplet metadata response
+will contain the field `reserved_ips` in addition to the `floating_ips` field.
+Floating IPs retrieved using the Projects API will retain the original name.
+
+[DigitalOcean Floating IPs](https://www.digitalocean.com/docs/networking/floating-ips/)
+are publicly-accessible static IP addresses that can be mapped to one of
+your Droplets. They can be used to create highly available setups or other
+configurations requiring movable addresses.
+
+Floating IPs are bound to a specific region.
+
+
+# Get instance
+
+An instance of the `FloatingIPsApi` class can be accessed from the API Client.
+
+```
+FloatingIPsApi floatingIPsApi = client.getFloatingIPsApi();
+```
+
+
+

@@ -1,0 +1,42 @@
+# List of APIs
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/ruby/x-redirect/JTI0aCUyRl9fbGlzdF9vZl9hcGlz
+
+* [1-Click Applications](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/1-click-applications/overview.md)
+* [Account](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/account/overview.md)
+* [Actions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/actions/overview.md)
+* [Apps](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/apps/overview.md)
+* [Billing](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/billing/overview.md)
+* [Block Storage](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/block-storage/overview.md)
+* [Block Storage Actions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/block-storage-actions/overview.md)
+* [CDN Endpoints](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/cdn-endpoints/overview.md)
+* [Certificates](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/certificates/overview.md)
+* [Container Registry](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/container-registry/overview.md)
+* [Databases](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/databases/overview.md)
+* [Domain Records](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/domain-records/overview.md)
+* [Domains](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/domains/overview.md)
+* [Droplet Actions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/droplet-actions/overview.md)
+* [Droplets](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/droplets/overview.md)
+* [Firewalls](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/firewalls/overview.md)
+* [Floating IP Actions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/floating-ip-actions/overview.md)
+* [Floating I Ps](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/floating-i-ps/overview.md)
+* [Functions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/functions/overview.md)
+* [Image Actions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/image-actions/overview.md)
+* [Images](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/images/overview.md)
+* [Kubernetes](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/kubernetes/overview.md)
+* [Load Balancers](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/load-balancers/overview.md)
+* [Monitoring](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/monitoring/overview.md)
+* [Project Resources](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/project-resources/overview.md)
+* [Projects](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/projects/overview.md)
+* [Regions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/regions/overview.md)
+* [Reserved IP Actions](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/reserved-ip-actions/overview.md)
+* [Reserved I Ps](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/reserved-i-ps/overview.md)
+* [Sizes](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/sizes/overview.md)
+* [Snapshots](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/snapshots/overview.md)
+* [SSH Keys](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/ssh-keys/overview.md)
+* [Tags](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/tags/overview.md)
+* [Uptime](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/uptime/overview.md)
+* [VP Cs](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/api-endpoints/vp-cs/overview.md)
+
+
+

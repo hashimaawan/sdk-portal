@@ -1,0 +1,37 @@
+# Minimum Tls Version
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/go/x-redirect/JTI0bSUyRk1pbmltdW1UbHNWZXJzaW9u
+
+The minimum version of TLS a client application can use to access resources for the domain.  Must be one of the following values wrapped within quotations: `"1.2"` or `"1.3"`.
+
+
+# Class Name
+
+`MinimumTlsVersion`
+
+
+# Fields
+
+| Name |
+|  --- |
+| `Enum12` |
+| `Enum13` |
+
+
+# Example
+
+```go
+package main
+
+import (
+    "digitalOceanApi/models"
+)
+
+func main() {
+    minimumTlsVersion := models.MinimumTlsVersion_Enum12
+
+}
+```
+
+
+

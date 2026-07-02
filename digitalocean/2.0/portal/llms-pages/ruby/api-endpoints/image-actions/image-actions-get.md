@@ -1,0 +1,114 @@
+# Image Actions Get
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/ruby/x-redirect/JTI0ZSUyRkltYWdlJTI1MjBBY3Rpb25zJTJGaW1hZ2VBY3Rpb25zX2dldA
+
+To retrieve the status of an image action, send a GET request to `/v2/images/$IMAGE_ID/actions/$IMAGE_ACTION_ID`.
+
+```ruby
+def image_actions_get(image_id,
+                      action_id)
+```
+
+
+# Authentication
+
+This endpoint requires [bearer_auth](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/getting-started/quickstart/authorization.md)
+
+
+# Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `image_id` | `Integer` | Template, Required | A unique number that can be used to identify and reference a specific image. |
+| `action_id` | `Integer` | Template, Required | A unique numeric ID that can be used to identify and reference an action.<br><br>**Constraints**: `>= 1` |
+
+
+# Response Type
+
+**200**: The response will be an object with a key called `action`. The value of this will be an object that contains the standard image action attributes.
+
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/sdk-infrastructure/utilities/apiresponse.md) instance. The `data` property of this instance returns the response data which is of type [`Action`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/models/structures/action.md).
+
+
+# Example Usage
+
+```ruby
+image_id = 62137902
+
+action_id = 36804636
+
+result = image_actions_api.image_actions_get(
+  image_id,
+  action_id
+)
+
+if result.success?
+  puts result.data
+elsif result.error?
+  warn result.errors
+end
+```
+
+
+# Example Response *(as JSON)*
+
+```json
+{
+  "action": {
+    "completed_at": null,
+    "id": 36805527,
+    "region": {
+      "available": true,
+      "features": [
+        "private_networking",
+        "backups",
+        "ipv6",
+        "metadata",
+        "server_id",
+        "install_agent",
+        "storage",
+        "image_transfer"
+      ],
+      "name": "New York 3",
+      "sizes": [
+        "s-1vcpu-3gb",
+        "m-1vcpu-8gb",
+        "s-3vcpu-1gb",
+        "s-1vcpu-2gb",
+        "s-2vcpu-2gb",
+        "s-2vcpu-4gb",
+        "s-4vcpu-8gb",
+        "s-6vcpu-16gb",
+        "s-8vcpu-32gb",
+        "s-12vcpu-48gb",
+        "s-16vcpu-64gb",
+        "s-20vcpu-96gb",
+        "s-1vcpu-1gb",
+        "c-1vcpu-2gb",
+        "s-24vcpu-128gb"
+      ],
+      "slug": "nyc3"
+    },
+    "region_slug": "nyc3",
+    "resource_id": 7938269,
+    "resource_type": "image",
+    "started_at": "2014-11-14T16:42:45Z",
+    "status": "in-progress",
+    "type": "transfer"
+  }
+}
+```
+
+
+# Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 401 | Unauthorized | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/models/exceptions/v2-1-clicks-401-error.md) |
+| 404 | The resource was not found. | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/models/exceptions/v2-1-clicks-401-error.md) |
+| 429 | API Rate limit exceeded | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/models/exceptions/v2-1-clicks-401-error.md) |
+| 500 | Server error. | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/models/exceptions/v2-1-clicks-401-error.md) |
+| Default | Unexpected error | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/ruby/models/exceptions/v2-1-clicks-401-error.md) |
+
+
+

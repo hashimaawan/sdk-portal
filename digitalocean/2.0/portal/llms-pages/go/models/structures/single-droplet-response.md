@@ -1,0 +1,255 @@
+# Single Droplet Response
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/go/x-redirect/JTI0bSUyRlNpbmdsZSUyNTIwRHJvcGxldCUyNTIwUmVzcG9uc2U
+
+*This model accepts additional fields of type [interface{}](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/structures/object.md).*
+
+
+# Class Name
+
+`SingleDropletResponse`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `Droplet` | [`models.Droplet`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/structures/droplet.md) | Required | - |
+| `Links` | [`models.Links1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/structures/links-1.md) | Required | - |
+| `AdditionalProperties` | [`map[string]interface{}`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/structures/object.md) | Optional | - |
+
+
+# Example
+
+```go
+package main
+
+import (
+    "log"
+    "time"
+    "digitalOceanApi/models"
+)
+
+func main() {
+    parseTime := func(layout, value string, errCallback func(error)) time.Time {
+        dateTime, err := time.Parse(layout, value)
+        if err != nil {
+            errCallback(err) 
+       }
+        return dateTime
+    }
+    singleDropletResponse := models.SingleDropletResponse{
+        Droplet:               models.Droplet{
+            BackupIds:             []int{
+                53893572,
+            },
+            CreatedAt:             parseTime(time.RFC3339, "2020-07-21T18:37:44Z", func(err error) { log.Fatalln(err) }),
+            Disk:                  25,
+            Features:              []string{
+                "backups",
+                "private_networking",
+                "ipv6",
+            },
+            Id:                    3164444,
+            Image:                 models.Image1{
+                CreatedAt:             models.ToPointer(parseTime(time.RFC3339, "2020-05-04T22:23:02Z", func(err error) { log.Fatalln(err) })),
+                Description:           models.ToPointer("description6"),
+                Distribution:          models.ToPointer(models.Distribution_Ubuntu),
+                ErrorMessage:          models.ToPointer("error_message8"),
+                Id:                    models.ToPointer(7555620),
+                MinDiskSize:           models.NewOptional(models.ToPointer(20)),
+                Name:                  models.ToPointer("Nifty New Snapshot"),
+                Public:                models.ToPointer(true),
+                Regions:               []models.Region2{
+                    models.Region2_Nyc1,
+                    models.Region2_Nyc2,
+                },
+                SizeGigabytes:         models.NewOptional(models.ToPointer(float64(2.34))),
+                Slug:                  models.NewOptional(models.ToPointer("nifty1")),
+                Status:                models.ToPointer(models.Status7_New),
+                Tags:                  models.NewOptional(models.ToPointer([]string{
+                    "base-image",
+                    "prod",
+                })),
+                Type:                  models.ToPointer(models.Type9_Snapshot),
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            Kernel:                models.NewOptional(models.ToPointer(models.Kernel{
+                Id:                    models.ToPointer(16),
+                Name:                  models.ToPointer("name4"),
+                Version:               models.ToPointer("version0"),
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            })),
+            Locked:                false,
+            Memory:                1024,
+            Name:                  "example.com",
+            Networks:              models.Networks{
+                V4:                    []models.V4{
+                    models.V4{
+                        Gateway:               models.ToPointer("gateway2"),
+                        IpAddress:             models.ToPointer("ip_address2"),
+                        Netmask:               models.ToPointer("netmask2"),
+                        Type:                  models.ToPointer(models.Type10_Public),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
+                    },
+                    models.V4{
+                        Gateway:               models.ToPointer("gateway2"),
+                        IpAddress:             models.ToPointer("ip_address2"),
+                        Netmask:               models.ToPointer("netmask2"),
+                        Type:                  models.ToPointer(models.Type10_Public),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
+                    },
+                    models.V4{
+                        Gateway:               models.ToPointer("gateway2"),
+                        IpAddress:             models.ToPointer("ip_address2"),
+                        Netmask:               models.ToPointer("netmask2"),
+                        Type:                  models.ToPointer(models.Type10_Public),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
+                    },
+                },
+                V6:                    []models.V6{
+                    models.V6{
+                        Gateway:               models.ToPointer("gateway4"),
+                        IpAddress:             models.ToPointer("ip_address4"),
+                        Netmask:               models.ToPointer(106),
+                        Type:                  models.ToPointer(models.Type11_Public),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
+                    },
+                    models.V6{
+                        Gateway:               models.ToPointer("gateway4"),
+                        IpAddress:             models.ToPointer("ip_address4"),
+                        Netmask:               models.ToPointer(106),
+                        Type:                  models.ToPointer(models.Type11_Public),
+                        AdditionalProperties:  map[string]interface{}{
+                            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                        },
+                    },
+                },
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            NextBackupWindow:      models.ToPointer(models.NextBackupWindow{
+                End:                   models.ToPointer(parseTime(time.RFC3339, "2019-12-04T23:00:00Z", func(err error) { log.Fatalln(err) })),
+                Start:                 models.ToPointer(parseTime(time.RFC3339, "2019-12-04T00:00:00Z", func(err error) { log.Fatalln(err) })),
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            }),
+            Region:                models.Region{
+                Available:             true,
+                Features:              []string{
+                    "private_networking",
+                    "backups",
+                    "ipv6",
+                    "metadata",
+                    "install_agent",
+                    "storage",
+                    "image_transfer",
+                },
+                Name:                  "New York 3",
+                Sizes:                 []string{
+                    "s-1vcpu-1gb",
+                    "s-1vcpu-2gb",
+                    "s-1vcpu-3gb",
+                    "s-2vcpu-2gb",
+                    "s-3vcpu-1gb",
+                    "s-2vcpu-4gb",
+                    "s-4vcpu-8gb",
+                    "s-6vcpu-16gb",
+                    "s-8vcpu-32gb",
+                    "s-12vcpu-48gb",
+                    "s-16vcpu-64gb",
+                    "s-20vcpu-96gb",
+                    "s-24vcpu-128gb",
+                    "s-32vcpu-192g",
+                },
+                Slug:                  "nyc3",
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            Size:                  models.Size{
+                Available:             true,
+                Description:           "Basic",
+                Disk:                  25,
+                Memory:                1024,
+                PriceHourly:           float64(0.00743999984115362),
+                PriceMonthly:          float64(5),
+                Regions:               []string{
+                    "ams2",
+                    "ams3",
+                    "blr1",
+                    "fra1",
+                    "lon1",
+                    "nyc1",
+                    "nyc2",
+                    "nyc3",
+                    "sfo1",
+                    "sfo2",
+                    "sfo3",
+                    "sgp1",
+                    "tor1",
+                },
+                Slug:                  "s-1vcpu-1gb",
+                Transfer:              float64(1),
+                Vcpus:                 1,
+                AdditionalProperties:  map[string]interface{}{
+                    "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                },
+            },
+            SizeSlug:              "s-1vcpu-1gb",
+            SnapshotIds:           []int{
+                67512819,
+            },
+            Status:                models.Status8_Active,
+            Tags:                  []string{
+                "web",
+                "env:prod",
+            },
+            Vcpus:                 1,
+            VolumeIds:             []string{
+                "506f78a4-e098-11e5-ad9f-000f53306ae1",
+            },
+            VpcUuid:               models.ToPointer("760e09ef-dc84-11e8-981e-3cfdfeaae000"),
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
+        },
+        Links:                 models.Links1{
+            Actions:               []models.Action1{
+                models.Action1{
+                    Href:                  models.ToPointer("href0"),
+                    Id:                    models.ToPointer(154),
+                    Rel:                   models.ToPointer("rel4"),
+                    AdditionalProperties:  map[string]interface{}{
+                        "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+                    },
+                },
+            },
+            AdditionalProperties:  map[string]interface{}{
+                "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+            },
+        },
+        AdditionalProperties:  map[string]interface{}{
+            "exampleAdditionalProperty": interface{}("[key1, val1][key2, val2]"),
+        },
+    }
+
+}
+```
+
+
+

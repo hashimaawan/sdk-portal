@@ -1,0 +1,76 @@
+# Kubernetes Get Available Upgrades
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/#/go/x-redirect/JTI0ZSUyRkt1YmVybmV0ZXMlMkZrdWJlcm5ldGVzX2dldF9hdmFpbGFibGVVcGdyYWRlcw
+
+To determine whether a cluster can be upgraded, and the versions to which it
+can be upgraded, send a GET request to
+`/v2/kubernetes/clusters/$K8S_CLUSTER_ID/upgrades`.
+
+```go
+KubernetesGetAvailableUpgrades(
+    ctx context.Context,
+    clusterId uuid.UUID) (
+    models.ApiResponse[models.V2KubernetesClustersUpgradesResponse],
+    error)
+```
+
+
+# Authentication
+
+This endpoint requires [bearer_auth](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/getting-started/quickstart/authorization.md)
+
+
+# Parameters
+
+| Parameter | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `clusterId` | `uuid.UUID` | Template, Required | A unique ID that can be used to reference a Kubernetes cluster. |
+
+
+# Response Type
+
+**200**: The response will be a JSON object with a key called
+`available_upgrade_versions`. The value of this will be an array of objects,
+representing the upgrade versions currently available for this cluster.
+
+If the cluster is up-to-date (i.e. there are no upgrades currently available)
+`available_upgrade_versions` will be `null`.
+
+This method returns an [`ApiResponse`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/sdk-infrastructure/utilities/apiresponse.md) instance. The `Data` property of this instance returns the response data which is of type [models.V2KubernetesClustersUpgradesResponse](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/structures/v2-kubernetes-clusters-upgrades-response.md).
+
+
+# Example Usage
+
+```go
+ctx := context.Background()
+
+clusterId := uuid.MustParse("bd5f5959-5e1e-4205-a714-a914373942af")
+
+apiResponse, err := kubernetesApi.KubernetesGetAvailableUpgrades(ctx, clusterId)
+if err != nil {
+    switch typedErr := err.(type) {
+        case *errors.V21Clicks401Error:
+            log.Fatalln("V21Clicks401ErrorException: ", typedErr)
+        default:
+            log.Fatalln(err)
+    }
+} else {
+    // Printing the result and response
+    fmt.Println(apiResponse.Data)
+    fmt.Println(apiResponse.Response.StatusCode)
+}
+```
+
+
+# Errors
+
+| HTTP Status Code | Error Description | Exception Class |
+|  --- | --- | --- |
+| 401 | Unauthorized | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/exceptions/v2-1-clicks-401-error.md) |
+| 404 | The resource was not found. | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/exceptions/v2-1-clicks-401-error.md) |
+| 429 | API Rate limit exceeded | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/exceptions/v2-1-clicks-401-error.md) |
+| 500 | Server error. | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/exceptions/v2-1-clicks-401-error.md) |
+| Default | Unexpected error | [`V21Clicks401ErrorException`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/digitalocean/2.0/portal/llms-pages/go/models/exceptions/v2-1-clicks-401-error.md) |
+
+
+

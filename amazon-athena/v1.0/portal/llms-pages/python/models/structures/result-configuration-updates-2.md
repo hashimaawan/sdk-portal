@@ -1,0 +1,56 @@
+# Result Configuration Updates 2
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRlJlc3VsdENvbmZpZ3VyYXRpb25VcGRhdGVzMg
+
+*This model accepts additional fields of type Any.*
+
+
+# Class Name
+
+`ResultConfigurationUpdates2`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `output_location` | `str` | Optional | - |
+| `remove_output_location` | `bool` | Optional | - |
+| `encryption_configuration` | [`EncryptionConfiguration2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/encryption-configuration-2.md) | Optional | - |
+| `remove_encryption_configuration` | `bool` | Optional | - |
+| `expected_bucket_owner` | `str` | Optional | **Constraints**: *Minimum Length*: `12`, *Maximum Length*: `12`, *Pattern*: `^[0-9]+$` |
+| `remove_expected_bucket_owner` | `bool` | Optional | - |
+| `acl_configuration` | [`AclConfiguration1`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/structures/acl-configuration-1.md) | Optional | - |
+| `remove_acl_configuration` | `bool` | Optional | - |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
+
+
+# Example
+
+```python
+import jsonpickle
+
+from amazonathena.models.encryption_configuration_2 import EncryptionConfiguration2
+from amazonathena.models.encryption_option_1 import EncryptionOption1
+from amazonathena.models.result_configuration_updates_2 import ResultConfigurationUpdates2
+
+result_configuration_updates_2 = ResultConfigurationUpdates2(
+    output_location='OutputLocation0',
+    remove_output_location=False,
+    encryption_configuration=EncryptionConfiguration2(
+        encryption_option=EncryptionOption1.SSE_S3,
+        kms_key='KmsKey6',
+        additional_properties={
+            'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+        }
+    ),
+    remove_encryption_configuration=False,
+    expected_bucket_owner='ExpectedBucketOwner0',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
+)
+```
+
+
+

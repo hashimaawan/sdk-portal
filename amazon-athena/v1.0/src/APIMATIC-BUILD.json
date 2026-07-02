@@ -1,0 +1,142 @@
+{
+  "generatePortal": {
+    "baseUrl": "https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal",
+    "languageConfig": {
+      "python": {},
+      "csharp": {},
+      "typescript": {},
+      "java": {},
+      "php": {},
+      "ruby": {},
+      "go": {}
+    },
+    "portalSettings": {
+      "languageSettings": {
+        "http_curl_v1": {},
+        "python_generic_lib": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        },
+        "cs_net_standard_lib": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        },
+        "ts_generic_lib": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        },
+        "java_eclipse_jre_lib": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        },
+        "php_generic_lib_v2": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        },
+        "ruby_generic_lib": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        },
+        "go_generic_lib": {
+          "stabilityLevelTag": "",
+          "aiIntegration": {
+            "cursor": {
+              "isEnabled": true
+            },
+            "claudeCode": {
+              "isEnabled": true
+            },
+            "vscode": {
+              "isEnabled": true
+            }
+          }
+        }
+      },
+      "theme": {
+        "baseTheme": "cosmos",
+        "colorMode": {
+          "defaultMode": "system",
+          "disableSwitch": false
+        },
+        "colors": {
+          "primaryColor": {
+            "light": "#0C7FF2",
+            "dark": "#7CBAF8"
+          },
+          "linkColor": {
+            "light": "#004AD7",
+            "dark": "#A3D1FF"
+          }
+        }
+      },
+      "enableHttpVerbsForAllLangs": true,
+      "enableExport": true,
+      "enableConsoleCalls": true
+    }
+  },
+  "apiCopilotConfig": {
+    "isEnabled": true,
+    "key": "37da24f5-57af-4b6d-a775-0c88c84ec643",
+    "welcomeMessage": "Welcome to the amazon-athena Developer Portal! Ask me anything about this API."
+  }
+}

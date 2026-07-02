@@ -1,0 +1,46 @@
+# Update Notebook Input
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/python/x-redirect/JTI0bSUyRlVwZGF0ZU5vdGVib29rSW5wdXQ
+
+*This model accepts additional fields of type Any.*
+
+
+# Class Name
+
+`UpdateNotebookInput`
+
+
+# Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `notebook_id` | `str` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `36`, *Pattern*: `[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}` |
+| `payload` | `str` | Required | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `10485760` |
+| `mtype` | [`NotebookType2`](https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/llms-pages/python/models/enumerations/notebook-type-2.md) | Required | - |
+| `session_id` | `str` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `256` |
+| `client_request_token` | `str` | Optional | **Constraints**: *Minimum Length*: `1`, *Maximum Length*: `36`, *Pattern*: `[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}` |
+| `additional_properties` | `Dict[str, Any]` | Optional | - |
+
+
+# Example
+
+```python
+import jsonpickle
+
+from amazonathena.models.notebook_type_2 import NotebookType2
+from amazonathena.models.update_notebook_input import UpdateNotebookInput
+
+update_notebook_input = UpdateNotebookInput(
+    notebook_id='NotebookId6',
+    payload='Payload2',
+    mtype=NotebookType2.IPYNB,
+    session_id='SessionId2',
+    client_request_token='ClientRequestToken0',
+    additional_properties={
+        'exampleAdditionalProperty': jsonpickle.decode('{"key1":"val1","key2":"val2"}')
+    }
+)
+```
+
+
+

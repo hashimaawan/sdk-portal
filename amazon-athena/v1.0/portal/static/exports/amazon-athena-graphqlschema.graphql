@@ -1,0 +1,3279 @@
+# API Name: "Amazon Athena"
+# Host: http://athena.us-east-1.amazonaws.com
+# <p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/what-is.html\">What is Amazon Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html\">Accessing Amazon Athena with JDBC</a>.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
+
+enum S3AclOption {
+    BUCKET_OWNER_FULL_CONTROL
+}
+
+enum CalculationExecutionState {
+    CANCELED
+    CANCELING
+    COMPLETED
+    CREATED
+    CREATING
+    FAILED
+    QUEUED
+    RUNNING
+}
+
+enum ColumnNullable {
+    NOT_NULL
+    NULLABLE
+    UNKNOWN
+}
+
+enum DataCatalogType {
+    GLUE
+    HIVE
+    LAMBDA
+}
+
+enum EncryptionOption {
+    CSE_KMS
+    SSE_KMS
+    SSE_S3
+}
+
+enum ExecutorState {
+    CREATED
+    CREATING
+    FAILED
+    REGISTERED
+    TERMINATED
+    TERMINATING
+}
+
+enum ExecutorType {
+    COORDINATOR
+    GATEWAY
+    WORKER
+}
+
+enum NotebookType {
+    IPYNB
+}
+
+enum SessionState {
+    BUSY
+    CREATED
+    CREATING
+    DEGRADED
+    FAILED
+    IDLE
+    TERMINATED
+    TERMINATING
+}
+
+enum StatementType {
+    DDL
+    DML
+    UTILITY
+}
+
+enum QueryExecutionState {
+    CANCELLED
+    FAILED
+    QUEUED
+    RUNNING
+    SUCCEEDED
+}
+
+enum WorkGroupState {
+    DISABLED
+    ENABLED
+}
+
+"<p>The state of the calculation execution. A description of each state follows.</p> <p> <code>CREATING</code> - The calculation is in the process of being created.</p> <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p> <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p> <p> <code>COMPLETED</code> - The calculation has completed without error.</p> <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>"
+enum CalculationExecutionState1 {
+    CANCELED
+    CANCELING
+    COMPLETED
+    CREATED
+    CREATING
+    FAILED
+    QUEUED
+    RUNNING
+}
+
+"<p>A filter for a specific calculation execution state. A description of each state follows.</p> <p> <code>CREATING</code> - The calculation is in the process of being created.</p> <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p> <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p> <p> <code>COMPLETED</code> - The calculation has completed without error.</p> <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>"
+enum CalculationExecutionState3 {
+    CANCELED
+    CANCELING
+    COMPLETED
+    CREATED
+    CREATING
+    FAILED
+    QUEUED
+    RUNNING
+}
+
+"<p> <code>CREATING</code> - The calculation is in the process of being created.</p> <p> <code>CREATED</code> - The calculation has been created and is ready to run.</p> <p> <code>QUEUED</code> - The calculation has been queued for processing.</p> <p> <code>RUNNING</code> - The calculation is running.</p> <p> <code>CANCELING</code> - A request to cancel the calculation has been received and the system is working to stop it.</p> <p> <code>CANCELED</code> - The calculation is no longer running as the result of a cancel request.</p> <p> <code>COMPLETED</code> - The calculation has completed without error.</p> <p> <code>FAILED</code> - The calculation failed and is no longer running.</p>"
+enum CalculationExecutionState4 {
+    CANCELED
+    CANCELING
+    COMPLETED
+    CREATED
+    CREATING
+    FAILED
+    QUEUED
+    RUNNING
+}
+
+"Indicates the column's nullable status."
+enum ColumnNullable2 {
+    NOT_NULL
+    NULLABLE
+    UNKNOWN
+}
+
+"The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog."
+enum DataCatalogType1 {
+    GLUE
+    HIVE
+    LAMBDA
+}
+
+"The data catalog type."
+enum DataCatalogType2 {
+    GLUE
+    HIVE
+    LAMBDA
+}
+
+"Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog."
+enum DataCatalogType3 {
+    GLUE
+    HIVE
+    LAMBDA
+}
+
+"<p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE_S3</code>), server-side encryption with KMS-managed keys (<code>SSE_KMS</code>), or client-side encryption with KMS-managed keys (<code>CSE_KMS</code>) is used.</p> <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for encryption is used. It specifies whether query results must be encrypted, for all queries that run in this workgroup. </p>"
+enum EncryptionOption1 {
+    CSE_KMS
+    SSE_KMS
+    SSE_S3
+}
+
+"<p>A filter for a specific executor state. A description of each state follows.</p> <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p> <p> <code>CREATED</code> - The executor has been started.</p> <p> <code>REGISTERED</code> - The executor has been registered.</p> <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p> <p> <code>TERMINATED</code> - The executor is no longer running.</p> <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>"
+enum ExecutorState1 {
+    CREATED
+    CREATING
+    FAILED
+    REGISTERED
+    TERMINATED
+    TERMINATING
+}
+
+"<p>The processing state of the executor. A description of each state follows.</p> <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p> <p> <code>CREATED</code> - The executor has been started.</p> <p> <code>REGISTERED</code> - The executor has been registered.</p> <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p> <p> <code>TERMINATED</code> - The executor is no longer running.</p> <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>"
+enum ExecutorState3 {
+    CREATED
+    CREATING
+    FAILED
+    REGISTERED
+    TERMINATED
+    TERMINATING
+}
+
+"The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>)."
+enum ExecutorType2 {
+    COORDINATOR
+    GATEWAY
+    WORKER
+}
+
+"The type of notebook. Currently, the only valid type is <code>IPYNB</code>."
+enum NotebookType1 {
+    IPYNB
+}
+
+"The notebook content type. Currently, the only valid type is <code>IPYNB</code>."
+enum NotebookType2 {
+    IPYNB
+}
+
+"<p>The state of query execution. <code>QUEUED</code> indicates that the query has been submitted to the service, and Athena will execute the query as soon as resources are available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code> indicates that the query completed without errors. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that a user input interrupted query execution.</p> <note> <p>Athena automatically retries your queries in cases of certain transient errors. As a result, you may see the query state transition from <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p> </note>"
+enum QueryExecutionState1 {
+    CANCELLED
+    FAILED
+    QUEUED
+    RUNNING
+    SUCCEEDED
+}
+
+enum Region {
+    AFSOUTH1
+    APEAST1
+    APNORTHEAST1
+    APNORTHEAST2
+    APNORTHEAST3
+    APSOUTH1
+    APSOUTHEAST1
+    APSOUTHEAST2
+    CACENTRAL1
+    EUCENTRAL1
+    EUNORTH1
+    EUSOUTH1
+    EUWEST1
+    EUWEST2
+    EUWEST3
+    MESOUTH1
+    SAEAST1
+    USEAST1
+    USEAST2
+    USGOVEAST1
+    USGOVWEST1
+    USWEST1
+    USWEST2
+}
+
+enum Region2 {
+    CNNORTH1
+    CNNORTHWEST1
+}
+
+"The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl\">Canned ACL</a> in the <i>Amazon S3 User Guide</i>."
+enum S3AclOption1 {
+    BUCKET_OWNER_FULL_CONTROL
+}
+
+"<p>The state of the session. A description of each state follows.</p> <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p> <p> <code>CREATED</code> - The session has been started.</p> <p> <code>IDLE</code> - The session is able to accept a calculation.</p> <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p> <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p> <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p> <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p> <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>"
+enum SessionState1 {
+    BUSY
+    CREATED
+    CREATING
+    DEGRADED
+    FAILED
+    IDLE
+    TERMINATED
+    TERMINATING
+}
+
+"<p>A filter for a specific session state. A description of each state follows.</p> <p> <code>CREATING</code> - The session is being started, including acquiring resources.</p> <p> <code>CREATED</code> - The session has been started.</p> <p> <code>IDLE</code> - The session is able to accept a calculation.</p> <p> <code>BUSY</code> - The session is processing another task and is unable to accept a calculation.</p> <p> <code>TERMINATING</code> - The session is in the process of shutting down.</p> <p> <code>TERMINATED</code> - The session and its resources are no longer running.</p> <p> <code>DEGRADED</code> - The session has no healthy coordinators.</p> <p> <code>FAILED</code> - Due to a failure, the session and its resources are no longer running.</p>"
+enum SessionState3 {
+    BUSY
+    CREATED
+    CREATING
+    DEGRADED
+    FAILED
+    IDLE
+    TERMINATED
+    TERMINATING
+}
+
+"The type of query statement that was run. <code>DDL</code> indicates DDL query statements. <code>DML</code> indicates DML (Data Manipulation Language) query statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE TABLE</code>."
+enum StatementType1 {
+    DDL
+    DML
+    UTILITY
+}
+
+"The state of the workgroup."
+enum WorkGroupState1 {
+    DISABLED
+    ENABLED
+}
+
+"The workgroup state that will be updated for the given workgroup."
+enum WorkGroupState2 {
+    DISABLED
+    ENABLED
+}
+
+"The state of the workgroup: ENABLED or DISABLED."
+enum WorkGroupState3 {
+    DISABLED
+    ENABLED
+}
+
+enum XAmzTarget {
+    AMAZONATHENABATCHGETNAMEDQUERY
+}
+
+enum XAmzTarget1 {
+    AMAZONATHENABATCHGETPREPAREDSTATEMENT
+}
+
+enum XAmzTarget2 {
+    AMAZONATHENABATCHGETQUERYEXECUTION
+}
+
+enum XAmzTarget3 {
+    AMAZONATHENACREATEDATACATALOG
+}
+
+enum XAmzTarget4 {
+    AMAZONATHENACREATENAMEDQUERY
+}
+
+enum XAmzTarget5 {
+    AMAZONATHENACREATENOTEBOOK
+}
+
+enum XAmzTarget6 {
+    AMAZONATHENACREATEPREPAREDSTATEMENT
+}
+
+enum XAmzTarget7 {
+    AMAZONATHENACREATEPRESIGNEDNOTEBOOKURL
+}
+
+enum XAmzTarget8 {
+    AMAZONATHENACREATEWORKGROUP
+}
+
+enum XAmzTarget9 {
+    AMAZONATHENADELETEDATACATALOG
+}
+
+enum XAmzTarget10 {
+    AMAZONATHENADELETENAMEDQUERY
+}
+
+enum XAmzTarget11 {
+    AMAZONATHENADELETENOTEBOOK
+}
+
+enum XAmzTarget12 {
+    AMAZONATHENADELETEPREPAREDSTATEMENT
+}
+
+enum XAmzTarget13 {
+    AMAZONATHENADELETEWORKGROUP
+}
+
+enum XAmzTarget14 {
+    AMAZONATHENAEXPORTNOTEBOOK
+}
+
+enum XAmzTarget15 {
+    AMAZONATHENAGETCALCULATIONEXECUTION
+}
+
+enum XAmzTarget16 {
+    AMAZONATHENAGETCALCULATIONEXECUTIONCODE
+}
+
+enum XAmzTarget17 {
+    AMAZONATHENAGETCALCULATIONEXECUTIONSTATUS
+}
+
+enum XAmzTarget18 {
+    AMAZONATHENAGETDATACATALOG
+}
+
+enum XAmzTarget19 {
+    AMAZONATHENAGETDATABASE
+}
+
+enum XAmzTarget20 {
+    AMAZONATHENAGETNAMEDQUERY
+}
+
+enum XAmzTarget21 {
+    AMAZONATHENAGETNOTEBOOKMETADATA
+}
+
+enum XAmzTarget22 {
+    AMAZONATHENAGETPREPAREDSTATEMENT
+}
+
+enum XAmzTarget23 {
+    AMAZONATHENAGETQUERYEXECUTION
+}
+
+enum XAmzTarget24 {
+    AMAZONATHENAGETQUERYRESULTS
+}
+
+enum XAmzTarget25 {
+    AMAZONATHENAGETQUERYRUNTIMESTATISTICS
+}
+
+enum XAmzTarget26 {
+    AMAZONATHENAGETSESSION
+}
+
+enum XAmzTarget27 {
+    AMAZONATHENAGETSESSIONSTATUS
+}
+
+enum XAmzTarget28 {
+    AMAZONATHENAGETTABLEMETADATA
+}
+
+enum XAmzTarget29 {
+    AMAZONATHENAGETWORKGROUP
+}
+
+enum XAmzTarget30 {
+    AMAZONATHENAIMPORTNOTEBOOK
+}
+
+enum XAmzTarget31 {
+    AMAZONATHENALISTAPPLICATIONDPUSIZES
+}
+
+enum XAmzTarget32 {
+    AMAZONATHENALISTCALCULATIONEXECUTIONS
+}
+
+enum XAmzTarget33 {
+    AMAZONATHENALISTDATACATALOGS
+}
+
+enum XAmzTarget34 {
+    AMAZONATHENALISTDATABASES
+}
+
+enum XAmzTarget35 {
+    AMAZONATHENALISTENGINEVERSIONS
+}
+
+enum XAmzTarget36 {
+    AMAZONATHENALISTEXECUTORS
+}
+
+enum XAmzTarget37 {
+    AMAZONATHENALISTNAMEDQUERIES
+}
+
+enum XAmzTarget38 {
+    AMAZONATHENALISTNOTEBOOKMETADATA
+}
+
+enum XAmzTarget39 {
+    AMAZONATHENALISTNOTEBOOKSESSIONS
+}
+
+enum XAmzTarget40 {
+    AMAZONATHENALISTPREPAREDSTATEMENTS
+}
+
+enum XAmzTarget41 {
+    AMAZONATHENALISTQUERYEXECUTIONS
+}
+
+enum XAmzTarget42 {
+    AMAZONATHENALISTSESSIONS
+}
+
+enum XAmzTarget43 {
+    AMAZONATHENALISTTABLEMETADATA
+}
+
+enum XAmzTarget44 {
+    AMAZONATHENALISTTAGSFORRESOURCE
+}
+
+enum XAmzTarget45 {
+    AMAZONATHENALISTWORKGROUPS
+}
+
+enum XAmzTarget46 {
+    AMAZONATHENASTARTCALCULATIONEXECUTION
+}
+
+enum XAmzTarget47 {
+    AMAZONATHENASTARTQUERYEXECUTION
+}
+
+enum XAmzTarget48 {
+    AMAZONATHENASTARTSESSION
+}
+
+enum XAmzTarget49 {
+    AMAZONATHENASTOPCALCULATIONEXECUTION
+}
+
+enum XAmzTarget50 {
+    AMAZONATHENASTOPQUERYEXECUTION
+}
+
+enum XAmzTarget51 {
+    AMAZONATHENATAGRESOURCE
+}
+
+enum XAmzTarget52 {
+    AMAZONATHENATERMINATESESSION
+}
+
+enum XAmzTarget53 {
+    AMAZONATHENAUNTAGRESOURCE
+}
+
+enum XAmzTarget54 {
+    AMAZONATHENAUPDATEDATACATALOG
+}
+
+enum XAmzTarget55 {
+    AMAZONATHENAUPDATENAMEDQUERY
+}
+
+enum XAmzTarget56 {
+    AMAZONATHENAUPDATENOTEBOOK
+}
+
+enum XAmzTarget57 {
+    AMAZONATHENAUPDATENOTEBOOKMETADATA
+}
+
+enum XAmzTarget58 {
+    AMAZONATHENAUPDATEPREPAREDSTATEMENT
+}
+
+enum XAmzTarget59 {
+    AMAZONATHENAUPDATEWORKGROUP
+}
+
+type BatchGetNamedQueryOutput {
+    namedQueries: [NamedQuery!]
+    unprocessedNamedQueryIds: [UnprocessedNamedQueryId!]
+}
+
+"Contains an array of named query IDs."
+type BatchGetNamedQueryInput {
+    namedQueryIds: [String!]
+}
+
+type BatchGetPreparedStatementOutput {
+    preparedStatements: [PreparedStatement!]
+    unprocessedPreparedStatementNames: [UnprocessedPreparedStatementName!]
+}
+
+type BatchGetPreparedStatementInput {
+    preparedStatementNames: [String!]
+    workGroup: String!
+}
+
+type BatchGetQueryExecutionOutput {
+    queryExecutions: [QueryExecution!]
+    unprocessedQueryExecutionIds: [UnprocessedQueryExecutionId!]
+}
+
+"Contains an array of query execution IDs."
+type BatchGetQueryExecutionInput {
+    queryExecutionIds: [String!]
+}
+
+type CreateDataCatalogInput {
+    name: String!
+    type: DataCatalogType1!
+    description: String!
+    parameters: Parameters!
+    tags: [Tag!]
+}
+
+type CreateNamedQueryOutput {
+    namedQueryId: String!
+}
+
+type CreateNamedQueryInput {
+    name: String!
+    description: String!
+    database: String!
+    queryString: String!
+    clientRequestToken: String!
+    workGroup: String!
+}
+
+type CreateNotebookOutput {
+    notebookId: String!
+}
+
+type CreateNotebookInput {
+    workGroup: String!
+    name: String!
+    clientRequestToken: String!
+}
+
+type CreatePreparedStatementInput {
+    statementName: String!
+    workGroup: String!
+    queryStatement: String!
+    description: String!
+}
+
+type CreatePresignedNotebookUrlResponse {
+    notebookUrl: String!
+    authToken: String!
+    authTokenExpirationTime: Int!
+}
+
+type CreatePresignedNotebookUrlRequest {
+    sessionId: String!
+}
+
+type CreateWorkGroupInput {
+    name: String!
+    configuration: Configuration!
+    description: String!
+    tags: [Tag!]
+}
+
+type DeleteDataCatalogInput {
+    name: String!
+}
+
+type DeleteNamedQueryInput {
+    namedQueryId: String!
+}
+
+type DeleteNotebookInput {
+    notebookId: String!
+}
+
+type DeletePreparedStatementInput {
+    statementName: String!
+    workGroup: String!
+}
+
+type DeleteWorkGroupInput {
+    workGroup: String!
+    recursiveDeleteOption: Boolean!
+}
+
+type ExportNotebookOutput {
+    notebookMetadata: NotebookMetadata1!
+    payload: String!
+}
+
+type ExportNotebookInput {
+    notebookId: String!
+}
+
+type GetCalculationExecutionResponse {
+    calculationExecutionId: String!
+    sessionId: String!
+    description: String!
+    workingDirectory: String!
+    status: Status1!
+    statistics: Statistics1!
+    result: Result!
+}
+
+type GetCalculationExecutionRequest {
+    calculationExecutionId: String!
+}
+
+type GetCalculationExecutionCodeResponse {
+    codeBlock: String!
+}
+
+type GetCalculationExecutionCodeRequest {
+    calculationExecutionId: String!
+}
+
+type GetCalculationExecutionStatusResponse {
+    status: Status1!
+    statistics: Statistics1!
+}
+
+type GetCalculationExecutionStatusRequest {
+    calculationExecutionId: String!
+}
+
+type GetDataCatalogOutput {
+    dataCatalog: DataCatalog2!
+}
+
+type GetDataCatalogInput {
+    name: String!
+}
+
+type GetDatabaseOutput {
+    database: Database2!
+}
+
+type GetDatabaseInput {
+    catalogName: String!
+    databaseName: String!
+}
+
+type GetNamedQueryOutput {
+    namedQuery: NamedQuery1!
+}
+
+type GetNamedQueryInput {
+    namedQueryId: String!
+}
+
+type GetNotebookMetadataOutput {
+    notebookMetadata: NotebookMetadata1!
+}
+
+type GetNotebookMetadataInput {
+    notebookId: String!
+}
+
+type GetPreparedStatementOutput {
+    preparedStatement: PreparedStatement1!
+}
+
+type GetPreparedStatementInput {
+    statementName: String!
+    workGroup: String!
+}
+
+type GetQueryExecutionOutput {
+    queryExecution: QueryExecution1!
+}
+
+type GetQueryExecutionInput {
+    queryExecutionId: String!
+}
+
+type GetQueryResultsOutput {
+    updateCount: Int!
+    resultSet: ResultSet2!
+    nextToken: String!
+}
+
+type GetQueryResultsInput {
+    queryExecutionId: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+type GetQueryRuntimeStatisticsOutput {
+    queryRuntimeStatistics: QueryRuntimeStatistics2!
+}
+
+type GetQueryRuntimeStatisticsInput {
+    queryExecutionId: String!
+}
+
+type GetSessionResponse {
+    sessionId: String!
+    description: String!
+    workGroup: String!
+    engineVersion: String!
+    engineConfiguration: EngineConfiguration1!
+    notebookVersion: String!
+    sessionConfiguration: SessionConfiguration2!
+    status: Status3!
+    statistics: Statistics3!
+}
+
+type GetSessionRequest {
+    sessionId: String!
+}
+
+type GetSessionStatusResponse {
+    sessionId: String!
+    status: Status3!
+}
+
+type GetSessionStatusRequest {
+    sessionId: String!
+}
+
+type GetTableMetadataOutput {
+    tableMetadata: TableMetadata2!
+}
+
+type GetTableMetadataInput {
+    catalogName: String!
+    databaseName: String!
+    tableName: String!
+}
+
+type GetWorkGroupOutput {
+    workGroup: WorkGroup2!
+}
+
+type GetWorkGroupInput {
+    workGroup: String!
+}
+
+type ImportNotebookOutput {
+    notebookId: String!
+}
+
+type ImportNotebookInput {
+    workGroup: String!
+    name: String!
+    payload: String!
+    type: NotebookType2!
+    clientRequestToken: String!
+}
+
+type ListApplicationDPUSizesOutput {
+    applicationDPUSizes: [ApplicationDPUSizes!]
+    nextToken: String!
+}
+
+type ListApplicationDPUSizesInput {
+    maxResults: Int!
+    nextToken: String!
+}
+
+type ListCalculationExecutionsResponse {
+    nextToken: String!
+    calculations: [CalculationSummary!]
+}
+
+type ListCalculationExecutionsRequest {
+    sessionId: String!
+    stateFilter: CalculationExecutionState3!
+    maxResults: Int!
+    nextToken: String!
+}
+
+type ListDataCatalogsOutput {
+    dataCatalogsSummary: [DataCatalogSummary!]
+    nextToken: String!
+}
+
+type ListDataCatalogsInput {
+    nextToken: String!
+    maxResults: Int!
+}
+
+type ListDatabasesOutput {
+    databaseList: [Database!]
+    nextToken: String!
+}
+
+type ListDatabasesInput {
+    catalogName: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+type ListEngineVersionsOutput {
+    engineVersions: [EngineVersion!]
+    nextToken: String!
+}
+
+type ListEngineVersionsInput {
+    nextToken: String!
+    maxResults: Int!
+}
+
+type ListExecutorsResponse {
+    sessionId: String!
+    nextToken: String!
+    executorsSummary: [ExecutorsSummary!]
+}
+
+type ListExecutorsRequest {
+    sessionId: String!
+    executorStateFilter: ExecutorState1!
+    maxResults: Int!
+    nextToken: String!
+}
+
+type ListNamedQueriesOutput {
+    namedQueryIds: [String!]
+    nextToken: String!
+}
+
+type ListNamedQueriesInput {
+    nextToken: String!
+    maxResults: Int!
+    workGroup: String!
+}
+
+type ListNotebookMetadataOutput {
+    nextToken: String!
+    notebookMetadataList: [NotebookMetadata!]
+}
+
+type ListNotebookMetadataInput {
+    filters: Filters!
+    nextToken: String!
+    maxResults: Int!
+    workGroup: String!
+}
+
+type ListNotebookSessionsResponse {
+    notebookSessionsList: [NotebookSessionSummary!]
+    nextToken: String!
+}
+
+type ListNotebookSessionsRequest {
+    notebookId: String!
+    maxResults: Int!
+    nextToken: String!
+}
+
+type ListPreparedStatementsOutput {
+    preparedStatements: [PreparedStatementSummary!]
+    nextToken: String!
+}
+
+type ListPreparedStatementsInput {
+    workGroup: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+type ListQueryExecutionsOutput {
+    queryExecutionIds: [String!]
+    nextToken: String!
+}
+
+type ListQueryExecutionsInput {
+    nextToken: String!
+    maxResults: Int!
+    workGroup: String!
+}
+
+type ListSessionsResponse {
+    nextToken: String!
+    sessions: [SessionSummary!]
+}
+
+type ListSessionsRequest {
+    workGroup: String!
+    stateFilter: SessionState3!
+    maxResults: Int!
+    nextToken: String!
+}
+
+type ListTableMetadataOutput {
+    tableMetadataList: [TableMetadata!]
+    nextToken: String!
+}
+
+type ListTableMetadataInput {
+    catalogName: String!
+    databaseName: String!
+    expression: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+type ListTagsForResourceOutput {
+    tags: [Tag!]
+    nextToken: String!
+}
+
+type ListTagsForResourceInput {
+    resourceARN: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+type ListWorkGroupsOutput {
+    workGroups: [WorkGroupSummary!]
+    nextToken: String!
+}
+
+type ListWorkGroupsInput {
+    nextToken: String!
+    maxResults: Int!
+}
+
+type StartCalculationExecutionResponse {
+    calculationExecutionId: String!
+    state: CalculationExecutionState4!
+}
+
+type StartCalculationExecutionRequest {
+    sessionId: String!
+    description: String!
+    calculationConfiguration: GetCalculationExecutionCodeResponse!
+    codeBlock: String!
+    clientRequestToken: String!
+}
+
+type StartQueryExecutionOutput {
+    queryExecutionId: String!
+}
+
+type StartQueryExecutionInput {
+    queryString: String!
+    clientRequestToken: String!
+    queryExecutionContext: QueryExecutionContext1!
+    resultConfiguration: ResultConfiguration1!
+    workGroup: String!
+    executionParameters: [String!]
+    resultReuseConfiguration: ResultReuseConfiguration1!
+}
+
+type StartSessionResponse {
+    sessionId: String!
+    state: SessionState1!
+}
+
+type StartSessionRequest {
+    description: String!
+    workGroup: String!
+    engineConfiguration: EngineConfiguration1!
+    notebookVersion: String!
+    sessionIdleTimeoutInMinutes: Int!
+    clientRequestToken: String!
+}
+
+type StopCalculationExecutionResponse {
+    state: CalculationExecutionState4!
+}
+
+type StopCalculationExecutionRequest {
+    calculationExecutionId: String!
+}
+
+type StopQueryExecutionInput {
+    queryExecutionId: String!
+}
+
+type TagResourceInput {
+    resourceARN: String!
+    tags: [Tag!]
+}
+
+type TerminateSessionResponse {
+    state: SessionState1!
+}
+
+type TerminateSessionRequest {
+    sessionId: String!
+}
+
+type UntagResourceInput {
+    resourceARN: String!
+    tagKeys: [String!]
+}
+
+type UpdateDataCatalogInput {
+    name: String!
+    type: DataCatalogType3!
+    description: String!
+    parameters: Parameters!
+}
+
+type UpdateNamedQueryInput {
+    namedQueryId: String!
+    name: String!
+    description: String!
+    queryString: String!
+}
+
+type UpdateNotebookInput {
+    notebookId: String!
+    payload: String!
+    type: NotebookType2!
+    sessionId: String!
+    clientRequestToken: String!
+}
+
+type UpdateNotebookMetadataInput {
+    notebookId: String!
+    clientRequestToken: String!
+    name: String!
+}
+
+type UpdatePreparedStatementInput {
+    statementName: String!
+    workGroup: String!
+    queryStatement: String!
+    description: String!
+}
+
+type UpdateWorkGroupInput {
+    workGroup: String!
+    description: String!
+    configurationUpdates: ConfigurationUpdates!
+    state: WorkGroupState2!
+}
+
+"Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview\">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>."
+type AclConfiguration {
+    s3AclOption: S3AclOption1!
+}
+
+"Contains the application runtime IDs and their supported DPU sizes."
+type ApplicationDPUSizes {
+    applicationRuntimeId: String!
+    supportedDPUSizes: [Int!]
+}
+
+"Provides information about an Athena query error. The <code>AthenaError</code> feature provides standardized error information to help you understand failed queries and take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code> field that specifies whether the cause of the failed query is due to system error, user error, or other error."
+type AthenaError {
+    errorCategory: Int!
+    errorType: Int!
+    retryable: Boolean!
+    errorMessage: String!
+}
+
+"A query, where <code>QueryString</code> contains the SQL statements that make up the query."
+type NamedQuery {
+    name: String!
+    description: String!
+    database: String!
+    queryString: String!
+    namedQueryId: String!
+    workGroup: String!
+}
+
+"Information about a named query ID that could not be processed."
+type UnprocessedNamedQueryId {
+    namedQueryId: String!
+    errorCode: String!
+    errorMessage: String!
+}
+
+"A prepared SQL statement for use with Athena."
+type PreparedStatement {
+    statementName: String!
+    queryStatement: String!
+    workGroupName: String!
+    description: String!
+    lastModifiedTime: String!
+}
+
+"The name of a prepared statement that could not be returned."
+type UnprocessedPreparedStatementName {
+    statementName: String!
+    errorCode: String!
+    errorMessage: String!
+}
+
+"Information about a single instance of a query execution."
+type QueryExecution {
+    queryExecutionId: String!
+    query: String!
+    statementType: StatementType1!
+    resultConfiguration: ResultConfiguration1!
+    resultReuseConfiguration: ResultReuseConfiguration1!
+    queryExecutionContext: QueryExecutionContext1!
+    status: Status!
+    statistics: Statistics!
+    workGroup: String!
+    engineVersion: EngineVersion1!
+    executionParameters: [String!]
+    substatementType: String!
+}
+
+"Describes a query execution that failed to process."
+type UnprocessedQueryExecutionId {
+    queryExecutionId: String!
+    errorCode: String!
+    errorMessage: String!
+}
+
+"Contains configuration information for the calculation."
+type CalculationConfiguration {
+    codeBlock: String!
+}
+
+"Contains information about an application-specific calculation result."
+type CalculationResult {
+    stdOutS3Uri: String!
+    stdErrorS3Uri: String!
+    resultS3Uri: String!
+    resultType: String!
+}
+
+"Contains statistics for a notebook calculation."
+type CalculationStatistics {
+    dpuExecutionInMillis: Int!
+    progress: String!
+}
+
+"Contains information about the status of a notebook calculation."
+type CalculationStatus {
+    submissionDateTime: String!
+    completionDateTime: String!
+    state: CalculationExecutionState1!
+    stateChangeReason: String!
+}
+
+"Summary information for a notebook calculation."
+type CalculationSummary {
+    calculationExecutionId: String!
+    description: String!
+    status: Status1!
+}
+
+"Contains metadata for a column in a table."
+type Column {
+    name: String!
+    type: String!
+    comment: String!
+}
+
+"Information about the columns in a query execution result."
+type ColumnInfo {
+    catalogName: String!
+    schemaName: String!
+    tableName: String!
+    name: String!
+    label: String!
+    type: String!
+    precision: Int!
+    scale: Int!
+    nullable: ColumnNullable2!
+    caseSensitive: Boolean!
+}
+
+"A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas."
+type Tag {
+    key: String!
+    value: String!
+}
+
+"The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query and calculation results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>."
+type WorkGroupConfiguration {
+    resultConfiguration: ResultConfiguration1!
+    enforceWorkGroupConfiguration: Boolean!
+    publishCloudWatchMetricsEnabled: Boolean!
+    bytesScannedCutoffPerQuery: Int!
+    requesterPaysEnabled: Boolean!
+    engineVersion: EngineVersion1!
+    additionalConfiguration: String!
+    executionRole: String!
+    customerContentEncryptionConfiguration: CustomerContentEncryptionConfiguration2!
+    enableMinimumEncryptionConfiguration: Boolean!
+}
+
+"Specifies the KMS key that is used to encrypt the user's data stores in Athena."
+type CustomerContentEncryptionConfiguration {
+    kmsKey: String!
+}
+
+"<p>Contains information about a data catalog in an Amazon Web Services account.</p> <note> <p>In the Athena console, data catalogs are listed as \"data sources\" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p> </note>"
+type DataCatalog {
+    name: String!
+    description: String!
+    type: DataCatalogType1!
+    parameters: Parameters!
+}
+
+"The summary information for the data catalog, which includes its name and type."
+type DataCatalogSummary {
+    catalogName: String!
+    type: DataCatalogType2!
+}
+
+"Contains metadata information for a database in a data catalog."
+type Database {
+    name: String!
+    description: String!
+    parameters: Parameters!
+}
+
+"A piece of data (a field in the table)."
+type Datum {
+    varCharValue: String!
+}
+
+"If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information."
+type EncryptionConfiguration {
+    encryptionOption: EncryptionOption1!
+    kmsKey: String!
+}
+
+"Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine."
+type EngineConfiguration {
+    coordinatorDpuSize: Int!
+    maxConcurrentDpus: Int!
+    defaultExecutorDpuSize: Int!
+    additionalConfigs: AdditionalConfigs!
+}
+
+"The Athena engine version for running queries, or the PySpark engine version for running sessions."
+type EngineVersion {
+    selectedEngineVersion: String!
+    effectiveEngineVersion: String!
+}
+
+"Contains summary information about an executor."
+type ExecutorsSummary {
+    executorId: String!
+    executorType: ExecutorType2!
+    startDateTime: Int!
+    terminationDateTime: Int!
+    executorState: ExecutorState3!
+    executorSize: Int!
+}
+
+"Contains metadata for notebook, including the notebook name, ID, workgroup, and time created."
+type NotebookMetadata {
+    notebookId: String!
+    name: String!
+    workGroup: String!
+    creationTime: String!
+    type: NotebookType1!
+    lastModifiedTime: String!
+}
+
+"A string for searching notebook names."
+type FilterDefinition {
+    name: String!
+}
+
+"The metadata and rows that make up a query result set. The metadata describes the column structure and data types. To return a <code>ResultSet</code> object, use <a>GetQueryResults</a>."
+type ResultSet {
+    rows: [Row!]
+    resultSetMetadata: ResultSetMetadata2!
+}
+
+"The query execution timeline, statistics on input and output rows and bytes, and the different query stages that form the query execution plan."
+type QueryRuntimeStatistics {
+    "Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time."
+    timeline: QueryRuntimeStatisticsTimeline!
+    "Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query."
+    rows: QueryRuntimeStatisticsRows!
+    outputStage: OutputStage!
+}
+
+"Contains session configuration information."
+type SessionConfiguration {
+    executionRole: String!
+    workingDirectory: String!
+    idleTimeoutSeconds: Int!
+    "If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information."
+    encryptionConfiguration: EncryptionConfiguration!
+}
+
+"Contains information about the status of a session."
+type SessionStatus {
+    startDateTime: String!
+    lastModifiedDateTime: String!
+    endDateTime: String!
+    idleSinceDateTime: String!
+    state: SessionState1!
+    stateChangeReason: String!
+}
+
+"Contains statistics for a session."
+type SessionStatistics {
+    dpuExecutionInMillis: Int!
+}
+
+"Contains metadata for a table."
+type TableMetadata {
+    name: String!
+    createTime: String!
+    lastAccessTime: String!
+    tableType: String!
+    columns: [Column!]
+    partitionKeys: [Column!]
+    parameters: Parameters!
+}
+
+"A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>."
+type WorkGroup {
+    name: String!
+    state: WorkGroupState3!
+    configuration: Configuration!
+    description: String!
+    creationTime: String!
+}
+
+"Contains the notebook session ID and notebook session creation time."
+type NotebookSessionSummary {
+    sessionId: String!
+    creationTime: String!
+}
+
+"The name and last modified time of the prepared statement."
+type PreparedStatementSummary {
+    statementName: String!
+    lastModifiedTime: String!
+}
+
+"Contains summary information about a session."
+type SessionSummary {
+    sessionId: String!
+    description: String!
+    engineVersion: EngineVersion1!
+    notebookVersion: String!
+    status: Status3!
+}
+
+"The summary information for the workgroup, which includes its name, state, description, and the date and time it was created."
+type WorkGroupSummary {
+    name: String!
+    state: WorkGroupState1!
+    description: String!
+    creationTime: String!
+    engineVersion: EngineVersion1!
+}
+
+"The location in Amazon S3 where query and calculation results are stored and the encryption option, if any, used for query and calculation results. These are known as \"client-side settings\". If workgroup settings override client-side settings, then the query uses the workgroup settings."
+type ResultConfiguration {
+    outputLocation: String!
+    encryptionConfiguration: EncryptionConfiguration2!
+    expectedBucketOwner: String!
+    aclConfiguration: AclConfiguration1!
+}
+
+"Specifies the query result reuse behavior for the query."
+type ResultReuseConfiguration {
+    resultReuseByAgeConfiguration: ResultReuseByAgeConfiguration2!
+}
+
+"The database and data catalog context in which the query execution occurs."
+type QueryExecutionContext {
+    database: String!
+    catalog: String!
+}
+
+"The completion date, current state, submission time, and state change reason (if applicable) for the query execution."
+type QueryExecutionStatus {
+    state: QueryExecutionState1!
+    stateChangeReason: String!
+    submissionDateTime: String!
+    completionDateTime: String!
+    athenaError: AthenaError2!
+}
+
+"The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run."
+type QueryExecutionStatistics {
+    engineExecutionTimeInMillis: Int!
+    dataScannedInBytes: Int!
+    dataManifestLocation: String!
+    totalExecutionTimeInMillis: Int!
+    queryQueueTimeInMillis: Int!
+    queryPlanningTimeInMillis: Int!
+    serviceProcessingTimeInMillis: Int!
+    resultReuseInformation: ResultReuseInformation2!
+}
+
+"Contains information about whether the result of a previous query was reused."
+type ResultReuseInformation {
+    reusedPreviousResult: Boolean!
+}
+
+"Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time."
+type QueryRuntimeStatisticsTimeline {
+    queryQueueTimeInMillis: Int!
+    queryPlanningTimeInMillis: Int!
+    engineExecutionTimeInMillis: Int!
+    serviceProcessingTimeInMillis: Int!
+    totalExecutionTimeInMillis: Int!
+}
+
+"Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query."
+type QueryRuntimeStatisticsRows {
+    inputRows: Int!
+    inputBytes: Int!
+    outputBytes: Int!
+    outputRows: Int!
+}
+
+"Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan."
+type QueryStage {
+    stageId: Int!
+    state: String!
+    outputBytes: Int!
+    outputRows: Int!
+    inputBytes: Int!
+    inputRows: Int!
+    executionTime: Int!
+    queryStagePlan: QueryStagePlan!
+    subStages: [QueryStage!]
+}
+
+"Stage plan information such as name, identifier, sub plans, and remote sources."
+type QueryStagePlanNode {
+    name: String!
+    identifier: String!
+    children: [QueryStagePlanNode!]
+    remoteSources: [String!]
+}
+
+"The information about the updates in the query results, such as output location and encryption configuration for the query results."
+type ResultConfigurationUpdates {
+    outputLocation: String!
+    removeOutputLocation: Boolean!
+    encryptionConfiguration: EncryptionConfiguration2!
+    removeEncryptionConfiguration: Boolean!
+    expectedBucketOwner: String!
+    removeExpectedBucketOwner: Boolean!
+    aclConfiguration: AclConfiguration1!
+    removeAclConfiguration: Boolean!
+}
+
+"Specifies whether previous query results are reused, and if so, their maximum age."
+type ResultReuseByAgeConfiguration {
+    enabled: Boolean!
+    maxAgeInMinutes: Int!
+}
+
+"The rows that make up a query result table."
+type Row {
+    data: [Datum!]
+}
+
+"The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <a>GetQueryResults</a>."
+type ResultSetMetadata {
+    columnInfo: [ColumnInfo!]
+}
+
+"The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified."
+type WorkGroupConfigurationUpdates {
+    enforceWorkGroupConfiguration: Boolean!
+    resultConfigurationUpdates: ResultConfigurationUpdates2!
+    publishCloudWatchMetricsEnabled: Boolean!
+    bytesScannedCutoffPerQuery: Int!
+    removeBytesScannedCutoffPerQuery: Boolean!
+    requesterPaysEnabled: Boolean!
+    engineVersion: EngineVersion1!
+    removeCustomerContentEncryptionConfiguration: Boolean!
+    additionalConfiguration: String!
+    executionRole: String!
+    "Specifies the KMS key that is used to encrypt the user's data stores in Athena."
+    customerContentEncryptionConfiguration: CustomerContentEncryptionConfiguration!
+    enableMinimumEncryptionConfiguration: Boolean!
+}
+
+type AclConfiguration1 {
+    s3AclOption: S3AclOption1!
+}
+
+type AdditionalConfigs {
+    _: Boolean
+}
+
+type AthenaError2 {
+    errorCategory: Int!
+    errorType: Int!
+    retryable: Boolean!
+    errorMessage: String!
+}
+
+type Configuration {
+    resultConfiguration: ResultConfiguration1!
+    enforceWorkGroupConfiguration: Boolean!
+    publishCloudWatchMetricsEnabled: Boolean!
+    bytesScannedCutoffPerQuery: Int!
+    requesterPaysEnabled: Boolean!
+    engineVersion: EngineVersion1!
+    additionalConfiguration: String!
+    executionRole: String!
+    customerContentEncryptionConfiguration: CustomerContentEncryptionConfiguration2!
+    enableMinimumEncryptionConfiguration: Boolean!
+}
+
+type ConfigurationUpdates {
+    enforceWorkGroupConfiguration: Boolean!
+    resultConfigurationUpdates: ResultConfigurationUpdates2!
+    publishCloudWatchMetricsEnabled: Boolean!
+    bytesScannedCutoffPerQuery: Int!
+    removeBytesScannedCutoffPerQuery: Boolean!
+    requesterPaysEnabled: Boolean!
+    engineVersion: EngineVersion1!
+    removeCustomerContentEncryptionConfiguration: Boolean!
+    additionalConfiguration: String!
+    executionRole: String!
+    "Specifies the KMS key that is used to encrypt the user's data stores in Athena."
+    customerContentEncryptionConfiguration: CustomerContentEncryptionConfiguration!
+    enableMinimumEncryptionConfiguration: Boolean!
+}
+
+type CustomerContentEncryptionConfiguration2 {
+    kmsKey: String!
+}
+
+type Database2 {
+    name: String!
+    description: String!
+    parameters: Parameters!
+}
+
+type DataCatalog2 {
+    name: String!
+    description: String!
+    type: DataCatalogType1!
+    parameters: Parameters!
+}
+
+type EncryptionConfiguration2 {
+    encryptionOption: EncryptionOption1!
+    kmsKey: String!
+}
+
+type EngineConfiguration1 {
+    coordinatorDpuSize: Int!
+    maxConcurrentDpus: Int!
+    defaultExecutorDpuSize: Int!
+    additionalConfigs: AdditionalConfigs!
+}
+
+type EngineVersion1 {
+    selectedEngineVersion: String!
+    effectiveEngineVersion: String!
+}
+
+type Filters {
+    name: String!
+}
+
+type NamedQuery1 {
+    name: String!
+    description: String!
+    database: String!
+    queryString: String!
+    namedQueryId: String!
+    workGroup: String!
+}
+
+type NotebookMetadata1 {
+    notebookId: String!
+    name: String!
+    workGroup: String!
+    creationTime: String!
+    type: NotebookType1!
+    lastModifiedTime: String!
+}
+
+type OutputStage {
+    stageId: Int!
+    state: String!
+    outputBytes: Int!
+    outputRows: Int!
+    inputBytes: Int!
+    inputRows: Int!
+    executionTime: Int!
+    queryStagePlan: QueryStagePlan!
+    subStages: [QueryStage!]
+}
+
+type Parameters {
+    _: Boolean
+}
+
+type PreparedStatement1 {
+    statementName: String!
+    queryStatement: String!
+    workGroupName: String!
+    description: String!
+    lastModifiedTime: String!
+}
+
+type QueryExecution1 {
+    queryExecutionId: String!
+    query: String!
+    statementType: StatementType1!
+    resultConfiguration: ResultConfiguration1!
+    resultReuseConfiguration: ResultReuseConfiguration1!
+    queryExecutionContext: QueryExecutionContext1!
+    status: Status!
+    statistics: Statistics!
+    workGroup: String!
+    engineVersion: EngineVersion1!
+    executionParameters: [String!]
+    substatementType: String!
+}
+
+type QueryExecutionContext1 {
+    database: String!
+    catalog: String!
+}
+
+type QueryRuntimeStatistics2 {
+    "Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time."
+    timeline: QueryRuntimeStatisticsTimeline!
+    "Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query."
+    rows: QueryRuntimeStatisticsRows!
+    outputStage: OutputStage!
+}
+
+type QueryStagePlan {
+    name: String!
+    identifier: String!
+    children: [QueryStagePlanNode!]
+    remoteSources: [String!]
+}
+
+type Result {
+    stdOutS3Uri: String!
+    stdErrorS3Uri: String!
+    resultS3Uri: String!
+    resultType: String!
+}
+
+type ResultConfiguration1 {
+    outputLocation: String!
+    encryptionConfiguration: EncryptionConfiguration2!
+    expectedBucketOwner: String!
+    aclConfiguration: AclConfiguration1!
+}
+
+type ResultConfigurationUpdates2 {
+    outputLocation: String!
+    removeOutputLocation: Boolean!
+    encryptionConfiguration: EncryptionConfiguration2!
+    removeEncryptionConfiguration: Boolean!
+    expectedBucketOwner: String!
+    removeExpectedBucketOwner: Boolean!
+    aclConfiguration: AclConfiguration1!
+    removeAclConfiguration: Boolean!
+}
+
+type ResultReuseByAgeConfiguration2 {
+    enabled: Boolean!
+    maxAgeInMinutes: Int!
+}
+
+type ResultReuseConfiguration1 {
+    resultReuseByAgeConfiguration: ResultReuseByAgeConfiguration2!
+}
+
+type ResultReuseInformation2 {
+    reusedPreviousResult: Boolean!
+}
+
+type ResultSet2 {
+    rows: [Row!]
+    resultSetMetadata: ResultSetMetadata2!
+}
+
+type ResultSetMetadata2 {
+    columnInfo: [ColumnInfo!]
+}
+
+type SessionConfiguration2 {
+    executionRole: String!
+    workingDirectory: String!
+    idleTimeoutSeconds: Int!
+    "If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information."
+    encryptionConfiguration: EncryptionConfiguration!
+}
+
+type Statistics {
+    engineExecutionTimeInMillis: Int!
+    dataScannedInBytes: Int!
+    dataManifestLocation: String!
+    totalExecutionTimeInMillis: Int!
+    queryQueueTimeInMillis: Int!
+    queryPlanningTimeInMillis: Int!
+    serviceProcessingTimeInMillis: Int!
+    resultReuseInformation: ResultReuseInformation2!
+}
+
+type Statistics1 {
+    dpuExecutionInMillis: Int!
+    progress: String!
+}
+
+type Statistics3 {
+    dpuExecutionInMillis: Int!
+}
+
+type Status {
+    state: QueryExecutionState1!
+    stateChangeReason: String!
+    submissionDateTime: String!
+    completionDateTime: String!
+    athenaError: AthenaError2!
+}
+
+type Status1 {
+    submissionDateTime: String!
+    completionDateTime: String!
+    state: CalculationExecutionState1!
+    stateChangeReason: String!
+}
+
+type Status3 {
+    startDateTime: String!
+    lastModifiedDateTime: String!
+    endDateTime: String!
+    idleSinceDateTime: String!
+    state: SessionState1!
+    stateChangeReason: String!
+}
+
+type TableMetadata2 {
+    name: String!
+    createTime: String!
+    lastAccessTime: String!
+    tableType: String!
+    columns: [Column!]
+    partitionKeys: [Column!]
+    parameters: Parameters!
+}
+
+type WorkGroup2 {
+    name: String!
+    state: WorkGroupState3!
+    configuration: Configuration!
+    description: String!
+    creationTime: String!
+}
+
+"Contains an array of named query IDs."
+input BatchGetNamedQueryInput1 {
+    namedQueryIds: [String!]
+}
+
+input CreateBatchgetnamedqueryInput {
+    xAmzTarget: XAmzTarget!
+    contentType: String!
+    body: BatchGetNamedQueryInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input BatchGetPreparedStatementInput1 {
+    preparedStatementNames: [String!]
+    workGroup: String!
+}
+
+input CreateBatchgetpreparedstatementInput {
+    xAmzTarget: XAmzTarget1!
+    contentType: String!
+    body: BatchGetPreparedStatementInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+"Contains an array of query execution IDs."
+input BatchGetQueryExecutionInput1 {
+    queryExecutionIds: [String!]
+}
+
+input CreateBatchgetqueryexecutionInput {
+    xAmzTarget: XAmzTarget2!
+    contentType: String!
+    body: BatchGetQueryExecutionInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ParametersInput {
+    _: Boolean
+}
+
+"A label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas."
+input TagInput {
+    key: String!
+    value: String!
+}
+
+input CreateDataCatalogInput1 {
+    name: String!
+    type: DataCatalogType1!
+    description: String!
+    parameters: ParametersInput!
+    tags: [TagInput!]
+}
+
+input CreateDataCatalogInput1 {
+    xAmzTarget: XAmzTarget3!
+    contentType: String!
+    body: CreateDataCatalogInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input CreateNamedQueryInput1 {
+    name: String!
+    description: String!
+    database: String!
+    queryString: String!
+    clientRequestToken: String!
+    workGroup: String!
+}
+
+input CreateNamedQueryInput1 {
+    xAmzTarget: XAmzTarget4!
+    contentType: String!
+    body: CreateNamedQueryInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input CreateNotebookInput1 {
+    workGroup: String!
+    name: String!
+    clientRequestToken: String!
+}
+
+input CreateNotebookInput1 {
+    xAmzTarget: XAmzTarget5!
+    contentType: String!
+    body: CreateNotebookInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input CreatePreparedStatementInput1 {
+    statementName: String!
+    workGroup: String!
+    queryStatement: String!
+    description: String!
+}
+
+input CreatePreparedStatementInput1 {
+    xAmzTarget: XAmzTarget6!
+    contentType: String!
+    body: CreatePreparedStatementInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input CreatePresignedNotebookUrlRequestInput {
+    sessionId: String!
+}
+
+input CreatePresignedNotebookUrlInput {
+    xAmzTarget: XAmzTarget7!
+    contentType: String!
+    body: CreatePresignedNotebookUrlRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input EncryptionConfiguration2Input {
+    encryptionOption: EncryptionOption1!
+    kmsKey: String!
+}
+
+input AclConfiguration1Input {
+    s3AclOption: S3AclOption1!
+}
+
+input ResultConfiguration1Input {
+    outputLocation: String!
+    encryptionConfiguration: EncryptionConfiguration2Input!
+    expectedBucketOwner: String!
+    aclConfiguration: AclConfiguration1Input!
+}
+
+input EngineVersion1Input {
+    selectedEngineVersion: String!
+    effectiveEngineVersion: String!
+}
+
+input CustomerContentEncryptionConfiguration2Input {
+    kmsKey: String!
+}
+
+input ConfigurationInput {
+    resultConfiguration: ResultConfiguration1Input!
+    enforceWorkGroupConfiguration: Boolean!
+    publishCloudWatchMetricsEnabled: Boolean!
+    bytesScannedCutoffPerQuery: Int!
+    requesterPaysEnabled: Boolean!
+    engineVersion: EngineVersion1Input!
+    additionalConfiguration: String!
+    executionRole: String!
+    customerContentEncryptionConfiguration: CustomerContentEncryptionConfiguration2Input!
+    enableMinimumEncryptionConfiguration: Boolean!
+}
+
+input CreateWorkGroupInput1 {
+    name: String!
+    configuration: ConfigurationInput!
+    description: String!
+    tags: [TagInput!]
+}
+
+input CreateWorkGroupInput1 {
+    xAmzTarget: XAmzTarget8!
+    contentType: String!
+    body: CreateWorkGroupInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input DeleteDataCatalogInput1 {
+    name: String!
+}
+
+input CreateDeletedatacatalogInput {
+    xAmzTarget: XAmzTarget9!
+    contentType: String!
+    body: DeleteDataCatalogInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input DeleteNamedQueryInput1 {
+    namedQueryId: String!
+}
+
+input CreateDeletenamedqueryInput {
+    xAmzTarget: XAmzTarget10!
+    contentType: String!
+    body: DeleteNamedQueryInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input DeleteNotebookInput1 {
+    notebookId: String!
+}
+
+input CreateDeletenotebookInput {
+    xAmzTarget: XAmzTarget11!
+    contentType: String!
+    body: DeleteNotebookInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input DeletePreparedStatementInput1 {
+    statementName: String!
+    workGroup: String!
+}
+
+input CreateDeletepreparedstatementInput {
+    xAmzTarget: XAmzTarget12!
+    contentType: String!
+    body: DeletePreparedStatementInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input DeleteWorkGroupInput1 {
+    workGroup: String!
+    recursiveDeleteOption: Boolean!
+}
+
+input CreateDeleteworkgroupInput {
+    xAmzTarget: XAmzTarget13!
+    contentType: String!
+    body: DeleteWorkGroupInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ExportNotebookInput1 {
+    notebookId: String!
+}
+
+input CreateExportnotebookInput {
+    xAmzTarget: XAmzTarget14!
+    contentType: String!
+    body: ExportNotebookInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetCalculationExecutionRequestInput {
+    calculationExecutionId: String!
+}
+
+input CreateGetcalculationexecutionInput {
+    xAmzTarget: XAmzTarget15!
+    contentType: String!
+    body: GetCalculationExecutionRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetCalculationExecutionCodeRequestInput {
+    calculationExecutionId: String!
+}
+
+input CreateGetcalculationexecutioncodeInput {
+    xAmzTarget: XAmzTarget16!
+    contentType: String!
+    body: GetCalculationExecutionCodeRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetCalculationExecutionStatusRequestInput {
+    calculationExecutionId: String!
+}
+
+input CreateGetcalculationexecutionstatusInput {
+    xAmzTarget: XAmzTarget17!
+    contentType: String!
+    body: GetCalculationExecutionStatusRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetDataCatalogInput1 {
+    name: String!
+}
+
+input CreateGetdatacatalogInput {
+    xAmzTarget: XAmzTarget18!
+    contentType: String!
+    body: GetDataCatalogInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetDatabaseInput1 {
+    catalogName: String!
+    databaseName: String!
+}
+
+input CreateGetdatabaseInput {
+    xAmzTarget: XAmzTarget19!
+    contentType: String!
+    body: GetDatabaseInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetNamedQueryInput1 {
+    namedQueryId: String!
+}
+
+input CreateGetnamedqueryInput {
+    xAmzTarget: XAmzTarget20!
+    contentType: String!
+    body: GetNamedQueryInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetNotebookMetadataInput1 {
+    notebookId: String!
+}
+
+input CreateGetnotebookmetadataInput {
+    xAmzTarget: XAmzTarget21!
+    contentType: String!
+    body: GetNotebookMetadataInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetPreparedStatementInput1 {
+    statementName: String!
+    workGroup: String!
+}
+
+input CreateGetpreparedstatementInput {
+    xAmzTarget: XAmzTarget22!
+    contentType: String!
+    body: GetPreparedStatementInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetQueryExecutionInput1 {
+    queryExecutionId: String!
+}
+
+input CreateGetqueryexecutionInput {
+    xAmzTarget: XAmzTarget23!
+    contentType: String!
+    body: GetQueryExecutionInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetQueryResultsInput1 {
+    queryExecutionId: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateGetqueryresultsInput {
+    xAmzTarget: XAmzTarget24!
+    contentType: String!
+    body: GetQueryResultsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input GetQueryRuntimeStatisticsInput1 {
+    queryExecutionId: String!
+}
+
+input CreateGetqueryruntimestatisticsInput {
+    xAmzTarget: XAmzTarget25!
+    contentType: String!
+    body: GetQueryRuntimeStatisticsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetSessionRequestInput {
+    sessionId: String!
+}
+
+input CreateGetsessionInput {
+    xAmzTarget: XAmzTarget26!
+    contentType: String!
+    body: GetSessionRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetSessionStatusRequestInput {
+    sessionId: String!
+}
+
+input CreateGetsessionstatusInput {
+    xAmzTarget: XAmzTarget27!
+    contentType: String!
+    body: GetSessionStatusRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetTableMetadataInput1 {
+    catalogName: String!
+    databaseName: String!
+    tableName: String!
+}
+
+input CreateGettablemetadataInput {
+    xAmzTarget: XAmzTarget28!
+    contentType: String!
+    body: GetTableMetadataInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input GetWorkGroupInput1 {
+    workGroup: String!
+}
+
+input CreateGetworkgroupInput {
+    xAmzTarget: XAmzTarget29!
+    contentType: String!
+    body: GetWorkGroupInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ImportNotebookInput1 {
+    workGroup: String!
+    name: String!
+    payload: String!
+    type: NotebookType2!
+    clientRequestToken: String!
+}
+
+input CreateImportnotebookInput {
+    xAmzTarget: XAmzTarget30!
+    contentType: String!
+    body: ImportNotebookInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ListApplicationDPUSizesInput1 {
+    maxResults: Int!
+    nextToken: String!
+}
+
+input CreateListapplicationdpusizesInput {
+    xAmzTarget: XAmzTarget31!
+    contentType: String!
+    body: ListApplicationDPUSizesInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListCalculationExecutionsRequestInput {
+    sessionId: String!
+    stateFilter: CalculationExecutionState3!
+    maxResults: Int!
+    nextToken: String!
+}
+
+input CreateListcalculationexecutionsInput {
+    xAmzTarget: XAmzTarget32!
+    contentType: String!
+    body: ListCalculationExecutionsRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListDataCatalogsInput1 {
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListdatacatalogsInput {
+    xAmzTarget: XAmzTarget33!
+    contentType: String!
+    body: ListDataCatalogsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListDatabasesInput1 {
+    catalogName: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListdatabasesInput {
+    xAmzTarget: XAmzTarget34!
+    contentType: String!
+    body: ListDatabasesInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListEngineVersionsInput1 {
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListengineversionsInput {
+    xAmzTarget: XAmzTarget35!
+    contentType: String!
+    body: ListEngineVersionsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListExecutorsRequestInput {
+    sessionId: String!
+    executorStateFilter: ExecutorState1!
+    maxResults: Int!
+    nextToken: String!
+}
+
+input CreateListexecutorsInput {
+    xAmzTarget: XAmzTarget36!
+    contentType: String!
+    body: ListExecutorsRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListNamedQueriesInput1 {
+    nextToken: String!
+    maxResults: Int!
+    workGroup: String!
+}
+
+input CreateListnamedqueriesInput {
+    xAmzTarget: XAmzTarget37!
+    contentType: String!
+    body: ListNamedQueriesInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input FiltersInput {
+    name: String!
+}
+
+input ListNotebookMetadataInput1 {
+    filters: FiltersInput!
+    nextToken: String!
+    maxResults: Int!
+    workGroup: String!
+}
+
+input CreateListnotebookmetadataInput {
+    xAmzTarget: XAmzTarget38!
+    contentType: String!
+    body: ListNotebookMetadataInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ListNotebookSessionsRequestInput {
+    notebookId: String!
+    maxResults: Int!
+    nextToken: String!
+}
+
+input CreateListnotebooksessionsInput {
+    xAmzTarget: XAmzTarget39!
+    contentType: String!
+    body: ListNotebookSessionsRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ListPreparedStatementsInput1 {
+    workGroup: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListpreparedstatementsInput {
+    xAmzTarget: XAmzTarget40!
+    contentType: String!
+    body: ListPreparedStatementsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListQueryExecutionsInput1 {
+    nextToken: String!
+    maxResults: Int!
+    workGroup: String!
+}
+
+input CreateListqueryexecutionsInput {
+    xAmzTarget: XAmzTarget41!
+    contentType: String!
+    body: ListQueryExecutionsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListSessionsRequestInput {
+    workGroup: String!
+    stateFilter: SessionState3!
+    maxResults: Int!
+    nextToken: String!
+}
+
+input CreateListsessionsInput {
+    xAmzTarget: XAmzTarget42!
+    contentType: String!
+    body: ListSessionsRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListTableMetadataInput1 {
+    catalogName: String!
+    databaseName: String!
+    expression: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListtablemetadataInput {
+    xAmzTarget: XAmzTarget43!
+    contentType: String!
+    body: ListTableMetadataInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListTagsForResourceInput1 {
+    resourceARN: String!
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListtagsforresourceInput {
+    xAmzTarget: XAmzTarget44!
+    contentType: String!
+    body: ListTagsForResourceInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input ListWorkGroupsInput1 {
+    nextToken: String!
+    maxResults: Int!
+}
+
+input CreateListworkgroupsInput {
+    xAmzTarget: XAmzTarget45!
+    contentType: String!
+    body: ListWorkGroupsInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    "Pagination limit"
+    maxResults: String!
+    "Pagination token"
+    nextToken: String!
+    authorization: String!
+}
+
+input GetCalculationExecutionCodeResponseInput {
+    codeBlock: String!
+}
+
+input StartCalculationExecutionRequestInput {
+    sessionId: String!
+    description: String!
+    calculationConfiguration: GetCalculationExecutionCodeResponseInput!
+    codeBlock: String!
+    clientRequestToken: String!
+}
+
+input CreateStartcalculationexecutionInput {
+    xAmzTarget: XAmzTarget46!
+    contentType: String!
+    body: StartCalculationExecutionRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input QueryExecutionContext1Input {
+    database: String!
+    catalog: String!
+}
+
+input ResultReuseByAgeConfiguration2Input {
+    enabled: Boolean!
+    maxAgeInMinutes: Int!
+}
+
+input ResultReuseConfiguration1Input {
+    resultReuseByAgeConfiguration: ResultReuseByAgeConfiguration2Input!
+}
+
+input StartQueryExecutionInput1 {
+    queryString: String!
+    clientRequestToken: String!
+    queryExecutionContext: QueryExecutionContext1Input!
+    resultConfiguration: ResultConfiguration1Input!
+    workGroup: String!
+    executionParameters: [String!]
+    resultReuseConfiguration: ResultReuseConfiguration1Input!
+}
+
+input CreateStartqueryexecutionInput {
+    xAmzTarget: XAmzTarget47!
+    contentType: String!
+    body: StartQueryExecutionInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input AdditionalConfigsInput {
+    _: Boolean
+}
+
+input EngineConfiguration1Input {
+    coordinatorDpuSize: Int!
+    maxConcurrentDpus: Int!
+    defaultExecutorDpuSize: Int!
+    additionalConfigs: AdditionalConfigsInput!
+}
+
+input StartSessionRequestInput {
+    description: String!
+    workGroup: String!
+    engineConfiguration: EngineConfiguration1Input!
+    notebookVersion: String!
+    sessionIdleTimeoutInMinutes: Int!
+    clientRequestToken: String!
+}
+
+input CreateStartsessionInput {
+    xAmzTarget: XAmzTarget48!
+    contentType: String!
+    body: StartSessionRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input StopCalculationExecutionRequestInput {
+    calculationExecutionId: String!
+}
+
+input CreateStopcalculationexecutionInput {
+    xAmzTarget: XAmzTarget49!
+    contentType: String!
+    body: StopCalculationExecutionRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input StopQueryExecutionInput1 {
+    queryExecutionId: String!
+}
+
+input CreateStopqueryexecutionInput {
+    xAmzTarget: XAmzTarget50!
+    contentType: String!
+    body: StopQueryExecutionInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input TagResourceInput1 {
+    resourceARN: String!
+    tags: [TagInput!]
+}
+
+input CreateTagresourceInput {
+    xAmzTarget: XAmzTarget51!
+    contentType: String!
+    body: TagResourceInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input TerminateSessionRequestInput {
+    sessionId: String!
+}
+
+input CreateTerminatesessionInput {
+    xAmzTarget: XAmzTarget52!
+    contentType: String!
+    body: TerminateSessionRequestInput!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input UntagResourceInput1 {
+    resourceARN: String!
+    tagKeys: [String!]
+}
+
+input CreateUntagresourceInput {
+    xAmzTarget: XAmzTarget53!
+    contentType: String!
+    body: UntagResourceInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input UpdateDataCatalogInput1 {
+    name: String!
+    type: DataCatalogType3!
+    description: String!
+    parameters: ParametersInput!
+}
+
+input UpdateDataCatalogInput1 {
+    xAmzTarget: XAmzTarget54!
+    contentType: String!
+    body: UpdateDataCatalogInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input UpdateNamedQueryInput1 {
+    namedQueryId: String!
+    name: String!
+    description: String!
+    queryString: String!
+}
+
+input UpdateNamedQueryInput1 {
+    xAmzTarget: XAmzTarget55!
+    contentType: String!
+    body: UpdateNamedQueryInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input UpdateNotebookInput1 {
+    notebookId: String!
+    payload: String!
+    type: NotebookType2!
+    sessionId: String!
+    clientRequestToken: String!
+}
+
+input UpdateNotebookInput1 {
+    xAmzTarget: XAmzTarget56!
+    contentType: String!
+    body: UpdateNotebookInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input UpdateNotebookMetadataInput1 {
+    notebookId: String!
+    clientRequestToken: String!
+    name: String!
+}
+
+input UpdateNotebookMetadataInput1 {
+    xAmzTarget: XAmzTarget57!
+    contentType: String!
+    body: UpdateNotebookMetadataInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input UpdatePreparedStatementInput1 {
+    statementName: String!
+    workGroup: String!
+    queryStatement: String!
+    description: String!
+}
+
+input UpdatePreparedStatementInput1 {
+    xAmzTarget: XAmzTarget58!
+    contentType: String!
+    body: UpdatePreparedStatementInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+input ResultConfigurationUpdates2Input {
+    outputLocation: String!
+    removeOutputLocation: Boolean!
+    encryptionConfiguration: EncryptionConfiguration2Input!
+    removeEncryptionConfiguration: Boolean!
+    expectedBucketOwner: String!
+    removeExpectedBucketOwner: Boolean!
+    aclConfiguration: AclConfiguration1Input!
+    removeAclConfiguration: Boolean!
+}
+
+"Specifies the KMS key that is used to encrypt the user's data stores in Athena."
+input CustomerContentEncryptionConfigurationInput {
+    kmsKey: String!
+}
+
+input ConfigurationUpdatesInput {
+    enforceWorkGroupConfiguration: Boolean!
+    resultConfigurationUpdates: ResultConfigurationUpdates2Input!
+    publishCloudWatchMetricsEnabled: Boolean!
+    bytesScannedCutoffPerQuery: Int!
+    removeBytesScannedCutoffPerQuery: Boolean!
+    requesterPaysEnabled: Boolean!
+    engineVersion: EngineVersion1Input!
+    removeCustomerContentEncryptionConfiguration: Boolean!
+    additionalConfiguration: String!
+    executionRole: String!
+    "Specifies the KMS key that is used to encrypt the user's data stores in Athena."
+    customerContentEncryptionConfiguration: CustomerContentEncryptionConfigurationInput!
+    enableMinimumEncryptionConfiguration: Boolean!
+}
+
+input UpdateWorkGroupInput1 {
+    workGroup: String!
+    description: String!
+    configurationUpdates: ConfigurationUpdatesInput!
+    state: WorkGroupState2!
+}
+
+input UpdateWorkGroupInput1 {
+    xAmzTarget: XAmzTarget59!
+    contentType: String!
+    body: UpdateWorkGroupInput1!
+    xAmzContentSha256: String!
+    xAmzDate: String!
+    xAmzAlgorithm: String!
+    xAmzCredential: String!
+    xAmzSecurityToken: String!
+    xAmzSignature: String!
+    xAmzSignedheaders: String!
+    authorization: String!
+}
+
+type Query {
+    _: Boolean
+}
+
+type Mutation {
+    "Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <a>ListNamedQueriesInput</a> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use <a>BatchGetQueryExecutionInput</a> to get details about each unique query execution, and <a>ListQueryExecutionsInput</a> to get a list of query execution IDs."
+    createBatchgetnamedquery(input: CreateBatchgetnamedqueryInput!): BatchGetNamedQueryOutput!
+    "Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>."
+    createBatchgetpreparedstatement(input: CreateBatchgetpreparedstatementInput!): BatchGetPreparedStatementOutput!
+    "Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries."
+    createBatchgetqueryexecution(input: CreateBatchgetqueryexecutionInput!): BatchGetQueryExecutionOutput!
+    "Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account."
+    createDataCatalog(input: CreateDataCatalogInput1!): String!
+    "<p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+    createNamedQuery(input: CreateNamedQueryInput1!): CreateNamedQueryOutput!
+    "Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists."
+    createNotebook(input: CreateNotebookInput1!): CreateNotebookOutput!
+    "Creates a prepared statement for use with SQL queries in Athena."
+    createPreparedStatement(input: CreatePreparedStatementInput1!): String!
+    "Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access\">Grant programmatic access</a>."
+    createPresignedNotebookUrl(input: CreatePresignedNotebookUrlInput!): CreatePresignedNotebookUrlResponse!
+    "Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup."
+    createWorkGroup(input: CreateWorkGroupInput1!): String!
+    "Deletes a data catalog."
+    createDeletedatacatalog(input: CreateDeletedatacatalogInput!): String!
+    "<p>Deletes the named query if you have access to the workgroup in which the query was saved.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+    createDeletenamedquery(input: CreateDeletenamedqueryInput!): String!
+    "Deletes the specified notebook."
+    createDeletenotebook(input: CreateDeletenotebookInput!): String!
+    "Deletes the prepared statement with the specified name from the specified workgroup."
+    createDeletepreparedstatement(input: CreateDeletepreparedstatementInput!): String!
+    "Deletes the workgroup with the specified name. The primary workgroup cannot be deleted."
+    createDeleteworkgroup(input: CreateDeleteworkgroupInput!): String!
+    "Exports the specified notebook and its metadata."
+    createExportnotebook(input: CreateExportnotebookInput!): ExportNotebookOutput!
+    "Describes a previously submitted calculation execution."
+    createGetcalculationexecution(input: CreateGetcalculationexecutionInput!): GetCalculationExecutionResponse!
+    "Retrieves the unencrypted code that was executed for the calculation."
+    createGetcalculationexecutioncode(input: CreateGetcalculationexecutioncodeInput!): GetCalculationExecutionCodeResponse!
+    "Gets the status of a current calculation."
+    createGetcalculationexecutionstatus(input: CreateGetcalculationexecutionstatusInput!): GetCalculationExecutionStatusResponse!
+    "Returns the specified data catalog."
+    createGetdatacatalog(input: CreateGetdatacatalogInput!): GetDataCatalogOutput!
+    "Returns a database object for the specified database and data catalog."
+    createGetdatabase(input: CreateGetdatabaseInput!): GetDatabaseOutput!
+    "Returns information about a single query. Requires that you have access to the workgroup in which the query was saved."
+    createGetnamedquery(input: CreateGetnamedqueryInput!): GetNamedQueryOutput!
+    "Retrieves notebook metadata for the specified notebook ID."
+    createGetnotebookmetadata(input: CreateGetnotebookmetadataInput!): GetNotebookMetadataOutput!
+    "Retrieves the prepared statement with the specified name from the specified workgroup."
+    createGetpreparedstatement(input: CreateGetpreparedstatementInput!): GetPreparedStatementOutput!
+    "Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID."
+    createGetqueryexecution(input: CreateGetqueryexecutionInput!): GetQueryExecutionOutput!
+    "<p>Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query results location in Amazon S3. For more information, see <a href=\"https://docs.aws.amazon.com/athena/latest/ug/querying.html\">Working with query results, recent queries, and output files</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.</p> <p>To stream query results successfully, the IAM principal with permission to call <code>GetQueryResults</code> also must have permissions to the Amazon S3 <code>GetObject</code> action for the Athena query results location.</p> <important> <p>IAM principals with permission to the Amazon S3 <code>GetObject</code> action for the query results location are able to retrieve query results from Amazon S3 even if permission to the <code>GetQueryResults</code> action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena query location are denied.</p> </important>"
+    createGetqueryresults(input: CreateGetqueryresultsInput!): GetQueryResultsOutput!
+    "Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation."
+    createGetqueryruntimestatistics(input: CreateGetqueryruntimestatisticsInput!): GetQueryRuntimeStatisticsOutput!
+    "Gets the full details of a previously created session, including the session status and configuration."
+    createGetsession(input: CreateGetsessionInput!): GetSessionResponse!
+    "Gets the current status of a session."
+    createGetsessionstatus(input: CreateGetsessionstatusInput!): GetSessionStatusResponse!
+    "Returns table metadata for the specified catalog, database, and table."
+    createGettablemetadata(input: CreateGettablemetadataInput!): GetTableMetadataOutput!
+    "Returns information about the workgroup with the specified name."
+    createGetworkgroup(input: CreateGetworkgroupInput!): GetWorkGroupOutput!
+    "Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error."
+    createImportnotebook(input: CreateImportnotebookInput!): ImportNotebookOutput!
+    "Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>)."
+    createListapplicationdpusizes(input: CreateListapplicationdpusizesInput!): ListApplicationDPUSizesOutput!
+    "Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later."
+    createListcalculationexecutions(input: CreateListcalculationexecutionsInput!): ListCalculationExecutionsResponse!
+    "<p>Lists the data catalogs in the current Amazon Web Services account.</p> <note> <p>In the Athena console, data catalogs are listed as \"data sources\" on the <b>Data sources</b> page under the <b>Data source name</b> column.</p> </note>"
+    createListdatacatalogs(input: CreateListdatacatalogsInput!): ListDataCatalogsOutput!
+    "Lists the databases in the specified data catalog."
+    createListdatabases(input: CreateListdatabasesInput!): ListDatabasesOutput!
+    "Returns a list of engine versions that are available to choose from, including the Auto option."
+    createListengineversions(input: CreateListengineversionsInput!): ListEngineVersionsOutput!
+    "Lists, in descending order, the executors that joined a session. Newer executors are listed first; older executors are listed later. The result can be optionally filtered by state."
+    createListexecutors(input: CreateListexecutorsInput!): ListExecutorsResponse!
+    "<p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+    createListnamedqueries(input: CreateListnamedqueriesInput!): ListNamedQueriesOutput!
+    "Displays the notebook files for the specified workgroup in paginated format."
+    createListnotebookmetadata(input: CreateListnotebookmetadataInput!): ListNotebookMetadataOutput!
+    "Lists, in descending order, the sessions that have been created in a notebook that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later."
+    createListnotebooksessions(input: CreateListnotebooksessionsInput!): ListNotebookSessionsResponse!
+    "Lists the prepared statements in the specified workgroup."
+    createListpreparedstatements(input: CreateListpreparedstatementsInput!): ListPreparedStatementsOutput!
+    "<p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+    createListqueryexecutions(input: CreateListqueryexecutionsInput!): ListQueryExecutionsOutput!
+    "Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later."
+    createListsessions(input: CreateListsessionsInput!): ListSessionsResponse!
+    "Lists the metadata for the tables in the specified data catalog database."
+    createListtablemetadata(input: CreateListtablemetadataInput!): ListTableMetadataOutput!
+    "Lists the tags associated with an Athena workgroup or data catalog resource."
+    createListtagsforresource(input: CreateListtagsforresourceInput!): ListTagsForResourceOutput!
+    "Lists available workgroups for the account."
+    createListworkgroups(input: CreateListworkgroupsInput!): ListWorkGroupsOutput!
+    "Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request."
+    createStartcalculationexecution(input: CreateStartcalculationexecutionInput!): StartCalculationExecutionResponse!
+    "Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>."
+    createStartqueryexecution(input: CreateStartqueryexecutionInput!): StartQueryExecutionOutput!
+    "Creates a session for running calculations within a workgroup. The session is ready when it reaches an <code>IDLE</code> state."
+    createStartsession(input: CreateStartsessionInput!): StartSessionResponse!
+    "<p>Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.</p> <note> <p>Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider terminating the session in which the calculation is running.</p> </note>"
+    createStopcalculationexecution(input: CreateStopcalculationexecutionInput!): StopCalculationExecutionResponse!
+    "<p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p> <p>For code samples using the Amazon Web Services SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+    createStopqueryexecution(input: CreateStopqueryexecutionInput!): String!
+    "Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href=\"https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html\">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas."
+    createTagresource(input: CreateTagresourceInput!): String!
+    "Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped, but may display as <code>FAILED</code> instead of <code>STOPPED</code>."
+    createTerminatesession(input: CreateTerminatesessionInput!): TerminateSessionResponse!
+    "Removes one or more tags from a data catalog or workgroup resource."
+    createUntagresource(input: CreateUntagresourceInput!): String!
+    "Updates the data catalog that has the specified name."
+    updateDataCatalog(input: UpdateDataCatalogInput1!): String!
+    "Updates a <a>NamedQuery</a> object. The database or workgroup cannot be updated."
+    updateNamedQuery(input: UpdateNamedQueryInput1!): String!
+    "Updates the contents of a Spark notebook."
+    updateNotebook(input: UpdateNotebookInput1!): String!
+    "Updates the metadata for a notebook."
+    updateNotebookMetadata(input: UpdateNotebookMetadataInput1!): String!
+    "Updates a prepared statement."
+    updatePreparedStatement(input: UpdatePreparedStatementInput1!): String!
+    "Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified."
+    updateWorkGroup(input: UpdateWorkGroupInput1!): String!
+}
+
+schema {
+    mutation: Mutation
+    query: Query
+}

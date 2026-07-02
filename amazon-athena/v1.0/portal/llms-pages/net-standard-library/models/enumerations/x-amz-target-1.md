@@ -1,0 +1,27 @@
+# X-Amz-Target 1
+
+Source: https://raw.githubusercontent.com/hashimaawan/sdk-portal/main/amazon-athena/v1.0/portal/#/net-standard-library/x-redirect/JTI0bSUyRlgtQW16LVRhcmdldDE
+
+
+# Enum Type Name
+
+`XAmzTarget1`
+
+
+# Fields
+
+| Name |
+|  --- |
+| `EnumAmazonAthenaBatchGetPreparedStatement` |
+
+
+# Example
+
+```csharp
+using AmazonAthena.Standard.Models;
+
+XAmzTarget1 xAmzTarget1 = XAmzTarget1.EnumAmazonAthenaBatchGetPreparedStatement;
+```
+
+
+
